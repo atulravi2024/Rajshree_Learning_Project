@@ -1,0 +1,437 @@
+const RAJSHREE_DATA = {
+    // --- VARNAMALA SECTION ---
+    swar: [
+        { letter: 'अ', word: 'अनार', emoji: '🍎', audio: 'assets/audio/varnamala/v_a_anar.mp3', image: 'https://loremflickr.com/600/800/pomegranate' },
+        { letter: 'आ', word: 'आम', emoji: '🥭', audio: 'assets/audio/varnamala/v_aa_aam.mp3', image: 'https://loremflickr.com/600/800/mango' },
+        { letter: 'इ', word: 'इमली', emoji: '🍬', audio: 'assets/audio/varnamala/v_i.mp3', image: 'https://loremflickr.com/600/800/tamarind' },
+        { letter: 'ई', word: 'ईख', emoji: '🎋', audio: 'assets/audio/varnamala/v_ee.mp3', image: 'https://loremflickr.com/600/800/sugarcane' },
+        { letter: 'उ', word: 'उल्लू', emoji: '🦉', audio: 'assets/audio/varnamala/v_u.mp3', image: 'https://loremflickr.com/600/800/owl' },
+        { letter: 'ऊ', word: 'ऊून', emoji: '🧶', audio: 'assets/audio/varnamala/v_oo.mp3', image: 'https://loremflickr.com/600/800/wool' },
+        { letter: 'ऋ', word: 'ऋषि', emoji: '🧘', audio: 'assets/audio/varnamala/v_ri.mp3', image: 'https://loremflickr.com/600/800/sage' },
+        { letter: 'ए', word: 'एड़ी', emoji: '🦶', audio: 'assets/audio/varnamala/v_e.mp3', image: 'https://loremflickr.com/600/800/heel' },
+        { letter: 'ऐ', word: 'ऐनक', emoji: '👓', audio: 'assets/audio/varnamala/v_ai.mp3', image: 'https://loremflickr.com/600/800/tamarind' },
+        { letter: 'ओ', word: 'ओखली', emoji: '🥣', audio: 'assets/audio/varnamala/v_o_okhli.mp3', image: 'https://loremflickr.com/600/800/mortar' },
+        { letter: 'औ', word: 'औरत', emoji: '👩', audio: 'assets/audio/varnamala/v_au.mp3', image: 'https://loremflickr.com/600/800/woman' },
+        { letter: 'अं', word: 'अंगूर', emoji: '🍇', audio: 'assets/audio/varnamala/v_ang_angur.mp3', image: 'https://loremflickr.com/600/800/grapes' },
+        { letter: 'अः', word: 'खाली', emoji: '⚪', audio: 'assets/audio/varnamala/v_aha.mp3', textOnly: true }
+    ],
+    vyanjan: [
+        { letter: 'क', word: 'कमल', emoji: '🌸', audio: 'assets/audio/varnamala/ka.mp3', image: 'https://loremflickr.com/600/800/lotus' },
+        { letter: 'ख', word: 'खरगोश', emoji: '🐇', audio: 'assets/audio/varnamala/kha.mp3', image: 'https://loremflickr.com/600/800/rabbit' },
+        { letter: 'ग', word: 'गमला', emoji: '🌻', audio: 'assets/audio/varnamala/ga_new.mp3', image: 'https://loremflickr.com/600/800/flowerpot' },
+        { letter: 'घ', word: 'घर', emoji: '🏠', audio: 'assets/audio/varnamala/gha.mp3', image: 'https://loremflickr.com/600/800/house' },
+        { letter: 'च', word: 'चकला', emoji: '🟡', audio: 'assets/audio/varnamala/cha.mp3', image: 'https://loremflickr.com/600/800/rollingboard' },
+        { letter: 'छ', word: 'छतरी', emoji: '🌂', audio: 'assets/audio/varnamala/chha.mp3', image: 'https://loremflickr.com/600/800/umbrella' },
+        { letter: 'ज', word: 'जहाज', emoji: '🚢', audio: 'assets/audio/varnamala/ja.mp3', image: 'https://loremflickr.com/600/800/ship' },
+        { letter: 'झ', word: 'झंडा', emoji: '🇮🇳', audio: 'assets/audio/varnamala/jha.mp3', image: 'https://loremflickr.com/600/800/flag' },
+        { letter: 'ट', word: 'टमाटर', emoji: '🍅', audio: 'assets/audio/varnamala/ta.mp3', image: 'https://loremflickr.com/600/800/tomato' },
+        { letter: 'ठ', word: 'ठठेरा', emoji: '🔨', audio: 'assets/audio/varnamala/ttha.mp3', image: 'https://loremflickr.com/600/800/blacksmith' },
+        { letter: 'ड', word: 'डमरू', emoji: '🥁', audio: 'assets/audio/varnamala/da.mp3', image: 'https://loremflickr.com/600/800/handdrum' },
+        { letter: 'ढ', word: 'ढक्कन', emoji: '🍲', audio: 'assets/audio/varnamala/ddha_new.mp3', image: 'https://loremflickr.com/600/800/potlid' },
+        { letter: 'त', word: 'तरबूज', emoji: '🍉', audio: 'assets/audio/varnamala/taa.mp3', image: 'https://loremflickr.com/600/800/watermelon' },
+        { letter: 'थ', word: 'थाली', emoji: '🍽️', audio: 'assets/audio/varnamala/tha.mp3', image: 'https://loremflickr.com/600/800/plate' },
+        { letter: 'द', word: 'दवात', emoji: '🖋️', audio: 'assets/audio/varnamala/daa.mp3', image: 'https://loremflickr.com/600/800/inkpot' },
+        { letter: 'ध', word: 'धनुष', emoji: '🏹', audio: 'assets/audio/varnamala/dha.mp3', image: 'https://loremflickr.com/600/800/bow' },
+        { letter: 'न', word: 'नल', emoji: '🚰', audio: 'assets/audio/varnamala/na.mp3', image: 'https://loremflickr.com/600/800/tap' },
+        { letter: 'प', word: 'पतंग', emoji: '🪁', audio: 'assets/audio/varnamala/pa.mp3', image: 'https://loremflickr.com/600/800/kite' },
+        { letter: 'फ', word: 'फल', emoji: '🧺', audio: 'assets/audio/varnamala/pha.mp3', image: 'https://loremflickr.com/600/800/fruit' },
+        { letter: 'ब', word: 'बत्तख', emoji: '🦆', audio: 'assets/audio/varnamala/ba.mp3', image: 'https://loremflickr.com/600/800/duck' },
+        { letter: 'भ', word: 'भालू', emoji: '🐻', audio: 'assets/audio/varnamala/bha.mp3', image: 'https://loremflickr.com/600/800/bear' },
+        { letter: 'म', word: 'मछली', emoji: '🐟', audio: 'assets/audio/varnamala/ma.mp3', image: 'https://loremflickr.com/600/800/fish' },
+        { letter: 'य', word: 'यज्ञ', emoji: '🔥', audio: 'assets/audio/varnamala/ya.mp3', image: 'https://loremflickr.com/600/800/fire' },
+        { letter: 'र', word: 'राजश्री', emoji: '👶', audio: 'assets/audio/varnamala/v_r_rajshree.mp3', image: 'https://loremflickr.com/600/800/baby' },
+        { letter: 'ल', word: 'लट्टू', emoji: '🧶', audio: 'assets/audio/varnamala/la.mp3', image: 'https://loremflickr.com/600/800/spinningtop' },
+        { letter: 'व', word: 'वन', emoji: '🌳', audio: 'assets/audio/varnamala/va.mp3', image: 'https://loremflickr.com/600/800/forest' },
+        { letter: 'श', word: 'शलगम', emoji: '🥗', audio: 'assets/audio/varnamala/sha.mp3', image: 'https://loremflickr.com/600/800/turnip' },
+        { letter: 'ष', word: 'षटकोण', emoji: '🔷', audio: 'assets/audio/varnamala/shha.mp3', image: 'https://loremflickr.com/600/800/hexagon' },
+        { letter: 'स', word: 'सपेरा', emoji: '🐍', audio: 'assets/audio/varnamala/sa.mp3', image: 'https://loremflickr.com/600/800/snake' },
+        { letter: 'ह', word: 'हाथी', emoji: '🐘', audio: 'assets/audio/varnamala/ha.mp3', image: 'https://loremflickr.com/600/800/elephant' }
+    ],
+    samyukt: [
+        { letter: 'क्ष', word: 'क्षत्रिय', emoji: '🛡️', audio: 'assets/audio/varnamala/ksha.mp3', image: 'https://loremflickr.com/600/800/warrior' },
+        { letter: 'त्र', word: 'त्रिशूल', emoji: '🔱', audio: 'assets/audio/varnamala/tra.mp3', image: 'https://loremflickr.com/600/800/trident' },
+        { letter: 'ज्ञ', word: 'ज्ञानी', emoji: '🧠', audio: 'assets/audio/varnamala/gya.mp3', image: 'https://loremflickr.com/600/800/sage' },
+        { letter: 'श्र', word: 'श्रमिक', emoji: '👨‍🔧', audio: 'assets/audio/varnamala/v_shra.mp3', image: 'https://loremflickr.com/600/800/worker' }
+    ],
+    matra: [
+        { letter: 'क + आ', word: 'का', emoji: '🖍️', audio: 'assets/audio/varnamala/matra/matra_aa.mp3' },
+        { letter: 'क + इ', word: 'कि', emoji: '🖍️', audio: 'assets/audio/varnamala/matra/matra_i.mp3' },
+        { letter: 'क + ई', word: 'की', emoji: '🖍️', audio: 'assets/audio/varnamala/matra/matra_ee.mp3' },
+        { letter: 'क + उ', word: 'कु', emoji: '🖍️', audio: 'assets/audio/varnamala/matra/matra_u.mp3' },
+        { letter: 'क + ऊ', word: 'कू', emoji: '🖍️', audio: 'assets/audio/varnamala/matra/matra_oo.mp3' }
+    ],
+
+    // --- GANIT SECTION ---
+    numbers_10: [
+        { letter: '१', word: 'एक', emoji: '🍎', audio: 'assets/audio/ganit/numbers/num_1.mp3', value: '1' },
+        { letter: '२', word: 'दो', emoji: '🍐🍐', audio: 'assets/audio/ganit/numbers/num_2.mp3', value: '2' },
+        { letter: '३', word: 'तीन', emoji: '🍊🍊🍊', audio: 'assets/audio/ganit/numbers/num_3.mp3', value: '3' },
+        { letter: '४', word: 'चार', emoji: '🍋🍋🍋🍋', audio: 'assets/audio/ganit/numbers/num_4.mp3', value: '4' },
+        { letter: '५', word: 'पाँच', emoji: '🍌🍌🍌🍌🍌', audio: 'assets/audio/ganit/numbers/num_5.mp3', value: '5' },
+        { letter: '६', word: 'छह', emoji: '🍉🍉🍉🍉🍉🍉', audio: 'assets/audio/ganit/numbers/num_6.mp3', value: '6' },
+        { letter: '७', word: 'सात', emoji: '🍇🍇🍇🍇🍇🍇🍇', audio: 'assets/audio/ganit/numbers/num_7.mp3', value: '7' },
+        { letter: '८', word: 'आठ', emoji: '🍓🍓🍓🍓🍓🍓🍓🍓', audio: 'assets/audio/ganit/numbers/num_8.mp3', value: '8' },
+        { letter: '९', word: 'नौ', emoji: '🍍🍍🍍🍍🍍🍍🍍🍍🍍', audio: 'assets/audio/ganit/numbers/num_9.mp3', value: '9' },
+        { letter: '१०', word: 'दस', emoji: '🍎🥚', audio: 'assets/audio/ganit/numbers/num_10.mp3', value: '10' }
+    ],
+    numbers_100: (() => {
+        const hindiNumbersNames = ["शून्य", "एक", "दो", "तीन", "चार", "पाँच", "छह", "सात", "आठ", "नौ", "दस", "ग्यारह", "बारह", "तेरह", "चौदह", "पंद्रह", "सोलह", "सत्रह", "अठारह", "उन्नीस", "बीस", "इक्कीस", "बाईस", "तेईस", "चौबीस", "पच्चीस", "छब्बीस", "सत्ताईस", "अट्ठाइस", "उनतीस", "तीस", "इकतीस", "बत्तीस", "तैंतीस", "चौंतीस", "पैंतीस", "छत्तीस", "सैंतीस", "अड़तीस", "उनतालीस", "चालीस", "इकतालीस", "बयालीस", "तैंतालीस", "चवालीस", "पैंतालीस", "छियालीस", "सैंतालीस", "अड़तालीस", "उनचाas", "पचाas", "इक्यावन", "बावन", "तिरपन", "चौवन", "पचपन", "छप्पन", "सत्तावन", "अठावन", "उनसठ", "साठ", "इकसठ", "बासठ", "तिरसठ", "चौंसठ", "पैंसठ", "छियासठ", "सरसठ", "अड़सठ", "उनहत्तर", "सत्तर", "इकहत्तर", "बहत्तर", "तिहत्तर", "चौहत्तर", "पचहत्तर", "छिहत्तर", "सतहत्तर", "अठहत्तर", "उनासी", "अस्सी", "इक्यासी", "बयासी", "तिरासी", "चौरासी", "पचासी", "छियासी", "सतासी", "अठासी", "नवासी", "नब्बे", "इक्यानवे", "बयानवे", "तिरानवे", "चौरानवे", "पंचानवे", "छियाanve", "सत्तानवे", "अट्ठानवे", "निन्यानवे", "सौ"];
+        const hindiNumeralsDigits = ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९"];
+        const toHindi = (num) => num.toString().split('').map(d => hindiNumeralsDigits[parseInt(d)]).join('');
+        const unitIcons = ["🥚", "🍎", "🍐", "🍊", "🍋", "🍌", "🍉", "🍇", "🍓", "🍍"];
+        
+        return Array.from({length: 100}, (_, i) => {
+            const n = i + 1;
+            const s = n.toString();
+            let iconStr = "";
+            
+            if (n === 100) {
+                iconStr = "💯";
+            } else if (n < 10) {
+                iconStr = unitIcons[n].repeat(n);
+            } else {
+                const firstDigit = parseInt(s[0]);
+                const secondDigit = parseInt(s[1]);
+                iconStr = unitIcons[firstDigit];
+                if (secondDigit === 0) {
+                    iconStr += "🥚";
+                } else {
+                    iconStr += unitIcons[secondDigit];
+                }
+            }
+            
+            return {
+                letter: toHindi(n),
+                word: hindiNumbersNames[n],
+                emoji: iconStr,
+                audio: `assets/audio/ganit/numbers/num_${n}.mp3`,
+                value: n.toString()
+            };
+        });
+    })(),
+    tables_10_m1: (() => {
+        const tables = [];
+        const unitIcons = ["🥚", "🍎", "🍐", "🍊", "🍋", "🍌", "🍉", "🍇", "🍓", "🍍", "🍎🥚"];
+        for (let n = 2; n <= 10; n++) {
+            let leftCol = "";
+            let rightCol = "";
+            for (let i = 1; i <= 10; i++) {
+                const line = `${n} x ${i} = ${n * i}<br>`;
+                if (i <= 5) leftCol += line;
+                else rightCol += line;
+            }
+            const hindiNumerals = ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९", "१०"];
+            const toHindi = (num) => num.toString().split('').map(d => hindiNumerals[parseInt(d)]).join('');
+
+            tables.push({ 
+                letter: toHindi(n), 
+                word: `पहाड़ा`, 
+                emoji: unitIcons[n], 
+                audio: `assets/audio/ganit/tables/method_1/table_${n}_m1.mp3`, 
+                content: `<div style="text-align:center;"><b style="font-size:4.5vh; color:#FF5722;">स्कूल पद्धति</b></div>
+                          <div style="display:flex; justify-content:center; align-items: flex-start; font-size:4.5vh; margin-top:15px; font-weight:bold; gap: 30px;">
+                            <div style="text-align:left;">${leftCol}</div>
+                            <div style="width: 3px; background: #FFDEE9; height: 35vh; align-self: center;"></div>
+                            <div style="text-align:left;">${rightCol}</div>
+                          </div>`
+            });
+        }
+        return tables;
+    })(),
+    tables_10_m2: (() => {
+        const tables = [];
+        const unitIcons = ["🥚", "🍎", "🍐", "🍊", "🍋", "🍌", "🍉", "🍇", "🍓", "🍍", "🍎🥚"];
+        for (let n = 2; n <= 10; n++) {
+            let leftCol = "";
+            let rightCol = "";
+            const hNums = ["०", "एक", "दो", "तीन", "चार", "पाँच", "छह", "सात", "आठ", "नौ", "दस"];
+            for (let i = 1; i <= 10; i++) {
+                const line = `${n} ${hNums[i]} जा ${n * i}<br>`;
+                if (i <= 5) leftCol += line;
+                else rightCol += line;
+            }
+            const hindiNumerals = ["०", "१", "२", "३", "४", "५", "६", "७", "८", "९", "१०"];
+            const toHindi = (num) => num.toString().split('').map(d => hindiNumerals[parseInt(d)]).join('');
+
+            tables.push({ 
+                letter: toHindi(n), 
+                word: `पहाड़ा`, 
+                emoji: unitIcons[n], 
+                audio: `assets/audio/ganit/tables/method_2/table_${n}_m2.mp3`, 
+                content: `<div style="text-align:center;"><b style="font-size:4.5vh; color:#2196F3;">बोलचाल पद्धति</b></div>
+                          <div style="display:flex; justify-content:center; align-items: flex-start; font-size:4vh; margin-top:15px; font-weight:bold; gap: 30px;">
+                            <div style="text-align:left;">${leftCol}</div>
+                            <div style="width: 3px; background: #FFDEE9; height: 35vh; align-self: center;"></div>
+                            <div style="text-align:left;">${rightCol}</div>
+                          </div>`
+            });
+        }
+        return tables;
+    })(),
+    shapes: [
+        { letter: 'गोल', word: 'Circle', emoji: '⭕', audio: 'assets/audio/ganit/shapes/shape_circle.mp3', type: 'circle', color: '#FF5722',
+          content: `<div class="shape-container"><div style="width:40cqmin; height:40cqmin; border: 4cqmin solid #FF5722; border-radius:50%; box-shadow: 0 0 20px rgba(255,87,34,0.3);"></div></div>` },
+        { letter: 'चौकोर', word: 'Square', emoji: '🟦', audio: 'assets/audio/ganit/shapes/shape_square.mp3', type: 'square', color: '#2196F3',
+          content: `<div class="shape-container"><div style="width:40cqmin; height:40cqmin; border: 4cqmin solid #2196F3; border-radius:10px; box-shadow: 0 0 20px rgba(33,150,243,0.3);"></div></div>` },
+        { letter: 'त्रिकोण', word: 'Triangle', emoji: '🔺', audio: 'assets/audio/ganit/shapes/shape_triangle.mp3', type: 'triangle', color: '#4CAF50',
+          content: `<div class="shape-container"><div style="width: 0; height: 0; border-left: 25cqmin solid transparent; border-right: 25cqmin solid transparent; border-bottom: 43cqmin solid #4CAF50;"></div></div>` },
+        { letter: 'तारा', word: 'Star', emoji: '⭐', audio: 'assets/audio/ganit/shapes/shape_star_funny.mp3', type: 'star', color: '#FFEB3B',
+          content: `<div class="shape-container"><span style="font-size:50cqmin; filter: drop-shadow(0 0 10px gold);">⭐</span></div>` },
+        { letter: 'आयताकार', word: 'Rectangle', emoji: '▮', audio: 'assets/audio/ganit/shapes/shape_rectangle.mp3', type: 'rectangle', color: '#9C27B0',
+          content: `<div class="shape-container"><div style="width:48cqmin; height:28cqmin; border: 4cqmin solid #9C27B0; border-radius:8px; box-shadow: 0 0 20px rgba(156,39,176,0.3);"></div></div>` },
+        { letter: 'दिल', word: 'Heart', emoji: '❤️', audio: 'assets/audio/ganit/shapes/shape_heart.mp3', type: 'heart', color: '#E91E63',
+          content: `<div class="shape-container"><span style="font-size:50cqmin; filter: drop-shadow(0 0 10px rgba(233,30,99,0.4));">❤️</span></div>` },
+        { letter: 'हीरा', word: 'Diamond', emoji: '💎', audio: 'assets/audio/ganit/shapes/shape_diamond.mp3', type: 'diamond', color: '#00BCD4',
+          content: `<div class="shape-container"><span style="font-size:50cqmin; filter: drop-shadow(0 0 15px rgba(0,188,212,0.6));">💎</span></div>` },
+        { letter: 'चाँद', word: 'Crescent', emoji: '🌙', audio: 'assets/audio/ganit/shapes/shape_crescent.mp3', type: 'crescent', color: '#FFF59D',
+          content: `<div class="shape-container"><span style="font-size:50cqmin; filter: drop-shadow(0 0 10px rgba(255,245,157,0.5));">🌙</span></div>` },
+        { letter: 'षटकोण', word: 'Hexagon', emoji: '🔷', audio: 'assets/audio/ganit/shapes/shape_hexagon.mp3', type: 'hexagon', color: '#FF4081',
+          content: `<div class="shape-container"><div style="width: 40cqmin; height: 23cqmin; background: #FF4081; position: relative;">
+                            <div style="content: ''; position: absolute; top: -20cqmin; left: 0; width: 0; height: 0; border-left: 20cqmin solid transparent; border-right: 20cqmin solid transparent; border-bottom: 20cqmin solid #FF4081;"></div>
+                            <div style="position: absolute; bottom: -20cqmin; left: 0; width: 0; height: 0; border-left: 20cqmin solid transparent; border-right: 20cqmin solid transparent; border-top: 20cqmin solid #FF4081;"></div>
+                        </div></div>` },
+        { letter: 'पेंटागन', word: 'Pentagon', emoji: '🏠', audio: 'assets/audio/ganit/shapes/shape_pentagon.mp3', type: 'pentagon', color: '#009688',
+          content: `<div class="shape-container"><div style="display:flex; flex-direction:column; align-items:center;">
+                        <div style="width: 0; height: 0; border-left: 22cqmin solid transparent; border-right: 22cqmin solid transparent; border-bottom: 22cqmin solid #009688; position: relative;"></div>
+                        <div style="width: 44cqmin; height: 25cqmin; background:#009688;"></div>
+                    </div></div>` },
+        { letter: 'अण्डा', word: 'Oval', emoji: '🥚', audio: 'assets/audio/ganit/shapes/shape_oval_funny.mp3', type: 'oval', color: '#FFF9C4',
+          content: `<div class="shape-container"><div style="width: 35cqmin; height: 50cqmin; border: 4cqmin solid #FBC02D; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;"></div></div>` },
+        { letter: 'बेलन', word: 'Cylinder', emoji: '🥖', audio: 'assets/audio/ganit/shapes/shape_cylinder.mp3', type: 'cylinder', color: '#795548',
+          content: `<div class="shape-container"><div style="width: 30cqmin; height: 50cqmin; border: 4cqmin solid #795548; border-radius: 40px / 20px;"></div></div>` }
+    ],
+    comparisons: [
+        { letter: 'बड़ा-छोटा', word: 'Big & Small', emoji: '🐘🐭', audio: 'assets/audio/ganit/comparisons/comp_big_small.mp3', type: 'big-small', 
+          content: `<div style="display:flex; justify-content:space-around; align-items:center; height:100%;">
+                        <div style="text-align:center;"><span style="font-size:15vh;">🐘</span><br><b>बड़ा</b></div>
+                        <div style="width:2px; background:#FFDEE9; height:20vh;"></div>
+                        <div style="text-align:center;"><span style="font-size:6vh;">🐭</span><br><b>छोटा</b></div>
+                    </div>` },
+        { letter: 'लंबा-पस्त', word: 'Tall & Short', emoji: '🦒🐶', audio: 'assets/audio/ganit/comparisons/comp_tall_short.mp3', type: 'tall-short',
+          content: `<div style="display:flex; justify-content:space-around; align-items:flex-end; height:100%;">
+                        <div style="text-align:center;"><span style="font-size:15vh;">🦒</span><br><b>लंबा</b></div>
+                        <div style="width:2px; background:#FFDEE9; height:20vh;"></div>
+                        <div style="text-align:center;"><span style="font-size:8vh;">🐶</span><br><b>पस्त</b></div>
+                    </div>` },
+        { letter: 'मोटा-पतला', word: 'Fat & Thin', emoji: '🐘🦒', audio: 'assets/audio/ganit/comparisons/comp_fat_thin.mp3', type: 'fat-thin',
+          content: `<div style="display:flex; justify-content:space-around; align-items:center; height:100%;">
+                        <div style="text-align:center;"><span style="font-size:12vh;">🐘</span><br><b>मोटा</b></div>
+                        <div style="width:2px; background:#FFDEE9; height:20vh;"></div>
+                        <div style="text-align:center;"><span style="font-size:12vh;">🦒</span><br><b>पतला</b></div>
+                    </div>` },
+        { letter: 'भारी-हल्का', word: 'Heavy & Light', emoji: '🧱🎈', audio: 'assets/audio/ganit/comparisons/comp_heavy_light.mp3', type: 'heavy-light',
+          content: `<div style="display:flex; justify-content:space-around; align-items:center; height:100%;">
+                        <div style="text-align:center;"><span style="font-size:12vh;">🧱</span><br><b>भारी</b></div>
+                        <div style="width:2px; background:#FFDEE9; height:20vh;"></div>
+                        <div style="text-align:center;"><span style="font-size:10vh; transform:translateY(-30px); display:inline-block;">🎈</span><br><b>हल्का</b></div>
+                    </div>` },
+        { letter: 'ऊपर-नीचे', word: 'Up & Down', emoji: '⬆️⬇️', audio: 'assets/audio/ganit/comparisons/comp_up_down.mp3', type: 'up-down',
+          content: `<div style="display:flex; flex-direction:column; justify-content:center; align-items:center; height:100%; gap:5px;">
+                        <div style="text-align:center;"><span style="font-size:8vh;">☁️</span><br><b>ऊपर</b></div>
+                        <div style="width:40%; background:#FFDEE9; height:2px; margin: 2px 0;"></div>
+                        <div style="text-align:center;"><span style="font-size:8vh;">🌱</span><br><b>नीचे</b></div>
+                    </div>` },
+        { letter: 'अंदर-बाहर', word: 'In & Out', emoji: '🏠🚪', audio: 'assets/audio/ganit/comparisons/comp_in_out.mp3', type: 'in-out',
+          content: `<div style="display:flex; justify-content:space-around; align-items:center; height:100%;">
+                        <div style="text-align:center;"><span style="font-size:12vh;">🏠</span><br><b>अंदर</b></div>
+                        <div style="width:2px; background:#FFDEE9; height:20vh;"></div>
+                        <div style="text-align:center;"><span style="font-size:12vh;">🌳</span><br><b>बाहर</b></div>
+                    </div>` },
+        { letter: 'पास-दूर', word: 'Near & Far', emoji: '📍🏔️', audio: 'assets/audio/ganit/comparisons/comp_near_far.mp3', type: 'near-far', 
+          content: `<div style="display:flex; justify-content:space-around; align-items:center; height:100%;">
+                        <div style="text-align:center;"><span style="font-size:12vh;">🏠</span><br><b>पास</b></div>
+                        <div style="width:2px; background:#FFDEE9; height:20vh;"></div>
+                        <div style="text-align:center;"><span style="font-size:6vh;">🏔️</span><br><b>दूर</b></div>
+                    </div>` },
+        { letter: 'खुला-बंद', word: 'Open & Closed', emoji: '📖📕', audio: 'assets/audio/ganit/comparisons/comp_open_closed.mp3', type: 'open-closed',
+          content: `<div style="display:flex; justify-content:space-around; align-items:center; height:100%;">
+                        <div style="text-align:center;"><span style="font-size:12vh;">📖</span><br><b>खुला</b></div>
+                        <div style="width:2px; background:#FFDEE9; height:20vh;"></div>
+                        <div style="text-align:center;"><span style="font-size:12vh;">📕</span><br><b>बंद</b></div>
+                    </div>` },
+        { letter: 'साफ़-गंदा', word: 'Clean & Dirty', emoji: '✨👕', audio: 'assets/audio/ganit/comparisons/comp_clean_dirty.mp3', type: 'clean-dirty',
+          content: `<div style="display:flex; justify-content:space-around; align-items:center; height:100%;">
+                        <div style="text-align:center;"><span style="font-size:12vh;">✨</span><br><b>साफ़</b></div>
+                        <div style="width:2px; background:#FFDEE9; height:20vh;"></div>
+                        <div style="text-align:center;"><span style="font-size:12vh;">🧼</span><br><b>गंदा</b></div>
+                    </div>` },
+        { letter: 'हल्का-गहरा', word: 'Light & Dark', emoji: '🎨', audio: 'assets/audio/ganit/comparisons/comp_light_dark.mp3', type: 'light-dark',
+          content: `<div style="display:flex; justify-content:space-around; align-items:center; height:100%;">
+                        <div style="text-align:center;"><div style="width:10vh; height:10vh; background:#BBDEFB; border-radius:50%;"></div><br><b>हल्का</b></div>
+                        <div style="width:2px; background:#FFDEE9; height:20vh;"></div>
+                        <div style="text-align:center;"><div style="width:10vh; height:10vh; background:#0D47A1; border-radius:50%;"></div><br><b>गहरा</b></div>
+                    </div>` },
+        { letter: 'तेज़-धीरे', word: 'Fast & Slow', emoji: '🚀🐢', audio: 'assets/audio/ganit/comparisons/comp_fast_slow.mp3', type: 'fast-slow',
+          content: `<div style="display:flex; justify-content:space-around; align-items:center; height:100%;">
+                        <div style="text-align:center;"><span style="font-size:12vh;">🚀</span><br><b>तेज़</b></div>
+                        <div style="width:2px; background:#FFDEE9; height:20vh;"></div>
+                        <div style="text-align:center;"><span style="font-size:12vh;">🐢</span><br><b>धीरे</b></div>
+                    </div>` },
+        { letter: 'सूखा-गीला', word: 'Dry & Wet', emoji: '⛱️🌧️', audio: 'assets/audio/ganit/comparisons/comp_dry_wet.mp3', type: 'dry-wet',
+          content: `<div style="display:flex; justify-content:space-around; align-items:center; height:100%;">
+                        <div style="text-align:center;"><span style="font-size:12vh;">☀️</span><br><b>सूखा</b></div>
+                        <div style="width:2px; background:#FFDEE9; height:20vh;"></div>
+                        <div style="text-align:center;"><span style="font-size:12vh;">🌧️</span><br><b>गीला</b></div>
+                    </div>` }
+    ],
+
+    // --- MERA SANSAR SECTION ---
+    family: [
+        { letter: 'पापा', word: 'Papa', emoji: '👨', audio: 'assets/audio/mera_sansar/family/family_papa.mp3', image: 'https://loremflickr.com/600/800/father' },
+        { letter: 'मम्मी', word: 'Mummy', emoji: '👩', audio: 'assets/audio/mera_sansar/family/family_mummy.mp3', image: 'https://loremflickr.com/600/800/mother' },
+        { letter: 'दादाजी', word: 'Dadaji', emoji: '👴', audio: 'assets/audio/mera_sansar/family/family_dadaji.mp3', image: 'https://loremflickr.com/600/800/grandfather' },
+        { letter: 'दादीजी', word: 'Dadiji', emoji: '👵', audio: 'assets/audio/mera_sansar/family/family_dadiji.mp3', image: 'https://loremflickr.com/600/800/grandmother' }
+    ],
+    body_parts: [
+        { letter: 'आँखें', word: 'Eyes', emoji: '👀', audio: 'assets/audio/mera_sansar/body_parts/body_eyes.mp3', image: 'https://loremflickr.com/600/800/eyes' },
+        { letter: 'नाक', word: 'Nose', emoji: '👃', audio: 'assets/audio/mera_sansar/body_parts/body_nose.mp3', image: 'https://loremflickr.com/600/800/nose' },
+        { letter: 'कान', word: 'Ear', emoji: '👂', audio: 'assets/audio/mera_sansar/body_parts/body_ear.mp3', image: 'https://loremflickr.com/600/800/ear' },
+        { letter: 'हाथ', word: 'Hand', emoji: '✋', audio: 'assets/audio/mera_sansar/body_parts/body_hand.mp3', image: 'https://loremflickr.com/600/800/hand' }
+    ],
+    animals_wild: [
+        { letter: 'शेर', word: 'Lion (Wild)', emoji: '🦁', audio: 'assets/audio/mera_sansar/animals/lion.mp3', image: 'https://loremflickr.com/600/800/lion' },
+        { letter: 'हाथी', word: 'Elephant (Wild)', emoji: '🐘', audio: 'assets/audio/mera_sansar/animals/elephant.mp3', image: 'https://loremflickr.com/600/800/elephant' }
+    ],
+    animals_domestic: [
+        { letter: 'गाय', word: 'Cow (Domestic)', emoji: '🐄', audio: 'assets/audio/mera_sansar/animals/animal_cow.mp3', image: 'https://loremflickr.com/600/800/cow' },
+        { letter: 'कुत्ता', word: 'Dog (Domestic)', emoji: '🐶', audio: 'assets/audio/mera_sansar/animals/animal_dog.mp3', image: 'https://loremflickr.com/600/800/dog' }
+    ],
+    nature: [
+        { letter: 'गर्मी', word: 'Summer', emoji: '☀️', audio: 'assets/audio/mera_sansar/nature_habits/nature_summer.mp3', image: 'https://loremflickr.com/600/800/summer' },
+        { letter: 'बारिश', word: 'Rainy', emoji: '🌧️', audio: 'assets/audio/mera_sansar/nature_habits/nature_rainy.mp3', image: 'https://loremflickr.com/600/800/rain' },
+        { letter: 'सर्दी', word: 'Winter', emoji: '❄️', audio: 'assets/audio/mera_sansar/nature_habits/nature_winter.mp3', image: 'https://loremflickr.com/600/800/winter' }
+    ],
+    fruits: [
+        { letter: 'सेब', word: 'Apple', emoji: '🍎', audio: 'assets/audio/mera_sansar/fruits_vegetables/apple.mp3', image: 'https://loremflickr.com/600/800/apple' },
+        { letter: 'आम', word: 'Mango', emoji: '🥭', audio: 'assets/audio/mera_sansar/fruits_vegetables/mango.mp3', image: 'https://loremflickr.com/600/800/mango' }
+    ],
+    vegetables: [
+        { letter: 'आलू', word: 'Potato', emoji: '🥔', audio: 'assets/audio/mera_sansar/fruits_vegetables/potato.mp3', image: 'https://loremflickr.com/600/800/potato' },
+        { letter: 'टमाटर', word: 'Tomato', emoji: '🍅', audio: 'assets/audio/mera_sansar/fruits_vegetables/tomato.mp3', image: 'https://loremflickr.com/600/800/tomato' }
+    ],
+    habits: [
+        { letter: 'ब्रश करना', word: 'Brushing', emoji: '🪥', audio: 'assets/audio/mera_sansar/nature_habits/habit_brushing.mp3', image: 'https://loremflickr.com/600/800/brushing' },
+        { letter: 'नहाना', word: 'Bathing', emoji: '🛁', audio: 'assets/audio/mera_sansar/nature_habits/habit_bathing.mp3', image: 'https://loremflickr.com/600/800/bathing' }
+    ],
+
+    // --- RANG (COLORS) CATEGORIES ---
+    colors_primary: [
+        { letter: 'बैंगनी', word: 'Violet', audio: 'assets/audio/rangon_ka_sansar/primary/col_purple.mp3', color: 'violet' },
+        { letter: 'गहरा नीला', word: 'Indigo', audio: 'assets/audio/rangon_ka_sansar/primary/col_indigo.mp3', color: 'indigo' },
+        { letter: 'नीला', word: 'Blue', audio: 'assets/audio/rangon_ka_sansar/primary/col_blue.mp3', color: 'blue' },
+        { letter: 'हरा', word: 'Green', audio: 'assets/audio/rangon_ka_sansar/primary/col_green.mp3', color: 'green' },
+        { letter: 'पीला', word: 'Yellow', audio: 'assets/audio/rangon_ka_sansar/primary/col_yellow.mp3', color: 'yellow' },
+        { letter: 'नारंगी', word: 'Orange', audio: 'assets/audio/rangon_ka_sansar/primary/col_orange.mp3', color: 'orange' },
+        { letter: 'लाल', word: 'Red', audio: 'assets/audio/rangon_ka_sansar/primary/col_red.mp3', color: 'red' },
+        { letter: 'इंद्रधनुष', word: 'Rainbow', emoji: '🌈', audio: 'assets/audio/rangon_ka_sansar/primary/col_rainbow.mp3', image: 'https://loremflickr.com/600/800/rainbow' }
+    ],
+    colors_secondary: [
+        { letter: 'गुलाबी', word: 'Pink', audio: 'assets/audio/rangon_ka_sansar/secondary/col_pink.mp3', color: 'pink' },
+        { letter: 'काला', word: 'Black', audio: 'assets/audio/rangon_ka_sansar/secondary/col_black.mp3', color: 'black' },
+        { letter: 'सफ़ेद', word: 'White', audio: 'assets/audio/rangon_ka_sansar/secondary/col_white.mp3', color: 'white' },
+        { letter: 'भूरा', word: 'Brown', audio: 'assets/audio/rangon_ka_sansar/secondary/col_brown.mp3', color: 'brown' },
+        { letter: 'स्लेटी', word: 'Grey', audio: 'assets/audio/rangon_ka_sansar/secondary/col_grey.mp3', color: 'grey' },
+        { letter: 'कथई', word: 'Maroon', audio: 'assets/audio/rangon_ka_sansar/secondary/col_maroon.mp3', color: 'maroon' },
+        { letter: 'बैंगनी', word: 'Purple', audio: 'assets/audio/rangon_ka_sansar/secondary/col_purple.mp3', color: 'purple' },
+        { letter: 'जामुनी', word: 'Magenta', audio: 'assets/audio/rangon_ka_sansar/secondary/col_magenta.mp3', color: '#8E4585' },
+        { letter: 'बादामी', word: 'Beige', audio: 'assets/audio/rangon_ka_sansar/secondary/col_beige.mp3', color: '#F5F5DC' },
+        { letter: 'खाकी', word: 'Khaki', audio: 'assets/audio/rangon_ka_sansar/secondary/col_khaki.mp3', color: '#C3B091' },
+        { letter: 'फिरोज़ी', word: 'Turquoise', audio: 'assets/audio/rangon_ka_sansar/secondary/col_turquoise.mp3', color: '#40E0D0' },
+        { letter: 'सुनहरा', word: 'Golden', audio: 'assets/audio/rangon_ka_sansar/secondary/col_gold.mp3', color: 'gold' },
+        { letter: 'चाँदी जैसा', word: 'Silver', audio: 'assets/audio/rangon_ka_sansar/secondary/col_silver.mp3', color: 'silver' },
+        { letter: 'कपूर', word: 'Off-White', audio: 'assets/audio/rangon_ka_sansar/secondary/col_offwhite.mp3', color: '#F8F8FF' }
+    ],
+    colors_natural: [
+        { letter: 'चम्पई', word: 'Golden Yellow', audio: 'assets/audio/rangon_ka_sansar/natural/col_goldenyellow.mp3', color: '#FEB424' },
+        { letter: 'काषायी', word: 'Ochre', audio: 'assets/audio/rangon_ka_sansar/natural/col_ochre.mp3', color: '#CC7722' },
+        { letter: 'बसन्ती', word: 'Spring Yellow', audio: 'assets/audio/rangon_ka_sansar/natural/col_springyellow.mp3', color: '#FFD700' },
+        { letter: 'फिरोज़ी', word: 'Turquoise', audio: 'assets/audio/rangon_ka_sansar/natural/col_turquoise.mp3', color: '#40E0D0' },
+        { letter: 'मूँगिया', word: 'Mung Green', audio: 'assets/audio/rangon_ka_sansar/natural/col_munggreen.mp3', color: '#32CD32' },
+        { letter: 'बैंगनी', word: 'Brinjal Purple', audio: 'assets/audio/rangon_ka_sansar/natural/col_brinjalpurple.mp3', color: '#4B0082' },
+        { letter: 'सन्तरी', word: 'Orange', audio: 'assets/audio/rangon_ka_sansar/natural/col_natural_orange.mp3', color: '#FF8C00' },
+        { letter: 'जामुनी', word: 'Jamun Purple', audio: 'assets/audio/rangon_ka_sansar/natural/col_jamunpurple.mp3', color: '#2E0854' },
+        { letter: 'अनारी', word: 'Pomegranate Red', audio: 'assets/audio/rangon_ka_sansar/natural/col_pomegranatered.mp3', color: '#C0392B' },
+        { letter: 'काई जैसा', word: 'Moss Green', audio: 'assets/audio/rangon_ka_sansar/natural/col_mossgreen.mp3', color: '#8A9A5B' },
+        { letter: 'हल्दी जैसा', word: 'Turmeric Yellow', audio: 'assets/audio/rangon_ka_sansar/natural/col_turmericyellow.mp3', color: '#FFC30B' },
+        { letter: 'मेहँदी रंग', word: 'Henna Green', audio: 'assets/audio/rangon_ka_sansar/natural/col_hennagreen.mp3', color: '#4E5D2F' },
+        { letter: 'खाकी', word: 'Dust Color', audio: 'assets/audio/rangon_ka_sansar/natural/col_dustcolor.mp3', color: '#C3B091' },
+        { letter: 'तोता परी', word: 'Parrot Green', audio: 'assets/audio/rangon_ka_sansar/natural/col_parrotgreen.mp3', color: '#7FFF00' },
+        { letter: 'स्लेटी', word: 'Slate Grey', audio: 'assets/audio/rangon_ka_sansar/natural/col_slategrey.mp3', color: '#708090' },
+        { letter: 'मानीक', word: 'Ruby Red', audio: 'assets/audio/rangon_ka_sansar/natural/col_rubyred.mp3', color: '#E0115F' }
+    ],
+
+    // --- RANGON KA SANSAR ---
+    colors_pink_red: [
+        { letter: 'हल्का गुलाबी', word: 'Light Pink', audio: 'assets/audio/rangon_ka_sansar/pink_red/col_lightpink.mp3', color: '#FFB6C1' },
+        { letter: 'गहरा गुलाबी', word: 'Dark Pink', audio: 'assets/audio/rangon_ka_sansar/pink_red/col_darkpink.mp3', color: '#FF1493' },
+        { letter: 'रानी रंग', word: 'Magenta', audio: 'assets/audio/rangon_ka_sansar/pink_red/col_magenta_special.mp3', color: '#FF00FF' },
+        { letter: 'प्याज़ी', word: 'Onion Pink', audio: 'assets/audio/rangon_ka_sansar/pink_red/col_onionpink.mp3', color: '#D2B48C' },
+        { letter: 'सिन्दूरी', word: 'Crimson', audio: 'assets/audio/rangon_ka_sansar/pink_red/col_crimson.mp3', color: '#DC143C' },
+        { letter: 'गुलाल', word: 'Bright Pink', audio: 'assets/audio/rangon_ka_sansar/pink_red/col_brightpink.mp3', color: '#FF69B4' },
+        { letter: 'ईंट जैसा', word: 'Brick Red', audio: 'assets/audio/rangon_ka_sansar/pink_red/col_brickred.mp3', color: '#B22222' }
+    ],
+    colors_blue_green: [
+        { letter: 'हल्का नीला', word: 'Light Blue', audio: 'assets/audio/rangon_ka_sansar/blue_green/col_lightblue.mp3', color: '#ADD8E6' },
+        { letter: 'गहरा नीला', word: 'Navy Blue', audio: 'assets/audio/rangon_ka_sansar/blue_green/col_navyblue.mp3', color: '#000080' },
+        { letter: 'फिरोज़ी', word: 'Turquoise', audio: 'assets/audio/rangon_ka_sansar/blue_green/col_turquoise_bluegreen.mp3', color: '#40E0D0' },
+        { letter: 'तोता परी', word: 'Parrot Green', audio: 'assets/audio/rangon_ka_sansar/blue_green/col_parrotgreen_bluegreen.mp3', color: '#7FFF00' },
+        { letter: 'हल्का हरा', word: 'Light Green', audio: 'assets/audio/rangon_ka_sansar/blue_green/col_lightgreen.mp3', color: '#90EE90' },
+        { letter: 'गहरा हरा', word: 'Dark Green', audio: 'assets/audio/rangon_ka_sansar/blue_green/col_darkgreen.mp3', color: '#006400' },
+        { letter: 'काई जैसा', word: 'Moss Green', audio: 'assets/audio/rangon_ka_sansar/blue_green/col_mossgreen_bluegreen.mp3', color: '#8A9A5B' },
+        { letter: 'मूँगिया', word: 'Mung Green', audio: 'assets/audio/rangon_ka_sansar/blue_green/col_munggreen_bluegreen.mp3', color: '#32CD32' }
+    ],
+    colors_brown_beige: [
+        { letter: 'हल्का भूरा', word: 'Light Brown', audio: 'assets/audio/rangon_ka_sansar/brown_beige/col_lightbrown.mp3', color: '#996633' },
+        { letter: 'गहरा भूरा', word: 'Dark Brown', audio: 'assets/audio/rangon_ka_sansar/brown_beige/col_darkbrown.mp3', color: '#654321' },
+        { letter: 'बादामी', word: 'Beige', audio: 'assets/audio/rangon_ka_sansar/brown_beige/col_beige_brown.mp3', color: '#F5F5DC' },
+        { letter: 'खाकी', word: 'Khaki', audio: 'assets/audio/rangon_ka_sansar/brown_beige/col_khaki_brown.mp3', color: '#C3B091' },
+        { letter: 'चन्दन', word: 'Sandalwood', audio: 'assets/audio/rangon_ka_sansar/brown_beige/col_sandalwood.mp3', color: '#C2B280' },
+        { letter: 'मटियाला', word: 'Clay', audio: 'assets/audio/rangon_ka_sansar/brown_beige/col_stay_brown.mp3', color: '#856D4D' }
+    ],
+    colors_metallic: [
+        { letter: 'सुनहरा', word: 'Golden', audio: 'assets/audio/rangon_ka_sansar/metallic/col_golden.mp3', color: '#FFD700' },
+        { letter: 'चाँदी जैसा', word: 'Silvery', audio: 'assets/audio/rangon_ka_sansar/metallic/col_silvery.mp3', color: '#C0C0C0' },
+        { letter: 'ताँबेया', word: 'Copper', audio: 'assets/audio/rangon_ka_sansar/metallic/col_copper.mp3', color: '#B87333' },
+        { letter: 'काँसेया', word: 'Bronze', audio: 'assets/audio/rangon_ka_sansar/metallic/col_bronze.mp3', color: '#CD7F32' },
+        { letter: 'चमकीला', word: 'Shiny', audio: 'assets/audio/rangon_ka_sansar/metallic/col_shiny.mp3', color: '#E0E0E0' },
+        { letter: 'धुंधला', word: 'Matte', audio: 'assets/audio/rangon_ka_sansar/metallic/col_matte.mp3', color: '#808080' }
+    ],
+    colors_special: [
+        { letter: 'कपूर', word: 'Camphor White', audio: 'assets/audio/rangon_ka_sansar/special/col_camphorwhite.mp3', color: '#F8F8FF' },
+        { letter: 'स्लेटी', word: 'Slate', audio: 'assets/audio/rangon_ka_sansar/special/col_slate.mp3', color: '#708090' },
+        { letter: 'बैंगनी', word: 'Violet', audio: 'assets/audio/rangon_ka_sansar/special/col_violet_special.mp3', color: '#8F00FF' },
+        { letter: 'जामुनी', word: 'Plum', audio: 'assets/audio/rangon_ka_sansar/special/col_plum.mp3', color: '#8E4585' },
+        { letter: 'सुरमई', word: 'Antimony', audio: 'assets/audio/rangon_ka_sansar/special/col_antimony.mp3', color: '#2F4F4F' }
+    ],
+
+    // --- SAMAY AUR PRAKRITI SECTION (Expansion) ---
+    days_week: [
+        { letter: 'सोमवार', word: 'Monday', emoji: '🌑', audio: 'assets/audio/samay_prakriti/din_maheene/day_1.mp3' },
+        { letter: 'मंगलवार', word: 'Tuesday', emoji: '⚔️', audio: 'assets/audio/samay_prakriti/din_maheene/day_2.mp3' },
+        { letter: 'बुधवार', word: 'Wednesday', emoji: '✍️', audio: 'assets/audio/samay_prakriti/din_maheene/day_3.mp3' },
+        { letter: 'गुरुवार', word: 'Thursday', emoji: '📚', audio: 'assets/audio/samay_prakriti/din_maheene/day_4.mp3' },
+        { letter: 'शुक्रवार', word: 'Friday', emoji: '💎', audio: 'assets/audio/samay_prakriti/din_maheene/day_5.mp3' },
+        { letter: 'शनिवार', word: 'Saturday', emoji: '⚖️', audio: 'assets/audio/samay_prakriti/din_maheene/day_6.mp3' },
+        { letter: 'रविवार', word: 'Sunday (Chutti)', emoji: '🎉', audio: 'assets/audio/samay_prakriti/din_maheene/day_7.mp3' }
+    ],
+    months_year: [
+        { letter: 'जनवरी', word: 'January', emoji: '❄️', audio: 'assets/audio/samay_prakriti/din_maheene/month_1.mp3' },
+        { letter: 'फरवरी', word: 'February', emoji: '🌸', audio: 'assets/audio/samay_prakriti/din_maheene/month_2.mp3' },
+        { letter: 'मार्च', word: 'March', emoji: '🌞', audio: 'assets/audio/samay_prakriti/din_maheene/month_3.mp3' },
+        { letter: 'अप्रैल', word: 'April', emoji: '🍃', audio: 'assets/audio/samay_prakriti/din_maheene/month_4.mp3' },
+        { letter: 'मई', word: 'May', emoji: '🔥', audio: 'assets/audio/samay_prakriti/din_maheene/month_5.mp3' },
+        { letter: 'जून', word: 'June', emoji: '🍦', audio: 'assets/audio/samay_prakriti/din_maheene/month_6.mp3' },
+        { letter: 'जुलाई', word: 'July', emoji: '🌧️', audio: 'assets/audio/samay_prakriti/din_maheene/month_7.mp3' },
+        { letter: 'अगस्त', word: 'August', emoji: '☔', audio: 'assets/audio/samay_prakriti/din_maheene/month_8.mp3' },
+        { letter: 'सितंबर', word: 'September', emoji: '🌤️', audio: 'assets/audio/samay_prakriti/din_maheene/month_9.mp3' },
+        { letter: 'अक्टूबर', word: 'October', emoji: '🎃', audio: 'assets/audio/samay_prakriti/din_maheene/month_10.mp3' },
+        { letter: 'नवंबर', word: 'November', emoji: '🧣', audio: 'assets/audio/samay_prakriti/din_maheene/month_11.mp3' },
+        { letter: 'दिसंबर', word: 'December', emoji: '🎅', audio: 'assets/audio/samay_prakriti/din_maheene/month_12.mp3' }
+    ],
+    directions: [
+        { letter: 'पूर्व', word: 'East', emoji: '🌅', audio: 'assets/audio/samay_prakriti/dishayen/east.mp3' },
+        { letter: 'पश्चिम', word: 'West', emoji: '🌇', audio: 'assets/audio/samay_prakriti/dishayen/west.mp3' },
+        { letter: 'उत्तर', word: 'North', emoji: '🏔️', audio: 'assets/audio/samay_prakriti/dishayen/north.mp3' },
+        { letter: 'दक्षिण', word: 'South', emoji: '🌊', audio: 'assets/audio/samay_prakriti/dishayen/south.mp3' }
+    ]
+};

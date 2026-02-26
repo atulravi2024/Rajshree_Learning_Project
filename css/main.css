@@ -1,0 +1,18 @@
+/* Core Styles */
+@import "base/base.css";
+@import "base/animations.css";
+
+/* Layout Components */
+@import "layout/navbar.css";
+@import "layout/overlay.css";
+@import "layout/cards.css";
+
+/* Features */
+@import "features/navigation.css";
+@import "features/counting.css";
+
+/* Themes */
+@import "themes/kids.css";
+
+/* NOTE: Future themes like theme-adult.css can be imported here 
+   or swapped dynamically via JavaScript. */

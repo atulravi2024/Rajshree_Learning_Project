@@ -1,0 +1,695 @@
+let selectedCategory = '';
+let currentLayout = '1'; 
+let currentIndex = 0;
+let activeCardsData = [];
+let globalVolume = 1;
+let dropdownTimeouts = {};
+let currentAudio = null;
+
+let selectedTitle = '';
+let selectedMain = '';
+
+function stopCurrentAudio() { if (currentAudio) { currentAudio.pause(); currentAudio.currentTime = 0; } }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const icons = ['🧸', '🍫', '🦁', '🐘', '🍦', '🎈', '🍬', '🐼', '🎨', '🎁', '🐶', '🍭', '🌈', '🚲', '🍪'];
+    const bg = document.getElementById('bg-icons');
+    if (bg) {
+        for(let i=0; i<40; i++) {
+            const span = document.createElement('span');
+            span.className = 'float-icon';
+            span.innerText = icons[Math.floor(Math.random()*icons.length)];
+            span.style.left = Math.random()*100 + '%';
+            span.style.top = Math.random()*100 + '%';
+            span.style.animationDuration = (4 + Math.random()*4) + 's';
+            span.style.animationDelay = Math.random()*5 + 's';
+            bg.appendChild(span);
+        }
+    }
+    initializeAppElements();
+});
+
+function initializeAppElements() {
+    const vol = document.getElementById('volume-control');
+    const volIcon = document.querySelector('#nav-volume .hi');
+    
+    if(vol) {
+        vol.value = globalVolume;
+        vol.addEventListener('input', (e) => {
+            globalVolume = e.target.value;
+            if (volIcon) {
+                if (globalVolume == 0) volIcon.innerText = '🔇';
+                else if (globalVolume < 0.5) volIcon.innerText = '🔉';
+                else volIcon.innerText = '🔊';
+            }
+        });
+    }
+    document.querySelectorAll('.dropdown').forEach((dropdown, index) => {
+        const content = dropdown.querySelector('.dropdown-content');
+        if(content) {
+            dropdown.addEventListener('mouseenter', () => { 
+                if (isSlideshowActive && dropdown.querySelector('#nav-layout')) return; // Disable layout dropdown during slideshow
+                clearTimeout(dropdownTimeouts[index]); 
+                content.classList.add('show'); 
+                content.style.display = 'block';
+            });
+            dropdown.addEventListener('mouseleave', () => { 
+                dropdownTimeouts[index] = setTimeout(() => { 
+                    content.classList.remove('show'); 
+                    content.style.display = 'none';
+                }, 1000); 
+            });
+        }
+    });
+}
+
+function showMainCategory(titleCat) {
+    if (isSlideshowActive) return; // Lock category switching
+    const nav = document.getElementById('main-nav');
+    if(nav) nav.classList.add('hidden'); // Keep nav hidden during menu selection
+    const lZone = document.getElementById('learning-zone');
+    if(lZone) lZone.classList.add('hidden');
+    const overlay = document.getElementById('overlay');
+    if(overlay) { overlay.style.display = 'flex'; overlay.style.opacity = '1'; }
+    
+    selectedTitle = titleCat;
+    ['step-1', 'step-2', 'step-3', 'step-4', 'step-5'].forEach(s => { const el = document.getElementById(s); if(el) el.classList.add('hidden'); });
+    const step3 = document.getElementById('step-3');
+    if(step3) step3.classList.remove('hidden');
+    
+    // Dynamic Icon Logic for Menu
+    document.querySelectorAll('.nav-menu .nav-link').forEach(link => link.classList.remove('active-menu-icon'));
+    const activeLink = document.getElementById('nav-' + titleCat);
+    if (activeLink) activeLink.classList.add('active-menu-icon');
+
+    // Intro Audio for Main Categories
+    const introFiles = {
+        'varnamala': 'assets/audio/system/intros/intro_varnamala.mp3',
+        'sankhya': 'assets/audio/system/intros/intro_ganit.mp3',
+        'names': 'assets/audio/system/intros/intro_names.mp3',
+        'samay': 'assets/audio/system/intros/intro_samay.mp3'
+    };
+    if (introFiles[titleCat]) {
+        stopCurrentAudio();
+        currentAudio = new Audio(introFiles[titleCat]);
+        currentAudio.volume = globalVolume;
+        currentAudio.play();
+    }
+
+    const container = document.getElementById('step3-container');
+    const title = document.getElementById('step3-title');
+    if(!container || !title) return;
+    container.innerHTML = '';
+
+    if (titleCat === 'varnamala') {
+        title.innerText = 'वर्णमाला के भाग';
+        container.innerHTML = 
+            createChoiceCard('🍎', 'स्वर (Swar)', 'swar') + 
+            createChoiceCard('🚗', 'व्यंजन (Vyanjan)', 'vyanjan') + 
+            createChoiceCard('🤝', 'संयुक्त अक्षर', 'samyukt') +
+            createChoiceCard('🖍️', 'मात्रा ज्ञान', 'matra');
+    } else if (titleCat === 'sankhya') {
+        title.innerText = 'गणित (Math)';
+        container.innerHTML = 
+            createChoiceCard('🔢', 'गिनती (Ginti)', 'numbers_main') + 
+            createChoiceCard('📊', 'पहाड़े (Pahade)', 'tables_main') + 
+            createChoiceCard('📐', 'आकार और तुलना', 'shapes_fun');
+    } else if (titleCat === 'names') {
+        title.innerText = 'मेरा संसार';
+        container.innerHTML = 
+            createChoiceCard('👨‍👩‍👧‍👦', 'मेरा परिवार', 'family_main') + 
+            createChoiceCard('🦁', 'पशु-पक्षी', 'animals_main') +
+            createChoiceCard('🥦', 'फल-सब्जी', 'fruits_main') +
+            createChoiceCard('✨', 'अच्छी आदतें', 'habits_main');
+    } else if (titleCat === 'samay') {
+        title.innerText = 'समय और रंग';
+        container.innerHTML = 
+            createChoiceCard('📅', 'दिन और महीने', 'time_main') + 
+            createChoiceCard('🎨', 'रंगों का संसार', 'colors_main') +
+            createChoiceCard('🌦️', 'मौसम', 'nature_final') +
+            createChoiceCard('🧭', 'दिशाएं', 'directions_main');
+    }
+}
+
+function showSubCategory(mainCat) {
+    if (isSlideshowActive) return;
+    // Intro Audio for Sub Categories
+    const subIntroFiles = {
+        'swar': 'assets/audio/system/intros/sub_swar.mp3',
+        'vyanjan': 'assets/audio/system/intros/sub_vyanjan.mp3',
+        'samyukt': 'assets/audio/system/intros/sub_samyukt.mp3',
+        'matra': 'assets/audio/system/intros/sub_matra.mp3',
+        'numbers_main': 'assets/audio/system/intros/sub_numbers.mp3',
+        'tables_main': 'assets/audio/system/intros/sub_tables.mp3',
+        'shapes_fun': 'assets/audio/system/intros/sub_shapes.mp3',
+        'family_main': 'assets/audio/system/intros/sub_family.mp3',
+        'animals_main': 'assets/audio/system/intros/sub_animals.mp3',
+        'fruits_main': 'assets/audio/system/intros/sub_fruits.mp3',
+        'habits_main': 'assets/audio/system/intros/sub_habits.mp3',
+        'time_main': 'assets/audio/system/intros/sub_time.mp3',
+        'colors_main': 'assets/audio/system/intros/sub_colors.mp3',
+        'nature_final': 'assets/audio/system/intros/sub_nature.mp3',
+        'directions_main': 'assets/audio/system/intros/sub_directions.mp3'
+    };
+    if (subIntroFiles[mainCat]) {
+        stopCurrentAudio();
+        currentAudio = new Audio(subIntroFiles[mainCat]);
+        currentAudio.volume = globalVolume;
+        currentAudio.play();
+    }
+
+    if (['swar', 'vyanjan', 'samyukt', 'matra', 'nature_final', 'directions_main'].includes(mainCat)) { 
+        const map = { 'nature_final': 'nature', 'directions_main': 'directions' };
+        finishSetup(map[mainCat] || mainCat); 
+        return; 
+    }
+    selectedMain = mainCat;
+    const step3 = document.getElementById('step-3'); if(step3) step3.classList.add('hidden');
+    const step4 = document.getElementById('step-4'); if(step4) step4.classList.remove('hidden');
+    const container = document.getElementById('step4-container');
+    const title = document.getElementById('step4-title');
+    if(!container || !title) return;
+    container.innerHTML = '';
+
+    if (mainCat === 'numbers_main') {
+        title.innerText = 'गिनती (Numbers)';
+        container.innerHTML = 
+            createChoiceCardFinal('🔢', 'गिनती १ - १०', 'numbers_10', 'swar') + 
+            createChoiceCardFinal('🔟', 'गिनती १ - १००', 'numbers_100', 'vyanjan');
+    } else if (mainCat === 'tables_main') {
+        title.innerText = 'पहाड़े (Tables)';
+        container.innerHTML = 
+            createChoiceCardFinal('📊', 'पद्धति १ (Standard)', 'tables_10_m1', 'samyukt') + 
+            createChoiceCardFinal('📈', 'पद्धति २ (Rhythmic)', 'tables_10_m2', 'magic');
+    } else if (mainCat === 'shapes_fun') {
+        title.innerText = 'आकार और तुलना';
+        container.innerHTML = 
+            createChoiceCardFinal('📐', 'आकार (Shapes)', 'shapes', 'magic') + 
+            createChoiceCardFinal('⚖️', 'तुलना (Comparison)', 'comparisons', 'vyanjan');
+    } else if (mainCat === 'family_main') {
+        title.innerText = 'मेरा परिवार और मैं';
+        container.innerHTML = 
+            createChoiceCardFinal('👴', 'रिश्ते (Relations)', 'family', 'swar') + 
+            createChoiceCardFinal('👃', 'शरीर के अंग', 'body_parts', 'magic');
+    } else if (mainCat === 'animals_main') {
+        title.innerText = 'पशु-पक्षी';
+        container.innerHTML = 
+            createChoiceCardFinal('🐄', 'पालतू (Domestic)', 'animals_domestic', 'samyukt') + 
+            createChoiceCardFinal('🦁', 'जंगली (Wild)', 'animals_wild', 'vyanjan');
+    } else if (mainCat === 'fruits_main') {
+        title.innerText = 'फल और सब्जियाँ';
+        container.innerHTML = 
+            createChoiceCardFinal('🍎', 'फल (Fruits)', 'fruits', 'swar') + 
+            createChoiceCardFinal('🥦', 'सब्जियाँ', 'vegetables', 'samyukt');
+    } else if (mainCat === 'habits_main') {
+        title.innerText = 'अच्छी आदतें';
+        container.innerHTML = createChoiceCardFinal('✨', 'अच्छी आदतें', 'habits', 'magic');
+    } else if (mainCat === 'time_main') {
+        title.innerText = 'दिन and महीने';
+        container.innerHTML = 
+            createChoiceCardFinal('📅', 'सप्ताह के दिन', 'days_week', 'vyanjan') + 
+            createChoiceCardFinal('🗓️', 'साल के महीने', 'months_year', 'swar');
+    } else if (mainCat === 'colors_main') {
+        title.innerText = 'रंगों के नाम';
+        container.innerHTML = 
+            createChoiceCardFinal('🔴', 'प्राथमिक रंग (Primary)', 'colors_primary', 'swar') + 
+            createChoiceCardFinal('🟢', 'द्वितीयक रंग (Secondary)', 'colors_secondary', 'vyanjan') +
+            createChoiceCardFinal('🟤', 'प्राकृतिक रंग (Natural)', 'colors_natural', 'samyukt') +
+            createChoiceCardDeep('🌈', 'रंगों का संसार', 'colors_world_main');
+    }
+}
+
+function showDeepCategory(deepCat) {
+    if (isSlideshowActive) return;
+    const deepIntroFiles = { 'colors_world_main': 'assets/audio/system/intros/sub_colors.mp3' };
+    if (deepIntroFiles[deepCat]) {
+        stopCurrentAudio();
+        currentAudio = new Audio(deepIntroFiles[deepCat]);
+        currentAudio.volume = globalVolume;
+        currentAudio.play();
+    }
+
+    const step4 = document.getElementById('step-4'); if(step4) step4.classList.add('hidden');
+    const step5 = document.getElementById('step-5'); if(step5) step5.classList.remove('hidden');
+    const container = document.getElementById('step5-container');
+    const title = document.getElementById('step5-title');
+    if(!container || !title) return;
+    container.innerHTML = '';
+
+    if (deepCat === 'colors_world_main') {
+        title.innerText = 'रंगों का संसार';
+        container.innerHTML = 
+            createChoiceCardFinalDeep('🌸', 'गुलाबी और लाल', 'colors_pink_red') + 
+            createChoiceCardFinalDeep('🌊', 'नीले और हरे', 'colors_blue_green') +
+            createChoiceCardFinalDeep('🪵', 'भूरे और बादामी', 'colors_brown_beige') +
+            createChoiceCardFinalDeep('✨', 'चमकीले और धातु', 'colors_metallic') +
+            createChoiceCardFinalDeep('🔮', 'अन्य विशेष रंग', 'colors_special');
+    }
+}
+
+function createChoiceCardFinalDeep(icon, label, category) {
+    return `<div class="kid-choice-card swar" onclick="playDeepThenSetup('${category}')"><div class="choice-icon">${icon}</div><div class="choice-label-hi" style="font-size:2rem">${label}</div></div>`;
+}
+
+function playDeepThenSetup(category) { finishSetup(category); }
+
+function createChoiceCard(icon, label, category) {
+    return `<div class="kid-choice-card vyanjan" onclick="showSubCategory('${category}')"><div class="choice-icon">${icon}</div><div class="choice-label-hi" style="font-size:2rem">${label}</div></div>`;
+}
+function createChoiceCardFinal(icon, label, category, colorClass = 'swar') {
+    return `<div class="kid-choice-card ${colorClass}" onclick="finishSetup('${category}')"><div class="choice-icon">${icon}</div><div class="choice-label-hi" style="font-size:2rem">${label}</div></div>`;
+}
+function createChoiceCardDeep(icon, label, category) {
+    return `<div class="kid-choice-card magic" onclick="showDeepCategory('${category}')"><div class="choice-icon">${icon}</div><div class="choice-label-hi" style="font-size:2rem">${label}</div></div>`;
+}
+
+function goBackTo(step) {
+    if (isSlideshowActive) return;
+    ['step-1', 'step-2', 'step-3', 'step-4', 'step-5'].forEach(s => { const el = document.getElementById(s); if(el) el.classList.add('hidden'); });
+    const target = document.getElementById('step-' + step);
+    if(target) target.classList.remove('hidden');
+}
+function goToStep2() {
+    const step1 = document.getElementById('step-1'); if(step1) step1.classList.add('hidden');
+    const step2 = document.getElementById('step-2'); if(step2) step2.classList.remove('hidden');
+    stopCurrentAudio();
+    currentAudio = new Audio('assets/audio/system/welcome_short.mp3');
+    currentAudio.volume = globalVolume;
+    currentAudio.play();
+}
+
+function finishSetup(category) {
+    if (isSlideshowActive) return;
+    selectedCategory = category;
+    stopCurrentAudio();
+
+    // FINAL STAGE AUDIO
+    const finalIntroFiles = {
+        'swar': 'assets/audio/system/intros/final_swar.mp3',
+        'vyanjan': 'assets/audio/system/intros/final_vyanjan.mp3',
+        'samyukt': 'assets/audio/system/intros/final_samyukt.mp3',
+        'matra': 'assets/audio/system/intros/final_matra.mp3',
+        'numbers_10': 'assets/audio/system/intros/final_numbers_10.mp3',
+        'numbers_100': 'assets/audio/system/intros/final_numbers_100.mp3',
+        'tables_10_m1': 'assets/audio/system/intros/final_tables_m1.mp3',
+        'tables_10_m2': 'assets/audio/system/intros/final_tables_m2.mp3',
+        'shapes': 'assets/audio/system/intros/final_shapes.mp3',
+        'comparisons': 'assets/audio/system/intros/final_comparisons.mp3',
+        'family': 'assets/audio/system/intros/final_family.mp3',
+        'body_parts': 'assets/audio/system/intros/final_body_parts.mp3',
+        'animals_domestic': 'assets/audio/system/intros/final_animals_domestic.mp3',
+        'animals_wild': 'assets/audio/system/intros/final_animals_wild.mp3',
+        'fruits': 'assets/audio/system/intros/final_fruits.mp3',
+        'vegetables': 'assets/audio/system/intros/final_vegetables.mp3',
+        'habits': 'assets/audio/system/intros/final_habits.mp3',
+        'days_week': 'assets/audio/system/intros/final_days_week.mp3',
+        'months_year': 'assets/audio/system/intros/final_months_year.mp3',
+        'nature': 'assets/audio/system/intros/final_nature.mp3',
+        'directions': 'assets/audio/system/intros/final_directions.mp3',
+        'colors_primary': 'assets/audio/system/intros/final_colors_primary.mp3',
+        'colors_secondary': 'assets/audio/system/intros/final_colors_secondary.mp3',
+        'colors_natural': 'assets/audio/system/intros/final_colors_natural.mp3',
+        'colors_pink_red': 'assets/audio/system/intros/sub_pink_red.mp3',
+        'colors_blue_green': 'assets/audio/system/intros/sub_blue_green.mp3',
+        'colors_brown_beige': 'assets/audio/system/intros/sub_brown_beige.mp3',
+        'colors_metallic': 'assets/audio/system/intros/sub_metallic.mp3',
+        'colors_special': 'assets/audio/system/intros/sub_special.mp3'
+    };
+
+    if (finalIntroFiles[category]) {
+        currentAudio = new Audio(finalIntroFiles[category]);
+        currentAudio.volume = globalVolume;
+        currentAudio.play();
+    }
+    
+    // Dynamic Main Nav Icon Update
+    const iconMap = {
+        'swar': '🍎', 'vyanjan': '🚗', 'samyukt': '🤝', 'matra': '🖍️',
+        'numbers_10': '🔢', 'numbers_100': '🔟', 'tables_10_m1': '📊', 'tables_10_m2': '📈',
+        'shapes': '📐', 'comparisons': '⚖️',
+        'family': '👴', 'body_parts': '👃',
+        'animals_domestic': '🐄', 'animals_wild': '🦁',
+        'nature': '🌦️', 'fruits': '🍎', 'vegetables': '🥦', 'habits': '✨',
+        'days_week': '📅', 'months_year': '🗓️', 'directions': '🧭',
+        'colors_primary': '🔴', 'colors_secondary': '🟢', 'colors_natural': '🟤',
+        'colors_pink_red': '🌸', 'colors_blue_green': '🌊', 'colors_brown_beige': '🪵',
+        'colors_metallic': '✨', 'colors_special': '🔮'
+    };
+
+    const activeIcon = iconMap[category] || '📖';
+    const activeLink = document.getElementById('nav-' + selectedTitle);
+    if (activeLink) {
+        const iconSpan = activeLink.querySelector('.hi');
+        if (iconSpan) iconSpan.innerText = activeIcon;
+        document.querySelectorAll('.nav-menu .nav-link').forEach(link => link.classList.remove('active-menu-icon'));
+        activeLink.classList.add('active-menu-icon');
+    }
+
+    const overlay = document.getElementById('overlay');
+    if (overlay) {
+        overlay.style.opacity = '0';
+        setTimeout(() => {
+            overlay.style.display = 'none';
+            const nav = document.getElementById('main-nav'); 
+            if(nav) nav.classList.remove('hidden'); // Show nav ONLY when flash cards appear
+            const lZone = document.getElementById('learning-zone');
+            if(lZone) { lZone.classList.remove('hidden'); applySelection(); }
+        }, 500);
+    }
+}
+
+function applySelection() {
+    activeCardsData = RAJSHREE_DATA[selectedCategory] || [];
+    currentIndex = 0;
+    renderCards();
+    updateDisplay();
+}
+
+function renderCards() {
+    const master = document.getElementById('master-container');
+    if (!master) return;
+    master.innerHTML = '';
+    activeCardsData.forEach((data, index) => {
+        const card = document.createElement('div');
+        const isHundred = data.value === '100';
+        card.className = `card ${selectedCategory}-card ${isHundred ? 'special-hundred' : ''} hidden`;
+        card.onclick = () => flipCard(card, data.audio);
+        
+        let backContent = '';
+        if (data.image) backContent = `<img class="flash-image" src="${data.image}" alt="${data.word}">`;
+        else if (data.content) backContent = `<div style="font-size:6vh; padding:20px;">${data.content}</div>`;
+        else if (data.value) backContent = `<div style="font-size:15vh; font-weight:700;">${data.value}</div>`;
+        else if (data.color) backContent = `<div style="background:${data.color} !important; width:100%; height:100%;"></div>`;
+        else if (data.type === 'circle') backContent = `<div style="width:250px; height:250px; background:${data.color}; border-radius:50%; border:10px solid white;"></div>`;
+        else if (data.type === 'square') backContent = `<div style="width:250px; height:250px; background:${data.color}; border:10px solid white;"></div>`;
+        else if (data.type === 'triangle') backContent = `<div style="width:0; height:0; border-left:125px solid transparent; border-right:125px solid transparent; border-bottom:216px solid ${data.color};"></div>`;
+        else if (data.type === 'star') backContent = `<span style="font-size:15rem; color:${data.color};">⭐</span>`;
+        else if (data.type === 'big-small') backContent = `<div style="display:flex; align-items:flex-end; gap:30px;"><div style="width:200px; height:200px; background:#9C27B0; border-radius:20px;"></div><div style="width:80px; height:80px; background:#E91E63; border-radius:10px;"></div></div>`;
+        else if (data.type === 'tall-short') backContent = `<div style="display:flex; align-items:flex-end; gap:30px;"><div style="width:60px; height:300px; background:#795548; border-radius:10px;"></div><div style="width:60px; height:100px; background:#FFC107; border-radius:10px;"></div></div>`;
+        else backContent = `<div style="display:flex; align-items:center; justify-content:center; height:100%; font-size:10vh; font-weight:700; color:#4B0082;">${data.letter}</div>`;
+
+        let frontContent = '';
+        if (selectedCategory.startsWith('colors')) {
+            frontContent = `<div style="width:120px; height:120px; background:${data.color}; border-radius:50%; border:5px solid white;" class="emoji-animate"></div><div class="text-group"><span class="letter" style="font-size:10vh">${data.letter}</span><span class="word" style="font-size:5vh">${data.word}</span></div>`;
+        } else {
+            // Handle multiple emojis: Split by character and wrap in spans for CSS scaling
+            const emojis = Array.from(data.emoji || '');
+            const emojiCount = emojis.length;
+            const emojiHtml = emojis.map(e => `<span>${e}</span>`).join('');
+            
+    const isCounting = selectedCategory === 'numbers_10' || selectedCategory === 'numbers_100';
+    const emojiClass = isCounting ? 'emoji emoji-animate flex-wrap-counting' : 'emoji emoji-animate';
+
+    // Calculate Dynamic Scaling for Counting Category
+    let dynamicEmojiSize = 'var(--emoji-size)';
+    let dynamicTextScale = '1';
+
+    if (isCounting) {
+        // Uniform text scaling for all counting cards
+        dynamicTextScale = '1';
+
+        if (emojiCount === 1) {
+            dynamicEmojiSize = 'var(--emoji-size)';
+        } else if (emojiCount === 2) {
+            dynamicEmojiSize = 'calc(var(--emoji-size) * 0.9)'; 
+        } else if (emojiCount <= 5) {
+            dynamicEmojiSize = 'calc(var(--emoji-size) * 0.45)'; /* Scaled for 5-column grid */
+        } else if (emojiCount <= 10) {
+            dynamicEmojiSize = 'calc(var(--emoji-size) * 0.4)';
+        } else {
+            dynamicEmojiSize = 'calc(var(--emoji-size) * 0.3)';
+        }
+    }
+
+    if (emojiCount >= 10) {
+        dynamicEmojiSize = 'calc(var(--emoji-size) * 0.35)';
+    }
+
+    if (isCounting) {
+        dynamicTextScale = '1';
+    }
+
+            frontContent = `
+                <div class="${emojiClass}" style="--dynamic-emoji-size: ${dynamicEmojiSize}">
+                    ${emojiHtml}
+                </div>
+                <div class="text-group" style="--text-scale: ${dynamicTextScale}">
+                    <span class="letter">${data.letter}</span>
+                    <span class="word">${data.word}</span>
+                </div>`;
+        }
+
+        card.innerHTML = `<div class="card-inner"><div class="card-front">${frontContent}</div><div class="card-back">${backContent}</div></div><div class="progress-container"><div class="progress-bar"></div></div>`;
+        master.appendChild(card);
+    });
+}
+
+function updateLayout(layout) { 
+    if (isSlideshowActive) return; // Lock layout changes
+    currentLayout = layout; 
+    currentIndex = 0; 
+    
+    const layoutIcon = document.querySelector('#nav-layout .hi');
+    if (layoutIcon) {
+        let icon = '📐';
+        if (layout === '1') icon = '🌟';
+        else if (layout === '3') icon = '🔳';
+        else if (layout === 'all') icon = '📑';
+        else if (layout === 'fit') icon = '📺';
+        layoutIcon.innerText = icon;
+    }
+    
+    updateDisplay(); 
+}
+
+function updateDisplay() {
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const master = document.getElementById('master-container');
+    if (!master) return;
+    
+    // Set SVG icons for Arrows
+    if (prevBtn) prevBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:60%; height:60%;"><path d="M15 19L8 12L15 5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    if (nextBtn) nextBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:60%; height:60%;"><path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    const cards = Array.from(master.children);
+    master.classList.remove('grid-1', 'grid-3', 'vertical-scroll', 'fit-screen');
+    prevBtn?.classList.remove('large-arrows'); 
+    nextBtn?.classList.remove('large-arrows');
+    master.style.gridTemplateColumns = ''; 
+    master.style.gridTemplateRows = ''; // CRITICAL: Reset rows to prevent Fit-Screen corruption
+    master.style.gridAutoRows = '';
+    document.body.style.overflow = 'hidden';
+    
+    if (currentLayout === 'all') {
+        master.classList.add('vertical-scroll'); prevBtn?.classList.add('hidden'); nextBtn?.classList.add('hidden');
+        cards.forEach(card => card.classList.remove('hidden', 'is-flipped'));
+        document.body.style.overflow = 'auto'; // Change from visible to auto for cleaner handling
+    } else if (currentLayout === 'fit') {
+        master.classList.add('fit-screen'); prevBtn?.classList.add('hidden'); nextBtn?.classList.add('hidden');
+        
+        const count = cards.length;
+        const isCounting100 = selectedCategory === 'numbers_100';
+
+        let cols, rows;
+        if (isCounting100) {
+            cols = 10;
+            rows = Math.ceil(count / cols);
+        } else {
+            cols = 4;
+            if (count > 36) cols = 9;
+            else if (count > 25) cols = 8;
+            else if (count > 16) cols = 6;
+            else if (count > 9) cols = 5;
+            else if (count > 4) cols = 4;
+            else cols = count;
+            rows = Math.ceil(count / cols);
+        }
+        
+        master.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+        master.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+        master.style.gridAutoRows = '';
+        
+        cards.forEach(card => {
+            card.classList.remove('hidden', 'is-flipped');
+            if (isCounting100) {
+                card.classList.add('icon-only-layout');
+            }
+        });
+    } else {
+        prevBtn?.classList.remove('hidden'); nextBtn?.classList.remove('hidden');
+        if (currentLayout === '3') master.classList.add('grid-3');
+        if (currentLayout === '1') {
+            master.classList.add('grid-1');
+            prevBtn?.classList.add('large-arrows');
+            nextBtn?.classList.add('large-arrows');
+        }
+        let step = (currentLayout === '3') ? 3 : 1;
+        cards.forEach((card, index) => {
+            card.classList.add('hidden'); card.classList.remove('is-flipped');
+            if (currentLayout === '3') { if (index >= currentIndex && index < currentIndex + 3) card.classList.remove('hidden'); }
+            else { if (index === currentIndex) card.classList.remove('hidden'); }
+        });
+
+        // ARROW LOCK LOGIC: Respect isSlideshowActive state
+        if (isSlideshowActive) {
+            prevBtn?.classList.add('disabled');
+            nextBtn?.classList.add('disabled');
+        } else {
+            if (currentIndex === 0) prevBtn?.classList.add('disabled'); else prevBtn?.classList.remove('disabled');
+            if (currentIndex + step >= cards.length) nextBtn?.classList.add('disabled'); else nextBtn?.classList.remove('disabled');
+        }
+    }
+}
+
+function next(force = false) {
+    if (isSlideshowActive && !force) return; // Disable manual navigation unless forced by internal logic
+    let step = (currentLayout === '3') ? 3 : 1;
+    if (currentIndex + step < activeCardsData.length) { currentIndex += step; updateDisplay(); }
+}
+function prev(force = false) {
+    if (isSlideshowActive && !force) return; 
+    let step = (currentLayout === '3') ? 3 : 1;
+    if (currentIndex - step >= 0) { currentIndex -= step; updateDisplay(); }
+}
+function quickSwitch(cat) { finishSetup(cat); }
+function goHome() { 
+    if (isSlideshowActive) return;
+    const nav = document.getElementById('main-nav');
+    if(nav) nav.classList.add('hidden'); // Hide nav on home/reset
+    const resetMap = { 'nav-varnamala': '📖', 'nav-sankhya': '🧮', 'nav-names': '🌍', 'nav-samay': '☀️' };
+    for (let id in resetMap) {
+        const el = document.getElementById(id);
+        if (el) {
+            const span = el.querySelector('.hi');
+            if (span) span.innerText = resetMap[id];
+        }
+    }
+    location.reload(); 
+}
+function flipCard(card, audioFile) { 
+    if (isSlideshowActive && !card.classList.contains('auto-flipping')) return; // Disable manual flip during slideshow
+    card.classList.toggle('is-flipped'); 
+    if(audioFile && card.classList.contains('is-flipped')) playSound(audioFile, card); 
+}
+
+function playSound(file, card) {
+    if (card && card.classList) { card.classList.add('playing'); card.classList.add('selected'); setTimeout(() => card.classList.remove('selected'), 400); }
+    stopCurrentAudio();
+    currentAudio = new Audio(file);
+    currentAudio.volume = globalVolume;
+    const bar = card.querySelector('.progress-bar');
+    if (bar) {
+        currentAudio.addEventListener('timeupdate', () => { const percent = (currentAudio.currentTime / currentAudio.duration) * 100; bar.style.width = percent + '%'; });
+        currentAudio.addEventListener('ended', () => { 
+            card.classList.remove('playing'); 
+            bar.style.width = '0%'; 
+            if (isSlideshowActive) handleSlideshowTransition();
+        });
+    }
+    currentAudio.play();
+}
+
+let isSlideshowActive = false;
+let slideshowCardIndex = 0; 
+function toggleSlideshow() {
+    const btn = document.getElementById('nav-slideshow');
+    const iconSpan = btn.querySelector('.hi');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const mainNavIcons = document.querySelectorAll('.nav-menu .nav-link:not(#nav-slideshow):not(#nav-layout):not(#nav-volume)');
+    const layoutBtn = document.getElementById('nav-layout');
+    
+    if (isSlideshowActive) { 
+        isSlideshowActive = false; 
+        btn.classList.remove('active'); 
+        if (iconSpan) iconSpan.innerText = '🎬';
+        // Re-enable arrows
+        if (prevBtn) prevBtn.classList.remove('disabled');
+        if (nextBtn) nextBtn.classList.remove('disabled');
+        // Re-enable main nav
+        mainNavIcons.forEach(icon => icon.classList.remove('disabled-nav'));
+        if (layoutBtn) layoutBtn.classList.remove('disabled-nav');
+        
+        stopCurrentAudio();
+    }
+    else {
+        if (currentLayout === 'all' || currentLayout === 'fit') { 
+            alert('Please select 1x1 or 3-Card layout for slideshow!'); 
+            return; 
+        }
+        isSlideshowActive = true; 
+        btn.classList.add('active'); 
+        if (iconSpan) iconSpan.innerText = '⏹️';
+        // Grey out arrows
+        if (prevBtn) prevBtn.classList.add('disabled');
+        if (nextBtn) nextBtn.classList.add('disabled');
+        // Grey out main nav
+        mainNavIcons.forEach(icon => icon.classList.add('disabled-nav'));
+        if (layoutBtn) layoutBtn.classList.add('disabled-nav');
+        
+        slideshowCardIndex = 0; 
+        // Initial wait before starting first card
+        setTimeout(startSlideshowPlayback, 1000);
+    }
+}
+
+function startSlideshowPlayback() {
+    if (!isSlideshowActive) return;
+    const master = document.getElementById('master-container');
+    const cards = Array.from(master.children).filter(c => !c.classList.contains('hidden'));
+    
+    if (slideshowCardIndex < cards.length) {
+        const card = cards[slideshowCardIndex];
+        // Reset card state if it was somehow left flipped
+        card.classList.remove('is-flipped');
+        
+        // Wait 1 second before flipping and playing audio
+        setTimeout(() => {
+            if (!isSlideshowActive) return;
+            card.classList.add('auto-flipping');
+            card.click();
+            card.classList.remove('auto-flipping');
+        }, 1000);
+    } else {
+        // End of current visible cards - advance to next set
+        let step = (currentLayout === '3') ? 3 : 1;
+        if (currentIndex + step < activeCardsData.length) {
+            next(true); // Force next page switch internally
+            
+            slideshowCardIndex = 0;
+            // Wait 1 second after switching page before starting the first card of new page
+            setTimeout(startSlideshowPlayback, 1000);
+        } else {
+            // Category Completed
+            stopCurrentAudio();
+            currentAudio = new Audio('assets/audio/system/effects/reward_excellent.mp3');
+            currentAudio.volume = globalVolume;
+            currentAudio.play();
+            
+            // Re-enable navigation before alerting
+            isSlideshowActive = false;
+            const btn = document.getElementById('nav-slideshow');
+            btn.classList.remove('active');
+            const iconSpan = btn.querySelector('.hi');
+            if (iconSpan) iconSpan.innerText = '🎬';
+
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const mainNavIcons = document.querySelectorAll('.nav-menu .nav-link:not(#nav-slideshow):not(#nav-volume)');
+            const layoutBtn = document.getElementById('nav-layout');
+            if (prevBtn) prevBtn.classList.remove('disabled');
+            if (nextBtn) nextBtn.classList.remove('disabled');
+            mainNavIcons.forEach(icon => icon.classList.remove('disabled-nav'));
+            if (layoutBtn) layoutBtn.classList.remove('disabled-nav');
+
+            alert('Category Complete! Great job!');
+        }
+    }
+}
+
+function handleSlideshowTransition() {
+    slideshowCardIndex++;
+    // Add 1 second pause AFTER audio ends before moving to next card
+    setTimeout(startSlideshowPlayback, 1000);
+}

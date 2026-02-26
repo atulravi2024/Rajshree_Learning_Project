@@ -1,0 +1,80 @@
+/* --- FLASH CARD LAYOUTS --- */
+.main-content { 
+    margin-top: calc(var(--nav-height) + 20px); 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    padding: 0; 
+    box-sizing: border-box; 
+    margin-bottom: 0 !important; 
+}
+.learning-wrapper { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    width: 100vw; 
+    height: calc(100vh - (var(--nav-height) + 20px)); 
+    margin: 0; 
+    padding-bottom: 0 !important;
+}
+
+.container { display: flex; gap: 20px; justify-content: center; align-items: center; flex-grow: 1; height: 100%; width: 100%; }
+
+/* --- 3D FLASH CARDS --- */
+.card { perspective: 2500px; width: 100%; height: 100%; max-width: 600px; max-height: 550px; position: relative; cursor: pointer; transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1); transform-style: preserve-3d; }
+.card.is-flipped .card-inner { transform: rotateY(-180deg); }
+.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 50px; background: white; border: 12px solid #fff; outline: 4px solid #FFDEE9; outline-offset: -12px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 40px; box-sizing: border-box; overflow: hidden; transition: all 0.4s ease; }
+.card:hover .card-front, .card:hover .card-back { border-color: var(--primary-pink); box-shadow: 0 40px 80px rgba(255, 20, 147, 0.3); }
+.card-back { transform: rotateY(-180deg); background: #fafafa; padding: 0 !important; justify-content: center; }
+
+.letter { font-size: var(--letter-size, 18vh); font-weight: 700; color: var(--deep-purple); font-family: 'Bubblegum Sans', cursive; line-height: 1; margin-bottom: 0px; }
+.emoji { 
+    font-size: var(--emoji-size, 15vh); 
+    margin-bottom: 0px; 
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); 
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+.word { font-size: var(--word-size, 8vh); color: var(--vibrant-orange); font-weight: 700; font-family: 'Bubblegum Sans', cursive; margin-bottom: 0px; }
+
+.text-group {
+    transform: scale(var(--text-scale, 1));
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
+    margin-top: auto; /* Global Rule: Stick text to bottom */
+}
+
+/* Dynamic Layout Scaling */
+.container.grid-1 { --emoji-size: 22vh; --letter-size: 15vh; --word-size: 7vh; }
+.container.grid-3 { --emoji-size: 15vh; --letter-size: 10vh; --word-size: 5vh; }
+.container.vertical-scroll { --emoji-size: 10vh; --letter-size: 6vh; --word-size: 3vh; }
+.container.fit-screen { --emoji-size: 8vh; --letter-size: 5vh; --word-size: 2.5vh; }
+
+/* Grid specific fixes */
+.container.grid-3 { 
+    display: grid !important; 
+    grid-template-columns: repeat(3, 1fr) !important; 
+    width: 100% !important; 
+    gap: 20px !important; 
+    height: 100% !important; 
+    max-height: none !important; 
+    align-content: center !important; 
+    align-items: center !important; 
+}
+.grid-3 .card { height: 450px !important; width: 100% !important; max-width: none !important; max-height: 550px !important; margin: 0 auto !important; }
+
+.container.vertical-scroll { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; width: 100% !important; gap: 15px !important; overflow-y: auto !important; overflow-x: hidden !important; height: 100% !important; align-content: start !important; padding: 10px !important; box-sizing: border-box !important; }
+.vertical-scroll .card { height: 250px !important; display: flex; flex-direction: column; }
+
+.container.fit-screen { display: grid !important; width: 100vw; height: 100%; gap: 5px; overflow: hidden !important; margin: 0; padding: 0; align-content: stretch; }
+.fit-screen .card { height: 100% !important; max-width: none; max-height: none; margin: 0; }

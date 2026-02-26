@@ -1,0 +1,58 @@
+#overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, #ffffff 0%, #f0f7ff 100%);
+    display: flex; flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 3000; transition: opacity 0.5s ease-in-out;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#step-1, #step-2, #step-3, #step-4, #step-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin-top: 0px;
+}
+
+.floating-icons { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; overflow: hidden; }
+.float-icon { 
+    position: absolute; 
+    font-size: 4rem; 
+    animation: float-bubble 8s infinite ease-in-out; 
+    opacity: 0.6; 
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 20px rgba(255, 20, 147, 0.4)); 
+}
+
+.welcome-title { 
+    font-family: 'Bubblegum Sans', cursive; 
+    font-size: 3.5rem;
+    color: var(--primary-pink); 
+    text-shadow: 4px 4px 0px #fff, 0 10px 20px rgba(0,0,0,0.1);
+    margin: 0 0 25px 0 !important;
+}
+
+/* Start Button: Realistic Orb */
+.start-orb {
+    width: 220px; height: 220px; 
+    background: linear-gradient(145deg, #FF69B4, #FF1493);
+    border: 12px solid white;
+    border-radius: 50%; 
+    color: white; 
+    font-size: 2.5rem; 
+    font-weight: 700;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    cursor: pointer; position: relative; margin-top: 30px; 
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(255, 20, 147, 0.3), inset 0 0 20px rgba(255,255,255,0.4);
+    font-family: 'Bubblegum Sans', cursive;
+}
+.start-orb:hover { transform: scale(1.1) rotate(5deg); box-shadow: 0 15px 45px rgba(255, 20, 147, 0.5); }
+.start-orb span { font-family: 'Bubblegum Sans', cursive; font-size: 2.5rem; margin-top: 0px; }
+.start-orb::before { content: ''; position: absolute; top: -20px; left: -20px; right: -20px; bottom: -20px; border: 10px solid #FF0000; border-radius: 50%; animation: blink-ring 1s step-end infinite; }
+@keyframes blink-ring { 50% { opacity: 0; } }

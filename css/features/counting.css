@@ -1,0 +1,81 @@
+/* Special Flex-Wrap for Counting Numbers (1-10, 1-100) */
+.emoji.flex-wrap-counting {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-content: center !important;
+    gap: 15px; 
+    padding: 0 !important;
+    max-height: 40% !important; 
+    width: 100% !important;
+    margin: 0 auto !important;
+    animation: none !important;
+    text-align: center !important;
+}
+
+.emoji.flex-wrap-counting span {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: var(--dynamic-emoji-size) !important;
+    width: calc(20% - 12px) !important; /* Mathematical 5 columns: (100% / 5) minus gap allowance */
+    aspect-ratio: 1/1 !important;
+    text-align: center !important;
+    animation: playful-bounce 3s infinite ease-in-out !important;
+    margin: 0 !important;
+}
+
+/* Ensure centering for small counts */
+.emoji.flex-wrap-counting:has(span:nth-child(1):last-child),
+.emoji.flex-wrap-counting:has(span:nth-child(2):last-child) {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+/* Global Fit Screen Layout Rule: Hide Words on Front Side */
+.fit-screen .card-front .word {
+    display: none !important;
+}
+
+/* EXCEPTION: Counting Categories should show their text/numerals if they have them */
+.fit-screen .numbers_10-card .card-front .word,
+.fit-screen .numbers_100-card .card-front .word {
+    display: block !important;
+}
+
+/* EXCLUSIVE SCOPE: Category 1-100 ONLY (Fit Screen Layout ONLY) */
+.fit-screen .numbers_100-card .card-front {
+    justify-content: center !important;
+}
+
+.fit-screen .numbers_100-card .card-front .text-group {
+    display: none !important; /* Numbers 1-100: Icon Only on Front */
+}
+
+.fit-screen .numbers_100-card .card-front .emoji span {
+    font-size: calc(var(--emoji-size) * 0.5) !important; /* Set to exactly 50% */
+}
+
+/* EXCLUSIVE SCOPE: Vyanjan ONLY (Fit Screen Layout ONLY) */
+.fit-screen .vyanjan-card .emoji span,
+.fit-screen .vyanjan-card .emoji {
+    font-size: calc(var(--emoji-size) * 0.7) !important; /* Smaller icon for Vyanjan */
+}
+
+.fit-screen .vyanjan-card .letter {
+    font-size: calc(var(--letter-size) * 0.7) !important; /* Smaller letter for Vyanjan */
+}
+
+/* Special Styling for Number 100 (💯) */
+.special-hundred .card-front {
+    background: radial-gradient(circle, #fff9c4 0%, #fff 70%) !important;
+    border-color: #ffd700 !important;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+}
+
+.special-hundred .emoji {
+    animation: celebrate-hundred 2s infinite ease-in-out !important;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+}
