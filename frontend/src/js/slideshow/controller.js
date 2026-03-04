@@ -60,7 +60,7 @@ function startSlideshowPlayback() {
             setTimeout(startSlideshowPlayback, 1000);
         } else {
             stopCurrentAudio();
-            window.currentAudio = new Audio('../assets/audio/system/effects/reward_excellent.mp3');
+            window.currentAudio = new Audio('assets/audio/system/effects/reward_excellent.mp3');
             window.currentAudio.volume = window.globalVolume;
             window.currentAudio.play();
             window.isSlideshowActive = false;

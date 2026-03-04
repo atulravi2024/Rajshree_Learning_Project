@@ -61,7 +61,7 @@ function goToStep2() {
     const step1 = document.getElementById('step-1'); if(step1) step1.classList.add('hidden');
     const step2 = document.getElementById('step-2'); if(step2) step2.classList.remove('hidden');
     stopCurrentAudio();
-    currentAudio = new Audio('../assets/audio/system/welcome_short.mp3');
+    currentAudio = new Audio('assets/audio/system/welcome_short.mp3');
     currentAudio.volume = globalVolume;
     currentAudio.play();
 }

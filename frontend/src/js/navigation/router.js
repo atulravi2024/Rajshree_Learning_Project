@@ -22,10 +22,10 @@ function showMainCategory(titleCat) {
     if (activeLink) activeLink.classList.add('active-menu-icon');
 
     const introFiles = {
-        'varnamala': '../assets/audio/system/intros/intro_varnamala.mp3',
-        'sankhya': '../assets/audio/system/intros/intro_ganit.mp3',
-        'names': '../assets/audio/system/intros/intro_names.mp3',
-        'samay': '../assets/audio/system/intros/intro_samay.mp3'
+        'varnamala': 'assets/audio/system/intros/intro_varnamala.mp3',
+        'sankhya': 'assets/audio/system/intros/intro_ganit.mp3',
+        'names': 'assets/audio/system/intros/intro_names.mp3',
+        'samay': 'assets/audio/system/intros/intro_samay.mp3'
     };
     if (introFiles[titleCat]) {
         stopCurrentAudio();
@@ -57,10 +57,10 @@ function showMainCategory(titleCat) {
 function showSubCategory(mainCat) {
     if (window.isSlideshowActive) return;
     const subIntroFiles = {
-        'swar': '../assets/audio/system/intros/sub_swar.mp3', 'vyanjan': '../assets/audio/system/intros/sub_vyanjan.mp3', 'samyukt': '../assets/audio/system/intros/sub_samyukt.mp3', 'matra': '../assets/audio/system/intros/sub_matra.mp3',
-        'numbers_main': '../assets/audio/system/intros/sub_numbers.mp3', 'tables_main': '../assets/audio/system/intros/sub_tables.mp3', 'shapes_fun': '../assets/audio/system/intros/sub_shapes.mp3',
-        'family_main': '../assets/audio/system/intros/sub_family.mp3', 'animals_main': '../assets/audio/system/intros/sub_animals.mp3', 'fruits_main': '../assets/audio/system/intros/sub_fruits.mp3', 'habits_main': '../assets/audio/system/intros/sub_habits.mp3',
-        'time_main': '../assets/audio/system/intros/sub_time.mp3', 'colors_main': '../assets/audio/system/intros/sub_colors.mp3', 'nature_final': '../assets/audio/system/intros/sub_nature.mp3', 'directions_main': '../assets/audio/system/intros/sub_directions.mp3'
+        'swar': 'assets/audio/system/intros/sub_swar.mp3', 'vyanjan': 'assets/audio/system/intros/sub_vyanjan.mp3', 'samyukt': 'assets/audio/system/intros/sub_samyukt.mp3', 'matra': 'assets/audio/system/intros/sub_matra.mp3',
+        'numbers_main': 'assets/audio/system/intros/sub_numbers.mp3', 'tables_main': 'assets/audio/system/intros/sub_tables.mp3', 'shapes_fun': 'assets/audio/system/intros/sub_shapes.mp3',
+        'family_main': 'assets/audio/system/intros/sub_family.mp3', 'animals_main': 'assets/audio/system/intros/sub_animals.mp3', 'fruits_main': 'assets/audio/system/intros/sub_fruits.mp3', 'habits_main': 'assets/audio/system/intros/sub_habits.mp3',
+        'time_main': 'assets/audio/system/intros/sub_time.mp3', 'colors_main': 'assets/audio/system/intros/sub_colors.mp3', 'nature_final': 'assets/audio/system/intros/sub_nature.mp3', 'directions_main': 'assets/audio/system/intros/sub_directions.mp3'
     };
     if (subIntroFiles[mainCat]) {
         stopCurrentAudio();
@@ -116,7 +116,7 @@ function showSubCategory(mainCat) {
 
 function showDeepCategory(deepCat) {
     if (window.isSlideshowActive) return;
-    const deepIntroFiles = { 'colors_world_main': '../assets/audio/system/intros/sub_colors.mp3' };
+    const deepIntroFiles = { 'colors_world_main': 'assets/audio/system/intros/sub_colors.mp3' };
     if (deepIntroFiles[deepCat]) {
         stopCurrentAudio();
         window.currentAudio = new Audio(deepIntroFiles[deepCat]);
@@ -171,17 +171,17 @@ function finishSetup(category) {
 
     // 3. Trigger Intro Audio in the background
     const finalIntroFiles = {
-        'swar': '../assets/audio/system/intros/final_swar.mp3', 'vyanjan': '../assets/audio/system/intros/final_vyanjan.mp3', 'samyukt': '../assets/audio/system/intros/final_samyukt.mp3', 'matra': '../assets/audio/system/intros/final_matra.mp3',
-        'numbers_10': '../assets/audio/system/intros/final_numbers_10.mp3', 'numbers_100': '../assets/audio/system/intros/final_numbers_100.mp3',
-        'tables_10_m1': '../assets/audio/system/intros/final_tables_m1.mp3', 'tables_10_m2': '../assets/audio/system/intros/final_tables_m2.mp3',
-        'shapes': '../assets/audio/system/intros/final_shapes.mp3', 'comparisons': '../assets/audio/system/intros/final_comparisons.mp3',
-        'family': '../assets/audio/system/intros/final_family.mp3', 'body_parts': '../assets/audio/system/intros/final_body_parts.mp3',
-        'animals_domestic': '../assets/audio/system/intros/final_animals_domestic.mp3', 'animals_wild': '../assets/audio/system/intros/final_animals_wild.mp3',
-        'fruits': '../assets/audio/system/intros/final_fruits.mp3', 'vegetables': '../assets/audio/system/intros/final_vegetables.mp3',
-        'habits': '../assets/audio/system/intros/final_habits.mp3', 'days_week': '../assets/audio/system/intros/final_days_week.mp3', 'months_year': '../assets/audio/system/intros/final_months_year.mp3',
-        'nature': '../assets/audio/system/intros/final_nature.mp3', 'directions': '../assets/audio/system/intros/final_directions.mp3',
-        'colors_primary': '../assets/audio/system/intros/final_colors_primary.mp3', 'colors_secondary': '../assets/audio/system/intros/final_colors_secondary.mp3', 'colors_natural': '../assets/audio/system/intros/final_colors_natural.mp3',
-        'colors_pink_red': '../assets/audio/system/intros/sub_pink_red.mp3', 'colors_blue_green': '../assets/audio/system/intros/sub_blue_green.mp3', 'colors_brown_beige': '../assets/audio/system/intros/sub_brown_beige.mp3', 'colors_metallic': '../assets/audio/system/intros/sub_metallic.mp3', 'colors_special': '../assets/audio/system/intros/sub_special.mp3'
+        'swar': 'assets/audio/system/intros/final_swar.mp3', 'vyanjan': 'assets/audio/system/intros/final_vyanjan.mp3', 'samyukt': 'assets/audio/system/intros/final_samyukt.mp3', 'matra': 'assets/audio/system/intros/final_matra.mp3',
+        'numbers_10': 'assets/audio/system/intros/final_numbers_10.mp3', 'numbers_100': 'assets/audio/system/intros/final_numbers_100.mp3',
+        'tables_10_m1': 'assets/audio/system/intros/final_tables_m1.mp3', 'tables_10_m2': 'assets/audio/system/intros/final_tables_m2.mp3',
+        'shapes': 'assets/audio/system/intros/final_shapes.mp3', 'comparisons': 'assets/audio/system/intros/final_comparisons.mp3',
+        'family': 'assets/audio/system/intros/final_family.mp3', 'body_parts': 'assets/audio/system/intros/final_body_parts.mp3',
+        'animals_domestic': 'assets/audio/system/intros/final_animals_domestic.mp3', 'animals_wild': 'assets/audio/system/intros/final_animals_wild.mp3',
+        'fruits': 'assets/audio/system/intros/final_fruits.mp3', 'vegetables': 'assets/audio/system/intros/final_vegetables.mp3',
+        'habits': 'assets/audio/system/intros/final_habits.mp3', 'days_week': 'assets/audio/system/intros/final_days_week.mp3', 'months_year': 'assets/audio/system/intros/final_months_year.mp3',
+        'nature': 'assets/audio/system/intros/final_nature.mp3', 'directions': 'assets/audio/system/intros/final_directions.mp3',
+        'colors_primary': 'assets/audio/system/intros/final_colors_primary.mp3', 'colors_secondary': 'assets/audio/system/intros/final_colors_secondary.mp3', 'colors_natural': 'assets/audio/system/intros/final_colors_natural.mp3',
+        'colors_pink_red': 'assets/audio/system/intros/sub_pink_red.mp3', 'colors_blue_green': 'assets/audio/system/intros/sub_blue_green.mp3', 'colors_brown_beige': 'assets/audio/system/intros/sub_brown_beige.mp3', 'colors_metallic': 'assets/audio/system/intros/sub_metallic.mp3', 'colors_special': 'assets/audio/system/intros/sub_special.mp3'
     };
 
     if (finalIntroFiles[category]) {
