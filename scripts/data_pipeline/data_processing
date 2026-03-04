@@ -1,0 +1,79 @@
+const xlsx = require('xlsx');
+const path = require('path');
+const file = path.join('c:\\Users\\Atul Verma\\.openclaw\\workspace\\RajShree_Project\\Rajshree Learning Project', 'Rajshree_Learning_Data_Master.xlsx');
+const wb = xlsx.readFile(file);
+const sheetName = wb.SheetNames[0];
+const data = xlsx.utils.sheet_to_json(wb.Sheets[sheetName], { defval: "" });
+
+const newItems = [
+    // Priority 1: Fruits (फल)
+    { Category: "My World", Title: "Names", MainMenu: "Fruits", Letter_Numeral: "के", Word_Name: "केला", Icon_Emoji: "🍌", Audio_Path: "assets/audio/names/fruits/banana.mp3", Display_Word_En: "Banana", JS_Source_File: "fruits.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Fruits", Letter_Numeral: "सं", Word_Name: "संतरा", Icon_Emoji: "🍊", Audio_Path: "assets/audio/names/fruits/orange.mp3", Display_Word_En: "Orange", JS_Source_File: "fruits.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Fruits", Letter_Numeral: "अं", Word_Name: "अंगूर", Icon_Emoji: "🍇", Audio_Path: "assets/audio/names/fruits/grapes.mp3", Display_Word_En: "Grapes", JS_Source_File: "fruits.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Fruits", Letter_Numeral: "प", Word_Name: "पपीता", Icon_Emoji: "🫒", Audio_Path: "assets/audio/names/fruits/papaya.mp3", Display_Word_En: "Papaya", JS_Source_File: "fruits.js", Age_Group: "3-5", Status: "active" }, // Using generic emoji as papaya emoji is not standard everywhere
+    { Category: "My World", Title: "Names", MainMenu: "Fruits", Letter_Numeral: "त", Word_Name: "तरबूज", Icon_Emoji: "🍉", Audio_Path: "assets/audio/names/fruits/watermelon.mp3", Display_Word_En: "Watermelon", JS_Source_File: "fruits.js", Age_Group: "3-5", Status: "active" },
+
+    // Priority 1: Vegetables (सब्जियां)
+    { Category: "My World", Title: "Names", MainMenu: "Vegetables", Letter_Numeral: "आ", Word_Name: "आलू", Icon_Emoji: "🥔", Audio_Path: "assets/audio/names/vegetables/potato.mp3", Display_Word_En: "Potato", JS_Source_File: "vegetables.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Vegetables", Letter_Numeral: "ट", Word_Name: "टमाटर", Icon_Emoji: "🍅", Audio_Path: "assets/audio/names/vegetables/tomato.mp3", Display_Word_En: "Tomato", JS_Source_File: "vegetables.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Vegetables", Letter_Numeral: "प्या", Word_Name: "प्याज", Icon_Emoji: "🧅", Audio_Path: "assets/audio/names/vegetables/onion.mp3", Display_Word_En: "Onion", JS_Source_File: "vegetables.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Vegetables", Letter_Numeral: "गा", Word_Name: "गाजर", Icon_Emoji: "🥕", Audio_Path: "assets/audio/names/vegetables/carrot.mp3", Display_Word_En: "Carrot", JS_Source_File: "vegetables.js", Age_Group: "3-5", Status: "active" },
+
+    // Priority 1: Wild Animals
+    { Category: "My World", Title: "Names", MainMenu: "Animals", SubMenu: "Wild", Letter_Numeral: "बा", Word_Name: "बाघ", Icon_Emoji: "🐅", Audio_Path: "assets/audio/names/animals_wild/tiger.mp3", Display_Word_En: "Tiger", JS_Source_File: "animals_wild.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Animals", SubMenu: "Wild", Letter_Numeral: "हा", Word_Name: "हाथी", Icon_Emoji: "🐘", Audio_Path: "assets/audio/names/animals_wild/elephant.mp3", Display_Word_En: "Elephant", JS_Source_File: "animals_wild.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Animals", SubMenu: "Wild", Letter_Numeral: "बं", Word_Name: "बंदर", Icon_Emoji: "🐒", Audio_Path: "assets/audio/names/animals_wild/monkey.mp3", Display_Word_En: "Monkey", JS_Source_File: "animals_wild.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Animals", SubMenu: "Wild", Letter_Numeral: "भा", Word_Name: "भालू", Icon_Emoji: "🐻", Audio_Path: "assets/audio/names/animals_wild/bear.mp3", Display_Word_En: "Bear", JS_Source_File: "animals_wild.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Animals", SubMenu: "Wild", Letter_Numeral: "हि", Word_Name: "हिरण", Icon_Emoji: "🦌", Audio_Path: "assets/audio/names/animals_wild/deer.mp3", Display_Word_En: "Deer", JS_Source_File: "animals_wild.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Animals", SubMenu: "Wild", Letter_Numeral: "ज़े", Word_Name: "ज़ेबरा", Icon_Emoji: "🦓", Audio_Path: "assets/audio/names/animals_wild/zebra.mp3", Display_Word_En: "Zebra", JS_Source_File: "animals_wild.js", Age_Group: "3-5", Status: "active" },
+
+    // Priority 1: Domestic Animals
+    { Category: "My World", Title: "Names", MainMenu: "Animals", SubMenu: "Domestic", Letter_Numeral: "कु", Word_Name: "कुत्ता", Icon_Emoji: "🐕", Audio_Path: "assets/audio/names/animals_domestic/dog.mp3", Display_Word_En: "Dog", JS_Source_File: "animals_domestic.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Animals", SubMenu: "Domestic", Letter_Numeral: "बि", Word_Name: "बिल्ली", Icon_Emoji: "🐈", Audio_Path: "assets/audio/names/animals_domestic/cat.mp3", Display_Word_En: "Cat", JS_Source_File: "animals_domestic.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Animals", SubMenu: "Domestic", Letter_Numeral: "घो", Word_Name: "घोड़ा", Icon_Emoji: "🐎", Audio_Path: "assets/audio/names/animals_domestic/horse.mp3", Display_Word_En: "Horse", JS_Source_File: "animals_domestic.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Animals", SubMenu: "Domestic", Letter_Numeral: "भे", Word_Name: "भेड़", Icon_Emoji: "🐑", Audio_Path: "assets/audio/names/animals_domestic/sheep.mp3", Display_Word_En: "Sheep", JS_Source_File: "animals_domestic.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Animals", SubMenu: "Domestic", Letter_Numeral: "ब", Word_Name: "बकरी", Icon_Emoji: "🐐", Audio_Path: "assets/audio/names/animals_domestic/goat.mp3", Display_Word_En: "Goat", JS_Source_File: "animals_domestic.js", Age_Group: "3-5", Status: "active" },
+
+    // Priority 1: Good Habits
+    { Category: "My World", Title: "Names", MainMenu: "Habits", Letter_Numeral: "ब्र", Word_Name: "ब्रश करना", Icon_Emoji: "🪥", Audio_Path: "assets/audio/names/habits/brushing.mp3", Display_Word_En: "Brushing", JS_Source_File: "habits.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Habits", Letter_Numeral: "न", Word_Name: "नहाना", Icon_Emoji: "🛁", Audio_Path: "assets/audio/names/habits/bathing.mp3", Display_Word_En: "Bathing", JS_Source_File: "habits.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Habits", Letter_Numeral: "हा", Word_Name: "हाथ धोना", Icon_Emoji: "🧼", Audio_Path: "assets/audio/names/habits/washing_hands.mp3", Display_Word_En: "Washing Hands", JS_Source_File: "habits.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Habits", Letter_Numeral: "जा", Word_Name: "जल्दी उठना", Icon_Emoji: "🌅", Audio_Path: "assets/audio/names/habits/waking_early.mp3", Display_Word_En: "Waking Early", JS_Source_File: "habits.js", Age_Group: "3-5", Status: "active" },
+
+    // Priority 2/3 Selections to reasonably flesh out the rest:
+    { Category: "My World", Title: "Names", MainMenu: "Emotions", Letter_Numeral: "हौ", Word_Name: "हैरान", Icon_Emoji: "😲", Audio_Path: "assets/audio/names/emotions/surprised.mp3", Display_Word_En: "Surprised", JS_Source_File: "emotions.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Emotions", Letter_Numeral: "ड", Word_Name: "डरा हुआ", Icon_Emoji: "😨", Audio_Path: "assets/audio/names/emotions/scared.mp3", Display_Word_En: "Scared", JS_Source_File: "emotions.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Clothes", Letter_Numeral: "स्वै", Word_Name: "स्वेटर", Icon_Emoji: "🥼", Audio_Path: "assets/audio/names/clothes/sweater.mp3", Display_Word_En: "Sweater", JS_Source_File: "clothes.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Clothes", Letter_Numeral: "तो", Word_Name: "टोपी", Icon_Emoji: "🧢", Audio_Path: "assets/audio/names/clothes/hat.mp3", Display_Word_En: "Hat", JS_Source_File: "clothes.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Actions", Letter_Numeral: "ना", Word_Name: "नाचना", Icon_Emoji: "💃", Audio_Path: "assets/audio/names/actions/dancing.mp3", Display_Word_En: "Dancing", JS_Source_File: "actions.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Actions", Letter_Numeral: "खे", Word_Name: "खेलना", Icon_Emoji: "⚽", Audio_Path: "assets/audio/names/actions/playing.mp3", Display_Word_En: "Playing", JS_Source_File: "actions.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Helpers", Letter_Numeral: "कि", Word_Name: "किसान", Icon_Emoji: "🧑‍🌾", Audio_Path: "assets/audio/names/helpers/farmer.mp3", Display_Word_En: "Farmer", JS_Source_File: "helpers.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Nature", Letter_Numeral: "चां", Word_Name: "चांद", Icon_Emoji: "🌙", Audio_Path: "assets/audio/names/nature/moon.mp3", Display_Word_En: "Moon", JS_Source_File: "nature.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Nature", Letter_Numeral: "ता", Word_Name: "तारा", Icon_Emoji: "⭐", Audio_Path: "assets/audio/names/nature/star.mp3", Display_Word_En: "Star", JS_Source_File: "nature.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Family", Letter_Numeral: "भा", Word_Name: "भाई", Icon_Emoji: "👦", Audio_Path: "assets/audio/names/family/brother.mp3", Display_Word_En: "Brother", JS_Source_File: "family.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Family", Letter_Numeral: "ब", Word_Name: "बहन", Icon_Emoji: "👧", Audio_Path: "assets/audio/names/family/sister.mp3", Display_Word_En: "Sister", JS_Source_File: "family.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Family", Letter_Numeral: "दा", Word_Name: "दादा", Icon_Emoji: "👴", Audio_Path: "assets/audio/names/family/grandfather.mp3", Display_Word_En: "Grandfather", JS_Source_File: "family.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Family", Letter_Numeral: "दा", Word_Name: "दादी", Icon_Emoji: "👵", Audio_Path: "assets/audio/names/family/grandmother.mp3", Display_Word_En: "Grandmother", JS_Source_File: "family.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Body Parts", Letter_Numeral: "हा", Word_Name: "हाथ", Icon_Emoji: "🖐️", Audio_Path: "assets/audio/names/body_parts/hand.mp3", Display_Word_En: "Hand", JS_Source_File: "body_parts.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Body Parts", Letter_Numeral: "पै", Word_Name: "पैर", Icon_Emoji: "🦶", Audio_Path: "assets/audio/names/body_parts/leg.mp3", Display_Word_En: "Leg", JS_Source_File: "body_parts.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Vehicles", Letter_Numeral: "मो", Word_Name: "मोटरसाइकिल", Icon_Emoji: "🏍️", Audio_Path: "assets/audio/names/vehicles/motorcycle.mp3", Display_Word_En: "Motorcycle", JS_Source_File: "vehicles.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Vehicles", Letter_Numeral: "सा", Word_Name: "साइकिल", Icon_Emoji: "🚲", Audio_Path: "assets/audio/names/vehicles/bicycle.mp3", Display_Word_En: "Bicycle", JS_Source_File: "vehicles.js", Age_Group: "3-5", Status: "active" }
+];
+
+let added = 0;
+for (const item of newItems) {
+    // Prevent exactly duplicate words in the same main & sub menu
+    if (!data.some(r => r.MainMenu === item.MainMenu && r.SubMenu === item.SubMenu && r.Word_Name === item.Word_Name)) {
+        data.push({ ...item, DeepSubMenu: item.DeepSubMenu || '', SubMenu: item.SubMenu || '' });
+        added++;
+    }
+}
+
+if (added > 0) {
+    const newSheet = xlsx.utils.json_to_sheet(data);
+    wb.Sheets[sheetName] = newSheet;
+    xlsx.writeFile(wb, file);
+    console.log(`Added ${added} new detailed items to Excel!`);
+} else {
+    console.log("No new items added, they probably exist already.");
+}

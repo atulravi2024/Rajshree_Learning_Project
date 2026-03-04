@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>राजश्री हिंदी लर्निंग | Rajshree Hindi Learning 🎒✨</title>
+    <link rel="stylesheet" href="../src/css/main.css">
+</head>
+
+<body>
+
+    <!-- COMPACT NAVBAR -->
+    <nav class="navbar hidden" id="main-nav">
+        <div class="nav-logo">
+            <div class="logo-with-icon">
+                <span class="baby-icon">👶</span>
+                <div class="logo-text">
+                    <span class="hi">राजश्री हिंदी लर्निंग</span>
+                    <span class="en">Rajshree Hindi Learning</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-menu-container">
+            <ul class="nav-menu">
+                <li><a class="nav-link icon-only" id="nav-varnamala" onclick="showMainCategory('varnamala')"
+                        title="वर्णमाला (Alphabet)" style="background:#F3E5F5; border-radius:15px;">
+                        <span class="hi">📖</span>
+                    </a></li>
+                <li><a class="nav-link icon-only" id="nav-sankhya" onclick="showMainCategory('sankhya')"
+                        title="गणित (Math)" style="background:#E8F5E9; border-radius:15px;">
+                        <span class="hi">🧮</span>
+                    </a></li>
+                <li><a class="nav-link icon-only" id="nav-names" onclick="showMainCategory('names')"
+                        title="मेरा संसार (Mera Sansar)" style="background:#FFF3E0; border-radius:15px;">
+                        <span class="hi">🌍</span>
+                    </a></li>
+                <li><a class="nav-link icon-only" id="nav-samay" onclick="showMainCategory('samay')"
+                        title="समय और रंग (Time & Colors)" style="background:#FFF9C4; border-radius:15px;">
+                        <span class="hi">☀️</span>
+                    </a></li>
+
+                <li class="nav-separator"></li>
+
+                <li><a class="nav-link icon-only" onclick="goHome()" id="nav-home" title="Home"
+                        style="background:#FFF9C4; border-radius:15px;">
+                        <span class="hi">🏠</span>
+                    </a></li>
+                <li><a class="nav-link icon-only" onclick="toggleSlideshow()" id="nav-slideshow" title="Slideshow"
+                        style="background:#E3F2FD; border-radius:15px;">
+                        <span class="hi">🎬</span>
+                    </a></li>
+                <li class="dropdown">
+                    <a class="nav-link icon-only" style="background:#f0f0f0; border-radius:15px;" id="nav-layout"
+                        title="Layout">
+                        <span class="hi">📐</span>
+                    </a>
+                    <div class="dropdown-content">
+                        <a onclick="updateLayout('1')">🌟 1 by 1</a>
+                        <a onclick="updateLayout('3')">🔳 3 Cards</a>
+                        <a onclick="updateLayout('all')">📑 All (Scroll)</a>
+                        <a onclick="updateLayout('fit')">📺 Fit Screen</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a class="nav-link icon-only" style="background:#FFDEE9; border-radius:15px;" title="Volume"
+                        id="nav-volume">
+                        <span class="hi">🔊</span>
+                    </a>
+                    <div class="dropdown-content" style="min-width: 150px; padding: 15px;">
+                        <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1"
+                            style="width: 100%; cursor: pointer; accent-color: #FF1493;">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="overlay">
+        <div class="floating-icons" id="bg-icons"></div>
+
+        <!-- Screen 1: Welcome -->
+        <div id="step-1">
+            <h1 class="welcome-title">नमस्ते राजश्री!</h1>
+            <p style="font-size: 1.8rem; color: #666; font-weight: 600;">सीखने की दुनिया में आपका स्वागत है ✨</p>
+            <div class="start-orb" onclick="goToStep2()">
+                <div class="rocket-icon" style="font-size: 5rem;">🚀</div>
+                <span>शुरू करें</span>
+            </div>
+        </div>
+
+        <!-- Screen 2: Title Category -->
+        <div id="step-2" class="hidden">
+            <h1 class="welcome-title" style="font-size: 3.5rem;">मुख्य विषय चुनें</h1>
+            <div class="choice-grid">
+                <div class="kid-choice-card vyanjan" onclick="showMainCategory('varnamala')">
+                    <div class="choice-icon">📖</div>
+                    <div class="choice-label-hi">वर्णमाला</div>
+                </div>
+                <div class="kid-choice-card swar" onclick="showMainCategory('sankhya')">
+                    <div class="choice-icon">🧮</div>
+                    <div class="choice-label-hi">गणित</div>
+                </div>
+                <div class="kid-choice-card samyukt" onclick="showMainCategory('names')">
+                    <div class="choice-icon">🌍</div>
+                    <div class="choice-label-hi">मेरा संसार</div>
+                </div>
+                <div class="kid-choice-card magic" onclick="showMainCategory('samay')">
+                    <div class="choice-icon">☀️</div>
+                    <div class="choice-label-hi">समय और रंग</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 3: Main Category -->
+        <div id="step-3" class="hidden">
+            <h1 class="welcome-title" id="step3-title" style="font-size: 3.5rem;">श्रेणी चुनें</h1>
+            <div class="choice-grid" id="step3-container"></div>
+            <div>
+                <button class="nav-link" onclick="goBackTo(2)"
+                    style="background:#4B0082; color:white; border-radius:15px; padding:10px 30px; display:inline-block;">⬅️
+                    वापस (Back)</button>
+            </div>
+        </div>
+
+        <!-- Screen 4: Sub Category -->
+        <div id="step-4" class="hidden">
+            <h1 class="welcome-title" id="step4-title" style="font-size: 3.5rem;">चुनिए</h1>
+            <div class="choice-grid" id="step4-container"></div>
+            <div>
+                <button class="nav-link" onclick="goBackTo(3)"
+                    style="background:#4B0082; color:white; border-radius:15px; padding:10px 30px; display:inline-block;">⬅️
+                    वापस (Back)</button>
+            </div>
+        </div>
+
+        <!-- Screen 5: Deep Category (New for nested colors) -->
+        <div id="step-5" class="hidden">
+            <h1 class="welcome-title" id="step5-title" style="font-size: 3.5rem;">रंगों का संसार</h1>
+            <div class="choice-grid" id="step5-container"></div>
+            <div>
+                <button class="nav-link" onclick="goBackTo(4)"
+                    style="background:#4B0082; color:white; border-radius:15px; padding:10px 30px; display:inline-block;">⬅️
+                    वापस (Back)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN LEARNING ZONE -->
+    <div class="main-content">
+        <div id="learning-zone" class="learning-wrapper hidden">
+            <div id="prev-btn" class="nav-btn-side" onclick="prev()">
+                <div class="arrow-shape left-arrow"></div>
+            </div>
+            <div id="master-container" class="container">
+                <!-- Dynamic cards -->
+            </div>
+            <div id="next-btn" class="nav-btn-side" onclick="next()">
+                <div class="arrow-shape right-arrow"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Atomic Data Modules -->
+    <script src="../src/js/data/varnamala/swar.js"></script>
+    <script src="../src/js/data/varnamala/vyanjan.js"></script>
+    <script src="../src/js/data/varnamala/samyukt.js"></script>
+    <script src="../src/js/data/varnamala/matra.js"></script>
+
+    <!-- Modular Data: Ganit -->
+    <script src="../src/js/data/ganit/numbers_10.js"></script>
+    <script src="../src/js/data/ganit/numbers_100.js"></script>
+    <script src="../src/js/data/ganit/tables_m1.js"></script>
+    <script src="../src/js/data/ganit/tables_m2.js"></script>
+    <script src="../src/js/data/ganit/shapes.js"></script>
+    <script src="../src/js/data/ganit/comparisons.js"></script>
+
+    <!-- Modular Data: Mera Sansar -->
+    <script src="../src/js/data/mera_sansar/family.js"></script>
+    <script src="../src/js/data/mera_sansar/body_parts.js"></script>
+    <script src="../src/js/data/mera_sansar/animals_wild.js"></script>
+    <script src="../src/js/data/mera_sansar/animals_domestic.js"></script>
+    <script src="../src/js/data/mera_sansar/fruits.js"></script>
+    <script src="../src/js/data/mera_sansar/vegetables.js"></script>
+    <script src="../src/js/data/mera_sansar/habits.js"></script>
+    <script src="../src/js/data/mera_sansar/vehicles.js"></script>
+    <script src="../src/js/data/mera_sansar/emotions.js"></script>
+    <script src="../src/js/data/mera_sansar/clothes.js"></script>
+    <script src="../src/js/data/mera_sansar/actions.js"></script>
+    <script src="../src/js/data/mera_sansar/helpers.js"></script>
+
+    <!-- Modular Data: Rangon ka Sansar -->
+    <script src="../src/js/data/rangon_ka_sansar/colors_primary.js"></script>
+    <script src="../src/js/data/rangon_ka_sansar/colors_secondary.js"></script>
+    <script src="../src/js/data/rangon_ka_sansar/colors_natural.js"></script>
+    <script src="../src/js/data/rangon_ka_sansar/colors_pink_red.js"></script>
+    <script src="../src/js/data/rangon_ka_sansar/colors_blue_green.js"></script>
+    <script src="../src/js/data/rangon_ka_sansar/colors_brown_beige.js"></script>
+    <script src="../src/js/data/rangon_ka_sansar/colors_metallic.js"></script>
+    <script src="../src/js/data/rangon_ka_sansar/colors_special.js"></script>
+
+    <!-- Modular Data: Samay aur Prakriti -->
+    <script src="../src/js/data/samay_prakriti/days_week.js"></script>
+    <script src="../src/js/data/samay_prakriti/months_year.js"></script>
+    <script src="../src/js/data/samay_prakriti/directions.js"></script>
+    <script src="../src/js/data/samay_prakriti/nature.js"></script>
+
+    <!-- Modular Scripts -->
+    <script src="../src/js/core/main.js"></script>
+    <script src="../src/js/core/init.js"></script>
+    <script src="../src/js/utils/helpers.js"></script>
+    <script src="../src/js/ui/display.js"></script>
+    <script src="../src/js/navigation/router.js"></script>
+    <script src="../src/js/slideshow/controller.js"></script>
+</body>
+
+</html>

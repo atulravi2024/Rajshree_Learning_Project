@@ -1,0 +1,58 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Deploy job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      # We skip the setup-pages step because we don't have a build framework like Jekyll or Hugo. 
+      # We just want to serve the raw static files inside frontend/.
+      
+      - name: Prepare Deployment Payload
+        run: |
+          mkdir deploy_payload
+          # Move 'public' contents (index.html, assets) directly to the root of our payload
+          cp -r frontend/public/* deploy_payload/
+          # Move 'src' (css, js) directly into the root so they sit next to index.html
+          cp -r frontend/src deploy_payload/
+          # Now index.html and src/ are siblings, but index.html's code currently says '../src/'.
+          # We will use 'sed' to automatically rewrite the paths inside index.html before deployment!
+          sed -i 's|../src/|src/|g' deploy_payload/index.html
+          
+          # The result: A perfectly clean deployment folder where index.html is at the root, 
+          # CSS/JS are in src/, and everything links perfectly!
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Tell GitHub Pages to strictly serve the prepared payload directory
+          path: 'deploy_payload'
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

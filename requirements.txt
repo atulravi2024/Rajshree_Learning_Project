@@ -1,0 +1,5 @@
+# Python dependencies for RajShree Learning Project
+librosa==0.10.2
+soundfile==0.12.1
+edge-tts==6.1.12
+pandas==2.2.0

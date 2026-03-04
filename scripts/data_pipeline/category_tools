@@ -1,0 +1,47 @@
+const xlsx = require('xlsx');
+const path = require('path');
+const file = path.join('c:\\Users\\Atul Verma\\.openclaw\\workspace\\RajShree_Project\\Rajshree Learning Project', 'Rajshree_Learning_Data_Master.xlsx');
+const wb = xlsx.readFile(file);
+const sheetName = wb.SheetNames[0];
+const data = xlsx.utils.sheet_to_json(wb.Sheets[sheetName], { defval: "" });
+
+const newItems = [
+    // Vehicles
+    { Category: "My World", Title: "Names", MainMenu: "Vehicles", Letter_Numeral: "का", Word_Name: "कार", Icon_Emoji: "🚗", Audio_Path: "assets/audio/names/transport/car.mp3", Display_Word_En: "Car", JS_Source_File: "vehicles.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Vehicles", Letter_Numeral: "ब", Word_Name: "बस", Icon_Emoji: "🚌", Audio_Path: "assets/audio/names/transport/bus.mp3", Display_Word_En: "Bus", JS_Source_File: "vehicles.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Vehicles", Letter_Numeral: "ट्रे", Word_Name: "ट्रेन", Icon_Emoji: "🚆", Audio_Path: "assets/audio/names/transport/train.mp3", Display_Word_En: "Train", JS_Source_File: "vehicles.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Vehicles", Letter_Numeral: "ह", Word_Name: "हवाई जहाज़", Icon_Emoji: "✈️", Audio_Path: "assets/audio/names/transport/airplane.mp3", Display_Word_En: "Airplane", JS_Source_File: "vehicles.js", Age_Group: "3-5", Status: "active" },
+    // Emotions
+    { Category: "My World", Title: "Names", MainMenu: "Emotions", Letter_Numeral: "खु", Word_Name: "खुश", Icon_Emoji: "😊", Audio_Path: "assets/audio/names/emotions/happy.mp3", Display_Word_En: "Happy", JS_Source_File: "emotions.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Emotions", Letter_Numeral: "उ", Word_Name: "उदास", Icon_Emoji: "😢", Audio_Path: "assets/audio/names/emotions/sad.mp3", Display_Word_En: "Sad", JS_Source_File: "emotions.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Emotions", Letter_Numeral: "गु", Word_Name: "गुस्सा", Icon_Emoji: "😠", Audio_Path: "assets/audio/names/emotions/angry.mp3", Display_Word_En: "Angry", JS_Source_File: "emotions.js", Age_Group: "3-5", Status: "active" },
+    // Clothes
+    { Category: "My World", Title: "Names", MainMenu: "Clothes", Letter_Numeral: "क", Word_Name: "कमीज़", Icon_Emoji: "👕", Audio_Path: "assets/audio/names/clothes/shirt.mp3", Display_Word_En: "Shirt", JS_Source_File: "clothes.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Clothes", Letter_Numeral: "पैं", Word_Name: "पैंट", Icon_Emoji: "👖", Audio_Path: "assets/audio/names/clothes/pants.mp3", Display_Word_En: "Pants", JS_Source_File: "clothes.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Clothes", Letter_Numeral: "जू", Word_Name: "जूते", Icon_Emoji: "👞", Audio_Path: "assets/audio/names/clothes/shoes.mp3", Display_Word_En: "Shoes", JS_Source_File: "clothes.js", Age_Group: "3-5", Status: "active" },
+    // Actions
+    { Category: "My World", Title: "Names", MainMenu: "Actions", Letter_Numeral: "दौ", Word_Name: "दौड़ना", Icon_Emoji: "🏃‍♂️", Audio_Path: "assets/audio/names/actions/running.mp3", Display_Word_En: "Running", JS_Source_File: "actions.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Actions", Letter_Numeral: "खा", Word_Name: "खाना", Icon_Emoji: "🍽️", Audio_Path: "assets/audio/names/actions/eating.mp3", Display_Word_En: "Eating", JS_Source_File: "actions.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Actions", Letter_Numeral: "सो", Word_Name: "सोना", Icon_Emoji: "😴", Audio_Path: "assets/audio/names/actions/sleeping.mp3", Display_Word_En: "Sleeping", JS_Source_File: "actions.js", Age_Group: "3-5", Status: "active" },
+    // Community Helpers
+    { Category: "My World", Title: "Names", MainMenu: "Helpers", Letter_Numeral: "शि", Word_Name: "शिक्षक", Icon_Emoji: "👩‍🏫", Audio_Path: "assets/audio/names/helpers/teacher.mp3", Display_Word_En: "Teacher", JS_Source_File: "helpers.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Helpers", Letter_Numeral: "डॉ", Word_Name: "डॉक्टर", Icon_Emoji: "👨‍⚕️", Audio_Path: "assets/audio/names/helpers/doctor.mp3", Display_Word_En: "Doctor", JS_Source_File: "helpers.js", Age_Group: "3-5", Status: "active" },
+    { Category: "My World", Title: "Names", MainMenu: "Helpers", Letter_Numeral: "पु", Word_Name: "पुलिस", Icon_Emoji: "👮‍♂️", Audio_Path: "assets/audio/names/helpers/police.mp3", Display_Word_En: "Police", JS_Source_File: "helpers.js", Age_Group: "3-5", Status: "active" }
+];
+
+let added = 0;
+for (const item of newItems) {
+    if (!data.some(r => r.MainMenu === item.MainMenu && r.Word_Name === item.Word_Name)) {
+        data.push({ ...item, SubMenu: '', DeepSubMenu: '' });
+        added++;
+    }
+}
+
+if (added > 0) {
+    const newSheet = xlsx.utils.json_to_sheet(data);
+    wb.Sheets[sheetName] = newSheet;
+    xlsx.writeFile(wb, file);
+    console.log(`Added ${added} new items to Excel!`);
+} else {
+    console.log("No new items added, they probably exist already.");
+}

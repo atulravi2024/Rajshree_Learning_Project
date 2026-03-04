@@ -1,0 +1,24 @@
+{
+  "name": "rajshree-learning-project",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "build_database.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atulravi2024/Rajshree_Learning_Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/atulravi2024/Rajshree_Learning_Project/issues"
+  },
+  "homepage": "https://github.com/atulravi2024/Rajshree_Learning_Project#readme",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
