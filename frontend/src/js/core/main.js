@@ -4,18 +4,19 @@
  */
 
 window.selectedCategory = '';
-window.currentLayout = '1'; 
+window.currentLayout = '1';
 window.currentIndex = 0;
 window.activeCardsData = [];
 window.globalVolume = 1;
 window.currentAudio = null;
+window.AUDIO_BASE_PATH = 'assets/audio/';
 
 window.selectedTitle = '';
 window.selectedMain = '';
 
-function stopCurrentAudio() { 
-    if (window.currentAudio) { 
-        window.currentAudio.pause(); 
-        window.currentAudio.currentTime = 0; 
-    } 
+function stopCurrentAudio() {
+    if (window.currentAudio) {
+        window.currentAudio.pause();
+        window.currentAudio.currentTime = 0;
+    }
 }

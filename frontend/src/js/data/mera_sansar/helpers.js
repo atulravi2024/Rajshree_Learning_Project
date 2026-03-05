@@ -1,8 +1,8 @@
 if (!window.RAJSHREE_DATA) window.RAJSHREE_DATA = {};
 
 window.RAJSHREE_DATA.helpers = [
-    { letter: 'शि', word: 'शिक्षक', emoji: '👩‍🏫', audio: 'assets/audio/names/helpers/teacher.mp3', textOnly: false },
-    { letter: 'डॉ', word: 'डॉक्टर', emoji: '👨‍⚕️', audio: 'assets/audio/names/helpers/doctor.mp3', textOnly: false },
-    { letter: 'पु', word: 'पुलिस', emoji: '👮‍♂️', audio: 'assets/audio/names/helpers/police.mp3', textOnly: false },
-    { letter: 'कि', word: 'किसान', emoji: '🧑‍🌾', audio: 'assets/audio/names/helpers/farmer.mp3', textOnly: false },
+    { letter: 'शि', word: 'शिक्षक', emoji: '👩‍🏫', audio: 'names/helpers/teacher.mp3', textOnly: false },
+    { letter: 'डॉ', word: 'डॉक्टर', emoji: '👨‍⚕️', audio: 'names/helpers/doctor.mp3', textOnly: false },
+    { letter: 'पु', word: 'पुलिस', emoji: '👮‍♂️', audio: 'names/helpers/police.mp3', textOnly: false },
+    { letter: 'कि', word: 'किसान', emoji: '🧑‍🌾', audio: 'names/helpers/farmer.mp3', textOnly: false },
 ];
