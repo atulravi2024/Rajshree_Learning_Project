@@ -41,7 +41,7 @@ function showMainCategory(titleCat) {
 
     if (titleCat === 'varnamala') {
         title.innerText = 'वर्णमाला के भाग';
-        container.innerHTML = createChoiceCard('🍎', 'स्वर (Swar)', 'swar') + createChoiceCard('🚗', 'व्यंजन (Vyanjan)', 'vyanjan') + createChoiceCard('🤝', 'संयुक्त अक्षर', 'samyukt') + createChoiceCard('🖍️', 'मात्रा ज्ञान', 'matra');
+        container.innerHTML = createChoiceCard('🍎', 'स्वर (Swar)', 'swar') + createChoiceCard('🚗', 'व्यंजन (Vyanjan)', 'vyanjan') + createChoiceCard('🤝', 'संयुक्त अक्षर (Samyukt Akshar)', 'samyukt') + createChoiceCard('🖍️', 'मात्रा ज्ञान', 'matra');
     } else if (titleCat === 'sankhya') {
         title.innerText = 'गणित (Math)';
         container.innerHTML = createChoiceCard('🔢', 'गिनती (Ginti)', 'numbers_main') + createChoiceCard('📊', 'पहाड़े (Pahade)', 'tables_main') + createChoiceCard('📐', 'आकार और तुलना', 'shapes_fun');
