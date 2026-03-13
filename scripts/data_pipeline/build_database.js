@@ -88,7 +88,7 @@ try {
         jsOutput += `window.RAJSHREE_DATA.${key} = [\n`;
 
         outputData[key].data.forEach(item => {
-            jsOutput += `    { letter: '${item.letter}', word: '${item.word}', emoji: '${item.emoji}', audio: '${item.audio}', textOnly: ${item.word === 'खाली' ? 'true' : 'false'} },\n`;
+            jsOutput += `    { letter: '${item.letter}', word: '${item.word}', emoji: '${item.emoji}', audio: '${item.audio}', textOnly: ${item.word === 'खाली' ? 'false' : (item.word === '' ? 'true' : 'false')} },\n`;
         });
 
         jsOutput += `];\n`;

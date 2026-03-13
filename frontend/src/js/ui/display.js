@@ -32,7 +32,20 @@ function renderCards() {
         } else {
             const emojis = Array.from(data.emoji || '');
             const emojiCount = emojis.length;
-            const emojiHtml = emojis.map(e => `<span>${e}</span>`).join('');
+            const isImage = (data.emoji || '').toLowerCase().endsWith('.png') || (data.emoji || '').toLowerCase().endsWith('.jpg') || (data.emoji || '').toLowerCase().includes('assets/');
+            const isRedCircle = data.type === 'red-circle';
+            
+            let emojiHtml = '';
+            if (isRedCircle) {
+                emojiHtml = `<div class="khali-circle" style="width: var(--dynamic-emoji-size, 15vh); height: var(--dynamic-emoji-size, 15vh); border: 1vh solid #F44336; border-radius: 50%; box-shadow: 0 0 20px rgba(244, 67, 54, 0.3); position: relative;">
+                    <div style="position: absolute; top: 10%; left: 10%; right: 10%; bottom: 10%; border: 0.5vh dashed #333; border-radius: 50%;"></div>
+                </div>`;
+            } else if (isImage) {
+                emojiHtml = `<img src="${data.emoji}" class="emoji-img" alt="${data.word}" style="width: var(--dynamic-emoji-size, 15vh); height: auto;">`;
+            } else {
+                emojiHtml = emojis.map(e => `<span>${e}</span>`).join('');
+            }
+            
             const isCounting = window.selectedCategory === 'numbers_10' || window.selectedCategory === 'numbers_100';
             const emojiClass = isCounting ? 'emoji emoji-animate flex-wrap-counting' : 'emoji emoji-animate';
 
