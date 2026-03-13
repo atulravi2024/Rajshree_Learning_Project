@@ -3,7 +3,7 @@ if (!window.RAJSHREE_DATA) window.RAJSHREE_DATA = {};
 window.RAJSHREE_DATA.numbers_100 = [
     { letter: '1', word: 'एक', emoji: '☀️', audio: 'ganit/numbers/num_1.mp3', textOnly: false },
     { letter: '2', word: 'दो', emoji: '👀', audio: 'ganit/numbers/num_2.mp3', textOnly: false },
-    { letter: '3', word: 'तीन', emoji: '💧💧💧', audio: 'ganit/numbers/num_3.mp3', textOnly: false },
+    { letter: '3', word: 'तीन', emoji: '🌊', audio: 'ganit/numbers/num_3.mp3', textOnly: false },
     { letter: '4', word: 'चार', emoji: '🚗', audio: 'ganit/numbers/num_4.mp3', textOnly: false },
     { letter: '5', word: 'पाँच', emoji: '🖐️', audio: 'ganit/numbers/num_5.mp3', textOnly: false },
     { letter: '6', word: 'छह', emoji: '🐜', audio: 'ganit/numbers/num_6.mp3', textOnly: false },
