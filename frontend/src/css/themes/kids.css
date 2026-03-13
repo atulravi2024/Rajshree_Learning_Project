@@ -16,35 +16,114 @@
     height: 360px; 
     background: white; 
     border-radius: 40px;
-    border: 12px solid #fff;
+    border: 8px solid rgba(255,255,255,0.9);
     flex-shrink: 0; 
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.08),
+        0 5px 15px rgba(0,0,0,0.05); 
     display: flex; 
     flex-direction: column;
     align-items: center; 
     justify-content: center; 
     cursor: pointer; 
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Subtle shimmer overlay */
+.kid-choice-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(255,255,255,0.3) 50%,
+        transparent 60%
+    );
+    transition: transform 0.6s ease;
+    transform: translateX(-100%) translateY(-100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.kid-choice-card:hover::before {
+    transform: translateX(30%) translateY(30%);
+}
+
+.kid-choice-card:hover { 
+    transform: scale(1.08) translateY(-12px);
+    z-index: 10; 
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.12),
+        0 0 30px rgba(255, 20, 147, 0.25),
+        0 0 60px rgba(255, 20, 147, 0.1);
+    border-color: rgba(255, 20, 147, 0.5);
+}
+
+.kid-choice-card:active {
+    transform: scale(1.02) translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.choice-icon { 
+    font-size: 8rem; 
+    margin-bottom: 15px; 
+    animation: bounce-soft 3s infinite ease-in-out;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     z-index: 1;
 }
 
-.kid-choice-card:hover { 
-    transform: scale(1.0694);
-    border-color: var(--primary-pink);
-    z-index: 10; 
-    box-shadow: 0 0 25px var(--primary-pink), 0 0 50px rgba(255, 20, 147, 0.4); 
+.kid-choice-card:hover .choice-icon {
+    animation: wiggle-pop 0.6s ease;
+    transform: scale(1.15);
 }
 
-.choice-icon { font-size: 8rem; margin-bottom: 15px; animation: bounce-soft 3s infinite ease-in-out; }
-.choice-label-hi { font-size: 2.5rem; font-weight: 700; color: var(--deep-purple); font-family: 'Bubblegum Sans', cursive; text-align: center; }
+.choice-label-hi { 
+    font-size: 2.5rem; 
+    font-weight: 700; 
+    color: var(--deep-purple); 
+    font-family: 'Bubblegum Sans', cursive; 
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
 
-/* Sub-menu specialized gradients */
+.kid-choice-card:hover .choice-label-hi {
+    transform: scale(1.05);
+}
+
+/* Sub-menu specialized gradients with unique hover glows */
 .kid-choice-card.swar { background: linear-gradient(135deg, #FFF9C4 0%, #FFF176 100%); border-color: #FFF176; }
+.kid-choice-card.swar:hover { border-color: #FFD600; box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 35px rgba(255, 214, 0, 0.45), 0 0 70px rgba(255, 214, 0, 0.15); }
+
 .kid-choice-card.vyanjan { background: linear-gradient(135deg, #E1F5FE 0%, #81D4FA 100%); border-color: #81D4FA; }
+.kid-choice-card.vyanjan:hover { border-color: #29B6F6; box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 35px rgba(41, 182, 246, 0.45), 0 0 70px rgba(41, 182, 246, 0.15); }
+
 .kid-choice-card.samyukt { background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); border-color: #81C784; }
+.kid-choice-card.samyukt:hover { border-color: #43A047; box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 35px rgba(67, 160, 71, 0.45), 0 0 70px rgba(67, 160, 71, 0.15); }
+
 .kid-choice-card.magic { background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%); border-color: #BA68C8; }
+.kid-choice-card.magic:hover { border-color: #9C27B0; box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 35px rgba(156, 39, 176, 0.45), 0 0 70px rgba(156, 39, 176, 0.15); }
+
 .kid-choice-card.colors { background: linear-gradient(135deg, #FCE4EC 0%, #F06292 100%); border-color: #F06292; }
+.kid-choice-card.colors:hover { border-color: #E91E63; box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 35px rgba(233, 30, 99, 0.45), 0 0 70px rgba(233, 30, 99, 0.15); }
+
+@keyframes wiggle-pop {
+    0% { transform: scale(1) rotate(0deg); }
+    20% { transform: scale(1.2) rotate(-8deg); }
+    40% { transform: scale(1.15) rotate(8deg); }
+    60% { transform: scale(1.18) rotate(-4deg); }
+    80% { transform: scale(1.15) rotate(2deg); }
+    100% { transform: scale(1.15) rotate(0deg); }
+}
 
 /* Modern Back Button */
 button.nav-link {
