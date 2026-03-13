@@ -51,21 +51,40 @@
 
 .welcome-title {
     font-family: 'Bubblegum Sans', cursive;
-    font-size: 3.5rem;
-    color: var(--primary-pink);
-    text-shadow: 4px 4px 0px #fff, 0 10px 20px rgba(0, 0, 0, 0.1);
-    margin: 0 0 25px 0 !important;
+    font-size: 4rem;
+    background: linear-gradient(45deg, #FF1493, #FF8C00, #9400D3, #FF1493);
+    background-size: 300% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-align: center;
+    filter: drop-shadow(4px 4px 0px #ffffff) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+    margin: 0 0 15px 0 !important;
+    animation: gradient-shift 6s ease infinite, smooth-bounce 4s ease-in-out infinite;
+}
+
+#step-1 p {
+    font-size: 1.8rem !important;
+    color: #444 !important;
+    font-weight: 700 !important;
+    margin-bottom: 25px;
+    background: #ffffff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05), inset 0 0 10px rgba(255, 20, 147, 0.1);
+    border: 3px solid #FFDEE9;
+    animation: smooth-bounce 4s ease-in-out infinite alternate-reverse;
 }
 
 /* Start Button: Realistic Orb */
 .start-orb {
-    width: 220px;
-    height: 220px;
-    background: linear-gradient(145deg, #FF69B4, #FF1493);
-    border: 12px solid white;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle at 35% 35%, #ffb6c1 0%, #ff1493 50%, #c71585 100%);
+    border: 12px solid #ffffff;
     border-radius: 50%;
     color: white;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
     display: flex;
     flex-direction: column;
@@ -73,31 +92,98 @@
     justify-content: center;
     cursor: pointer;
     position: relative;
-    margin-top: 30px;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 30px rgba(255, 20, 147, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.4);
+    margin-top: 20px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 
+        0 15px 35px rgba(255, 20, 147, 0.5), 
+        inset 0 15px 25px rgba(255, 255, 255, 0.9),
+        inset 0 -15px 25px rgba(0, 0, 0, 0.2);
     font-family: 'Bubblegum Sans', cursive;
+    animation: float-orb 4s ease-in-out infinite;
 }
 
 .start-orb:hover {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 15px 45px rgba(255, 20, 147, 0.5);
+    transform: scale(1.2) translateY(-18px);
+    background: radial-gradient(circle at 40% 30%, #ffe4f3 0%, #ff69b4 35%, #ff1493 65%, #9400d3 100%);
+    border-color: #ffeb3b;
+    animation: none;
+    box-shadow: 
+        0 0 25px rgba(255, 20, 147, 0.8),
+        0 0 50px rgba(255, 105, 180, 0.5),
+        0 0 80px rgba(148, 0, 211, 0.3),
+        0 30px 50px rgba(255, 20, 147, 0.4),
+        inset 0 15px 30px rgba(255, 255, 255, 1),
+        inset 0 -10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.start-orb:hover::before {
+    border-color: rgba(255, 235, 59, 0.8);
+    animation: spin-ring 4s linear infinite;
+}
+
+.start-orb:hover::after {
+    border-color: rgba(148, 0, 211, 0.6);
+    animation: spin-ring 6s linear infinite reverse;
+}
+
+.start-orb:active {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 
+        0 0 15px rgba(255, 20, 147, 0.6),
+        0 10px 25px rgba(255, 20, 147, 0.3),
+        inset 0 10px 20px rgba(255, 255, 255, 0.8);
 }
 
 .start-orb span {
     font-family: 'Bubblegum Sans', cursive;
-    font-size: 2.5rem;
-    margin-top: 0px;
+    font-size: 2.8rem;
+    margin-top: 5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .start-orb::before {
     content: '';
     position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    border: 10px solid #FF0000;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: 4px dashed rgba(255, 20, 147, 0.6);
     border-radius: 50%;
-    animation: blink-ring 1s step-end infinite;
+    animation: spin-ring 12s linear infinite;
+    z-index: -1;
+}
+
+.start-orb::after {
+    content: '';
+    position: absolute;
+    top: -28px;
+    left: -28px;
+    right: -28px;
+    bottom: -28px;
+    border: 6px dotted rgba(255, 140, 0, 0.4);
+    border-radius: 50%;
+    animation: spin-ring 18s linear infinite reverse;
+    z-index: -1;
+}
+
+@keyframes float-orb {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes spin-ring {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes smooth-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
 }
