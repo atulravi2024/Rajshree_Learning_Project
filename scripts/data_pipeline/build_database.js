@@ -74,7 +74,7 @@ try {
             letter: row.Letter_Numeral,
             word: row.Word_Name,
             emoji: row.Icon_Emoji,
-            audio: (row.Audio_Path || '').replace(/^assets\//, '../assets/'),
+            audio: (row.Audio_Path || '').replace(/^assets\/audio\//, '').replace(/^assets\//, '../assets/'),
             word_en: row.Display_Word_En
         });
     });

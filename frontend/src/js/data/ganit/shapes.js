@@ -13,8 +13,4 @@ window.RAJSHREE_DATA.shapes = [
     { letter: 'पेंटागन', word: 'Pentagon', emoji: '🏠', audio: 'ganit/shapes/shape_pentagon.mp3', textOnly: false },
     { letter: 'अण्डा', word: 'Oval', emoji: '🥚', audio: 'ganit/shapes/shape_oval_funny.mp3', textOnly: false },
     { letter: 'बेलन', word: 'Cylinder', emoji: '🥖', audio: 'ganit/shapes/shape_cylinder.mp3', textOnly: false },
-    { letter: 'घन', word: 'Cube', emoji: '🧊', audio: 'ganit/shapes/shape_cube.mp3', textOnly: false },
-    { letter: 'गोला', word: 'Sphere', emoji: '⚽', audio: 'ganit/shapes/shape_sphere.mp3', textOnly: false },
-    { letter: 'शंकु', word: 'Cone', emoji: '🍦', audio: 'ganit/shapes/shape_cone.mp3', textOnly: false },
-    { letter: 'पिरामिड', word: 'Pyramid', emoji: '⛺', audio: 'ganit/shapes/shape_pyramid.mp3', textOnly: false },
 ];
