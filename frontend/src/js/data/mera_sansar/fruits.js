@@ -6,7 +6,7 @@ window.RAJSHREE_DATA.fruits = [
     { letter: 'के', word: 'केला', emoji: '🍌', audio: 'mera_sansar/fruits/banana.mp3', textOnly: false },
     { letter: 'सं', word: 'संतरा', emoji: '🍊', audio: 'mera_sansar/fruits/orange.mp3', textOnly: false },
     { letter: 'अं', word: 'अंगूर', emoji: '🍇', audio: 'mera_sansar/fruits/grapes.mp3', textOnly: false },
-    { letter: 'प', word: 'पपीता', emoji: '🫒', audio: 'mera_sansar/fruits/papaya.mp3', textOnly: false },
+    { letter: 'प', word: 'पपीता', emoji: '🍈', audio: 'mera_sansar/fruits/papaya.mp3', textOnly: false },
     { letter: 'त', word: 'तरबूज', emoji: '🍉', audio: 'mera_sansar/fruits/watermelon.mp3', textOnly: false },
     { letter: 'अ', word: 'अमरूद', emoji: '🍐', audio: 'mera_sansar/fruits/guava.mp3', textOnly: false },
     { letter: 'अ', word: 'अनानास', emoji: '🍍', audio: 'mera_sansar/fruits/pineapple.mp3', textOnly: false },

@@ -1,9 +1,9 @@
 if (!window.RAJSHREE_DATA) window.RAJSHREE_DATA = {};
 
 window.RAJSHREE_DATA.vyanjan = [
-    { letter: 'क', word: 'कमल', emoji: '🌸', audio: 'varnamala/vyanjan/ka.mp3', textOnly: false },
+    { letter: 'क', word: 'कमल', emoji: '🪷', audio: 'varnamala/vyanjan/ka.mp3', textOnly: false },
     { letter: 'ख', word: 'खरगोश', emoji: '🐇', audio: 'varnamala/vyanjan/kha.mp3', textOnly: false },
-    { letter: 'ग', word: 'गमला', emoji: '🌻', audio: 'varnamala/vyanjan/ga_new.mp3', textOnly: false },
+    { letter: 'ग', word: 'गमला', emoji: '🪴', audio: 'varnamala/vyanjan/ga_new.mp3', textOnly: false },
     { letter: 'घ', word: 'घर', emoji: '🏠', audio: 'varnamala/vyanjan/gha.mp3', textOnly: false },
     { letter: 'ङ', word: 'खाली', emoji: '', type: 'red-circle', audio: 'varnamala/vyanjan/nga.mp3', textOnly: false },
     { letter: 'च', word: 'चकला', emoji: '🟡', audio: 'varnamala/vyanjan/cha.mp3', textOnly: false },
@@ -14,7 +14,7 @@ window.RAJSHREE_DATA.vyanjan = [
     { letter: 'ट', word: 'टमाटर', emoji: '🍅', audio: 'varnamala/vyanjan/ta.mp3', textOnly: false },
     { letter: 'ठ', word: 'ठठेरा', emoji: '🔨', audio: 'varnamala/vyanjan/ttha.mp3', textOnly: false },
     { letter: 'ड', word: 'डमरू', emoji: '🥁', audio: 'varnamala/vyanjan/da.mp3', textOnly: false },
-    { letter: 'ढ', word: 'ढक्कन', emoji: '🍲', audio: 'varnamala/vyanjan/ddha_new.mp3', textOnly: false },
+    { letter: 'ढ', word: 'ढक्कन', emoji: '🥘', audio: 'varnamala/vyanjan/ddha_new.mp3', textOnly: false },
     { letter: 'ण', word: 'खाली', emoji: '', type: 'red-circle', audio: 'varnamala/vyanjan/nna.mp3', textOnly: false },
     { letter: 'त', word: 'तरबूज', emoji: '🍉', audio: 'varnamala/vyanjan/taa.mp3', textOnly: false },
     { letter: 'थ', word: 'थाली', emoji: '🍽️', audio: 'varnamala/vyanjan/tha.mp3', textOnly: false },

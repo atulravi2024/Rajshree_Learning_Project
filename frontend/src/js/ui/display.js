@@ -27,49 +27,45 @@ function renderCards() {
         else backContent = `<div style="display:flex; align-items:center; justify-content:center; height:100%; font-size:10vh; font-weight:700; color:#4B0082;">${data.letter}</div>`;
 
         let frontContent = '';
-        if (window.selectedCategory.startsWith('colors')) {
-            frontContent = `<div style="width:120px; height:120px; background:${data.color}; border-radius:50%; border:5px solid white;" class="emoji-animate"></div><div class="text-group"><span class="letter" style="font-size:10vh">${data.letter}</span><span class="word" style="font-size:5vh">${data.word}</span></div>`;
+        const emojis = Array.from(data.emoji || '');
+        const emojiCount = emojis.length;
+        const isImage = (data.emoji || '').toLowerCase().endsWith('.png') || (data.emoji || '').toLowerCase().endsWith('.jpg') || (data.emoji || '').toLowerCase().includes('assets/');
+        const isRedCircle = data.type === 'red-circle';
+        
+        let emojiHtml = '';
+        if (isRedCircle) {
+            emojiHtml = `<div class="khali-circle" style="width: var(--dynamic-emoji-size, 15vh); height: var(--dynamic-emoji-size, 15vh); border: 1vh solid #F44336; border-radius: 50%; box-shadow: 0 0 20px rgba(244, 67, 54, 0.3); position: relative;">
+                <div style="position: absolute; top: 10%; left: 10%; right: 10%; bottom: 10%; border: 0.5vh dashed #333; border-radius: 50%;"></div>
+            </div>`;
+        } else if (isImage) {
+            emojiHtml = `<img src="${data.emoji}" class="emoji-img" alt="${data.word}" style="width: var(--dynamic-emoji-size, 15vh); height: auto;">`;
         } else {
-            const emojis = Array.from(data.emoji || '');
-            const emojiCount = emojis.length;
-            const isImage = (data.emoji || '').toLowerCase().endsWith('.png') || (data.emoji || '').toLowerCase().endsWith('.jpg') || (data.emoji || '').toLowerCase().includes('assets/');
-            const isRedCircle = data.type === 'red-circle';
-            
-            let emojiHtml = '';
-            if (isRedCircle) {
-                emojiHtml = `<div class="khali-circle" style="width: var(--dynamic-emoji-size, 15vh); height: var(--dynamic-emoji-size, 15vh); border: 1vh solid #F44336; border-radius: 50%; box-shadow: 0 0 20px rgba(244, 67, 54, 0.3); position: relative;">
-                    <div style="position: absolute; top: 10%; left: 10%; right: 10%; bottom: 10%; border: 0.5vh dashed #333; border-radius: 50%;"></div>
-                </div>`;
-            } else if (isImage) {
-                emojiHtml = `<img src="${data.emoji}" class="emoji-img" alt="${data.word}" style="width: var(--dynamic-emoji-size, 15vh); height: auto;">`;
-            } else {
-                emojiHtml = emojis.map(e => `<span>${e}</span>`).join('');
-            }
-            
-            const isCounting = window.selectedCategory === 'numbers_10' || window.selectedCategory === 'numbers_100';
-            const emojiClass = isCounting ? 'emoji emoji-animate flex-wrap-counting' : 'emoji emoji-animate';
-
-            let dynamicEmojiSize = 'var(--emoji-size)';
-            let dynamicTextScale = '1';
-
-            if (isCounting) {
-                if (emojiCount === 1) dynamicEmojiSize = 'var(--emoji-size)';
-                else if (emojiCount === 2) dynamicEmojiSize = 'calc(var(--emoji-size) * 0.9)'; 
-                else if (emojiCount <= 5) dynamicEmojiSize = 'calc(var(--emoji-size) * 0.45)';
-                else if (emojiCount <= 10) dynamicEmojiSize = 'calc(var(--emoji-size) * 0.4)';
-                else dynamicEmojiSize = 'calc(var(--emoji-size) * 0.3)';
-            }
-            if (emojiCount >= 10) dynamicEmojiSize = 'calc(var(--emoji-size) * 0.35)';
-
-            frontContent = `
-                <div class="${emojiClass}" style="--dynamic-emoji-size: ${dynamicEmojiSize}">
-                    ${emojiHtml}
-                </div>
-                <div class="text-group" style="--text-scale: ${dynamicTextScale}">
-                    <span class="letter">${data.letter}</span>
-                    <span class="word">${data.word}</span>
-                </div>`;
+            emojiHtml = emojis.map(e => `<span>${e}</span>`).join('');
         }
+        
+        const isCounting = window.selectedCategory === 'numbers_10' || window.selectedCategory === 'numbers_100';
+        const emojiClass = isCounting ? 'emoji emoji-animate flex-wrap-counting' : 'emoji emoji-animate';
+
+        let dynamicEmojiSize = 'var(--emoji-size)';
+        let dynamicTextScale = '1';
+
+        if (isCounting) {
+            if (emojiCount === 1) dynamicEmojiSize = 'var(--emoji-size)';
+            else if (emojiCount === 2) dynamicEmojiSize = 'calc(var(--emoji-size) * 0.9)'; 
+            else if (emojiCount <= 5) dynamicEmojiSize = 'calc(var(--emoji-size) * 0.45)';
+            else if (emojiCount <= 10) dynamicEmojiSize = 'calc(var(--emoji-size) * 0.4)';
+            else dynamicEmojiSize = 'calc(var(--emoji-size) * 0.3)';
+        }
+        if (emojiCount >= 10) dynamicEmojiSize = 'calc(var(--emoji-size) * 0.35)';
+
+        frontContent = `
+            <div class="${emojiClass}" style="--dynamic-emoji-size: ${dynamicEmojiSize}">
+                ${emojiHtml}
+            </div>
+            <div class="text-group" style="--text-scale: ${dynamicTextScale}">
+                <span class="letter">${data.letter}</span>
+                <span class="word">${data.word}</span>
+            </div>`;
         card.innerHTML = `<div class="card-inner"><div class="card-front">${frontContent}</div><div class="card-back">${backContent}</div></div><div class="progress-container"><div class="progress-bar"></div></div>`;
         master.appendChild(card);
     });

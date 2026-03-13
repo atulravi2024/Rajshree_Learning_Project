@@ -1,8 +1,6 @@
 if (!window.RAJSHREE_DATA) window.RAJSHREE_DATA = {};
 
 window.RAJSHREE_DATA.vegetables = [
-    { letter: 'आलू', word: 'Potato', emoji: '🥔', audio: 'mera_sansar/fruits_vegetables/vegetables/potato.mp3', textOnly: false },
-    { letter: 'टमाटर', word: 'Tomato', emoji: '🍅', audio: 'mera_sansar/fruits_vegetables/vegetables/tomato.mp3', textOnly: false },
     { letter: 'आ', word: 'आलू', emoji: '🥔', audio: 'mera_sansar/vegetables/potato.mp3', textOnly: false },
     { letter: 'ट', word: 'टमाटर', emoji: '🍅', audio: 'mera_sansar/vegetables/tomato.mp3', textOnly: false },
     { letter: 'प्या', word: 'प्याज', emoji: '🧅', audio: 'mera_sansar/vegetables/onion.mp3', textOnly: false },

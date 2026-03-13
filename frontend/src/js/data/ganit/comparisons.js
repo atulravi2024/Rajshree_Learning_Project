@@ -9,7 +9,7 @@ window.RAJSHREE_DATA.comparisons = [
     { letter: 'अन्दर-बाहर', word: 'In & Out', emoji: '🏠🚪', audio: 'ganit/comparisons/comp_in_out.mp3', textOnly: false },
     { letter: 'पास-दूर', word: 'Near & Far', emoji: '📍🏔️', audio: 'ganit/comparisons/comp_near_far.mp3', textOnly: false },
     { letter: 'खुला-बंद', word: 'Open & Closed', emoji: '📖📕', audio: 'ganit/comparisons/comp_open_closed.mp3', textOnly: false },
-    { letter: 'साफ़-गंदा', word: 'Clean & Dirty', emoji: '✨👕', audio: 'ganit/comparisons/comp_clean_dirty.mp3', textOnly: false },
+    { letter: 'साफ़-गंदा', word: 'Clean & Dirty', emoji: '✨', audio: 'ganit/comparisons/comp_clean_dirty.mp3', textOnly: false },
     { letter: 'हल्का-गहरा', word: 'Light & Dark', emoji: '🎨', audio: 'ganit/comparisons/comp_light_dark.mp3', textOnly: false },
     { letter: 'तेज़-धीरे', word: 'Fast & Slow', emoji: '🚀🐢', audio: 'ganit/comparisons/comp_fast_slow.mp3', textOnly: false },
     { letter: 'सूखा-गीला', word: 'Dry & Wet', emoji: '⛱️🌧️', audio: 'ganit/comparisons/comp_dry_wet.mp3', textOnly: false },
