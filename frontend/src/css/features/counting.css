@@ -26,6 +26,10 @@
     margin: 0 !important;
 }
 
+.emoji.flex-wrap-counting span:only-child {
+    width: 100% !important;
+}
+
 /* Ensure centering for small counts */
 .emoji.flex-wrap-counting:has(span:nth-child(1):last-child),
 .emoji.flex-wrap-counting:has(span:nth-child(2):last-child) {

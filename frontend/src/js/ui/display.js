@@ -7,6 +7,7 @@ function renderCards() {
     const master = document.getElementById('master-container');
     if (!master) return;
     master.innerHTML = '';
+    const segmenter = new Intl.Segmenter('en', { granularity: 'grapheme' });
     window.activeCardsData.forEach((data, index) => {
         const card = document.createElement('div');
         const isHundred = data.value === '100';
@@ -27,7 +28,7 @@ function renderCards() {
         else backContent = `<div style="display:flex; align-items:center; justify-content:center; height:100%; font-size:10vh; font-weight:700; color:#4B0082;">${data.letter}</div>`;
 
         let frontContent = '';
-        const emojis = Array.from(data.emoji || '');
+        const emojis = [...segmenter.segment(data.emoji || '')].map(s => s.segment);
         const emojiCount = emojis.length;
         const isImage = (data.emoji || '').toLowerCase().endsWith('.png') || (data.emoji || '').toLowerCase().endsWith('.jpg') || (data.emoji || '').toLowerCase().includes('assets/');
         const isRedCircle = data.type === 'red-circle';
