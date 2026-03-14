@@ -15,6 +15,24 @@ try {
 
     // Group exactly by the JS object keys used in Rajshree
     const outputData = {};
+    const digitEmojis = {};
+
+    // Pre-pass to collect all digit emojis for numbers 1-9
+    data.forEach(row => {
+        if (row.Status !== 'active' && row.Status !== '') return;
+        if (row.Title === 'Sankhya' && row.MainMenu === 'Ginti') {
+            const letter = String(row.Letter_Numeral).trim();
+            if (letter.length === 1 && letter >= '1' && letter <= '9') {
+                digitEmojis[letter] = row.Icon_Emoji;
+            }
+        }
+    });
+
+    // Forced overrides as requested by USER
+    digitEmojis['0'] = '🥚';
+    digitEmojis['3'] = '🚁';
+
+    console.log('DEBUG: digitEmojis mapping:', digitEmojis);
 
     data.forEach(row => {
         if (row.Status !== 'active' && row.Status !== '') return;
@@ -70,10 +88,39 @@ try {
 
         if (!outputData[fileMap.key]) outputData[fileMap.key] = { data: [], folder: fileMap.folder };
 
+        const letter = String(row.Letter_Numeral).trim();
+        let iconEmoji = row.Icon_Emoji;
+
+        // Apply overrides for digits if specifically defined in digitEmojis (like 0 and 3)
+        if (digitEmojis[letter]) {
+            iconEmoji = digitEmojis[letter];
+        }
+
+        // Logic for numbers 11-99 in Ginti: combine digit emojis
+        if (row.Title === 'Sankhya' && row.MainMenu === 'Ginti' && row.SubMenu === '1-100') {
+            const num = parseInt(letter);
+            
+            // Re-apply overrides just in case
+            digitEmojis['0'] = '🥚';
+            digitEmojis['3'] = '🚁';
+
+            if (num >= 11 && num <= 99) {
+                // IMPORTANT: Use the digitEmojis mapping which contains our overrides
+                iconEmoji = letter.split('').map(digit => digitEmojis[digit] || '').join('');
+            } else if (num === 100) {
+                iconEmoji = '💯';
+            }
+        }
+
+        // Apply override once more for the single digit case
+        if (letter === '3' && row.Title === 'Sankhya' && row.MainMenu === 'Ginti') iconEmoji = '🚁';
+        if (letter === '0') iconEmoji = '🥚';
+
         outputData[fileMap.key].data.push({
-            letter: row.Letter_Numeral,
+            letter: letter,
             word: row.Word_Name,
-            emoji: row.Icon_Emoji,
+            emoji: iconEmoji,
+            value: letter,
             audio: (row.Audio_Path || '').replace(/^assets\/audio\//, '').replace(/^assets\//, '../assets/'),
             word_en: row.Display_Word_En
         });
@@ -88,7 +135,7 @@ try {
         jsOutput += `window.RAJSHREE_DATA.${key} = [\n`;
 
         outputData[key].data.forEach(item => {
-            jsOutput += `    { letter: '${item.letter}', word: '${item.word}', emoji: '${item.emoji}', audio: '${item.audio}', textOnly: ${item.word === 'खाली' ? 'false' : (item.word === '' ? 'true' : 'false')} },\n`;
+            jsOutput += `    { letter: '${item.letter}', word: '${item.word}', emoji: '${item.emoji}', value: '${item.value}', audio: '${item.audio}', textOnly: ${item.word === 'खाली' ? 'false' : (item.word === '' ? 'true' : 'false')} },\n`;
         });
 
         jsOutput += `];\n`;

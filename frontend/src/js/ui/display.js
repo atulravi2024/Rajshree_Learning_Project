@@ -13,7 +13,7 @@ function renderCards() {
         const isHundred = data.value === '100';
         card.className = `card ${window.selectedCategory}-card ${isHundred ? 'special-hundred' : ''} hidden`;
         card.onclick = () => flipCard(card, data.audio);
-        
+
         let backContent = '';
         if (data.image) backContent = `<img class="flash-image" src="${data.image}" alt="${data.word}">`;
         else if (data.content) backContent = `<div style="font-size:6vh; padding:20px;">${data.content}</div>`;
@@ -32,7 +32,7 @@ function renderCards() {
         const emojiCount = emojis.length;
         const isImage = (data.emoji || '').toLowerCase().endsWith('.png') || (data.emoji || '').toLowerCase().endsWith('.jpg') || (data.emoji || '').toLowerCase().includes('assets/');
         const isRedCircle = data.type === 'red-circle';
-        
+
         let emojiHtml = '';
         if (isRedCircle) {
             emojiHtml = `<div class="khali-circle" style="width: var(--dynamic-emoji-size, 15vh); height: var(--dynamic-emoji-size, 15vh); border: 1vh solid #F44336; border-radius: 50%; box-shadow: 0 0 20px rgba(244, 67, 54, 0.3); position: relative;">
@@ -43,7 +43,7 @@ function renderCards() {
         } else {
             emojiHtml = emojis.map(e => `<span>${e}</span>`).join('');
         }
-        
+
         const isCounting = window.selectedCategory === 'numbers_10' || window.selectedCategory === 'numbers_100';
         const emojiClass = isCounting ? 'emoji emoji-animate flex-wrap-counting' : 'emoji emoji-animate';
 
@@ -52,7 +52,7 @@ function renderCards() {
 
         if (isCounting) {
             if (emojiCount === 1) dynamicEmojiSize = 'var(--emoji-size)';
-            else if (emojiCount === 2) dynamicEmojiSize = 'calc(var(--emoji-size) * 0.9)'; 
+            else if (emojiCount === 2) dynamicEmojiSize = 'var(--emoji-size)';
             else if (emojiCount <= 5) dynamicEmojiSize = 'calc(var(--emoji-size) * 0.45)';
             else if (emojiCount <= 10) dynamicEmojiSize = 'calc(var(--emoji-size) * 0.4)';
             else dynamicEmojiSize = 'calc(var(--emoji-size) * 0.3)';
@@ -77,20 +77,20 @@ function updateDisplay() {
     const nextBtn = document.getElementById('next-btn');
     const master = document.getElementById('master-container');
     if (!master) return;
-    
+
     // SVG Icons (from original script logic)
     if (prevBtn) prevBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:60%; height:60%;"><path d="M15 19L8 12L15 5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     if (nextBtn) nextBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:60%; height:60%;"><path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
     const cards = Array.from(master.children);
     master.classList.remove('grid-1', 'grid-3', 'vertical-scroll', 'fit-screen');
-    prevBtn?.classList.remove('large-arrows'); 
+    prevBtn?.classList.remove('large-arrows');
     nextBtn?.classList.remove('large-arrows');
-    master.style.gridTemplateColumns = ''; 
+    master.style.gridTemplateColumns = '';
     master.style.gridTemplateRows = '';
     master.style.gridAutoRows = '';
     document.body.style.overflow = 'hidden';
-    
+
     if (window.currentLayout === 'all') {
         master.classList.add('vertical-scroll'); prevBtn?.classList.add('hidden'); nextBtn?.classList.add('hidden');
         cards.forEach(card => card.classList.remove('hidden', 'is-flipped'));
@@ -144,10 +144,10 @@ function applySelection() {
     updateDisplay();
 }
 
-function updateLayout(layout) { 
+function updateLayout(layout) {
     if (window.isSlideshowActive) return;
-    window.currentLayout = layout; 
-    window.currentIndex = 0; 
+    window.currentLayout = layout;
+    window.currentIndex = 0;
     const layoutIcon = document.querySelector('#nav-layout .hi');
     if (layoutIcon) {
         let icon = '📐';
@@ -157,7 +157,7 @@ function updateLayout(layout) {
         else if (layout === 'fit') icon = '📺';
         layoutIcon.innerText = icon;
     }
-    updateDisplay(); 
+    updateDisplay();
 }
 
 function next(force = false) {
@@ -166,7 +166,7 @@ function next(force = false) {
     if (window.currentIndex + step < window.activeCardsData.length) { window.currentIndex += step; updateDisplay(); }
 }
 function prev(force = false) {
-    if (window.isSlideshowActive && !force) return; 
+    if (window.isSlideshowActive && !force) return;
     let step = (window.currentLayout === '3') ? 3 : 1;
     if (window.currentIndex - step >= 0) { window.currentIndex -= step; updateDisplay(); }
 }

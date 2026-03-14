@@ -5,9 +5,9 @@
     justify-content: center !important;
     align-items: center !important;
     align-content: center !important;
-    gap: 15px; 
+    gap: 15px;
     padding: 0 !important;
-    max-height: 40% !important; 
+    max-height: 40% !important;
     width: 100% !important;
     margin: 0 auto !important;
     animation: none !important;
@@ -19,7 +19,8 @@
     align-items: center !important;
     justify-content: center !important;
     font-size: var(--dynamic-emoji-size) !important;
-    width: calc(20% - 12px) !important; /* Mathematical 5 columns: (100% / 5) minus gap allowance */
+    width: auto !important; /* Allow emojis to take their natural width */
+    min-width: calc(var(--dynamic-emoji-size) * 0.9) !important;
     aspect-ratio: 1/1 !important;
     text-align: center !important;
     animation: playful-bounce 3s infinite ease-in-out !important;
@@ -36,6 +37,7 @@
     display: flex !important;
     justify-content: center !important;
     width: 100% !important;
+    gap: 3vh !important; /* Provide a "single visual space bar" gap */
 }
 
 /* Global Fit Screen Layout Rule: Hide Words on Front Side */
@@ -55,21 +57,25 @@
 }
 
 .fit-screen .numbers_100-card .card-front .text-group {
-    display: none !important; /* Numbers 1-100: Icon Only on Front */
+    display: none !important;
+    /* Numbers 1-100: Icon Only on Front */
 }
 
 .fit-screen .numbers_100-card .card-front .emoji span {
-    font-size: calc(var(--emoji-size) * 0.5) !important; /* Set to exactly 50% */
+    font-size: calc(var(--emoji-size) * 0.5) !important;
+    /* Set to exactly 50% */
 }
 
 /* EXCLUSIVE SCOPE: Vyanjan ONLY (Fit Screen Layout ONLY) */
 .fit-screen .vyanjan-card .emoji span,
 .fit-screen .vyanjan-card .emoji {
-    font-size: calc(var(--emoji-size) * 0.7) !important; /* Smaller icon for Vyanjan */
+    font-size: calc(var(--emoji-size) * 0.7) !important;
+    /* Smaller icon for Vyanjan */
 }
 
 .fit-screen .vyanjan-card .letter {
-    font-size: calc(var(--letter-size) * 0.7) !important; /* Smaller letter for Vyanjan */
+    font-size: calc(var(--letter-size) * 0.7) !important;
+    /* Smaller letter for Vyanjan */
 }
 
 /* Special Styling for Number 100 (💯) */
