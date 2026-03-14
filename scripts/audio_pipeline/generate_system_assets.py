@@ -1,4 +1,4 @@
-import edge_tts
+import edge_tts  # type: ignore[import-not-found]
 import asyncio
 import os
 

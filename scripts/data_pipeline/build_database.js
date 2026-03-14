@@ -153,7 +153,7 @@ try {
                 if (row.SubMenu === 'Primary') fileMap = { key: 'colors_primary', folder: 'rangon_ka_sansar' };
                 else if (row.SubMenu === 'Secondary') fileMap = { key: 'colors_secondary', folder: 'rangon_ka_sansar' };
                 else if (row.SubMenu === 'Natural') fileMap = { key: 'colors_natural', folder: 'rangon_ka_sansar' };
-                else if (row.SubMenu === 'Sagar') fileMap = { key: 'colors_sagar', folder: 'rangon_ka_sansar' };
+
                 else {
                     if (row.DeepSubMenu === 'Pink/Red') fileMap = { key: 'colors_pink_red', folder: 'rangon_ka_sansar' };
                     else if (row.DeepSubMenu === 'Blue/Green') fileMap = { key: 'colors_blue_green', folder: 'rangon_ka_sansar' };

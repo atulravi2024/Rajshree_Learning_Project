@@ -1,7 +1,7 @@
 import os
 import asyncio
-from gtts import gTTS
-import edge_tts
+from gtts import gTTS  # type: ignore[import-not-found]
+import edge_tts  # type: ignore[import-not-found]
 
 base_path = r"c:\Users\Atul Verma\.openclaw\workspace\RajShree_Project\Rajshree Learning Project\Audio Demo"
 
