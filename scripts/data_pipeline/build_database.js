@@ -17,6 +17,86 @@ try {
     const outputData = {};
     const digitEmojis = {};
 
+    const COLOR_EMOJI_OVERRIDES = {
+        'Red': '🍎',
+        'Blue': '🌊',
+        'Green': '🌿',
+        'Yellow': '🍌',
+        'Black': '⚫',
+        'White': '🥛',
+        'Brown': '🐻',
+        'Pink': '🎀',
+        'Orange': '🍊',
+        'Purple': '🍇',
+        'Grey': '🗿',
+        'Maroon': '🧱',
+        'Magenta': '🟣',
+        'Beige': '🥜',
+        'Khaki': '🧥',
+        'Turquoise': '💎',
+        'Golden': '🏆',
+        'Silver': '🥈',
+        'Off-White': '🧊',
+        'Camphor White': '🧊',
+        'Slate': '🗿',
+        'Violet': '🍆',
+        'Plum': '🍇',
+        'Antimony': '🌚',
+        'Golden Yellow': '🌼',
+        'Ochre': '🏺',
+        'Spring Yellow': '🌻',
+        'Mung Green': '🫘',
+        'Brinjal Purple': '🍆',
+        'Jamun Purple': '🫐',
+        'Pomegranate Red': '🍎',
+        'Moss Green': '🌿',
+        'Turmeric Yellow': '🫚',
+        'Henna Green': '🍃',
+        'Dust Color': '🧥',
+        'Parrot Green': '🦜',
+        'Slate Grey': '🗿',
+        'Ruby Red': '💎',
+        'Silvery': '🥈',
+        'Copper': '🏺',
+        'Bronze': '🥉',
+        'Shiny': '✨',
+        'Matte': '🌫️',
+        'Light Pink': '🌸',
+        'Dark Pink': '🌺',
+        'Onion Pink': '🧅',
+        'Crimson': '🌹',
+        'Bright Pink': '🍭',
+        'Brick Red': '🧱',
+        'Light Blue': '🌤️',
+        'Navy Blue': '🔵',
+        'Light Green': '🌱',
+        'Dark Green': '🌲',
+        'Light Brown': '🥨',
+        'Dark Brown': '🐻',
+        'Sandalwood': '🪵',
+        'Clay': '🏺'
+    };
+
+    const COLOR_HEX_OVERRIDES = {
+        'Red': '#FF0000', 'Blue': '#0000FF', 'Green': '#008000', 'Yellow': '#FFFF00',
+        'Black': '#000000', 'White': '#FFFFFF', 'Brown': '#8B4513', 'Pink': '#FFC0CB',
+        'Orange': '#FFA500', 'Purple': '#800080', 'Grey': '#808080', 'Maroon': '#800000',
+        'Magenta': '#FF00FF', 'Beige': '#F5F5DC', 'Khaki': '#C3B091', 'Turquoise': '#40E0D0',
+        'Golden': '#FFD700', 'Silver': '#C0C0C0', 'Off-White': '#FAF9F6', 'Camphor White': '#FAF9F6',
+        'Slate': '#708090', 'Violet': '#8F00FF', 'Plum': '#8E4585', 'Antimony': '#333333',
+        'Golden Yellow': '#FFDF00', 'Ochre': '#CC7722', 'Spring Yellow': '#ECEBB0',
+        'Mung Green': '#89A84E', 'Brinjal Purple': '#4B0082', 'Jamun Purple': '#3A125E',
+        'Pomegranate Red': '#C0392B', 'Moss Green': '#8A9A5B', 'Turmeric Yellow': '#E8D33F',
+        'Henna Green': '#2D5A27', 'Dust Color': '#C3B091', 'Parrot Green': '#37FD12',
+        'Slate Grey': '#708090', 'Ruby Red': '#E0115F', 'Silvery': '#C0C0C0',
+        'Copper': '#B87333', 'Bronze': '#CD7F32', 'Shiny': '#E0F7FA', 'Matte': '#757575',
+        'Light Pink': '#FFB6C1', 'Dark Pink': '#FF1493', 'Onion Pink': '#D2B48C',
+        'Crimson': '#DC143C', 'Bright Pink': '#FF69B4', 'Brick Red': '#B22222',
+        'Light Blue': '#ADD8E6', 'Navy Blue': '#000080', 'Light Green': '#90EE90',
+        'Dark Green': '#006400', 'Light Brown': '#996633', 'Dark Brown': '#654321',
+        'Sandalwood': '#C2B280', 'Clay': '#856D4D'
+    };
+
     // Pre-pass to collect all digit emojis for numbers 1-9
     data.forEach(row => {
         if (row.Status !== 'active' && row.Status !== '') return;
@@ -73,6 +153,7 @@ try {
                 if (row.SubMenu === 'Primary') fileMap = { key: 'colors_primary', folder: 'rangon_ka_sansar' };
                 else if (row.SubMenu === 'Secondary') fileMap = { key: 'colors_secondary', folder: 'rangon_ka_sansar' };
                 else if (row.SubMenu === 'Natural') fileMap = { key: 'colors_natural', folder: 'rangon_ka_sansar' };
+                else if (row.SubMenu === 'Sagar') fileMap = { key: 'colors_sagar', folder: 'rangon_ka_sansar' };
                 else {
                     if (row.DeepSubMenu === 'Pink/Red') fileMap = { key: 'colors_pink_red', folder: 'rangon_ka_sansar' };
                     else if (row.DeepSubMenu === 'Blue/Green') fileMap = { key: 'colors_blue_green', folder: 'rangon_ka_sansar' };
@@ -94,6 +175,11 @@ try {
         // Apply overrides for digits if specifically defined in digitEmojis (like 0 and 3)
         if (digitEmojis[letter]) {
             iconEmoji = digitEmojis[letter];
+        }
+
+        // Apply Color Overrides
+        if (row.MainMenu === 'Colors' && COLOR_EMOJI_OVERRIDES[row.Word_Name]) {
+            iconEmoji = COLOR_EMOJI_OVERRIDES[row.Word_Name];
         }
 
         // Logic for numbers 11-99 in Ginti: combine digit emojis
@@ -122,7 +208,8 @@ try {
             emoji: iconEmoji,
             value: letter,
             audio: (row.Audio_Path || '').replace(/^assets\/audio\//, '').replace(/^assets\//, '../assets/'),
-            word_en: row.Display_Word_En
+            word_en: row.Display_Word_En,
+            color: COLOR_HEX_OVERRIDES[row.Word_Name] || ''
         });
     });
 
@@ -135,7 +222,8 @@ try {
         jsOutput += `window.RAJSHREE_DATA.${key} = [\n`;
 
         outputData[key].data.forEach(item => {
-            jsOutput += `    { letter: '${item.letter}', word: '${item.word}', emoji: '${item.emoji}', value: '${item.value}', audio: '${item.audio}', textOnly: ${item.word === 'खाली' ? 'false' : (item.word === '' ? 'true' : 'false')} },\n`;
+            const colorProp = item.color ? `, color: '${item.color}'` : '';
+            jsOutput += `    { letter: '${item.letter}', word: '${item.word}', emoji: '${item.emoji}', value: '${item.value}', audio: '${item.audio}', textOnly: ${item.word === 'खाली' ? 'false' : (item.word === '' ? 'true' : 'false')}${colorProp} },\n`;
         });
 
         jsOutput += `];\n`;

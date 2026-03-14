@@ -15,10 +15,14 @@ function renderCards() {
         card.onclick = () => flipCard(card, data.audio);
 
         let backContent = '';
+        let backStyle = '';
         if (data.image) backContent = `<img class="flash-image" src="${data.image}" alt="${data.word}">`;
         else if (data.content) backContent = `<div style="font-size:6vh; padding:20px;">${data.content}</div>`;
+        else if (data.color) {
+            backContent = ''; // Solid color, no text usually requested
+            backStyle = `style="background:${data.color} !important; border-color:${data.color} !important; outline:none !important;"`;
+        }
         else if (data.value) backContent = `<div style="font-size:15vh; font-weight:700;">${data.value}</div>`;
-        else if (data.color) backContent = `<div style="background:${data.color} !important; width:100%; height:100%;"></div>`;
         else if (data.type === 'circle') backContent = `<div style="width:250px; height:250px; background:${data.color}; border-radius:50%; border:10px solid white;"></div>`;
         else if (data.type === 'square') backContent = `<div style="width:250px; height:250px; background:${data.color}; border:10px solid white;"></div>`;
         else if (data.type === 'triangle') backContent = `<div style="width:0; height:0; border-left:125px solid transparent; border-right:125px solid transparent; border-bottom:216px solid ${data.color};"></div>`;
@@ -67,7 +71,7 @@ function renderCards() {
                 <span class="letter">${data.letter}</span>
                 <span class="word">${data.word}</span>
             </div>`;
-        card.innerHTML = `<div class="card-inner"><div class="card-front">${frontContent}</div><div class="card-back">${backContent}</div></div><div class="progress-container"><div class="progress-bar"></div></div>`;
+        card.innerHTML = `<div class="card-inner"><div class="card-front">${frontContent}</div><div class="card-back" ${backStyle}>${backContent}</div></div><div class="progress-container"><div class="progress-bar"></div></div>`;
         master.appendChild(card);
     });
 }

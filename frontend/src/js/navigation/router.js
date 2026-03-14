@@ -128,7 +128,7 @@ function showSubCategory(mainCat) {
         container.innerHTML = createChoiceCardFinal('📅', 'सप्ताह के दिन', 'days_week', 'vyanjan') + createChoiceCardFinal('🗓️', 'साल के महीने', 'months_year', 'swar');
     } else if (mainCat === 'colors_main') {
         title.innerText = 'रंगों के नाम';
-        container.innerHTML = createChoiceCardFinal('❤️', 'प्राथमिक रंग (Primary)', 'colors_primary', 'swar') + createChoiceCardFinal('💚', 'द्वितीयक रंग (Secondary)', 'colors_secondary', 'vyanjan') + createChoiceCardFinal('🌿', 'प्राकृतिक रंग (Natural)', 'colors_natural', 'samyukt') + createChoiceCardDeep('🌈', 'रंगों का संसार', 'colors_world_main');
+        container.innerHTML = createChoiceCardFinal('❤️', 'प्राथमिक रंग (Primary)', 'colors_primary', 'swar') + createChoiceCardFinal('💚', 'द्वितीयक रंग (Secondary)', 'colors_secondary', 'vyanjan') + createChoiceCardFinal('🌿', 'प्राकृतिक रंग (Natural)', 'colors_natural', 'samyukt') + createChoiceCardFinal('🌈', 'रंगों का सागर', 'colors_sagar', 'magic') + createChoiceCardDeep('🌈', 'रंगों का संसार', 'colors_world_main');
     }
 }
 
@@ -201,7 +201,7 @@ function finishSetup(category) {
         'fruits': 'system/intros/final_fruits.mp3', 'vegetables': 'system/intros/final_vegetables.mp3',
         'habits': 'system/intros/final_habits.mp3', 'days_week': 'system/intros/final_days_week.mp3', 'months_year': 'system/intros/final_months_year.mp3',
         'nature': 'system/intros/final_nature.mp3', 'directions': 'system/intros/final_directions.mp3',
-        'colors_primary': 'system/intros/final_colors_primary.mp3', 'colors_secondary': 'system/intros/final_colors_secondary.mp3', 'colors_natural': 'system/intros/final_colors_natural.mp3',
+        'colors_primary': 'system/intros/final_colors_primary.mp3', 'colors_secondary': 'system/intros/final_colors_secondary.mp3', 'colors_natural': 'system/intros/final_colors_natural.mp3', 'colors_sagar': 'system/intros/sub_colors.mp3',
         'colors_pink_red': 'system/intros/sub_pink_red.mp3', 'colors_blue_green': 'system/intros/sub_blue_green.mp3', 'colors_brown_beige': 'system/intros/sub_brown_beige.mp3', 'colors_metallic': 'system/intros/sub_metallic.mp3', 'colors_special': 'system/intros/sub_special.mp3'
     };
 
@@ -215,7 +215,7 @@ function finishSetup(category) {
     const iconMap = {
         'swar': 'अ', 'vyanjan': 'क', 'samyukt': '🔗', 'matra': '✍️', 'numbers_10': '🧮', 'numbers_100': '💯', 'tables_10_m1': '📝', 'tables_10_m2': '🎵', 'shapes': '📐', 'comparisons': '⚖️',
         'family': '👨‍👩‍👧', 'body_parts': '👃', 'animals_domestic': '🐄', 'animals_wild': '🦁', 'nature': '⛅', 'fruits': '🍎', 'vegetables': '🥦', 'habits': '🌟', 'days_week': '📅', 'months_year': '🗓️', 'directions': '🧭',
-        'colors_primary': '❤️', 'colors_secondary': '💚', 'colors_natural': '🌿', 'colors_pink_red': '🌸', 'colors_blue_green': '🌊', 'colors_brown_beige': '🟫', 'colors_metallic': '✨', 'colors_special': '🔮',
+        'colors_primary': '❤️', 'colors_secondary': '💚', 'colors_natural': '🌿', 'colors_sagar': '🌈', 'colors_pink_red': '🌸', 'colors_blue_green': '🌊', 'colors_brown_beige': '🟫', 'colors_metallic': '✨', 'colors_special': '🔮',
         'vehicles': '🚌', 'emotions': '🤩', 'clothes': '👗', 'actions': '🤸', 'helpers': '👨‍🚒'
     };
     const activeIcon = iconMap[category] || '📖';
