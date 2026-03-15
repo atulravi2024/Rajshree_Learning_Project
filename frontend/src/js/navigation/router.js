@@ -55,7 +55,7 @@ function showMainCategory(titleCat) {
         container.innerHTML = createChoiceCard('👨‍👩‍👧‍👦', 'मेरा परिवार', 'family_main') + createChoiceCard('🦁', 'पशु-पक्षी', 'animals_main') + createChoiceCard('🥦', 'फल-सब्जियाँ', 'fruits_main') + createChoiceCard('🌟', 'अच्छी आदतें', 'habits_main') + createChoiceCard('📦', 'अन्य चीजें (More)', 'misc_main');
     } else if (titleCat === 'samay') {
         title.innerText = 'समय और रंग';
-        container.innerHTML = createChoiceCard('🗓️', 'दिन और महीने', 'time_main') + createChoiceCard('🌈', 'रंगों का संसार', 'colors_main') + createChoiceCard('⛅', 'मौसम', 'nature_final') + createChoiceCard('🧭', 'दिशाएं', 'directions_main');
+        container.innerHTML = createChoiceCard('🗓️', 'दिन और महीने', 'time_main') + createChoiceCard('🌈', 'रंगों का संसार', 'colors_main') + createChoiceCard('⛅', 'मौसम', 'nature_final') + createChoiceCard('🧭', 'दिशाएं', 'directions_main') + createChoiceCard('🚀', 'अंतरिक्ष', 'space_main') + createChoiceCard('🪔', 'त्योहार', 'festivals_main');
     }
 }
 
@@ -86,8 +86,8 @@ function showSubCategory(mainCat) {
         if (iconSpan) iconSpan.innerText = subIconMap[mainCat];
     }
 
-    if (['swar', 'vyanjan', 'samyukt', 'matra', 'nature_final', 'directions_main'].includes(mainCat)) {
-        const map = { 'nature_final': 'nature', 'directions_main': 'directions' };
+    if (['swar', 'vyanjan', 'samyukt', 'matra', 'nature_final', 'directions_main', 'space_main', 'festivals_main'].includes(mainCat)) {
+        const map = { 'nature_final': 'nature', 'directions_main': 'directions', 'space_main': 'space', 'festivals_main': 'festivals' };
         finishSetup(map[mainCat] || mainCat);
         return;
     }
@@ -113,16 +113,25 @@ function showSubCategory(mainCat) {
         container.innerHTML = createChoiceCardFinal('👨‍👩‍👧', 'रिश्ते (Relations)', 'family', 'swar') + createChoiceCardFinal('👃', 'शरीर के अंग', 'body_parts', 'magic');
     } else if (mainCat === 'animals_main') {
         title.innerText = 'पशु-पक्षी';
-        container.innerHTML = createChoiceCardFinal('🐄', 'पालतू (Domestic)', 'animals_domestic', 'samyukt') + createChoiceCardFinal('🦁', 'जंगली (Wild)', 'animals_wild', 'vyanjan');
+        container.innerHTML = createChoiceCardFinal('🐄', 'पालतू (Domestic)', 'animals_domestic', 'samyukt') + 
+                              createChoiceCardFinal('🦁', 'जंगली (Wild)', 'animals_wild', 'vyanjan') +
+                              createChoiceCardFinal('🦜', 'पक्षी (Birds)', 'birds', 'swar') +
+                              createChoiceCardFinal('🦋', 'कीड़े-मकोड़े', 'insects', 'magic');
     } else if (mainCat === 'fruits_main') {
         title.innerText = 'फल और सब्जियाँ';
         container.innerHTML = createChoiceCardFinal('🍎', 'फल (Fruits)', 'fruits', 'swar') + createChoiceCardFinal('🥦', 'सब्जियाँ', 'vegetables', 'samyukt');
     } else if (mainCat === 'habits_main') {
         title.innerText = 'अच्छी आदतें';
         container.innerHTML = createChoiceCardFinal('🌟', 'अच्छी आदतें', 'habits', 'magic');
+    } else if (mainCat === 'mera_sansar') {
+        title.innerText = 'मेरा संसार (My World)';
+        container.innerHTML = createChoiceCardFinal('👨‍👩‍👧', 'मेरा परिवार', 'family', 'swar') + createChoiceCardFinal('👃', 'शरीर के अंग', 'body_parts', 'vyanjan') + createChoiceCardFinal('🐄', 'पालतू पशु', 'animals_domestic', 'magic') + createChoiceCardFinal('🦁', 'जंगली जानवर', 'animals_wild', 'samyukt') + createChoiceCardFinal('🦎', 'छोटे जीव', 'animals_smaller', 'vyanjan') + createChoiceCardFinal('🦜', 'पक्षी', 'birds', 'swar') + createChoiceCardFinal('🦋', 'कीड़े-मकोड़े', 'insects', 'vyanjan') + createChoiceCardFinal('🍎', 'फल', 'fruits', 'magic') + createChoiceCardFinal('🥦', 'सब्जियां', 'vegetables', 'samyukt');
+    } else if (mainCat === 'prakriti_main') {
+        title.innerText = 'प्रकृति और पर्यावरण';
+        container.innerHTML = createChoiceCardFinal('🌳', 'पेड़-पौधे', 'plants', 'swar') + createChoiceCardFinal('🌸', 'फूल', 'flowers', 'vyanjan') + createChoiceCardFinal('⛰️', 'पहाड़ और नदियाँ', 'mountains_rivers', 'magic') + createChoiceCardFinal('☀️', 'मौसम', 'nature', 'samyukt') + createChoiceCardFinal('🌈', 'रंग', 'colors_main', 'vyanjan') + createChoiceCardFinal('🧭', 'दिशाएं', 'directions', 'swar') + createChoiceCardFinal('🚀', 'अंतरिक्ष', 'space', 'vyanjan') + createChoiceCardFinal('🪔', 'त्योहार', 'festivals', 'magic');
     } else if (mainCat === 'misc_main') {
         title.innerText = 'अन्य चीजें (More)';
-        container.innerHTML = createChoiceCardFinal('🚌', 'यातायात', 'vehicles', 'swar') + createChoiceCardFinal('🤩', 'भावनाएं', 'emotions', 'vyanjan') + createChoiceCardFinal('👗', 'कपड़े', 'clothes', 'magic') + createChoiceCardFinal('🤸', 'क्रियाएँ', 'actions', 'samyukt') + createChoiceCardFinal('👨‍🚒', 'सहायक', 'helpers', 'swar');
+        container.innerHTML = createChoiceCardFinal('🚌', 'यातायात', 'vehicles', 'swar') + createChoiceCardFinal('🤩', 'भावनाएं', 'emotions', 'vyanjan') + createChoiceCardFinal('👗', 'कपड़े', 'clothes', 'magic') + createChoiceCardFinal('🧚‍♀️', 'जादुई दुनिया', 'magic', 'vyanjan') + createChoiceCardFinal('🤸', 'क्रियाएँ', 'actions', 'samyukt') + createChoiceCardFinal('☀️', 'दिनचर्या', 'activities', 'vyanjan') + createChoiceCardFinal('👨‍🚒', 'सहायक', 'helpers', 'swar') + createChoiceCardFinal('🧸', 'खिलौने', 'toys', 'vyanjan') + createChoiceCardFinal('🏠', 'घर का सामान', 'objects', 'magic') + createChoiceCardFinal('🔔', 'आवाज़ें', 'sounds', 'swar') + createChoiceCardFinal('🏫', 'जगहें', 'places', 'vyanjan') + createChoiceCardFinal('⚽', 'खेल', 'games', 'samyukt') + createChoiceCardFinal('😋', 'खाना-पीना', 'food', 'magic') + createChoiceCardFinal('🥁', 'वाद्य यंत्र', 'instruments', 'vyanjan') + createChoiceCardFinal('💭', 'कल्पना', 'imagination', 'swar');
     } else if (mainCat === 'time_main') {
         title.innerText = 'दिन and महीने';
         container.innerHTML = createChoiceCardFinal('📅', 'सप्ताह के दिन', 'days_week', 'vyanjan') + createChoiceCardFinal('🗓️', 'साल के महीने', 'months_year', 'swar');
@@ -214,9 +223,9 @@ function finishSetup(category) {
     // Update Icons
     const iconMap = {
         'swar': 'अ', 'vyanjan': 'क', 'samyukt': '🔗', 'matra': '✍️', 'numbers_10': '🧮', 'numbers_100': '💯', 'tables_10_m1': '📝', 'tables_10_m2': '🎵', 'shapes': '📐', 'comparisons': '⚖️',
-        'family': '👨‍👩‍👧', 'body_parts': '👃', 'animals_domestic': '🐄', 'animals_wild': '🦁', 'nature': '⛅', 'fruits': '🍎', 'vegetables': '🥦', 'habits': '🌟', 'days_week': '📅', 'months_year': '🗓️', 'directions': '🧭',
+        'family': '👨‍👩‍👧', 'body_parts': '👃', 'animals_domestic': '🐄', 'animals_wild': '🦁', 'birds': '🦜', 'insects': '🦋', 'nature': '⛅', 'fruits': '🍎', 'vegetables': '🥦', 'habits': '🌟', 'days_week': '📅', 'months_year': '🗓️', 'directions': '🧭',
         'colors_primary': '❤️', 'colors_secondary': '💚', 'colors_natural': '🌿', 'colors_pink_red': '🌸', 'colors_blue_green': '🌊', 'colors_brown_beige': '🟫', 'colors_metallic': '✨', 'colors_special': '🔮',
-        'vehicles': '🚌', 'emotions': '🤩', 'clothes': '👗', 'actions': '🤸', 'helpers': '👨‍🚒'
+        'vehicles': '🚌', 'emotions': '🤩', 'clothes': '👗', 'actions': '🤸', 'helpers': '👨‍🚒', 'toys': '🧸', 'space': '🚀', 'festivals': '🪔', 'objects': '🏠', 'sounds': '🔔', 'places': '🏫', 'games': '⚽', 'food': '😋', 'instruments': '🥁', 'imagination': '💭', 'activities': '☀️', 'animals_smaller': '🦎', 'magic': '🧚‍♀️'
     };
     const activeIcon = iconMap[category] || '📖';
     const activeLink = document.getElementById('nav-' + window.selectedTitle);

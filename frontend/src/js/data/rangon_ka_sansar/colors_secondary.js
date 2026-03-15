@@ -7,7 +7,7 @@ window.RAJSHREE_DATA.colors_secondary = [
     { letter: 'भूरा', word: 'Brown', emoji: '🐻', value: 'भूरा', audio: 'rangon_ka_sansar/secondary/col_brown.mp3', textOnly: false, color: '#8B4513' },
     { letter: 'स्लेटी', word: 'Grey', emoji: '🗿', value: 'स्लेटी', audio: 'rangon_ka_sansar/secondary/col_grey.mp3', textOnly: false, color: '#808080' },
     { letter: 'कथई', word: 'Maroon', emoji: '🧱', value: 'कथई', audio: 'rangon_ka_sansar/secondary/col_maroon.mp3', textOnly: false, color: '#800000' },
-    { letter: 'बैंगनी', word: 'Purple', emoji: '🍇', value: 'बैंगनी', audio: 'rangon_ka_sansar/secondary/col_purple.mp3', textOnly: false, color: '#800080' },
+    { letter: 'बैंगनी', word: 'Purple', emoji: '🍇', value: 'बैंगनी', audio: 'rangon_ka_sansar/primary/col_purple.mp3', textOnly: false, color: '#800080' },
     { letter: 'जामुनी', word: 'Magenta', emoji: '🟣', value: 'जामुनी', audio: 'rangon_ka_sansar/secondary/col_magenta.mp3', textOnly: false, color: '#FF00FF' },
     { letter: 'बादामी', word: 'Beige', emoji: '🥜', value: 'बादामी', audio: 'rangon_ka_sansar/secondary/col_beige.mp3', textOnly: false, color: '#F5F5DC' },
     { letter: 'खाकी', word: 'Khaki', emoji: '🧥', value: 'खाकी', audio: 'rangon_ka_sansar/secondary/col_khaki.mp3', textOnly: false, color: '#C3B091' },

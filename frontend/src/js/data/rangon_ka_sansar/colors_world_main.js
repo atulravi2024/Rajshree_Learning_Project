@@ -9,7 +9,7 @@ window.RAJSHREE_DATA.colors_world_main = [
     { letter: 'गुलाल', word: 'Bright Pink', emoji: '🍭', value: 'गुलाल', audio: 'rangon_ka_sansar/pink_red/col_brightpink.mp3', textOnly: false, color: '#FF69B4' },
     { letter: 'ईंट जैसा', word: 'Brick Red', emoji: '🧱', value: 'ईंट जैसा', audio: 'rangon_ka_sansar/pink_red/col_brickred.mp3', textOnly: false, color: '#B22222' },
     { letter: 'हल्का नीला', word: 'Light Blue', emoji: '🌤️', value: 'हल्का नीला', audio: 'rangon_ka_sansar/blue_green/col_lightblue.mp3', textOnly: false, color: '#ADD8E6' },
-    { letter: 'गहरा नीला', word: 'Navy Blue', emoji: '🔵', value: 'गहरा नीला', audio: 'rangon_ka_sansar/blue_green/col_navyblue.mp3', textOnly: false, color: '#000080' },
+    { letter: 'गहरा नीला', word: 'Navy Blue', emoji: '🔵', value: 'गहरा नीला', audio: 'rangon_ka_sansar/colors_special/navy_blue.mp3', textOnly: false, color: '#000080' },
     { letter: 'फिरोज़ी', word: 'Turquoise', emoji: '💎', value: 'फिरोज़ी', audio: 'rangon_ka_sansar/blue_green/col_turquoise_bluegreen.mp3', textOnly: false, color: '#40E0D0' },
     { letter: 'तोता परी', word: 'Parrot Green', emoji: '🦜', value: 'तोता परी', audio: 'rangon_ka_sansar/blue_green/col_parrotgreen_bluegreen.mp3', textOnly: false, color: '#37FD12' },
     { letter: 'हल्का हरा', word: 'Light Green', emoji: '🌱', value: 'हल्का हरा', audio: 'rangon_ka_sansar/blue_green/col_lightgreen.mp3', textOnly: false, color: '#90EE90' },

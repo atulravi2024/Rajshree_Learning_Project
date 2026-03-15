@@ -11,6 +11,9 @@ window.RAJSHREE_DATA.comparisons = [
     { letter: 'खुला-बंद', word: 'Open & Closed', emoji: '📖📕', value: 'खुला-बंद', audio: 'ganit/comparisons/comp_open_closed.mp3', textOnly: false },
     { letter: 'साफ़-गंदा', word: 'Clean & Dirty', emoji: '✨👕', value: 'साफ़-गंदा', audio: 'ganit/comparisons/comp_clean_dirty.mp3', textOnly: false },
     { letter: 'हल्का-गहरा', word: 'Light & Dark', emoji: '🎨', value: 'हल्का-गहरा', audio: 'ganit/comparisons/comp_light_dark.mp3', textOnly: false },
+    { letter: 'दिन-रात', word: 'Day & Night', emoji: '☀️🌙', value: 'दिन-रात', audio: 'ganit/comparisons/comp_day_night.mp3', textOnly: false },
+    { letter: 'भरा-खाली', word: 'Full & Empty', emoji: '🍷🥃', value: 'भरा-खाली', audio: 'ganit/comparisons/comp_full_empty.mp3', textOnly: false },
+    { letter: 'चौड़ा-संकरा', word: 'Wide & Narrow', emoji: '🛣️🛤️', value: 'चौड़ा-संकरा', audio: 'ganit/comparisons/comp_wide_narrow.mp3', textOnly: false },
     { letter: 'तेज़-धीरे', word: 'Fast & Slow', emoji: '🚀🐢', value: 'तेज़-धीरे', audio: 'ganit/comparisons/comp_fast_slow.mp3', textOnly: false },
     { letter: 'सूखा-गीला', word: 'Dry & Wet', emoji: '⛱️🌧️', value: 'सूखा-गीला', audio: 'ganit/comparisons/comp_dry_wet.mp3', textOnly: false },
 ];
