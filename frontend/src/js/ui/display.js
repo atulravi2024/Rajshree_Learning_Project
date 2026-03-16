@@ -166,11 +166,13 @@ function updateLayout(layout) {
 
 function next(force = false) {
     if (window.isSlideshowActive && !force) return;
+    if (!force && window.ChildSafetyLock && !window.ChildSafetyLock.canNavigate()) return;
     let step = (window.currentLayout === '3') ? 3 : 1;
     if (window.currentIndex + step < window.activeCardsData.length) { window.currentIndex += step; updateDisplay(); }
 }
 function prev(force = false) {
     if (window.isSlideshowActive && !force) return;
+    if (!force && window.ChildSafetyLock && !window.ChildSafetyLock.canNavigate()) return;
     let step = (window.currentLayout === '3') ? 3 : 1;
     if (window.currentIndex - step >= 0) { window.currentIndex -= step; updateDisplay(); }
 }

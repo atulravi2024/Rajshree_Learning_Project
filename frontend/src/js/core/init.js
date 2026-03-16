@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    if (window.ChildSafetyLock) window.ChildSafetyLock.init();
     const icons = ['🧸', '🍫', '🦁', '🐘', '🍦', '🎈', '🍬', '🐼', '🎨', '🎁', '🐶', '🍭', '🌈', '🚲', '🍪'];
     const bg = document.getElementById('bg-icons');
     if (bg) {
@@ -24,6 +25,60 @@ document.addEventListener('DOMContentLoaded', () => {
 function initializeAppElements() {
     const vol = document.getElementById('volume-control');
     const volIcon = document.querySelector('#nav-volume .hi');
+    const homeBtn = document.getElementById('nav-home');
+
+    // Parental Gate for ALL Navbar items
+    const navItems = [
+        { id: 'nav-varnamala', action: () => showMainCategory('varnamala') },
+        { id: 'nav-sankhya', action: () => showMainCategory('sankhya') },
+        { id: 'nav-names', action: () => showMainCategory('names') },
+        { id: 'nav-samay', action: () => showMainCategory('samay') },
+        { id: 'nav-home', action: () => goHome() },
+        { id: 'nav-slideshow', action: (btn) => {
+            // One-click to START, but 3s hold to STOP
+            if (!window.isSlideshowActive) {
+                toggleSlideshow();
+            } else {
+                // If already active, the Parental Gate (3s hold) will call this
+                toggleSlideshow();
+            }
+        } },
+        { id: 'nav-layout', action: (btn) => {
+            const dropdown = btn.closest('.dropdown');
+            const content = dropdown.querySelector('.dropdown-content');
+            content.classList.add('show');
+            content.style.display = 'block';
+        } },
+        { id: 'nav-volume', action: (btn) => {
+            const dropdown = btn.closest('.dropdown');
+            const content = dropdown.querySelector('.dropdown-content');
+            content.classList.add('show');
+            content.style.display = 'block';
+        } }
+    ];
+
+    navItems.forEach(item => {
+        const btn = document.getElementById(item.id);
+        if (window.ChildSafetyLock && btn) {
+            btn.removeAttribute('onclick');
+            window.ChildSafetyLock.setupParentalGate(btn, () => {
+                if (item.action) item.action(btn);
+            });
+        }
+    });
+
+    // Parental Gate for Step Back Buttons
+    ['back-step-3', 'back-step-4', 'back-step-5'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (window.ChildSafetyLock && btn) {
+            const step = id.split('-')[2];
+            const targetStep = parseInt(step) - 1;
+            btn.removeAttribute('onclick');
+            window.ChildSafetyLock.setupParentalGate(btn, () => {
+                goBackTo(targetStep);
+            });
+        }
+    });
 
     if (vol) {
         vol.value = globalVolume;
@@ -42,6 +97,7 @@ function initializeAppElements() {
         const content = dropdown.querySelector('.dropdown-content');
         if (content) {
             dropdown.addEventListener('mouseenter', () => {
+                if (window.ChildSafetyLock && window.ChildSafetyLock.isSafetyEnabled) return;
                 if (window.isSlideshowActive && dropdown.querySelector('#nav-layout')) return;
                 clearTimeout(dropdownTimeouts[index]);
                 content.classList.add('show');
@@ -62,8 +118,15 @@ function goToStep2() {
     const step2 = document.getElementById('step-2'); if (step2) step2.classList.remove('hidden');
     stopCurrentAudio();
     currentAudio = new Audio(window.AUDIO_BASE_PATH + 'system/welcome_short.mp3');
-    currentAudio.volume = globalVolume;
+    // First audio (Welcome) is 75% as per user request
+    currentAudio.volume = window.ChildSafetyLock && window.ChildSafetyLock.isSafetyEnabled ? 0.75 : globalVolume;
     currentAudio.play();
+    
+    // Mark first audio as played to bump volume for next audios
+    if (window.ChildSafetyLock) {
+        window.ChildSafetyLock.hasPlayedFirstAudio = true;
+        window.ChildSafetyLock.applyGlobalStyles();
+    }
 }
 
 function goHome() {

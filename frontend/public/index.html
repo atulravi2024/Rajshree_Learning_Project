@@ -118,7 +118,7 @@
             <h1 class="welcome-title" id="step3-title" style="font-size: 3.5rem;">श्रेणी चुनें</h1>
             <div class="choice-grid" id="step3-container"></div>
             <div>
-                <button class="nav-link" onclick="goBackTo(2)"
+                <button id="back-step-3" class="nav-link" onclick="goBackTo(2)"
                     style="background:#4B0082; color:white; border-radius:15px; padding:10px 30px; display:inline-block;">⬅️
                     वापस (Back)</button>
             </div>
@@ -129,7 +129,7 @@
             <h1 class="welcome-title" id="step4-title" style="font-size: 3.5rem;">चुनिए</h1>
             <div class="choice-grid" id="step4-container"></div>
             <div>
-                <button class="nav-link" onclick="goBackTo(3)"
+                <button id="back-step-4" class="nav-link" onclick="goBackTo(3)"
                     style="background:#4B0082; color:white; border-radius:15px; padding:10px 30px; display:inline-block;">⬅️
                     वापस (Back)</button>
             </div>
@@ -140,7 +140,7 @@
             <h1 class="welcome-title" id="step5-title" style="font-size: 3.5rem;">रंगों का संसार</h1>
             <div class="choice-grid" id="step5-container"></div>
             <div>
-                <button class="nav-link" onclick="goBackTo(4)"
+                <button id="back-step-5" class="nav-link" onclick="goBackTo(4)"
                     style="background:#4B0082; color:white; border-radius:15px; padding:10px 30px; display:inline-block;">⬅️
                     वापस (Back)</button>
             </div>
@@ -224,10 +224,12 @@
 
     <!-- Modular Scripts -->
     <script src="../src/js/core/main.js"></script>
+    <script src="../src/js/utils/child-safety.js"></script>
     <script src="../src/js/core/init.js"></script>
     <script src="../src/js/utils/helpers.js"></script>
     <script src="../src/js/ui/display.js"></script>
     <script src="../src/js/navigation/router.js"></script>
+    <script src="../src/js/ui/animations.js"></script>
     <script src="../src/js/slideshow/controller.js"></script>
 </body>
 

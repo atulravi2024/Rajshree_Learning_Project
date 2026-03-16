@@ -25,3 +25,37 @@ body {
     color: #333;
     overflow-x: hidden;
 }
+
+.interaction-locked #master-container,
+.interaction-locked #nav-layout,
+.interaction-locked .nav-btn,
+.interaction-locked #prev-btn,
+.interaction-locked #next-btn {
+    pointer-events: none;
+    opacity: 0.8;
+    filter: grayscale(0.2);
+    transition: all 0.3s ease;
+}
+
+/* Parental Gate Styles */
+.holding {
+    position: relative;
+    overflow: hidden;
+}
+
+.holding::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    background: var(--vibrant-orange);
+    width: var(--hold-progress, 0%);
+    transition: width 0.3s linear;
+}
+
+/* Zoom Locking */
+html, body {
+    touch-action: pan-x pan-y;
+    overflow: clip; /* Prevent accidental scroll during zoom attempts */
+}
