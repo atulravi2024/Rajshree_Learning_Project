@@ -22,15 +22,14 @@ function showMainCategory(titleCat) {
     if (activeLink) {
         activeLink.classList.add('active-menu-icon');
         const iconSpan = activeLink.querySelector('.hi');
-        const mainIcons = { 'varnamala': '📖', 'sankhya': '🧮', 'names': '🌎', 'samay': '🕐' };
+        const mainIcons = { 'varnamala': '📖', 'sankhya': '🧮', 'names': '🌎' };
         if (iconSpan && mainIcons[titleCat]) iconSpan.innerText = mainIcons[titleCat];
     }
 
     const introFiles = {
         'varnamala': 'system/intros/intro_varnamala.mp3',
         'sankhya': 'system/intros/intro_ganit.mp3',
-        'names': 'system/intros/intro_names.mp3',
-        'samay': 'system/intros/intro_samay.mp3'
+        'names': 'system/intros/intro_names.mp3'
     };
     if (introFiles[titleCat]) {
         stopCurrentAudio();
@@ -52,10 +51,12 @@ function showMainCategory(titleCat) {
         container.innerHTML = createChoiceCard('🧮', 'गिनती (Ginti)', 'numbers_main') + createChoiceCard('📚', 'पहाड़े (Pahade)', 'tables_main') + createChoiceCard('📐', 'आकार और तुलना', 'shapes_fun');
     } else if (titleCat === 'names') {
         title.innerText = 'मेरा संसार';
-        container.innerHTML = createChoiceCard('👨‍👩‍👧‍👦', 'मेरा परिवार', 'family_main') + createChoiceCard('🦁', 'पशु-पक्षी', 'animals_main') + createChoiceCard('🥦', 'फल-सब्जियाँ', 'fruits_main') + createChoiceCard('🌟', 'अच्छी आदतें', 'habits_main') + createChoiceCard('📦', 'अन्य चीजें (More)', 'misc_main');
-    } else if (titleCat === 'samay') {
-        title.innerText = 'समय और रंग';
-        container.innerHTML = createChoiceCard('🗓️', 'दिन और महीने', 'time_main') + createChoiceCard('🌈', 'रंगों का संसार', 'colors_main') + createChoiceCard('⛅', 'मौसम', 'nature_final') + createChoiceCard('🧭', 'दिशाएं', 'directions_main') + createChoiceCard('🚀', 'अंतरिक्ष', 'space_main') + createChoiceCard('🪔', 'त्योहार', 'festivals_main');
+        container.innerHTML = createChoiceCard('👨‍👩‍👧‍👦', 'मेरा परिवार', 'family_main') + 
+                              createChoiceCard('🦁', 'पशु-पक्षी', 'animals_main') + 
+                              createChoiceCard('🥦', 'फल-सब्जियाँ', 'fruits_main') + 
+                              createChoiceCard('🕐', 'समय और रंग', 'samay_main') + 
+                              createChoiceCard('🌟', 'अच्छी आदतें', 'habits_main') + 
+                              createChoiceCard('📦', 'अन्य चीजें (More)', 'misc_main');
     }
 }
 
@@ -65,6 +66,7 @@ function showSubCategory(mainCat) {
         'swar': 'system/intros/sub_swar.mp3', 'vyanjan': 'system/intros/sub_vyanjan.mp3', 'samyukt': 'system/intros/sub_samyukt.mp3', 'matra': 'system/intros/sub_matra.mp3',
         'numbers_main': 'system/intros/sub_numbers.mp3', 'tables_main': 'system/intros/sub_tables.mp3', 'shapes_fun': 'system/intros/sub_shapes.mp3',
         'family_main': 'system/intros/sub_family.mp3', 'animals_main': 'system/intros/sub_animals.mp3', 'fruits_main': 'system/intros/sub_fruits.mp3', 'habits_main': 'system/intros/sub_habits.mp3',
+        'samay_main': 'system/intros/intro_samay.mp3',
         'time_main': 'system/intros/sub_time.mp3', 'colors_main': 'system/intros/sub_colors.mp3', 'nature_final': 'system/intros/sub_nature.mp3', 'directions_main': 'system/intros/sub_directions.mp3'
     };
     if (subIntroFiles[mainCat]) {
@@ -77,8 +79,8 @@ function showSubCategory(mainCat) {
     const subIconMap = {
         'swar': 'अ', 'vyanjan': 'क', 'samyukt': '🔗', 'matra': '✍️',
         'numbers_main': '🧮', 'tables_main': '📚', 'shapes_fun': '📐',
-        'family_main': '👨‍👩‍👧‍👦', 'animals_main': '🦁', 'fruits_main': '🥦', 'habits_main': '🌟', 'misc_main': '📦',
-        'time_main': '🗓️', 'colors_main': '🌈', 'nature_final': '⛅', 'directions_main': '🧭'
+        'family_main': '👨‍👩‍👧‍👦', 'animals_main': '🦁', 'fruits_main': '🥦', 'habits_main': '🌟', 'misc_main': '📦', 'samay_main': '🕐',
+        'time_main': '📆', 'colors_main': '🌈', 'nature_final': '⛅', 'directions_main': '🧭'
     };
     const navLink = document.getElementById('nav-' + window.selectedTitle);
     if (navLink && subIconMap[mainCat]) {
@@ -132,8 +134,16 @@ function showSubCategory(mainCat) {
     } else if (mainCat === 'misc_main') {
         title.innerText = 'अन्य चीजें (More)';
         container.innerHTML = createChoiceCardFinal('🚌', 'यातायात', 'vehicles', 'swar') + createChoiceCardFinal('🤩', 'भावनाएं', 'emotions', 'vyanjan') + createChoiceCardFinal('👗', 'कपड़े', 'clothes', 'magic') + createChoiceCardFinal('🧚‍♀️', 'जादुई दुनिया', 'magic', 'vyanjan') + createChoiceCardFinal('🤸', 'क्रियाएँ', 'actions', 'samyukt') + createChoiceCardFinal('☀️', 'दिनचर्या', 'activities', 'vyanjan') + createChoiceCardFinal('👨‍🚒', 'सहायक', 'helpers', 'swar') + createChoiceCardFinal('🧸', 'खिलौने', 'toys', 'vyanjan') + createChoiceCardFinal('🏠', 'घर का सामान', 'objects', 'magic') + createChoiceCardFinal('🔔', 'आवाज़ें', 'sounds', 'swar') + createChoiceCardFinal('🏫', 'जगहें', 'places', 'vyanjan') + createChoiceCardFinal('⚽', 'खेल', 'games', 'samyukt') + createChoiceCardFinal('😋', 'खाना-पीना', 'food', 'magic') + createChoiceCardFinal('🥁', 'वाद्य यंत्र', 'instruments', 'vyanjan') + createChoiceCardFinal('💭', 'कल्पना', 'imagination', 'swar');
+    } else if (mainCat === 'samay_main') {
+        title.innerText = 'समय और रंग';
+        container.innerHTML = createChoiceCard('📆', 'दिन और महीने', 'time_main') + 
+                              createChoiceCard('🌈', 'रंगों का संसार', 'colors_main') + 
+                              createChoiceCardFinal('⛅', 'मौसम', 'nature', 'magic') + 
+                              createChoiceCardFinal('🧭', 'दिशाएं', 'directions', 'samyukt') + 
+                              createChoiceCardFinal('🚀', 'अंतरिक्ष', 'space', 'vyanjan') + 
+                              createChoiceCardFinal('🪔', 'त्योहार', 'festivals', 'swar');
     } else if (mainCat === 'time_main') {
-        title.innerText = 'दिन and महीने';
+        title.innerText = 'दिन और महीने';
         container.innerHTML = createChoiceCardFinal('📅', 'सप्ताह के दिन', 'days_week', 'vyanjan') + createChoiceCardFinal('🗓️', 'साल के महीने', 'months_year', 'swar');
     } else if (mainCat === 'colors_main') {
         title.innerText = 'रंगों का संसार';
@@ -209,7 +219,7 @@ function finishSetup(category) {
         'animals_domestic': 'system/intros/final_animals_domestic.mp3', 'animals_wild': 'system/intros/final_animals_wild.mp3',
         'fruits': 'system/intros/final_fruits.mp3', 'vegetables': 'system/intros/final_vegetables.mp3',
         'habits': 'system/intros/final_habits.mp3', 'days_week': 'system/intros/final_days_week.mp3', 'months_year': 'system/intros/final_months_year.mp3',
-        'nature': 'system/intros/final_nature.mp3', 'directions': 'system/intros/final_directions.mp3',
+        'nature': 'system/intros/final_nature.mp3', 'directions': 'system/intros/final_directions.mp3', 'space': 'system/intros/final_nature.mp3', 'festivals': 'system/intros/final_nature.mp3',
         'colors_primary': 'system/intros/final_colors_primary.mp3', 'colors_secondary': 'system/intros/final_colors_secondary.mp3', 'colors_natural': 'system/intros/final_colors_natural.mp3',
         'colors_pink_red': 'system/intros/sub_pink_red.mp3', 'colors_blue_green': 'system/intros/sub_blue_green.mp3', 'colors_brown_beige': 'system/intros/sub_brown_beige.mp3', 'colors_metallic': 'system/intros/sub_metallic.mp3', 'colors_special': 'system/intros/sub_special.mp3'
     };

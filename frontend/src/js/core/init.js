@@ -32,7 +32,6 @@ function initializeAppElements() {
         { id: 'nav-varnamala', action: () => showMainCategory('varnamala') },
         { id: 'nav-sankhya', action: () => showMainCategory('sankhya') },
         { id: 'nav-names', action: () => showMainCategory('names') },
-        { id: 'nav-samay', action: () => showMainCategory('samay') },
         { id: 'nav-home', action: () => goHome() },
         { id: 'nav-slideshow', action: (btn) => {
             // One-click to START, but 3s hold to STOP

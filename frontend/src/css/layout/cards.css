@@ -26,7 +26,7 @@
 .card { perspective: 2500px; width: 100%; height: 100%; max-width: 600px; max-height: 550px; position: relative; cursor: pointer; transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 .card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1); transform-style: preserve-3d; }
 .card.is-flipped .card-inner { transform: rotateY(-180deg); }
-.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 50px; background: white; border: 12px solid #fff; outline: 4px solid #FFDEE9; outline-offset: -12px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 40px; box-sizing: border-box; overflow: hidden; transition: all 0.4s ease; }
+.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 50px; background: white; border: 12px solid #fff; outline: 4px solid #FFDEE9; outline-offset: -12px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; overflow: hidden; transition: all 0.4s ease; }
 .card:hover .card-front, .card:hover .card-back { border-color: var(--primary-pink); box-shadow: 0 40px 80px rgba(255, 20, 147, 0.3); }
 .card-back { transform: rotateY(-180deg); background: #fafafa; padding: 0 !important; justify-content: center; }
 
@@ -51,14 +51,16 @@
     flex-direction: column;
     align-items: center;
     width: 100%; 
-    margin-top: auto; /* Global Rule: Stick text to bottom */
+    margin-top: 5px; /* Spacing between emoji and text */
 }
 
 /* Dynamic Layout Scaling */
-.container.grid-1 { --emoji-size: 22vh; --letter-size: 15vh; --word-size: 7vh; }
+.container.grid-1 { --emoji-size: 25vh; --letter-size: 15vh; --word-size: 8vh; }
+.container.grid-1 .card-front { padding: 40px; }
 .container.grid-3 { --emoji-size: 15vh; --letter-size: 10vh; --word-size: 5vh; }
 .container.vertical-scroll { --emoji-size: 10vh; --letter-size: 6vh; --word-size: 3vh; }
-.container.fit-screen { --emoji-size: 8vh; --letter-size: 5vh; --word-size: 2.5vh; }
+.container.fit-screen { --emoji-size: 7vh; --letter-size: 4vh; --word-size: 2vh; }
+.container.fit-screen .card-front { padding: 10px; border-radius: 25px; border-width: 6px; outline-width: 2px; outline-offset: -6px; }
 
 /* Grid specific fixes */
 .container.grid-3 { 
