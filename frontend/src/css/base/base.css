@@ -26,15 +26,20 @@ body {
     overflow-x: hidden;
 }
 
-.interaction-locked #master-container,
+/* Interaction Lock: only dim nav buttons, NOT the card container */
 .interaction-locked #nav-layout,
 .interaction-locked .nav-btn,
 .interaction-locked #prev-btn,
 .interaction-locked #next-btn {
     pointer-events: none;
-    opacity: 0.8;
-    filter: grayscale(0.2);
+    opacity: 0.5;
+    filter: grayscale(0.5);
     transition: all 0.3s ease;
+}
+
+/* Block clicks on container but do NOT dim it — audio-active CSS handles dimming */
+.interaction-locked #master-container {
+    pointer-events: none;
 }
 
 /* Zoom Locking */
