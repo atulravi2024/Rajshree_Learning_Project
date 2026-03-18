@@ -58,6 +58,7 @@ function showMainCategory(titleCat) {
                               createChoiceCard('🌟', 'अच्छी आदतें', 'habits_main') + 
                               createChoiceCard('📦', 'अन्य चीजें (More)', 'misc_main');
     }
+    updateScrollClass(container);
 }
 
 function showSubCategory(mainCat) {
@@ -149,6 +150,7 @@ function showSubCategory(mainCat) {
         title.innerText = 'रंगों का संसार';
         container.innerHTML = createChoiceCardFinal('❤️', 'प्राथमिक रंग (Primary)', 'colors_primary', 'swar') + createChoiceCardFinal('💚', 'द्वितीयक रंग (Secondary)', 'colors_secondary', 'vyanjan') + createChoiceCardFinal('🌿', 'प्राकृतिक रंग (Natural)', 'colors_natural', 'samyukt') + createChoiceCardDeep('🌈', 'रंगों का सागर', 'colors_world_main');
     }
+    updateScrollClass(container);
 }
 
 function showDeepCategory(deepCat) {
@@ -172,6 +174,16 @@ function showDeepCategory(deepCat) {
         // Update nav icon
         const navLink = document.getElementById('nav-' + window.selectedTitle);
         if (navLink) { const iconSpan = navLink.querySelector('.hi'); if (iconSpan) iconSpan.innerText = '🌈'; }
+    }
+    updateScrollClass(container);
+}
+
+function updateScrollClass(container) {
+    if (!container) return;
+    if (container.children.length > 4) {
+        container.classList.add('has-scroll');
+    } else {
+        container.classList.remove('has-scroll');
     }
 }
 

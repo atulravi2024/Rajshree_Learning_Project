@@ -11,6 +11,8 @@ function playSound(file, card) {
         setTimeout(() => card.classList.remove('selected'), 400);
     }
     stopCurrentAudio();
+    document.body.classList.add('audio-active');
+    
     const finalAudioPath = file.startsWith('assets') ? file : window.AUDIO_BASE_PATH + file;
     window.currentAudio = new Audio(finalAudioPath);
     const targetVolume = window.globalVolume;
@@ -25,12 +27,14 @@ function playSound(file, card) {
         window.currentAudio.addEventListener('ended', () => {
             if (window.ChildSafetyLock) window.ChildSafetyLock.unlock();
             card.classList.remove('playing');
+            document.body.classList.remove('audio-active');
             bar.style.width = '0%';
             if (window.isSlideshowActive) handleSlideshowTransition();
         });
         window.currentAudio.addEventListener('error', () => {
             if (window.ChildSafetyLock) window.ChildSafetyLock.unlock();
             card.classList.remove('playing');
+            document.body.classList.remove('audio-active');
         });
     }
     

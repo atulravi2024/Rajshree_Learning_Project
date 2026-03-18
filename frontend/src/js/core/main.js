@@ -18,5 +18,6 @@ function stopCurrentAudio() {
     if (window.currentAudio) {
         window.currentAudio.pause();
         window.currentAudio.currentTime = 0;
+        document.body.classList.remove('audio-active');
     }
 }

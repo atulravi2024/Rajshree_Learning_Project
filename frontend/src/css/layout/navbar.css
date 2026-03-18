@@ -54,3 +54,12 @@
 }
 .dropdown-content a { color: var(--deep-purple); padding: 12px 20px; text-decoration: none; display: block; border-radius: 12px; font-weight: 700; transition: 0.2s; cursor: pointer; }
 .dropdown-content a:hover { background-color: var(--light-pink); color: var(--primary-pink); }
+
+/* --- AUDIO ACTIVE STATE (Focused Learning) --- */
+body.audio-active .navbar,
+body.audio-active .dropdown-content {
+    opacity: 0.4;
+    filter: grayscale(100%);
+    pointer-events: none;
+    transition: all 0.5s ease;
+}

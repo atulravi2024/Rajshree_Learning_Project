@@ -80,3 +80,20 @@
 
 .container.fit-screen { display: grid !important; width: 100vw; height: 100%; gap: 5px; overflow: hidden !important; margin: 0; padding: 0; align-content: stretch; }
 .fit-screen .card { height: 100% !important; max-width: none; max-height: none; margin: 0; }
+
+/* --- AUDIO ACTIVE STATE (Focused Learning) --- */
+body.audio-active #master-container .card:not(.playing) {
+    opacity: 0.3;
+    filter: grayscale(100%) blur(1px);
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body.audio-active #master-container .card.playing {
+    opacity: 1 !important;
+    filter: none !important;
+    z-index: 100;
+    pointer-events: auto;
+}
+
