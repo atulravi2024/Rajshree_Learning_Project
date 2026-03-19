@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>राजश्री हिंदी लर्निंग | Rajshree Hindi Learning 🎒✨</title>
     <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/css/ui/settings-modal.css">
 </head>
 
 <body>
@@ -71,6 +72,9 @@
                             title="Volume Control" aria-label="Volume Control">
                     </div>
                 </li>
+                <li><a class="nav-link icon-only" onclick="openSettingsModal()" id="nav-settings" title="Settings">
+                        <span class="hi">⚙️</span>
+                    </a></li>
             </ul>
         </div>
     </nav>
@@ -225,7 +229,9 @@
     <script src="../src/js/ui/display.js"></script>
     <script src="../src/js/navigation/router.js"></script>
     <script src="../src/js/ui/animations.js"></script>
+    <script src="../src/js/ui/settings-modal.js"></script>
     <script src="../src/js/slideshow/controller.js"></script>
+    <div id="settings-modal-mount"></div>
 </body>
 
 </html>

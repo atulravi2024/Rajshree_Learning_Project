@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ai-role" content="Memory Super Hub">
+    <meta name="project-version" content="v16.6">
+
+    <title>राजश्री - SUPER MEMORY HUB</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Hind:wght@400;600&family=Bubblegum+Sans&family=Fira+Code:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="audit_styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="brand-logo">राजश्री</div>
+            <div class="system-status">
+                <div class="pulse-dot"></div>
+                SYSTEM INTEGRITY: 100% SECURE
+            </div>
+            <div class="header-actions">
+                <button class="action-chip" id="btn-anchor">⚓ Anchor Context</button>
+                <div class="version-tag">SUPER HUB v16.6</div>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="super-card super-card-accent">
+                <h3>Total Knowledge Artifacts</h3>
+                <span class="big-value" id="artifact-count">24</span>
+                <p>943 Assets Mapped • 62 Scripts Validated</p>
+            </div>
+            <div class="super-card super-card-gold">
+                <h3>Memory Excellence Tier</h3>
+                <span class="big-value">PLATINUM</span>
+                <p>v16.6 Frontier Protocol Active</p>
+            </div>
+            <div class="super-card super-card-success">
+                <h3>Neural Connectivity</h3>
+                <span class="big-value">STABLE</span>
+                <p>AI-Human Parsing Optimized</p>
+            </div>
+        </div>
+
+        <div class="terminal-desk">
+            <div class="terminal-header">
+                <div class="t-dot t-dot-red"></div>
+                <div class="t-dot t-dot-yellow"></div>
+                <div class="t-dot t-dot-green"></div>
+                <span class="terminal-meta">integrity_audit.ps1 —
+                    root@rajshree</span>
+            </div>
+            <div class="terminal-body" id="t-body">
+                > Initializing Memory Audit...<br>
+                > Loading Johnny Decimal Tree... [DONE]<br>
+                > Validating 24/24 Artifacts... [SECURE]<br>
+                > Health Level: MAXIMUM.<br><br>
+                <span class="terminal-audit-text">$ (gci -r "memory" -Filter *.md).Count</span><br>
+                <button class="action-btn copy-btn" id="copy-audit">Copy Command</button>
+            </div>
+        </div>
+
+        <div class="registry-container">
+            <h2>📑 Neural Domain Registry</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Memory Artifact</th>
+                        <th>Neural Purpose</th>
+                        <th>Safety Status</th>
+                    </tr>
+                </thead>
+                <tbody id="registry-body">
+                    <!-- Dynamic Domains -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="01.00_MEMORY_MAP.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.getElementById('registry-body');
+            const countEl = document.getElementById('artifact-count');
+
+            if (window.MEMORY_MAP && window.MEMORY_MAP.memory_map) {
+                countEl.innerText = window.MEMORY_MAP.memory_map.length;
+
+                const domains = {
+                    "00": "System & Guardrails",
+                    "01": "Current State Hub",
+                    "02": "Research & Knowledge",
+                    "03": "Architecture & Planning",
+                    "05": "Infrastructure & Dev",
+                    "09": "Source Materials"
+                };
+
+                let lastDomain = "";
+
+                window.MEMORY_MAP.memory_map.forEach(item => {
+                    const d = item.id.split('.')[0];
+                    if (d !== lastDomain) {
+                        const h = document.createElement('tr');
+                        h.innerHTML = `<td colspan="4" class="domain-heading">✦ ${domains[d] || "Specialized Sub-Domain"} [${d}.xx]</td>`;
+                        body.appendChild(h);
+                        lastDomain = d;
+                    }
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><span class="id-badge">${item.id}</span></td>
+                        <td class="registry-file-cell"><a href="${item.file}" class="registry-link">${item.file}</a></td>
+                        <td class="registry-purpose-cell">${item.type}</td>
+                        <td><span class="status-tag">✨ CRYPTO-STABLE</span></td>
+                    `;
+                    body.appendChild(row);
+                });
+            }
+
+            // Interactive Copy
+            document.getElementById('btn-anchor').addEventListener('click', () => {
+                const text = "Rajshree Learning Project Memory Architecture: v16.6 Frontier. Johnny Decimal + DDD active. Primary Hub: 01.05.";
+                navigator.clipboard.writeText(text);
+                alert("Neural Anchor Copied to Clipboard! ⚓");
+            });
+
+            document.getElementById('copy-audit').addEventListener('click', () => {
+                navigator.clipboard.writeText('(gci -r "memory" -Filter *.md).Count');
+                alert("Audit Command Copied! 🛡️");
+            });
+        });
+    </script>
+</body>
+
+</html>

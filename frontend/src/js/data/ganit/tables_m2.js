@@ -13,7 +13,7 @@ window.RAJSHREE_DATA.tables_10_m2 = (() => {
         const toHi = (num) => num.toString().split('').map(d => hiDigits[parseInt(d)]).join('');
         tables.push({
             letter: toHi(n), word: `पहाड़ा`, emoji: icons[n], audio: `ganit/tables/method_2/table_${n}_m2.mp3`,
-            content: `<div style="text-align:center;"><b style="font-size:4.5vh; color:#2196F3;">बोलचाल पद्धति</b></div><div style="display:flex; justify-content:center; align-items: flex-start; font-size:4vh; margin-top:15px; font-weight:bold; gap: 30px;"><div style="text-align:left;">${l}</div><div style="width: 3px; background: #FFDEE9; height: 35vh; align-self: center;"></div><div style="text-align:left;">${r}</div></div>`
+            content: `<div class="table-method-title"><b class="table-method-label" style="color:#2196F3;">बोलचाल पद्धति</b></div><div class="table-method-container"><div class="table-column">${l}</div><div class="table-divider"></div><div class="table-column">${r}</div></div>`
         });
     }
     return tables;

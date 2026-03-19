@@ -182,16 +182,16 @@ function updateScrollClass(container) {
 }
 
 function createChoiceCard(icon, label, category) {
-    return `<div class="kid-choice-card vyanjan" onclick="showSubCategory('${category}')"><div class="choice-icon">${icon}</div><div class="choice-label-hi" style="font-size:2rem">${label}</div></div>`;
+    return `<div class="kid-choice-card vyanjan" onclick="showSubCategory('${category}')"><div class="choice-icon">${icon}</div><div class="choice-label-hi choice-label-standard">${label}</div></div>`;
 }
 function createChoiceCardFinal(icon, label, category, colorClass = 'swar') {
-    return `<div class="kid-choice-card ${colorClass}" onclick="finishSetup('${category}')"><div class="choice-icon">${icon}</div><div class="choice-label-hi" style="font-size:2rem">${label}</div></div>`;
+    return `<div class="kid-choice-card ${colorClass}" onclick="finishSetup('${category}')"><div class="choice-icon">${icon}</div><div class="choice-label-hi choice-label-standard">${label}</div></div>`;
 }
 function createChoiceCardDeep(icon, label, category) {
-    return `<div class="kid-choice-card magic" onclick="showDeepCategory('${category}')"><div class="choice-icon">${icon}</div><div class="choice-label-hi" style="font-size:2rem">${label}</div></div>`;
+    return `<div class="kid-choice-card magic" onclick="showDeepCategory('${category}')"><div class="choice-icon">${icon}</div><div class="choice-label-hi choice-label-standard">${label}</div></div>`;
 }
 function createChoiceCardFinalDeep(icon, label, category) {
-    return `<div class="kid-choice-card swar" onclick="finishSetup('${category}')"><div class="choice-icon">${icon}</div><div class="choice-label-hi" style="font-size:2rem">${label}</div></div>`;
+    return `<div class="kid-choice-card swar" onclick="finishSetup('${category}')"><div class="choice-icon">${icon}</div><div class="choice-label-hi choice-label-standard">${label}</div></div>`;
 }
 
 function finishSetup(category) {

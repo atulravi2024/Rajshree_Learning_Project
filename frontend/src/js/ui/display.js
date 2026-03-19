@@ -17,19 +17,19 @@ function renderCards() {
         let backContent = '';
         let backStyle = '';
         if (data.image) backContent = `<img class="flash-image" src="${data.image}" alt="${data.word}">`;
-        else if (data.content) backContent = `<div style="font-size:6vh; padding:20px;">${data.content}</div>`;
+        else if (data.content) backContent = `<div class="display-content-medium">${data.content}</div>`;
         else if (data.color) {
             backContent = ''; // Solid color, no text usually requested
             backStyle = `style="background:${data.color} !important; border-color:${data.color} !important; outline:none !important;"`;
         }
-        else if (data.value) backContent = `<div style="font-size:15vh; font-weight:700;">${data.value}</div>`;
-        else if (data.type === 'circle') backContent = `<div style="width:250px; height:250px; background:${data.color}; border-radius:50%; border:10px solid white;"></div>`;
-        else if (data.type === 'square') backContent = `<div style="width:250px; height:250px; background:${data.color}; border:10px solid white;"></div>`;
-        else if (data.type === 'triangle') backContent = `<div style="width:0; height:0; border-left:125px solid transparent; border-right:125px solid transparent; border-bottom:216px solid ${data.color};"></div>`;
-        else if (data.type === 'star') backContent = `<span style="font-size:15rem; color:${data.color};">⭐</span>`;
-        else if (data.type === 'big-small') backContent = `<div style="display:flex; align-items:flex-end; gap:30px;"><div style="width:200px; height:200px; background:#9C27B0; border-radius:20px;"></div><div style="width:80px; height:80px; background:#E91E63; border-radius:10px;"></div></div>`;
-        else if (data.type === 'tall-short') backContent = `<div style="display:flex; align-items:flex-end; gap:30px;"><div style="width:60px; height:300px; background:#795548; border-radius:10px;"></div><div style="width:60px; height:100px; background:#FFC107; border-radius:10px;"></div></div>`;
-        else backContent = `<div style="display:flex; align-items:center; justify-content:center; height:100%; font-size:10vh; font-weight:700; color:#4B0082;">${data.letter}</div>`;
+        else if (data.value) backContent = `<div class="display-content-large">${data.value}</div>`;
+        else if (data.type === 'circle') backContent = `<div class="shape-container shape-circle" style="background:${data.color}"></div>`;
+        else if (data.type === 'square') backContent = `<div class="shape-container" style="background:${data.color}"></div>`;
+        else if (data.type === 'triangle') backContent = `<div class="shape-triangle" style="border-bottom-color:${data.color}"></div>`;
+        else if (data.type === 'star') backContent = `<span class="emoji-star" style="color:${data.color}">⭐</span>`;
+        else if (data.type === 'big-small') backContent = `<div class="comparison-container"><div class="big-small-large"></div><div class="big-small-small"></div></div>`;
+        else if (data.type === 'tall-short') backContent = `<div class="comparison-container"><div class="tall-short-tall"></div><div class="tall-short-short"></div></div>`;
+        else backContent = `<div class="letter-display-container">${data.letter}</div>`;
 
         let frontContent = '';
         const emojis = [...segmenter.segment(data.emoji || '')].map(s => s.segment);
@@ -39,11 +39,11 @@ function renderCards() {
 
         let emojiHtml = '';
         if (isRedCircle) {
-            emojiHtml = `<div class="khali-circle" style="width: var(--dynamic-emoji-size, 15vh); height: var(--dynamic-emoji-size, 15vh); border: 1vh solid #F44336; border-radius: 50%; box-shadow: 0 0 20px rgba(244, 67, 54, 0.3); position: relative;">
-                <div style="position: absolute; top: 10%; left: 10%; right: 10%; bottom: 10%; border: 0.5vh dashed #333; border-radius: 50%;"></div>
+            emojiHtml = `<div class="khali-circle khali-circle-main">
+                <div class="khali-circle-inner"></div>
             </div>`;
         } else if (isImage) {
-            emojiHtml = `<img src="${data.emoji}" class="emoji-img" alt="${data.word}" style="width: var(--dynamic-emoji-size, 15vh); height: auto;">`;
+            emojiHtml = `<img src="${data.emoji}" class="emoji-img emoji-img-standard" alt="${data.word}">`;
         } else {
             emojiHtml = emojis.map(e => `<span>${e}</span>`).join('');
         }
@@ -83,8 +83,8 @@ function updateDisplay() {
     if (!master) return;
 
     // SVG Icons (from original script logic)
-    if (prevBtn) prevBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:60%; height:60%;"><path d="M15 19L8 12L15 5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    if (nextBtn) nextBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:60%; height:60%;"><path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    if (prevBtn) prevBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-icon-svg"><path d="M15 19L8 12L15 5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    if (nextBtn) nextBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="nav-icon-svg"><path d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
     const cards = Array.from(master.children);
     master.classList.remove('grid-1', 'grid-3', 'vertical-scroll', 'fit-screen');
