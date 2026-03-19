@@ -187,3 +187,23 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-6px); }
 }
+
+/* --- EXTRACTED INLINE STYLES --- */
+
+/* Rocket icon inside .start-orb */
+.rocket-icon { font-size: 5rem; }
+
+/* Step titles on screens 2-5 use a slightly smaller font */
+#step-2 .welcome-title,
+#step-3 .welcome-title,
+#step-4 .welcome-title,
+#step-5 .welcome-title { font-size: 3.5rem; }
+
+/* Back buttons (steps 3-5) */
+.back-btn {
+    background: #4B0082;
+    color: white;
+    border-radius: 15px;
+    padding: 10px 30px;
+    display: inline-block;
+}

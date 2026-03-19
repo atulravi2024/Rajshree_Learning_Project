@@ -3,6 +3,7 @@
     width: 100%;
     height: var(--nav-height);
     background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
@@ -63,3 +64,19 @@ body.audio-active .dropdown-content {
     pointer-events: none;
     transition: all 0.5s ease;
 }
+
+/* --- NAV LINK BACKGROUND COLOURS (extracted from inline styles) --- */
+#nav-varnamala  { background: #F3E5F5; border-radius: 15px; }
+#nav-sankhya    { background: #E8F5E9; border-radius: 15px; }
+#nav-names      { background: #FFF3E0; border-radius: 15px; }
+#nav-games      { background: #E1F5FE; border-radius: 15px; }
+#nav-home       { background: #FFF9C4; border-radius: 15px; }
+#nav-slideshow  { background: #E3F2FD; border-radius: 15px; }
+#nav-layout     { background: #f0f0f0; border-radius: 15px; }
+#nav-volume     { background: #FFDEE9; border-radius: 15px; }
+
+/* Volume dropdown sizing */
+#nav-volume + .dropdown-content { min-width: 150px; padding: 15px; }
+
+/* Volume range input */
+#volume-control { width: 100%; cursor: pointer; accent-color: #FF1493; }

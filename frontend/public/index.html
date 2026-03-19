@@ -25,34 +25,32 @@
         <div class="nav-menu-container">
             <ul class="nav-menu">
                 <li><a class="nav-link icon-only" id="nav-varnamala" onclick="showMainCategory('varnamala')"
-                        title="वर्णमाला (Alphabet)" style="background:#F3E5F5; border-radius:15px;">
+                        title="वर्णमाला (Alphabet)">
                         <span class="hi">📖</span>
                     </a></li>
                 <li><a class="nav-link icon-only" id="nav-sankhya" onclick="showMainCategory('sankhya')"
-                        title="गणित (Math)" style="background:#E8F5E9; border-radius:15px;">
+                        title="गणित (Math)">
                         <span class="hi">🧮</span>
                     </a></li>
                 <li><a class="nav-link icon-only" id="nav-names" onclick="showMainCategory('names')"
-                        title="मेरा संसार (Mera Sansar)" style="background:#FFF3E0; border-radius:15px;">
+                        title="मेरा संसार (Mera Sansar)">
                         <span class="hi">🌎</span>
                     </a></li>
                 <li><a class="nav-link icon-only" id="nav-games" onclick="showMainCategory('games')"
-                        title="खेल-कूद (Games)" style="background:#E1F5FE; border-radius:15px;">
+                        title="खेल-कूद (Games)">
                         <span class="hi">🎮</span>
                     </a></li>
 
                 <li class="nav-separator"></li>
 
-                <li><a class="nav-link icon-only" onclick="goHome()" id="nav-home" title="Home"
-                        style="background:#FFF9C4; border-radius:15px;">
+                <li><a class="nav-link icon-only" onclick="goHome()" id="nav-home" title="Home">
                         <span class="hi">🏠</span>
                     </a></li>
-                <li><a class="nav-link icon-only" onclick="toggleSlideshow()" id="nav-slideshow" title="Slideshow"
-                        style="background:#E3F2FD; border-radius:15px;">
+                <li><a class="nav-link icon-only" onclick="toggleSlideshow()" id="nav-slideshow" title="Slideshow">
                         <span class="hi">🎬</span>
                     </a></li>
                 <li class="dropdown">
-                    <a class="nav-link icon-only" style="background:#f0f0f0; border-radius:15px;" id="nav-layout"
+                    <a class="nav-link icon-only" id="nav-layout"
                         title="Layout">
                         <span class="hi">📐</span>
                     </a>
@@ -64,13 +62,13 @@
                     </div>
                 </li>
                 <li class="dropdown">
-                    <a class="nav-link icon-only" style="background:#FFDEE9; border-radius:15px;" title="Volume"
+                    <a class="nav-link icon-only" title="Volume"
                         id="nav-volume">
                         <span class="hi">🔊</span>
                     </a>
-                    <div class="dropdown-content" style="min-width: 150px; padding: 15px;">
+                    <div class="dropdown-content">
                         <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1"
-                            style="width: 100%; cursor: pointer; accent-color: #FF1493;">
+                            title="Volume Control" aria-label="Volume Control">
                     </div>
                 </li>
             </ul>
@@ -83,16 +81,16 @@
         <!-- Screen 1: Welcome -->
         <div id="step-1">
             <h1 class="welcome-title">नमस्ते राजश्री!</h1>
-            <p style="font-size: 1.8rem; color: #666; font-weight: 600;">सीखने की दुनिया में आपका स्वागत है ✨</p>
+            <p>सीखने की दुनिया में आपका स्वागत है ✨</p>
             <div class="start-orb" onclick="goToStep2()">
-                <div class="rocket-icon" style="font-size: 5rem;">🚀</div>
+                <div class="rocket-icon">🚀</div>
                 <span>शुरू करें</span>
             </div>
         </div>
 
         <!-- Screen 2: Title Category -->
         <div id="step-2" class="hidden">
-            <h1 class="welcome-title" style="font-size: 3.5rem;">मुख्य विषय चुनें</h1>
+            <h1 class="welcome-title">मुख्य विषय चुनें</h1>
             <div class="choice-grid">
                 <div class="kid-choice-card vyanjan" onclick="showMainCategory('varnamala')">
                     <div class="choice-icon">📖</div>
@@ -115,33 +113,30 @@
 
         <!-- Screen 3: Main Category -->
         <div id="step-3" class="hidden">
-            <h1 class="welcome-title" id="step3-title" style="font-size: 3.5rem;">श्रेणी चुनें</h1>
+            <h1 class="welcome-title" id="step3-title">श्रेणी चुनें</h1>
             <div class="choice-grid" id="step3-container"></div>
             <div>
-                <button id="back-step-3" class="nav-link" onclick="goBackTo(2)"
-                    style="background:#4B0082; color:white; border-radius:15px; padding:10px 30px; display:inline-block;">⬅️
+                <button id="back-step-3" class="nav-link back-btn" onclick="goBackTo(2)">⬅️
                     वापस (Back)</button>
             </div>
         </div>
 
         <!-- Screen 4: Sub Category -->
         <div id="step-4" class="hidden">
-            <h1 class="welcome-title" id="step4-title" style="font-size: 3.5rem;">चुनिए</h1>
+            <h1 class="welcome-title" id="step4-title">चुनिए</h1>
             <div class="choice-grid" id="step4-container"></div>
             <div>
-                <button id="back-step-4" class="nav-link" onclick="goBackTo(3)"
-                    style="background:#4B0082; color:white; border-radius:15px; padding:10px 30px; display:inline-block;">⬅️
+                <button id="back-step-4" class="nav-link back-btn" onclick="goBackTo(3)">⬅️
                     वापस (Back)</button>
             </div>
         </div>
 
         <!-- Screen 5: Deep Category (New for nested colors) -->
         <div id="step-5" class="hidden">
-            <h1 class="welcome-title" id="step5-title" style="font-size: 3.5rem;">रंगों का संसार</h1>
+            <h1 class="welcome-title" id="step5-title">रंगों का संसार</h1>
             <div class="choice-grid" id="step5-container"></div>
             <div>
-                <button id="back-step-5" class="nav-link" onclick="goBackTo(4)"
-                    style="background:#4B0082; color:white; border-radius:15px; padding:10px 30px; display:inline-block;">⬅️
+                <button id="back-step-5" class="nav-link back-btn" onclick="goBackTo(4)">⬅️
                     वापस (Back)</button>
             </div>
         </div>
