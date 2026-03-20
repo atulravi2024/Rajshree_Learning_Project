@@ -10,8 +10,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Hind:wght@400;600&family=Fira+Code:wght@400;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="v2_styles.css">
+    <link rel="stylesheet" href="rajshree_core.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body class="frontier-theme">
@@ -20,29 +21,34 @@
 
     <nav class="frontier-nav">
         <div class="nav-brand">
-            <div class="protocol-icon">⌬</div>
+            <div class="nav-brand-icon">
+                <i data-lucide="hexagon"></i>
+            </div>
             <div class="brand-text">
                 <h1>FRONTIER</h1>
                 <span>PROTOCOL</span>
             </div>
         </div>
         <div class="nav-center">
-            <a href="#" class="nav-item active">DASHBOARD</a>
-            <a href="#" class="nav-item">TERMINAL</a>
-            <a href="#" class="nav-item">MAP</a>
-            <a href="#" class="nav-item">ASSETS</a>
+            <a href="#" class="nav-link active">DASHBOARD</a>
+            <a href="#" class="nav-link">TERMINAL</a>
+            <a href="#" class="nav-link">MAP</a>
+            <a href="#" class="nav-link">ASSETS</a>
         </div>
         <div class="nav-user">
-            <div class="user-info">
+            <div class="nav-avatar">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Elara" alt="Avatar">
+            </div>
+            <div class="nav-user-info">
                 <span class="rank">CMDR.</span>
                 <span class="name">ATUL VERMA</span>
             </div>
-            <div class="user-avatar">
-                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Atul" alt="AV">
-            </div>
-            <div class="status-indicators">
-                <span class="notif">🔔</span>
-                <span class="power">⏻</span>
+            <div class="nav-icons">
+                <div class="nav-icon-wrapper">
+                    <i data-lucide="bell"></i>
+                    <span class="nav-badge"></span>
+                </div>
+                <i data-lucide="log-out"></i>
             </div>
         </div>
     </nav>
@@ -74,7 +80,7 @@
 
     <!-- Master Data Link -->
     <script src="../../00 System & Guardrails/00.00_MEMORY_MAP.js"></script>
-    <script src="v2_logic.js"></script>
+    <script src="rajshree_core.js"></script>
 </body>
 
 </html>
