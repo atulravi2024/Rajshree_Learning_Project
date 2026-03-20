@@ -15,7 +15,7 @@
     --bg-panel: rgba(4, 16, 24, 0.85);
     --bg-card: rgba(6, 18, 28, 0.8);
     --bg-card-active: rgba(0, 30, 40, 0.9);
-    --border-subtle: rgba(255,255,255,0.07);
+    --border-subtle: rgba(255, 255, 255, 0.07);
     --border-glow: rgba(0, 240, 255, 0.4);
     --text-bright: #d8f6ff;
     --text-mid: #8db4c0;
@@ -26,9 +26,14 @@
     --side-w: 360px;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-html, body {
+html,
+body {
     height: 100%;
     overflow: hidden;
     background: var(--bg-void);
@@ -42,8 +47,8 @@ html, body {
     inset: 0;
     z-index: -3;
     background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,50,70,0.6) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(0,30,50,0.5) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0, 50, 70, 0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(0, 30, 50, 0.5) 0%, transparent 60%),
         linear-gradient(180deg, #010c15 0%, #010810 50%, #010a12 100%);
 }
 
@@ -52,8 +57,8 @@ html, body {
     inset: 0;
     z-index: -2;
     background-image:
-        linear-gradient(rgba(0,240,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,240,255,0.04) 1px, transparent 1px);
+        linear-gradient(rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
     background-size: 55px 55px;
 }
 
@@ -61,13 +66,11 @@ html, body {
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0,0,0,0.15) 2px,
-        rgba(0,0,0,0.15) 4px
-    );
+    background: repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.15) 2px,
+            rgba(0, 0, 0, 0.15) 4px);
     pointer-events: none;
 }
 
@@ -78,7 +81,7 @@ html, body {
     transform: translateX(-50%);
     width: 900px;
     height: 400px;
-    background: radial-gradient(ellipse, rgba(0,200,255,0.07) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(0, 200, 255, 0.07) 0%, transparent 70%);
     pointer-events: none;
     z-index: -1;
 }
@@ -152,7 +155,9 @@ html, body {
     transition: color 0.2s;
 }
 
-.nav-link:hover { color: var(--text-bright); }
+.nav-link:hover {
+    color: var(--text-bright);
+}
 
 .nav-link.active {
     color: var(--cyan);
@@ -162,7 +167,8 @@ html, body {
     content: '';
     position: absolute;
     bottom: -2px;
-    left: 0; right: 0;
+    left: 0;
+    right: 0;
     height: 2px;
     background: var(--cyan);
     box-shadow: 0 0 8px var(--cyan);
@@ -247,13 +253,19 @@ html, body {
 
 /* ── DOMAIN GRID ──────────────────────────────────── */
 .domain-portal {
+    height: 100%;
+    /* Ensure container fills parent height */
     overflow-y: auto;
     padding-right: 0.5rem;
 }
 
 .domain-grid {
+    height: 100%;
+    /* Ensure grid fills container height */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /* 3 rows that share the height equally */
     gap: 1.2rem;
 }
 
@@ -267,13 +279,15 @@ html, body {
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    min-height: 180px;
+    min-height: 0;
+    /* Remove fixed min-height to allow scaling with grid rows */
+    height: 100%;
     overflow: hidden;
     transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
 }
 
 .domain-card:hover {
-    border-color: rgba(0,240,255,0.25);
+    border-color: rgba(0, 240, 255, 0.25);
     background: rgba(6, 22, 34, 0.9);
 }
 
@@ -281,9 +295,9 @@ html, body {
     background: var(--bg-card-active);
     border-color: var(--cyan);
     box-shadow:
-        0 0 0 1px rgba(0,240,255,0.1),
-        0 0 20px rgba(0,240,255,0.12),
-        inset 0 0 20px rgba(0,240,255,0.03);
+        0 0 0 1px rgba(0, 240, 255, 0.1),
+        0 0 20px rgba(0, 240, 255, 0.12),
+        inset 0 0 20px rgba(0, 240, 255, 0.03);
 }
 
 /* Card top row: id + icon */
@@ -312,7 +326,11 @@ html, body {
     display: flex;
     align-items: center;
 }
-.card-icon svg { width: 16px; height: 16px; }
+
+.card-icon svg {
+    width: 16px;
+    height: 16px;
+}
 
 .domain-card.active .card-icon {
     color: var(--cyan);
@@ -341,6 +359,52 @@ html, body {
     flex-direction: column;
     justify-content: center;
     gap: 0.2rem;
+    min-height: 0;
+}
+
+.card-graph-label {
+    font-size: 0.5rem;
+    font-weight: 600;
+    color: var(--text-label);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    opacity: 0.8;
+}
+
+/* Card header KPI area (Top label) */
+.card-kpi-row {
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+}
+
+.kpi-label {
+    font-size: 0.55rem;
+    font-weight: 700;
+    color: var(--text-label);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.card-status-badge {
+    position: absolute;
+    top: 0.8rem;
+    right: 2.5rem;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+
+.card-status-badge.status-stable {
+    background: #00ff99;
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.4);
+}
+
+.card-status-badge.status-active {
+    background: var(--cyan);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
 }
 
 /* Bullet list style (card 01 style) */
@@ -366,8 +430,9 @@ html, body {
 
 /* Sparkline / bar chart area */
 .card-viz {
-    height: 45px;
+    height: 32px;
     position: relative;
+    min-height: 0;
 }
 
 .card-viz canvas {
@@ -385,34 +450,52 @@ html, body {
     height: 55px;
 }
 
-.domain-card.active .card-center-icon { opacity: 0.8; }
+.domain-card.active .card-center-icon {
+    opacity: 0.8;
+}
 
 /* Waveform for audio cards */
 .card-waveform {
-    height: 40px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 2.5px; /* Increased gap for cleaner look */
+    padding: 0 5px;
+    overflow: hidden;
 }
 
 .wave-bar {
-    width: 3px;
-    background: var(--cyan-dim);
+    width: 3px; /* Refined 'medium-thin' width */
+    background: linear-gradient(to bottom, var(--cyan-dim), var(--cyan), var(--cyan-dim));
     border-radius: 2px;
-    animation: wave-pulse 1.2s ease-in-out infinite;
+    opacity: 0.6;
+    transform-origin: center; /* Ensures central oscillation */
+    animation: wave-jump 1.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; /* More elastic/natural feel */
+    box-shadow: 0 0 6px rgba(0, 240, 255, 0.2);
 }
 
-.domain-card.active .wave-bar { background: var(--cyan); }
+.domain-card.active .wave-bar {
+    opacity: 1;
+    background: linear-gradient(to bottom, var(--cyan), #fff, var(--cyan));
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+}
 
-@keyframes wave-pulse {
-    0%, 100% { transform: scaleY(0.4); }
-    50% { transform: scaleY(1); }
+@keyframes wave-jump {
+    0%, 100% {
+        transform: scaleY(0.15);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scaleY(1.2); /* Higher peak for more 'jumping' energy */
+        opacity: 1;
+    }
 }
 
 /* Card data row (metrics at bottom) */
 .card-data-row {
     display: flex;
+    justify-content: space-between;
     gap: 1rem;
     margin-top: 0.6rem;
     padding-top: 0.5rem;
@@ -422,6 +505,18 @@ html, body {
 .card-metric {
     display: flex;
     flex-direction: column;
+}
+
+.card-metric.primary .metric-value {
+    color: var(--cyan);
+    font-size: 0.78rem;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.card-metric.primary .metric-value small {
+    font-size: 0.55rem;
+    margin-left: 2px;
+    opacity: 0.8;
 }
 
 .metric-label {
@@ -442,31 +537,11 @@ html, body {
     color: var(--text-bright);
 }
 
-/* Card footer link */
-.card-footer-link {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 0.5rem;
-    padding-top: 0.5rem;
-    border-top: 1px solid var(--border-subtle);
-    font-size: 0.58rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    color: var(--text-label);
-    text-transform: uppercase;
-    transition: color 0.2s;
-}
-
-.domain-card:hover .card-footer-link { color: var(--text-mid); }
-.domain-card.active .card-footer-link { color: var(--cyan); }
-
-.card-footer-link .arrow { font-size: 0.7rem; }
-
 /* Bottom accent line */
 .card-accent {
     position: absolute;
-    bottom: 0; left: 0;
+    bottom: 0;
+    left: 0;
     height: 2px;
     width: 0;
     background: var(--cyan);
@@ -474,8 +549,13 @@ html, body {
     transition: width 0.4s ease;
 }
 
-.domain-card.active .card-accent { width: 100%; }
-.domain-card:hover .card-accent { width: 40%; }
+.domain-card.active .card-accent {
+    width: 100%;
+}
+
+.domain-card:hover .card-accent {
+    width: 40%;
+}
 
 /* ── NEURAL CONSOLE (Right Sidebar) ──────────────── */
 .neural-console {
@@ -484,10 +564,17 @@ html, body {
     border-radius: 14px;
     display: flex;
     flex-direction: column;
-    overflow: visible;
+    overflow: hidden;
+    /* Changed from visible to hidden to contain internal scrolling */
     position: relative;
     z-index: 100;
-    box-shadow: -4px 0 30px rgba(0,0,0,0.5);
+    box-shadow: -4px 0 30px rgba(0, 0, 0, 0.5);
+    transition: overflow 0s;
+    min-height: 0;
+}
+
+.neural-console:has(.btn-launch:hover) {
+    overflow: visible;
 }
 
 .console-header {
@@ -516,15 +603,25 @@ html, body {
     line-height: 1;
     transition: color 0.2s;
 }
-.console-close:hover { color: var(--text-bright); }
+
+.console-close:hover {
+    color: var(--text-bright);
+}
 
 .console-body {
     flex: 1;
-    overflow: visible;
+    overflow-y: auto;
+    /* Changed from visible to auto to enable internal scrolling */
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    transition: overflow 0s;
+    min-height: 0;
+}
+
+.console-body:has(.btn-launch:hover) {
+    overflow: visible;
 }
 
 /* Welcome state */
@@ -545,8 +642,15 @@ html, body {
 }
 
 @keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
 .welcome-title {
@@ -612,8 +716,8 @@ html, body {
 }
 
 .transcription-box {
-    background: rgba(0,0,0,0.3);
-    border-left: 2px solid rgba(0,240,255,0.4);
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 2px solid rgba(0, 240, 255, 0.4);
     padding: 0.75rem;
     font-size: 0.68rem;
     line-height: 1.6;
@@ -637,8 +741,8 @@ html, body {
 .kw-pill {
     font-size: 0.58rem;
     padding: 0.2rem 0.6rem;
-    background: rgba(0,240,255,0.06);
-    border: 1px solid rgba(0,240,255,0.2);
+    background: rgba(0, 240, 255, 0.06);
+    border: 1px solid rgba(0, 240, 255, 0.2);
     border-radius: 3px;
     color: var(--text-mid);
     letter-spacing: 0.5px;
@@ -658,7 +762,9 @@ html, body {
     transition: color 0.2s;
 }
 
-.resources-list a:hover { color: var(--cyan); }
+.resources-list a:hover {
+    color: var(--cyan);
+}
 
 /* ── LAUNCH BUTTON ────────────────────────────────── */
 .launch-wrap {
@@ -671,11 +777,15 @@ html, body {
     z-index: 10;
 }
 
+.launch-wrap:hover {
+    z-index: 9999;
+}
+
 .btn-launch {
     width: 100%;
     margin: 0;
     padding: 1rem 1.2rem;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     border: 1.5px solid var(--cyan);
     border-radius: 8px;
     color: var(--cyan);
@@ -685,19 +795,19 @@ html, body {
     gap: 1rem;
     position: relative;
     overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.25), 
-                box-shadow 0.4s ease, 
-                background-color 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.25),
+        box-shadow 0.4s ease,
+        background-color 0.4s ease;
     box-shadow:
-        0 0 15px rgba(0,240,255,0.2),
-        inset 0 0 10px rgba(0,240,255,0.05);
+        0 0 15px rgba(0, 240, 255, 0.2),
+        inset 0 0 10px rgba(0, 240, 255, 0.05);
 }
 
 .btn-launch::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0,240,255,0.08), transparent);
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.08), transparent);
 }
 
 .btn-launch:hover {
@@ -714,8 +824,15 @@ html, body {
 }
 
 @keyframes float-hover-v2 {
-    0%, 100% { transform: scale(1.3) translateY(0); }
-    50% { transform: scale(1.3) translateY(-8px); }
+
+    0%,
+    100% {
+        transform: scale(1.3) translateY(0);
+    }
+
+    50% {
+        transform: scale(1.3) translateY(-8px);
+    }
 }
 
 .launch-terminal-icon {
@@ -726,7 +843,7 @@ html, body {
     padding: 0.4rem 0.6rem;
     border-radius: 4px;
     flex-shrink: 0;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .launch-text {
@@ -751,10 +868,22 @@ html, body {
 }
 
 /* ── SCROLLBAR ────────────────────────────────────── */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(0,240,255,0.2); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(0,240,255,0.5); }
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 240, 255, 0.2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 240, 255, 0.5);
+}
 
 /* ── CARD VARIANTS ────────────────────────────────── */
 
@@ -787,26 +916,6 @@ html, body {
     margin-top: 0.3rem;
 }
 
-/* Shield icon for Internal Audit card */
-.card-shield-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-dim);
-    font-size: 1.8rem;
-    opacity: 0.4;
-    margin-bottom: 0.3rem;
-}
-
-.card-shield-icon svg {
-    width: 28px;
-    height: 28px;
-}
-
-.domain-card.active .card-shield-icon {
-    color: var(--cyan);
-    opacity: 0.9;
-}
 
 /* ── SIDEBAR SECTIONS ─────────────────────────────── */
 
@@ -817,5 +926,6 @@ html, body {
 }
 
 /* ── UTILITY ──────────────────────────────────────── */
-.sr-only { display: none; }
-
+.sr-only {
+    display: none;
+}

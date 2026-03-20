@@ -1,0 +1,20 @@
+# Rajshree Learning Project - AI Guardrails
+
+## 🚀 CRITICAL RULE: LOCAL EXECUTION ONLY
+
+This project is designed to run directly from the filesystem (`file://`) or via GitHub Pages. It **DOES NOT** support or require a local server (Vite, Live Server, etc.).
+
+### 🚨 FORBIDDEN ACTIONS:
+- **NEVER** use `http://localhost:[PORT]` to view or test this project.
+- **NEVER** attempt to start a dev server (npm run dev, etc.) unless explicitly instructed for a specific backend task.
+- **NEVER** use `fetch()` for local JSON/HTML files (as it fails under `file://`).
+
+### 🛠️ MANDATORY ACTIONS:
+- **ALWAYS** open the project by using the direct file path: `file:///path/to/index.html`.
+- **ALWAYS** use relative paths for all assets (JS, CSS, Images).
+- **ALWAYS** use JavaScript Template Strings for modular components that need to be loaded into the main page.
+
+### 🤖 BROWSER AUTOMATION (For AI Agents):
+- When use tools like `open_browser_url` or `read_browser_page`, you **MUST** provide the absolute terminal path with the `file:///` prefix.
+- **Correct**: `open_browser_url("file:///C:/Users/Atul Verma/.openclaw/workspace/RajShree_Project/Rajshree Learning Project/memory/06 Internal Audit/v2.0/index.html")`
+- **Incorrect**: `open_browser_url("http://localhost:8080/index.html")`

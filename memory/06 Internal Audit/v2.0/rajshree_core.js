@@ -9,24 +9,31 @@ const DOMAIN_DATA = [
         slot: '01',
         domainId: '00',
         name: 'System & Guardrails',
-        icon: 'power',
-        spark: [80, 82, 85, 90, 88, 95, 93],
-        cardType: 'bullets',
-        bullets: ['Strict Boundaries', 'Memory Map', 'Excel Guardrail', 'Arch Standard', 'Old Archive', 'Governance Core'],
+        icon: 'shield-check',
+        graphLabel: 'PROTOCOL INTEGRITY',
+        kpi: '100',
+        units: 'PASS',
+        status: 'stable',
+        spark: [98, 100, 99, 100, 100, 98, 100, 100, 99, 100, 100, 100, 99, 100, 100],
+        cardType: 'chart-shield',
         footerLabel: 'SYSTEM & GUARDRAILS',
-        footerMetrics: { label1: 'DOMAIN', val1: 'SYS-CORE', label2: 'TYPE', val2: 'Governance' },
+        footerMetrics: { label1: 'RULES', val1: '12', label2: 'DRIFT', val2: '0.0%' },
         keywords: ['memory map', 'guardrails', 'architecture', 'governance'],
-        resources: ['00.00_MEMORY_MAP.js', '00.01_STRICT_BOUNDARIES.md', '00.02_MEMORY_ARCHITECTURE.md']
+        resources: ['00.00_MEMORY_MAP.js', '00.01_STRICT_BOUNDARIES.md']
     },
     {
         slot: '02',
         domainId: '05',
         name: 'Infrastructure',
-        icon: 'crosshair',
-        spark: [40, 38, 42, 45, 43, 50, 48],
+        icon: 'server',
+        graphLabel: 'NETWORK LATENCY',
+        kpi: '12',
+        units: 'ms',
+        status: 'active',
+        spark: [15, 12, 14, 22, 11, 13, 10, 12, 11, 15, 12, 18, 12, 13, 12],
         cardType: 'chart-bar',
         footerLabel: 'INFRASTRUCTURE',
-        footerMetrics: { label1: 'SOURCE', val1: 'GitHub' },
+        footerMetrics: { label1: 'COMMITS', val1: '45+', label2: 'UPTIME', val2: '99.9%' },
         keywords: ['github', 'devops', 'changelog', 'systems'],
         resources: ['05.01_GITHUB_CHANGELOG.md', '05.02_GITHUB_MEMORY.md']
     },
@@ -34,60 +41,86 @@ const DOMAIN_DATA = [
         slot: '03',
         domainId: '02',
         name: 'Research & Knowledge',
-        icon: 'settings',
-        spark: [5, 8, 10, 15, 18, 20, 25],
+        icon: 'book-open',
+        graphLabel: 'TOPIC COVERAGE',
+        kpi: '82',
+        units: '%',
+        status: 'stable',
+        spark: [20, 25, 30, 45, 45, 50, 60, 62, 65, 70, 70, 75, 78, 80, 82],
         cardType: 'chart-bar',
         footerLabel: 'RESEARCH & KNOWLEDGE',
-        footerMetrics: { label1: 'TRAFFIC', val1: '5 docs', label2: 'TIME', val2: 'Deep' },
+        footerMetrics: { label1: 'DOCS', val1: '124', label2: 'REFS', val2: '1.2k' },
         keywords: ['database schema', 'TTS engines', 'roadmap', 'expansion', 'safety'],
-        resources: ['02.01_Database_Schemas/', '02.02_TTS_Engines/', '02.03_Roadmap/']
+        resources: ['02.01_Database_Schemas/', '02.02_TTS_Engines/']
     },
     {
         slot: '04',
         domainId: '10',
         name: 'MVP',
-        icon: 'settings',
-        spark: [10, 20, 40, 35, 50, 45, 60],
+        icon: 'rocket',
+        graphLabel: 'BUILD PROGRESS',
+        kpi: '92',
+        units: '%',
+        status: 'active',
+        spark: [10, 15, 25, 30, 40, 45, 55, 60, 65, 75, 80, 85, 88, 90, 92],
         cardType: 'chart-line',
         footerLabel: 'MVP',
-        footerMetrics: { label1: 'PRIORITY', val1: 'P1 + P2', label2: 'STATE', val2: 'Active' },
+        footerMetrics: { label1: 'PRIORITY', val1: 'P1+P2', label2: 'TASKS', val2: '8/12' },
         keywords: ['mvp audit', 'priority 1', 'priority 2', 'monetization'],
-        resources: ['10.01_MVP_AUDIT_REPORT.md', '10.02_MVP_PRIORITY_1.md', '10.03_MVP_PRIORITY_2.md']
+        resources: ['10.01_MVP_AUDIT_REPORT.md', '10.02_MVP_PRIORITY_1.md']
     },
     {
         slot: '05',
         domainId: '01',
         name: 'Current State',
-        icon: 'sliders',
-        spark: [20, 35, 50, 40, 60, 75, 80],
+        icon: 'activity',
+        graphLabel: 'VERSION PULSE',
+        kpi: '4',
+        units: 'MODS',
+        status: 'stable',
+        spark: [2, 5, 3, 8, 4, 1, 6, 4, 9, 3, 4, 2, 7, 5, 4],
         cardType: 'chart-line',
         footerLabel: 'CURRENT STATE',
-        footerMetrics: { label1: 'STREAMS', val1: '25 docs', label2: 'BASE', val2: 'v16.7' },
+        footerMetrics: { label1: 'VERSION', val1: 'v2.0', label2: 'DELTA', val2: '+15%' },
         keywords: ['project index', 'changelog', 'css', 'js', 'audio mapping'],
-        resources: ['01.00_PROJECT_INDEX.md', '01.06_PROJECT_CHANGELOG.md', '01.10_MENU_NAVBAR.md']
+        resources: ['01.00_PROJECT_INDEX.md', '01.06_PROJECT_CHANGELOG.md']
     },
     {
         slot: '06',
         domainId: '06',
         name: 'Internal Audit',
-        icon: 'alert-triangle',
-        spark: [95, 98, 100, 99, 100, 98, 100],
+        icon: 'search',
+        graphLabel: 'FIDELITY SCORE',
+        kpi: '99.4',
+        units: '%',
+        status: 'stable',
+        spark: [95, 96, 96.5, 97, 98, 99, 98.5, 99.2, 99, 99.1, 99.3, 99.5, 99.2, 99.4, 99.4],
         cardType: 'chart-shield',
         footerLabel: 'INTERNAL AUDIT',
-        footerMetrics: { label1: 'THREAT', val1: '99.4%', label2: 'STATUS', val2: 'Clear' },
+        footerMetrics: { label1: 'THREAT', val1: 'CLEAR', label2: 'ISSUES', val2: '0' },
         keywords: ['audit', 'neural hub', 'frontier', 'mockup', 'fidelity'],
-        resources: ['v2.0/index.html', 'v2_styles.css', 'v2_logic.js', 'Mockups/']
+        resources: [
+            'index.html', 
+            'Audit Memory/06.00_AUDIT_INDEX.md',
+            'Audit Memory/06.01_AUDIT_HTML_LAYOUT.md',
+            'Audit Memory/06.02_AUDIT_CSS_DYNAMICS.md',
+            'Audit Memory/06.03_AUDIT_JS_LOGIC_FLOW.md',
+            'Audit Memory/06.04_AUDIT_WORKFLOW.md'
+        ]
     },
     {
         slot: '07',
         domainId: '04',
         name: 'Sandbox & Demos',
-        icon: 'cloud',
-        spark: [10, 15, 20, 30, 25, 20, 15],
-        cardType: 'two-col-stats',
-        stats: [{ label: 'CLOUD', val: '329 TB' }, { label: 'RUNTIME', val: '55 TB' }],
+        icon: 'flask-conical',
+        graphLabel: 'PROTOTYPE DRIFT',
+        kpi: '0.4',
+        units: 'LOW',
+        status: 'active',
+        spark: [2.1, 1.8, 2.5, 1.5, 3.0, 1.2, 0.8, 1.4, 0.5, 1.1, 0.9, 0.3, 0.7, 0.4, 0.4],
+        cardType: 'chart-bar',
         footerLabel: 'SANDBOX & DEMOS',
-        footerMetrics: {},
+        footerMetrics: { label1: 'STABLE', val1: '7', label2: 'EXP', val2: '12' },
         keywords: ['demo assets', 'sandbox', 'prototype', 'experiments'],
         resources: ['04.01_DEMO_ASSETS.md', '04.02_README.md']
     },
@@ -95,29 +128,41 @@ const DOMAIN_DATA = [
         slot: '08',
         domainId: '03',
         name: 'Architecture & Planning',
-        icon: 'align-justify',
-        spark: [60, 55, 65, 70, 65, 75, 80],
+        icon: 'layers',
+        graphLabel: 'DEPENDENCY FLUX',
+        kpi: '0',
+        units: 'PASS',
+        status: 'stable',
+        spark: [40, 35, 20, 15, 10, 5, 2, 0, 0, 1, 0, 0, 0, 0, 0],
         cardType: 'chart-line',
         footerLabel: 'ARCHITECTURE & PLANNING',
-        footerMetrics: { label1: 'RESOURCE', val1: '53.3B', label2: 'BASE', val2: '4m 12s' },
+        footerMetrics: { label1: 'LAYERS', val1: '3 Tier', label2: 'MODULES', val2: '24' },
         keywords: ['architecture', 'monorepo', 'domain-driven', 'johnny decimal'],
-        resources: ['03.01_Current_Architecture.md', '03.03_Ultra_Refined.md', '03.06_Peak_Domain.md']
+        resources: ['03.01_Current_Architecture.md', '03.03_Ultra_Refined.md']
     },
     {
         slot: '09',
         domainId: '09',
         name: 'Audio Script',
-        icon: 'activity',
-        spark: [30, 50, 70, 40, 85, 60, 90],
+        icon: 'mic',
+        graphLabel: 'PHONETIC ACCURACY',
+        kpi: '95',
+        units: 'SCORE',
+        status: 'active',
+        spark: [30, 50, 70, 40, 85, 60, 95],
         cardType: 'waveform',
         footerLabel: 'AUDIO SCRIPT',
-        footerMetrics: { label1: 'DURATION', val1: '4m 12s' },
+        footerMetrics: { label1: 'SCRIPTS', val1: '505', label2: 'LEVEL', val2: 'High' },
         keywords: ['audio scripts', 'matra gyan', 'hindi', 'tts', 'content'],
         resources: ['09.01_Matra_Gyan_Audio_Scripts.md']
     }
 ];
 
-const WAVE_HEIGHTS = [15, 35, 55, 70, 45, 80, 60, 90, 50, 75, 40, 65, 30, 55, 45, 70, 35, 60, 25, 80];
+const WAVE_HEIGHTS = [
+    18, 32, 45, 60, 25, 80, 55, 95, 40, 70, 35, 65, 20, 50, 48, 75, 30, 85, 60, 90,
+    15, 40, 55, 78, 42, 88, 62, 98, 50, 82, 38, 72, 28, 58, 46, 76, 32, 86, 64, 92,
+    22, 44, 58, 82, 45, 92, 65, 95, 55, 85, 42, 75, 35, 65, 52, 80, 38, 88, 68, 96
+];
 
 let activeConsoleChart = null;
 
@@ -144,9 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render all charts after DOM settles
     setTimeout(() => {
         DOMAIN_DATA.forEach(d => {
-            if (['chart-line','chart-bar','chart-shield'].includes(d.cardType)) {
-                renderCardChart(d);
-            }
+            renderCardChart(d);
         });
 
         // Auto-select domain 09 to match mockup default
@@ -160,8 +203,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // ─────────────────────────────────────────────────
 function buildCardHTML(d) {
     const metrics = d.footerMetrics || {};
-    const metricsHTML = (metrics.label1 || metrics.label2) ? `
+    const metricsHTML = `
         <div class="card-data-row">
+            <div class="card-metric primary">
+                <span class="metric-label">CURRENT</span>
+                <span class="metric-value">${d.kpi}<small>${d.units}</small></span>
+            </div>
             ${metrics.label1 ? `<div class="card-metric">
                 <span class="metric-label">${metrics.label1}</span>
                 <span class="metric-value">${metrics.val1}</span>
@@ -170,55 +217,42 @@ function buildCardHTML(d) {
                 <span class="metric-label">${metrics.label2}</span>
                 <span class="metric-value">${metrics.val2}</span>
             </div>` : ''}
-        </div>` : '';
+        </div>`;
 
     return `
         <div class="card-top">
             <span class="card-num">${d.slot}</span>
+            <div class="card-status-badge status-${d.status}"></div>
             <span class="card-icon"><i data-lucide="${d.icon}"></i></span>
         </div>
         <div class="card-title">${d.name}</div>
-        <div class="card-body">${buildCardBody(d)}</div>
-        ${metricsHTML}
-        <div class="card-footer-link">
-            <span>${d.footerLabel}</span>
-            <span class="arrow">→</span>
+        <div class="card-body">
+            ${buildCardBody(d)}
         </div>
+        ${metricsHTML}
         <div class="card-accent"></div>
     `;
 }
 
 function buildCardBody(d) {
-    switch (d.cardType) {
-        case 'bullets':
-            return `<div class="card-bullets">
-                ${(d.bullets || []).map(b => `<span class="card-bullet">${b}</span>`).join('')}
-            </div>`;
-
-        case 'two-col-stats':
-            return `<div class="card-big-stats">
-                ${(d.stats || []).map(s => `<div class="big-stat">
-                    <div class="big-stat-val">${s.val}</div>
-                    <div class="big-stat-label">${s.label}</div>
-                </div>`).join('')}
-            </div>`;
-
-        case 'waveform':
-            return `<div class="card-waveform">
+    let vizHTML = `<div class="card-viz"><canvas id="spark-${d.slot}"></canvas></div>`;
+    
+    // Waveform has a custom HTML structure instead of a chart canvas
+    if (d.cardType === 'waveform') {
+        vizHTML = `
+            <div class="card-waveform">
                 ${WAVE_HEIGHTS.map((h, i) =>
-                    `<div class="wave-bar" style="height:${h}%;animation-delay:${(i * 0.065).toFixed(2)}s"></div>`
+                    `<div class="wave-bar" style="height:${h}%;animation-duration:${(1.2 + Math.random() * 0.6).toFixed(2)}s;animation-delay:${(Math.random() * -2).toFixed(2)}s"></div>`
                 ).join('')}
             </div>`;
-
-        case 'chart-shield':
-            return `<div class="card-shield-icon"><i data-lucide="shield-alert"></i></div>
-                    <div class="card-viz"><canvas id="spark-${d.slot}"></canvas></div>`;
-
-        case 'chart-line':
-        case 'chart-bar':
-        default:
-            return `<div class="card-viz"><canvas id="spark-${d.slot}"></canvas></div>`;
     }
+
+    const kpiHeader = `
+        <div class="card-kpi-row">
+            <div class="kpi-label">${d.graphLabel}</div>
+        </div>`;
+
+    return `${kpiHeader}${vizHTML}`;
 }
 
 // ─────────────────────────────────────────────────
@@ -230,30 +264,59 @@ function renderCardChart(d) {
     const ctx = canvas.getContext('2d');
     const isBar = d.cardType === 'chart-bar' || d.cardType === 'chart-shield';
 
+    // Premium "Sparkling" Gradient for line charts
+    let gradient = 'rgba(0, 240, 255, 0.08)';
+    if (!isBar) {
+        gradient = ctx.createLinearGradient(0, 0, 0, 40);
+        gradient.addColorStop(0, 'rgba(0, 240, 255, 0.3)');
+        gradient.addColorStop(1, 'rgba(0, 240, 255, 0)');
+    }
+
     new Chart(ctx, {
         type: isBar ? 'bar' : 'line',
         data: {
-            labels: d.spark.map((_, i) => i),
+            labels: d.spark.map((_, i) => 'T-' + (d.spark.length - i - 1)),
             datasets: [{
+                label: d.graphLabel,
                 data: d.spark,
-                borderColor: 'rgba(0,240,255,0.8)',
-                backgroundColor: isBar
-                    ? d.spark.map(() => 'rgba(0,240,255,0.35)')
-                    : 'rgba(0,240,255,0.08)',
-                borderWidth: isBar ? 0 : 1.5,
+                borderColor: 'rgba(0, 240, 255, 0.9)',
+                backgroundColor: isBar ? 'rgba(0, 240, 255, 0.4)' : gradient,
+                borderWidth: isBar ? 0 : 2,
                 borderRadius: isBar ? 2 : 0,
                 pointRadius: 0,
-                tension: 0.4,
+                pointHoverRadius: 4,
+                pointBackgroundColor: '#00f0ff',
+                tension: 0.45,
                 fill: !isBar
             }]
         },
         options: {
-            events: [],
+            interaction: { mode: 'index', intersect: false },
             responsive: true,
             maintainAspectRatio: false,
-            scales: { x: { display: false }, y: { display: false } },
-            plugins: { legend: { display: false } },
-            animation: { duration: 600, easing: 'easeOutQuart' }
+            scales: { x: { display: false }, y: { display: false, beginAtZero: isBar } },
+            plugins: { 
+                legend: { display: false },
+                tooltip: {
+                    enabled: true,
+                    backgroundColor: 'rgba(0, 30, 40, 0.9)',
+                    titleColor: '#8db4c0',
+                    bodyColor: '#00f0ff',
+                    borderColor: 'rgba(0, 240, 255, 0.3)',
+                    borderWidth: 1,
+                    displayColors: false,
+                    callbacks: {
+                        label: function(context) { return context.parsed.y + ' ' + d.units; }
+                    }
+                }
+            },
+            animation: { duration: 800, easing: 'easeOutQuart' },
+            elements: {
+                line: {
+                    shadowColor: 'rgba(0, 240, 255, 0.6)',
+                    shadowBlur: 10
+                }
+            }
         }
     });
 }
@@ -368,8 +431,9 @@ function renderSidebarChart(d) {
     activeConsoleChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['W1','W2','W3','W4','W5','W6','W7'],
+            labels: d.spark.map((_, i) => 'T-' + (d.spark.length - i - 1)),
             datasets: [{
+                label: d.graphLabel,
                 data: d.spark,
                 borderColor: '#00f0ff',
                 backgroundColor: 'rgba(0,240,255,0.1)',
@@ -383,6 +447,7 @@ function renderSidebarChart(d) {
             }]
         },
         options: {
+            interaction: { mode: 'index', intersect: false },
             responsive: true,
             maintainAspectRatio: false,
             scales: {
@@ -390,9 +455,23 @@ function renderSidebarChart(d) {
                     ticks: { color: '#4a6a78', font: { size: 8, family: 'Fira Code' } },
                     grid: { color: 'rgba(255,255,255,0.04)', drawBorder: false }
                 },
-                y: { display: false }
+                y: { display: false, beginAtZero: false } // ensure auto-scaling
             },
-            plugins: { legend: { display: false }, tooltip: { enabled: false } }
+            plugins: { 
+                legend: { display: false }, 
+                tooltip: { 
+                    enabled: true,
+                    backgroundColor: 'rgba(0, 30, 40, 0.9)',
+                    titleColor: '#8db4c0',
+                    bodyColor: '#00f0ff',
+                    borderColor: 'rgba(0, 240, 255, 0.3)',
+                    borderWidth: 1,
+                    displayColors: false,
+                    callbacks: {
+                        label: function(context) { return context.parsed.y + ' ' + d.units; }
+                    }
+                } 
+            }
         }
     });
 }
