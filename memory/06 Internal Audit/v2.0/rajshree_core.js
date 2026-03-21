@@ -17,7 +17,13 @@ const DOMAIN_DATA = [
         spark: [98, 100, 99, 100, 100, 98, 100, 100, 99, 100, 100, 100, 99, 100, 100],
         cardType: 'chart-shield',
         footerLabel: 'SYSTEM & GUARDRAILS',
-        footerMetrics: { label1: 'RULES', val1: '12', label2: 'DRIFT', val2: '0.0%' },
+        footerMetrics: { 
+            label1: 'RULES', val1: '12', 
+            label2: 'DRIFT', val2: '0.0%',
+            label3: 'LATENCY', val3: '2ms',
+            label4: 'UPTIME', val4: '100%',
+            label5: 'LOAD', val5: '14%'
+        },
         keywords: ['memory map', 'guardrails', 'architecture', 'governance'],
         resources: ['00.00_MEMORY_MAP.js', '00.01_STRICT_BOUNDARIES.md']
     },
@@ -33,7 +39,13 @@ const DOMAIN_DATA = [
         spark: [15, 12, 14, 22, 11, 13, 10, 12, 11, 15, 12, 18, 12, 13, 12],
         cardType: 'chart-bar',
         footerLabel: 'INFRASTRUCTURE',
-        footerMetrics: { label1: 'COMMITS', val1: '45+', label2: 'UPTIME', val2: '99.9%' },
+        footerMetrics: { 
+            label1: 'COMMITS', val1: '45+', 
+            label2: 'UPTIME', val2: '99.9%',
+            label3: 'NODES', val3: '08',
+            label4: 'TRAFFIC', val4: 'HIGH',
+            label5: 'SENSORS', val5: 'ON'
+        },
         keywords: ['github', 'devops', 'changelog', 'systems'],
         resources: ['05.01_GITHUB_CHANGELOG.md', '05.02_GITHUB_MEMORY.md']
     },
@@ -42,14 +54,20 @@ const DOMAIN_DATA = [
         domainId: '02',
         name: 'Research & Knowledge',
         icon: 'book-open',
+        status: 'warning',
+        spark: [20, 25, 30, 45, 45, 50, 60, 62, 65, 70, 70, 75, 78, 80, 82],
         graphLabel: 'TOPIC COVERAGE',
         kpi: '82',
         units: '%',
-        status: 'stable',
-        spark: [20, 25, 30, 45, 45, 50, 60, 62, 65, 70, 70, 75, 78, 80, 82],
         cardType: 'chart-bar',
         footerLabel: 'RESEARCH & KNOWLEDGE',
-        footerMetrics: { label1: 'DOCS', val1: '124', label2: 'REFS', val2: '1.2k' },
+        footerMetrics: { 
+            label1: 'DOCS', val1: '124', 
+            label2: 'REFS', val2: '1.2k',
+            label3: 'TOPICS', val3: '42',
+            label4: 'SOURCES', val4: '09',
+            label5: 'CITES', val5: '380'
+        },
         keywords: ['database schema', 'TTS engines', 'roadmap', 'expansion', 'safety'],
         resources: ['02.01_Database_Schemas/', '02.02_TTS_Engines/']
     },
@@ -65,7 +83,13 @@ const DOMAIN_DATA = [
         spark: [10, 15, 25, 30, 40, 45, 55, 60, 65, 75, 80, 85, 88, 90, 92],
         cardType: 'chart-line',
         footerLabel: 'MVP',
-        footerMetrics: { label1: 'PRIORITY', val1: 'P1+P2', label2: 'TASKS', val2: '8/12' },
+        footerMetrics: { 
+            label1: 'PRIORITY', val1: 'P1+P2', 
+            label2: 'TASKS', val2: '8/12',
+            label3: 'STAGE', val3: 'BETA',
+            label4: 'SPRINT', val4: '04',
+            label5: 'VELO', val5: '1.4x'
+        },
         keywords: ['mvp audit', 'priority 1', 'priority 2', 'monetization'],
         resources: ['10.01_MVP_AUDIT_REPORT.md', '10.02_MVP_PRIORITY_1.md']
     },
@@ -81,7 +105,13 @@ const DOMAIN_DATA = [
         spark: [2, 5, 3, 8, 4, 1, 6, 4, 9, 3, 4, 2, 7, 5, 4],
         cardType: 'chart-line',
         footerLabel: 'CURRENT STATE',
-        footerMetrics: { label1: 'VERSION', val1: 'v2.0', label2: 'DELTA', val2: '+15%' },
+        footerMetrics: { 
+            label1: 'VERSION', val1: 'v2.0', 
+            label2: 'DELTA', val2: '+15%',
+            label3: 'MODS', val3: '04',
+            label4: 'BRANCH', val4: 'MAIN',
+            label5: 'STABLE', val5: 'YES'
+        },
         keywords: ['project index', 'changelog', 'css', 'js', 'audio mapping'],
         resources: ['01.00_PROJECT_INDEX.md', '01.06_PROJECT_CHANGELOG.md']
     },
@@ -91,13 +121,19 @@ const DOMAIN_DATA = [
         name: 'Internal Audit',
         icon: 'search',
         graphLabel: 'FIDELITY SCORE',
-        kpi: '99.4',
-        units: '%',
-        status: 'stable',
-        spark: [95, 96, 96.5, 97, 98, 99, 98.5, 99.2, 99, 99.1, 99.3, 99.5, 99.2, 99.4, 99.4],
+        kpi: '404',
+        units: 'LEAKS',
+        status: 'threat',
+        spark: [50, 120, 250, 380, 420, 404],
         cardType: 'chart-shield',
         footerLabel: 'INTERNAL AUDIT',
-        footerMetrics: { label1: 'THREAT', val1: 'CLEAR', label2: 'ISSUES', val2: '0' },
+        footerMetrics: { 
+            label1: 'THREAT', val1: 'HIGH', 
+            label2: 'ISSUES', val2: '08',
+            label3: 'SCORE', val3: '9.9/10',
+            label4: 'ALARM', val4: 'ON',
+            label5: 'SOURCE', val5: 'EXT'
+        },
         keywords: ['audit', 'neural hub', 'frontier', 'mockup', 'fidelity'],
         resources: [
             'index.html', 
@@ -120,41 +156,53 @@ const DOMAIN_DATA = [
         spark: [2.1, 1.8, 2.5, 1.5, 3.0, 1.2, 0.8, 1.4, 0.5, 1.1, 0.9, 0.3, 0.7, 0.4, 0.4],
         cardType: 'chart-bar',
         footerLabel: 'SANDBOX & DEMOS',
-        footerMetrics: { label1: 'STABLE', val1: '7', label2: 'EXP', val2: '12' },
-        keywords: ['demo assets', 'sandbox', 'prototype', 'experiments'],
-        resources: ['04.01_DEMO_ASSETS.md', '04.02_README.md']
+        footerMetrics: { 
+            label1: 'STABLE', val1: 'YES',
+            label2: 'EXP', val2: '02',
+            label3: 'PUSH', val3: 'READY',
+            label4: 'ENV', val4: 'PROD',
+            label5: 'HASH', val5: '8F2C'
+        }
     },
     {
         slot: '08',
-        domainId: '03',
-        name: 'Architecture & Planning',
-        icon: 'layers',
-        graphLabel: 'DEPENDENCY FLUX',
-        kpi: '0',
-        units: 'PASS',
-        status: 'stable',
-        spark: [40, 35, 20, 15, 10, 5, 2, 0, 0, 1, 0, 0, 0, 0, 0],
+        domainId: '08',
+        name: 'Protocol X',
+        icon: 'hexagon',
+        status: 'warning',
+        kpi: '0.12',
+        units: 'drift',
+        spark: [0.05, 0.08, 0.15, 0.1, 0.11, 0.12],
+        graphLabel: 'DRIFT ANALYSIS',
         cardType: 'chart-line',
-        footerLabel: 'ARCHITECTURE & PLANNING',
-        footerMetrics: { label1: 'LAYERS', val1: '3 Tier', label2: 'MODULES', val2: '24' },
-        keywords: ['architecture', 'monorepo', 'domain-driven', 'johnny decimal'],
-        resources: ['03.01_Current_Architecture.md', '03.03_Ultra_Refined.md']
+        footerLabel: 'PROTOCOL X',
+        footerMetrics: { 
+            label1: 'LAYERS', val1: '12', 
+            label2: 'MODULES', val2: '04',
+            label3: 'SYNC', val3: 'FAIL',
+            label4: 'PORT', val4: '8080',
+            label5: 'IP', val5: '127.0.0.1'
+        }
     },
     {
         slot: '09',
-        domainId: '09',
+        domainId: '06',
         name: 'Audio Script',
         icon: 'mic',
-        graphLabel: 'PHONETIC ACCURACY',
-        kpi: '95',
-        units: 'SCORE',
-        status: 'active',
-        spark: [30, 50, 70, 40, 85, 60, 95],
+        status: 'stable',
+        kpi: '505',
+        units: 'files',
+        spark: [100, 250, 400, 480, 495, 505],
+        graphLabel: 'CONTENT TOTAL',
         cardType: 'waveform',
         footerLabel: 'AUDIO SCRIPT',
-        footerMetrics: { label1: 'SCRIPTS', val1: '505', label2: 'LEVEL', val2: 'High' },
-        keywords: ['audio scripts', 'matra gyan', 'hindi', 'tts', 'content'],
-        resources: ['09.01_Matra_Gyan_Audio_Scripts.md']
+        footerMetrics: { 
+            label1: 'SCRIPTS', val1: 'ON', 
+            label2: 'LEVEL', val2: 'MAX',
+            label3: 'PHASE', val3: '02',
+            label4: 'LANG', val4: 'HINDI',
+            label5: 'QUAL', val5: 'HD'
+        }
     }
 ];
 
@@ -192,9 +240,31 @@ document.addEventListener('DOMContentLoaded', () => {
             renderCardChart(d);
         });
 
-        // Auto-select domain 09 to match mockup default
-        const d09 = DOMAIN_DATA.find(d => d.slot === '09');
-        if (d09) selectDomain(d09);
+        // Auto-select domain 09 to match mockup default (DISABLED per user request)
+        // const d09 = DOMAIN_DATA.find(d => d.slot === '09');
+        // if (d09) selectDomain(d09);
+
+        // Start with the panel completely hidden (Workspace reset)
+        closeConsole();
+
+        // Bind Close Button to reset layout
+        const closeBtn = document.querySelector('.close-console');
+        if (closeBtn) closeBtn.addEventListener('click', closeConsole);
+
+        // Bind collapsable sections via event delegation
+        const consoleBody = document.getElementById('console-body');
+        if (consoleBody) {
+            consoleBody.addEventListener('click', (e) => {
+                const label = e.target.closest('.sidebar-section-label');
+                if (label) {
+                    const section = label.closest('.sidebar-section.collapsable');
+                    if (section) section.classList.toggle('collapsed');
+                }
+            });
+        }
+
+        // Init Tooltip Engine
+        initSentinelTooltips();
     }, 150);
 });
 
@@ -203,27 +273,36 @@ document.addEventListener('DOMContentLoaded', () => {
 // ─────────────────────────────────────────────────
 function buildCardHTML(d) {
     const metrics = d.footerMetrics || {};
+    const tooltipData = Object.keys(metrics)
+        .filter(k => k.startsWith('label'))
+        .map(k => {
+            const id = k.replace('label', '');
+            return `${metrics['label' + id]}: ${metrics['val' + id]}`;
+        })
+        .join(' | ');
+
     const metricsHTML = `
         <div class="card-data-row">
             <div class="card-metric primary">
                 <span class="metric-label">CURRENT</span>
                 <span class="metric-value">${d.kpi}<small>${d.units}</small></span>
             </div>
-            ${metrics.label1 ? `<div class="card-metric">
-                <span class="metric-label">${metrics.label1}</span>
-                <span class="metric-value">${metrics.val1}</span>
-            </div>` : ''}
-            ${metrics.label2 ? `<div class="card-metric">
-                <span class="metric-label">${metrics.label2}</span>
-                <span class="metric-value">${metrics.val2}</span>
-            </div>` : ''}
+            ${Object.keys(metrics).filter(k => k.startsWith('label')).map(k => {
+                const id = k.replace('label', '');
+                return `
+                    <div class="card-metric">
+                        <span class="metric-label">${metrics['label' + id]}</span>
+                        <span class="metric-value">${metrics['val' + id]}</span>
+                    </div>`;
+            }).join('')}
         </div>`;
 
     return `
         <div class="card-top">
             <span class="card-num">${d.slot}</span>
-            <div class="card-status-badge status-${d.status}"></div>
-            <span class="card-icon"><i data-lucide="${d.icon}"></i></span>
+            <span class="card-icon" data-status="${d.status}" data-tooltip="${tooltipData}">
+                <i data-lucide="${d.icon}"></i>
+            </span>
         </div>
         <div class="card-title">${d.name}</div>
         <div class="card-body">
@@ -322,16 +401,102 @@ function renderCardChart(d) {
 }
 
 // ─────────────────────────────────────────────────
+// DYNAMIC TOOLTIP ENGINE
+// ─────────────────────────────────────────────────
+function initSentinelTooltips() {
+    let tooltip = document.getElementById('sentinel-tooltip-float');
+    if (!tooltip) {
+        tooltip = document.createElement('div');
+        tooltip.id = 'sentinel-tooltip-float';
+        tooltip.className = 'sentinel-tooltip-float';
+        document.body.appendChild(tooltip);
+    }
+
+    const hideTooltip = () => { tooltip.classList.remove('visible'); };
+
+    document.querySelectorAll('.card-icon').forEach(icon => {
+        icon.addEventListener('mouseenter', (e) => {
+            const text = icon.getAttribute('data-tooltip');
+            if (!text) return;
+
+            tooltip.textContent = text;
+            tooltip.classList.add('visible');
+
+            const rect = icon.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
+
+            // Default position: below the icon
+            let top = rect.bottom + 8;
+            let left = rect.left + (rect.width / 2) - (tooltipRect.width / 2);
+
+            // Flip to TOP if it would overflow the bottom of the screen
+            if (top + tooltipRect.height > window.innerHeight) {
+                top = rect.top - tooltipRect.height - 8;
+            }
+
+            // Adjust horizontal if it overflows screen edges
+            if (left < 10) left = 10;
+            if (left + tooltipRect.width > window.innerWidth - 10) {
+                left = window.innerWidth - tooltipRect.width - 10;
+            }
+
+            tooltip.style.top = `${top + window.scrollY}px`;
+            tooltip.style.left = `${left + window.scrollX}px`;
+        });
+
+        icon.addEventListener('mouseleave', hideTooltip);
+    });
+
+    // Hide if window moves or scrolls
+    window.addEventListener('scroll', hideTooltip, { passive: true });
+    window.addEventListener('resize', hideTooltip);
+}
+
+// ─────────────────────────────────────────────────
 // DOMAIN SELECTION + SIDEBAR
 // ─────────────────────────────────────────────────
+
+function closeConsole() {
+    // Remove active state from all cards
+    document.querySelectorAll('.domain-card').forEach(c => c.classList.remove('active'));
+    
+    // Hide panel layout via CSS class
+    const mainArea = document.querySelector('.frontier-main');
+    if (mainArea) mainArea.classList.add('console-hidden');
+
+    // Reset Title safely
+    const title = document.getElementById('console-title');
+    if (title) title.textContent = 'NEURAL HUB // 00';
+}
+
 function selectDomain(d) {
+    const card = document.querySelector(`.domain-card[data-slot="${d.slot}"]`);
+    
+    // Toggle Logic: If the clicked card is already active, shut the console off
+    if (card && card.classList.contains('active')) {
+        closeConsole();
+        return;
+    }
+
     // Deactivate all, activate selected
     document.querySelectorAll('.domain-card').forEach(c => c.classList.remove('active'));
-    const card = document.querySelector(`.domain-card[data-slot="${d.slot}"]`);
     if (card) card.classList.add('active');
 
-    // Update header
-    document.getElementById('console-title').textContent = `${d.name.toUpperCase()} // ${d.slot}`;
+    // Reveal the panel if it was hidden
+    const mainArea = document.querySelector('.frontier-main');
+    if (mainArea) mainArea.classList.remove('console-hidden');
+
+    // Update header: Matches folder format "06 INTERNAL AUDIT"
+    document.getElementById('console-title').textContent = `${d.slot} ${d.name.toUpperCase()}`;
+
+    // Inject dynamic icon matching the card
+    const iconWrap = document.getElementById('console-icon-wrap');
+    if (iconWrap) {
+        iconWrap.innerHTML = `<i data-lucide="${d.icon}"></i>`;
+    }
+    
+    // Scale title if needed
+    setTimeout(scaleConsoleTitle, 10);
 
     // Rebuild sidebar body
     const body = document.getElementById('console-body');
@@ -346,76 +511,179 @@ function selectDomain(d) {
 }
 
 // ─────────────────────────────────────────────────
+// DYNAMIC HEADER SCALING
+// ─────────────────────────────────────────────────
+function scaleConsoleTitle() {
+    const title = document.getElementById('console-title');
+    if (!title) return;
+
+    // Reset to base size first to measure native width
+    title.style.fontSize = '0.85rem';
+    
+    // The panel has a fixed target width of 360px (--side-w).
+    // During the opening CSS animation, clientWidth is artificially small, 
+    // causing the math to aggressively shrink the font.
+    // By hardcoding the target available space (360px panel - 40px padding - 40px close button area),
+    // it calculates the perfect size instantly without waiting for the animation.
+    const maxWidth = 280; 
+    
+    let currentSize = 0.85; // rem
+    
+    // Loop to decrease size until it fits, down to a minimum of 0.5rem
+    while (title.scrollWidth > maxWidth && currentSize > 0.5) {
+        currentSize -= 0.05;
+        title.style.fontSize = `${currentSize}rem`;
+    }
+}
+
+// Re-scale on window resize
+window.addEventListener('resize', () => {
+    // Only scale if the console is actively displaying a custom title
+    const title = document.getElementById('console-title');
+    if (title && title.textContent !== 'NEURAL HUB // 00') {
+        scaleConsoleTitle();
+    }
+});
+
+// ─────────────────────────────────────────────────
 // SIDEBAR HTML BUILDER
 // ─────────────────────────────────────────────────
 function buildSidebarHTML(d) {
-    const kwHTML = (d.keywords || []).map(k => `<span class="kw-pill">${k}</span>`).join('');
-    const resHTML = (d.resources || []).map(r => `<div>• <span>${r}</span></div>`).join('');
+    // 1. Calculate Status Colors
+    const s = (d.status || 'ACTIVE').toUpperCase();
+    let statusClass = 'text-stable';
+    if (s.includes('THREAT') || s.includes('BREACH')) statusClass = 'text-threat';
+    else if (s.includes('WARNING') || s.includes('INVESTIGATION')) statusClass = 'text-warning';
+
+    // 2. Generate System Metrics Section dynamically
+    let metricsHTML = '';
+    if (d.footerMetrics && Object.keys(d.footerMetrics).length > 0) {
+        const fields = Object.entries(d.footerMetrics).map(([k, v]) => `
+            <div class="meta-field">
+                <span class="meta-label">${k}</span>
+                <span class="meta-val">${v}</span>
+            </div>
+        `).join('');
+        metricsHTML = `
+            <!-- System Metrics (Collapsible) -->
+            <div class="sidebar-section collapsable collapsed">
+                <div class="sidebar-section-label">
+                    System Metrics <span class="expand-btn">∨</span>
+                </div>
+                <div class="sidebar-section-content sidebar-meta">
+                    ${fields}
+                </div>
+            </div>
+        `;
+    }
+
+    // 3. Conditional Keywords and Resources
+    let kwSection = '';
+    if (d.keywords && d.keywords.length > 0) {
+        const kwHTML = d.keywords.map(k => `<span class="kw-pill">${k}</span>`).join('');
+        kwSection = `
+            <!-- Keywords (Collapsible) -->
+            <div class="sidebar-section collapsable collapsed">
+                <div class="sidebar-section-label">
+                    Keywords <span class="expand-btn">∨</span>
+                </div>
+                <div class="sidebar-section-content keywords-wrap">${kwHTML}</div>
+            </div>
+        `;
+    }
+
+    let resSection = '';
+    if (d.resources && d.resources.length > 0) {
+        const resHTML = d.resources.map(r => `<div>• <span>${r}</span></div>`).join('');
+        resSection = `
+            <!-- Resources (Collapsible) -->
+            <div class="sidebar-section collapsable collapsed">
+                <div class="sidebar-section-label">
+                    Resources <span class="expand-btn">∨</span>
+                </div>
+                <div class="sidebar-section-content resources-list">${resHTML}</div>
+            </div>
+        `;
+    }
+
+    // 4. Dynamic Logs
+    const logText = statusClass === 'text-threat' 
+        ? `CRITICAL ALERT: Anomalies detected in <em>${d.footerLabel}</em> sector. Automated quarantine protocols engaged. Administrator override required.` 
+        : statusClass === 'text-warning'
+        ? `Caution advised. Irregularities logged in <em>${d.footerLabel}</em> mapping. Neural heuristic analyzing potential vectors. Proceed with awareness.`
+        : `Neural engine initialized. Parsing <em>${d.footerLabel}</em> domain… Artifact count: ${d._count || Math.floor(Math.random()*100)}. All systems validated. CMDR Atul Verma access granted.`;
 
     return `
-        <!-- 2×2 Meta Grid -->
-        <div class="sidebar-meta">
-            <div class="meta-field">
-                <span class="meta-label">Status</span>
-                <span class="meta-val status-active">ACTIVE</span>
+        <!-- 1. Overview (Visible by default per user request) -->
+        <div class="sidebar-section collapsable">
+            <div class="sidebar-section-label">
+                Overview <span class="expand-btn">∨</span>
             </div>
-            <div class="meta-field">
-                <span class="meta-label">Script ID</span>
-                <span class="meta-val">${d.domainId.padStart(2,'0')}-CORE</span>
-            </div>
-            <div class="meta-field">
-                <span class="meta-label">Source</span>
-                <span class="meta-val">AMU7/V1</span>
-            </div>
-            <div class="meta-field">
-                <span class="meta-label">Duration</span>
-                <span class="meta-val">4m 12s</span>
-            </div>
-        </div>
-
-        <!-- AI Transcription -->
-        <div class="sidebar-section">
-            <div class="sidebar-section-label">AI Transcription</div>
-            <div class="transcription-box">
-                Neural engine initialized. Parsing <em>${d.footerLabel}</em> domain… 
-                Artifact count: ${d._count || 0}. All systems validated. 
-                CMDR Atul Verma access granted.
-            </div>
-        </div>
-
-        <!-- Launch Terminal Button (Moved here) -->
-        <div class="launch-wrap">
-            <button class="btn-launch" onclick="alert('Frontier Terminal: ${d.name}')">
-                <div class="launch-terminal-icon">&gt;_]</div>
-                <div class="launch-text">
-                    <strong>DOMAIN<br>TERMINAL</strong>
+            <div class="sidebar-section-content sidebar-meta">
+                <div class="meta-field">
+                    <span class="meta-label">Status</span>
+                    <span class="meta-val ${statusClass}">${d.status || 'ACTIVE'}</span>
                 </div>
-            </button>
+                <div class="meta-field">
+                    <span class="meta-label">ID</span>
+                    <span class="meta-val">${d.domainId.toString().padStart(2,'0')}-CORE</span>
+                </div>
+                <div class="meta-field">
+                    <span class="meta-label">KPI Index</span>
+                    <span class="meta-val">${d.kpi || '---'} ${d.units || ''}</span>
+                </div>
+                <div class="meta-field">
+                    <span class="meta-label">Designation</span>
+                    <span class="meta-val">${d.name.length > 15 ? d.name.substring(0, 15).toUpperCase() + '...' : d.name.toUpperCase()}</span>
+                </div>
+                <div class="meta-field">
+                    <span class="meta-label">Sector Slot</span>
+                    <span class="meta-val">SEC-${d.slot || 'XX'}</span>
+                </div>
+                ${d.footerLabel ? `
+                <div class="meta-field">
+                    <span class="meta-label">Node Class</span>
+                    <span class="meta-val">${d.footerLabel.toUpperCase()}</span>
+                </div>` : ''}
+            </div>
         </div>
 
-        <!-- Domain Traffic Chart -->
+        ${metricsHTML}
+
+        <!-- 3. AI Transcription (Collapsed by default) -->
+        <div class="sidebar-section collapsable collapsed">
+            <div class="sidebar-section-label">
+                AI Interpretation <span class="expand-btn">∨</span>
+            </div>
+            <div class="sidebar-section-content transcription-box">
+                ${logText}
+            </div>
+        </div>
+
+        <!-- 4. Launch Terminal Button (Uncollapsible, Always Visible, Center Stage) -->
         <div class="sidebar-section">
-            <div class="sidebar-section-label">Domain Traffic</div>
-            <div class="traffic-chart-wrap">
+            <div class="launch-wrap">
+                <button class="btn-launch" onclick="alert('Frontier Terminal: ${d.name}')">
+                    <div class="launch-terminal-icon">&gt;_]</div>
+                    <div class="launch-text">
+                        <strong>DOMAIN<br>TERMINAL</strong>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- 5. Domain Traffic Chart (Collapsible, OPEN by default) -->
+        <div class="sidebar-section collapsable">
+            <div class="sidebar-section-label">
+                Domain Traffic <span class="expand-btn">∨</span>
+            </div>
+            <div class="sidebar-section-content traffic-chart-wrap">
                 <canvas id="console-chart"></canvas>
             </div>
         </div>
 
-        <!-- Keywords -->
-        <div class="sidebar-section">
-            <div class="sidebar-section-label">
-                Keywords <span class="expand-btn">∨</span>
-            </div>
-            <div class="keywords-wrap">${kwHTML}</div>
-        </div>
-
-        <!-- Resources -->
-        <div class="sidebar-section">
-            <div class="sidebar-section-label">
-                Resources <span class="expand-btn">∨</span>
-            </div>
-            <div class="resources-list">${resHTML}</div>
-        </div>
+        ${kwSection}
+        ${resSection}
     `;
 }
 

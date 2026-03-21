@@ -249,6 +249,18 @@ body {
     padding: 1.5rem;
     gap: 1.5rem;
     position: relative;
+    transition: grid-template-columns 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.frontier-main.console-hidden {
+    grid-template-columns: 1fr 0px;
+    gap: 0;
+}
+
+.frontier-main.console-hidden .neural-console {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(20px);
 }
 
 /* ── DOMAIN GRID ──────────────────────────────────── */
@@ -282,13 +294,28 @@ body {
     min-height: 0;
     /* Remove fixed min-height to allow scaling with grid rows */
     height: 100%;
-    overflow: hidden;
-    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+    overflow: visible; /* Changed from hidden to show tooltips */
+    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s, transform 0.25s, z-index 0s;
+}
+
+/* Row 1: Expand Down */
+.domain-card:nth-child(-n+3) {
+    transform-origin: top;
+}
+
+/* Row 3: Expand Up */
+.domain-card:nth-child(n+7) {
+    transform-origin: bottom;
 }
 
 .domain-card:hover {
     border-color: rgba(0, 240, 255, 0.25);
     background: rgba(6, 22, 34, 0.9);
+    transform: scale(1.02);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(0, 240, 255, 0.15);
+    z-index: 500; /* Ensure hovered card is on top for tooltips */
 }
 
 .domain-card.active {
@@ -320,21 +347,98 @@ body {
     color: var(--cyan);
 }
 
+/* ── UNIFIED SENTINEL ICON ────────────────────────── */
 .card-icon {
     color: var(--text-dim);
-    opacity: 0.7;
     display: flex;
     align-items: center;
+    position: relative;
+    cursor: help;
+    transition: all 0.3s ease;
 }
 
 .card-icon svg {
-    width: 16px;
-    height: 16px;
+    width: 20px; /* Increased for prominence */
+    height: 20px;
+}
+
+/* Status Colors & Glow signatures */
+.card-icon[data-status="stable"] {
+    color: #00ff99; /* Green */
+    filter: drop-shadow(0 0 5px rgba(0, 255, 153, 0.5));
+    animation: sentinel-aura 4s ease-in-out infinite;
+}
+
+.card-icon[data-status="active"] {
+    color: var(--cyan); /* Cyan */
+    filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.7));
+    animation: sentinel-glitch 0.15s infinite;
+}
+
+.card-icon[data-status="warning"] {
+    color: #ffcc00; /* Amber/Yellow */
+    filter: drop-shadow(0 0 7px rgba(255, 204, 0, 0.6));
+    animation: sentinel-spin 6s linear infinite;
+}
+
+.card-icon[data-status="threat"] {
+    color: #ff3e3e; /* Red */
+    filter: drop-shadow(0 0 12px rgba(255, 62, 62, 0.8));
+    animation: sentinel-alarm 0.5s ease-in-out infinite;
+}
+
+/* Sentinel Dynamic Tooltip (Floating Singleton) */
+.sentinel-tooltip-float {
+    position: absolute;
+    pointer-events: none;
+    background: rgba(1, 12, 24, 0.95);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-glow);
+    padding: 0.6rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.62rem;
+    font-family: 'Fira Code', monospace;
+    color: var(--text-mid);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s ease;
+    z-index: 9999;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 240, 255, 0.1);
+    letter-spacing: 0.5px;
+}
+
+.sentinel-tooltip-float.visible {
+    opacity: 1;
 }
 
 .domain-card.active .card-icon {
-    color: var(--cyan);
     opacity: 1;
+}
+
+/* Kinetic Logic Table */
+@keyframes sentinel-aura {
+    0%, 100% { opacity: 0.6; transform: scale(0.95); filter: drop-shadow(0 0 2px currentColor); }
+    50% { opacity: 1; transform: scale(1.05); filter: drop-shadow(0 0 10px currentColor); }
+}
+
+@keyframes sentinel-glitch {
+    0% { transform: translate(0); }
+    25% { transform: translate(-0.5px, 0.5px); }
+    50% { transform: translate(-0.5px, -0.5px); }
+    75% { transform: translate(0.5px, 0.5px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes sentinel-spin {
+    0% { transform: rotate(0deg); }
+    5%, 95% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes sentinel-alarm {
+    0%, 100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 15px currentColor); }
+    50% { opacity: 0.4; transform: scale(1.2); filter: drop-shadow(0 0 2px currentColor); }
 }
 
 /* Card title */
@@ -388,24 +492,6 @@ body {
     opacity: 0.9;
 }
 
-.card-status-badge {
-    position: absolute;
-    top: 0.8rem;
-    right: 2.5rem;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-}
-
-.card-status-badge.status-stable {
-    background: #00ff99;
-    box-shadow: 0 0 10px rgba(0, 255, 153, 0.4);
-}
-
-.card-status-badge.status-active {
-    background: var(--cyan);
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
-}
 
 /* Bullet list style (card 01 style) */
 .card-bullets {
@@ -495,16 +581,20 @@ body {
 /* Card data row (metrics at bottom) */
 .card-data-row {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
-    gap: 1rem;
-    margin-top: 0.6rem;
-    padding-top: 0.5rem;
+    gap: 0.35rem; /* Reduced gap to fit 6 items */
+    margin-top: 0.75rem;
+    padding-top: 0.65rem;
     border-top: 1px solid var(--border-subtle);
+    overflow: hidden;
 }
 
 .card-metric {
     display: flex;
     flex-direction: column;
+    min-width: 0; /* Allow shrinking */
+    flex: 1;
 }
 
 .card-metric.primary .metric-value {
@@ -520,17 +610,17 @@ body {
 }
 
 .metric-label {
-    font-size: 0.5rem;
+    font-size: 0.44rem; /* Slightly smaller to fit 6 items */
     color: var(--text-label);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .metric-value {
-    font-size: 0.68rem;
+    font-size: 0.6rem; /* Slightly smaller for 6 items */
     font-weight: 600;
     color: var(--text-mid);
     font-family: 'Fira Code', monospace;
+    white-space: nowrap;
 }
 
 .domain-card.active .metric-value {
@@ -569,7 +659,7 @@ body {
     position: relative;
     z-index: 100;
     box-shadow: -4px 0 30px rgba(0, 0, 0, 0.5);
-    transition: overflow 0s;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), overflow 0s; /* Added smooth transition for hiding */
     min-height: 0;
 }
 
@@ -581,31 +671,75 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 1.25rem;
+    padding: 0.75rem 1.25rem;
     border-bottom: 1px solid var(--border-glow);
     flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.console-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.console-card-icon {
+    color: var(--cyan);
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.console-card-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
 }
 
 .console-title {
-    font-size: 0.85rem;
+    font-size: 0.85rem; /* Base size, controlled by JS if too long */
     font-weight: 700;
     color: var(--cyan);
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     font-family: 'Fira Code', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Fallback if JS scaling hits absolute minimum */
+    transition: font-size 0.1s ease;
 }
 
-.console-close {
+.close-console { /* Corrected class selector from .console-close */
     background: transparent;
     border: none;
     color: var(--text-dim);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     cursor: pointer;
     line-height: 1;
-    transition: color 0.2s;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.console-close:hover {
-    color: var(--text-bright);
+.close-console:hover {
+    color: #ff3e3e;
+    background: rgba(255, 62, 62, 0.15);
+    box-shadow: 0 0 10px rgba(255, 62, 62, 0.2);
+    transform: rotate(90deg) scale(1.1);
 }
 
 .console-body {
@@ -671,8 +805,10 @@ body {
 /* 2x2 meta grid */
 .sidebar-meta {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* Auto-fit calculates space: securely builds 3 columns if >=255px, otherwise naturally drops to 2 */
+    grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
     gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .meta-field .meta-label {
@@ -707,12 +843,32 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer; /* Makes it clearly clickable */
+    -webkit-user-select: none;
+    user-select: none;
+    transition: color 0.2s;
+}
+
+.sidebar-section-label:hover {
+    color: var(--text-mid);
 }
 
 .sidebar-section-label .expand-btn {
     font-size: 0.6rem;
     color: var(--text-dim);
-    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Collapsible States */
+.sidebar-section.collapsable.collapsed .expand-btn {
+    transform: rotate(-90deg); /* Points right when collapsed */
+}
+
+.sidebar-section.collapsable.collapsed .sidebar-section-content {
+    display: none;
 }
 
 .transcription-box {
@@ -765,6 +921,15 @@ body {
 .resources-list a:hover {
     color: var(--cyan);
 }
+
+.resources-list span {
+    color: var(--text-mid);
+}
+
+/* ── DYNAMIC STATUS COLORS ──────────────────────── */
+.text-stable { color: #20e29b; text-shadow: 0 0 10px rgba(32, 226, 155, 0.4); }
+.text-threat { color: #ff3e3e; text-shadow: 0 0 10px rgba(255, 62, 62, 0.4); }
+.text-warning { color: #ffb03e; text-shadow: 0 0 10px rgba(255, 176, 62, 0.4); }
 
 /* ── LAUNCH BUTTON ────────────────────────────────── */
 .launch-wrap {
