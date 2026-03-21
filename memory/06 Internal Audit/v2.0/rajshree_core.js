@@ -489,10 +489,13 @@ function selectDomain(d) {
     // Update header: Matches folder format "06 INTERNAL AUDIT"
     document.getElementById('console-title').textContent = `${d.slot} ${d.name.toUpperCase()}`;
 
-    // Inject dynamic icon matching the card
+    // Inject dynamic icon matching the card with status-driven styling
     const iconWrap = document.getElementById('console-icon-wrap');
     if (iconWrap) {
-        iconWrap.innerHTML = `<i data-lucide="${d.icon}"></i>`;
+        iconWrap.innerHTML = `
+            <div class="card-icon" data-status="${d.status}">
+                <i data-lucide="${d.icon}"></i>
+            </div>`;
     }
     
     // Scale title if needed
