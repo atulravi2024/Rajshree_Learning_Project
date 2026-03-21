@@ -6,7 +6,7 @@
 // Domain data — mapped to user's MEMORY_MAP structure
 const DOMAIN_DATA = [
     {
-        slot: '01',
+        slot: '00',
         domainId: '00',
         name: 'System & Guardrails',
         icon: 'shield-check',
@@ -28,29 +28,29 @@ const DOMAIN_DATA = [
         resources: ['00.00_MEMORY_MAP.js', '00.01_STRICT_BOUNDARIES.md']
     },
     {
-        slot: '02',
-        domainId: '05',
-        name: 'Infrastructure',
-        icon: 'server',
-        graphLabel: 'NETWORK LATENCY',
-        kpi: '12',
-        units: 'ms',
-        status: 'active',
-        spark: [15, 12, 14, 22, 11, 13, 10, 12, 11, 15, 12, 18, 12, 13, 12],
-        cardType: 'chart-bar',
-        footerLabel: 'INFRASTRUCTURE',
+        slot: '01',
+        domainId: '01',
+        name: 'Current State',
+        icon: 'activity',
+        graphLabel: 'VERSION PULSE',
+        kpi: '4',
+        units: 'MODS',
+        status: 'stable',
+        spark: [2, 5, 3, 8, 4, 1, 6, 4, 9, 3, 4, 2, 7, 5, 4],
+        cardType: 'chart-line',
+        footerLabel: 'CURRENT STATE',
         footerMetrics: { 
-            label1: 'COMMITS', val1: '45+', 
-            label2: 'UPTIME', val2: '99.9%',
-            label3: 'NODES', val3: '08',
-            label4: 'TRAFFIC', val4: 'HIGH',
-            label5: 'SENSORS', val5: 'ON'
+            label1: 'VERSION', val1: 'v2.0', 
+            label2: 'DELTA', val2: '+15%',
+            label3: 'MODS', val3: '04',
+            label4: 'BRANCH', val4: 'MAIN',
+            label5: 'STABLE', val5: 'YES'
         },
-        keywords: ['github', 'devops', 'changelog', 'systems'],
-        resources: ['05.01_GITHUB_CHANGELOG.md', '05.02_GITHUB_MEMORY.md']
+        keywords: ['project index', 'changelog', 'css', 'js', 'audio mapping'],
+        resources: ['01.00_PROJECT_INDEX.md', '01.06_PROJECT_CHANGELOG.md']
     },
     {
-        slot: '03',
+        slot: '02',
         domainId: '02',
         name: 'Research & Knowledge',
         icon: 'book-open',
@@ -72,48 +72,68 @@ const DOMAIN_DATA = [
         resources: ['02.01_Database_Schemas/', '02.02_TTS_Engines/']
     },
     {
-        slot: '04',
-        domainId: '10',
-        name: 'MVP',
-        icon: 'rocket',
-        graphLabel: 'BUILD PROGRESS',
-        kpi: '92',
-        units: '%',
+        slot: '03',
+        domainId: '03',
+        name: 'Architecture & Planning',
+        icon: 'layout',
         status: 'active',
-        spark: [10, 15, 25, 30, 40, 45, 55, 60, 65, 75, 80, 85, 88, 90, 92],
+        graphLabel: 'DESIGN COHESION',
+        kpi: '88',
+        units: '%',
+        spark: [70, 72, 75, 78, 80, 82, 85, 88],
         cardType: 'chart-line',
-        footerLabel: 'MVP',
+        footerLabel: 'ARCHITECTURE & PLANNING',
         footerMetrics: { 
-            label1: 'PRIORITY', val1: 'P1+P2', 
-            label2: 'TASKS', val2: '8/12',
-            label3: 'STAGE', val3: 'BETA',
-            label4: 'SPRINT', val4: '04',
-            label5: 'VELO', val5: '1.4x'
+            label1: 'MODULES', val1: '24', 
+            label2: 'TIERS', val2: '04',
+            label3: 'DEBT', val3: 'LOW',
+            label4: 'DOCS', val4: 'YES',
+            label5: 'SYNC', val5: 'ON'
         },
-        keywords: ['mvp audit', 'priority 1', 'priority 2', 'monetization'],
-        resources: ['10.01_MVP_AUDIT_REPORT.md', '10.02_MVP_PRIORITY_1.md']
+        keywords: ['blueprint', 'structural', 'planning', 'scaling'],
+        resources: ['03.01_ARCHITECTURE_MAP.md', '03.02_PROJECT_ROADMAP.md']
+    },
+    {
+        slot: '04',
+        domainId: '04',
+        name: 'Sandbox & Demos',
+        icon: 'flask-conical',
+        graphLabel: 'PROTOTYPE DRIFT',
+        kpi: '0.4',
+        units: 'LOW',
+        status: 'active',
+        spark: [2.1, 1.8, 2.5, 1.5, 3.0, 1.2, 0.8, 1.4, 0.5, 1.1, 0.9, 0.3, 0.7, 0.4, 0.4],
+        cardType: 'chart-bar',
+        footerLabel: 'SANDBOX & DEMOS',
+        footerMetrics: { 
+            label1: 'STABLE', val1: 'YES',
+            label2: 'EXP', val2: '02',
+            label3: 'PUSH', val3: 'READY',
+            label4: 'ENV', val4: 'PROD',
+            label5: 'HASH', val5: '8F2C'
+        }
     },
     {
         slot: '05',
-        domainId: '01',
-        name: 'Current State',
-        icon: 'activity',
-        graphLabel: 'VERSION PULSE',
-        kpi: '4',
-        units: 'MODS',
-        status: 'stable',
-        spark: [2, 5, 3, 8, 4, 1, 6, 4, 9, 3, 4, 2, 7, 5, 4],
-        cardType: 'chart-line',
-        footerLabel: 'CURRENT STATE',
+        domainId: '05',
+        name: 'Infrastructure & Workflows',
+        icon: 'server',
+        graphLabel: 'NETWORK LATENCY',
+        kpi: '12',
+        units: 'ms',
+        status: 'active',
+        spark: [15, 12, 14, 22, 11, 13, 10, 12, 11, 15, 12, 18, 12, 13, 12],
+        cardType: 'chart-bar',
+        footerLabel: 'INFRASTRUCTURE',
         footerMetrics: { 
-            label1: 'VERSION', val1: 'v2.0', 
-            label2: 'DELTA', val2: '+15%',
-            label3: 'MODS', val3: '04',
-            label4: 'BRANCH', val4: 'MAIN',
-            label5: 'STABLE', val5: 'YES'
+            label1: 'COMMITS', val1: '45+', 
+            label2: 'UPTIME', val2: '99.9%',
+            label3: 'NODES', val3: '08',
+            label4: 'TRAFFIC', val4: 'HIGH',
+            label5: 'SENSORS', val5: 'ON'
         },
-        keywords: ['project index', 'changelog', 'css', 'js', 'audio mapping'],
-        resources: ['01.00_PROJECT_INDEX.md', '01.06_PROJECT_CHANGELOG.md']
+        keywords: ['github', 'devops', 'changelog', 'systems'],
+        resources: ['05.01_GITHUB_CHANGELOG.md', '05.02_GITHUB_MEMORY.md']
     },
     {
         slot: '06',
@@ -138,31 +158,28 @@ const DOMAIN_DATA = [
         resources: [
             'index.html', 
             'Audit Memory/06.00_AUDIT_INDEX.md',
-            'Audit Memory/06.01_AUDIT_HTML_LAYOUT.md',
-            'Audit Memory/06.02_AUDIT_CSS_DYNAMICS.md',
-            'Audit Memory/06.03_AUDIT_JS_LOGIC_FLOW.md',
-            'Audit Memory/06.04_AUDIT_WORKFLOW.md'
+            'Audit Memory/06.01_AUDIT_HTML_LAYOUT.md'
         ]
     },
     {
         slot: '07',
-        domainId: '04',
-        name: 'Sandbox & Demos',
-        icon: 'flask-conical',
-        graphLabel: 'PROTOTYPE DRIFT',
-        kpi: '0.4',
-        units: 'LOW',
-        status: 'active',
-        spark: [2.1, 1.8, 2.5, 1.5, 3.0, 1.2, 0.8, 1.4, 0.5, 1.1, 0.9, 0.3, 0.7, 0.4, 0.4],
-        cardType: 'chart-bar',
-        footerLabel: 'SANDBOX & DEMOS',
+        domainId: '07',
+        name: 'AI Training & Models',
+        icon: 'cpu',
+        status: 'stable',
+        graphLabel: 'MODEL ACCURACY',
+        kpi: '98.4',
+        units: '%',
+        spark: [90, 92, 94, 95, 96, 97, 98, 98.4],
+        footerLabel: 'AI TRAINING',
         footerMetrics: { 
-            label1: 'STABLE', val1: 'YES',
-            label2: 'EXP', val2: '02',
-            label3: 'PUSH', val3: 'READY',
-            label4: 'ENV', val4: 'PROD',
-            label5: 'HASH', val5: '8F2C'
-        }
+            label1: 'EPOCHS', val1: '250', 
+            label2: 'PARAMS', val2: '1.2B',
+            label3: 'LOSS', val3: '0.04',
+            label4: 'BIAS', val4: 'MIN',
+            label5: 'OPT', val5: 'ADAM'
+        },
+        keywords: ['neural', 'weights', 'inference', 'training']
     },
     {
         slot: '08',
@@ -186,7 +203,7 @@ const DOMAIN_DATA = [
     },
     {
         slot: '09',
-        domainId: '06',
+        domainId: '09',
         name: 'Audio Script',
         icon: 'mic',
         status: 'stable',
@@ -203,6 +220,48 @@ const DOMAIN_DATA = [
             label4: 'LANG', val4: 'HINDI',
             label5: 'QUAL', val5: 'HD'
         }
+    },
+    {
+        slot: '10',
+        domainId: '10',
+        name: 'MVP',
+        icon: 'rocket',
+        graphLabel: 'BUILD PROGRESS',
+        kpi: '92',
+        units: '%',
+        status: 'active',
+        spark: [10, 15, 25, 30, 40, 45, 55, 60, 65, 75, 80, 85, 88, 90, 92],
+        cardType: 'chart-line',
+        footerLabel: 'MVP',
+        footerMetrics: { 
+            label1: 'PRIORITY', val1: 'P1+P2', 
+            label2: 'TASKS', val2: '8/12',
+            label3: 'STAGE', val3: 'BETA',
+            label4: 'SPRINT', val4: '04',
+            label5: 'VELO', val5: '1.4x'
+        },
+        keywords: ['mvp audit', 'priority 1', 'priority 2', 'monetization'],
+        resources: ['10.01_MVP_AUDIT_REPORT.md', '10.02_MVP_PRIORITY_1.md']
+    },
+    {
+        slot: '11',
+        domainId: '11',
+        name: 'Security & Ethics',
+        icon: 'lock',
+        status: 'stable',
+        graphLabel: 'ETHICS SCORE',
+        kpi: '100',
+        units: 'SAFE',
+        spark: [100, 100, 100, 100, 100],
+        footerLabel: 'SECURITY & ETHICS',
+        footerMetrics: { 
+            label1: 'FILTER', val1: 'ON', 
+            label2: 'BIAS', val2: 'ZERO',
+            label3: 'JAIL', val3: 'PROOT',
+            label4: 'AUDIT', val4: 'PASS',
+            label5: 'POL+', val5: 'YES'
+        },
+        keywords: ['safety', 'ethics', 'security', 'privacy']
     }
 ];
 
@@ -211,6 +270,147 @@ const WAVE_HEIGHTS = [
     15, 40, 55, 78, 42, 88, 62, 98, 50, 82, 38, 72, 28, 58, 46, 76, 32, 86, 64, 92,
     22, 44, 58, 82, 45, 92, 65, 95, 55, 85, 42, 75, 35, 65, 52, 80, 38, 88, 68, 96
 ];
+
+const NOTIFICATIONS = [
+    {
+        id: 1,
+        type: 'AUDITS',
+        title: 'System Drift Detected',
+        desc: 'Minor variance in Sector 08 (Protocol X) requires verification. Current deviation: +5.2%.',
+        time: '2 mins ago',
+        icon: 'alert-triangle',
+        unread: true
+    },
+    {
+        id: 2,
+        type: 'SECURITY',
+        title: 'Leaked Credential Alert',
+        desc: 'Potential compromise in Sector 02 portal access restricted. Lead Auditor review required.',
+        time: '45 mins ago',
+        icon: 'shield-alert',
+        unread: true
+    },
+    {
+        id: 3,
+        type: 'REPORTS',
+        title: 'Q1 Audit Report Ready',
+        desc: 'Consolidated report for Sector 09 (Cultural Matra) generated. Ready for executive review.',
+        time: '1 hour ago',
+        icon: 'file-text',
+        unread: true
+    },
+    {
+        id: 4,
+        type: 'MIGRATIONS',
+        title: 'Data Sync Complete',
+        desc: 'Migration of Sector 11 (Hindi Matra) artifacts to Frontier Hub finalized. Integrity check: PASS.',
+        time: '2 hours ago',
+        icon: 'database',
+        unread: false
+    },
+    {
+        id: 5,
+        type: 'SYSTEM',
+        title: 'Core Protocol Upgrade',
+        desc: 'Frontier Hub v2.1 deployment pending. System stability: 99.8%. Check log #409.',
+        time: '3 hours ago',
+        icon: 'cpu',
+        unread: false
+    },
+    {
+        id: 6,
+        type: 'ANALYTICS',
+        title: 'Anomalous Traffic Spike',
+        desc: 'Data throughput spike detected in Sector 05. Pattern mismatch with baseline. Investigating...',
+        time: '5 hours ago',
+        icon: 'activity',
+        unread: false
+    },
+    {
+        id: 7,
+        type: 'REPORTS',
+        title: 'Compliance Summary Extracted',
+        desc: 'Export of "System & Guardrails" compliance data completed. Files stored in secure vault.',
+        time: '7 hours ago',
+        icon: 'save',
+        unread: false
+    },
+    {
+        id: 8,
+        type: 'AUDITS',
+        title: 'Audit Log Sealed: Sector 00',
+        desc: 'All sector reports verified for Lead Auditor review. Fidelity: 100%. Protocol engaged.',
+        time: '8 hours ago',
+        icon: 'check-circle',
+        unread: false
+    },
+    {
+        id: 9,
+        type: 'MIGRATIONS',
+        title: 'Legacy Data Archive',
+        desc: 'Sector 01 legacy records re-indexed for deep-audit compliance. Storage optimized.',
+        time: '12 hours ago',
+        icon: 'archive',
+        unread: false
+    },
+    {
+        id: 10,
+        type: 'SYSTEM',
+        title: 'Network Latency Shift',
+        desc: 'Sector 05 node response > 20ms detected. Automatic relay rerouting active.',
+        time: '1 day ago',
+        icon: 'wifi-off',
+        unread: false
+    },
+    {
+        id: 11,
+        type: 'SECURITY',
+        title: 'New Access Pattern',
+        desc: 'Lead Auditor verified access from secure relay 10.0.8.2. Session logged.',
+        time: '2 days ago',
+        icon: 'key',
+        unread: false
+    }
+];
+
+// ─────────────────────────────────────────────────
+// RICH TOOLTIP MAPPINGS
+// ─────────────────────────────────────────────────
+const ICON_DESC = {
+    'shield-check': 'SECURITY SENTINEL: Ensures protocol integrity and safety guardrails.',
+    'activity': 'VERSION PULSE: Real-time monitoring of project modifications and stability.',
+    'book-open': 'KNOWLEDGE REPOSITORY: Tracks research progress and documentation coverage.',
+    'layout': 'STRUCTURE ENGINE: Optimizes multi-tier architecture and design cohesion.',
+    'flask-conical': 'INNOVATION SANDBOX: Experimental testing ground for new prototypes.',
+    'server': 'INFRASTRUCTURE CORE: Monitors network latency and system stability.',
+    'search': 'AUDIT LENS: Scans for fidelity leaks and structural anomalies.',
+    'cpu': 'NEURAL PROCESSOR: Handles model training, epochs, and inference weights.',
+    'hexagon': 'PROTOCOL X: Advanced drift analysis and modular synchronization.',
+    'mic': 'AUDIO PROCESSOR: High-definition mapping of Hindi script assets.',
+    'rocket': 'MVP LAUNCH GATEWAY: Manages development milestones and sprint velocity.',
+    'lock': 'ETHICAL LOCKDOWN: Ensures safety filters, bias mitigation, and proot-level security.'
+};
+
+const STATUS_DESC = {
+    'stable': 'STATUS: OPTIMIZED — System operating within nominal parameters. No action required.',
+    'active': 'STATUS: SYNCING — Real-time processing active. Monitoring high-frequency data.',
+    'warning': 'STATUS: CAUTION — Minor drift detected. Heuristic analysis recommended.',
+    'threat': 'STATUS: CRITICAL — Security breach or fidelity leak detected. Immediate audit required.'
+};
+
+const VISUAL_STATE_DESC = {
+    'stable': 'PULSE: Aura (Broad 4s cycle) | COLOR: Emerald Green — High stability detected.',
+    'active': 'PULSE: Glitch (High-frequency 0.15s) | COLOR: Electric Cyan — Intensive data processing.',
+    'warning': 'PULSE: Spin (Sustained 6s rotation) | COLOR: Amber Yellow — Heuristic analysis engaged.',
+    'threat': 'PULSE: Alarm (Urgent 0.5s cycle) | COLOR: Crimson Red — Immediate investigator override required.'
+};
+
+function generateIconTooltip(d) {
+    const iconSignificance = ICON_DESC[d.icon] || 'CORE MODULE: System component monitoring.';
+    const visualState = VISUAL_STATE_DESC[d.status] || 'PULSE: Stable | COLOR: Deep Cyan.';
+    const statusMeaning = STATUS_DESC[d.status] || 'STATUS: ACTIVE — Operational.';
+    return `${iconSignificance}\n\n${visualState}\n\n${statusMeaning}`;
+}
 
 let activeConsoleChart = null;
 
@@ -240,12 +440,14 @@ document.addEventListener('DOMContentLoaded', () => {
             renderCardChart(d);
         });
 
-        // Auto-select domain 09 to match mockup default (DISABLED per user request)
-        // const d09 = DOMAIN_DATA.find(d => d.slot === '09');
-        // if (d09) selectDomain(d09);
-
-        // Start with the panel completely hidden (Workspace reset)
-        closeConsole();
+        // Auto-select prioritized domain (Threat > Current State)
+        const initialCard = DOMAIN_DATA.find(d => d.status === 'threat') || 
+                          DOMAIN_DATA.find(d => d.slot === '01');
+        if (initialCard) {
+            selectDomain(initialCard);
+        } else {
+            closeConsole();
+        }
 
         // Bind Close Button to reset layout
         const closeBtn = document.querySelector('.close-console');
@@ -265,6 +467,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Init Tooltip Engine
         initSentinelTooltips();
+
+        // Init Notification Engine
+        initNotifications();
     }, 150);
 });
 
@@ -273,13 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ─────────────────────────────────────────────────
 function buildCardHTML(d) {
     const metrics = d.footerMetrics || {};
-    const tooltipData = Object.keys(metrics)
-        .filter(k => k.startsWith('label'))
-        .map(k => {
-            const id = k.replace('label', '');
-            return `${metrics['label' + id]}: ${metrics['val' + id]}`;
-        })
-        .join(' | ');
+    const tooltipData = generateIconTooltip(d);
 
     const metricsHTML = `
         <div class="card-data-row">
@@ -414,38 +613,40 @@ function initSentinelTooltips() {
 
     const hideTooltip = () => { tooltip.classList.remove('visible'); };
 
-    document.querySelectorAll('.card-icon').forEach(icon => {
-        icon.addEventListener('mouseenter', (e) => {
-            const text = icon.getAttribute('data-tooltip');
-            if (!text) return;
+    // Re-init for dynamically injected icons (like in the sidebar)
+    document.body.addEventListener('mouseenter', (e) => {
+        const icon = e.target.closest('.card-icon');
+        if (!icon) return;
 
-            tooltip.textContent = text;
-            tooltip.classList.add('visible');
+        const text = icon.getAttribute('data-tooltip');
+        if (!text) return;
 
-            const rect = icon.getBoundingClientRect();
-            const tooltipRect = tooltip.getBoundingClientRect();
+        tooltip.textContent = text;
+        tooltip.classList.add('visible');
 
-            // Default position: below the icon
-            let top = rect.bottom + 8;
-            let left = rect.left + (rect.width / 2) - (tooltipRect.width / 2);
+        const rect = icon.getBoundingClientRect();
+        const tooltipRect = tooltip.getBoundingClientRect();
 
-            // Flip to TOP if it would overflow the bottom of the screen
-            if (top + tooltipRect.height > window.innerHeight) {
-                top = rect.top - tooltipRect.height - 8;
-            }
+        let top = rect.bottom + 8;
+        let left = rect.left + (rect.width / 2) - (tooltipRect.width / 2);
 
-            // Adjust horizontal if it overflows screen edges
-            if (left < 10) left = 10;
-            if (left + tooltipRect.width > window.innerWidth - 10) {
-                left = window.innerWidth - tooltipRect.width - 10;
-            }
+        if (top + tooltipRect.height > window.innerHeight) {
+            top = rect.top - tooltipRect.height - 8;
+        }
 
-            tooltip.style.top = `${top + window.scrollY}px`;
-            tooltip.style.left = `${left + window.scrollX}px`;
-        });
+        if (left < 10) left = 10;
+        if (left + tooltipRect.width > window.innerWidth - 10) {
+            left = window.innerWidth - tooltipRect.width - 10;
+        }
 
-        icon.addEventListener('mouseleave', hideTooltip);
-    });
+        tooltip.style.top = `${top + window.scrollY}px`;
+        tooltip.style.left = `${left + window.scrollX}px`;
+    }, true);
+
+    document.body.addEventListener('mouseleave', (e) => {
+        const icon = e.target.closest('.card-icon');
+        if (icon) hideTooltip();
+    }, true);
 
     // Hide if window moves or scrolls
     window.addEventListener('scroll', hideTooltip, { passive: true });
@@ -493,7 +694,7 @@ function selectDomain(d) {
     const iconWrap = document.getElementById('console-icon-wrap');
     if (iconWrap) {
         iconWrap.innerHTML = `
-            <div class="card-icon" data-status="${d.status}">
+            <div class="card-icon" data-status="${d.status}" data-tooltip="${generateIconTooltip(d)}">
                 <i data-lucide="${d.icon}"></i>
             </div>`;
     }
@@ -693,6 +894,179 @@ function buildSidebarHTML(d) {
 // ─────────────────────────────────────────────────
 // SIDEBAR CHART RENDERER
 // ─────────────────────────────────────────────────
+// ─────────────────────────────────────────────────
+// NOTIFICATION ENGINE
+// ─────────────────────────────────────────────────
+function initNotifications() {
+    const bell = document.getElementById('notification-bell');
+    const dropdown = document.getElementById('notification-dropdown');
+    const list = document.getElementById('notification-list');
+    const badge = bell.querySelector('.nav-badge');
+
+    if (!bell || !dropdown || !list) return;
+
+    // Toggle logic
+    bell.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('active');
+        if (dropdown.classList.contains('active')) {
+            renderNotifications();
+        }
+    });
+
+    // Close on click outside
+    window.addEventListener('click', () => {
+        dropdown.classList.remove('active');
+    });
+
+    dropdown.addEventListener('click', (e) => e.stopPropagation());
+
+    // Mark All Read
+    const markAllBtn = dropdown.querySelector('.mark-read');
+    if (markAllBtn) {
+        markAllBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            NOTIFICATIONS.forEach(n => n.unread = false);
+            renderNotifications();
+            updateNotifBadge();
+        });
+    }
+
+    // View All Alerts
+    const viewAllBtn = dropdown.querySelector('.dropdown-footer a');
+    if (viewAllBtn) {
+        viewAllBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            openAlertsModal();
+            dropdown.classList.remove('active');
+        });
+    }
+
+    // Modal Close
+    const closeModalBtn = document.getElementById('close-alerts-modal');
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeAlertsModal);
+    }
+
+    const modalOverlay = document.getElementById('alerts-modal');
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeAlertsModal();
+        });
+    }
+
+    // Filter Logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderModalAlerts(btn.textContent);
+        });
+    });
+
+    // Initial Badge State
+    updateNotifBadge();
+}
+
+function openAlertsModal() {
+    const modal = document.getElementById('alerts-modal');
+    if (modal) {
+        modal.classList.add('active');
+        // Reset filter to ALL on open
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(b => b.classList.remove('active'));
+        if (filterBtns[0]) filterBtns[0].classList.add('active');
+        renderModalAlerts();
+    }
+}
+
+function closeAlertsModal() {
+    const modal = document.getElementById('alerts-modal');
+    if (modal) modal.classList.remove('active');
+}
+
+function renderModalAlerts(filterType = 'ALL ALERTS') {
+    const list = document.getElementById('modal-alerts-list');
+    if (!list) return;
+
+    const filtered = filterType === 'ALL ALERTS' 
+        ? NOTIFICATIONS 
+        : NOTIFICATIONS.filter(n => n.type === filterType);
+
+    if (filtered.length === 0) {
+        list.innerHTML = `
+            <div class="empty-alerts">
+                <i data-lucide="info"></i>
+                <p>No alerts found in ${filterType} category.</p>
+            </div>
+        `;
+    } else {
+        list.innerHTML = filtered.map(n => `
+            <div class="modal-alert-item ${n.unread ? 'unread' : ''}">
+                <div class="alert-marker"></div>
+                <div class="alert-icon"><i data-lucide="${n.icon}"></i></div>
+                <div class="alert-info">
+                    <h3>${n.title}</h3>
+                    <p>${n.desc}</p>
+                </div>
+                <div class="alert-meta">
+                    <span>${n.time}</span>
+                    <button onclick="toggleRead(${n.id}); renderModalAlerts('${filterType}');">${n.unread ? 'MARK READ' : 'MARK UNREAD'}</button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    lucide.createIcons();
+}
+
+function renderNotifications() {
+    const list = document.getElementById('notification-list');
+    if (!list) return;
+
+    list.innerHTML = NOTIFICATIONS.map(n => `
+        <div class="notification-item ${n.unread ? 'unread' : ''}" onclick="toggleRead(${n.id})">
+            <div class="notif-icon">
+                <i data-lucide="${n.icon}"></i>
+            </div>
+            <div class="notif-content">
+                <div class="notif-title">${n.title}</div>
+                <div class="notif-desc">${n.desc}</div>
+                <span class="notif-time">${n.time}</span>
+            </div>
+        </div>
+    `).join('');
+
+    // Re-init Lucide for new icons
+    lucide.createIcons();
+}
+
+function updateNotifBadge() {
+    const badge = document.querySelector('#notification-bell .nav-badge');
+    const unreadCount = NOTIFICATIONS.filter(n => n.unread).length;
+    if (badge) {
+        badge.style.display = unreadCount > 0 ? 'block' : 'none';
+        badge.textContent = unreadCount > 9 ? '9+' : unreadCount;
+    }
+}
+
+function toggleRead(id) {
+    const notif = NOTIFICATIONS.find(n => n.id === id);
+    if (notif) {
+        notif.unread = !notif.unread;
+        renderNotifications();
+        updateNotifBadge();
+        
+        // If modal is open, refresh it too
+        const modal = document.getElementById('alerts-modal');
+        if (modal && modal.classList.contains('active')) {
+            renderModalAlerts();
+        }
+    }
+}
+
 function renderSidebarChart(d) {
     const canvas = document.getElementById('console-chart');
     if (!canvas) return;
