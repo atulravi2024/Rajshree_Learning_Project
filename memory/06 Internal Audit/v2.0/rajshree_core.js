@@ -398,6 +398,37 @@ const STATUS_DESC = {
     'threat': 'STATUS: CRITICAL — Security breach or fidelity leak detected. Immediate audit required.'
 };
 
+const DETAILED_STATUS = {
+    'stable': {
+        title: 'PROTOCOL INTEGRITY: PASS',
+        problem: 'No structural anomalies or fidelity leaks detected in the current sector.',
+        reason: 'Periodic audit cycle #402 confirms 100% compliance with Frontier v2.0-Fidelity guardrails.',
+        solution: 'Continue standard monitoring. Baseline integrity is stable.',
+        location: 'Core Neural Path / Sector 00'
+    },
+    'active': {
+        title: 'SYNCING: NOMINAL',
+        problem: 'High-frequency delta synchronization in progress.',
+        reason: 'Real-time processing of incoming telemetry from local prototypes to Frontier Hub.',
+        solution: 'Observe throughput stability. Avoid manual override during high-load cycles.',
+        location: 'Neural Gateway / Production Port'
+    },
+    'warning': {
+        title: 'HEURISTIC VARIANCE DETECTED',
+        problem: 'Minor drift in Sector mapping detected (+5.2%).',
+        reason: 'Heuristic pattern mismatch in recently indexed Hindi script assets or CSS descriptors.',
+        solution: 'Execute manual re-indexing on the affected nodes. Review recent changelog for drift vectors.',
+        location: 'Sector 08 / Extension Protocol'
+    },
+    'threat': {
+        title: 'CRITICAL AUDIT EXCEPTION',
+        problem: 'Severe fidelity leak or unauthorized access attempt detected.',
+        reason: 'Neural pathway contradiction identified by System Guardrails. Potential external intercept.',
+        solution: 'Engage mandatory sector quarantine. Initiate Lead Auditor override protocol immediately.',
+        location: 'Sector 06 / Internal Audit'
+    }
+};
+
 const VISUAL_STATE_DESC = {
     'stable': 'PULSE: Aura (Broad 4s cycle) | COLOR: Emerald Green — High stability detected.',
     'active': 'PULSE: Glitch (High-frequency 0.15s) | COLOR: Electric Cyan — Intensive data processing.',
@@ -409,7 +440,13 @@ function generateIconTooltip(d) {
     const iconSignificance = ICON_DESC[d.icon] || 'CORE MODULE: System component monitoring.';
     const visualState = VISUAL_STATE_DESC[d.status] || 'PULSE: Stable | COLOR: Deep Cyan.';
     const statusMeaning = STATUS_DESC[d.status] || 'STATUS: ACTIVE — Operational.';
-    return `${iconSignificance}\n\n${visualState}\n\n${statusMeaning}`;
+    const [title, ...descParts] = iconSignificance.split(':');
+    const description = descParts.join(':').trim();
+
+    return `<span class="tooltip-title">${title}</span>` +
+           `<div style="margin-bottom: 0.4rem">${description}</div>` +
+           `<div style="font-size: 0.72rem; opacity: 0.7; margin-bottom: 0.4rem;">${visualState}</div>` +
+           `<div class="tooltip-status ${d.status}">${statusMeaning.replace('STATUS: ', '')}</div>`;
 }
 
 let activeConsoleChart = null;
@@ -499,7 +536,7 @@ function buildCardHTML(d) {
     return `
         <div class="card-top">
             <span class="card-num">${d.slot}</span>
-            <span class="card-icon" data-status="${d.status}" data-tooltip="${tooltipData}">
+            <span class="card-icon" data-status="${d.status}" data-tooltip='${tooltipData.replace(/'/g, "&apos;")}'>
                 <i data-lucide="${d.icon}"></i>
             </span>
         </div>
@@ -602,6 +639,9 @@ function renderCardChart(d) {
 // ─────────────────────────────────────────────────
 // DYNAMIC TOOLTIP ENGINE
 // ─────────────────────────────────────────────────
+// ─────────────────────────────────────────────────
+// DYNAMIC TOOLTIP ENGINE
+// ─────────────────────────────────────────────────
 function initSentinelTooltips() {
     let tooltip = document.getElementById('sentinel-tooltip-float');
     if (!tooltip) {
@@ -611,44 +651,62 @@ function initSentinelTooltips() {
         document.body.appendChild(tooltip);
     }
 
-    const hideTooltip = () => { tooltip.classList.remove('visible'); };
+    let tooltipTimeout;
 
-    // Re-init for dynamically injected icons (like in the sidebar)
-    document.body.addEventListener('mouseenter', (e) => {
-        const icon = e.target.closest('.card-icon');
-        if (!icon) return;
+    const hideTooltip = () => { 
+        clearTimeout(tooltipTimeout);
+        tooltip.classList.remove('visible'); 
+    };
 
-        const text = icon.getAttribute('data-tooltip');
+    // Global delegation for tooltips
+    document.body.addEventListener('mouseover', (e) => {
+        // Find target with data-tooltip
+        const target = e.target.closest('[data-tooltip], .card-icon, .close-console, .expand-btn');
+        if (!target) return;
+
+        let text = target.getAttribute('data-tooltip');
+        
+        // Fallback or specific logic for elements without explicit data-tooltip at runtime
+        if (!text) {
+            if (target.classList.contains('close-console')) text = '<span class="tooltip-title">DISCONNECT</span>Disconnect from current neural node.';
+            if (target.classList.contains('expand-btn')) text = '<span class="tooltip-title">TOGGLE</span>Collapse or expand data section.';
+            if (target.classList.contains('btn-launch')) text = '<span class="tooltip-title">TERMINAL</span>Launch direct protocol interface.';
+        }
+
         if (!text) return;
 
-        tooltip.textContent = text;
-        tooltip.classList.add('visible');
+        clearTimeout(tooltipTimeout);
+        tooltipTimeout = setTimeout(() => {
+            tooltip.innerHTML = text;
+            tooltip.classList.add('visible');
 
-        const rect = icon.getBoundingClientRect();
-        const tooltipRect = tooltip.getBoundingClientRect();
+            const rect = target.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
 
-        let top = rect.bottom + 8;
-        let left = rect.left + (rect.width / 2) - (tooltipRect.width / 2);
+            let top = rect.bottom + 8;
+            let left = rect.left + (rect.width / 2) - (tooltipRect.width / 2);
 
-        if (top + tooltipRect.height > window.innerHeight) {
-            top = rect.top - tooltipRect.height - 8;
-        }
+            // Flip if hits bottom
+            if (top + tooltipRect.height > window.innerHeight) {
+                top = rect.top - tooltipRect.height - 8;
+            }
 
-        if (left < 10) left = 10;
-        if (left + tooltipRect.width > window.innerWidth - 10) {
-            left = window.innerWidth - tooltipRect.width - 10;
-        }
+            // Boundary checks
+            if (left < 10) left = 10;
+            if (left + tooltipRect.width > window.innerWidth - 10) {
+                left = window.innerWidth - tooltipRect.width - 10;
+            }
 
-        tooltip.style.top = `${top + window.scrollY}px`;
-        tooltip.style.left = `${left + window.scrollX}px`;
+            tooltip.style.top = `${top + window.scrollY}px`;
+            tooltip.style.left = `${left + window.scrollX}px`;
+        }, 300); // 300ms delay for premium feel
     }, true);
 
-    document.body.addEventListener('mouseleave', (e) => {
-        const icon = e.target.closest('.card-icon');
-        if (icon) hideTooltip();
+    document.body.addEventListener('mouseout', (e) => {
+        const target = e.target.closest('[data-tooltip], .card-icon, .close-console, .expand-btn');
+        if (target) hideTooltip();
     }, true);
 
-    // Hide if window moves or scrolls
     window.addEventListener('scroll', hideTooltip, { passive: true });
     window.addEventListener('resize', hideTooltip);
 }
@@ -693,10 +751,21 @@ function selectDomain(d) {
     // Inject dynamic icon matching the card with status-driven styling
     const iconWrap = document.getElementById('console-icon-wrap');
     if (iconWrap) {
+        const tooltipData = generateIconTooltip(d);
         iconWrap.innerHTML = `
-            <div class="card-icon" data-status="${d.status}" data-tooltip="${generateIconTooltip(d)}">
+            <div class="card-icon" data-status="${d.status}" data-tooltip='${tooltipData.replace(/'/g, "&apos;")}'>
                 <i data-lucide="${d.icon}"></i>
             </div>`;
+        
+        // Add click listener to the icon in the header
+        const icon = iconWrap.querySelector('.card-icon');
+        if (icon) {
+            icon.style.cursor = 'pointer';
+            icon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleSidebarFlip();
+            });
+        }
     }
     
     // Scale title if needed
@@ -712,6 +781,22 @@ function selectDomain(d) {
 
     // Re-init Lucide icons inside sidebar
     lucide.createIcons();
+}
+
+/**
+ * 3D Flip Animation Toggle
+ * Swaps between the standard domain overview and detailed audit findings.
+ */
+function toggleSidebarFlip() {
+    const body = document.getElementById('console-body');
+    if (body) {
+        body.classList.toggle('flipped');
+        
+        // Re-init Lucide icons for the back face if needed
+        if (body.classList.contains('flipped')) {
+            lucide.createIcons();
+        }
+    }
 }
 
 // ─────────────────────────────────────────────────
@@ -817,77 +902,135 @@ function buildSidebarHTML(d) {
         ? `Caution advised. Irregularities logged in <em>${d.footerLabel}</em> mapping. Neural heuristic analyzing potential vectors. Proceed with awareness.`
         : `Neural engine initialized. Parsing <em>${d.footerLabel}</em> domain… Artifact count: ${d._count || Math.floor(Math.random()*100)}. All systems validated. CMDR Atul Verma access granted.`;
 
+    const detail = DETAILED_STATUS[d.status] || DETAILED_STATUS['active'];
+
     return `
-        <!-- 1. Overview (Visible by default per user request) -->
-        <div class="sidebar-section collapsable">
-            <div class="sidebar-section-label">
-                Overview <span class="expand-btn">∨</span>
-            </div>
-            <div class="sidebar-section-content sidebar-meta">
-                <div class="meta-field">
-                    <span class="meta-label">Status</span>
-                    <span class="meta-val ${statusClass}">${d.status || 'ACTIVE'}</span>
-                </div>
-                <div class="meta-field">
-                    <span class="meta-label">ID</span>
-                    <span class="meta-val">${d.domainId.toString().padStart(2,'0')}-CORE</span>
-                </div>
-                <div class="meta-field">
-                    <span class="meta-label">KPI Index</span>
-                    <span class="meta-val">${d.kpi || '---'} ${d.units || ''}</span>
-                </div>
-                <div class="meta-field">
-                    <span class="meta-label">Designation</span>
-                    <span class="meta-val">${d.name.length > 15 ? d.name.substring(0, 15).toUpperCase() + '...' : d.name.toUpperCase()}</span>
-                </div>
-                <div class="meta-field">
-                    <span class="meta-label">Sector Slot</span>
-                    <span class="meta-val">SEC-${d.slot || 'XX'}</span>
-                </div>
-                ${d.footerLabel ? `
-                <div class="meta-field">
-                    <span class="meta-label">Node Class</span>
-                    <span class="meta-val">${d.footerLabel.toUpperCase()}</span>
-                </div>` : ''}
-            </div>
-        </div>
-
-        ${metricsHTML}
-
-        <!-- 3. AI Transcription (Collapsed by default) -->
-        <div class="sidebar-section collapsable collapsed">
-            <div class="sidebar-section-label">
-                AI Interpretation <span class="expand-btn">∨</span>
-            </div>
-            <div class="sidebar-section-content transcription-box">
-                ${logText}
-            </div>
-        </div>
-
-        <!-- 4. Launch Terminal Button (Uncollapsible, Always Visible, Center Stage) -->
-        <div class="sidebar-section">
-            <div class="launch-wrap">
-                <button class="btn-launch" onclick="alert('Frontier Terminal: ${d.name}')">
-                    <div class="launch-terminal-icon">&gt;_]</div>
-                    <div class="launch-text">
-                        <strong>DOMAIN<br>TERMINAL</strong>
+        <!-- FRONT FACE: Standard Dashboard -->
+        <div class="console-front">
+                <!-- 1. Overview -->
+                <div class="sidebar-section collapsable">
+                    <div class="sidebar-section-label">
+                        Overview <span class="expand-btn">∨</span>
                     </div>
-                </button>
-            </div>
+                    <div class="sidebar-section-content sidebar-meta">
+                        <div class="meta-field">
+                            <span class="meta-label">Status</span>
+                            <span class="meta-val ${statusClass}">${d.status || 'ACTIVE'}</span>
+                        </div>
+                        <div class="meta-field">
+                            <span class="meta-label">ID</span>
+                            <span class="meta-val">${d.domainId.toString().padStart(2,'0')}-CORE</span>
+                        </div>
+                        <div class="meta-field">
+                            <span class="meta-label">KPI Index</span>
+                            <span class="meta-val">${d.kpi || '---'} ${d.units || ''}</span>
+                        </div>
+                        <div class="meta-field">
+                            <span class="meta-label">Designation</span>
+                            <span class="meta-val">${d.name.length > 15 ? d.name.substring(0, 15).toUpperCase() + '...' : d.name.toUpperCase()}</span>
+                        </div>
+                        <div class="meta-field">
+                            <span class="meta-label">Sector Slot</span>
+                            <span class="meta-val">SEC-${d.slot || 'XX'}</span>
+                        </div>
+                        ${d.footerLabel ? `
+                        <div class="meta-field">
+                            <span class="meta-label">Node Class</span>
+                            <span class="meta-val">${d.footerLabel.toUpperCase()}</span>
+                        </div>` : ''}
+                    </div>
+                </div>
+
+                ${metricsHTML}
+
+                <!-- 3. AI Transcription -->
+                <div class="sidebar-section collapsable collapsed">
+                    <div class="sidebar-section-label">
+                        AI Interpretation <span class="expand-btn">∨</span>
+                    </div>
+                    <div class="sidebar-section-content transcription-box">
+                        ${logText}
+                    </div>
+                </div>
+
+                <!-- 4. Launch Terminal Button (Hidden during flip) -->
+                <div class="sidebar-section">
+                    <div class="launch-wrap">
+                        <button class="btn-launch" onclick="alert('Frontier Terminal: ${d.name}')">
+                            <div class="launch-terminal-icon">&gt;_]</div>
+                            <div class="launch-text">
+                                <strong>DOMAIN<br>TERMINAL</strong>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 5. Domain Traffic Chart -->
+                <div class="sidebar-section collapsable">
+                    <div class="sidebar-section-label">
+                        Domain Traffic <span class="expand-btn">∨</span>
+                    </div>
+                    <div class="sidebar-section-content traffic-chart-wrap">
+                        <canvas id="console-chart"></canvas>
+                    </div>
+                </div>
+
+                ${kwSection}
+                ${resSection}
         </div>
 
-        <!-- 5. Domain Traffic Chart (Collapsible, OPEN by default) -->
-        <div class="sidebar-section collapsable">
-            <div class="sidebar-section-label">
-                Domain Traffic <span class="expand-btn">∨</span>
-            </div>
-            <div class="sidebar-section-content traffic-chart-wrap">
-                <canvas id="console-chart"></canvas>
-            </div>
-        </div>
+        <!-- BACK FACE: Detailed Audit Findings -->
+        <div class="console-back">
+                <div class="audit-details-container">
+                    <div class="audit-header">
+                        <i data-lucide="shield-alert"></i>
+                        <h3>DETAILED AUDIT FINDINGS</h3>
+                    </div>
+                    
+                    <div class="audit-item critical">
+                        <div class="audit-item-label">REPORTED EVENT</div>
+                        <div class="audit-item-value">${detail.title}</div>
+                    </div>
 
-        ${kwSection}
-        ${resSection}
+                    <!-- 4. Launch Terminal Button (Persistent version for back face) - MOVED BELOW CRITICAL ITEM -->
+                    <div class="sidebar-section">
+                        <div class="launch-wrap">
+                            <button class="btn-launch" onclick="alert('Frontier Terminal: ${d.name}')">
+                                <div class="launch-terminal-icon">&gt;_]</div>
+                                <div class="launch-text">
+                                    <strong>DOMAIN<br>TERMINAL</strong>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="audit-item">
+                        <div class="audit-item-label">STRUCTURAL ANOMALY</div>
+                        <div class="audit-item-value">${detail.problem}</div>
+                    </div>
+
+                    <div class="audit-item">
+                        <div class="audit-item-label">HEURISTIC ANALYSIS</div>
+                        <div class="audit-item-value">${detail.reason}</div>
+                    </div>
+
+                    <div class="audit-item">
+                        <div class="audit-item-label">MITIGATION PROTOCOL</div>
+                        <div class="audit-item-value">${detail.solution}</div>
+                    </div>
+
+                    <div class="audit-item">
+                        <div class="audit-item-label">VECTOR LOCATION</div>
+                        <div class="audit-item-value">${detail.location}</div>
+                    </div>
+
+
+                    <div class="audit-footer">
+                        <p>AUDIT TIMESTAMP: ${new Date().toISOString().replace('T', ' ').substring(0, 19)}</p>
+                        <p>CMDR ATUL VERMA // PROTOCOL V2.0</p>
+                    </div>
+                </div>
+            </div>
     `;
 }
 
