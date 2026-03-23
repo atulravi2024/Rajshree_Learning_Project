@@ -3,8 +3,234 @@
  * Pixel-perfect match to nav_entry_mockup.png with Rajshree Learning Project data
  */
 
+// ── SETTINGS ENGINE ──────────────────────────────────
+// Global config state, initialized from defaults.
+const CONFIG = {
+    theme: 'frontier',
+    glowIntensity: 85,
+    scanlineIntensity: 40,
+    refreshRate: 2.5,
+    autoSync: true,
+    masterVolume: 75,
+    feedbackBleeps: true,
+    dataMasking: false,
+    protocolLock: false,
+};
+
+let dataRefreshInterval = null;
+
+/**
+ * Synchronizes CSS variables that depend on the active theme's RGB color.
+ * Avoids browser compatibility issues with calc() inside rgba().
+ */
+function updateVisualSettings() {
+    requestAnimationFrame(() => {
+        const root = document.documentElement;
+        const body = document.body;
+        
+        let rgb = getComputedStyle(body).getPropertyValue('--accent-rgb').trim();
+        if (!rgb) rgb = '0, 240, 255'; 
+
+        const accentColor = `rgb(${rgb})`;
+        
+        // Root Variable Synchronization (The Single Source of Truth)
+        root.style.setProperty('--accent-rgb', rgb);
+        root.style.setProperty('--theme-accent', accentColor);
+        root.style.setProperty('--cyan', accentColor);
+        root.style.setProperty('--cyan-dim', `rgba(${rgb}, 0.6)`);
+        root.style.setProperty('--text-cyan', accentColor);
+
+        // Dynamic style injection for pseudo-elements and scrollbars
+        let themeStyle = document.getElementById('frontier-dynamic-theme');
+        if (!themeStyle) {
+            themeStyle = document.createElement('style');
+            themeStyle.id = 'frontier-dynamic-theme';
+            document.head.appendChild(themeStyle);
+        }
+        const glowOpacity = CONFIG.glowIntensity / 100;
+        const glowSoft = 0.2 * glowOpacity; // Soft glow (20%)
+        const glowMid = 0.4 * glowOpacity; // Mid glow (40%) for cards
+        themeStyle.innerHTML = `
+            .nav-link.active::after { 
+                background: var(--theme-accent) !important; 
+                box-shadow: 0 0 12px rgba(${rgb}, ${glowSoft}) !important; 
+            }
+            ::-webkit-scrollbar-thumb {
+                background: rgba(${rgb}, ${glowSoft}) !important;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: rgba(${rgb}, ${glowMid}) !important;
+            }
+        `;
+    });
+}
+
+/**
+ * Applies a setting change to the live DOM.
+ * @param {string} id - The setting key
+ * @param {*} value - The new value
+ */
+function applySettingEffect(id, value) {
+    const root = document.documentElement;
+    const body = document.body;
+    const mainEl = document.querySelector('.frontier-main');
+
+    switch (id) {
+        case 'theme':
+            // List of all theme classes to clear
+            const themeClasses = [
+                'theme-frontier', 'theme-obsidian', 'theme-ghost', 'theme-nordic', 
+                'theme-synth', 'theme-royal', 'theme-emerald', 'theme-crimson', 
+                'theme-solar', 'theme-stealth'
+            ];
+            body.classList.remove(...themeClasses);
+            
+            if (value !== 'frontier') {
+                body.classList.add(`theme-${value}`);
+            } else {
+                body.classList.add('theme-frontier');
+            }
+            CONFIG.theme = value;
+            updateVisualSettings();
+            hapticPulse();
+            break;
+
+        case 'glow':
+            CONFIG.glowIntensity = value;
+            root.style.setProperty('--neural-glow-opacity', value / 100);
+            updateVisualSettings();
+            break;
+
+        case 'scanline':
+            CONFIG.scanlineIntensity = value;
+            // Boost scanline opacity mapping to make it very obvious when sliding (0 to 1.5)
+            root.style.setProperty('--scanline-opacity', (value / 100) * 1.5);
+            break;
+
+        case 'refresh':
+            CONFIG.refreshRate = parseFloat(value);
+            initDataRefresh();
+            break;
+
+        case 'sync':
+            CONFIG.autoSync = value;
+            if (value) initDataRefresh();
+            else stopDataRefresh();
+            break;
+
+        case 'masking':
+            CONFIG.dataMasking = value;
+            root.style.setProperty('--data-blur-amount', value ? '6px' : '0px');
+            if (mainEl) mainEl.classList.toggle('data-masked', value);
+            hapticPulse();
+            break;
+
+        case 'lock':
+            CONFIG.protocolLock = value;
+            if (mainEl) mainEl.classList.toggle('protocol-locked', value);
+            hapticPulse();
+            break;
+
+        case 'auditor-name': {
+            CONFIG.auditorName = value || 'ATUL VERMA';
+            const nameEl = document.querySelector('.nav-user-info .name');
+            if (nameEl) {
+                nameEl.textContent = CONFIG.auditorName.toUpperCase();
+                nameEl.classList.remove('name-updated');
+                void nameEl.offsetWidth; // trigger reflow for animation restart
+                nameEl.classList.add('name-updated');
+                setTimeout(() => nameEl.classList.remove('name-updated'), 900);
+            }
+            break;
+        }
+
+        case 'volume':
+            CONFIG.masterVolume = value;
+            updateVolIndicator(value);
+            break;
+
+        case 'bleeps':
+            CONFIG.feedbackBleeps = value;
+            break;
+    }
+}
+
+/**
+ * Triggers a brief visual pulse on the navbar to simulate haptic/bleep feedback.
+ */
+function hapticPulse() {
+    if (!CONFIG.feedbackBleeps) return;
+    const body = document.body;
+    const nav = document.querySelector('.frontier-nav');
+    
+    // Pulse the navbar (classic)
+    if (nav) {
+        nav.classList.remove('haptic-pulse');
+        void nav.offsetWidth;
+        nav.classList.add('haptic-pulse');
+    }
+
+    // Pulse the entire body background/glare if it exists
+    const glare = document.querySelector('.holographic-glare');
+    if (glare) {
+        glare.classList.remove('glare-pulse');
+        void glare.offsetWidth;
+        glare.classList.add('glare-pulse');
+    }
+}
+
+/**
+ * Updates the volume indicator bar in the settings sidebar.
+ * @param {number} vol - Volume 0–100
+ */
+function updateVolIndicator(vol) {
+    const bar = document.getElementById('vol-indicator');
+    if (!bar) return;
+    const bars = bar.querySelectorAll('span');
+    const activeCount = Math.round((vol / 100) * bars.length);
+    bars.forEach((b, i) => {
+        if (i < activeCount) {
+            b.classList.remove('inactive');
+            const heights = [4, 6, 8, 10, 12, 10, 8, 6, 4, 6];
+            b.style.height = `${heights[i] || 8}px`;
+        } else {
+            b.classList.add('inactive');
+            b.style.height = '4px';
+        }
+    });
+}
+
+/**
+ * Starts or restarts the data refresh simulation.
+ */
+function initDataRefresh() {
+    stopDataRefresh();
+    if (!CONFIG.autoSync) return;
+
+    const intervalMs = CONFIG.refreshRate * 1000;
+    dataRefreshInterval = setInterval(() => {
+        // Slightly jitter visible KPI val spans on cards
+        document.querySelectorAll('.domain-kpi').forEach(el => {
+            const base = parseFloat(el.dataset.base || el.textContent);
+            if (!el.dataset.base) el.dataset.base = base;
+            const jitter = (Math.random() - 0.5) * 4;
+            const newVal = Math.max(0, (base + jitter)).toFixed(0);
+            el.textContent = newVal;
+        });
+    }, intervalMs);
+}
+
+function stopDataRefresh() {
+    if (dataRefreshInterval) {
+        clearInterval(dataRefreshInterval);
+        dataRefreshInterval = null;
+    }
+}
+
+
 // Domain data — mapped to user's MEMORY_MAP structure
 const DOMAIN_DATA = [
+
     {
         slot: '00',
         domainId: '00',
@@ -507,6 +733,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Init Notification Engine
         initNotifications();
+
+        // Bind Settings Button
+        const settingsBtn = document.getElementById('nav-settings-btn');
+        if (settingsBtn) {
+            settingsBtn.addEventListener('click', () => {
+                showSettingsMenu();
+            });
+        }
+
+        // Apply initial visual state from CONFIG
+        applySettingEffect('theme', CONFIG.theme);
+        applySettingEffect('glow', CONFIG.glowIntensity);
+        applySettingEffect('scanline', CONFIG.scanlineIntensity);
     }, 150);
 });
 
@@ -578,13 +817,16 @@ function renderCardChart(d) {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     const isBar = d.cardType === 'chart-bar' || d.cardType === 'chart-shield';
+    const glowVal = CONFIG.glowIntensity / 100;
+    const glowMid = 0.4 * glowVal; // Mid glow for charts (40%)
+    const rgb = '0, 240, 255';
 
     // Premium "Sparkling" Gradient for line charts
-    let gradient = 'rgba(0, 240, 255, 0.08)';
+    let gradient = `rgba(${rgb}, ${glowMid})`;
     if (!isBar) {
         gradient = ctx.createLinearGradient(0, 0, 0, 40);
-        gradient.addColorStop(0, 'rgba(0, 240, 255, 0.3)');
-        gradient.addColorStop(1, 'rgba(0, 240, 255, 0)');
+        gradient.addColorStop(0, `rgba(${rgb}, ${glowMid})`);
+        gradient.addColorStop(1, `rgba(${rgb}, 0)`);
     }
 
     new Chart(ctx, {
@@ -594,8 +836,8 @@ function renderCardChart(d) {
             datasets: [{
                 label: d.graphLabel,
                 data: d.spark,
-                borderColor: 'rgba(0, 240, 255, 0.9)',
-                backgroundColor: isBar ? 'rgba(0, 240, 255, 0.4)' : gradient,
+                borderColor: `rgba(${rgb}, ${glowMid})`,
+                backgroundColor: isBar ? `rgba(${rgb}, ${glowMid})` : gradient,
                 borderWidth: isBar ? 0 : 2,
                 borderRadius: isBar ? 2 : 0,
                 pointRadius: 0,
@@ -617,7 +859,7 @@ function renderCardChart(d) {
                     backgroundColor: 'rgba(0, 30, 40, 0.9)',
                     titleColor: '#8db4c0',
                     bodyColor: '#00f0ff',
-                    borderColor: 'rgba(0, 240, 255, 0.3)',
+                    borderColor: `rgba(${rgb}, ${glowMid})`,
                     borderWidth: 1,
                     displayColors: false,
                     callbacks: {
@@ -628,7 +870,7 @@ function renderCardChart(d) {
             animation: { duration: 800, easing: 'easeOutQuart' },
             elements: {
                 line: {
-                    shadowColor: 'rgba(0, 240, 255, 0.6)',
+                    shadowColor: `rgba(${rgb}, ${glowMid})`,
                     shadowBlur: 10
                 }
             }
@@ -716,6 +958,7 @@ function initSentinelTooltips() {
 // ─────────────────────────────────────────────────
 
 function closeConsole() {
+    const consoleEl = document.getElementById('neural-console');
     // Remove active state from all cards
     document.querySelectorAll('.domain-card').forEach(c => c.classList.remove('active'));
     
@@ -726,16 +969,23 @@ function closeConsole() {
     // Reset Title safely
     const title = document.getElementById('console-title');
     if (title) title.textContent = 'NEURAL HUB // 00';
+
+    // Reset Mode
+    if (consoleEl) consoleEl.removeAttribute('data-mode');
 }
 
 function selectDomain(d) {
+    const consoleEl = document.getElementById('neural-console');
     const card = document.querySelector(`.domain-card[data-slot="${d.slot}"]`);
     
-    // Toggle Logic: If the clicked card is already active, shut the console off
-    if (card && card.classList.contains('active')) {
+    // Toggle Logic: If the clicked card is already active and we are in details mode, shut it off
+    if (card && card.classList.contains('active') && consoleEl.getAttribute('data-mode') !== 'settings') {
         closeConsole();
         return;
     }
+
+    // Set Mode to Details
+    if (consoleEl) consoleEl.setAttribute('data-mode', 'details');
 
     // Deactivate all, activate selected
     document.querySelectorAll('.domain-card').forEach(c => c.classList.remove('active'));
@@ -788,6 +1038,9 @@ function selectDomain(d) {
  * Swaps between the standard domain overview and detailed audit findings.
  */
 function toggleSidebarFlip() {
+    const consoleEl = document.getElementById('neural-console');
+    if (consoleEl && consoleEl.getAttribute('data-mode') === 'settings') return; // No flip in settings
+
     const body = document.getElementById('console-body');
     if (body) {
         body.classList.toggle('flipped');
@@ -797,6 +1050,292 @@ function toggleSidebarFlip() {
             lucide.createIcons();
         }
     }
+}
+
+/**
+ * Switch Sidebar to Settings Mode
+ */
+function showSettingsMenu() {
+    const consoleEl = document.getElementById('neural-console');
+    const mainArea = document.querySelector('.frontier-main');
+
+    // Toggle Logic: If sidebar is open and in settings mode, close it
+    if (consoleEl.getAttribute('data-mode') === 'settings' && !mainArea.classList.contains('console-hidden')) {
+        closeConsole();
+        return;
+    }
+
+    const title = document.getElementById('console-title');
+    const iconWrap = document.getElementById('console-icon-wrap');
+    const body = document.getElementById('console-body');
+
+    // Deactivate all cards
+    document.querySelectorAll('.domain-card').forEach(c => c.classList.remove('active'));
+
+    // Set Mode
+    if (consoleEl) consoleEl.setAttribute('data-mode', 'settings');
+    if (mainArea) mainArea.classList.remove('console-hidden');
+    if (title) title.textContent = 'SYSTEM SETTINGS';
+
+    // Set Header Icon
+    if (iconWrap) {
+        iconWrap.innerHTML = `
+            <div class="card-icon" data-status="stable">
+                <i data-lucide="settings"></i>
+            </div>`;
+    }
+
+    // Build/Inject Settings View if not exists
+    let settingsView = body.querySelector('.settings-view');
+    if (!settingsView) {
+        settingsView = document.createElement('div');
+        settingsView.className = 'settings-view';
+        body.appendChild(settingsView);
+    }
+    
+    settingsView.innerHTML = buildSettingsHTML();
+
+    // Bind Accordion Logic
+    const items = settingsView.querySelectorAll('.settings-accordion-item');
+    items.forEach(item => {
+        const header = item.querySelector('.settings-item-header');
+        header.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Collapse all
+            items.forEach(i => i.classList.remove('active'));
+            
+            // Toggle clicked
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // ── WIRE CONTROLS TO SETTINGS ENGINE ─────────────
+    // Sliders: update label AND apply live effect
+    const bindSlider = (id, valId, suffix, effectKey) => {
+        const slider = document.getElementById(id);
+        const label = document.getElementById(valId);
+        if (!slider) return;
+        // Restore state from CONFIG on re-open
+        if (effectKey === 'glow') slider.value = CONFIG.glowIntensity;
+        if (effectKey === 'scanline') slider.value = CONFIG.scanlineIntensity;
+        if (effectKey === 'refresh') slider.value = CONFIG.refreshRate;
+        if (label) label.textContent = slider.value + suffix;
+        slider.addEventListener('input', () => {
+            if (label) label.textContent = slider.value + suffix;
+            applySettingEffect(effectKey, parseFloat(slider.value));
+        });
+    };
+
+    bindSlider('sl-refresh', 'val-refresh', 's', 'refresh');
+    bindSlider('sl-glow',    'val-glow',    '%', 'glow');
+    bindSlider('sl-scan',    'val-scan',    '%', 'scanline');
+    bindSlider('sl-vol',     'val-vol',     '%', 'volume');
+
+    // Theme select
+    const themeSelect = document.getElementById('sel-theme');
+    if (themeSelect) {
+        themeSelect.value = CONFIG.theme;
+        themeSelect.addEventListener('change', () => {
+            applySettingEffect('theme', themeSelect.value);
+        });
+    }
+
+    // Toggles: update CONFIG and apply live effect
+    const bindToggle = (id, effectKey) => {
+        const toggle = document.getElementById(id);
+        if (!toggle) return;
+        // Restore state from CONFIG on re-open
+        if (effectKey === 'sync')    toggle.checked = CONFIG.autoSync;
+        if (effectKey === 'masking') toggle.checked = CONFIG.dataMasking;
+        if (effectKey === 'lock')    toggle.checked = CONFIG.protocolLock;
+        if (effectKey === 'bleeps')  toggle.checked = CONFIG.feedbackBleeps;
+        toggle.addEventListener('change', () => {
+            applySettingEffect(effectKey, toggle.checked);
+        });
+    };
+
+    bindToggle('tg-sync',   'sync');
+    bindToggle('tg-bleeps', 'bleeps');
+    bindToggle('tg-mask',   'masking');
+    bindToggle('tg-lock',   'lock');
+
+    // Start data refresh engine if auto-sync is on
+    if (CONFIG.autoSync) initDataRefresh();
+
+    // ── AUDITOR NAME ──────────────────────────────────
+    const auditorInput = document.getElementById('in-auditor');
+    if (auditorInput) {
+        // Restore from CONFIG
+        auditorInput.value = CONFIG.auditorName || 'ATUL VERMA';
+        auditorInput.addEventListener('input', () => {
+            applySettingEffect('auditor-name', auditorInput.value.trim());
+        });
+    }
+
+    // ── ACTIVITY LOGS BUTTON ──────────────────────────
+    const logsBtn = document.getElementById('btn-activity-logs');
+    if (logsBtn) {
+        logsBtn.addEventListener('click', () => {
+            openAlertsModal();
+        });
+    }
+
+    // ── VOLUME INDICATOR ──────────────────────────────
+    // Draw the initial state based on CONFIG
+    updateVolIndicator(CONFIG.masterVolume);
+
+    // Re-init Lucide
+    lucide.createIcons();
+}
+
+
+function buildSettingsHTML() {
+    return `
+        <!-- SYSTEM OPS -->
+        <div class="settings-accordion-item active">
+            <div class="settings-item-header">
+                <i data-lucide="settings-2"></i>
+                <span class="settings-item-title">System Ops</span>
+            </div>
+            <div class="settings-item-content">
+                <div class="content-inner">
+                    <div class="settings-field">
+                        <div class="field-header">
+                            <span class="field-label">Data Refresh Rate</span>
+                            <span class="field-value" id="val-refresh">2.5s</span>
+                        </div>
+                        <input type="range" class="console-slider" id="sl-refresh" min="0.5" max="5.0" step="0.1" value="2.5">
+                    </div>
+                    <div class="settings-field" style="flex-direction: row; justify-content: space-between; align-items: center;">
+                        <span class="field-label">Neural Auto-Sync</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="tg-sync" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VISUAL PROTOCOL -->
+        <div class="settings-accordion-item">
+            <div class="settings-item-header">
+                <i data-lucide="monitor"></i>
+                <span class="settings-item-title">Visual Protocol</span>
+            </div>
+            <div class="settings-item-content">
+                <div class="content-inner">
+                    <div class="settings-field">
+                        <span class="field-label">Interface Theme</span>
+                        <select class="console-select" id="sel-theme">
+                            <option value="frontier">FRONTIER (DEFAULT)</option>
+                            <option value="obsidian">OBSIDIAN NIGHT</option>
+                            <option value="ghost">GHOST LIGHT</option>
+                            <option value="nordic">NORDIC FROST</option>
+                            <option value="synth">CYBER SYNTH</option>
+                            <option value="royal">ROYAL VELVET</option>
+                            <option value="emerald">EMERALD GATE</option>
+                            <option value="crimson">CRIMSON CORE</option>
+                            <option value="solar">SOLARIZED TEAL</option>
+                            <option value="stealth">CARBON STEALTH</option>
+                        </select>
+                    </div>
+                    <div class="settings-field">
+                        <div class="field-header">
+                            <span class="field-label">Neural Glow</span>
+                            <span class="field-value" id="val-glow">85%</span>
+                        </div>
+                        <input type="range" class="console-slider" id="sl-glow" min="0" max="100" value="85">
+                    </div>
+                    <div class="settings-field">
+                        <div class="field-header">
+                            <span class="field-label">Scanline Intensity</span>
+                            <span class="field-value" id="val-scan">40%</span>
+                        </div>
+                        <input type="range" class="console-slider" id="sl-scan" min="0" max="100" value="40">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- USER GATEWAY -->
+        <div class="settings-accordion-item">
+            <div class="settings-item-header">
+                <i data-lucide="user-check"></i>
+                <span class="settings-item-title">User Gateway</span>
+            </div>
+            <div class="settings-item-content">
+                <div class="content-inner">
+                    <div class="settings-field">
+                        <span class="field-label">Auditor Codename</span>
+                        <input type="text" class="console-input" id="in-auditor" placeholder="Enter codename..." value="RAVI_01">
+                    </div>
+                    <button class="console-button" id="btn-activity-logs" style="margin-top: 5px;">View Activity Logs</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEURAL AUDIO -->
+        <div class="settings-accordion-item">
+            <div class="settings-item-header">
+                <i data-lucide="volume-2"></i>
+                <span class="settings-item-title">Neural Audio</span>
+            </div>
+            <div class="settings-item-content">
+                <div class="content-inner">
+                    <div class="settings-field">
+                        <div class="field-header">
+                            <span class="field-label">Master UI Volume</span>
+                            <div style="display:flex;align-items:center;gap:6px;">
+                                <div class="vol-indicator-bar" id="vol-indicator">
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                    <span></span><span></span><span></span><span></span><span></span>
+                                </div>
+                                <span class="field-value" id="val-vol">75%</span>
+                            </div>
+                        </div>
+                        <input type="range" class="console-slider" id="sl-vol" min="0" max="100" value="75">
+                    </div>
+                    <div class="settings-field" style="flex-direction: row; justify-content: space-between; align-items: center;">
+                        <span class="field-label">Feedback Bleeps</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="tg-bleeps" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECURITY GUARDRAILS -->
+        <div class="settings-accordion-item">
+            <div class="settings-item-header">
+                <i data-lucide="shield"></i>
+                <span class="settings-item-title">Security Guardrails</span>
+            </div>
+            <div class="settings-item-content">
+                <div class="content-inner">
+                    <div class="settings-field" style="flex-direction: row; justify-content: space-between; align-items: center;">
+                        <span class="field-label">Sensitive Data Masking</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="tg-mask">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-field" style="flex-direction: row; justify-content: space-between; align-items: center;">
+                        <span class="field-label">Protocol Lockdown</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="tg-lock">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
 }
 
 // ─────────────────────────────────────────────────
@@ -1216,6 +1755,10 @@ function renderSidebarChart(d) {
     const ctx = canvas.getContext('2d');
     if (activeConsoleChart) { activeConsoleChart.destroy(); activeConsoleChart = null; }
 
+    const rootStyles = getComputedStyle(document.body);
+    const accentRgb = rootStyles.getPropertyValue('--accent-rgb').trim() || '0, 240, 255';
+    const glowVal = CONFIG.glowIntensity / 100;
+
     activeConsoleChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -1223,12 +1766,12 @@ function renderSidebarChart(d) {
             datasets: [{
                 label: d.graphLabel,
                 data: d.spark,
-                borderColor: '#00f0ff',
-                backgroundColor: 'rgba(0,240,255,0.1)',
+                borderColor: `rgb(${accentRgb})`,
+                backgroundColor: `rgba(${accentRgb}, ${0.15 * glowVal})`,
                 fill: true,
                 tension: 0.4,
-                pointBackgroundColor: '#00f0ff',
-                pointBorderColor: 'rgba(0,240,255,0.3)',
+                pointBackgroundColor: `rgb(${accentRgb})`,
+                pointBorderColor: `rgba(${accentRgb}, ${0.4 * glowVal})`,
                 pointRadius: 3,
                 pointHoverRadius: 5,
                 borderWidth: 2
@@ -1243,16 +1786,16 @@ function renderSidebarChart(d) {
                     ticks: { color: '#4a6a78', font: { size: 8, family: 'Fira Code' } },
                     grid: { color: 'rgba(255,255,255,0.04)', drawBorder: false }
                 },
-                y: { display: false, beginAtZero: false } // ensure auto-scaling
+                y: { display: false, beginAtZero: false } 
             },
             plugins: { 
                 legend: { display: false }, 
                 tooltip: { 
                     enabled: true,
-                    backgroundColor: 'rgba(0, 30, 40, 0.9)',
+                    backgroundColor: 'rgba(0, 15, 25, 0.95)',
                     titleColor: '#8db4c0',
-                    bodyColor: '#00f0ff',
-                    borderColor: 'rgba(0, 240, 255, 0.3)',
+                    bodyColor: `rgb(${accentRgb})`,
+                    borderColor: `rgba(${accentRgb}, ${0.3 * glowVal})`,
                     borderWidth: 1,
                     displayColors: false,
                     callbacks: {

@@ -64,8 +64,8 @@ window.MEMORY_MAP = {
     { "id": "06.01", "file": "06 Internal Audit/v1.0/internal_audit.html", "type": "Legacy Dashboard" },
     { "id": "06.02", "file": "06 Internal Audit/v1.0/audit_styles.css", "type": "Legacy Style" },
     { "id": "06.03", "file": "06 Internal Audit/v2.0/index.html", "type": "Neural Hub (v2.0)" },
-    { "id": "06.04", "file": "06 Internal Audit/v2.0/v2_styles.css", "type": "Neural Style" },
-    { "id": "06.05", "file": "06 Internal Audit/v2.0/v2_logic.js", "type": "Neural Engine" },
+    { "id": "06.04", "file": "06 Internal Audit/v2.0/rajshree_core.css", "type": "Neural Style" },
+    { "id": "06.05", "file": "06 Internal Audit/v2.0/rajshree_core.js", "type": "Neural Engine" },
     { "id": "06.10", "file": "06 Internal Audit/v2.0/Mockups/", "type": "Asset Repository" },
 
     // 09 - Audio Script
