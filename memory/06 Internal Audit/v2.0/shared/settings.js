@@ -256,6 +256,7 @@ function initSettings() {
  */
 window.showSettingsMenu = function() {
     let sidebar = document.querySelector('.neural-console');
+    const isDashboard = !!sidebar;
     if (!sidebar) sidebar = document.querySelector('.settings-global-overlay');
     
     if (!sidebar) return;
@@ -263,8 +264,24 @@ window.showSettingsMenu = function() {
     const currentMode = sidebar.getAttribute('data-mode');
     if (currentMode === 'settings') {
         sidebar.setAttribute('data-mode', 'normal');
+        
+        // Unconditionally hide the console and deselect cards on second click
+        if (isDashboard) {
+            document.querySelectorAll('.domain-card.active').forEach(c => c.classList.remove('active'));
+            const mainArea = document.querySelector('.frontier-main');
+            if (mainArea) mainArea.classList.add('console-hidden');
+            const title = document.getElementById('console-title');
+            if (title) title.textContent = 'NEURAL HUB // 00';
+            sidebar.removeAttribute('data-mode');
+        }
     } else {
         sidebar.setAttribute('data-mode', 'settings');
+        
+        // Unhide panel if on dashboard
+        if (isDashboard) {
+            const mainArea = document.querySelector('.frontier-main');
+            if (mainArea) mainArea.classList.remove('console-hidden');
+        }
     }
     
     if (window.hapticPulse) window.hapticPulse();

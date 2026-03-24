@@ -1,13 +1,94 @@
 :root {
-    --accent-rgb: 0, 240, 255;
+    /* ── THEME ACCENT (Used for glow calculations) ── */
+    --accent-rgb: 0, 240, 255;  /* Frontier Cyan */
     --theme-accent: rgb(var(--accent-rgb));
+    --cyan: var(--theme-accent);
+    --cyan-dim: rgba(var(--accent-rgb), 0.6);
+    --cyan-glow: rgba(var(--accent-rgb), 0.45);
+    --cyan-glow-strong: rgba(var(--accent-rgb), 0.8);
+    --border-glow: rgba(var(--accent-rgb), 0.7);
+    
+    /* Semantic Levels (Updated by JS) */
+    --accent-glow-subtle: rgba(var(--accent-rgb), 0.08); /* 8% */
+    --accent-glow-soft:   rgba(var(--accent-rgb), 0.2);  /* 20% */
+    --accent-glow-mid:    rgba(var(--accent-rgb), 0.4);  /* 40% */
+    --accent-glow-max:    rgba(var(--accent-rgb), 0.95); /* 95% */
+    
     --bg-void: #010a10;
+    --bg-deep: #020d14;
+    --bg-panel: rgba(4, 16, 24, 0.85);
+    /* New Component Variables */
+    --bg-nav: rgba(1, 8, 14, 0.95);
+    --bg-sidebar: rgba(3, 14, 22, 0.9);
+    --bg-modal: rgba(3, 14, 22, 0.98);
+    --bg-dropdown: rgba(3, 14, 22, 0.95);
+    
+    --bg-card: rgba(6, 18, 28, 0.8);
+    --bg-card-active: rgba(0, 30, 40, 0.9);
+    --border-subtle: rgba(255, 255, 255, 0.07);
     --text-bright: #d8f6ff;
+    --text-mid: #8db4c0;
     --text-dim: #4a6a78;
+    --text-cyan: rgb(var(--accent-rgb));
     --text-label: #5a8090;
-    --accent-glow-subtle: rgba(var(--accent-rgb), 0.1);
-    --accent-glow-soft: rgba(var(--accent-rgb), 0.2);
-    --accent-glow-mid: rgba(var(--accent-rgb), 0.4);
+    --card-radius: 10px;
+    --side-w: 360px;
+
+    /* ── DYNAMIC SETTINGS VARS ── */
+    --neural-glow-opacity: 0.85;   /* Controlled by Neural Glow slider */
+    --scanline-opacity: 0.4;        /* Controlled by Scanline slider */
+    --scanline-color: rgba(255, 255, 255, 0.025);  /* Light scanlines for dark themes */
+    --data-blur-amount: 0px;        /* Controlled by Data Masking toggle */
+    
+    /* ── NEW VISUAL PROTOCOL VARS ── */
+    --glare-opacity: 0.4;
+    --grid-opacity: 1;
+    --glass-blur: 10px;
+    --chroma-shift: 0px;
+
+    /* Glow effects now use neural-glow-opacity as multiplier */
+    /* Glow hierarchy: subtle < soft < mid (cards get more) */
+    --accent-glow-subtle: rgba(var(--accent-rgb), calc(0.1 * var(--neural-glow-opacity)));
+    --accent-glow-soft:   rgba(var(--accent-rgb), calc(0.2 * var(--neural-glow-opacity)));
+    --accent-glow-mid:    rgba(var(--accent-rgb), calc(0.4 * var(--neural-glow-opacity)));
+    --accent-glow-max:    rgba(var(--accent-rgb), calc(0.95 * var(--neural-glow-opacity)));
+    --cyan-glow:          rgba(var(--accent-rgb), calc(0.45 * var(--neural-glow-opacity)));
+    --cyan-glow-strong:   rgba(var(--accent-rgb), calc(0.8 * var(--neural-glow-opacity)));
+    --border-glow:        rgba(var(--accent-rgb), calc(0.2 * var(--neural-glow-opacity)));
+}
+
+/* ── THEME OVERRIDES ── */
+body.theme-obsidian {
+    --accent-rgb: 167, 139, 250;  /* Obsidian Purple */
+    --bg-void: #07060f;
+    --bg-deep: #0d0c1a;
+    --bg-panel: rgba(13, 12, 26, 0.85);
+    --bg-nav: rgba(13, 12, 26, 0.95);
+    --bg-sidebar: rgba(15, 14, 30, 0.9);
+    --bg-modal: rgba(15, 14, 30, 0.98);
+    --bg-dropdown: rgba(15, 14, 30, 0.95);
+    --bg-card: rgba(15, 12, 30, 0.9);
+    --bg-card-active: rgba(20, 15, 40, 0.95);
+    --text-bright: #ede9fe;
+    --text-mid: #8b8ca8;
+}
+
+body.theme-ghost {
+    --accent-rgb: 0, 102, 204;  /* Ghost Blue */
+    --bg-void: #f0f2f5;
+    --bg-deep: #e5e8ed;
+    --bg-panel: rgba(240, 242, 245, 0.9);
+    --bg-nav: rgba(255, 255, 255, 0.95);
+    --bg-sidebar: rgba(245, 247, 250, 0.9);
+    --bg-modal: rgba(255, 255, 255, 0.98);
+    --bg-dropdown: rgba(255, 255, 255, 0.95);
+    --bg-card: rgba(255, 255, 255, 0.8);
+    --bg-card-active: rgba(255, 255, 255, 0.95);
+    --border-subtle: rgba(0, 0, 0, 0.1);
+    --text-bright: #1a2a3a;
+    --text-mid: #4a5a6a;
+    --text-dim: #8a9aaa;
+    --text-label: #6a7a8a;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
