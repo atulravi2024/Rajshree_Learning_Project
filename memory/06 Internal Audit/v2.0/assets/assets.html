@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSET REPOSITORY // FRONTIER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets.css">
+    <link rel="stylesheet" href="../shared/background.css">
+    <link rel="stylesheet" href="../shared/navbar.css">
+    <link rel="stylesheet" href="../shared/notifications.css">
+    <link rel="stylesheet" href="../shared/settings.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="theme-frontier">
+    <!-- Background injected by shared/background.js -->
+    <nav class="frontier-nav">
+        <div class="nav-brand">
+            <div class="nav-brand-icon">
+                <i data-lucide="clipboard-check"></i>
+            </div>
+            <div class="brand-text">
+                <h1>RAJSHREE</h1>
+                <span>INTERNAL AUDIT</span>
+            </div>
+        </div>
+        <div class="nav-center">
+            <a href="../dashboard/dashboard.html" class="nav-link">DASHBOARD</a>
+            <a href="../terminal/global/global.html" class="nav-link">TERMINAL</a>
+            <a href="../map/map.html" class="nav-link">MAP</a>
+            <a href="assets.html" class="nav-link active">ASSETS</a>
+        </div>
+        <div class="nav-user">
+            <div class="nav-avatar">
+                <img src="https://api.dicebear.com/7.x/micah/svg?seed=Atul" alt="Avatar">
+            </div>
+            <div class="nav-user-info">
+                <span class="rank">LEAD AUDITOR</span>
+                <span class="name">ATUL VERMA</span>
+            </div>
+            <div class="nav-icons">
+                <div class="nav-icon-wrapper" id="notification-bell">
+                    <i data-lucide="bell"></i>
+                    <span class="nav-badge"></span>
+                    
+
+                </div>
+                <div class="nav-icon-wrapper" id="nav-settings-btn">
+                    <i data-lucide="settings"></i>
+                </div>
+                <div class="nav-icon-wrapper logout">
+                    <i data-lucide="log-out"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="page-split-layout">
+        <div class="assets-main-area">
+    <div class="assets-container">
+        <header class="assets-header">
+            <div class="header-left">
+                <i data-lucide="package"></i>
+                <span>ASSET REPOSITORY // CENTRAL HUB</span>
+            </div>
+            <div class="header-right">
+                <label for="asset-search" class="sr-only">Search assets</label>
+                <input type="text" id="asset-search" placeholder="Search assets..." aria-label="Search assets">
+            </div>
+        </header>
+
+        <main class="assets-grid" id="assets-grid">
+            <!-- Mock Assets -->
+            <div class="asset-card" data-type="audio">
+                <div class="asset-preview"><i data-lucide="mic"></i></div>
+                <div class="asset-info">
+                    <span class="asset-name">v_a_anar.mp3</span>
+                    <span class="asset-meta">Swar / Varnamala</span>
+                </div>
+            </div>
+            <div class="asset-card" data-type="image">
+                <div class="asset-preview"><i data-lucide="image"></i></div>
+                <div class="asset-info">
+                    <span class="asset-name">icon_shield.svg</span>
+                    <span class="asset-meta">UI / Icons</span>
+                </div>
+            </div>
+            <div class="asset-card" data-type="doc">
+                <div class="asset-preview"><i data-lucide="file-text"></i></div>
+                <div class="asset-info">
+                    <span class="asset-name">PROJECT_INDEX.md</span>
+                    <span class="asset-meta">Core / Documentation</span>
+                </div>
+            </div>
+            <div class="asset-card" data-type="audio">
+                <div class="asset-preview"><i data-lucide="volume-2"></i></div>
+                <div class="asset-info">
+                    <span class="asset-name">ui_blip.wav</span>
+                    <span class="asset-meta">Feedback / Audio</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    </div>
+
+
+    <aside class="settings-global-overlay">
+        <div class="console-header">
+            <h2>SYSTEM SETTINGS</h2>
+            <div class="header-controls">
+                <button class="close-console" onclick="if(window.showSettingsMenu) window.showSettingsMenu()">×</button>
+            </div>
+        </div>
+        <div id="settings-sidebar-container"></div>
+    </aside>
+    </main>
+    <script src="../shared/background.js"></script>
+    <script src="../shared/settings.js"></script>
+    <script src="../shared/notifications.js"></script>
+    <script src="../shared/navbar.js"></script>
+    <script src="assets.js"></script>
+</body>
+</html>

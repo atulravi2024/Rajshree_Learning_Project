@@ -1,0 +1,172 @@
+<!-- SETTINGS VIEW TEMPLATE -->
+<div class="settings-view">
+    <!-- SYSTEM OPS -->
+    <div class="settings-accordion-item active">
+        <div class="settings-item-header">
+            <i data-lucide="settings-2"></i>
+            <span class="settings-item-title">System Ops</span>
+        </div>
+        <div class="settings-item-content">
+            <div class="content-inner">
+                <div class="settings-field">
+                    <div class="field-header">
+                        <span class="field-label">Data Refresh Rate</span>
+                        <span class="field-value" id="val-refresh">2.5s</span>
+                    </div>
+                    <input type="range" class="console-slider" id="sl-refresh" min="0.5" max="5.0" step="0.1" value="2.5" aria-label="Data Refresh Rate">
+                </div>
+                <div class="settings-field settings-field-row">
+                    <span class="field-label">Neural Auto-Sync</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="tg-sync" checked title="Neural Auto-Sync Toggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VISUAL PROTOCOL -->
+    <div class="settings-accordion-item">
+        <div class="settings-item-header">
+            <i data-lucide="monitor"></i>
+            <span class="settings-item-title">Visual Protocol</span>
+        </div>
+        <div class="settings-item-content">
+            <div class="content-inner">
+                <div class="settings-field">
+                    <span class="field-label">Interface Theme</span>
+                    <select class="console-select" id="sel-theme" aria-label="Interface Theme">
+                        <option value="frontier">FRONTIER (DEFAULT)</option>
+                        <option value="obsidian">OBSIDIAN NIGHT</option>
+                        <option value="ghost">GHOST LIGHT</option>
+                        <option value="nordic">NORDIC FROST</option>
+                        <option value="synth">CYBER SYNTH</option>
+                        <option value="royal">ROYAL VELVET</option>
+                        <option value="emerald">EMERALD GATE</option>
+                        <option value="crimson">CRIMSON CORE</option>
+                        <option value="solar">SOLARIZED TEAL</option>
+                        <option value="stealth">CARBON STEALTH</option>
+                    </select>
+                </div>
+                <div class="settings-field">
+                    <div class="field-header">
+                        <span class="field-label">Neural Glow</span>
+                        <span class="field-value" id="val-glow">85%</span>
+                    </div>
+                    <input type="range" class="console-slider" id="sl-glow" min="0" max="100" value="85" aria-label="Neural Glow Intensity">
+                </div>
+                <div class="settings-field">
+                    <div class="field-header">
+                        <span class="field-label">Scanline Intensity</span>
+                        <span class="field-value" id="val-scan">40%</span>
+                    </div>
+                    <input type="range" class="console-slider" id="sl-scan" min="0" max="100" value="40" aria-label="Scanline Intensity">
+                </div>
+                <div class="settings-field">
+                    <div class="field-header">
+                        <span class="field-label">Holographic Glare</span>
+                        <span class="field-value" id="val-glare">40%</span>
+                    </div>
+                    <input type="range" class="console-slider" id="sl-glare" min="0" max="100" value="40" aria-label="Holographic Glare Intensity">
+                </div>
+                <div class="settings-field">
+                    <div class="field-header">
+                        <span class="field-label">Grid Background</span>
+                        <span class="field-value" id="val-grid">100%</span>
+                    </div>
+                    <input type="range" class="console-slider" id="sl-grid" min="0" max="100" value="100" aria-label="Grid Background Opacity">
+                </div>
+                <div class="settings-field">
+                    <div class="field-header">
+                        <span class="field-label">Backdrop Blur</span>
+                        <span class="field-value" id="val-glass">10px</span>
+                    </div>
+                    <input type="range" class="console-slider" id="sl-glass" min="0" max="40" value="10" aria-label="Backdrop Blur Intensity">
+                </div>
+                <div class="settings-field">
+                    <div class="field-header">
+                        <span class="field-label">Chroma Distortion</span>
+                        <span class="field-value" id="val-chroma">0%</span>
+                    </div>
+                    <input type="range" class="console-slider" id="sl-chroma" min="0" max="100" value="0" aria-label="Chroma Distortion Amount">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- USER GATEWAY -->
+    <div class="settings-accordion-item">
+        <div class="settings-item-header">
+            <i data-lucide="user-check"></i>
+            <span class="settings-item-title">User Gateway</span>
+        </div>
+        <div class="settings-item-content">
+            <div class="content-inner">
+                <div class="settings-field">
+                    <span class="field-label">Auditor Codename</span>
+                    <input type="text" class="console-input" id="in-auditor" placeholder="Enter codename..." aria-label="Auditor Codename" value="RAVI_01">
+                </div>
+                <button class="console-button btn-margin-top" id="btn-activity-logs">View Activity Logs</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEURAL AUDIO -->
+    <div class="settings-accordion-item">
+        <div class="settings-item-header">
+            <i data-lucide="volume-2"></i>
+            <span class="settings-item-title">Neural Audio</span>
+        </div>
+        <div class="settings-item-content">
+            <div class="content-inner">
+                <div class="settings-field">
+                    <div class="field-header">
+                        <span class="field-label">Master UI Volume</span>
+                        <div class="vol-indicator-wrapper">
+                            <div class="vol-indicator-bar" id="vol-indicator">
+                                <span></span><span></span><span></span><span></span><span></span>
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <span class="field-value" id="val-vol">75%</span>
+                        </div>
+                    </div>
+                    <input type="range" class="console-slider" id="sl-vol" min="0" max="100" value="75" aria-label="Master UI Volume">
+                </div>
+                <div class="settings-field settings-field-row">
+                    <span class="field-label">Feedback Bleeps</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="tg-bleeps" checked title="Feedback Bleeps Toggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECURITY GUARDRAILS -->
+    <div class="settings-accordion-item">
+        <div class="settings-item-header">
+            <i data-lucide="shield"></i>
+            <span class="settings-item-title">Security Guardrails</span>
+        </div>
+        <div class="settings-item-content">
+            <div class="content-inner">
+                <div class="settings-field settings-field-row">
+                    <span class="field-label">Sensitive Data Masking</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="tg-mask" title="Sensitive Data Masking Toggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="settings-field settings-field-row">
+                    <span class="field-label">Protocol Lockdown</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="tg-lock" title="Protocol Lockdown Toggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

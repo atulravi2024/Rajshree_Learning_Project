@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="ai-role" content="Frontier Protocol Hub">
+    <meta name="project-version" content="v2.0-Fidelity">
+    <title>RAJSHREE - INTERNAL AUDIT</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Hind:wght@400;600&family=Fira+Code:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="../shared/background.css">
+    <link rel="stylesheet" href="../shared/navbar.css">
+    <link rel="stylesheet" href="../shared/notifications.css">
+    <link rel="stylesheet" href="../shared/settings.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="theme-frontier">
+    <!-- Background injected by shared/background.js -->
+
+    <nav class="frontier-nav">
+        <div class="nav-brand">
+            <div class="nav-brand-icon">
+                <i data-lucide="clipboard-check"></i>
+            </div>
+            <div class="brand-text">
+                <h1>RAJSHREE</h1>
+                <span>INTERNAL AUDIT</span>
+            </div>
+        </div>
+        <div class="nav-center">
+            <a href="dashboard.html" class="nav-link active">DASHBOARD</a>
+            <a href="../terminal/global/global.html" class="nav-link">TERMINAL</a>
+            <a href="../map/map.html" class="nav-link">MAP</a>
+            <a href="../assets/assets.html" class="nav-link">ASSETS</a>
+        </div>
+        <div class="nav-user">
+            <div class="nav-avatar">
+                <img src="https://api.dicebear.com/7.x/micah/svg?seed=Atul" alt="Avatar">
+            </div>
+            <div class="nav-user-info">
+                <span class="rank">LEAD AUDITOR</span>
+                <span class="name">ATUL VERMA</span>
+            </div>
+            <div class="nav-icons">
+                <div class="nav-icon-wrapper" id="notification-bell">
+                    <i data-lucide="bell"></i>
+                    <span class="nav-badge"></span>
+                    
+
+                </div>
+                <div class="nav-icon-wrapper" id="nav-settings-btn">
+                    <i data-lucide="settings"></i>
+                </div>
+                <div class="nav-icon-wrapper logout">
+                    <i data-lucide="log-out"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="frontier-main console-hidden">
+        <!-- The Left Grid -->
+        <div class="domain-portal">
+            <div class="domain-grid" id="domain-grid">
+                <!-- Cards injected by JS with specific mockup icons and sparks -->
+            </div>
+        </div>
+
+        <!-- The Neural Console (Right Panel) -->
+        <aside class="neural-console" id="neural-console">
+            <div class="console-header">
+                <h2 id="console-title">NEURAL HUB // 00</h2>
+                <div class="header-controls">
+                    <div id="console-icon-wrap" class="console-card-icon"></div>
+                    <button class="close-console">×</button>
+                </div>
+            </div>
+            
+            <div class="console-body" id="console-body">
+                <div class="console-welcome">
+                    <div class="glitch-icon">⚓</div>
+                    <p>INITIALIZING FRONTIER LINK...</p>
+                    <span class="sub-text">SELECT A DOMAIN TO ENTER PRODUCTION GATEWAY</span>
+                </div>
+            </div>
+
+            <!-- Settings injected here by settings.js -->
+            <div id="settings-sidebar-container"></div>
+        </aside>
+    </main>
+
+    <!-- Master Data Link -->
+    <script src="../../../00 System & Guardrails/00.00_MEMORY_MAP.js"></script>
+
+    <script src="../shared/background.js"></script>
+    <script src="../shared/settings.js"></script>
+    <script src="../shared/notifications.js"></script>
+    <script src="../shared/navbar.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

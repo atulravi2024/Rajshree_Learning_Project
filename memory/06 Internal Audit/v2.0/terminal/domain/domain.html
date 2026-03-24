@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOMAIN CONSOLE // RAJSHREE SECTOR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="domain.css">
+    <link rel="stylesheet" href="../../shared/background.css">
+    <link rel="stylesheet" href="../../shared/navbar.css">
+    <link rel="stylesheet" href="../../shared/notifications.css">
+    <link rel="stylesheet" href="../../shared/settings.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="theme-frontier">
+    <!-- Background injected by shared/background.js -->
+
+    <nav class="frontier-nav">
+        <div class="nav-brand">
+            <div class="nav-brand-icon"><i data-lucide="clipboard-check"></i></div>
+            <div class="brand-text">
+                <h1>RAJSHREE</h1>
+                <span>INTERNAL AUDIT</span>
+            </div>
+        </div>
+        <div class="nav-center">
+            <a href="../../dashboard/dashboard.html" class="nav-link">DASHBOARD</a>
+            <a href="../global/global.html" class="nav-link">GLOBAL</a>
+            <a href="domain.html" class="nav-link active">SECTOR</a>
+            <a href="../../map/map.html" class="nav-link">MAP</a>
+            <a href="../../assets/assets.html" class="nav-link">ASSETS</a>
+        </div>
+        <div class="nav-user">
+            <div class="nav-avatar">
+                <img src="https://api.dicebear.com/7.x/micah/svg?seed=Atul" alt="Avatar">
+            </div>
+            <div class="nav-user-info">
+                <span class="rank">LEAD AUDITOR</span>
+                <span class="name">ATUL VERMA</span>
+            </div>
+            <div class="nav-icons">
+                <div class="nav-icon-wrapper" id="notification-bell">
+                    <i data-lucide="bell"></i>
+                    <span class="nav-badge"></span>
+                    
+
+                </div>
+                <div class="nav-icon-wrapper" id="nav-settings-btn">
+                    <i data-lucide="settings"></i>
+                </div>
+                <div class="nav-icon-wrapper logout">
+                    <i data-lucide="log-out"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="terminal-main-area">
+        <div class="terminal-container">
+            <header class="terminal-header">
+                <div class="header-left">
+                    <i data-lucide="shield-alert"></i>
+                    <span id="domain-header">DOMAIN CONSOLE // LOADING...</span>
+                </div>
+                <div class="header-right">
+                    <span class="status-indicator warning">DEBUG_MODE</span>
+                </div>
+            </header>
+
+            <main class="terminal-body" id="terminal-output">
+                <div class="terminal-line system">ISOLATING SECTOR INTERFACE...</div>
+                <div class="terminal-line system">CONNECTING TO SECTOR MEMORY CHIPS...</div>
+                <div class="terminal-line" id="welcome-message">Sector Diagnostics v2.0 READY.</div>
+                <div class="terminal-line">Type 'trace' to scan local sector assets.</div>
+            </main>
+
+            <footer class="terminal-input-area">
+                <label for="terminal-input" class="sr-only">Terminal Command Input</label>
+                <span class="prompt" id="terminal-prompt">SECTOR@FRONTIER:~$</span>
+                <input type="text" id="terminal-input" autofocus autocomplete="off" aria-label="Terminal command input" placeholder=" ">
+            </footer>
+        </div>
+    </div>
+
+    <script src="../../shared/background.js"></script>
+    <script src="../../shared/settings.js"></script>
+    <script src="../../shared/notifications.js"></script>
+    <script src="../../shared/navbar.js"></script>
+    <script src="domain.js"></script>
+</body>
+</html>

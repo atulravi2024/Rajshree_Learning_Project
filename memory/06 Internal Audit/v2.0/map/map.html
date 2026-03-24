@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOLOGRAPHIC MAP // FRONTIER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="../shared/background.css">
+    <link rel="stylesheet" href="../shared/navbar.css">
+    <link rel="stylesheet" href="../shared/notifications.css">
+    <link rel="stylesheet" href="../shared/settings.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="theme-frontier">
+    <!-- Background injected by shared/background.js -->
+    <nav class="frontier-nav">
+        <div class="nav-brand">
+            <div class="nav-brand-icon">
+                <i data-lucide="clipboard-check"></i>
+            </div>
+            <div class="brand-text">
+                <h1>RAJSHREE</h1>
+                <span>INTERNAL AUDIT</span>
+            </div>
+        </div>
+        <div class="nav-center">
+            <a href="../dashboard/dashboard.html" class="nav-link">DASHBOARD</a>
+            <a href="../terminal/global/global.html" class="nav-link">TERMINAL</a>
+            <a href="map.html" class="nav-link active">MAP</a>
+            <a href="../assets/assets.html" class="nav-link">ASSETS</a>
+        </div>
+        <div class="nav-user">
+            <div class="nav-avatar">
+                <img src="https://api.dicebear.com/7.x/micah/svg?seed=Atul" alt="Avatar">
+            </div>
+            <div class="nav-user-info">
+                <span class="rank">LEAD AUDITOR</span>
+                <span class="name">ATUL VERMA</span>
+            </div>
+            <div class="nav-icons">
+                <div class="nav-icon-wrapper" id="notification-bell">
+                    <i data-lucide="bell"></i>
+                    <span class="nav-badge"></span>
+                    
+
+                </div>
+                <div class="nav-icon-wrapper" id="nav-settings-btn">
+                    <i data-lucide="settings"></i>
+                </div>
+                <div class="nav-icon-wrapper logout">
+                    <i data-lucide="log-out"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="page-split-layout">
+        <div class="map-main-area">
+    <div class="map-container">
+        <header class="map-header">
+            <div class="header-left">
+                <i data-lucide="map"></i>
+                <span>GEOSPATIAL HUB // GLOBAL MAP</span>
+            </div>
+            <div class="header-right">
+                <span class="view-mode">TOPOGRAPHIC</span>
+            </div>
+        </header>
+
+        <main class="map-view">
+            <div class="map-overlay">
+                <div class="map-legend">
+                    <div class="legend-item"><span class="dot active"></span> STABLE</div>
+                    <div class="legend-item"><span class="dot warning"></span> DRIFTING</div>
+                    <div class="legend-item"><span class="dot threat"></span> THREAT</div>
+                </div>
+                <div class="active-node">
+                    <strong>ACTIVE NODE:</strong> SECTOR 06
+                </div>
+            </div>
+            
+            <div class="hologram-map">
+                <!-- Mock Map Plot -->
+                <div class="node-point node-s01" data-name="Sector 01"></div>
+                <div class="node-point node-s02" data-name="Sector 02"></div>
+                <div class="node-point threat node-s06" data-name="Sector 06"></div>
+                <div class="node-point warning node-s08" data-name="Sector 08"></div>
+                <div class="node-point node-s11" data-name="Sector 11"></div>
+            </div>
+        </main>
+
+        <footer class="map-footer">
+            <div class="coords">COORDS: 28.6139° N, 77.2090° E</div>
+            <div class="zoom-controls">
+                <span>+</span>
+                <span>-</span>
+            </div>
+        </footer>
+    </div>
+    </div>
+
+
+    <aside class="settings-global-overlay">
+        <div class="console-header">
+            <h2>SYSTEM SETTINGS</h2>
+            <div class="header-controls">
+                <button class="close-console" onclick="if(window.showSettingsMenu) window.showSettingsMenu()">×</button>
+            </div>
+        </div>
+        <div id="settings-sidebar-container"></div>
+    </aside>
+    </main>
+    <script src="../shared/background.js"></script>
+    <script src="../shared/settings.js"></script>
+    <script src="../shared/notifications.js"></script>
+    <script src="../shared/navbar.js"></script>
+    <script src="map.js"></script>
+</body>
+</html>

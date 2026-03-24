@@ -1,0 +1,73 @@
+/* ── CINEMATIC BACKGROUND SHARED STYLES ── */
+
+.bg-scene {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0, 50, 70, 0.6) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(0, 30, 50, 0.5) 0%, transparent 60%),
+        linear-gradient(180deg, #010c15 0%, #010810 50%, #010a12 100%);
+}
+
+.background-grid {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-image:
+        linear-gradient(var(--accent-glow-subtle) 1px, transparent 1px),
+        linear-gradient(90deg, var(--accent-glow-subtle) 1px, transparent 1px);
+    background-size: 55px 55px;
+    opacity: var(--grid-opacity, 1);
+    animation: gridPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes gridPulse {
+    0%   { opacity: calc(var(--grid-opacity, 1) * 0.7); }
+    100% { opacity: var(--grid-opacity, 1); }
+}
+
+.holographic-glare {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 50% -20%, var(--accent-glow-subtle), transparent 70%);
+    pointer-events: none;
+    mix-blend-mode: color-dodge;
+    opacity: var(--glare-opacity, 0.4);
+}
+
+.bg-scanlines {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    background: repeating-linear-gradient(0deg,
+            var(--scanline-color),
+            var(--scanline-color) 1px,
+            transparent 1px,
+            transparent 3px);
+    opacity: var(--scanline-opacity, 0.4);
+    pointer-events: none;
+}
+
+.bg-glow-top {
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 400px;
+    background: linear-gradient(to right, var(--accent-glow-subtle), transparent);
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes glarePulse {
+    0%   { opacity: 0.1; transform: scale(1); }
+    50%  { opacity: 0.3; transform: scale(1.1); filter: brightness(1.5); }
+    100% { opacity: 0.1; transform: scale(1); }
+}
+
+.glare-pulse {
+    animation: glarePulse 0.45s ease-out;
+}
