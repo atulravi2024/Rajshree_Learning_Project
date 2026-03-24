@@ -997,7 +997,7 @@ function buildSidebarHTML(d) {
                         <h3>DETAILED AUDIT FINDINGS</h3>
                     </div>
                     
-                    <div class="audit-item critical">
+                    <div class="audit-item ${d.status === 'threat' ? 'critical' : d.status === 'warning' ? 'warning' : 'stable'}">
                         <div class="audit-item-label">REPORTED EVENT</div>
                         <div class="audit-item-value">${detail.title}</div>
                     </div>

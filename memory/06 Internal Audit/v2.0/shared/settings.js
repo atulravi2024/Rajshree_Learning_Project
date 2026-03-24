@@ -262,6 +262,9 @@ window.showSettingsMenu = function() {
     if (!sidebar) return;
 
     const currentMode = sidebar.getAttribute('data-mode');
+    const titleEl = document.getElementById('console-title');
+    const iconWrap = document.getElementById('console-icon-wrap');
+
     if (currentMode === 'settings') {
         sidebar.setAttribute('data-mode', 'normal');
         
@@ -270,8 +273,8 @@ window.showSettingsMenu = function() {
             document.querySelectorAll('.domain-card.active').forEach(c => c.classList.remove('active'));
             const mainArea = document.querySelector('.frontier-main');
             if (mainArea) mainArea.classList.add('console-hidden');
-            const title = document.getElementById('console-title');
-            if (title) title.textContent = 'NEURAL HUB // 00';
+            if (titleEl) titleEl.textContent = 'NEURAL HUB // 00';
+            if (iconWrap) iconWrap.innerHTML = ''; // Clear icon
             sidebar.removeAttribute('data-mode');
         }
     } else {
@@ -281,6 +284,18 @@ window.showSettingsMenu = function() {
         if (isDashboard) {
             const mainArea = document.querySelector('.frontier-main');
             if (mainArea) mainArea.classList.remove('console-hidden');
+
+            // Update Header for Settings
+            const titleEl = document.getElementById('console-title');
+            const iconWrap = document.getElementById('console-icon-wrap');
+            if (titleEl) titleEl.textContent = 'SYSTEM SETTINGS';
+            if (iconWrap) {
+                iconWrap.innerHTML = `
+                    <div class="card-icon" data-status="stable" data-tooltip="<span class='tooltip-title'>SYSTEM SETTINGS</span>Global configuration and visual protocol effects.">
+                        <i data-lucide="settings"></i>
+                    </div>`;
+                if (window.lucide) lucide.createIcons();
+            }
         }
     }
     
