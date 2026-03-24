@@ -6,9 +6,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,25 +23,27 @@
     visibility: visible;
 }
 
-.modal-container {
-    background: rgba(255, 255, 255, 0.85);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    width: 90%;
-    max-width: 500px;
-    border-radius: 30px;
-    border: 3px solid var(--light-pink);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    padding: 30px;
-    transform: scale(0.9) translateY(20px);
+.modal-container-sidebar {
+    background: transparent;
+    width: 500px; /* Increased to accommodate the left-aligned SMods tab */
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    position: relative;
-    max-height: 80vh;
-    overflow-y: auto;
+    /* Box shadow handled by the iframe content itself now */
+    overflow: hidden;
 }
 
-.modal-overlay.active .modal-container {
-    transform: scale(1) translateY(0);
+.modal-overlay.active .modal-container-sidebar {
+    transform: translateX(0);
+}
+
+.settings-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .modal-header {

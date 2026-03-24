@@ -6,22 +6,9 @@
 
 const SETTINGS_MODAL_HTML = `
 <div id="settings-modal-overlay" class="modal-overlay hidden">
-    <div class="modal-container">
-        <div class="modal-header">
-            <div class="modal-title">
-                <span class="hi">सेटिंग्स</span>
-                <span class="en">Settings</span>
-            </div>
-            <button class="modal-close-btn" onclick="closeSettingsModal()" title="Close">
-                ❌
-            </button>
-        </div>
-        <div id="settings-modal-content" class="modal-content">
-            <!-- Settings will be added here later -->
-            <p class="settings-placeholder">
-                जल्द आ रहा है... / Coming Soon...
-            </p>
-        </div>
+    <div class="modal-container-sidebar">
+        <!-- Settings loaded via iframe for isolation -->
+        <iframe src="settings/settings.html" id="settings-frame" class="settings-frame"></iframe>
     </div>
 </div>
 `;
@@ -30,8 +17,12 @@ function initSettingsModal() {
     const mountPoint = document.getElementById('settings-modal-mount');
     if (!mountPoint) return;
 
-    mountPoint.innerHTML = SETTINGS_MODAL_HTML;
-    console.log('✅ Settings Modal injected via template.');
+    // Use a cache-breaker for the settings iframe
+    const cacheBreaker = Date.now();
+    const modalHtml = SETTINGS_MODAL_HTML.replace('settings/settings.html', `settings/settings.html?v=${cacheBreaker}`);
+    
+    mountPoint.innerHTML = modalHtml;
+    console.log('✅ Settings Modal injected with cache-breaker.');
     
     // Close on overlay click
     const overlay = document.getElementById('settings-modal-overlay');
@@ -69,4 +60,17 @@ function closeSettingsModal() {
 }
 
 // Automatically load the modal structure on page load
-document.addEventListener('DOMContentLoaded', initSettingsModal);
+document.addEventListener('DOMContentLoaded', () => {
+    initSettingsModal();
+
+    // Listen for messages from the settings iframe
+    window.addEventListener('message', (event) => {
+        if (event.data && event.data.action === 'close-modal') {
+            closeSettingsModal();
+        }
+        if (event.data && event.data.action === 'open-dashboard') {
+            // Navigate the main window to the Audit Dashboard
+            window.location.href = '../../memory/06 Internal Audit/v2.0/dashboard/dashboard.html';
+        }
+    });
+});

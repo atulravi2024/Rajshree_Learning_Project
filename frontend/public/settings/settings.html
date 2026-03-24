@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सेटिंग्स | Settings ⚙️</title>
+    <link rel="stylesheet" href="settings.css">
+    <link rel="stylesheet" href="../../src/css/base/base.css">
+</head>
+<body class="settings-body">
+    <div class="settings-container">
+
+        <!-- Side Tab -->
+        <div class="smods-tab">
+            <span class="smods-icon">⚙️</span>
+            <span class="smods-text">SMods</span>
+        </div>
+
+        <header class="settings-header">
+            <h1 class="settings-title">Settings</h1>
+            <button class="close-btn" id="close-settings" title="बंद करें (Close)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </header>
+
+        <main class="settings-content">
+
+            <!-- Section Nav Pills -->
+            <div class="section-nav" role="tablist" aria-label="Settings Sections">
+                <button class="nav-pill active" data-target="general" role="tab" aria-selected="true">General</button>
+                <button class="nav-pill" data-target="kids" role="tab" aria-selected="false">Kids</button>
+                <button class="nav-pill" data-target="parent" role="tab" aria-selected="false">Parent</button>
+                <button class="nav-pill" data-target="admin" role="tab" aria-selected="false">Admin</button>
+                <button class="nav-pill" data-target="developer" role="tab" aria-selected="false">Dev</button>
+            </div>
+
+            <!-- ===== GENERAL SECTION ===== -->
+            <section id="section-general" class="settings-section active" role="tabpanel">
+                <div class="role-card general-card section-hero-card">
+                    <div class="card-icon-wrapper">
+                        <img src="../../assets/icons/general.png" alt="General" onerror="this.outerHTML='<span class=\'card-emoji\'>🌐</span>'">
+                    </div>
+                    <div class="card-info">
+                        <h2>General</h2>
+                        <p>App-wide preferences</p>
+                    </div>
+                </div>
+
+                <!-- Volume Control -->
+                <div class="settings-group">
+                    <span class="group-label">Volume</span>
+                    <div class="slider-wrapper">
+                        <span class="volume-icon" id="volume-icon">🔊</span>
+                        <input type="range" id="volume-control" class="styled-slider" min="0" max="1" step="0.05" value="1" title="Volume Control" aria-label="Volume Control">
+                        <span class="slider-value" id="volume-value">100%</span>
+                    </div>
+                </div>
+
+                <!-- Language -->
+                <div class="settings-group">
+                    <span class="group-label">Language</span>
+                    <div class="select-wrapper">
+                        <select id="lang-select" class="styled-select" title="Switch Language" aria-label="Language Selection">
+                            <option value="hi">🇮🇳 हिन्दी (Hindi)</option>
+                            <option value="en">🇬🇧 English</option>
+                        </select>
+                        <span class="select-arrow">▾</span>
+                    </div>
+                </div>
+
+                <!-- Autoplay Toggle -->
+                <div class="settings-group row-group">
+                    <div class="group-text">
+                        <span class="group-label">Auto-play Audio</span>
+                        <span class="group-sub">Play audio on card flip</span>
+                    </div>
+                    <label class="toggle-switch" aria-label="Auto-play Toggle">
+                        <input type="checkbox" id="autoplay-check" checked title="Toggle Auto-play Audio">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- ===== KIDS SECTION ===== -->
+            <section id="section-kids" class="settings-section" role="tabpanel">
+                <div class="role-card kids-card section-hero-card">
+                    <div class="card-icon-wrapper">
+                        <img src="../../assets/icons/kids.png" alt="Kids" onerror="this.outerHTML='<span class=\'card-emoji\'>👦🏻</span>'">
+                    </div>
+                    <div class="card-info">
+                        <h2>Kids</h2>
+                        <p>Child-safe experience</p>
+                    </div>
+                </div>
+
+                <!-- Interaction Lock -->
+                <div class="settings-group row-group">
+                    <div class="group-text">
+                        <span class="group-label">Interaction Lock</span>
+                        <span class="group-sub">Lock UI during audio playback</span>
+                    </div>
+                    <label class="toggle-switch" aria-label="Lock Toggle">
+                        <input type="checkbox" id="lock-check" checked title="Toggle Interaction Lock">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Haptic Feedback -->
+                <div class="settings-group row-group">
+                    <div class="group-text">
+                        <span class="group-label">Haptic Pulse</span>
+                        <span class="group-sub">Vibrate on card interactions</span>
+                    </div>
+                    <label class="toggle-switch" aria-label="Haptic Toggle">
+                        <input type="checkbox" id="haptic-check" checked title="Toggle Haptic Feedback">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Animations -->
+                <div class="settings-group row-group">
+                    <div class="group-text">
+                        <span class="group-label">Card Animations</span>
+                        <span class="group-sub">Enable flip &amp; bounce effects</span>
+                    </div>
+                    <label class="toggle-switch" aria-label="Animations Toggle">
+                        <input type="checkbox" id="anim-check" checked title="Toggle Animations">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- ===== PARENT SECTION ===== -->
+            <section id="section-parent" class="settings-section" role="tabpanel">
+                <div class="role-card parent-card section-hero-card">
+                    <div class="card-icon-wrapper">
+                        <img src="../../assets/icons/parent.png" alt="Parent" onerror="this.outerHTML='<span class=\'card-emoji\'>👪</span>'">
+                    </div>
+                    <div class="card-info">
+                        <h2>Parent</h2>
+                        <p>Parental controls</p>
+                    </div>
+                    <span class="role-badge lock-icon">🔒</span>
+                </div>
+
+                <!-- Time Limit -->
+                <div class="settings-group">
+                    <span class="group-label">Daily Time Limit (minutes)</span>
+                    <div class="number-input-wrapper">
+                        <button class="num-btn" id="time-dec" aria-label="Decrease time limit">−</button>
+                        <input type="number" id="time-limit" class="styled-number-input" value="30" min="5" max="120" title="Set Time Limit in Minutes" aria-label="Time Limit">
+                        <button class="num-btn" id="time-inc" aria-label="Increase time limit">+</button>
+                    </div>
+                </div>
+
+                <!-- PIN Lock -->
+                <div class="settings-group row-group">
+                    <div class="group-text">
+                        <span class="group-label">Parental PIN</span>
+                        <span class="group-sub">3-second hold to unlock settings</span>
+                    </div>
+                    <button class="pill-btn" id="set-pin-btn" title="Set or change PIN">Change PIN</button>
+                </div>
+
+                <!-- Safe Search -->
+                <div class="settings-group row-group">
+                    <div class="group-text">
+                        <span class="group-label">Safe Content Only</span>
+                        <span class="group-sub">Restrict to curated content</span>
+                    </div>
+                    <label class="toggle-switch" aria-label="Safe Search Toggle">
+                        <input type="checkbox" id="safe-check" checked title="Toggle Safe Content">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- ===== ADMIN SECTION ===== -->
+            <section id="section-admin" class="settings-section" role="tabpanel">
+                <div class="role-card admin-card section-hero-card">
+                    <div class="card-icon-wrapper">
+                        <img src="../../assets/icons/admin.png" alt="Admin" onerror="this.outerHTML='<span class=\'card-emoji\'>🛡️</span>'">
+                    </div>
+                    <div class="card-info">
+                        <h2>Admin</h2>
+                        <p>System management</p>
+                    </div>
+                    <span class="role-badge gear-icon">⚙️</span>
+                </div>
+
+                <!-- Auditor Name -->
+                <div class="settings-group">
+                    <span class="group-label">Auditor Name</span>
+                    <div class="input-wrapper">
+                        <input type="text" id="auditor-name" class="styled-text-input" placeholder="Enter auditor name..." title="Auditor Name" aria-label="Auditor Name">
+                        <button class="inline-save-btn" id="save-auditor-btn" title="Save">✓</button>
+                    </div>
+                </div>
+
+                <!-- Activity Logs -->
+                <div class="settings-group row-group">
+                    <div class="group-text">
+                        <span class="group-label">Activity Logs</span>
+                        <span class="group-sub">View recent session history</span>
+                    </div>
+                    <button class="pill-btn" id="admin-logs" title="View Logs">View Logs</button>
+                </div>
+
+                <!-- Reset Data -->
+                <div class="settings-group row-group">
+                    <div class="group-text">
+                        <span class="group-label">Reset Progress</span>
+                        <span class="group-sub">Clear all saved session data</span>
+                    </div>
+                    <button class="pill-btn danger-btn" id="reset-data-btn" title="Reset all session data">Reset</button>
+                </div>
+            </section>
+
+            <!-- ===== DEVELOPER SECTION ===== -->
+            <section id="section-developer" class="settings-section" role="tabpanel">
+                <div class="role-card developer-card section-hero-card">
+                    <div class="card-icon-wrapper">
+                        <img src="../../assets/icons/developer.png" alt="Developer" onerror="this.outerHTML='<span class=\'card-emoji\'>🧑‍💻</span>'">
+                    </div>
+                    <div class="card-info">
+                        <h2>Developer</h2>
+                        <p>Advanced tools</p>
+                    </div>
+                    <span class="role-badge gear-icon">🔧</span>
+                </div>
+
+                <!-- Debug Mode -->
+                <div class="settings-group row-group">
+                    <div class="group-text">
+                        <span class="group-label">Debug Mode</span>
+                        <span class="group-sub">Show console overlays &amp; logs</span>
+                    </div>
+                    <label class="toggle-switch" aria-label="Debug Mode Toggle">
+                        <input type="checkbox" id="debug-check" title="Toggle Debug Mode">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Sync Excel -->
+                <div class="settings-group row-group">
+                    <div class="group-text">
+                        <span class="group-label">Sync Excel Data</span>
+                        <span class="group-sub">Rebuild database from source</span>
+                    </div>
+                    <button class="pill-btn" id="data-sync" title="Sync Excel Data">Sync</button>
+                </div>
+
+                <!-- Audit Dashboard -->
+                <div class="settings-group row-group">
+                    <div class="group-text">
+                        <span class="group-label">Audit Dashboard</span>
+                        <span class="group-sub">Internal system health & logs</span>
+                    </div>
+                    <button class="pill-btn" id="open-dashboard" title="Open Audit Dashboard">Open</button>
+                </div>
+
+                <!-- Version Info -->
+                <div class="settings-group">
+                    <span class="group-label">App Version</span>
+                    <div class="version-badge">
+                        <span class="version-text" id="app-version">v2.0.0</span>
+                        <span class="version-env" id="app-env">DEV</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html>
