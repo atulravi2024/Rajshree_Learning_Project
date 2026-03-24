@@ -9,6 +9,10 @@ const CONFIG = {
     theme: 'frontier',
     glowIntensity: 85,
     scanlineIntensity: 40,
+    glareIntensity: 40,
+    gridOpacity: 100,
+    glassBlur: 10,
+    chromaShift: 0,
     refreshRate: 2.5,
     autoSync: true,
     masterVolume: 75,
@@ -105,6 +109,27 @@ function applySettingEffect(id, value) {
             CONFIG.scanlineIntensity = value;
             // Boost scanline opacity mapping to make it very obvious when sliding (0 to 1.5)
             root.style.setProperty('--scanline-opacity', (value / 100) * 1.5);
+            break;
+
+        case 'glare':
+            CONFIG.glareIntensity = value;
+            root.style.setProperty('--glare-opacity', value / 100);
+            break;
+
+        case 'grid':
+            CONFIG.gridOpacity = value;
+            root.style.setProperty('--grid-opacity', value / 100);
+            break;
+
+        case 'glass':
+            CONFIG.glassBlur = value;
+            root.style.setProperty('--glass-blur', `${value}px`);
+            break;
+
+        case 'chroma':
+            CONFIG.chromaShift = value;
+            root.style.setProperty('--chroma-shift', `${value / 5}px`);
+            body.classList.toggle('chroma-distort', value > 0);
             break;
 
         case 'refresh':
@@ -746,6 +771,10 @@ document.addEventListener('DOMContentLoaded', () => {
         applySettingEffect('theme', CONFIG.theme);
         applySettingEffect('glow', CONFIG.glowIntensity);
         applySettingEffect('scanline', CONFIG.scanlineIntensity);
+        applySettingEffect('glare', CONFIG.glareIntensity);
+        applySettingEffect('grid', CONFIG.gridOpacity);
+        applySettingEffect('glass', CONFIG.glassBlur);
+        applySettingEffect('chroma', CONFIG.chromaShift);
     }, 150);
 });
 
@@ -1119,9 +1148,14 @@ function showSettingsMenu() {
         const label = document.getElementById(valId);
         if (!slider) return;
         // Restore state from CONFIG on re-open
-        if (effectKey === 'glow') slider.value = CONFIG.glowIntensity;
-        if (effectKey === 'scanline') slider.value = CONFIG.scanlineIntensity;
-        if (effectKey === 'refresh') slider.value = CONFIG.refreshRate;
+        if (effectKey === 'glow')    { slider.value = CONFIG.glowIntensity; }
+        if (effectKey === 'scanline'){ slider.value = CONFIG.scanlineIntensity; }
+        if (effectKey === 'glare')   { slider.value = CONFIG.glareIntensity; }
+        if (effectKey === 'grid')    { slider.value = CONFIG.gridOpacity; }
+        if (effectKey === 'glass')   { slider.value = CONFIG.glassBlur; }
+        if (effectKey === 'chroma')  { slider.value = CONFIG.chromaShift; }
+        if (effectKey === 'refresh') { slider.value = CONFIG.refreshRate; }
+        if (effectKey === 'volume')  { slider.value = CONFIG.masterVolume; }
         if (label) label.textContent = slider.value + suffix;
         slider.addEventListener('input', () => {
             if (label) label.textContent = slider.value + suffix;
@@ -1132,6 +1166,10 @@ function showSettingsMenu() {
     bindSlider('sl-refresh', 'val-refresh', 's', 'refresh');
     bindSlider('sl-glow',    'val-glow',    '%', 'glow');
     bindSlider('sl-scan',    'val-scan',    '%', 'scanline');
+    bindSlider('sl-glare',   'val-glare',   '%', 'glare');
+    bindSlider('sl-grid',    'val-grid',    '%', 'grid');
+    bindSlider('sl-glass',   'val-glass',   'px', 'glass');
+    bindSlider('sl-chroma',  'val-chroma',  '%', 'chroma');
     bindSlider('sl-vol',     'val-vol',     '%', 'volume');
 
     // Theme select
@@ -1256,6 +1294,34 @@ function buildSettingsHTML() {
                             <span class="field-value" id="val-scan">40%</span>
                         </div>
                         <input type="range" class="console-slider" id="sl-scan" min="0" max="100" value="40">
+                    </div>
+                    <div class="settings-field">
+                        <div class="field-header">
+                            <span class="field-label">Holographic Glare</span>
+                            <span class="field-value" id="val-glare">40%</span>
+                        </div>
+                        <input type="range" class="console-slider" id="sl-glare" min="0" max="100" value="40">
+                    </div>
+                    <div class="settings-field">
+                        <div class="field-header">
+                            <span class="field-label">Grid Background</span>
+                            <span class="field-value" id="val-grid">100%</span>
+                        </div>
+                        <input type="range" class="console-slider" id="sl-grid" min="0" max="100" value="100">
+                    </div>
+                    <div class="settings-field">
+                        <div class="field-header">
+                            <span class="field-label">Backdrop Blur</span>
+                            <span class="field-value" id="val-glass">10px</span>
+                        </div>
+                        <input type="range" class="console-slider" id="sl-glass" min="0" max="40" value="10">
+                    </div>
+                    <div class="settings-field">
+                        <div class="field-header">
+                            <span class="field-label">Chroma Distortion</span>
+                            <span class="field-value" id="val-chroma">0%</span>
+                        </div>
+                        <input type="range" class="console-slider" id="sl-chroma" min="0" max="100" value="0">
                     </div>
                 </div>
             </div>
