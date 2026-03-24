@@ -25,8 +25,7 @@
         </div>
         <div class="nav-center">
             <a href="../../dashboard/dashboard.html" class="nav-link">DASHBOARD</a>
-            <a href="../global/global.html" class="nav-link">GLOBAL</a>
-            <a href="domain.html" class="nav-link active">SECTOR</a>
+            <a href="domain.html" class="nav-link active">TERMINAL</a>
             <a href="../../map/map.html" class="nav-link">MAP</a>
             <a href="../../assets/assets.html" class="nav-link">ASSETS</a>
         </div>
@@ -56,6 +55,35 @@
     </nav>
 
     <div class="terminal-main-area">
+        <div class="terminal-broadcast-bar" id="broadcast-bar">
+            <span class="broadcast-icon">📡</span>
+            <span class="broadcast-text" id="broadcast-text">SYSTEM BROADCAST</span>
+            <button class="broadcast-close" id="broadcast-close-btn">✕</button>
+        </div>
+        <div class="terminal-control-bar">
+            <div class="terminal-tabs">
+                <a href="../global/global.html" class="tab-link">⬡ GLOBAL</a>
+                <span class="tab-active-sector" id="tab-sector-label">▸ SECTOR</span>
+            </div>
+            <div class="control-bar-selectors">
+                <div class="selector-group">
+                    <span class="selector-label">SECTOR:</span>
+                    <select id="domain-selector" aria-label="Select Domain" onchange="switchDomain(this.value)">
+                        <option value="">LOADING SECTORS...</option>
+                    </select>
+                </div>
+                <div class="selector-group">
+                    <span class="selector-label">DEPTH:</span>
+                    <select id="audit-depth-selector" aria-label="Select Audit Depth">
+                        <option value="meta">META SCAN</option>
+                        <option value="deep">DEEP SCAN</option>
+                        <option value="integrity">INTEGRITY CHECK</option>
+                        <option value="full">FULL SYSTEM AUDIT</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
         <div class="terminal-container">
             <header class="terminal-header">
                 <div class="header-left">
@@ -71,7 +99,7 @@
                 <div class="terminal-line system">ISOLATING SECTOR INTERFACE...</div>
                 <div class="terminal-line system">CONNECTING TO SECTOR MEMORY CHIPS...</div>
                 <div class="terminal-line" id="welcome-message">Sector Diagnostics v2.0 READY.</div>
-                <div class="terminal-line">Type 'trace' to scan local sector assets.</div>
+                <div class="terminal-line">Type 'help' for a full list of sector commands.</div>
             </main>
 
             <footer class="terminal-input-area">
@@ -79,6 +107,14 @@
                 <span class="prompt" id="terminal-prompt">SECTOR@FRONTIER:~$</span>
                 <input type="text" id="terminal-input" autofocus autocomplete="off" aria-label="Terminal command input" placeholder=" ">
             </footer>
+
+            <aside class="terminal-hud-panel" id="command-hud">
+                <div class="hud-header">
+                    <span class="hud-title">⌨ CMD REF</span>
+                    <button class="hud-toggle" id="hud-toggle-btn" aria-label="Toggle command reference">−</button>
+                </div>
+                <div class="hud-body" id="hud-body"></div>
+            </aside>
         </div>
     </div>
 
