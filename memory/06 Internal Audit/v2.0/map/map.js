@@ -347,6 +347,36 @@ function initMockDataFeeds() {
             });
         }, 1500);
     }
+
+    // 2. Phase-2 Widgets
+    renderComplianceWidget();
+    renderDonutChart();
+    renderAdminActivity();
+    renderSessions();
+    renderHardwareGauges();
+    initAnomalyScanner();
+
+    // ── NEW PHASE-2 (B) WIDGETS ──────────────────────
+    renderLatencyMatrix();
+    renderIntegritySeals();
+    renderSectorFlow();
+    renderIncidents();
+    renderBackups();
+    renderCredentialGauge();
+    renderTopology();
+    renderThreatVectors();
+    renderGeoLogs();
+    renderQuarantineList();
+    renderUptime();
+    renderMemoryMatrix();
+    renderSignalInterference();
+
+    // Live-update intervals
+    setInterval(renderHardwareGauges, 2000);
+    setInterval(renderSessions, 3000);
+    setInterval(renderLatencyMatrix, 2500);
+    setInterval(renderMemoryMatrix, 5000);
+    setInterval(renderSignalInterference, 3200);
 }
 
 // ─────────────────────────────────────────────────
@@ -510,6 +540,42 @@ function initBottomBar() {
         });
     }
 
+    // ── UI MINIMIZE TOGGLE ──────────────────────────────────────────
+    const uiToggleBtn = document.getElementById('btn-ui-toggle');
+    if (uiToggleBtn) {
+        uiToggleBtn.addEventListener('click', () => {
+            const isMinimized = document.body.classList.toggle('ui-minimized');
+
+            // Toggle eye icon
+            const icon = uiToggleBtn.querySelector('i');
+            if (icon) {
+                icon.setAttribute('data-lucide', isMinimized ? 'eye-off' : 'eye');
+                lucide.createIcons();
+            }
+
+            // Animate camera zoom: pull in when minimized, return when restored
+            const globe = window._mapGlobe;
+            if (globe) {
+                const targetZ = isMinimized ? 200 : 260; // 260 = default, 200 = zoomed
+                const startZ = globe.camera.position.z;
+                const duration = 600;
+                const startTime = Date.now();
+
+                function animateCamera() {
+                    const t = Math.min((Date.now() - startTime) / duration, 1);
+                    const eased = 1 - Math.pow(1 - t, 3); // cubic ease-out
+                    globe.camera.position.z = startZ + (targetZ - startZ) * eased;
+
+                    if (t < 1) requestAnimationFrame(animateCamera);
+                }
+                animateCamera();
+            }
+
+            // Allow layout to settle, then fire resize to re-fit the canvas
+            setTimeout(() => window.dispatchEvent(new Event('resize')), 520);
+        });
+    }
+
     // ── VIEW LOGS BUTTON: opens full Audit Log modal ──────────────────
     const logsBtn = document.getElementById('btn-view-logs');
     const logsModal = document.getElementById('modal-audit-logs');
@@ -554,6 +620,98 @@ function initBottomBar() {
 
     // ── QUARANTINE BUTTON ─────────────────────────────────────────────
     document.getElementById('btn-quarantine')?.addEventListener('click', runQuarantineSequence);
+
+    // ── DEEP SCAN BUTTON ─────────────────────────────────────────────
+    const deepScanBtn = document.getElementById('btn-deep-scan');
+    if (deepScanBtn) {
+        deepScanBtn.addEventListener('click', () => {
+            // Trigger the scan tab mode
+            document.querySelector('[data-tab="scan"]')?.click();
+            // Flash all widgets
+            document.querySelectorAll('.holo-widget').forEach((w, i) => {
+                setTimeout(() => {
+                    w.classList.add('scanning-flash');
+                    setTimeout(() => w.classList.remove('scanning-flash'), 800);
+                }, i * 80);
+            });
+            // Spin the deep scan icon
+            const icon = deepScanBtn.querySelector('svg');
+            if (icon) {
+                icon.style.transition = 'transform 0.6s ease';
+                icon.style.transform = 'rotate(360deg)';
+                setTimeout(() => { icon.style.transform = ''; }, 700);
+            }
+        });
+    }
+
+    // ── SYSTEM LOCKDOWN BUTTON ────────────────────────────────────────
+    const lockdownBtn = document.getElementById('btn-lockdown');
+    if (lockdownBtn) {
+        lockdownBtn.addEventListener('click', () => {
+            const isLocked = document.body.classList.toggle('lockdown-active');
+            lockdownBtn.classList.toggle('active', isLocked);
+            const titleEl = document.getElementById('bottom-title-text');
+            if (titleEl) {
+                titleEl.textContent = isLocked ? '⚠ SYSTEM LOCKDOWN ACTIVE' : 'INTERNAL AUDIT HUB';
+            }
+            // Flash anomaly result
+            const anomalyEl = document.getElementById('anomaly-result');
+            if (anomalyEl) {
+                anomalyEl.textContent = isLocked ? 'LOCKDOWN ENGAGED' : 'SCANNING…';
+                anomalyEl.classList.toggle('threat', isLocked);
+            }
+        });
+    }
+
+    // ── THEME TOGGLE BUTTON ───────────────────────────────────────────
+    const themeBtn = document.getElementById('btn-theme-toggle');
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            const isAmber = document.body.classList.toggle('theme-amber');
+            const titleEl = document.getElementById('bottom-title-text');
+            if (titleEl && !document.body.classList.contains('lockdown-active')) {
+                titleEl.textContent = isAmber ? 'INTERNAL AUDIT HUB — AMBER' : 'INTERNAL AUDIT HUB';
+                setTimeout(() => {
+                    if (!document.body.classList.contains('lockdown-active')) {
+                        titleEl.textContent = 'INTERNAL AUDIT HUB';
+                    }
+                }, 2500);
+            }
+        });
+    }
+
+    // ── HISTORY BUTTON (opens audit log) ─────────────────────────────
+    document.getElementById('btn-history')?.addEventListener('click', () => {
+        document.getElementById('btn-view-logs')?.click();
+    });
+
+    // ── GLOW SLIDER ──────────────────────────────────────────────────
+    const glowSlider = document.getElementById('glow-slider');
+    if (glowSlider) {
+        glowSlider.addEventListener('input', (e) => {
+            const val = e.target.value;
+            document.documentElement.style.setProperty('--theme-accent-glow', `rgba(0, 240, 255, ${val * 0.5})`);
+            const app = document.querySelector('.holo-app-container');
+            if (app) app.style.filter = `contrast(${0.9 + val * 0.1}) brightness(${0.8 + val * 0.2})`;
+        });
+    }
+
+    // ── EXPORT BUTTON ────────────────────────────────────────────────
+    document.getElementById('btn-export')?.addEventListener('click', () => {
+        const title = document.getElementById('bottom-title-text');
+        if (title) {
+            const original = title.textContent;
+            title.textContent = '⭳ GENERATING REPORT...';
+            title.style.color = 'var(--theme-accent)';
+            setTimeout(() => {
+                title.textContent = '✓ REPORT EXPORTED (PDF)';
+                setTimeout(() => {
+                    title.textContent = original;
+                    title.style.color = '';
+                }, 2000);
+            }, 1500);
+        }
+    });
 }
 
 // ── POPULATE LOGS MODAL ───────────────────────────────────────────────
@@ -824,5 +982,321 @@ function gsap_like_rotate(obj, targetY, durationMs) {
         if (t < 1) requestAnimationFrame(step);
     }
     step();
+}
+
+// ═══════════════════════════════════════════════════════
+// PHASE-2 WIDGET RENDERERS
+// ═══════════════════════════════════════════════════════
+
+// ── COMPLIANCE INDEX ──────────────────────────────────
+function renderComplianceWidget() {
+    const container = document.getElementById('compliance-list');
+    if (!container || !window.COMPLIANCE_DATA) return;
+    container.innerHTML = window.COMPLIANCE_DATA.map(item => `
+        <div class="compliance-row">
+            <span style="color:var(--text-mid);font-size:0.72rem;min-width:50px">${item.sector}</span>
+            <div class="compliance-bar-wrap">
+                <div class="compliance-bar ${item.tier}" style="width:${item.score}%"></div>
+            </div>
+            <span class="compliance-pct">${item.score}%</span>
+        </div>
+    `).join('');
+}
+
+// ── RESOURCE DONUT CHART (Canvas) ─────────────────────
+function renderDonutChart() {
+    const canvas = document.getElementById('resource-donut');
+    const legend = document.getElementById('donut-legend');
+    if (!canvas || !window.RESOURCE_DATA) return;
+
+    const ctx = canvas.getContext('2d');
+    const cx = canvas.width / 2;
+    const cy = canvas.height / 2;
+    const outerR = cx - 4;
+    const innerR = outerR * 0.55;
+    let startAngle = -Math.PI / 2;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    window.RESOURCE_DATA.forEach(item => {
+        const sweep = (item.pct / 100) * Math.PI * 2;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.arc(cx, cy, outerR, startAngle, startAngle + sweep);
+        ctx.closePath();
+        ctx.fillStyle = item.color;
+        ctx.globalAlpha = 0.85;
+        ctx.fill();
+
+        // Gap between segments
+        startAngle += sweep + 0.04;
+    });
+
+    // Donut hole
+    ctx.globalAlpha = 1;
+    ctx.beginPath();
+    ctx.arc(cx, cy, innerR, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(4, 14, 22, 0.95)';
+    ctx.fill();
+
+    // Center label
+    ctx.fillStyle = 'rgba(0, 240, 255, 0.8)';
+    ctx.font = 'bold 9px Fira Code, monospace';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('ALLOC', cx, cy - 5);
+    ctx.fillText('%', cx, cy + 7);
+
+    // Legend
+    if (legend) {
+        legend.innerHTML = window.RESOURCE_DATA.map(item => `
+            <div class="donut-item">
+                <div class="donut-dot" style="background:${item.color}"></div>
+                <span>${item.label} <strong style="color:var(--text-bright)">${item.pct}%</strong></span>
+            </div>
+        `).join('');
+    }
+}
+
+// ── ADMIN ACTIVITY ────────────────────────────────────
+function renderAdminActivity() {
+    const container = document.getElementById('admin-activity-log');
+    if (!container || !window.ADMIN_ACTIVITY) return;
+    container.innerHTML = window.ADMIN_ACTIVITY.map(e => `
+        <div class="admin-entry">
+            <div class="adot"></div>
+            <span class="a-time">${e.time}</span>
+            <span class="a-msg"><span class="a-who">${e.who}</span> — ${e.msg}</span>
+        </div>
+    `).join('');
+}
+
+// ── USER SESSIONS ─────────────────────────────────────
+function renderSessions() {
+    const container = document.getElementById('session-feed');
+    if (!container || !window.SESSION_DATA) return;
+    container.innerHTML = window.SESSION_DATA.map(s => {
+        // Simulate slight ping fluctuation
+        const pingBase = parseInt(s.ping);
+        const jitter = Math.floor(Math.random() * 3);
+        const displayPing = `${pingBase + jitter}ms`;
+        return `
+        <div class="session-row ${s.active ? 'active-session' : ''}">
+            <div>
+                <div class="session-user">${s.user}</div>
+                <div class="session-node">${s.node}</div>
+            </div>
+            <div class="session-ping">${displayPing}</div>
+        </div>`;
+    }).join('');
+}
+
+// ── HARDWARE GAUGES ───────────────────────────────────
+function renderHardwareGauges() {
+    const container = document.getElementById('hw-gauges');
+    if (!container || !window.HARDWARE_METRICS) return;
+    container.innerHTML = window.HARDWARE_METRICS.map(m => {
+        const val = Math.min(100, Math.max(10, m.base + Math.floor(Math.random() * m.variance * 2) - m.variance));
+        const cls = val >= 80 ? 'hot' : val >= 55 ? 'warm' : 'cool';
+        return `
+        <div class="hw-gauge-item">
+            <span class="hw-label">${m.label}</span>
+            <div class="hw-track"><div class="hw-fill ${cls}" style="width:${val}%"></div></div>
+            <span class="hw-value">${val}°C</span>
+        </div>`;
+    }).join('');
+}
+
+// ── ANOMALY SCANNER ───────────────────────────────────
+function initAnomalyScanner() {
+    const resultEl = document.getElementById('anomaly-result');
+    if (!resultEl) return;
+
+    const states = [
+        { text: 'SCANNING…',      cls: '' },
+        { text: 'SCANNING…',      cls: '' },
+        { text: 'SCANNING…',      cls: '' },
+        { text: 'NO ANOMALY',     cls: '' },
+        { text: 'SCANNING…',      cls: '' },
+        { text: 'VARIANCE +2.1%', cls: '' },
+        { text: 'SCANNING…',      cls: '' },
+    ];
+
+    let idx = 0;
+    setInterval(() => {
+        if (document.body.classList.contains('lockdown-active')) return;
+        const s = states[idx % states.length];
+        resultEl.textContent = s.text;
+        resultEl.className = `anomaly-result${s.cls ? ' ' + s.cls : ''}`;
+        idx++;
+    }, 3200);
+
+    // After quarantine, resolve the scanner
+    const origQuarantine = window._onQuarantineComplete;
+    window._onQuarantineComplete = () => {
+        if (resultEl) {
+            resultEl.textContent = 'SECTOR CLEAR';
+            resultEl.className = 'anomaly-result';
+        }
+        if (origQuarantine) origQuarantine();
+    };
+}
+
+// ─────────────────────────────────────────────────
+// NEW PHASE-2 (B) RENDER FUNCTIONS
+// ─────────────────────────────────────────────────
+
+function renderLatencyMatrix() {
+    const grid = document.getElementById('latency-matrix-grid');
+    if (!grid || !window.LATENCY_MATRIX_DATA) return;
+    grid.innerHTML = window.LATENCY_MATRIX_DATA.map(d => {
+        const jitter = Math.floor(Math.random() * 5);
+        const finalVal = d.val + jitter;
+        let cls = '';
+        if (finalVal > 30) cls = 'high-latency';
+        else if (finalVal < 10) cls = 'low-latency';
+        return `<div class="latency-cell ${cls}">${finalVal}ms</div>`;
+    }).join('');
+}
+
+function renderIntegritySeals() {
+    const container = document.getElementById('seal-container');
+    if (!container || !window.INTEGRITY_SEAL_DATA) return;
+    container.innerHTML = window.INTEGRITY_SEAL_DATA.map(s => `
+        <div class="seal-indicator ${s.status}">
+            <i data-lucide="${s.status === 'locked' ? 'lock' : 'unlock'}"></i>
+            <span style="font-size:0.6rem;margin-top:2px;">${s.name}</span>
+        </div>
+    `).join('');
+    lucide.createIcons();
+}
+
+function renderSectorFlow() {
+    const canvas = document.getElementById('sector-flow-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const w = canvas.width;
+    const h = canvas.height;
+    ctx.clearRect(0,0,w,h);
+    ctx.strokeStyle = '#00f0ff';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(0, h/2);
+    for(let i=0; i<w; i+=10) {
+        ctx.lineTo(i, h/2 + Math.sin(i/20 + Date.now()/500) * 15);
+    }
+    ctx.stroke();
+    requestAnimationFrame(renderSectorFlow);
+}
+
+function renderIncidents() {
+    const feed = document.getElementById('incident-list');
+    if (!feed || !window.INCIDENT_DATA) return;
+    feed.innerHTML = window.INCIDENT_DATA.map(i => `
+        <div class="incident-entry">
+            <span class="incident-code">${i.code}</span>
+            <span class="incident-msg">${i.msg}</span>
+            <span class="incident-loc">${i.loc}</span>
+        </div>
+    `).join('');
+}
+
+function renderBackups() {
+    const grid = document.getElementById('backup-list');
+    if (!grid || !window.BACKUP_DATA) return;
+    grid.innerHTML = window.BACKUP_DATA.map(b => `
+        <div class="backup-snap">
+            <span class="snap-label">${b.label}</span>
+            <span class="snap-item">${b.time}</span>
+            <span class="snap-item" style="color:${b.integrity === '100%' ? '#22c55e' : '#ff3e3e'}">${b.integrity}</span>
+        </div>
+    `).join('');
+}
+
+function renderCredentialGauge() {
+    const container = document.getElementById('credential-gauge');
+    if (!container || !window.CREDENTIAL_LEVEL) return;
+    container.innerHTML = `
+        <div class="cred-meter">
+            <div class="cred-fill" style="width: ${window.CREDENTIAL_LEVEL.access}%"></div>
+        </div>
+        <div style="font-size:0.6rem;color:var(--text-dim);margin-top:5px;font-family:var(--font-mono)">
+            ${window.CREDENTIAL_LEVEL.tier} // ACCESS ${window.CREDENTIAL_LEVEL.access}%
+        </div>
+    `;
+}
+
+function renderTopology() {
+    const wrap = document.getElementById('topology-map');
+    if (!wrap) return;
+    wrap.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:0.6rem;color:var(--text-dim);font-family:var(--font-mono)">MAP RECON [OK]</div>';
+}
+
+function renderThreatVectors() {
+    const map = document.getElementById('threat-vector-map');
+    if (!map || !window.THREAT_VECTOR_DATA) return;
+    let dots = '';
+    for(let i=0; i<60; i++) {
+        const isAlert = window.THREAT_VECTOR_DATA.some(v => v.id === i && v.alert);
+        dots += `<div class="vector-dot ${isAlert ? 'alert' : ''}"></div>`;
+    }
+    map.innerHTML = dots;
+}
+
+function renderGeoLogs() {
+    const feed = document.getElementById('geo-log-list');
+    if (!feed || !window.GEO_LOG_DATA) return;
+    feed.innerHTML = window.GEO_LOG_DATA.map(l => `
+        <div class="geo-entry">
+            <span class="geo-coord">${l.coord}</span>
+            <span class="geo-label">${l.label}</span>
+        </div>
+    `).join('');
+}
+
+function renderQuarantineList() {
+    const feed = document.getElementById('quarantine-list');
+    if (!feed || !window.QUARANTINE_DATA) return;
+    feed.innerHTML = window.QUARANTINE_DATA.map(q => `
+        <div class="quarantine-item"><i data-lucide="skull"></i> ${q}</div>
+    `).join('');
+    lucide.createIcons();
+}
+
+function renderUptime() {
+    const grid = document.getElementById('uptime-stats');
+    if (!grid || !window.UPTIME_DATA) return;
+    grid.innerHTML = window.UPTIME_DATA.map(u => `
+        <div class="uptime-box">
+            <div class="uptime-label">${u.label}</div>
+            <div class="uptime-val">${u.val}</div>
+        </div>
+    `).join('');
+}
+
+function renderMemoryMatrix() {
+    const grid = document.getElementById('memory-matrix-grid');
+    if (!grid || !window.MEMORY_MATRIX_DATA) return;
+    grid.innerHTML = window.MEMORY_MATRIX_DATA.map(pixel => `
+        <div class="mem-pixel ${pixel === 1 ? 'filled' : ''}"></div>
+    `).join('');
+}
+
+function renderSignalInterference() {
+    const val = document.getElementById('noise-value');
+    if (val) val.textContent = (Math.random() * 5).toFixed(1) + '%';
+    
+    const canvas = document.getElementById('noise-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const w = canvas.width;
+    const h = canvas.height;
+    ctx.fillStyle = 'rgba(0,0,0,0.1)';
+    ctx.fillRect(0,0,w,h);
+    ctx.fillStyle = '#facc15';
+    for(let i=0; i<50; i++) {
+        ctx.fillRect(Math.random()*w, Math.random()*h, 1, 1);
+    }
+    setTimeout(renderSignalInterference, 100);
 }
 

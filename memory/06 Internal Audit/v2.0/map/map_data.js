@@ -60,7 +60,6 @@ window.NODE_DATA = [
 ];
 
 // ── SYSTEM METRICS ────────────────────────────────────
-// Global defaults when no node is selected
 window.DEFAULT_GLOBAL_METRICS = {
     activeAudits: 135,
     netIntegrity: '96%',
@@ -98,3 +97,110 @@ window.SECTOR_G_INTEL = {
     coords:   'Lat 10.0 N, Lon -20.0 E',
     protocol: 'Mandatory Quarantine Sequence — Override Code: CMDR-77X',
 };
+
+// ── COMPLIANCE INDEX DATA ─────────────────────────────
+window.COMPLIANCE_DATA = [
+    { sector: 'Sec 00', score: 100, tier: 's-high' },
+    { sector: 'Sec 02', score: 83,  tier: 's-mid'  },
+    { sector: 'Sec 06', score: 96,  tier: 's-high' },
+    { sector: 'Sec 07', score: 79,  tier: 's-mid'  },
+    { sector: 'Sec 08', score: 68,  tier: 's-mid'  },
+    { sector: 'Sec G',  score: 24,  tier: 's-low'  },
+];
+
+// ── RESOURCE ALLOCATION (%) ───────────────────────────
+window.RESOURCE_DATA = [
+    { label: 'Audio Engine',  pct: 34, color: '#00f0ff' },
+    { label: 'Visual Layer',  pct: 28, color: '#a78bfa' },
+    { label: 'Database I/O',  pct: 22, color: '#facc15' },
+    { label: 'Net Overhead',  pct: 16, color: '#ff3e3e' },
+];
+
+// ── ADMIN ACTIVITY LOG ────────────────────────────────
+window.ADMIN_ACTIVITY = [
+    { time: '02:07', who: 'A.VERMA',  msg: 'Queried Node G-14 threat vector.' },
+    { time: '01:55', who: 'SYSTEM',   msg: 'Auto-rotation cycle completed.' },
+    { time: '01:33', who: 'A.VERMA',  msg: 'Integrity check #403 approved.' },
+    { time: '00:57', who: 'SYSTEM',   msg: 'Dashboard sync refresh triggered.' },
+    { time: '00:44', who: 'A.VERMA',  msg: 'Audio pipeline 505 files validated.' },
+];
+
+// ── USER SESSIONS ─────────────────────────────────────
+window.SESSION_DATA = [
+    { user: 'A.VERMA',    node: 'Frontier Hub',  ping: '2ms',   active: true  },
+    { user: 'SYS:AUDIT',  node: 'Sector G',      ping: '11ms',  active: true  },
+    { user: 'SYS:SYNC',   node: 'Core Path 00',  ping: '4ms',   active: false },
+    { user: 'SYS:BACKUP', node: 'Domain 06',     ping: '8ms',   active: false },
+];
+
+// ── HARDWARE METRICS ──────────────────────────────────
+window.HARDWARE_METRICS = [
+    { label: 'CPU Core',    base: 52, variance: 15 },
+    { label: 'Mem Matrix',  base: 68, variance: 8  },
+    { label: 'Net Fabric',  base: 44, variance: 12 },
+    { label: 'I/O Buffer',  base: 31, variance: 20 },
+];
+
+// ── LATENCY MATRIX DATA ───────────────────────────────
+window.LATENCY_MATRIX_DATA = [
+    { id: 'S0', val: 2 },  { id: 'S1', val: 5 },  { id: 'S2', val: 12 }, { id: 'S3', val: 4 },  { id: 'S4', val: 3 },  { id: 'S5', val: 21 },
+    { id: 'S6', val: 3 },  { id: 'S7', val: 8 },  { id: 'S8', val: 32 }, { id: 'S9', val: 6 },  { id: 'S10', val: 4 }, { id: 'S11', val: 2 },
+    { id: 'G1', val: 45 }, { id: 'G2', val: 38 }, { id: 'G3', val: 52 }, { id: 'G4', val: 41 }, { id: 'G5', val: 12 }, { id: 'G6', val: 7 }
+];
+
+// ── INTEGRITY SEALS ───────────────────────────────────
+window.INTEGRITY_SEAL_DATA = [
+    { name: 'Core',   status: 'locked' },
+    { name: 'Memory', status: 'locked' },
+    { name: 'Sector G', status: 'unlocked' },
+    { name: 'Assets', status: 'locked' }
+];
+
+// ── ACTIVE INCIDENTS ──────────────────────────────────
+window.INCIDENT_DATA = [
+    { code: 'W-902', msg: 'Heuristic drift', loc: 'Sec 02' },
+    { code: 'T-77X', msg: 'Data Exfil',      loc: 'Node G-14' },
+    { code: 'I-104', msg: 'Sync delay',      loc: 'Sec 08' }
+];
+
+// ── BACKUP SNAPSHOTS ──────────────────────────────────
+window.BACKUP_DATA = [
+    { label: 'Cloud A', time: '12m ago', integrity: '100%' },
+    { label: 'Local B', time: '4m ago',  integrity: '98%' },
+    { label: 'Offsite', time: '1h ago',  integrity: '100%' },
+    { label: 'Node Snap', time: 'Active', integrity: '24%' }
+];
+
+// ── CREDENTIAL LEVEL ──────────────────────────────────
+window.CREDENTIAL_LEVEL = { tier: 'LEAD AUDITOR', access: 92 };
+
+// ── THREAT VECTORS ────────────────────────────────────
+window.THREAT_VECTOR_DATA = [
+    { id: 4,  alert: false }, { id: 12, alert: true  }, { id: 25, alert: false },
+    { id: 44, alert: true  }, { id: 67, alert: false }, { id: 82, alert: false }
+];
+
+// ── GEOGRAPHIC LOGS ────────────────────────────────────
+window.GEO_LOG_DATA = [
+    { coord: '77.8 N, 84.0 E', label: 'Inbound Sync' },
+    { coord: '10.0 N, 20.0 W', label: 'Breach Point' },
+    { coord: '34.2 S, 18.4 E', label: 'Backup Node' }
+];
+
+// ── QUARANTINE LIST ────────────────────────────────────
+window.QUARANTINE_DATA = [ 'Node G-14', 'Node G-05', 'Node G-08' ];
+
+// ── SYSTEM UPTIME ─────────────────────────────────────
+window.UPTIME_DATA = [
+    { label: 'Core',   val: '142:22:05' },
+    { label: 'Neural', val: '48:12:11' },
+    { label: 'Audit',  val: '12:05:55' },
+    { label: 'Auth',   val: '1342:10:02' }
+];
+
+// ── MEMORY MATRIX ─────────────────────────────────────
+window.MEMORY_MATRIX_DATA = [
+    1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1,
+    0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1,
+    1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1
+];
