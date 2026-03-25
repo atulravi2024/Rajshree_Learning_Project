@@ -5,9 +5,21 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     if (window.ChildSafetyLock) window.ChildSafetyLock.init();
+    
+    // ─── Settings Persistence ───
+    const savedTheme = localStorage.getItem('rajshree_theme') || 'pink';
+    const savedAvatar = localStorage.getItem('rajshree_avatar') || 'lion';
+    const savedMusic = localStorage.getItem('rajshree_bg_music') || 'none';
+    const isMagicBg = localStorage.getItem('rajshree_bg-magic-check') !== 'false';
+
+    if (window.applyTheme) window.applyTheme(savedTheme);
+    if (window.updateAvatarUI) window.updateAvatarUI(savedAvatar);
+    if (window.playBackgroundMusic && savedMusic !== 'none') window.playBackgroundMusic(savedMusic);
+
     const icons = ['🧸', '🍫', '🦁', '🐘', '🍦', '🎈', '🍬', '🐼', '🎨', '🎁', '🐶', '🍭', '🌈', '🚲', '🍪'];
     const bg = document.getElementById('bg-icons');
     if (bg) {
+        bg.style.display = isMagicBg ? 'block' : 'none';
         for (let i = 0; i < 40; i++) {
             const span = document.createElement('span');
             span.className = 'float-icon';

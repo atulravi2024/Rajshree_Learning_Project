@@ -192,7 +192,9 @@ const DOMAIN_DATA = [
             label3: 'PUSH', val3: 'READY',
             label4: 'ENV', val4: 'PROD',
             label5: 'HASH', val5: '8F2C'
-        }
+        },
+        keywords: ['blueprint', 'sandbox', 'prototyping', 'innovation'],
+        resources: ['04.01_SANDBOX_MEMORY.md']
     },
     {
         slot: '05',
@@ -261,7 +263,8 @@ const DOMAIN_DATA = [
             label4: 'BIAS', val4: 'MIN',
             label5: 'OPT', val5: 'ADAM'
         },
-        keywords: ['neural', 'weights', 'inference', 'training']
+        keywords: ['neural', 'weights', 'inference', 'training'],
+        resources: ['07.01_AI_MODELS_MEMORY.md']
     },
     {
         slot: '08',
@@ -281,7 +284,9 @@ const DOMAIN_DATA = [
             label3: 'SYNC', val3: 'FAIL',
             label4: 'PORT', val4: '8080',
             label5: 'IP', val5: '127.0.0.1'
-        }
+        },
+        keywords: ['protocol x', 'drift', 'sync', 'extension'],
+        resources: ['08.01_PROTOCOL_X_MEMORY.md']
     },
     {
         slot: '09',
@@ -343,7 +348,8 @@ const DOMAIN_DATA = [
             label4: 'AUDIT', val4: 'PASS',
             label5: 'POL+', val5: 'YES'
         },
-        keywords: ['safety', 'ethics', 'security', 'privacy']
+        keywords: ['safety', 'ethics', 'security', 'privacy'],
+        resources: ['11.01_SECURITY_ETHICS_MEMORY.md']
     }
 ];
 

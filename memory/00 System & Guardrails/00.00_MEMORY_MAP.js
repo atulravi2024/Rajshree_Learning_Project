@@ -1,7 +1,7 @@
 window.MEMORY_MAP = {
   "project": "Rajshree Learning Project",
-  "version": "v16.7",
-  "lastUpdated": "2026-03-20",
+  "version": "v17.2",
+  "lastUpdated": "2026-03-25",
   "memory_map": [
     // 00 - System & Guardrails
     { "id": "00.00", "file": "00 System & Guardrails/00.00_MEMORY_MAP.js", "type": "Master Root" },
@@ -46,27 +46,42 @@ window.MEMORY_MAP = {
 
     // 03 - Architecture & Planning
     { "id": "03.01", "file": "03 Architecture & Planning/03.01_Current_Architecture_Map.md", "type": "Blueprint" },
-    { "id": "03.02", "file": "03 Architecture & Planning/03.02_Proposed_Monorepo_Architecture.md", "type": "Scaling" },
+    { "id": "03.02", "file": "03 Architecture & Planning/03.02_PROJECT_ROADMAP.md", "type": "Roadmap" },
     { "id": "03.03", "file": "03 Architecture & Planning/03.03_Ultra_Refined_Modular_Architecture.md", "type": "Refinement" },
     { "id": "03.04", "file": "03 Architecture & Planning/03.04_Domain_Driven_Architecture.md", "type": "Design" },
     { "id": "03.05", "file": "03 Architecture & Planning/03.05_Johnny_Decimal_Memory_Architecture.md", "type": "Structure" },
     { "id": "03.06", "file": "03 Architecture & Planning/03.06_Peak_Domain_Driven_Memory.md", "type": "Optimization" },
 
     // 04 - Sandbox & Demos
-    { "id": "04.01", "file": "04 Sandbox & Demos/04.01_DEMO_ASSETS.md", "type": "Sandbox" },
-    { "id": "04.02", "file": "04 Sandbox & Demos/04.02_README.md", "type": "Guide" },
+    { "id": "04.01", "file": "04 Sandbox & Demos/04.01_SANDBOX_MEMORY.md", "type": "Simulation" },
 
     // 05 - Infrastructure & Workflows
     { "id": "05.01", "file": "05 Infrastructure & Workflows/05.01_GITHUB_CHANGELOG.md", "type": "DevOps" },
     { "id": "05.02", "file": "05 Infrastructure & Workflows/05.02_GITHUB_MEMORY.md", "type": "Systems" },
 
-    // 06 - Internal Audit
-    { "id": "06.01", "file": "06 Internal Audit/v1.0/internal_audit.html", "type": "Legacy Dashboard" },
-    { "id": "06.02", "file": "06 Internal Audit/v1.0/audit_styles.css", "type": "Legacy Style" },
-    { "id": "06.03", "file": "06 Internal Audit/v2.0/index.html", "type": "Neural Hub (v2.0)" },
-    { "id": "06.04", "file": "06 Internal Audit/v2.0/rajshree_core.css", "type": "Neural Style" },
-    { "id": "06.05", "file": "06 Internal Audit/v2.0/rajshree_core.js", "type": "Neural Engine" },
-    { "id": "06.10", "file": "06 Internal Audit/v2.0/Mockups/", "type": "Asset Repository" },
+    // 06 - Internal Audit (v2.0 Neural Hub)
+    { "id": "06.00", "file": "06 Internal Audit/v2.0/Audit Memory/06.00_AUDIT_INDEX.md", "type": "Audit Index" },
+    { "id": "06.01", "file": "06 Internal Audit/v2.0/Audit Memory/06.01_AUDIT_HTML_LAYOUT.md", "type": "Step-by-Step" },
+    { "id": "06.02", "file": "06 Internal Audit/v2.0/Audit Memory/06.02_AUDIT_CSS_DYNAMICS.md", "type": "Step-by-Step" },
+    { "id": "06.03", "file": "06 Internal Audit/v2.0/Audit Memory/06.03_AUDIT_JS_LOGIC_FLOW.md", "type": "Step-by-Step" },
+    { "id": "06.04", "file": "06 Internal Audit/v2.0/Audit Memory/06.04_AUDIT_WORKFLOW.md", "type": "Step-by-Step" },
+    { "id": "06.05", "file": "06 Internal Audit/v2.0/Audit Memory/06.05_AUDIT_SIDEBAR_FLIP.md", "type": "Step-by-Step" },
+    { "id": "06.06", "file": "06 Internal Audit/v2.0/Audit Memory/06.06_AUDIT_ALERTS_MODAL.md", "type": "Step-by-Step" },
+    { "id": "06.07", "file": "06 Internal Audit/v2.0/Audit Memory/06.07_AUDIT_VISUAL_SYSTEM.md", "type": "Step-by-Step" },
+    { "id": "06.08", "file": "06 Internal Audit/v2.0/Audit Memory/06.08_AUDIT_FIDELITY_ANOMALIES.md", "type": "Integrity" },
+    { "id": "06.09", "file": "06 Internal Audit/v2.0/Audit Memory/06.09_LINE_BY_LINE_AUDIT.md", "type": "Deep Dive" },
+    { "id": "06.10", "file": "06 Internal Audit/v2.0/Audit Memory/06.10_AUDIT_EVOLUTION_REPORT.md", "type": "Evolution" },
+    { "id": "06.11", "file": "06 Internal Audit/v2.0/Audit Memory/06.11_AUDIT_SETTINGS_ENGINE.md", "type": "Logic" },
+    { "id": "06.12", "file": "06 Internal Audit/v2.0/Audit Memory/06.12_AUDIT_MEMORY.md", "type": "Neutral Hub Anchor" },
+    { "id": "06.13", "file": "06 Internal Audit/v2.0/Audit Memory/06.13_AUDIT_DASHBOARD_DOMAINS.md", "type": "Domain Registry" },
+    { "id": "06.14", "file": "06 Internal Audit/v2.0/index.html", "type": "Neural Hub (Live)" },
+    { "id": "06.90", "file": "06 Internal Audit/v1.0/internal_audit.html", "type": "Legacy Archive" },
+
+    // 07 - AI Training & Models
+    { "id": "07.01", "file": "07 AI Training & Models/07.01_AI_MODELS_MEMORY.md", "type": "Neural" },
+
+    // 08 - Protocol X
+    { "id": "08.01", "file": "08 Protocol X/08.01_PROTOCOL_X_MEMORY.md", "type": "Extension" },
 
     // 09 - Audio Script
     { "id": "09.01", "file": "09 Audio Script/Matra_Gyan_Audio_Scripts.md", "type": "Content" },
@@ -75,6 +90,10 @@ window.MEMORY_MAP = {
     { "id": "10.01", "file": "10 MVP/10.01_MVP_AUDIT_REPORT.md", "type": "Audit" },
     { "id": "10.02", "file": "10 MVP/10.02_MVP_PRIORITY_1_IMPLEMENTATION.md", "type": "Milestone" },
     { "id": "10.03", "file": "10 MVP/10.03_MVP_PRIORITY_2_IMPLEMENTATION.md", "type": "Milestone" },
-    { "id": "10.04", "file": "10 MVP/10.04_STATIC_SITE_MONETIZATION.md", "type": "Strategy" }
+    { "id": "10.04", "file": "10 MVP/10.04_STATIC_SITE_MONETIZATION.md", "type": "Strategy" },
+
+    // 11 - Security & Ethics
+    { "id": "11.01", "file": "11 Security & Ethics/11.01_SECURITY_ETHICS_MEMORY.md", "type": "Governance" }
+
   ]
 };

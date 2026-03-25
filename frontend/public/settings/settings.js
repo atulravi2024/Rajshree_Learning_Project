@@ -38,6 +38,110 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ─── Accordion Logic (Single-Open, No Icons) ─────────────────────
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.parentElement;
+            const isActive = item.classList.contains('active');
+
+            // Close all items
+            document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('active'));
+
+            // Toggle clicked item (if it wasn't already active)
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // ─── KIDS' PLAY ZONE: Avatar Picker ──────────────────────────────
+    const avatarItems = document.querySelectorAll('.avatar-item');
+    avatarItems.forEach(item => {
+        item.addEventListener('click', () => {
+            avatarItems.forEach(a => a.classList.remove('active'));
+            item.classList.add('active');
+            const avatar = item.getAttribute('data-avatar');
+            localStorage.setItem('rajshree_avatar', avatar);
+            if (window.parent) {
+                window.parent.postMessage({ action: 'avatar-change', value: avatar }, '*');
+            }
+        });
+    });
+
+    // Restore saved avatar
+    const savedAvatar = localStorage.getItem('rajshree_avatar');
+    if (savedAvatar) {
+        avatarItems.forEach(a => {
+            if (a.getAttribute('data-avatar') === savedAvatar) {
+                a.classList.add('active');
+            } else {
+                a.classList.remove('active');
+            }
+        });
+    }
+
+    // ─── KIDS' PLAY ZONE: Theme Picker ───────────────────────────────
+    const themePills = document.querySelectorAll('.color-pill');
+    themePills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            themePills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            const theme = pill.getAttribute('data-theme');
+            localStorage.setItem('rajshree_theme', theme);
+            if (window.parent) {
+                window.parent.postMessage({ action: 'theme-change', value: theme }, '*');
+            }
+        });
+    });
+
+    // Restore saved theme
+    const savedTheme = localStorage.getItem('rajshree_theme');
+    if (savedTheme) {
+        themePills.forEach(p => {
+            if (p.getAttribute('data-theme') === savedTheme) p.classList.add('active');
+            else p.classList.remove('active');
+        });
+    }
+
+    // ─── KIDS' PLAY ZONE: Music Picker ───────────────────────────────
+    const musicOptions = document.querySelectorAll('.music-option');
+    musicOptions.forEach(opt => {
+        opt.addEventListener('click', () => {
+            musicOptions.forEach(o => o.classList.remove('active'));
+            opt.classList.add('active');
+            const music = opt.getAttribute('data-music');
+            localStorage.setItem('rajshree_bg_music', music);
+            if (window.parent) {
+                window.parent.postMessage({ action: 'music-change', value: music }, '*');
+            }
+        });
+    });
+
+    // ─── Toggles Handler (General & Kids Safety) ─────────────────────
+    const toggles = [
+        'bg-magic-check', 'sfx-check', 'confetti-check', 
+        'bounce-check', 'stars-check', 'nav-lock-check', 
+        'lock-check', 'autoplay-check'
+    ];
+
+    toggles.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            // Restore saved state
+            const saved = localStorage.getItem(`rajshree_${id}`);
+            if (saved !== null) el.checked = saved === 'true';
+
+            el.addEventListener('change', (e) => {
+                const val = e.target.checked;
+                localStorage.setItem(`rajshree_${id}`, val);
+                if (window.parent) {
+                    window.parent.postMessage({ action: 'toggle-change', name: id, value: val }, '*');
+                }
+            });
+        }
+    });
+
     // ─── SMods Side Tab ──────────────────────────────────────────────
     const smodsTab = document.querySelector('.smods-tab');
     if (smodsTab) {
@@ -94,6 +198,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const val = parseInt(timeInput.value, 10);
             if (val > parseInt(timeInput.min, 10)) {
                 timeInput.value = val - 5;
+            }
+        });
+    }
+
+    // ─── PARENT: Language Selection ──────────────────────────────────
+    const langSelect = document.getElementById('lang-select');
+    if (langSelect) {
+        const savedLang = localStorage.getItem('rajshree_lang') || 'hi';
+        langSelect.value = savedLang;
+        langSelect.addEventListener('change', (e) => {
+            localStorage.setItem('rajshree_lang', e.target.value);
+            if (window.parent) {
+                window.parent.postMessage({ action: 'lang-change', value: e.target.value }, '*');
             }
         });
     }

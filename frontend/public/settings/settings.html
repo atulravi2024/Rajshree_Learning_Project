@@ -34,26 +34,193 @@
                 <button class="nav-pill" data-target="developer" role="tab" aria-selected="false">Dev</button>
             </div>
 
-            <!-- ===== GENERAL SECTION ===== -->
+            <!-- ===== KIDS' PLAY ZONE (GENERAL SECTION) ===== -->
             <section id="section-general" class="settings-section active" role="tabpanel">
                 <div class="role-card general-card section-hero-card">
                     <div class="card-icon-wrapper">
-                        <img src="../../assets/icons/general.png" alt="General" onerror="this.outerHTML='<span class=\'card-emoji\'>🌐</span>'">
+                        <span class="card-emoji">🎨</span>
                     </div>
                     <div class="card-info">
                         <h2>General</h2>
-                        <p>App-wide preferences</p>
+                        <p>Kids' Customization Zone</p>
                     </div>
                 </div>
 
-                <!-- Volume Control -->
-                <div class="settings-group">
-                    <span class="group-label">Volume</span>
-                    <div class="slider-wrapper">
-                        <span class="volume-icon" id="volume-icon">🔊</span>
-                        <input type="range" id="volume-control" class="styled-slider" min="0" max="1" step="0.05" value="1" title="Volume Control" aria-label="Volume Control">
-                        <span class="slider-value" id="volume-value">100%</span>
+                <!-- Accordion Start -->
+                <div class="accordion-container">
+                    
+                    <!-- 1. Appearance -->
+                    <div class="accordion-item active">
+                        <div class="accordion-header">Appearance</div>
+                        <div class="accordion-content">
+                            <span class="group-label">Pick Your Buddy</span>
+                            <div class="avatar-grid" id="avatar-picker">
+                                <div class="avatar-item active" data-avatar="lion">🦁</div>
+                                <div class="avatar-item" data-avatar="elephant">🐘</div>
+                                <div class="avatar-item" data-avatar="panda">🐼</div>
+                                <div class="avatar-item" data-avatar="monkey">🐒</div>
+                                <div class="avatar-item" data-avatar="rabbit">🐰</div>
+                            </div>
+
+                        <span class="section-label mt-20">Theme Colors</span>
+                        <div class="color-grid" id="theme-picker">
+                            <div class="color-pill active theme-pink" data-theme="pink"></div>
+                            <div class="color-pill theme-blue" data-theme="blue"></div>
+                            <div class="color-pill theme-gold" data-theme="gold"></div>
+                            <div class="color-pill theme-green" data-theme="green"></div>
+                        </div>
+                        
+                        <div class="settings-group row-group no-bg mt-20">
+                                <div class="group-text">
+                                    <span class="group-label">Magic Background</span>
+                                    <span class="group-sub">Floating clouds & bubbles</span>
+                                </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="bg-magic-check" checked title="Enable Magic Background">
+                                <span class="toggle-slider"></span>
+                            </label>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- 2. Sounds & Music -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">Sounds & Music</div>
+                        <div class="accordion-content">
+                            <span class="group-label">Background Music</span>
+                            <div class="music-list" id="music-picker">
+                                <div class="music-option active" data-music="playful">
+                                    <span class="music-icon">🎵</span>
+                                    <span class="music-name">Happy Playtime</span>
+                                </div>
+                                <div class="music-option" data-music="calm">
+                                    <span class="music-icon">🧘</span>
+                                    <span class="music-name">Calm Clouds</span>
+                                </div>
+                                <div class="music-option" data-music="lullaby">
+                                    <span class="music-icon">🌙</span>
+                                    <span class="music-name">Sweet Dreams</span>
+                                </div>
+                            </div>
+
+                        <div class="settings-group row-group no-bg mt-20">
+                                <div class="group-text">
+                                    <span class="group-label">Sound Effects</span>
+                                    <span class="group-sub">Fun Pop & Click sounds</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="sfx-check" checked title="Enable Sound Effects">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+
+                            <!-- Simplified Volume -->
+                            <div class="settings-group no-bg">
+                                <span class="group-label">Volume</span>
+                                <div class="slider-wrapper">
+                                    <span class="volume-icon" id="volume-icon">🔊</span>
+                                    <input type="range" id="volume-control" class="styled-slider" min="0" max="1" step="0.05" value="1" title="Adjust Volume">
+                                    <span class="slider-value" id="volume-value">100%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Animations -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">Animations</div>
+                        <div class="accordion-content">
+                            <div class="settings-group row-group" style="padding: 10px 0; background: transparent; border: none; box-shadow: none;">
+                                <div class="group-text">
+                                    <span class="group-label">Celebration Magic</span>
+                                    <span class="group-sub">Balloons & Confetti</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="confetti-check" checked title="Enable Confetti Magic">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="settings-group row-group" style="padding: 10px 0; background: transparent; border: none; box-shadow: none;">
+                                <div class="group-text">
+                                    <span class="group-label">Boing Effect</span>
+                                    <span class="group-sub">Cards bounce when clicked</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="bounce-check" checked title="Enable Boing Effect">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Rewards -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">Rewards</div>
+                        <div class="accordion-content">
+                            <div class="settings-group row-group" style="padding: 10px 0; background: transparent; border: none; box-shadow: none;">
+                                <div class="group-text">
+                                    <span class="group-label">Star Tracker</span>
+                                    <span class="group-sub">Show earned stars on screen</span>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="stars-check" checked title="Show Star Tracker">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ===== KIDS SECTION ===== -->
+            <section id="section-kids" class="settings-section" role="tabpanel">
+                <div class="role-card kids-card section-hero-card">
+                    <div class="card-icon-wrapper">
+                        <span class="card-emoji">🛡️</span>
+                    </div>
+                    <div class="card-info">
+                        <h2>Kids Safety</h2>
+                        <p>Safety & Interaction Locks</p>
+                    </div>
+                </div>
+
+                <!-- Interaction Lock -->
+                <div class="settings-group row-group">
+                    <div class="group-text">
+                        <span class="group-label">Interaction Lock</span>
+                        <span class="group-sub">Lock UI during audio playback</span>
+                    </div>
+                    <label class="toggle-switch" aria-label="Lock Toggle">
+                        <input type="checkbox" id="lock-check" checked title="Toggle Interaction Lock">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Navigation Lock -->
+                <div class="settings-group row-group">
+                    <div class="group-text">
+                        <span class="group-label">Navigation Lock</span>
+                        <span class="group-sub">Prevent exiting current game</span>
+                    </div>
+                    <label class="toggle-switch" aria-label="Nav Lock Toggle">
+                        <input type="checkbox" id="nav-lock-check" title="Toggle Navigation Lock">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </section>
+
+            <!-- ===== PARENT SECTION ===== -->
+            <section id="section-parent" class="settings-section" role="tabpanel">
+                <div class="role-card parent-card section-hero-card">
+                    <div class="card-icon-wrapper">
+                        <span class="card-emoji">👪</span>
+                    </div>
+                    <div class="card-info">
+                        <h2>Parent</h2>
+                        <p>Guardian Controls</p>
+                    </div>
+                    <span class="role-badge lock-icon">🔒</span>
                 </div>
 
                 <!-- Language -->
@@ -78,69 +245,6 @@
                         <input type="checkbox" id="autoplay-check" checked title="Toggle Auto-play Audio">
                         <span class="toggle-slider"></span>
                     </label>
-                </div>
-            </section>
-
-            <!-- ===== KIDS SECTION ===== -->
-            <section id="section-kids" class="settings-section" role="tabpanel">
-                <div class="role-card kids-card section-hero-card">
-                    <div class="card-icon-wrapper">
-                        <img src="../../assets/icons/kids.png" alt="Kids" onerror="this.outerHTML='<span class=\'card-emoji\'>👦🏻</span>'">
-                    </div>
-                    <div class="card-info">
-                        <h2>Kids</h2>
-                        <p>Child-safe experience</p>
-                    </div>
-                </div>
-
-                <!-- Interaction Lock -->
-                <div class="settings-group row-group">
-                    <div class="group-text">
-                        <span class="group-label">Interaction Lock</span>
-                        <span class="group-sub">Lock UI during audio playback</span>
-                    </div>
-                    <label class="toggle-switch" aria-label="Lock Toggle">
-                        <input type="checkbox" id="lock-check" checked title="Toggle Interaction Lock">
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-
-                <!-- Haptic Feedback -->
-                <div class="settings-group row-group">
-                    <div class="group-text">
-                        <span class="group-label">Haptic Pulse</span>
-                        <span class="group-sub">Vibrate on card interactions</span>
-                    </div>
-                    <label class="toggle-switch" aria-label="Haptic Toggle">
-                        <input type="checkbox" id="haptic-check" checked title="Toggle Haptic Feedback">
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-
-                <!-- Animations -->
-                <div class="settings-group row-group">
-                    <div class="group-text">
-                        <span class="group-label">Card Animations</span>
-                        <span class="group-sub">Enable flip &amp; bounce effects</span>
-                    </div>
-                    <label class="toggle-switch" aria-label="Animations Toggle">
-                        <input type="checkbox" id="anim-check" checked title="Toggle Animations">
-                        <span class="toggle-slider"></span>
-                    </label>
-                </div>
-            </section>
-
-            <!-- ===== PARENT SECTION ===== -->
-            <section id="section-parent" class="settings-section" role="tabpanel">
-                <div class="role-card parent-card section-hero-card">
-                    <div class="card-icon-wrapper">
-                        <img src="../../assets/icons/parent.png" alt="Parent" onerror="this.outerHTML='<span class=\'card-emoji\'>👪</span>'">
-                    </div>
-                    <div class="card-info">
-                        <h2>Parent</h2>
-                        <p>Parental controls</p>
-                    </div>
-                    <span class="role-badge lock-icon">🔒</span>
                 </div>
 
                 <!-- Time Limit -->
