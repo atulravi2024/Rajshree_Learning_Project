@@ -416,10 +416,19 @@
                 <button class="icon-btn" id="btn-view-info" title="Info"><i data-lucide="info"></i></button>
                 <button class="icon-btn" id="btn-deep-scan" title="Deep Scan"><i data-lucide="refresh-cw"></i></button>
                 <button class="icon-btn" id="btn-history" title="History Log"><i data-lucide="history"></i></button>
-                <button class="icon-btn" id="btn-theme-toggle" title="Toggle Theme"><i data-lucide="palette"></i></button>
-                <div class="brightness-slider-wrap">
-                    <i data-lucide="sun" class="icon-tiny"></i>
-                    <input type="range" id="glow-slider" min="0.2" max="1.5" step="0.1" value="1" title="Adjust UI Brightness">
+                <button class="icon-btn" id="btn-globe-design" title="Toggle Globe Design (HF/Wireframe)"><i data-lucide="globe"></i></button>
+
+                <button class="icon-btn active" id="btn-atmosphere" title="Toggle Atmospheric Glow"><i data-lucide="cloud"></i></button>
+                <button class="icon-btn active" id="btn-spotlight" title="Toggle Sunlight"><i data-lucide="flashlight"></i></button>
+                <button class="icon-btn" id="btn-visual-boost" title="Visual Boost: Enhance Globe Clarity"><i data-lucide="wand-2"></i></button>
+                <div class="brightness-slider-wrap zoom-control-wrap" title="Precision Globe Zoom">
+                    <i data-lucide="zoom-out" class="icon-tiny zoom-icon-btn" id="btn-zoom-out-icon"></i>
+                    <input type="range" id="globe-zoom-slider" min="0" max="100" step="1" value="71" title="Adjust Zoom Level">
+                    <i data-lucide="zoom-in" class="icon-tiny text-cyan zoom-icon-btn" id="btn-zoom-in-icon"></i>
+                </div>
+                <div class="brightness-slider-wrap speed-slider-wrap">
+                    <i data-lucide="gauge" class="icon-tiny"></i>
+                    <input type="range" id="sat-speed-slider" min="0" max="5" step="0.1" value="1" title="Adjust Satellite Speed">
                 </div>
                 <button class="icon-btn" id="btn-export" title="Export Audit Report"><i data-lucide="download"></i></button>
                 <button class="icon-btn lockdown-btn" id="btn-lockdown" title="System Lockdown"><i data-lucide="shield-off"></i></button>
@@ -435,16 +444,184 @@
             </div>
         </footer>
 
-        <!-- Settings Modal (Kept for compatibility) -->
-        <aside class="settings-global-overlay">
-            <div class="console-header">
-                <h2>SYSTEM SETTINGS</h2>
-                <div class="header-controls">
-                    <button class="close-console" onclick="if(window.showSettingsMenu) window.showSettingsMenu()">×</button>
+        <!-- Orbital Settings Indicator (shown when orbital settings are active) -->
+        <div id="orbital-settings-overlay" class="orbital-settings-overlay">
+            <!-- No content needed here; satellite labels are injected by JS into threejs-container -->
+        </div>
+
+        <!-- Orbital Holographic Sub-Panels (one per satellite) -->
+        <!-- SYSTEM OPS PANEL -->
+        <div class="orbital-panel" id="orbital-panel-system-ops">
+            <div class="orbital-panel-header">
+                <div class="orbital-panel-title">
+                    <i data-lucide="settings-2"></i>
+                    <span>SYSTEM OPS</span>
+                </div>
+                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))">×</button>
+            </div>
+            <div class="orbital-panel-body">
+                <div class="orbital-section-label">CONFIGURATION</div>
+                <div class="orbital-slider-row">
+                    <span>Refresh Rate</span>
+                    <div class="orbital-slider-wrap">
+                        <input type="range" class="orbital-slider" id="sl-refresh-map" min="0.5" max="5.0" step="0.1" value="2.5" title="Data Refresh Rate">
+                    </div>
+                    <span class="orbital-slider-val" id="val-refresh-map">2.5s</span>
+                </div>
+                <div class="orbital-toggle-row">
+                    <span>Neural Auto-Sync</span>
+                    <label class="orbital-toggle">
+                        <input type="checkbox" id="tg-sync-map" checked title="Neural Auto-Sync">
+                        <span class="orbital-toggle-track cyan"></span>
+                    </label>
+                </div>
+                <div class="orbital-panel-actions">
+                    <button class="orbital-btn-primary" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))">APPLY CONFIG</button>
                 </div>
             </div>
-            <div id="settings-sidebar-container"></div>
+        </div>
+
+        <!-- VISUAL PROTOCOL PANEL -->
+        <div class="orbital-panel" id="orbital-panel-visual-protocol">
+            <div class="orbital-panel-header">
+                <div class="orbital-panel-title">
+                    <i data-lucide="monitor"></i>
+                    <span>VISUAL PROTOCOL</span>
+                </div>
+                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))">×</button>
+            </div>
+            <div class="orbital-panel-body">
+                <div class="orbital-section-label">PROTOCOL ARTIFACTS</div>
+                <div class="orbital-slider-row">
+                    <span>Neural Glow</span>
+                    <div class="orbital-slider-wrap">
+                        <input type="range" class="orbital-slider" id="sl-glow-map" min="0" max="100" value="85" title="Neural Glow Intensity">
+                    </div>
+                    <span class="orbital-slider-val" id="val-glow-map">85%</span>
+                </div>
+                <div class="orbital-slider-row">
+                    <span>Scanline Intensity</span>
+                    <div class="orbital-slider-wrap">
+                        <input type="range" class="orbital-slider" id="sl-scan-map" min="0" max="100" value="40" title="Scanline Intensity">
+                    </div>
+                    <span class="orbital-slider-val" id="val-scan-map">40%</span>
+                </div>
+                <div class="orbital-slider-row">
+                    <span>Holographic Glare</span>
+                    <div class="orbital-slider-wrap">
+                        <input type="range" class="orbital-slider" id="sl-glare-map" min="0" max="100" value="40" title="Holographic Glare Intensity">
+                    </div>
+                    <span class="orbital-slider-val" id="val-glare-map">40%</span>
+                </div>
+                <!-- Mini toggles for map-specific visuals (Grid/Cloud) -->
+                <div class="orbital-toggle-row">
+                    <span>Grid Background</span>
+                    <label class="orbital-toggle">
+                        <input type="checkbox" checked id="tg-grid-map" title="Grid Background">
+                        <span class="orbital-toggle-track"></span>
+                    </label>
+                    <span>Cloud Layer</span>
+                    <label class="orbital-toggle">
+                        <input type="checkbox" checked id="tg-cloud-map" title="Cloud Layer">
+                        <span class="orbital-toggle-track cyan"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- USER GATEWAY PANEL -->
+        <div class="orbital-panel" id="orbital-panel-user-gateway">
+            <div class="orbital-panel-header">
+                <div class="orbital-panel-title">
+                    <i data-lucide="user-check"></i>
+                    <span>USER GATEWAY</span>
+                </div>
+                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))">×</button>
+            </div>
+            <div class="orbital-panel-body">
+                <div class="orbital-section-label">GATEWAY IDENTITY</div>
+                <div class="settings-field">
+                    <span class="field-label">Auditor Codename</span>
+                    <input type="text" class="console-input" id="in-auditor-map" placeholder="Enter codename..." title="Auditor Codename" value="ATUL VERMA">
+                </div>
+                <button class="orbital-btn-primary btn-margin-top" id="btn-activity-logs-map">VIEW ACTIVITY LOGS</button>
+                <div class="orbital-stat-row"><span>Access Level</span><span class="orbital-stat-val text-yellow">ALPHA-7</span></div>
+            </div>
+        </div>
+
+        <!-- NEURAL AUDIO PANEL -->
+        <div class="orbital-panel" id="orbital-panel-neural-audio">
+            <div class="orbital-panel-header">
+                <div class="orbital-panel-title">
+                    <i data-lucide="volume-2"></i>
+                    <span>NEURAL AUDIO</span>
+                </div>
+                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))">×</button>
+            </div>
+            <div class="orbital-panel-body">
+                <div class="orbital-section-label">AUDIO PROTOCOL</div>
+                <div class="orbital-slider-row">
+                    <span>Master UI Vol</span>
+                    <div class="orbital-slider-wrap">
+                        <input type="range" class="orbital-slider" id="sl-vol-map" min="0" max="100" value="75" title="Master UI Volume">
+                    </div>
+                    <span class="orbital-slider-val" id="val-vol-map">75%</span>
+                </div>
+                <div class="orbital-toggle-row">
+                    <span>Feedback Bleeps</span>
+                    <label class="orbital-toggle">
+                        <input type="checkbox" id="tg-bleeps-map" checked title="Feedback Bleeps">
+                        <span class="orbital-toggle-track cyan"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECURITY GUARDRAILS PANEL -->
+        <div class="orbital-panel" id="orbital-panel-security-guardrails">
+            <div class="orbital-panel-header">
+                <div class="orbital-panel-title">
+                    <i data-lucide="shield"></i>
+                    <span>SECURITY GUARDRAILS</span>
+                </div>
+                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))">×</button>
+            </div>
+            <div class="orbital-panel-body">
+                <div class="orbital-section-label">ACTIVE SHIELDS</div>
+                <div class="orbital-toggle-row">
+                    <span>Data Masking</span>
+                    <label class="orbital-toggle">
+                        <input type="checkbox" id="tg-mask-map" title="Sensitive Data Masking">
+                        <span class="orbital-toggle-track"></span>
+                    </label>
+                </div>
+                <div class="orbital-toggle-row">
+                    <span>Protocol Lock</span>
+                    <label class="orbital-toggle">
+                        <input type="checkbox" id="tg-lock-map" title="Protocol Lockdown">
+                        <span class="orbital-toggle-track red"></span>
+                    </label>
+                </div>
+                <div class="orbital-stat-row"><span>Integrity</span><span class="orbital-stat-val text-bright">99.8%</span></div>
+            </div>
+        </div>
+
+        <!-- Legacy Settings Modal (kept for shared/settings.js compatibility) -->
+        <aside class="settings-global-overlay">
+            <div class="settings-modal-inner">
+                <div class="console-header">
+                    <div class="header-title">
+                        <i data-lucide="settings"></i>
+                        <h2>SYSTEM SETTINGS</h2>
+                    </div>
+                    <div class="header-controls">
+                        <button class="close-console" onclick="if(window.showSettingsMenu) window.showSettingsMenu()">×</button>
+                    </div>
+                </div>
+                <div id="settings-sidebar-container"></div>
+            </div>
         </aside>
+
 
         <!-- ── HUD MODAL: Audit Log History ──────────────────── -->
         <div class="hud-modal" id="modal-audit-logs" role="dialog" aria-label="Audit Log History">

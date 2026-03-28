@@ -286,17 +286,18 @@ window.showSettingsMenu = function() {
             if (mainArea) mainArea.classList.remove('console-hidden');
 
             // Update Header for Settings
-            const titleEl = document.getElementById('console-title');
-            const iconWrap = document.getElementById('console-icon-wrap');
             if (titleEl) titleEl.textContent = 'SYSTEM SETTINGS';
             if (iconWrap) {
                 iconWrap.innerHTML = `
                     <div class="card-icon" data-status="stable" data-tooltip="<span class='tooltip-title'>SYSTEM SETTINGS</span>Global configuration and visual protocol effects.">
                         <i data-lucide="settings"></i>
                     </div>`;
-                if (window.lucide) lucide.createIcons();
             }
         }
+    }
+    
+    if (sidebar.getAttribute('data-mode') === 'settings') {
+        if (window.lucide) lucide.createIcons();
     }
     
     if (window.hapticPulse) window.hapticPulse();

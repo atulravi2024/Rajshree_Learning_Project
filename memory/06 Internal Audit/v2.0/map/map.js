@@ -4,11 +4,13 @@
 window._mapGlobe = null; // Will hold { globeGroup, camera, scene, renderer, nodes }
 window._mapScanInterval = null;
 window._mapTabState = 'sector-g';
-window.selectedNodeId = null; 
+window.selectedNodeId = null;
 window.controls = null;
 window.raycaster = new THREE.Raycaster();
 window.mouse = new THREE.Vector2();
 window._pointerStart = { x: 0, y: 0 };
+window._mapGlobeDesign = 'high-fidelity';
+
 
 document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
@@ -19,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error("Three.js is requested but not loaded.");
     }
-    
+
     initMockDataFeeds();
     initRealDataFeeds();
     initCardCollapsibility();
@@ -45,7 +47,7 @@ function initGlobe() {
 
     // Initial resize to ensure correct bounds
     setTimeout(() => {
-        if(container.clientWidth > 0 && container.clientHeight > 0) {
+        if (container.clientWidth > 0 && container.clientHeight > 0) {
             camera.aspect = container.clientWidth / container.clientHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(container.clientWidth, container.clientHeight);
@@ -61,44 +63,141 @@ function initGlobe() {
         camera.updateProjectionMatrix();
     });
 
-    // GLOBE GROUP
+    // ── GLOBE GROUP ─────────────────────────────────────────
     const globeGroup = new THREE.Group();
     scene.add(globeGroup);
 
-    // CORE SPHERE (Holographic base)
-    const sphereGeo = new THREE.SphereGeometry(90, 48, 48);
-    
-    // Wireframe material (Cyan mesh)
-    const wireMat = new THREE.MeshBasicMaterial({
+
+    // ── REAL EARTH TEXTURES (loaded from CDN) ───────────────────
+    const loader = new THREE.TextureLoader();
+
+    // NASA Blue Marble day texture
+    const earthDayTex = loader.load('https://unpkg.com/three-globe@2.31.1/example/img/earth-blue-marble.jpg');
+    // NASA night-lights texture
+    const earthNightTex = loader.load('https://unpkg.com/three-globe@2.31.1/example/img/earth-night.jpg');
+    // Specular water map
+    const earthSpecTex = loader.load('https://unpkg.com/three-globe@2.31.1/example/img/earth-water.png');
+    // Cloud layer
+    const cloudTex = loader.load('https://unpkg.com/three-globe@2.31.1/example/img/earth-clouds.png');
+
+    window._mapTextures = {
+        day: earthDayTex,
+        night: earthNightTex,
+        spec: earthSpecTex,
+        clouds: cloudTex
+    };
+
+    // Main High-Fidelity Geography Mesh
+    const hfSphereGeo = new THREE.SphereGeometry(90, 64, 64);
+    const globeMat = new THREE.MeshPhongMaterial({
+        map: earthDayTex,
+        bumpMap: earthDayTex,
+        bumpScale: 0.4,
+        emissiveMap: earthNightTex,
+        emissive: new THREE.Color(0xffc860),
+        emissiveIntensity: 0.6,
+        specularMap: earthSpecTex,
+        specular: new THREE.Color(0x336699),
+        shininess: 25,
+        wireframe: false, // Explicitly disabled
+        color: 0x112233   // Fallback dark blue/cyan
+    });
+
+
+    const hfGlobe = new THREE.Mesh(hfSphereGeo, globeMat);
+    hfGlobe.visible = true; // Explicitly visible
+    globeGroup.add(hfGlobe);
+    window._mapGlobeHF = hfGlobe;
+    window._mapGlobeMat = globeMat;
+
+    // Main Simplified Wireframe Mesh (Holographic Grid)
+    const wireframeGeo = new THREE.SphereGeometry(90.1, 64, 48); // Denser, high-tech grid
+    const wireframeMat = new THREE.MeshBasicMaterial({
         color: 0x00f0ff,
         wireframe: true,
         transparent: true,
-        opacity: 0.15
+        opacity: 0.35 // Lowered opacity due to increased density
     });
-    const globe = new THREE.Mesh(sphereGeo, wireMat);
-    globeGroup.add(globe);
+    const wireframeGlobe = new THREE.Mesh(wireframeGeo, wireframeMat);
+    wireframeGlobe.visible = false; // Explicitly hidden
+    globeGroup.add(wireframeGlobe);
+    window._mapGlobeWireframe = wireframeGlobe;
 
-    // Inner glow
-    const innerMat = new THREE.MeshBasicMaterial({
-        color: 0x005577,
-        transparent: true,
-        opacity: 0.15,
-        blending: THREE.AdditiveBlending
-    });
-    const innerGlobe = new THREE.Mesh(new THREE.SphereGeometry(88, 32, 32), innerMat);
-    globeGroup.add(innerGlobe);
-
-    // Atmospheric outer glow
-    const outerGlowGeo = new THREE.SphereGeometry(95, 32, 32);
-    const outerGlowMat = new THREE.MeshBasicMaterial({
+    // ── SIMPLE GLOBE GLOW EFFECT ────────────────────────────
+    // Radial glow sprite that surrounds the globe
+    const globeGlowSprite = new THREE.Sprite(new THREE.SpriteMaterial({
+        map: createGlowTexture(0x00f0ff),
         color: 0x00f0ff,
         transparent: true,
-        opacity: 0.05,
+        opacity: 0.3,
         blending: THREE.AdditiveBlending,
-        side: THREE.BackSide
-    });
-    const outerGlobe = new THREE.Mesh(outerGlowGeo, outerGlowMat);
-    globeGroup.add(outerGlobe);
+        depthWrite: false
+    }));
+    globeGlowSprite.scale.set(240, 240, 1);
+    globeGlowSprite.position.set(0, 0, -10); // Slightly behind to not block nodes
+    globeGroup.add(globeGlowSprite);
+    window._mapGlobeGlow = globeGlowSprite;
+
+    // Cloud layer (slightly larger sphere, transparent)
+    const cloudMesh = new THREE.Mesh(
+        new THREE.SphereGeometry(91.5, 48, 48),
+        new THREE.MeshPhongMaterial({
+            map: cloudTex,
+            transparent: true,
+            opacity: 0.6,
+            blending: THREE.NormalBlending,
+            depthWrite: false,
+            side: THREE.DoubleSide,
+            color: 0xffffff // Fallback white
+        })
+
+    );
+    globeGroup.add(cloudMesh);
+    window._mapCloudMesh = cloudMesh;
+
+    // ── NATURAL ATMOSPHERIC GLOW ──
+    const atmoMesh = new THREE.Mesh(
+        new THREE.SphereGeometry(93, 48, 48),
+        new THREE.MeshLambertMaterial({
+            color: 0x88ccff,
+            transparent: true,
+            opacity: 0.18,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false,
+            side: THREE.BackSide
+        })
+    );
+    globeGroup.add(atmoMesh);
+
+    const atmo2Mesh = new THREE.Mesh(
+        new THREE.SphereGeometry(100, 48, 48),
+        new THREE.MeshLambertMaterial({
+            color: 0x4488ff,
+            transparent: true,
+            opacity: 0.06,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false,
+            side: THREE.BackSide
+        })
+    );
+    globeGroup.add(atmo2Mesh);
+    window._mapAtmosphere = [atmoMesh, atmo2Mesh];
+
+    // Scene lighting — sun from the right
+    const ambientLight = new THREE.AmbientLight(0x223344, 0.25);
+    scene.add(ambientLight);
+    window._mapAmbientLight = ambientLight;
+    const sunLight = new THREE.DirectionalLight(0xffeedd, 0.8);
+    sunLight.position.set(250, 80, 150);
+    scene.add(sunLight);
+    window._mapSunLight = sunLight;
+    // Subtle fill from opposite side
+    const fillLight = new THREE.DirectionalLight(0x112244, 0.15);
+    fillLight.position.set(-200, -80, -150);
+    scene.add(fillLight);
+    window._mapFillLight = fillLight;
+
+    window._satSpeedMultiplier = 1.0;
 
     // ADD NODES (from map_data.js)
     const nodes = [];
@@ -109,41 +208,32 @@ function initGlobe() {
     globeGroup.add(linesGroup);
 
     nodeData.forEach(data => {
-        // Convert lat/lon to sphere position
         const phi = (90 - data.lat) * (Math.PI / 180);
         const theta = (data.lon + 180) * (Math.PI / 180);
-
         const r = 90;
         const x = -(r * Math.sin(phi) * Math.cos(theta));
         const z = (r * Math.sin(phi) * Math.sin(theta));
         const y = (r * Math.cos(phi));
 
-        let color = 0x22c55e; // Green
+        let color = 0x22c55e;
         let size = 1.5;
-        if (data.status === 'warning') {
-            color = 0xfacc15; // Yellow
-            size = 2;
-        } else if (data.status === 'critical') {
-            color = 0xff3e3e; // Red
-            size = 4;
-            
-            // Show the critical HTML callout near this visual node
+        if (data.status === 'warning') { color = 0xfacc15; size = 2; }
+        else if (data.status === 'critical') {
+            color = 0xff3e3e; size = 4;
             const callout = document.getElementById('breach-callout');
             if (callout) callout.classList.remove('hidden');
         }
 
-        // Inner solid core
         const nodeGeo = new THREE.SphereGeometry(size, 16, 16);
-        const nodeMat = new THREE.MeshBasicMaterial({ color: color });
+        const nodeMat = new THREE.MeshBasicMaterial({ color });
         const node = new THREE.Mesh(nodeGeo, nodeMat);
-        
-        // Glow sprite
+
         const glowMaterial = new THREE.SpriteMaterial({
             map: createGlowTexture(color),
-            color: color,
+            color,
             transparent: true,
             blending: THREE.AdditiveBlending,
-            depthWrite: false
+            depthWrite: false,
         });
         const glow = new THREE.Sprite(glowMaterial);
         glow.scale.set(size * 5, size * 5, 1);
@@ -155,63 +245,152 @@ function initGlobe() {
         nodes.push(node);
     });
 
-    // Create connections (lines between nodes)
+    // Create arc connections
     const lineMat = new THREE.LineBasicMaterial({ color: 0x00f0ff, transparent: true, opacity: 0.3 });
     const lineMatDim = new THREE.LineBasicMaterial({ color: 0x00f0ff, transparent: true, opacity: 0.1 });
     const redLineMat = new THREE.LineBasicMaterial({ color: 0xff3e3e, transparent: true, opacity: 0.5 });
-    
-    // Add some random connection web to the critical node
-    const criticalNode = nodes.find(n => n.userData.threat);
 
     for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
-            // Favor connecting nearby nodes
             const dist = nodes[i].position.distanceTo(nodes[j].position);
-            
             if (dist < 100 || (nodes[i].userData.threat || nodes[j].userData.threat)) {
-                
-                // Add some randomness to drawing the line
-                if(Math.random() > 0.3) {
-                    const points = [];
-                    points.push(nodes[i].position);
-                    
-                    // Arc computation for lines (curve along sphere)
+                if (Math.random() > 0.3) {
                     const midPoint = new THREE.Vector3().addVectors(nodes[i].position, nodes[j].position).multiplyScalar(0.5);
-                    midPoint.normalize().multiplyScalar(100); // pull outwards
-                    
-                    const curve = new THREE.QuadraticBezierCurve3(
-                        nodes[i].position,
-                        midPoint,
-                        nodes[j].position
-                    );
-                    
-                    const curvePoints = curve.getPoints(10);
-                    const lineGeo = new THREE.BufferGeometry().setFromPoints(curvePoints);
-                    
-                    let activeMat = lineMatDim;
-                    if (dist < 60) activeMat = lineMat;
-                    if (nodes[i].userData.threat || nodes[j].userData.threat) activeMat = redLineMat;
-
-                    const line = new THREE.Line(lineGeo, activeMat);
-                    linesGroup.add(line);
+                    midPoint.normalize().multiplyScalar(100);
+                    const curve = new THREE.QuadraticBezierCurve3(nodes[i].position, midPoint, nodes[j].position);
+                    const lineGeo = new THREE.BufferGeometry().setFromPoints(curve.getPoints(10));
+                    let mat = lineMatDim;
+                    if (dist < 60) mat = lineMat;
+                    if (nodes[i].userData.threat || nodes[j].userData.threat) mat = redLineMat;
+                    linesGroup.add(new THREE.Line(lineGeo, mat));
                 }
             }
         }
     }
 
-    globeGroup.rotation.y = 1.5; // Initial orientation
-    globeGroup.rotation.x = 0.2;
+    // ── INITIAL ORIENTATION ──
+    const INDIA_COORDS = { lat: 20.59, lon: 78.96 };
 
-    // ORBIT CONTROLS
+    function calculateRotationForCoords(lat, lon) {
+        // Based on the spherical mapping: theta = (lon + 180) * (PI/180)
+        // To bring a 'theta' to the front center (facing camera), we solve for world Y rotation.
+        // theta = PI/2 is front. So (lon + 180) * (PI/180) + rotY = PI/2
+        // rotY = PI/2 - (lon + 180) * (PI/180) = (90 - lon - 180) * (PI/180) = -(lon + 90) * (PI/180)
+        const targetY = -(lon + 90) * (Math.PI / 180);
+        // For X (latitude), we simple tilt the globe.
+        const targetX = (lat) * (Math.PI / 180);
+        return { x: targetX, y: targetY };
+    }
+
+    function focusGlobeOnStartup() {
+        const criticalNode = (window.NODE_DATA || []).find(n => n.status === 'critical');
+        const targetCoords = criticalNode ? { lat: criticalNode.lat, lon: criticalNode.lon } : INDIA_COORDS;
+        const targetRot = calculateRotationForCoords(targetCoords.lat, targetCoords.lon);
+
+        console.log(`Globe Orientation: ${criticalNode ? 'Critical Threat' : 'Default India'} [Lat: ${targetCoords.lat}, Lon: ${targetCoords.lon}]`);
+
+        // Perform a smooth "lock-on" transition
+        globeGroup.rotation.x = targetRot.x;
+        gsap_like_rotate(globeGroup, targetRot.y, 1800);
+    }
+
+    focusGlobeOnStartup();
+
+    // ── ORBITAL RING SYSTEM ─────────────────────────────────
+    // This group holds all orbital elements; hidden by default
+    const orbitalGroup = new THREE.Group();
+    scene.add(orbitalGroup);
+    orbitalGroup.visible = false;
+    window._mapOrbitalGroup = orbitalGroup;
+
+    function createRingMesh(radius, tube, color, opacity) {
+        const geo = new THREE.TorusGeometry(radius, tube, 2, 120);
+        const mat = new THREE.MeshBasicMaterial({ color, transparent: true, opacity, blending: THREE.AdditiveBlending });
+        return new THREE.Mesh(geo, mat);
+    }
+
+    // Ring 1 — equatorial
+    const ring1 = createRingMesh(118, 0.5, 0x00f0ff, 0.6);
+    orbitalGroup.add(ring1);
+
+    // Ring 2 — tilted 30°
+    const ring2 = createRingMesh(130, 0.4, 0xfacc15, 0.4);
+    ring2.rotation.x = Math.PI / 6;
+    ring2.rotation.z = Math.PI / 10;
+    orbitalGroup.add(ring2);
+
+    // Ring 3 — tilted 60° (faint connector)
+    const ring3 = createRingMesh(143, 0.3, 0x00f0ff, 0.2);
+    ring3.rotation.x = Math.PI / 3;
+    ring3.rotation.y = Math.PI / 8;
+    orbitalGroup.add(ring3);
+
+    // ── SATELLITES ──────────────────────────────────────────
+    const SATELLITE_DEFS = [
+        { id: 'system-ops',        label: 'SYSTEM OPS',        color: 0x00f0ff, icon: '⚙', angle: 0,               ring: ring1, radius: 118, panel: 'panel-system-ops' },
+        { id: 'visual-protocol',   label: 'VISUAL PROTOCOL',   color: 0xa78bfa, icon: '🖥', angle: Math.PI * 2/5,   ring: ring1, radius: 118, panel: 'panel-visual-protocol' },
+        { id: 'user-gateway',      label: 'USER GATEWAY',      color: 0x22c55e, icon: '👤', angle: Math.PI * 4/5,   ring: ring2, radius: 130, panel: 'panel-user-gateway' },
+        { id: 'neural-audio',      label: 'NEURAL AUDIO',      color: 0xfacc15, icon: '🔊', angle: Math.PI * 6/5,   ring: ring2, radius: 130, panel: 'panel-neural-audio' },
+        { id: 'security-guardrails',label: 'SECURITY GUARDRAILS',color: 0xff3e3e, icon: '🛡', angle: Math.PI * 8/5,   ring: ring3, radius: 143, panel: 'panel-security-guardrails' },
+    ];
+
+    const satellites = [];    // { mesh, sprite, def, angle }
+    const satHtmlLabels = []; // { el, def }
+
+    SATELLITE_DEFS.forEach(def => {
+        // Satellite ball
+        const sGeo = new THREE.SphereGeometry(3.5, 12, 12);
+        const sMat = new THREE.MeshBasicMaterial({ color: def.color });
+        const sMesh = new THREE.Mesh(sGeo, sMat);
+        sMesh.userData = { satelliteId: def.id, def };
+
+        // Satellite glow sprite
+        const sSprite = new THREE.Sprite(new THREE.SpriteMaterial({
+            map: createGlowTexture(def.color),
+            color: def.color,
+            transparent: true,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false,
+        }));
+        sSprite.scale.set(30, 30, 1);
+        sMesh.add(sSprite);
+
+        orbitalGroup.add(sMesh);
+        satellites.push({ mesh: sMesh, def, angle: def.angle });
+    });
+
+    // HTML labels for satellites (CSS-based, projected)
+    const mapViewport = document.getElementById('threejs-container');
+    SATELLITE_DEFS.forEach(def => {
+        const el = document.createElement('div');
+        el.className = 'sat-label';
+        el.dataset.satId = def.id;
+        el.innerHTML = `<span class="sat-icon">${def.icon}</span><span class="sat-text">${def.label}</span>`;
+        el.style.display = 'none';
+        mapViewport.appendChild(el);
+        satHtmlLabels.push({ el, def });
+
+        // Click → open panel
+        el.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openOrbitalPanel(def.id);
+        });
+        // Also allow clicking the 3D mesh via raycasting (handled in pointerup)
+    });
+
+    // Store satellites globally for raycaster
+    window._mapSatellites = satellites;
+
+    // ── ORBIT CONTROLS ────────────────────────────────────────
     window.controls = new THREE.OrbitControls(camera, renderer.domElement);
     window.controls.enableDamping = true;
     window.controls.dampingFactor = 0.05;
     window.controls.rotateSpeed = 0.8;
-    window.controls.enableZoom = false; // Keep it focused
+    window.controls.enableZoom = false;
     window.controls.autoRotate = true;
     window.controls.autoRotateSpeed = 0.5;
 
-    // INTERACTION: Precise Click Detection (Distinguish from Drag)
+    // INTERACTION: Precise Click Detection
     container.addEventListener('pointerdown', (e) => {
         window._pointerStart.x = e.clientX;
         window._pointerStart.y = e.clientY;
@@ -221,27 +400,29 @@ function initGlobe() {
         const deltaX = Math.abs(e.clientX - window._pointerStart.x);
         const deltaY = Math.abs(e.clientY - window._pointerStart.y);
 
-        // If moved less than 5px, it's a click/tap
         if (deltaX < 5 && deltaY < 5) {
             const rect = renderer.domElement.getBoundingClientRect();
             window.mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
             window.mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
 
             window.raycaster.setFromCamera(window.mouse, camera);
-            const intersects = window.raycaster.intersectObjects(nodes);
 
+            // Check satellites first
+            const satMeshes = (window._mapSatellites || []).map(s => s.mesh);
+            const satHits = window.raycaster.intersectObjects(satMeshes, false);
+            if (satHits.length > 0) {
+                openOrbitalPanel(satHits[0].object.userData.satelliteId);
+                return;
+            }
+
+            // Then check data nodes
+            const intersects = window.raycaster.intersectObjects(nodes);
             if (intersects.length > 0) {
                 const clickedNode = intersects[0].object;
                 const nodeId = clickedNode.userData.id;
-                
-                if (window.selectedNodeId === nodeId) {
-                    window.selectedNodeId = null; // Deselect
-                } else {
-                    window.selectedNodeId = nodeId; // Select
-                }
+                window.selectedNodeId = (window.selectedNodeId === nodeId) ? null : nodeId;
                 updateSidebarForSelection();
             } else {
-                // Clicking empty space deselects
                 if (window.selectedNodeId) {
                     window.selectedNodeId = null;
                     updateSidebarForSelection();
@@ -250,54 +431,110 @@ function initGlobe() {
         }
     });
 
-    // Disable auto-rotate when user actually drags
-    window.controls.addEventListener('start', () => {
-        window.controls.autoRotate = false;
-    });
+    window.controls.addEventListener('start', () => { window.controls.autoRotate = false; });
 
-    // Re-enable auto-rotate after some idle time (optional, but requested simple manual)
-    // For now, let's just keep it manual once moved.
+    // ── ANIMATION LOOP ───────────────────────────────────────
+    const _ringRotSpeeds = [0.002, -0.0015, 0.001];
+    const _satOrbitSpeeds = [0.005, 0.005, -0.004, -0.004];
 
-
-    // ANIMATION LOOP
     function animate() {
-        requestAnimationFrame(animate);
-
         if (window.controls) window.controls.update();
-        
-        // Visual pulses and feedback
+
+        const now = Date.now();
+
+        // Slowly drift the cloud layer
+        if (window._mapCloudMesh) {
+            window._mapCloudMesh.rotation.y += 0.00008;
+        }
+
+        // Interpolate camera zoom (Orbital distance)
+        if (typeof window._mapTargetCameraZ === 'number') {
+            const currentDist = camera.position.length();
+            const targetDist = window._mapTargetCameraZ;
+            if (Math.abs(currentDist - targetDist) > 0.1) {
+                const newDist = currentDist + (targetDist - currentDist) * 0.08;
+                camera.position.setLength(newDist);
+            }
+        }
+
+        // Interpolate globe scale
+        if (window._mapGlobe && window._mapGlobe.globeGroup) {
+            const targetScale = window._mapTargetGlobeScale || 1.0;
+            const currentScale = window._mapGlobe.globeGroup.scale.x;
+            const newScale = currentScale + (targetScale - currentScale) * 0.1;
+            window._mapGlobe.globeGroup.scale.set(newScale, newScale, newScale);
+            if (window._mapOrbitalGroup) {
+                window._mapOrbitalGroup.scale.set(newScale, newScale, newScale);
+            }
+        }
+
+        // Rotate orbital rings independently
+        if (orbitalGroup.visible) {
+            const mult = (typeof window._satSpeedMultiplier === 'number') ? window._satSpeedMultiplier : 1.0;
+
+            ring1.rotation.z += _ringRotSpeeds[0] * mult;
+            ring2.rotation.y += _ringRotSpeeds[1] * mult;
+            ring3.rotation.x += _ringRotSpeeds[2] * mult;
+
+            // Orbit satellites along their rings
+            satellites.forEach((sat, idx) => {
+                sat.angle += _satOrbitSpeeds[idx] * mult;
+                const r = sat.def.radius;
+                // Compute position on the ring in its local orientation
+                const localPos = new THREE.Vector3(
+                    r * Math.cos(sat.angle),
+                    r * Math.sin(sat.angle),
+                    0
+                );
+                // Apply ring's world quaternion to position
+                const ringWorld = new THREE.Quaternion();
+                sat.def.ring.getWorldQuaternion(ringWorld);
+                localPos.applyQuaternion(ringWorld);
+                sat.mesh.position.copy(localPos);
+
+                // Pulse scale
+                const pulse = 1 + 0.25 * Math.sin(now * 0.003 + idx);
+                sat.mesh.scale.set(pulse, pulse, pulse);
+
+                // Project to screen for HTML label
+                const satLabel = satHtmlLabels[idx];
+                if (satLabel && satLabel.el.style.display !== 'none') {
+                    const worldPos = new THREE.Vector3();
+                    sat.mesh.getWorldPosition(worldPos);
+                    const screenPos = worldPos.project(camera);
+                    const rect = renderer.domElement.getBoundingClientRect();
+                    const sx = (screenPos.x * 0.5 + 0.5) * rect.width + rect.left;
+                    const sy = (-(screenPos.y * 0.5) + 0.5) * rect.height + rect.top;
+                    satLabel.el.style.left = sx + 'px';
+                    satLabel.el.style.top = sy + 'px';
+                }
+            });
+        }
+
+        // Node pulses
         nodes.forEach(n => {
             const isSelected = window.selectedNodeId === n.userData.id;
-            
             if (n.userData.status === 'critical' || isSelected) {
                 const freq = isSelected ? 0.008 : 0.004;
                 const baseS = isSelected ? 2.0 : 1.0;
-                const s = (baseS + Math.sin(Date.now() * freq) * 0.5);
+                const s = baseS + Math.sin(now * freq) * 0.5;
                 n.scale.set(s, s, s);
-                
-                // Increase glow for selected
-                if (n.children[0]) {
-                    n.children[0].scale.set(s * 8, s * 8, 1);
-                }
+                if (n.children[0]) n.children[0].scale.set(s * 8, s * 8, 1);
             } else {
                 n.scale.set(1, 1, 1);
                 if (n.children[0]) n.children[0].scale.set(n.userData.status === 'warning' ? 10 : 7.5, n.userData.status === 'warning' ? 10 : 7.5, 1);
             }
-
-            // Make glow face camera
-            if(n.children.length > 0) {
-                 n.children[0].quaternion.copy(camera.quaternion);
-            }
+            if (n.children.length > 0) n.children[0].quaternion.copy(camera.quaternion);
         });
 
         renderer.render(scene, camera);
+        requestAnimationFrame(animate);
     }
     animate();
+    console.log("Holographic Map: THREE.js Render Loop RE-INITIALIZED [OK]");
 
-    // Expose globe internals for tab controls
     window._mapGlobe = { globeGroup, camera, renderer, scene, nodes };
 
-    // RESIZE HANDLER
     window.addEventListener('resize', () => {
         if (!container) return;
         camera.aspect = container.clientWidth / container.clientHeight;
@@ -305,36 +542,212 @@ function initGlobe() {
         renderer.setSize(container.clientWidth, container.clientHeight);
     });
 
-    // Helper for glow texture
+    // Helper: radial glow texture
     function createGlowTexture(colorHex) {
-        const canvas = document.createElement('canvas');
-        canvas.width = 64;
-        canvas.height = 64;
-        const ctx = canvas.getContext('2d');
+        const c = document.createElement('canvas');
+        c.width = 64; c.height = 64;
+        const ctx = c.getContext('2d');
         const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-        
-        let hexStr = colorHex.toString(16);
-        while (hexStr.length < 6) hexStr = '0' + hexStr;
-        const r = parseInt(hexStr.substring(0,2), 16);
-        const g = parseInt(hexStr.substring(2,4), 16);
-        const b = parseInt(hexStr.substring(4,6), 16);
-        
+        let hexStr = colorHex.toString(16).padStart(6, '0');
+        const r = parseInt(hexStr.substring(0, 2), 16);
+        const g = parseInt(hexStr.substring(2, 4), 16);
+        const b = parseInt(hexStr.substring(4, 6), 16);
         gradient.addColorStop(0, `rgba(${r},${g},${b}, 1)`);
         gradient.addColorStop(0.2, `rgba(${r},${g},${b}, 0.8)`);
         gradient.addColorStop(1, `rgba(${r},${g},${b}, 0)`);
-        
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, 64, 64);
-        
-        return new THREE.CanvasTexture(canvas);
+        return new THREE.CanvasTexture(c);
     }
+
+    // Wire up orbital settings system
+    initOrbitalSettingsSystem(satHtmlLabels);
+    initOrbitalPanelListeners();
+}
+
+// ─────────────────────────────────────────────────
+// ORBITAL SETTINGS SYSTEM
+// ─────────────────────────────────────────────────
+function initOrbitalSettingsSystem(satHtmlLabels) {
+    // Override window.showSettingsMenu so navbar.js's button calls our orbital toggle.
+    // Use setTimeout(0) to guarantee we run AFTER settings.js's DOMContentLoaded sets it.
+    setTimeout(() => {
+        window.showSettingsMenu = function () { toggleOrbitalSettings(); };
+    }, 0);
+
+    // Disable click-outside-to-close behavior so it only closes via the toggle button
+}
+
+function toggleOrbitalSettings() {
+    const orbitalGroup = window._mapOrbitalGroup;
+    const isActive = orbitalGroup && orbitalGroup.visible;
+
+    if (isActive) {
+        closeOrbitalSettings();
+    } else {
+        openOrbitalSettings();
+    }
+}
+
+function openOrbitalSettings() {
+    // 0. Scale down the globe and rings to fit without overlapping bottom nav
+    window._mapTargetGlobeScale = 0.65;
+
+    // 1. Show orbital rings + satellites
+    if (window._mapOrbitalGroup) {
+        window._mapOrbitalGroup.visible = true;
+    }
+
+    // 2. Show satellite HTML labels
+    document.querySelectorAll('.sat-label').forEach(el => {
+        el.style.display = 'flex';
+        setTimeout(() => el.classList.add('visible'), 50);
+    });
+
+    // 3. Show the outer overlay (for status indicator)
+    const overlay = document.getElementById('orbital-settings-overlay');
+    if (overlay) {
+        overlay.classList.add('active');
+    }
+
+    // 4. Close any legacy settings
+    const legacyOverlay = document.querySelector('.settings-global-overlay');
+    if (legacyOverlay) legacyOverlay.removeAttribute('data-mode');
+}
+
+function closeOrbitalSettings() {
+    // 0. Restore globe scale
+    window._mapTargetGlobeScale = 1.0;
+
+    // 1. Hide orbital rings
+    if (window._mapOrbitalGroup) window._mapOrbitalGroup.visible = false;
+
+    // 2. Hide satellite HTML labels
+    document.querySelectorAll('.sat-label').forEach(el => {
+        el.classList.remove('visible');
+        setTimeout(() => el.style.display = 'none', 300);
+    });
+
+    // 3. Hide all orbital sub-panels
+    document.querySelectorAll('.orbital-panel').forEach(p => p.classList.remove('active'));
+
+    // 4. Hide overlay
+    const overlay = document.getElementById('orbital-settings-overlay');
+    if (overlay) overlay.classList.remove('active');
+}
+
+function openOrbitalPanel(satelliteId) {
+    // Hide any open panels
+    document.querySelectorAll('.orbital-panel').forEach(p => p.classList.remove('active'));
+
+    // Show the mapped panel
+    const panelId = `orbital-panel-${satelliteId}`;
+    const panel = document.getElementById(panelId);
+    if (panel) {
+        panel.classList.add('active');
+        // Re-create lucide icons inside the panel
+        if (window.lucide) lucide.createIcons({ scope: panel });
+    }
+}
+
+function initOrbitalPanelListeners() {
+    const root = document.documentElement;
+
+    // 1. Helper to bind sliders
+    const bindOrbitalSlider = (id, effectId, valId, suffix = '') => {
+        const slider = document.getElementById(id);
+        const display = document.getElementById(valId);
+        if (!slider) return;
+
+        slider.addEventListener('input', (e) => {
+            const val = e.target.value;
+            if (display) display.textContent = val + suffix;
+            
+            // Map to Shared Settings Engine
+            if (window.applySettingEffect) window.applySettingEffect(effectId, val);
+            
+            // Map specific Three.js overrides
+            if (effectId === 'glow' && window._mapAtmosphere) {
+                window._mapAtmosphere[0].material.opacity = 0.25 * (val / 100);
+                window._mapAtmosphere[1].material.opacity = 0.1 * (val / 100);
+            }
+            if (effectId === 'scanline') {
+                root.style.setProperty('--scanline-opacity', (val / 100) * 0.15);
+            }
+            if (effectId === 'glare') {
+                root.style.setProperty('--glare-opacity', (val / 100) * 0.8);
+            }
+        });
+    };
+
+    const bindOrbitalToggle = (id, effectId) => {
+        const tg = document.getElementById(id);
+        if (!tg) return;
+        tg.addEventListener('change', (e) => {
+            if (window.applySettingEffect) window.applySettingEffect(effectId, e.target.checked);
+            
+            // Map specific overrides
+            if (effectId === 'grid') {
+                const gridOverlay = document.querySelector('.map-grid-overlay');
+                if (gridOverlay) gridOverlay.style.opacity = e.target.checked ? '1' : '0';
+            }
+            if (id === 'tg-cloud-map') {
+                if (window._mapCloudMesh) window._mapCloudMesh.visible = e.target.checked;
+            }
+        });
+    };
+
+    // SYSTEM OPS
+    bindOrbitalSlider('sl-refresh-map', 'refresh', 'val-refresh-map', 's');
+    bindOrbitalToggle('tg-sync-map', 'sync');
+
+    // VISUAL PROTOCOL
+    bindOrbitalSlider('sl-glow-map', 'glow', 'val-glow-map', '%');
+    bindOrbitalSlider('sl-scan-map', 'scanline', 'val-scan-map', '%');
+    bindOrbitalSlider('sl-glare-map', 'glare', 'val-glare-map', '%');
+    bindOrbitalToggle('tg-grid-map', 'grid');
+    bindOrbitalToggle('tg-cloud-map', 'cloud-layer');
+
+    // USER GATEWAY
+    const auditorInput = document.getElementById('in-auditor-map');
+    if (auditorInput) {
+        auditorInput.addEventListener('input', (e) => {
+            if (window.applySettingEffect) window.applySettingEffect('auditor-name', e.target.value);
+        });
+    }
+    document.getElementById('btn-activity-logs-map')?.addEventListener('click', () => {
+        document.getElementById('btn-view-logs')?.click();
+    });
+
+    // NEURAL AUDIO
+    bindOrbitalSlider('sl-vol-map', 'volume', 'val-vol-map', '%');
+    bindOrbitalToggle('tg-bleeps-map', 'bleeps');
+
+    // SECURITY GUARDRAILS
+    bindOrbitalToggle('tg-mask-map', 'masking');
+    bindOrbitalToggle('tg-lock-map', 'lock');
+
+    // CONNECTIVITY: Latency / Session Updates
+    const startT = Date.now();
+    setInterval(() => {
+        const lat = document.getElementById('conn-latency');
+        if (lat) lat.textContent = (24 + Math.floor(Math.random() * 12)) + ' ms';
+
+        const ses = document.getElementById('profile-session-time');
+        if (ses) {
+            const diff = Math.floor((Date.now() - startTime) / 1000);
+            const m = Math.floor(diff / 60).toString().padStart(2, '0');
+            const s = (diff % 60).toString().padStart(2, '0');
+            ses.textContent = `00:${m}:${s}`;
+        }
+    }, 1000);
 }
 
 function initMockDataFeeds() {
     // 1. Metric Bars simulation (still purely visual)
     const barsContainer = document.getElementById('metric-bars-container');
     if (barsContainer) {
-        for(let i=0; i<12; i++) {
+        for (let i = 0; i < 12; i++) {
             const bar = document.createElement('div');
             bar.className = `metric-bar ${Math.random() > 0.5 ? 'level-high' : 'level-low'}`;
             bar.style.height = `${Math.floor(Math.random() * 80 + 20)}%`;
@@ -405,7 +818,7 @@ function initRealDataFeeds() {
 function syncAuditTrail() {
     const logContainer = document.getElementById('audit-trail-log');
     if (!logContainer || !window.AUDIT_LOG_HISTORY) return;
-    
+
     logContainer.innerHTML = '';
     const recent = window.AUDIT_LOG_HISTORY.slice(0, 6);
     recent.forEach(log => addAuditTrailEntry(log, false));
@@ -414,7 +827,7 @@ function syncAuditTrail() {
 function addAuditTrailEntry(log, prepend = true) {
     const logContainer = document.getElementById('audit-trail-log');
     if (!logContainer) return;
-    
+
     const el = document.createElement('div');
     el.className = `log-entry ${log.type === 'threat' ? 'threat-log' : ''}`;
     el.innerHTML = `
@@ -438,19 +851,19 @@ function updateSidebarForSelection() {
 
     // ── 1. Widget Headers ────────────────────────────────────────────
     const overviewHeader = document.querySelector('.widget-overview .sidebar-toggle-label');
-    const scanHeader     = document.querySelector('.widget-network-scan .sidebar-toggle-label');
+    const scanHeader = document.querySelector('.widget-network-scan .sidebar-toggle-label');
     if (overviewHeader) overviewHeader.textContent = data ? `NODE ${nodeId} INTEL` : 'AUDIT OVERVIEW';
-    if (scanHeader)     scanHeader.textContent     = data ? `NODE ${nodeId} FEED`  : 'NETWORK SCAN';
+    if (scanHeader) scanHeader.textContent = data ? `NODE ${nodeId} FEED` : 'NETWORK SCAN';
 
     // ── 2. Audit Overview Stats ──────────────────────────────────────
-    setText('stat-active-audits',  data ? data.audits           : globalData.activeAudits);
-    setText('stat-net-integrity',  data ? data.integrity        : globalData.netIntegrity);
+    setText('stat-active-audits', data ? data.audits : globalData.activeAudits);
+    setText('stat-net-integrity', data ? data.integrity : globalData.netIntegrity);
     setText('stat-active-threats', (data ? data.threats : globalData.activeThreats) + ' ');
-    setText('stat-sector-status',  data ? data.status           : globalData.sectorStatus);
+    setText('stat-sector-status', data ? data.status : globalData.sectorStatus);
 
     // ── 3. Network Scan Stats ────────────────────────────────────────
-    setText('stat-latency',   data ? data.latency  : globalData.latency);
-    setText('stat-data-flow', data ? data.flow      : globalData.dataFlow);
+    setText('stat-latency', data ? data.latency : globalData.latency);
+    setText('stat-data-flow', data ? data.flow : globalData.dataFlow);
 
     // ── 4. Sector Analysis ───────────────────────────────────────────
     const analysis = baseData.analysis;
@@ -478,8 +891,8 @@ function updateSidebarForSelection() {
     // ── 5. Threat Profiles ───────────────────────────────────────────
     const threat = baseData.threatProfile;
     if (threat) {
-        setText('threat-title',  threat.title);
-        setText('threat-type',   threat.type);
+        setText('threat-title', threat.title);
+        setText('threat-type', threat.type);
         setText('threat-source', threat.source);
     }
 
@@ -487,7 +900,7 @@ function updateSidebarForSelection() {
     const metrics = data ? data.metrics : { activeNodes: globalData.activeNodes, systemLoad: globalData.systemLoad };
     if (metrics) {
         setText('metric-active-nodes', metrics.activeNodes);
-        setText('metric-system-load',  metrics.systemLoad);
+        setText('metric-system-load', metrics.systemLoad);
     }
 }
 
@@ -540,6 +953,89 @@ function initBottomBar() {
         });
     }
 
+    // ── ATMOSPHERE TOGGLE ──
+    const btnAtmosphere = document.getElementById('btn-atmosphere');
+    if (btnAtmosphere) {
+        btnAtmosphere.addEventListener('click', () => {
+            const isActive = btnAtmosphere.classList.toggle('active');
+            if (window._mapGlobeMat) {
+                window._mapGlobeMat.emissiveIntensity = isActive ? 0.6 : 0.0;
+            }
+            if (window._mapAtmosphere) {
+                window._mapAtmosphere[0].visible = isActive;
+                window._mapAtmosphere[1].visible = isActive;
+            }
+        });
+    }
+
+    // ── SUNLIGHT (TORCH) TOGGLE ──
+    const btnSpotlight = document.getElementById('btn-spotlight');
+    if (btnSpotlight) {
+        btnSpotlight.addEventListener('click', () => {
+            const isActive = btnSpotlight.classList.toggle('active');
+            if (window._mapSunLight) {
+                window._mapSunLight.visible = isActive;
+            }
+            if (window._mapAmbientLight) {
+                if (isActive) {
+                    window._mapAmbientLight.color.setHex(0x223344);
+                    window._mapAmbientLight.intensity = 0.5;
+                } else {
+                    window._mapAmbientLight.color.setHex(0xffffff);
+                    window._mapAmbientLight.intensity = 1.25;
+                }
+            }
+        });
+    }
+
+    // ── SATELLITE SPEED ──
+    const satSpeedSlider = document.getElementById('sat-speed-slider');
+    if (satSpeedSlider) {
+        satSpeedSlider.addEventListener('input', (e) => {
+            window._satSpeedMultiplier = parseFloat(e.target.value);
+        });
+    }
+
+    // ── ZOOM CONTROLS ──
+    const ZOOM_MIN = 100; // Max zoom in (closer)
+    const ZOOM_MAX = 800; // Max zoom out (further)
+
+    function mapSliderToZ(val) {
+        return ZOOM_MAX - (val / 100) * (ZOOM_MAX - ZOOM_MIN);
+    }
+
+    function mapZToSlider(z) {
+        const clampedZ = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, z));
+        const p = (ZOOM_MAX - clampedZ) / (ZOOM_MAX - ZOOM_MIN);
+        return Math.round(p * 100);
+    }
+
+    window._mapTargetCameraZ = 260; // default startup Z
+    const zoomSlider = document.getElementById('globe-zoom-slider');
+    if (zoomSlider) {
+        zoomSlider.addEventListener('input', (e) => {
+            window._mapTargetCameraZ = mapSliderToZ(parseFloat(e.target.value));
+        });
+
+        // Icon Button functionality (using event delegation to circumvent Lucide SVG swaps)
+        const zoomSliderWrapper = document.querySelector('.zoom-control-wrap');
+        if (zoomSliderWrapper) {
+            zoomSliderWrapper.addEventListener('click', (e) => {
+                if (e.target.closest('#btn-zoom-in-icon')) {
+                    let val = parseFloat(zoomSlider.value);
+                    val = Math.min(100, val + 15);
+                    zoomSlider.value = val;
+                    zoomSlider.dispatchEvent(new Event('input'));
+                } else if (e.target.closest('#btn-zoom-out-icon')) {
+                    let val = parseFloat(zoomSlider.value);
+                    val = Math.max(0, val - 15);
+                    zoomSlider.value = val;
+                    zoomSlider.dispatchEvent(new Event('input'));
+                }
+            });
+        }
+    }
+
     // ── UI MINIMIZE TOGGLE ──────────────────────────────────────────
     const uiToggleBtn = document.getElementById('btn-ui-toggle');
     if (uiToggleBtn) {
@@ -553,26 +1049,57 @@ function initBottomBar() {
                 lucide.createIcons();
             }
 
-            // Animate camera zoom: pull in when minimized, return when restored
+            // Update zoom target directly (animate loop will handle tweening)
             const globe = window._mapGlobe;
+            const zSlider = document.getElementById('globe-zoom-slider');
             if (globe) {
-                const targetZ = isMinimized ? 200 : 260; // 260 = default, 200 = zoomed
-                const startZ = globe.camera.position.z;
-                const duration = 600;
-                const startTime = Date.now();
-
-                function animateCamera() {
-                    const t = Math.min((Date.now() - startTime) / duration, 1);
-                    const eased = 1 - Math.pow(1 - t, 3); // cubic ease-out
-                    globe.camera.position.z = startZ + (targetZ - startZ) * eased;
-
-                    if (t < 1) requestAnimationFrame(animateCamera);
-                }
-                animateCamera();
+                const targetZ = isMinimized ? 150 : 260; // 260 = default, 150 = close focus
+                window._mapTargetCameraZ = targetZ;
+                if (zSlider) zSlider.value = mapZToSlider(targetZ);
             }
 
             // Allow layout to settle, then fire resize to re-fit the canvas
             setTimeout(() => window.dispatchEvent(new Event('resize')), 520);
+        });
+    }
+
+    // ── VISUAL BOOST TOGGLE ───────────────────────────────────────────
+    window._isVisualBoostActive = false;
+    
+    window.applyVisualBoostState = function() {
+        if (!window._isVisualBoostActive) {
+            document.body.classList.remove('visual-boost-hf', 'visual-boost-wire');
+            // Reset to defaults
+            if (window._mapSunLight) window._mapSunLight.intensity = 0.8;
+            if (window._mapAmbientLight) window._mapAmbientLight.intensity = window._mapGlobeDesign === 'wireframe' ? 0.8 : 0.25;
+            if (window._mapGlobeMat) window._mapGlobeMat.emissiveIntensity = 0.6;
+            if (window._mapGlobeWireframe) window._mapGlobeWireframe.material.opacity = 0.35;
+            if (window._mapGlobeGlow) window._mapGlobeGlow.material.opacity = window._mapGlobeDesign === 'wireframe' ? 0.4 : 0.15;
+            return;
+        }
+
+        const isHF = window._mapGlobeDesign === 'high-fidelity';
+        
+        // CSS Filters (Canvas strictly via CSS)
+        document.body.classList.toggle('visual-boost-hf', isHF);
+        document.body.classList.toggle('visual-boost-wire', !isHF);
+
+        // Three.js Material Tuning
+        if (isHF) {
+            if (window._mapSunLight) window._mapSunLight.intensity = 1.35;
+            if (window._mapGlobeMat) window._mapGlobeMat.emissiveIntensity = 0.9;
+        } else {
+            if (window._mapGlobeWireframe) window._mapGlobeWireframe.material.opacity = 0.8;
+            if (window._mapGlobeGlow) window._mapGlobeGlow.material.opacity = 0.7;
+        }
+    };
+
+    const visualBoostBtn = document.getElementById('btn-visual-boost');
+    if (visualBoostBtn) {
+        visualBoostBtn.addEventListener('click', () => {
+            window._isVisualBoostActive = !window._isVisualBoostActive;
+            visualBoostBtn.classList.toggle('active', window._isVisualBoostActive);
+            if (typeof window.applyVisualBoostState === 'function') window.applyVisualBoostState();
         });
     }
 
@@ -663,20 +1190,11 @@ function initBottomBar() {
         });
     }
 
-    // ── THEME TOGGLE BUTTON ───────────────────────────────────────────
-    const themeBtn = document.getElementById('btn-theme-toggle');
-    if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
-            const isAmber = document.body.classList.toggle('theme-amber');
-            const titleEl = document.getElementById('bottom-title-text');
-            if (titleEl && !document.body.classList.contains('lockdown-active')) {
-                titleEl.textContent = isAmber ? 'INTERNAL AUDIT HUB — AMBER' : 'INTERNAL AUDIT HUB';
-                setTimeout(() => {
-                    if (!document.body.classList.contains('lockdown-active')) {
-                        titleEl.textContent = 'INTERNAL AUDIT HUB';
-                    }
-                }, 2500);
-            }
+    // ── GLOBE DESIGN TOGGLE BUTTON ───────────────────────────────────
+    const globeDesignBtn = document.getElementById('btn-globe-design');
+    if (globeDesignBtn) {
+        globeDesignBtn.addEventListener('click', () => {
+            toggleGlobeDesign();
         });
     }
 
@@ -685,16 +1203,10 @@ function initBottomBar() {
         document.getElementById('btn-view-logs')?.click();
     });
 
-    // ── GLOW SLIDER ──────────────────────────────────────────────────
-    const glowSlider = document.getElementById('glow-slider');
-    if (glowSlider) {
-        glowSlider.addEventListener('input', (e) => {
-            const val = e.target.value;
-            document.documentElement.style.setProperty('--theme-accent-glow', `rgba(0, 240, 255, ${val * 0.5})`);
-            const app = document.querySelector('.holo-app-container');
-            if (app) app.style.filter = `contrast(${0.9 + val * 0.1}) brightness(${0.8 + val * 0.2})`;
-        });
-    }
+    // Default UI Brightness: Full
+    document.documentElement.style.setProperty('--theme-accent-glow', `rgba(0, 240, 255, 0.75)`);
+    const app = document.querySelector('.holo-app-container');
+    if (app) app.style.filter = 'contrast(1.05) brightness(1.1)';
 
     // ── EXPORT BUTTON ────────────────────────────────────────────────
     document.getElementById('btn-export')?.addEventListener('click', () => {
@@ -712,7 +1224,92 @@ function initBottomBar() {
             }, 1500);
         }
     });
+    // ── SETTINGS MODAL BACKDROP CLICK DISMISS ──────────────────────────
+    const settingsOverlay = document.querySelector('.settings-global-overlay');
+    if (settingsOverlay) {
+        settingsOverlay.addEventListener('click', (e) => {
+            if (e.target === settingsOverlay && window.showSettingsMenu) {
+                window.showSettingsMenu();
+            }
+        });
+    }
 }
+
+function toggleGlobeDesign() {
+
+    const isHF = window._mapGlobeDesign === 'high-fidelity';
+    window._mapGlobeDesign = isHF ? 'wireframe' : 'high-fidelity';
+
+    const btn = document.getElementById('btn-globe-design');
+    if (btn) {
+        btn.classList.toggle('active', !isHF);
+        const icon = btn.querySelector('i') || btn.querySelector('svg');
+        if (icon) {
+            icon.setAttribute('data-lucide', isHF ? 'monitor' : 'globe');
+            if (window.lucide) lucide.createIcons();
+        }
+    }
+
+    const hfGlobe = window._mapGlobeHF;
+    const wireframeGlobe = window._mapGlobeWireframe;
+    const cloudMesh = window._mapCloudMesh;
+    const atmosphere = window._mapAtmosphere;
+    const globeGlow = window._mapGlobeGlow;
+
+    if (window._mapGlobeDesign === 'wireframe') {
+        // ── SIMPLE WIREFRAME MODE ──
+        if (hfGlobe) hfGlobe.visible = false;
+        if (wireframeGlobe) wireframeGlobe.visible = true;
+        if (cloudMesh) cloudMesh.visible = false;
+        if (atmosphere) atmosphere.forEach(m => m.visible = false);
+        if (globeGlow) {
+            globeGlow.visible = true;
+            globeGlow.material.color.setHex(0x00f0ff);
+            globeGlow.material.opacity = 0.4;
+        }
+
+        // Simpler light logic: Hide directional lights
+        if (window._mapSunLight) window._mapSunLight.visible = false;
+        if (window._mapFillLight) window._mapFillLight.visible = false;
+        if (window._mapAmbientLight) window._mapAmbientLight.intensity = 0.8;
+
+        // Sync UI Buttons
+        const btnSpotlight = document.getElementById('btn-spotlight');
+        if (btnSpotlight) btnSpotlight.classList.remove('active');
+    } else {
+        // ── HIGH FIDELITY MODE ──
+        if (hfGlobe) hfGlobe.visible = true;
+        if (wireframeGlobe) wireframeGlobe.visible = false;
+        if (cloudMesh) cloudMesh.visible = true;
+        
+        if (globeGlow) {
+            globeGlow.visible = true;
+            globeGlow.material.color.setHex(0xffffff);
+            globeGlow.material.opacity = 0.15; // Faint white glow for HF
+        }
+
+        // Restore lights
+        if (window._mapSunLight) window._mapSunLight.visible = true;
+        if (window._mapFillLight) window._mapFillLight.visible = true;
+        if (window._mapAmbientLight) window._mapAmbientLight.intensity = 0.25;
+
+        // Sync UI Buttons
+        const btnSpotlight = document.getElementById('btn-spotlight');
+        if (btnSpotlight) btnSpotlight.classList.add('active');
+        
+        // Atmosphere visibility depends on atmospheric button state
+        const btnAtmo = document.getElementById('btn-atmosphere');
+        if (atmosphere && (!btnAtmo || btnAtmo.classList.contains('active'))) {
+            atmosphere.forEach(m => m.visible = true);
+        }
+    }
+    
+    // Maintain visual boost synchronicity across mode switches
+    if (typeof window.applyVisualBoostState === 'function') {
+        window.applyVisualBoostState();
+    }
+}
+
 
 // ── POPULATE LOGS MODAL ───────────────────────────────────────────────
 function populateLogsModal() {
@@ -759,12 +1356,12 @@ function runQuarantineSequence() {
     btn.disabled = true;
 
     const steps = [
-        { delay: 0,    cls: 'warn', text: '> Initiating Quarantine Protocol…' },
-        { delay: 600,  cls: 'ok',   text: '  [OK] Isolating Node G-14 from Sector G mesh…' },
-        { delay: 1300, cls: 'ok',   text: '  [OK] Neural pathway override: CMDR-77X applied.' },
+        { delay: 0, cls: 'warn', text: '> Initiating Quarantine Protocol…' },
+        { delay: 600, cls: 'ok', text: '  [OK] Isolating Node G-14 from Sector G mesh…' },
+        { delay: 1300, cls: 'ok', text: '  [OK] Neural pathway override: CMDR-77X applied.' },
         { delay: 2100, cls: 'warn', text: '  [~]  Scrubbing exfil packet queue…' },
-        { delay: 3000, cls: 'ok',   text: '  [OK] 847 anomalous packets discarded.' },
-        { delay: 3800, cls: 'ok',   text: '  [OK] Node G-14 sealed in sandbox layer.' },
+        { delay: 3000, cls: 'ok', text: '  [OK] 847 anomalous packets discarded.' },
+        { delay: 3800, cls: 'ok', text: '  [OK] Node G-14 sealed in sandbox layer.' },
         { delay: 4600, cls: 'done', text: '  ✓ QUARANTINE COMPLETE — Sector G integrity restored.' },
     ];
 
@@ -1113,13 +1710,13 @@ function initAnomalyScanner() {
     if (!resultEl) return;
 
     const states = [
-        { text: 'SCANNING…',      cls: '' },
-        { text: 'SCANNING…',      cls: '' },
-        { text: 'SCANNING…',      cls: '' },
-        { text: 'NO ANOMALY',     cls: '' },
-        { text: 'SCANNING…',      cls: '' },
+        { text: 'SCANNING…', cls: '' },
+        { text: 'SCANNING…', cls: '' },
+        { text: 'SCANNING…', cls: '' },
+        { text: 'NO ANOMALY', cls: '' },
+        { text: 'SCANNING…', cls: '' },
         { text: 'VARIANCE +2.1%', cls: '' },
-        { text: 'SCANNING…',      cls: '' },
+        { text: 'SCANNING…', cls: '' },
     ];
 
     let idx = 0;
@@ -1177,13 +1774,13 @@ function renderSectorFlow() {
     const ctx = canvas.getContext('2d');
     const w = canvas.width;
     const h = canvas.height;
-    ctx.clearRect(0,0,w,h);
+    ctx.clearRect(0, 0, w, h);
     ctx.strokeStyle = '#00f0ff';
     ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.moveTo(0, h/2);
-    for(let i=0; i<w; i+=10) {
-        ctx.lineTo(i, h/2 + Math.sin(i/20 + Date.now()/500) * 15);
+    ctx.moveTo(0, h / 2);
+    for (let i = 0; i < w; i += 10) {
+        ctx.lineTo(i, h / 2 + Math.sin(i / 20 + Date.now() / 500) * 15);
     }
     ctx.stroke();
     requestAnimationFrame(renderSectorFlow);
@@ -1236,7 +1833,7 @@ function renderThreatVectors() {
     const map = document.getElementById('threat-vector-map');
     if (!map || !window.THREAT_VECTOR_DATA) return;
     let dots = '';
-    for(let i=0; i<60; i++) {
+    for (let i = 0; i < 60; i++) {
         const isAlert = window.THREAT_VECTOR_DATA.some(v => v.id === i && v.alert);
         dots += `<div class="vector-dot ${isAlert ? 'alert' : ''}"></div>`;
     }
@@ -1285,17 +1882,17 @@ function renderMemoryMatrix() {
 function renderSignalInterference() {
     const val = document.getElementById('noise-value');
     if (val) val.textContent = (Math.random() * 5).toFixed(1) + '%';
-    
+
     const canvas = document.getElementById('noise-canvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     const w = canvas.width;
     const h = canvas.height;
     ctx.fillStyle = 'rgba(0,0,0,0.1)';
-    ctx.fillRect(0,0,w,h);
+    ctx.fillRect(0, 0, w, h);
     ctx.fillStyle = '#facc15';
-    for(let i=0; i<50; i++) {
-        ctx.fillRect(Math.random()*w, Math.random()*h, 1, 1);
+    for (let i = 0; i < 50; i++) {
+        ctx.fillRect(Math.random() * w, Math.random() * h, 1, 1);
     }
     setTimeout(renderSignalInterference, 100);
 }
