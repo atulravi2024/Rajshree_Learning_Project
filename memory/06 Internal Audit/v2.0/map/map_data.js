@@ -204,3 +204,32 @@ window.MEMORY_MATRIX_DATA = [
     0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1,
     1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1
 ];
+
+// ── LEVEL OF DETAIL (LOD) DATA ────────────────────────
+// Mid-level zoom labels (Regions)
+window.REGION_LABELS = [
+    { id: 'R-NA', lat: 45, lon: -100, label: 'SECTOR-ALPHA (NA)', type: 'region' },
+    { id: 'R-SA', lat: -15, lon: -60, label: 'SECTOR-BETA (SA)', type: 'region' },
+    { id: 'R-EU', lat: 50, lon: 15, label: 'SECTOR-GAMMA (EU)', type: 'region' },
+    { id: 'R-AS', lat: 35, lon: 90, label: 'SECTOR-DELTA (AS)', type: 'region' },
+    { id: 'R-AF', lat: 5, lon: 20, label: 'SECTOR-EPSILON (AF)', type: 'region' },
+    { id: 'R-OC', lat: -25, lon: 135, label: 'SECTOR-ZETA (OC)', type: 'region' }
+];
+
+// High-level zoom labels (Cities / Sub-Nodes)
+window.CITY_LABELS = [
+    { lat: 40.71, lon: -74.00, label: 'NY-CORE', status: 'stable' },
+    { lat: 34.05, lon: -118.24, label: 'LA-UPLINK', status: 'warning' },
+    { lat: 51.50, lon: -0.12, label: 'LDN-HUB', status: 'stable' },
+    { lat: 48.85, lon: 2.35, label: 'PAR-SYNC', status: 'stable' },
+    { lat: 35.68, lon: 139.76, label: 'TYO-DATA', status: 'critical' },
+    { lat: 1.35, lon: 103.81, label: 'SGP-ROUTER', status: 'stable' },
+    { lat: -33.86, lon: 151.20, label: 'SYD-MEM', status: 'stable' },
+    { lat: 19.07, lon: 72.87, label: 'BOM-GATE', status: 'stable' },
+    { lat: -23.55, lon: -46.63, label: 'GRU-ARCHIVE', status: 'stable' },
+    { lat: 55.75, lon: 37.61, label: 'MOW-PROXY', status: 'warning' },
+    // A little cluster around the breach point G-14 (Lat 10, Lon -20 is off west coast of Africa)
+    { lat: 12.5, lon: -18.0, label: 'G14-RELAY-1', status: 'critical' },
+    { lat: 8.0, lon: -22.5, label: 'G14-RELAY-2', status: 'critical' },
+    { lat: 11.2, lon: -23.0, label: 'G14-PROXY', status: 'warning' }
+];

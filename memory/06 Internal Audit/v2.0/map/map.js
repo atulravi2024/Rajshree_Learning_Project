@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (typeof THREE !== 'undefined') {
         initGlobe();
+        if (typeof initMapModes === 'function') initMapModes();
     } else {
         console.error("Three.js is requested but not loaded.");
     }
@@ -37,7 +38,7 @@ function initGlobe() {
 
     // CAMERA
     const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.z = 260;
+    camera.position.z = 250;
 
     // RENDERER
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -386,7 +387,9 @@ function initGlobe() {
     window.controls.enableDamping = true;
     window.controls.dampingFactor = 0.05;
     window.controls.rotateSpeed = 0.8;
-    window.controls.enableZoom = false;
+    window.controls.enableZoom = true;
+    window.controls.minDistance = 50;
+    window.controls.maxDistance = 500;
     window.controls.autoRotate = true;
     window.controls.autoRotateSpeed = 0.5;
 
@@ -433,9 +436,137 @@ function initGlobe() {
 
     window.controls.addEventListener('start', () => { window.controls.autoRotate = false; });
 
+    // Sync slider with actual zoom
+    window.controls.addEventListener('change', () => {
+        const slider = document.getElementById('globe-zoom-slider');
+        if (slider && typeof window._mapTargetCameraZ !== 'number') {
+            const dist = camera.position.length();
+            const pct = 100 - ((dist - 50) / (500 - 50)) * 100;
+            slider.value = pct;
+        }
+    });
+
+    const zSlider = document.getElementById('globe-zoom-slider');
+    if (zSlider) {
+        zSlider.addEventListener('input', (e) => {
+            const pct = e.target.value;
+            const targetDist = 450 - (pct / 100) * (450 - 110);
+            window._mapTargetCameraZ = targetDist;
+        });
+    }
+
+    // ── LOD LAYERS ──────────────────────────────────────────
+    window._mapRegionGroup = new THREE.Group();
+    window._mapCityGroup = new THREE.Group();
+    globeGroup.add(window._mapRegionGroup);
+    globeGroup.add(window._mapCityGroup);
+    
+    function createTextSprite(message, color, sizeMultiplier = 1) {
+        const fontface = "Fira Code";
+        const fontsize = 32;
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.width = 512;
+        canvas.height = 128; // wider for longer labels
+        context.font = "bold " + fontsize + "px " + fontface;
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+        context.shadowColor = color;
+        context.shadowBlur = 12;
+        context.fillStyle = color;
+        context.fillText(message, canvas.width/2, canvas.height/2);
+        
+        const texture = new THREE.CanvasTexture(canvas);
+        const spriteMaterial = new THREE.SpriteMaterial({ map: texture, transparent: true, opacity: 0, depthWrite: false });
+        const sprite = new THREE.Sprite(spriteMaterial);
+        sprite.scale.set(sizeMultiplier * 48, sizeMultiplier * 12, 1);
+        return sprite;
+    }
+
+    if (window.REGION_LABELS) {
+        window.REGION_LABELS.forEach(r => {
+            const phi = (90 - r.lat) * (Math.PI / 180);
+            const theta = (r.lon + 180) * (Math.PI / 180);
+            const r_globe = 92; 
+            const x = -(r_globe * Math.sin(phi) * Math.cos(theta));
+            const z = (r_globe * Math.sin(phi) * Math.sin(theta));
+            const y = (r_globe * Math.cos(phi));
+            
+            const sprite = createTextSprite(r.label, "rgba(0, 240, 255, 0.6)", 1.2);
+            sprite.position.set(x, y, z);
+            window._mapRegionGroup.add(sprite);
+        });
+    }
+
+    if (window.CITY_LABELS) {
+        window.CITY_LABELS.forEach(c => {
+            const phi = (90 - c.lat) * (Math.PI / 180);
+            const theta = (c.lon + 180) * (Math.PI / 180);
+            const r_globe = 91.5; 
+            const x = -(r_globe * Math.sin(phi) * Math.cos(theta));
+            const z = (r_globe * Math.sin(phi) * Math.sin(theta));
+            const y = (r_globe * Math.cos(phi));
+            
+            let color = "rgba(34, 197, 94, 0.9)"; // stable
+            if (c.status === 'warning') color = "rgba(250, 204, 21, 0.9)";
+            if (c.status === 'critical') color = "rgba(255, 62, 62, 0.9)";
+            
+            const sprite = createTextSprite(c.label, color, 0.65);
+            sprite.position.set(x, y, z);
+            
+            // Add a tiny dot
+            const dotGeo = new THREE.SphereGeometry(0.6, 8, 8);
+            const dotMat = new THREE.MeshBasicMaterial({ color: color.replace('0.9)', '1)'), transparent: true, opacity: 0 });
+            const dot = new THREE.Mesh(dotGeo, dotMat);
+            dot.position.set(x * (90/91.5), y * (90/91.5), z * (90/91.5));
+            dot.userData = { isCityDot: true };
+            window._mapCityGroup.add(dot);
+            window._mapCityGroup.add(sprite);
+        });
+    }
+
+
+
+    window._mapGlobe = { globeGroup, camera, scene, renderer };
+
+    function updateLOD(dist) {
+        let regionOpacity = 0;
+        if (dist > 180) {
+            regionOpacity = Math.min(1, Math.max(0, (dist - 180) / 40));
+        }
+        
+        let cityOpacity = 0;
+        if (dist < 260 && dist > 120) {
+            cityOpacity = Math.min(1, Math.max(0, (260 - dist) / 40));
+            if (dist < 150) {
+                cityOpacity = Math.min(cityOpacity, Math.max(0, (dist - 120) / 30));
+            }
+        }
+        
+        // Force fully visible labels in Map mode
+        if (window._mapViewMode === 'map') {
+            regionOpacity = 1;
+            cityOpacity = 1;
+        }
+
+        window._mapRegionGroup.children.forEach(c => {
+            if (c.material) c.material.opacity = regionOpacity;
+        });
+        
+        window._mapCityGroup.children.forEach(c => {
+            if (c.type === 'Sprite') {
+                if (c.material) c.material.opacity = cityOpacity;
+            } else if (c.userData.isCityDot) {
+                if (c.material) c.material.opacity = cityOpacity;
+            }
+        });
+
+
+    }
+
     // ── ANIMATION LOOP ───────────────────────────────────────
     const _ringRotSpeeds = [0.002, -0.0015, 0.001];
-    const _satOrbitSpeeds = [0.005, 0.005, -0.004, -0.004];
+    const _satOrbitSpeeds = [0.005, 0.005, -0.004, -0.004, 0.003];
 
     function animate() {
         if (window.controls) window.controls.update();
@@ -451,11 +582,15 @@ function initGlobe() {
         if (typeof window._mapTargetCameraZ === 'number') {
             const currentDist = camera.position.length();
             const targetDist = window._mapTargetCameraZ;
-            if (Math.abs(currentDist - targetDist) > 0.1) {
+            if (Math.abs(currentDist - targetDist) > 0.5) {
                 const newDist = currentDist + (targetDist - currentDist) * 0.08;
                 camera.position.setLength(newDist);
+            } else {
+                window._mapTargetCameraZ = null; // Clear it to allow scroll again
             }
         }
+
+        updateLOD(camera.position.length());
 
         // Interpolate globe scale
         if (window._mapGlobe && window._mapGlobe.globeGroup) {
@@ -467,6 +602,8 @@ function initGlobe() {
                 window._mapOrbitalGroup.scale.set(newScale, newScale, newScale);
             }
         }
+
+
 
         // Rotate orbital rings independently
         if (orbitalGroup.visible) {
@@ -997,8 +1134,8 @@ function initBottomBar() {
     }
 
     // ── ZOOM CONTROLS ──
-    const ZOOM_MIN = 100; // Max zoom in (closer)
-    const ZOOM_MAX = 800; // Max zoom out (further)
+    const ZOOM_MIN = 50; // Max zoom in (closer)
+    const ZOOM_MAX = 500; // Max zoom out (further)
 
     function mapSliderToZ(val) {
         return ZOOM_MAX - (val / 100) * (ZOOM_MAX - ZOOM_MIN);
@@ -1010,7 +1147,7 @@ function initBottomBar() {
         return Math.round(p * 100);
     }
 
-    window._mapTargetCameraZ = 260; // default startup Z
+    window._mapTargetCameraZ = 250; // default startup Z (Scale 250)
     const zoomSlider = document.getElementById('globe-zoom-slider');
     if (zoomSlider) {
         zoomSlider.addEventListener('input', (e) => {
@@ -1053,7 +1190,7 @@ function initBottomBar() {
             const globe = window._mapGlobe;
             const zSlider = document.getElementById('globe-zoom-slider');
             if (globe) {
-                const targetZ = isMinimized ? 150 : 260; // 260 = default, 150 = close focus
+                const targetZ = isMinimized ? 150 : 250; // 250 = default scale, 150 = close focus
                 window._mapTargetCameraZ = targetZ;
                 if (zSlider) zSlider.value = mapZToSlider(targetZ);
             }
@@ -1201,6 +1338,16 @@ function initBottomBar() {
     // ── HISTORY BUTTON (opens audit log) ─────────────────────────────
     document.getElementById('btn-history')?.addEventListener('click', () => {
         document.getElementById('btn-view-logs')?.click();
+    });
+
+    // ── MAP MODE TOGGLE (Satellite / Atlas) ───────────────────────────
+    document.getElementById('btn-map-mode-toggle')?.addEventListener('click', () => {
+        if (typeof window.toggleGlobeMapView === 'function') window.toggleGlobeMapView();
+    });
+
+    // ── THEME TOGGLE (Light / Dark) ──────────────────────────────────
+    document.getElementById('btn-theme-toggle')?.addEventListener('click', () => {
+        if (typeof window.toggleGlobeTheme === 'function') window.toggleGlobeTheme();
     });
 
     // Default UI Brightness: Full

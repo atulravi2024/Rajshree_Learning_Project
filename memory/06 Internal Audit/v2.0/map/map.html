@@ -417,13 +417,16 @@
                 <button class="icon-btn" id="btn-deep-scan" title="Deep Scan"><i data-lucide="refresh-cw"></i></button>
                 <button class="icon-btn" id="btn-history" title="History Log"><i data-lucide="history"></i></button>
                 <button class="icon-btn" id="btn-globe-design" title="Toggle Globe Design (HF/Wireframe)"><i data-lucide="globe"></i></button>
+                <button class="icon-btn" id="btn-map-mode-toggle" title="Toggle Map/Satellite View"><i data-lucide="map"></i></button>
+                <button class="icon-btn" id="btn-theme-toggle" title="Toggle Light/Dark Theme (Globe Only)"><i data-lucide="sun"></i></button>
+
 
                 <button class="icon-btn active" id="btn-atmosphere" title="Toggle Atmospheric Glow"><i data-lucide="cloud"></i></button>
                 <button class="icon-btn active" id="btn-spotlight" title="Toggle Sunlight"><i data-lucide="flashlight"></i></button>
                 <button class="icon-btn" id="btn-visual-boost" title="Visual Boost: Enhance Globe Clarity"><i data-lucide="wand-2"></i></button>
                 <div class="brightness-slider-wrap zoom-control-wrap" title="Precision Globe Zoom">
                     <i data-lucide="zoom-out" class="icon-tiny zoom-icon-btn" id="btn-zoom-out-icon"></i>
-                    <input type="range" id="globe-zoom-slider" min="0" max="100" step="1" value="71" title="Adjust Zoom Level">
+                    <input type="range" id="globe-zoom-slider" min="0" max="100" step="1" value="56" title="Adjust Zoom Level">
                     <i data-lucide="zoom-in" class="icon-tiny text-cyan zoom-icon-btn" id="btn-zoom-in-icon"></i>
                 </div>
                 <div class="brightness-slider-wrap speed-slider-wrap">
@@ -670,6 +673,7 @@
     <script src="../shared/notifications.js"></script>
     <script src="../shared/navbar.js"></script>
     <script src="map_data.js"></script>
+    <script src="map_modes.js"></script>
     <script src="map.js"></script>
 </body>
 </html>
