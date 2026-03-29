@@ -342,18 +342,99 @@ body.holo-v2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.3rem 1.5rem 0.3rem 0;
     background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     border-top: 1px solid var(--glass-border);
-    height: 70px;
+    height: 50px;
     z-index: 10;
 }
 
-.bottom-left-icons {
+.bottom-left-icons,
+.bottom-right-icons {
     display: flex;
-    gap: 1rem;
+    gap: 0;
     width: auto;
+    align-items: flex-end;
 }
+
+/* ── GLOBAL SEARCH (CLEAN MODE) ── */
+.bottom-center-search {
+    flex-grow: 1;
+    display: none;
+    align-items: center;
+    background: rgba(0, 240, 255, 0.05);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    border-radius: 8px;
+    padding: 0 0.8rem;
+    height: 32px;
+    margin: 0 2rem;
+    opacity: 0;
+}
+
+.bottom-center-search.active {
+    display: flex;
+    opacity: 1;
+    animation: searchSlideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes searchSlideIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.bottom-center-search .search-icon {
+    width: 14px;
+    height: 14px;
+    color: var(--theme-accent);
+    margin-right: 0.5rem;
+}
+
+.bottom-center-search input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-bright);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.bottom-center-search input::placeholder {
+    color: rgba(0, 240, 255, 0.4);
+}
+
+.navbar-category {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+}
+
+.category-label {
+    font-size: 0.6rem;
+    font-family: var(--font-mono);
+    color: var(--text-dim);
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.category-icons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.nav-separator {
+    width: 1px;
+    height: 24px;
+    background: linear-gradient(to bottom, transparent, var(--glass-border) 50%, transparent);
+    margin: 0;
+    align-self: center;
+    opacity: 0.6;
+}
+
 .icon-btn {
     background: rgba(255,255,255,0.05);
     border: 1px solid var(--glass-border);
@@ -389,10 +470,10 @@ body.holo-v2 {
     display: flex;
     gap: 0.5rem;
     width: auto;
-    justify-content: flex-end;
+    align-items: center;
 }
 .nav-tab {
-    background: transparent;
+    background: rgba(255,255,255,0.03);
     border: 1px solid var(--glass-border);
     color: var(--text-mid);
     padding: 0.5rem 1.2rem;
@@ -1273,44 +1354,10 @@ body.holo-v2.theme-amber {
     background: rgba(255,255,255,0.05); /* Restore base styles since parent wrap is gone */
     border: 1px solid var(--glass-border);
     border-radius: 6px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    color: var(--text-dim);
 }
-#sat-speed-slider {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 45px;
-    height: 2px;
-    background: var(--glass-border);
-    outline: none;
-}
-#sat-speed-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--theme-accent);
-    cursor: pointer;
-    box-shadow: 0 0 8px var(--theme-accent-glow);
-}
+/* ── SECTION COLLAPSE INTERACTION ── */
 
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-2px); }
-    75% { transform: translateX(2px); }
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
-}
-
-/* ─────────────────────────────────────────────────
-   UI MINIMIZATION (Clean Mode)
-───────────────────────────────────────────────── */
+/* ── UI MINIMIZATION (Clean Mode) ── */
 body.ui-minimized .holo-sidebar {
     transform: translateX(var(--sidebar-dir, -100%));
     opacity: 0;
@@ -1322,61 +1369,119 @@ body.ui-minimized .right-sidebar { --sidebar-dir: 100%; }
 body.ui-minimized .holo-main-layout {
     grid-template-columns: 1fr;
     padding: 0;
-    gap: 0;
 }
 
 body.ui-minimized .holo-map-viewport {
     border-radius: 0;
 }
 
-/* Collapse bottom bar entirely */
+/* Collapse bottom bar height */
 body.ui-minimized .holo-bottom-bar {
     height: 0 !important;
     padding: 0 !important;
     border-top-color: transparent;
-    overflow: visible; /* Allow toggle button to poke out */
+    overflow: visible; /* Let eye icon poke out */
     pointer-events: none;
 }
 
 body.ui-minimized .holo-bottom-bar > *:not(.bottom-left-icons) {
     opacity: 0;
     pointer-events: none;
-    transform: translateY(20px);
 }
 
 body.ui-minimized .bottom-left-icons {
     position: fixed;
-    bottom: 16px;
-    left: 16px;
+    bottom: 15px;
+    left: 15px;
     z-index: 100;
     pointer-events: auto;
 }
 
-body.ui-minimized .bottom-left-icons > *:not(#btn-ui-toggle) {
+body.ui-minimized .bottom-left-icons .navbar-category[data-cat="sys-ui"] .category-label {
     opacity: 0;
-    pointer-events: none;
-    transform: translateX(-20px);
+    height: 0;
 }
 
 body.ui-minimized #btn-ui-toggle {
-    pointer-events: auto;
-    opacity: 1;
     background: rgba(var(--accent-rgb), 0.15);
     border-color: var(--theme-accent);
     box-shadow: 0 0 15px var(--theme-accent-glow);
     transform: scale(1.1);
 }
 
-/* Smooth transitions */
-
-.holo-sidebar,
-.holo-main-layout,
-.holo-map-viewport,
-.holo-bottom-bar,
-.holo-bottom-bar > *,
-.bottom-left-icons > * {
+/* Transitions */
+.holo-sidebar, .holo-bottom-bar, .holo-bottom-bar > *, #btn-ui-toggle {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
+/* ── SECTION COLLAPSE INTERACTION ── */
+.navbar-category {
+    position: relative;
+    cursor: pointer;
+    padding: 0.2rem 0.8rem;
+    border-radius: 8px;
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-category:hover {
+    background: rgba(var(--accent-rgb), 0.05);
+    border-color: rgba(var(--accent-rgb), 0.15);
+}
+
+/* Expanded state (default) -> hide label */
+.navbar-category:not(.section-collapsed) .category-label {
+    display: none;
+}
+
+/* Collapsed state */
+.navbar-category.section-collapsed {
+    padding: 0.2rem 1.2rem;
+    background: rgba(0,0,0,0.2);
+    border-color: rgba(255,255,255,0.05);
+    opacity: 0.7;
+}
+
+.navbar-category.section-collapsed:hover {
+    opacity: 1;
+    background: rgba(var(--accent-rgb), 0.08);
+    border-color: var(--glass-border);
+}
+
+/* In collapsed state, hide icons/tabs and show label */
+.navbar-category.section-collapsed .category-icons,
+.navbar-category.section-collapsed .bottom-tabs {
+    display: none !important;
+}
+
+.navbar-category.section-collapsed .category-label {
+    display: block;
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.65rem;
+}
+
+.navbar-category.section-collapsed:hover .category-label {
+    color: var(--theme-accent);
+}
+
+.category-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Ensure buttons inside don't look like the whole row is being clicked */
+.navbar-category .icon-btn, 
+.navbar-category .nav-tab {
+    position: relative;
+    z-index: 2;
+}
+
 
 
 

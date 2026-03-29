@@ -11,6 +11,8 @@ window.mouse = new THREE.Vector2();
 window._pointerStart = { x: 0, y: 0 };
 window._mapGlobeDesign = 'high-fidelity';
 
+// Global coordinate settings moved to map_locations.js
+
 
 document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initRealDataFeeds();
     initCardCollapsibility();
     initBottomBar();
+    initGlobalSearch();
 });
 
 function initGlobe() {
@@ -1728,6 +1731,100 @@ function gsap_like_rotate(obj, targetY, durationMs) {
     step();
 }
 
+/**
+ * Public function to smoothly rotate the globe to specific lat/lon coordinates.
+ */
+window.rotateGlobeToCoords = function(lat, lon) {
+    if (!window._mapGlobe || !window._mapGlobe.globeGroup) return;
+    
+    // Convert to radians and compensate for initial mesh orientation
+    const targetY = -(lon + 90) * (Math.PI / 180);
+    const targetX = (lat) * (Math.PI / 180);
+    
+    const globe = window._mapGlobe.globeGroup;
+    globe.rotation.x = targetX; // Direct tilt
+    gsap_like_rotate(globe, targetY, 1500); // Smooth spin on Y
+    
+    // If user rotated camera, swing it back to the Z-axis (front) so the target aligns perfectly
+    if (window.controls && typeof window.THREE !== 'undefined') {
+        const camera = window.controls.object;
+        const startPos = camera.position.clone();
+        const currentDist = startPos.length();
+        const targetPos = new THREE.Vector3(0, 0, currentDist);
+
+        const startTime = Date.now();
+        function cameraStep() {
+            const t = Math.min(1, (Date.now() - startTime) / 1200);
+            const ease = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+            camera.position.copy(startPos).lerp(targetPos, ease).setLength(currentDist);
+            window.controls.update();
+            if (t < 1) requestAnimationFrame(cameraStep);
+        }
+        cameraStep();
+    }
+    
+    if (window.playSound) window.playSound('UI_GENERIC_TAP');
+};
+
+// ═══════════════════════════════════════════════════════
+// MAP SEARCH INTERACTION
+// ═══════════════════════════════════════════════════════
+
+function initGlobalSearch() {
+    const searchContainer = document.getElementById('global-search-container');
+    const searchInput = document.getElementById('map-search-input');
+    const searchIcon = searchContainer ? searchContainer.querySelector('.search-icon') : null;
+
+    if (!searchInput || !searchContainer) return;
+
+    function executeSearch() {
+        const query = searchInput.value.trim().toLowerCase();
+        if (!query) return;
+
+        // Try exact match first
+        let coords = window.LOCATION_COORDS[query];
+
+        // If no exact match, try broad substring match
+        if (!coords) {
+            const keys = Object.keys(window.LOCATION_COORDS);
+            const foundKey = keys.find(k => k.includes(query) || query.includes(k));
+            if (foundKey) {
+                coords = window.LOCATION_COORDS[foundKey];
+            }
+        }
+
+        if (coords) {
+            // Found location: rotate globe
+            window.rotateGlobeToCoords(coords.lat, coords.lon);
+            searchInput.style.color = '#22c55e'; // Temporal success green
+            setTimeout(() => { searchInput.style.color = ''; }, 1000);
+        } else {
+            // Failed match: Flash red
+            searchInput.style.transition = 'color 0.2s';
+            searchInput.style.color = '#ff3e3e';
+            searchContainer.style.transform = 'translateX(10px)';
+            setTimeout(() => searchContainer.style.transform = 'translateX(-10px)', 50);
+            setTimeout(() => searchContainer.style.transform = 'translateX(10px)', 100);
+            setTimeout(() => {
+                searchContainer.style.transform = 'none';
+                searchInput.style.color = '';
+            }, 150);
+            if (window.playSound) window.playSound('UI_ERROR');
+        }
+    }
+
+    searchInput.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') {
+            executeSearch();
+        }
+    });
+
+    if (searchIcon) {
+        searchIcon.style.cursor = 'pointer';
+        searchIcon.addEventListener('click', executeSearch);
+    }
+}
+
 // ═══════════════════════════════════════════════════════
 // PHASE-2 WIDGET RENDERERS
 // ═══════════════════════════════════════════════════════
@@ -2044,3 +2141,120 @@ function renderSignalInterference() {
     setTimeout(renderSignalInterference, 100);
 }
 
+
+// ─────────────────────────────────────────────────
+// SECTION COLLAPSE LOGIC (Refined)
+// ─────────────────────────────────────────────────
+
+/**
+ * Checks if all sections are collapsed. If so, shows the global search bar.
+ */
+function checkGlobalSearchVisibility() {
+    const categories = document.querySelectorAll('.navbar-category');
+    let expandedCount = 0;
+    categories.forEach(cat => {
+        if (!cat.classList.contains('section-collapsed')) {
+            expandedCount++;
+        }
+    });
+
+    const searchContainer = document.getElementById('global-search-container');
+    if (searchContainer) {
+        if (expandedCount === 0) {
+            searchContainer.classList.add('active');
+        } else {
+            searchContainer.classList.remove('active');
+        }
+    }
+}
+
+/**
+ * Toggle collapsed state of a specific bottom bar category
+ */
+window.toggleSectionCollapse = function(catId) {
+    const section = document.querySelector(`.navbar-category[data-cat="${catId}"]`);
+    if (!section) return;
+
+    section.classList.toggle('section-collapsed');
+    
+    checkGlobalSearchVisibility();
+    
+    if (window.playSound) window.playSound('UI_GENERIC_TAP');
+};
+
+/**
+ * Toggle all navigation categories at once (master toggle)
+ */
+function toggleAllNavSections() {
+    const categories = document.querySelectorAll('.navbar-category');
+    
+    let expandedCount = 0;
+    categories.forEach(cat => {
+        if (!cat.classList.contains('section-collapsed')) {
+            expandedCount++;
+        }
+    });
+
+    // If more than 1 section is expanded, the user intent is "Collapse All".
+    // If only 1 section is expanded (e.g., they manually opened SYS.UI to see the button),
+    // the user intent is "Expand All".
+    const shouldCollapse = expandedCount > 1;
+
+    categories.forEach(cat => {
+        if (shouldCollapse) {
+            cat.classList.add('section-collapsed');
+        } else {
+            cat.classList.remove('section-collapsed');
+        }
+    });
+
+    checkGlobalSearchVisibility();
+
+    if (window.playSound) window.playSound('UI_GENERIC_TAP');
+}
+
+/**
+ * Initialize the click-to-collapse behavior on all nav categories
+ */
+function initNavCollapsing() {
+    const categories = document.querySelectorAll('.navbar-category');
+    const masterBtn = document.getElementById('btn-nav-toggle-all');
+
+    if (masterBtn) {
+        masterBtn.onclick = (e) => {
+            e.stopPropagation();
+            toggleAllNavSections();
+        };
+    }
+
+    categories.forEach(cat => {
+        cat.addEventListener('click', (e) => {
+            // If the user clicked a button or interactive element inside, don't collapse
+            if (e.target.closest('.icon-btn, .nav-tab, input, button, a')) {
+                return;
+            }
+
+            const catId = cat.getAttribute('data-cat');
+            toggleSectionCollapse(catId);
+        });
+
+        // Add explicit click listener to the label for clarity
+        const label = cat.querySelector('.category-label');
+        if (label) {
+            label.style.cursor = 'pointer';
+            label.addEventListener('click', (e) => {
+                e.stopPropagation(); 
+                const catId = cat.getAttribute('data-cat');
+                toggleSectionCollapse(catId);
+            });
+        }
+    });
+
+    // Initial check for search bar visibility
+    checkGlobalSearchVisibility();
+}
+
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+    initNavCollapsing();
+});
