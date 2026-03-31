@@ -123,7 +123,7 @@ function initMapElements(globeGroup, camera) {
 /**
  * HIGH-VISIBILITY PATHFINDING
  */
-function drawQuantumPath(coordsFrom, coordsTo) {
+async function drawQuantumPath(coordsFrom, coordsTo) {
     if (!window._mapGlobe || !window._mapGlobe.globeGroup) return;
     const { globeGroup, camera } = window._mapGlobe;
     
@@ -187,19 +187,8 @@ function drawQuantumPath(coordsFrom, coordsTo) {
     });
     const glowLine = new THREE.Line(geometry, glowLineMat);
     
-    const pGeo = new THREE.SphereGeometry(2.0, 12, 12);
-    const pMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 1.0 });
-    const particle = new THREE.Mesh(pGeo, pMat);
-    
-    const pGlow = new THREE.Sprite(new THREE.SpriteMaterial({
-        map: createGlowTexture(0x00f0ff),
-        color: 0x00f0ff,
-        transparent: true,
-        opacity: 0.8,
-        blending: THREE.AdditiveBlending
-    }));
-    pGlow.scale.set(25, 25, 1);
-    particle.add(pGlow);
+    // Create particle using helper
+    const particle = await createPathParticle();
     
     const pathGroup = new THREE.Group();
     pathGroup.add(line);
@@ -215,10 +204,113 @@ function drawQuantumPath(coordsFrom, coordsTo) {
         if (progress > 1) progress = 0;
         
         const pos = curve.getPoint(progress);
-        particle.position.copy(pos);
+        const p = pathGroup.children.find(c => c.userData.isPathParticle);
+        if (p) {
+            p.position.copy(pos);
+            
+            // Dynamic rotation for vehicle pointers using real-time screen-space tangents
+            if (camera && window.SELECTED_POINTER_ICON && window.SELECTED_POINTER_ICON !== 'circle') {
+                const limit = Math.min(progress + 0.01, 1.0);
+                if (limit > progress) {
+                    const nextPos = curve.getPoint(limit);
+                    const vec1 = pos.clone().project(camera);
+                    const vec2 = nextPos.clone().project(camera);
+                    
+                    const dx = vec2.x - vec1.x;
+                    const dy = vec2.y - vec1.y;
+                    
+                    // Lucide transport icons typically point Top-Right by default (45 deg angle)
+                    // Subtract Math.PI / 4 to align the nose of the icon with the travel vector
+                    const angle = Math.atan2(dy, dx) - (Math.PI / 4);
+                    
+                    p.children.forEach(child => {
+                        if (child.isSprite && child.material) {
+                            child.material.rotation = angle;
+                        }
+                    });
+                }
+            }
+        }
+
         material.dashOffset -= 0.25;
-        
         window._pathAnimId = requestAnimationFrame(animatePath);
     };
     animatePath();
+}
+
+/**
+ * Creates the animated particle based on selection
+ */
+async function createPathParticle() {
+    let particle;
+    const mode = (window.TRAVEL_MODES || []).find(m => m.id === window.SELECTED_POINTER_ICON);
+    const iconName = mode ? mode.icon : 'navigation';
+
+    if (!window.SELECTED_POINTER_ICON || window.SELECTED_POINTER_ICON === 'circle') {
+        particle = createDefaultSphere();
+    } else {
+        // Safe texture fetch
+        const tex = window.createIconTexture ? await window.createIconTexture(iconName) : null;
+        
+        if (tex) {
+            particle = new THREE.Group();
+            const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
+                map: tex,
+                transparent: true,
+                opacity: 1.0,
+                blending: THREE.AdditiveBlending
+            }));
+            sprite.scale.set(16, 16, 1);
+            particle.add(sprite);
+        } else {
+            console.log('Falling back to default dot pointer...');
+            particle = createDefaultSphere();
+        }
+    }
+    particle.userData.isPathParticle = true;
+    return particle;
+}
+
+/**
+ * Fallback particle generator
+ */
+function createDefaultSphere() {
+    const pGeo = new THREE.SphereGeometry(2.0, 12, 12);
+    const pMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 1.0 });
+    const mesh = new THREE.Mesh(pGeo, pMat);
+    
+    const pGlow = new THREE.Sprite(new THREE.SpriteMaterial({
+        map: createGlowTexture(0x00f0ff),
+        color: 0x00f0ff,
+        transparent: true,
+        opacity: 0.8,
+        blending: THREE.AdditiveBlending
+    }));
+    pGlow.scale.set(25, 25, 1);
+    mesh.add(pGlow);
+    return mesh;
+}
+
+/**
+ * Updates the active pointer on the fly with Atomic Swap
+ */
+async function updateCurrentPathPointer() {
+    if (!window._currentPathObj) return;
+    const pathGroup = window._currentPathObj;
+    const oldP = pathGroup.children.find(c => c.userData.isPathParticle);
+    
+    // ATOMIC SWAP: Load new first to prevent "hidden" state
+    const newP = await createPathParticle();
+    
+    if (oldP) {
+        newP.position.copy(oldP.position);
+        pathGroup.remove(oldP);
+        
+        // Clean memory
+        oldP.traverse(child => {
+            if (child.geometry) child.geometry.dispose();
+            if (child.material) child.material.dispose();
+        });
+    }
+    pathGroup.add(newP);
 }

@@ -420,6 +420,23 @@
                     </div>
                 </div>
 
+                <div class="nav-separator" id="search-cfg-separator"></div>
+
+                <div class="navbar-category hidden" data-cat="search-settings" id="search-settings-section">
+                    <span class="category-label">SEARCH.CFG</span>
+                    <div class="category-icons">
+                        <button class="icon-btn active" id="btn-suggestion-toggle" title="Toggle Search Suggestions">
+                            <i data-lucide="settings-2"></i>
+                        </button>
+                        <div class="pointer-selector-wrap">
+                            <button class="icon-btn" id="btn-pointer-selector" title="Change Pointer Mode">
+                                <i data-lucide="navigation"></i>
+                            </button>
+                            <div class="pointer-menu" id="map-pointer-menu"></div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="nav-separator"></div>
 
                 <div class="navbar-category" data-cat="vis-proto">
@@ -479,7 +496,7 @@
                     <i data-lucide="map-pin" class="search-icon text-cyan"></i>
                     <input type="text" id="map-search-from" placeholder="FROM: STARTING POINT..." autocomplete="off" value="Delhi">
                 </div>
-                <div class="search-divider">
+                <div class="search-divider" id="btn-swap-locations" title="Swap Start and Destination">
                     <i data-lucide="arrow-right-left" class="swap-icon"></i>
                 </div>
                 <div class="search-field to-field">
@@ -489,6 +506,8 @@
                 <button class="search-go-btn" id="btn-run-search" title="INITIATE QUANTUM SEARCH">
                     <i data-lucide="search"></i>
                 </button>
+                <!-- Holographic Drop-up Suggestions -->
+                <div class="suggestions-container" id="map-search-suggestions"></div>
             </div>
 
             <div class="bottom-right-icons">
