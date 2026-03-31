@@ -10,6 +10,8 @@ window.raycaster = new THREE.Raycaster();
 window.mouse = new THREE.Vector2();
 window._pointerStart = { x: 0, y: 0 };
 window._mapGlobeDesign = 'high-fidelity';
+window._manualSearchToggle = false; // Track manual search bar visibility
+
 
 // Global coordinate settings moved to map_locations.js
 
@@ -1189,6 +1191,8 @@ function initBottomBar() {
                 lucide.createIcons();
             }
 
+            // [REMOVED] force-collapse (Handled by aggressive CSS rules)
+
             // Update zoom target directly (animate loop will handle tweening)
             const globe = window._mapGlobe;
             const zSlider = document.getElementById('globe-zoom-slider');
@@ -2150,20 +2154,33 @@ function renderSignalInterference() {
  * Checks if all sections are collapsed. If so, shows the global search bar.
  */
 function checkGlobalSearchVisibility() {
-    const categories = document.querySelectorAll('.navbar-category');
-    let expandedCount = 0;
-    categories.forEach(cat => {
-        if (!cat.classList.contains('section-collapsed')) {
-            expandedCount++;
-        }
-    });
-
     const searchContainer = document.getElementById('global-search-container');
+    const allCategories = document.querySelectorAll('.navbar-category');
+    const allSeparators = document.querySelectorAll('.nav-separator');
+
     if (searchContainer) {
-        if (expandedCount === 0) {
+        if (window._manualSearchToggle) {
             searchContainer.classList.add('active');
+            // Exclusive Mode: Hide other categories and separators
+            allCategories.forEach(cat => {
+                if (cat.getAttribute('data-cat') !== 'sys-ui') {
+                    cat.classList.add('hidden');
+                }
+            });
+            allSeparators.forEach(sep => sep.classList.add('hidden'));
+
+            // Refinement: Inside SYS.UI, hide the eye toggle to show ONLY search icon
+            const eyeBtn = document.getElementById('btn-ui-toggle');
+            if (eyeBtn) eyeBtn.classList.add('hidden');
         } else {
             searchContainer.classList.remove('active');
+            // Restore all sectors
+            allCategories.forEach(cat => cat.classList.remove('hidden'));
+            allSeparators.forEach(sep => sep.classList.remove('hidden'));
+
+            // Restore Eye button
+            const eyeBtn = document.getElementById('btn-ui-toggle');
+            if (eyeBtn) eyeBtn.classList.remove('hidden');
         }
     }
 }
@@ -2176,6 +2193,26 @@ window.toggleSectionCollapse = function(catId) {
     if (!section) return;
 
     section.classList.toggle('section-collapsed');
+    const isClosing = section.classList.contains('section-collapsed');
+
+    // MASTER TOGGLE LOGIC: If SYS.UI is toggled, it acts as a master switch
+    if (catId === 'sys-ui') {
+        const allCategories = document.querySelectorAll('.navbar-category');
+        allCategories.forEach(cat => {
+            const thisCatId = cat.getAttribute('data-cat');
+            if (thisCatId !== 'sys-ui') {
+                if (isClosing) {
+                    // FORCE COLLAPSE ALL including map-modes
+                    cat.classList.add('section-collapsed');
+                } else {
+                    // RESTORE ALL EXCEPT map-modes
+                    if (thisCatId !== 'map-modes') {
+                        cat.classList.remove('section-collapsed');
+                    }
+                }
+            }
+        });
+    }
     
     checkGlobalSearchVisibility();
     
@@ -2185,29 +2222,11 @@ window.toggleSectionCollapse = function(catId) {
 /**
  * Toggle all navigation categories at once (master toggle)
  */
-function toggleAllNavSections() {
-    const categories = document.querySelectorAll('.navbar-category');
-    
-    let expandedCount = 0;
-    categories.forEach(cat => {
-        if (!cat.classList.contains('section-collapsed')) {
-            expandedCount++;
-        }
-    });
-
-    // If more than 1 section is expanded, the user intent is "Collapse All".
-    // If only 1 section is expanded (e.g., they manually opened SYS.UI to see the button),
-    // the user intent is "Expand All".
-    const shouldCollapse = expandedCount > 1;
-
-    categories.forEach(cat => {
-        if (shouldCollapse) {
-            cat.classList.add('section-collapsed');
-        } else {
-            cat.classList.remove('section-collapsed');
-        }
-    });
-
+/**
+ * Toggle Global Search Bar visibility
+ */
+function toggleGlobalSearch() {
+    window._manualSearchToggle = !window._manualSearchToggle;
     checkGlobalSearchVisibility();
 
     if (window.playSound) window.playSound('UI_GENERIC_TAP');
@@ -2223,7 +2242,7 @@ function initNavCollapsing() {
     if (masterBtn) {
         masterBtn.onclick = (e) => {
             e.stopPropagation();
-            toggleAllNavSections();
+            toggleGlobalSearch();
         };
     }
 

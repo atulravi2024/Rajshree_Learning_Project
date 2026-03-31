@@ -1385,8 +1385,7 @@ body.ui-minimized .holo-bottom-bar {
 }
 
 body.ui-minimized .holo-bottom-bar > *:not(.bottom-left-icons) {
-    opacity: 0;
-    pointer-events: none;
+    display: none !important;
 }
 
 body.ui-minimized .bottom-left-icons {
@@ -1397,9 +1396,23 @@ body.ui-minimized .bottom-left-icons {
     pointer-events: auto;
 }
 
-body.ui-minimized .bottom-left-icons .navbar-category[data-cat="sys-ui"] .category-label {
-    opacity: 0;
-    height: 0;
+/* Aggressively hide ALL other categories and separators inside the icon bar */
+body.ui-minimized .bottom-left-icons > *:not(.navbar-category[data-cat="sys-ui"]) {
+    display: none !important;
+}
+
+/* Hide everything in SYS.UI except the toggle button itself */
+body.ui-minimized .navbar-category[data-cat="sys-ui"] .category-label,
+body.ui-minimized .navbar-category[data-cat="sys-ui"] .category-icons > *:not(#btn-ui-toggle) {
+    display: none !important;
+}
+
+/* Clean up the box styling to make the eye button looked standalone */
+body.ui-minimized .navbar-category[data-cat="sys-ui"] {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
 }
 
 body.ui-minimized #btn-ui-toggle {
