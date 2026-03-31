@@ -1,0 +1,97 @@
+/* ── CRT SCANLINES & GRADIENTS ── */
+.holo-app-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes pulseRed {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; filter: drop-shadow(0 0 8px red); }
+    100% { opacity: 0.4; }
+}
+
+@keyframes dashFill {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    75% { transform: translateX(-4px); }
+}
+
+@keyframes buttonPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7); }
+    50% { transform: scale(1.1); box-shadow: 0 0 20px 10px rgba(0, 240, 255, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 240, 255, 0); }
+}
+
+@keyframes searchSlideIn {
+    0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes beamSweep {
+    0%   { left: -4px;   opacity: 1; }
+    45%  { left: calc(100% + 4px); opacity: 1; }
+    50%  { left: calc(100% + 4px); opacity: 0; }
+    51%  { left: -4px;   opacity: 0; }
+    55%  { opacity: 1; }
+    100% { left: -4px;   opacity: 1; }
+}
+
+@keyframes scanFlash {
+    0%   { box-shadow: 0 0 0 rgba(0,240,255,0); }
+    40%  { box-shadow: 0 0 20px rgba(0,240,255,0.6); border-color: rgba(0,240,255,0.85); }
+    100% { box-shadow: 0 0 0 rgba(0,240,255,0); }
+}
+
+@keyframes scanTop {
+    0%   { opacity: 0; transform: translateX(-100%); }
+    50%  { opacity: 1; }
+    100% { opacity: 0; transform: translateX(200%); }
+}
+
+/* ── LOCKDOWN & THEME STATES ── */
+body.holo-v2.lockdown-active .holo-widget { border-color: rgba(255, 62, 62, 0.45) !important; }
+body.holo-v2.lockdown-active .holo-app-container { background: radial-gradient(circle at center, #1a0202 0%, #0a0101 100%); }
+body.holo-v2.lockdown-active .holo-bottom-bar { border-top-color: rgba(255, 62, 62, 0.5); }
+
+body.holo-v2.theme-amber {
+    --accent-rgb: 251, 191, 36;
+    --theme-accent: rgb(var(--accent-rgb));
+    --bg-void: #0c0900;
+}
+
+/* ── VISUAL BOOST MODES ── */
+body.visual-boost-hf #threejs-container canvas {
+    filter: brightness(1.15) contrast(1.08) saturate(1.15);
+}
+body.visual-boost-wire #threejs-container canvas {
+    filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.5)) contrast(1.3);
+}
+
+/* ── SIGNAL INTERFERENCE ── */
+#noise-canvas { width: 100%; height: 100%; opacity: 0.4; }
+.scanning-flash { animation: scanFlash 0.7s ease forwards; }
+.scanner-beam {
+    position: absolute;
+    top: 0; left: -4px;
+    width: 4px; height: 100%;
+    background: linear-gradient(180deg, transparent, var(--theme-accent), transparent);
+    box-shadow: 0 0 12px var(--theme-accent);
+    animation: beamSweep 2.4s linear infinite;
+}

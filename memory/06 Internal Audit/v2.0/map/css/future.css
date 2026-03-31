@@ -1,0 +1,111 @@
+/* future.css - Advanced Holographic & Future UI Module */
+
+:root {
+    --holo-primary: #00f0ff;
+    --holo-secondary: #0088ff;
+    --holo-alert: #ff3e3e;
+    --holo-warning: #facc15;
+    --holo-success: #22c55e;
+    --holo-purple: #a78bfa;
+    --holo-bg: rgba(2, 10, 20, 0.95);
+    --holo-glass-border: rgba(0, 240, 255, 0.25);
+    --holo-text: #d8f6ff;
+    --holo-text-dim: #4a6a78;
+}
+
+/* ── ADVANCED NEURAL SCANNERS ── */
+.neural-scanner-v3 {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    background: radial-gradient(circle at center, rgba(0, 240, 255, 0.05) 0%, transparent 80%);
+    border: 1px solid var(--holo-glass-border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.scanner-wave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, var(--holo-primary), transparent 30%);
+    opacity: 0.15;
+    animation: rotateWave 4s linear infinite;
+}
+
+@keyframes rotateWave {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ── HOLOGRAPHIC TABS ── */
+.holo-tab-system {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(0,0,0,0.3);
+    border-radius: 30px;
+    border: 1px solid var(--holo-glass-border);
+}
+
+.holo-tab {
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--holo-text-dim);
+}
+
+.holo-tab:hover {
+    color: var(--holo-primary);
+    background: rgba(0, 240, 255, 0.05);
+}
+
+.holo-tab.active {
+    background: var(--holo-primary);
+    color: #010a10;
+    box-shadow: 0 0 15px var(--holo-primary);
+}
+
+/* ── DATA STREAM OVERLAYS ── */
+.data-stream-vfx {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: 
+        repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0, 240, 255, 0.03) 1px, rgba(0, 240, 255, 0.03) 2px);
+    opacity: 0.5;
+}
+
+/* ── NEXT-GEN STATUS INDICATORS ── */
+.status-pulse-v2 {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    background: rgba(0, 240, 255, 0.05);
+    border: 1px solid var(--holo-glass-border);
+}
+
+.pulse-core {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--holo-primary);
+    box-shadow: 0 0 8px var(--holo-primary);
+    animation: corePulse 1.5s infinite;
+}
+
+@keyframes corePulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}

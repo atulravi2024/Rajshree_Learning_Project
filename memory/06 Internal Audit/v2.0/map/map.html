@@ -6,6 +6,7 @@
     <title>HOLOGRAPHIC MAP // FRONTIER</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="css/future.css">
     <link rel="stylesheet" href="../shared/background.css">
     <link rel="stylesheet" href="../shared/navbar.css">
     <link rel="stylesheet" href="../shared/notifications.css">
@@ -473,9 +474,21 @@
                 </div>
             </div>
             
-            <div class="bottom-center-search" id="global-search-container">
-                <i data-lucide="search" class="search-icon"></i>
-                <input type="text" id="map-search-input" placeholder="SEARCH COUNTRY AND STATE..." autocomplete="off">
+            <div class="bottom-center-search directional-search" id="global-search-container">
+                <div class="search-field from-field">
+                    <i data-lucide="map-pin" class="search-icon text-cyan"></i>
+                    <input type="text" id="map-search-from" placeholder="FROM: STARTING POINT..." autocomplete="off" value="Delhi">
+                </div>
+                <div class="search-divider">
+                    <i data-lucide="arrow-right-left" class="swap-icon"></i>
+                </div>
+                <div class="search-field to-field">
+                    <i data-lucide="navigation" class="search-icon text-purple"></i>
+                    <input type="text" id="map-search-to" placeholder="TO: DESTINATION..." autocomplete="off" value="Mumbai">
+                </div>
+                <button class="search-go-btn" id="btn-run-search" title="INITIATE QUANTUM SEARCH">
+                    <i data-lucide="search"></i>
+                </button>
             </div>
 
             <div class="bottom-right-icons">
@@ -717,9 +730,17 @@
     <script src="../shared/settings.js"></script>
     <script src="../shared/notifications.js"></script>
     <script src="../shared/navbar.js"></script>
-    <script src="map_data.js"></script>
-    <script src="map_modes.js"></script>
-    <script src="map_locations.js"></script>
-    <script src="map.js"></script>
+    <script src="js/map_data.js"></script>
+    <script src="js/map_modes.js"></script>
+    <script src="js/map_locations.js"></script>
+    <script src="js/map_state.js"></script>
+    <script src="js/map_utils.js"></script>
+    <script src="js/map_core.js"></script>
+    <script src="js/map_elements.js"></script>
+    <script src="js/map_controls.js"></script>
+    <script src="js/map_ui.js"></script>
+    <script src="js/map_search.js"></script>
+    <script src="js/map_widgets.js"></script>
+    <script src="map_main.js"></script>
 </body>
 </html>

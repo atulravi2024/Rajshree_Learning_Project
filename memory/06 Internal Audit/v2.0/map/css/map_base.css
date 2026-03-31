@@ -1,0 +1,34 @@
+:root {
+    /* ── CORE DESIGN TOKENS ── */
+    --accent-rgb: 0, 240, 255;  /* Frontier Cyan */
+    --theme-accent: rgb(var(--accent-rgb));
+    --theme-accent-soft: rgba(var(--accent-rgb), 0.2);
+    --theme-accent-glow: rgba(var(--accent-rgb), 0.5);
+    
+    --bg-void: #010a10;
+    --bg-panel: rgba(4, 16, 24, 0.6);
+    --glass-border: rgba(var(--accent-rgb), 0.25);
+    
+    --text-bright: #d8f6ff;
+    --text-mid: #8db4c0;
+    --text-dim: #4a6a78;
+    
+    --color-red: #ff3e3e;
+    --color-orange: #f97316;
+    --color-yellow: #facc15;
+    --color-green: #22c55e;
+    --color-purple: #a78bfa;
+
+    --font-main: 'Outfit', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+}
+
+body.holo-v2 {
+    background: var(--bg-void);
+    color: var(--text-bright);
+    font-family: var(--font-main);
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,38 @@
+/* ── FRONTIER MAP RESPONSIVE OVERRIDES ── */
+
+/* 1. Large Tablets / Small Laptops */
+@media screen and (max-width: 1400px) {
+    .holo-main-layout {
+        grid-template-columns: 280px 1fr 280px;
+        gap: 1rem;
+        padding: 1rem;
+    }
+}
+
+/* 2. Tablets (Portrait) */
+@media screen and (max-width: 1024px) {
+    .holo-main-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        overflow-y: auto;
+    }
+    
+    .holo-sidebar {
+        height: auto;
+        max-height: 400px;
+    }
+}
+
+/* 3. Mobile Devices */
+@media screen and (max-width: 768px) {
+    .holo-bottom-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+    
+    .directional-search {
+        width: 100%;
+        margin: 1rem 0;
+    }
+}

@@ -1,0 +1,348 @@
+/* ── BOTTOM NAV BAR ── */
+.holo-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 1.5rem 0.3rem 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    border-top: 1px solid var(--glass-border);
+    height: 50px;
+    z-index: 10;
+}
+
+.bottom-left-icons,
+.bottom-right-icons {
+    display: flex;
+    gap: 0;
+    width: auto;
+    align-items: flex-end;
+}
+
+.bottom-center-title {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.bottom-tabs {
+    display: flex;
+    gap: 0.5rem;
+    width: auto;
+    align-items: center;
+}
+
+/* ── GLOBAL SEARCH (CLEAN MODE) ── */
+.bottom-center-search {
+    flex-grow: 1;
+    display: none;
+    align-items: center;
+    background: rgba(0, 240, 255, 0.05);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    border-radius: 8px;
+    padding: 0 0.8rem;
+    height: 32px;
+    margin: 0 2rem;
+    opacity: 0;
+}
+
+.bottom-center-search.active {
+    display: flex;
+    opacity: 1;
+}
+
+.bottom-center-search .search-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* ── DIRECTIONAL SEARCH (DUAL INPUT) ── */
+.directional-search {
+    flex-grow: 0;
+    width: 600px;
+    background: rgba(4, 16, 26, 0.7);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    box-shadow: 
+        0 0 20px rgba(0, 240, 255, 0.1),
+        inset 0 0 10px rgba(0, 240, 255, 0.05);
+    display: flex;
+    align-items: center;
+    padding: 0 0.4rem;
+    height: 42px;
+    border-radius: 12px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.search-field {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 0.8rem;
+    height: 100%;
+}
+
+.search-field input {
+    width: 100%;
+    margin-left: 0.6rem;
+    font-size: 0.65rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-bright);
+    font-family: var(--font-mono);
+    letter-spacing: 1px;
+}
+
+.search-field input::placeholder {
+    color: rgba(0, 240, 255, 0.3);
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+}
+
+.search-divider {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dim);
+    flex-shrink: 0;
+    position: relative;
+}
+
+.swap-icon {
+    width: 14px;
+    height: 14px;
+    transition: all 0.3s;
+}
+
+.search-go-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--theme-accent-soft);
+    border: 1px solid var(--theme-accent);
+    color: var(--theme-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 2px;
+    transition: all 0.3s;
+}
+
+.search-go-btn:hover {
+    background: var(--theme-accent);
+    color: var(--bg-void);
+}
+
+.search-go-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.from-field { border-right: 1px solid rgba(0, 240, 255, 0.1); }
+.to-field { border-left: 1px solid rgba(0, 240, 255, 0.1); }
+
+/* ── NAVBAR CATEGORIES & TABS ── */
+.navbar-category {
+    position: relative;
+    cursor: pointer;
+    padding: 0.2rem 0.8rem;
+    border-radius: 8px;
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-category:hover {
+    background: rgba(var(--accent-rgb), 0.05);
+    border-color: rgba(var(--accent-rgb), 0.15);
+}
+
+.category-label {
+    font-size: 0.6rem;
+    font-family: var(--font-mono);
+    color: var(--text-dim);
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.category-icons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.nav-separator {
+    width: 1px;
+    height: 24px;
+    background: linear-gradient(to bottom, transparent, var(--glass-border) 50%, transparent);
+    margin: 0;
+    align-self: center;
+    opacity: 0.6;
+}
+
+/* ── BUTTONS & TABS ── */
+.icon-btn {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-mid);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.icon-btn:hover {
+    background: var(--theme-accent-soft);
+    color: var(--theme-accent);
+}
+.icon-btn.active {
+    background: var(--theme-accent-soft);
+    color: var(--theme-accent);
+    border-color: var(--theme-accent);
+}
+
+.nav-tab {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    color: var(--text-mid);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s;
+}
+.nav-tab:hover {
+    background: rgba(255,255,255,0.05);
+    color: var(--text-bright);
+}
+.nav-tab.active {
+    background: var(--theme-accent-soft);
+    border-color: var(--theme-accent);
+    color: var(--theme-accent);
+}
+
+.nav-tab.threat-btn {
+    border-color: rgba(167, 139, 250, 0.5);
+    color: var(--color-purple);
+}
+.nav-tab.threat-btn:hover {
+    background: rgba(167, 139, 250, 0.1);
+}
+
+/* ── SECTION COLLAPSE INTERACTION ── */
+/* Expanded state (default) -> hide label */
+.navbar-category:not(.section-collapsed) .category-label {
+    display: none;
+}
+
+/* Collapsed state */
+.navbar-category.section-collapsed {
+    padding: 0.2rem 1.2rem;
+    background: rgba(0,0,0,0.2);
+    border-color: rgba(255,255,255,0.05);
+    opacity: 0.7;
+}
+
+.navbar-category.section-collapsed:hover {
+    opacity: 1;
+    background: rgba(var(--accent-rgb), 0.08);
+    border-color: var(--glass-border);
+}
+
+/* In collapsed state, hide icons/tabs and show label */
+.navbar-category.section-collapsed .category-icons,
+.navbar-category.section-collapsed .bottom-tabs {
+    display: none !important;
+}
+
+.navbar-category.section-collapsed .category-label {
+    display: block;
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.65rem;
+}
+
+.navbar-category.section-collapsed:hover .category-label {
+    color: var(--theme-accent);
+}
+
+/* ── HOLOGRAPHIC SLIDERS (Zoom & Speed) ── */
+.zoom-control-wrap, .speed-slider-wrap {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 240, 255, 0.05);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    padding: 0 12px;
+    border-radius: 30px;
+    height: 36px;
+    margin: 0 4px;
+    box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.05);
+}
+
+.holo-bottom-bar input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 90px;
+    height: 4px;
+    background: rgba(0, 240, 255, 0.2);
+    border-radius: 2px;
+    outline: none;
+    margin: 0 8px;
+    transition: background 0.3s;
+}
+
+.holo-bottom-bar input[type="range"]:hover {
+    background: rgba(0, 240, 255, 0.4);
+}
+
+.holo-bottom-bar input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--theme-accent);
+    cursor: pointer;
+    box-shadow: 0 0 8px var(--theme-accent);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.holo-bottom-bar input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 15px var(--theme-accent);
+}
+
+.holo-bottom-bar input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--theme-accent);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 8px var(--theme-accent);
+}
+
+.zoom-icon-btn {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.zoom-icon-btn:hover {
+    color: var(--theme-accent) !important;
+    filter: drop-shadow(0 0 8px var(--theme-accent));
+    transform: scale(1.15);
+}
+.zoom-icon-btn:active {
+    transform: scale(0.95);
+}
