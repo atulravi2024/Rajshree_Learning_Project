@@ -300,6 +300,14 @@
     box-shadow: inset 4px 0 0 var(--theme-accent);
 }
 
+.color-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px currentColor;
+}
+
 /* ── NAVBAR CATEGORIES & TABS ── */
 .navbar-category {
     position: relative;

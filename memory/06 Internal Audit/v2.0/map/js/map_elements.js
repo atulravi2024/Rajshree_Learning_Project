@@ -154,35 +154,75 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
     const distance = vStart.distanceTo(vEnd);
     if (distance < 2) return;
 
+    const pathType = window.SELECTED_PATH_TYPE || 'curve';
+    let curve;
     const points = [];
     const segments = 64;
-    for (let i = 0; i <= segments; i++) {
-        const t = i / segments;
-        const p = new THREE.Vector3().lerpVectors(vStart, vEnd, t);
-        const minH = 15;
-        const h = 90 + Math.max(minH, Math.sin(Math.PI * t) * (distance * 0.5 + 20));
-        p.normalize().multiplyScalar(h);
-        points.push(p);
+
+    if (pathType === 'straight') {
+        curve = new THREE.LineCurve3(vStart, vEnd);
+    } else if (pathType === 'circle') {
+        // Uniform circular arc (Orbital) - Close proximity
+        const orbitalH = 95; 
+        for (let i = 0; i <= segments; i++) {
+            const t = i / segments;
+            const p = new THREE.Vector3().lerpVectors(vStart, vEnd, t);
+            p.normalize().multiplyScalar(orbitalH);
+            points.push(p);
+        }
+        curve = new THREE.CatmullRomCurve3(points);
+    } else {
+        // High Arched Curve (Original) - Streamlined to be Near Surface
+        for (let i = 0; i <= segments; i++) {
+            const t = i / segments;
+            const p = new THREE.Vector3().lerpVectors(vStart, vEnd, t);
+            const minH = 2;
+            const h = 90 + Math.max(minH, Math.sin(Math.PI * t) * (distance * 0.06 + 3));
+            p.normalize().multiplyScalar(h);
+            points.push(p);
+        }
+        curve = new THREE.CatmullRomCurve3(points);
     }
 
-    const curve = new THREE.CatmullRomCurve3(points);
     const geometry = new THREE.BufferGeometry().setFromPoints(curve.getPoints(120));
-    const material = new THREE.LineDashedMaterial({ 
-        color: 0x00f0ff,
-        dashSize: 3,
-        gapSize: 2,
-        transparent: true,
-        opacity: 0.9,
-        blending: THREE.AdditiveBlending
-    });
+    
+    let material;
+    const style = window.SELECTED_LINE_STYLE || 'pulsed';
+    const pathColor = window.SELECTED_PATH_COLOR || 0x00f0ff;
+    let dashSpeed = 0.25;
+    
+    if (style === 'solid') {
+        material = new THREE.LineBasicMaterial({
+            color: pathColor,
+            transparent: true,
+            opacity: 0.9,
+            blending: THREE.AdditiveBlending
+        });
+    } else {
+        let d = 3, g = 2;
+        if (style === 'dotted') { d = 0.5; g = 3; dashSpeed = 0.15; }
+        else if (style === 'hyper') { d = 1.0; g = 1.5; dashSpeed = 0.5; }
+        else if (style === 'ghost') { d = 12; g = 15; dashSpeed = 0.08; }
+        else if (style === 'spike') { d = 0.2; g = 8; dashSpeed = 0.4; }
+        else if (style === 'field') { d = 25; g = 5; dashSpeed = 0.12; }
+        
+        material = new THREE.LineDashedMaterial({ 
+            color: pathColor,
+            dashSize: d,
+            gapSize: g,
+            transparent: true,
+            opacity: 0.9,
+            blending: THREE.AdditiveBlending
+        });
+    }
     
     const line = new THREE.Line(geometry, material);
-    line.computeLineDistances();
+    if (style !== 'solid') line.computeLineDistances();
     
     const glowLineMat = new THREE.LineBasicMaterial({ 
-        color: 0x00f0ff, 
+        color: pathColor, 
         transparent: true, 
-        opacity: 0.3,
+        opacity: (style === 'ghost' ? 0.15 : 0.3),
         blending: THREE.AdditiveBlending
     });
     const glowLine = new THREE.Line(geometry, glowLineMat);
@@ -232,7 +272,7 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
             }
         }
 
-        material.dashOffset -= 0.25;
+        if (style !== 'solid') material.dashOffset -= dashSpeed;
         window._pathAnimId = requestAnimationFrame(animatePath);
     };
     animatePath();
@@ -246,8 +286,10 @@ async function createPathParticle() {
     const mode = (window.TRAVEL_MODES || []).find(m => m.id === window.SELECTED_POINTER_ICON);
     const iconName = mode ? mode.icon : 'navigation';
 
+    const iconColor = window.SELECTED_POINTER_COLOR || 0x00f0ff;
+
     if (!window.SELECTED_POINTER_ICON || window.SELECTED_POINTER_ICON === 'circle') {
-        particle = createDefaultSphere();
+        particle = createDefaultSphere(iconColor);
     } else {
         // Safe texture fetch
         const tex = window.createIconTexture ? await window.createIconTexture(iconName) : null;
@@ -256,6 +298,7 @@ async function createPathParticle() {
             particle = new THREE.Group();
             const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
                 map: tex,
+                color: iconColor,
                 transparent: true,
                 opacity: 1.0,
                 blending: THREE.AdditiveBlending
@@ -264,7 +307,7 @@ async function createPathParticle() {
             particle.add(sprite);
         } else {
             console.log('Falling back to default dot pointer...');
-            particle = createDefaultSphere();
+            particle = createDefaultSphere(iconColor);
         }
     }
     particle.userData.isPathParticle = true;
@@ -274,14 +317,14 @@ async function createPathParticle() {
 /**
  * Fallback particle generator
  */
-function createDefaultSphere() {
+function createDefaultSphere(color) {
     const pGeo = new THREE.SphereGeometry(2.0, 12, 12);
     const pMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 1.0 });
     const mesh = new THREE.Mesh(pGeo, pMat);
     
     const pGlow = new THREE.Sprite(new THREE.SpriteMaterial({
-        map: createGlowTexture(0x00f0ff),
-        color: 0x00f0ff,
+        map: createGlowTexture(color),
+        color: color,
         transparent: true,
         opacity: 0.8,
         blending: THREE.AdditiveBlending
