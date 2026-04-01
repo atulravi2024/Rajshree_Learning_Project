@@ -66,6 +66,16 @@ function initGlobalSearch() {
             runBtn.style.transform = 'scale(0.9)';
             setTimeout(() => runBtn.style.transform = '', 100);
             if (window.playSound) window.playSound('UI_QUANTUM_LOCK');
+            
+            // Sync Navbar Distance Calculator
+            if (window.updateNavbarMetrics) window.updateNavbarMetrics(fromCoords, toCoords);
+
+            // AUTOMATION: Zoom to 150 on search
+            window._mapTargetCameraZ = 150;
+            const zSlider = document.getElementById('globe-zoom-slider');
+            if (zSlider && typeof mapZToSlider === 'function') {
+                zSlider.value = mapZToSlider(150);
+            }
         } else if (toCoords) {
             window.rotateGlobeToCoords(toCoords.lat, toCoords.lon);
         } else if (fromCoords) {
@@ -129,21 +139,21 @@ function initGlobalSearch() {
 
 window.SELECTED_POINTER_ICON = 'circle';
 window.TRAVEL_MODES = [
-    { id: 'circle', label: 'Default Dot', icon: 'circle' },
-    { id: 'plane', label: 'Airplane', icon: 'plane' },
-    { id: 'jet', label: 'Quantum Jet', icon: 'plane-takeoff' },
-    { id: 'rocket', label: 'Falcon Rocket', icon: 'rocket' },
-    { id: 'helicopter', label: 'Helicopter', icon: 'helicopter' },
-    { id: 'drone', label: 'Surveillance Drone', icon: 'eye' },
-    { id: 'satellite', label: 'Orbital Sat', icon: 'satellite' },
-    { id: 'train', label: 'Maglev Train', icon: 'train' },
-    { id: 'bus', label: 'Auto Bus', icon: 'bus' },
-    { id: 'car', label: 'Tactical Car', icon: 'car' },
-    { id: 'motorcycle', label: 'Quantum Bike', icon: 'bike' },
-    { id: 'bicycle', label: 'Eco Cycle', icon: 'bike' },
-    { id: 'walking', label: 'Human Trace', icon: 'footprints' },
-    { id: 'ship', label: 'Cargo Ship', icon: 'ship' },
-    { id: 'submarine', label: 'Deep Sub', icon: 'anchor' }
+    { id: 'circle', label: 'Default Dot', icon: 'circle', angleOffset: 0 },
+    { id: 'plane', label: 'Airplane', icon: 'plane', angleOffset: Math.PI / 4, flipCorrection: false },
+    { id: 'jet', label: 'Quantum Jet', icon: 'plane-takeoff', angleOffset: Math.PI / 4, flipCorrection: false },
+    { id: 'rocket', label: 'Falcon Rocket', icon: 'rocket', angleOffset: Math.PI / 4, flipCorrection: false },
+    { id: 'helicopter', label: 'Helicopter', icon: 'helicopter', angleOffset: 0, flipCorrection: true },
+    { id: 'drone', label: 'Surveillance Drone', icon: 'eye', angleOffset: 0, flipCorrection: false },
+    { id: 'satellite', label: 'Orbital Sat', icon: 'satellite', angleOffset: Math.PI / 4, flipCorrection: false },
+    { id: 'train', label: 'Maglev Train', icon: 'train', angleOffset: 0, flipCorrection: true },
+    { id: 'bus', label: 'Auto Bus', icon: 'bus', angleOffset: 0, flipCorrection: true },
+    { id: 'car', label: 'Tactical Car', icon: 'car', angleOffset: 0, flipCorrection: true },
+    { id: 'motorcycle', label: 'Quantum Bike', icon: 'bike', angleOffset: 0, flipCorrection: true },
+    { id: 'bicycle', label: 'Eco Cycle', icon: 'bike', angleOffset: 0, flipCorrection: true },
+    { id: 'walking', label: 'Human Trace', icon: 'footprints', angleOffset: Math.PI / 2, flipCorrection: false },
+    { id: 'ship', label: 'Cargo Ship', icon: 'ship', angleOffset: 0, flipCorrection: true },
+    { id: 'submarine', label: 'Deep Sub', icon: 'anchor', angleOffset: 0, flipCorrection: false }
 ];
 
 function initPointerSelection() {

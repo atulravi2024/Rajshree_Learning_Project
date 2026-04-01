@@ -564,6 +564,14 @@ function checkGlobalSearchVisibility() {
             });
             document.getElementById('btn-ui-toggle')?.classList.remove('hidden');
         }
+
+        // AUTOMATION: Update Zoom Level based on search toggle (150 active / 250 default)
+        const targetZ = window._manualSearchToggle ? 150 : 250;
+        window._mapTargetCameraZ = targetZ;
+        const zSlider = document.getElementById('globe-zoom-slider');
+        if (zSlider && typeof mapZToSlider === 'function') {
+            zSlider.value = mapZToSlider(targetZ);
+        }
     }
 }
 

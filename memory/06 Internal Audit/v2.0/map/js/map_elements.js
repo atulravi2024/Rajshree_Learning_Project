@@ -130,7 +130,7 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
     const getPos = (c) => {
         const phi = (90 - c.lat) * (Math.PI / 180);
         const theta = (c.lon + 180) * (Math.PI / 180);
-        const r = 90.2; 
+        const r = 93.0; // Substantially lifted from 90.2 to prevent clipping
         return new THREE.Vector3(
             -(r * Math.sin(phi) * Math.cos(theta)),
             (r * Math.cos(phi)),
@@ -160,10 +160,13 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
     const segments = 64;
 
     if (pathType === 'straight') {
-        curve = new THREE.LineCurve3(vStart, vEnd);
+        // Shallow arc lifted significantly to keep icon fully visible above surface
+        const mid = new THREE.Vector3().addVectors(vStart, vEnd).multiplyScalar(0.5);
+        mid.normalize().multiplyScalar(95.0); // Lifted further for icon clearance
+        curve = new THREE.QuadraticBezierCurve3(vStart, mid, vEnd);
     } else if (pathType === 'circle') {
         // Uniform circular arc (Orbital) - Close proximity
-        const orbitalH = 95; 
+        const orbitalH = 100; // Increased to ensure icon is well above globe surface
         for (let i = 0; i <= segments; i++) {
             const t = i / segments;
             const p = new THREE.Vector3().lerpVectors(vStart, vEnd, t);
@@ -177,7 +180,7 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
             const t = i / segments;
             const p = new THREE.Vector3().lerpVectors(vStart, vEnd, t);
             const minH = 2;
-            const h = 90 + Math.max(minH, Math.sin(Math.PI * t) * (distance * 0.06 + 3));
+            const h = 93 + Math.max(minH, Math.sin(Math.PI * t) * (distance * 0.06 + 3));
             p.normalize().multiplyScalar(h);
             points.push(p);
         }
@@ -235,6 +238,12 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
     pathGroup.add(glowLine);
     pathGroup.add(particle);
     
+    // Z-INDEX FIX: High renderOrder to ensure paths/icons are drawn on top of the globe
+    pathGroup.renderOrder = 100;
+    line.renderOrder = 100;
+    glowLine.renderOrder = 100;
+    particle.renderOrder = 110; 
+
     window._currentPathObj = pathGroup;
     globeGroup.add(pathGroup);
 
@@ -253,19 +262,42 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
                 const limit = Math.min(progress + 0.01, 1.0);
                 if (limit > progress) {
                     const nextPos = curve.getPoint(limit);
-                    const vec1 = pos.clone().project(camera);
-                    const vec2 = nextPos.clone().project(camera);
                     
+                    // Convert local path coordinates to world space for accurate screen projection
+                    const worldPos = pos.clone();
+                    pathGroup.localToWorld(worldPos);
+                    const worldNextPos = nextPos.clone();
+                    pathGroup.localToWorld(worldNextPos);
+
+                    const vec1 = worldPos.project(camera);
+                    const vec2 = worldNextPos.project(camera);
+                    
+                    // Re-instated accidentally deleted variables
                     const dx = vec2.x - vec1.x;
                     const dy = vec2.y - vec1.y;
                     
-                    // Lucide transport icons typically point Top-Right by default (45 deg angle)
-                    // Subtract Math.PI / 4 to align the nose of the icon with the travel vector
-                    const angle = Math.atan2(dy, dx) - (Math.PI / 4);
+                    // Retrieve dynamic angle offset and flip metadata
+                    let iconOffset = 0;
+                    let flipCorrection = false;
+                    if (window.TRAVEL_MODES) {
+                        const mode = window.TRAVEL_MODES.find(m => m.id === window.SELECTED_POINTER_ICON);
+                        if (mode) {
+                            if (typeof mode.angleOffset === 'number') iconOffset = mode.angleOffset;
+                            if (mode.flipCorrection) flipCorrection = true;
+                        }
+                    }
+                    
+                    const angle = Math.atan2(dy, dx) - iconOffset;
                     
                     p.children.forEach(child => {
                         if (child.isSprite && child.material) {
                             child.material.rotation = angle;
+                            // Pre-Flip rendering correction for upside-down surface vehicles
+                            if (flipCorrection) {
+                                child.scale.y = (dx < 0) ? -Math.abs(child.scale.y) : Math.abs(child.scale.y);
+                            } else {
+                                child.scale.y = Math.abs(child.scale.y);
+                            }
                         }
                     });
                 }

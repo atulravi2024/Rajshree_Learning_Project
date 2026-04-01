@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/atulravi2024/Rajshree_Learning_Project#readme",
   "dependencies": {
+    "jsdom": "^29.0.1",
+    "three": "^0.183.2",
     "xlsx": "^0.18.5"
   }
 }
