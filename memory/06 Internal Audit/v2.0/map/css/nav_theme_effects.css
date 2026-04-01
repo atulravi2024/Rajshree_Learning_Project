@@ -1,0 +1,55 @@
+@keyframes slideUpHolo {
+    from {
+        transform: translateY(10px) scale(0.98);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes highlightYellow {
+    0% { box-shadow: 0 0 0px var(--text-yellow); }
+    50% { box-shadow: 0 0 20px var(--text-yellow); }
+    100% { box-shadow: 0 0 0px var(--text-yellow); }
+}
+
+@keyframes flashCyan {
+    0% {
+        box-shadow: 0 0 30px rgba(0, 240, 255, 0.8), inset 0 0 20px rgba(0, 240, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.1), inset 0 0 10px rgba(0, 240, 255, 0.05);
+    }
+}
+
+@keyframes pulsePurpleSoft {
+    0% {
+        border-color: rgba(167, 139, 250, 0.3);
+        box-shadow: 0 0 0 rgba(167, 139, 250, 0);
+    }
+    50% {
+        border-color: rgba(167, 139, 250, 0.6);
+        box-shadow: 0 0 10px rgba(167, 139, 250, 0.1);
+    }
+    100% {
+        border-color: rgba(167, 139, 250, 0.3);
+        box-shadow: 0 0 0 rgba(167, 139, 250, 0);
+    }
+}
+
+.distance-metrics-bar.pulse-light {
+    animation: flashCyan 0.6s ease-out;
+}
+
+.efficiency-recommendation {
+    animation: pulsePurpleSoft 2s infinite;
+}
+
+#btn-via-mode-toggle.active {
+    color: var(--text-yellow);
+    border-color: var(--text-yellow);
+    background: rgba(250, 204, 21, 0.1);
+    box-shadow: 0 0 15px rgba(250, 204, 21, 0.3);
+}

@@ -6,7 +6,11 @@
 @import url('css/map_base.css');
 @import url('css/map_layout.css');
 @import url('css/map_widgets.css');
-@import url('css/map_navigation.css');
+@import url('css/nav_layout_core.css');
+@import url('css/nav_search_interface.css');
+@import url('css/nav_control_menus.css');
+@import url('css/nav_status_widgets.css');
+@import url('css/nav_theme_effects.css');
 @import url('css/map_modals.css');
 @import url('css/map_effects.css');
 @import url('css/map_utils.css');
