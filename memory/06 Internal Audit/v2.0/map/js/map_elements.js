@@ -123,14 +123,14 @@ function initMapElements(globeGroup, camera) {
 /**
  * HIGH-VISIBILITY PATHFINDING
  */
-async function drawQuantumPath(coordsFrom, coordsTo) {
-    if (!window._mapGlobe || !window._mapGlobe.globeGroup) return;
+async function drawQuantumPath(coordinateArray) {
+    if (!window._mapGlobe || !window._mapGlobe.globeGroup || !coordinateArray || coordinateArray.length < 2) return;
     const { globeGroup, camera } = window._mapGlobe;
     
     const getPos = (c) => {
         const phi = (90 - c.lat) * (Math.PI / 180);
         const theta = (c.lon + 180) * (Math.PI / 180);
-        const r = 93.0; // Substantially lifted from 90.2 to prevent clipping
+        const r = 93.0; 
         return new THREE.Vector3(
             -(r * Math.sin(phi) * Math.cos(theta)),
             (r * Math.cos(phi)),
@@ -138,9 +138,6 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
         );
     };
 
-    const vStart = getPos(coordsFrom);
-    const vEnd = getPos(coordsTo);
-    
     // Clear previous
     if (window._currentPathObj) {
         globeGroup.remove(window._currentPathObj);
@@ -151,40 +148,54 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
     }
     if (window._pathAnimId) cancelAnimationFrame(window._pathAnimId);
 
-    const distance = vStart.distanceTo(vEnd);
-    if (distance < 2) return;
-
     const pathType = window.SELECTED_PATH_TYPE || 'curve';
-    let curve;
     const points = [];
     const segments = 64;
 
-    if (pathType === 'straight') {
-        // Shallow arc lifted significantly to keep icon fully visible above surface
+    if (pathType === 'straight' && coordinateArray.length === 2) {
+        const vStart = getPos(coordinateArray[0]);
+        const vEnd = getPos(coordinateArray[1]);
         const mid = new THREE.Vector3().addVectors(vStart, vEnd).multiplyScalar(0.5);
-        mid.normalize().multiplyScalar(95.0); // Lifted further for icon clearance
+        mid.normalize().multiplyScalar(95.0); 
         curve = new THREE.QuadraticBezierCurve3(vStart, mid, vEnd);
-    } else if (pathType === 'circle') {
-        // Uniform circular arc (Orbital) - Close proximity
-        const orbitalH = 100; // Increased to ensure icon is well above globe surface
-        for (let i = 0; i <= segments; i++) {
-            const t = i / segments;
-            const p = new THREE.Vector3().lerpVectors(vStart, vEnd, t);
-            p.normalize().multiplyScalar(orbitalH);
-            points.push(p);
-        }
-        curve = new THREE.CatmullRomCurve3(points);
     } else {
-        // High Arched Curve (Original) - Streamlined to be Near Surface
-        for (let i = 0; i <= segments; i++) {
-            const t = i / segments;
-            const p = new THREE.Vector3().lerpVectors(vStart, vEnd, t);
-            const minH = 2;
-            const h = 93 + Math.max(minH, Math.sin(Math.PI * t) * (distance * 0.06 + 3));
-            p.normalize().multiplyScalar(h);
-            points.push(p);
+        // Handle Multi-point or curved
+        const intermediatePoints = [];
+        for (let i = 0; i < coordinateArray.length; i++) {
+            intermediatePoints.push(getPos(coordinateArray[i]));
         }
-        curve = new THREE.CatmullRomCurve3(points);
+
+        if (pathType === 'circle') {
+            const orbitalH = 100 + (window.ICON_ALTITUDE_LEVEL || 0);
+            const densePoints = [];
+            for (let i = 0; i < intermediatePoints.length - 1; i++) {
+                const p1 = intermediatePoints[i];
+                const p2 = intermediatePoints[i+1];
+                for (let j = 0; j <= 20; j++) {
+                    const t = j / 20;
+                    const p = new THREE.Vector3().lerpVectors(p1, p2, t);
+                    p.normalize().multiplyScalar(orbitalH);
+                    densePoints.push(p);
+                }
+            }
+            curve = new THREE.CatmullRomCurve3(densePoints);
+        } else {
+            // Default Curve
+            const densePoints = [];
+            for (let i = 0; i < intermediatePoints.length - 1; i++) {
+                const p1 = intermediatePoints[i];
+                const p2 = intermediatePoints[i+1];
+                const dist = p1.distanceTo(p2);
+                for (let j = 0; j <= 20; j++) {
+                    const t = j / 20;
+                    const p = new THREE.Vector3().lerpVectors(p1, p2, t);
+                    const h = 93 + (window.ICON_ALTITUDE_LEVEL || 0) + Math.sin(Math.PI * t) * (dist * 0.06 + 3);
+                    p.normalize().multiplyScalar(h);
+                    densePoints.push(p);
+                }
+            }
+            curve = new THREE.CatmullRomCurve3(densePoints);
+        }
     }
 
     const geometry = new THREE.BufferGeometry().setFromPoints(curve.getPoints(120));
@@ -238,7 +249,6 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
     pathGroup.add(glowLine);
     pathGroup.add(particle);
     
-    // Z-INDEX FIX: High renderOrder to ensure paths/icons are drawn on top of the globe
     pathGroup.renderOrder = 100;
     line.renderOrder = 100;
     glowLine.renderOrder = 100;
@@ -249,7 +259,8 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
 
     let progress = 0;
     const animatePath = () => {
-        progress += 0.006;
+        const speedMult = window.ICON_SPEED_MULTIPLIER || 1.0;
+        progress += 0.006 * speedMult;
         if (progress > 1) progress = 0;
         
         const pos = curve.getPoint(progress);
@@ -257,13 +268,10 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
         if (p) {
             p.position.copy(pos);
             
-            // Dynamic rotation for vehicle pointers using real-time screen-space tangents
             if (camera && window.SELECTED_POINTER_ICON && window.SELECTED_POINTER_ICON !== 'circle') {
                 const limit = Math.min(progress + 0.01, 1.0);
                 if (limit > progress) {
                     const nextPos = curve.getPoint(limit);
-                    
-                    // Convert local path coordinates to world space for accurate screen projection
                     const worldPos = pos.clone();
                     pathGroup.localToWorld(worldPos);
                     const worldNextPos = nextPos.clone();
@@ -272,11 +280,9 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
                     const vec1 = worldPos.project(camera);
                     const vec2 = worldNextPos.project(camera);
                     
-                    // Re-instated accidentally deleted variables
                     const dx = vec2.x - vec1.x;
                     const dy = vec2.y - vec1.y;
                     
-                    // Retrieve dynamic angle offset and flip metadata
                     let iconOffset = 0;
                     let flipCorrection = false;
                     if (window.TRAVEL_MODES) {
@@ -292,7 +298,6 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
                     p.children.forEach(child => {
                         if (child.isSprite && child.material) {
                             child.material.rotation = angle;
-                            // Pre-Flip rendering correction for upside-down surface vehicles
                             if (flipCorrection) {
                                 child.scale.y = (dx < 0) ? -Math.abs(child.scale.y) : Math.abs(child.scale.y);
                             } else {
@@ -304,7 +309,7 @@ async function drawQuantumPath(coordsFrom, coordsTo) {
             }
         }
 
-        if (style !== 'solid') material.dashOffset -= dashSpeed;
+        if (style !== 'solid') material.dashOffset -= dashSpeed * (window.ICON_SPEED_MULTIPLIER || 1.0);
         window._pathAnimId = requestAnimationFrame(animatePath);
     };
     animatePath();

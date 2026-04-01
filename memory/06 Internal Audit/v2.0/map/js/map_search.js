@@ -1,33 +1,77 @@
-// map_search.js - Location Search Engine for the Holographic Map
+// Search Aliases for common variations
+window.MAP_SEARCH_ALIASES = {
+    "bangalore": "bengaluru",
+    "bombay": "mumbai",
+    "madras": "chennai",
+    "calcutta": "kolkata",
+    "banaras": "varanasi",
+    "pondy": "puducherry",
+    "trichy": "tiruchirappalli",
+    "baroda": "vadodara",
+    "cochin": "kochi"
+};
 
 /**
  * Searches through all available datasets for location coordinates.
+ * Robust implementation as per "Anyway from Anyway" directive.
  */
 function searchDeepLocation(name) {
     if (!name) return null;
-    const q = name.toLowerCase().trim();
+    let q = name.toLowerCase().trim();
 
-    // 1. Check flat master list
+    // 1. Alias/Synonym redirection
+    if (window.MAP_SEARCH_ALIASES[q]) {
+        console.log(`[Search] Redirecting Alias: ${q} -> ${window.MAP_SEARCH_ALIASES[q]}`);
+        q = window.MAP_SEARCH_ALIASES[q];
+    }
+
+    // 2. Check flat master list
     if (window.LOCATION_COORDS && window.LOCATION_COORDS[q]) return window.LOCATION_COORDS[q];
 
-    // 2. Search deep in country data
+    // 3. Search in deep country data
     if (window.LOCATION_DATA) {
+        // Collect potential fuzzy matches
+        let fuzzyResults = [];
+
         for (const country in window.LOCATION_DATA) {
             const cData = window.LOCATION_DATA[country];
+            
+            // Country match
             if (country.toLowerCase() === q) return findNestedCoords(cData);
 
             for (const state in cData) {
                 const sData = cData[state];
-                if (state.toLowerCase() === q) return findNestedCoords(sData);
+                
+                // State match (Check for city with same name inside state first)
+                if (state.toLowerCase() === q) {
+                    if (sData[q]) return sData[q]; 
+                    return findNestedCoords(sData);
+                }
 
                 if (typeof sData === 'object') {
                     for (const city in sData) {
-                        if (city.toLowerCase() === q) return sData[city];
+                        const lowCity = city.toLowerCase();
+                        
+                        // Exact city match
+                        if (lowCity === q) return sData[city];
+                        
+                        // Collect for fuzzy if exact fail
+                        if (lowCity.includes(q) || q.includes(lowCity)) {
+                            fuzzyResults.push(sData[city]);
+                        }
                     }
                 }
             }
         }
+
+        // 4. Return first fuzzy match if no exact match found
+        if (fuzzyResults.length > 0) {
+            console.log(`[Search] No exact match for "${name}". Returning best fuzzy match.`);
+            return fuzzyResults[0];
+        }
     }
+    
+    console.warn(`[Search] Location NOT found: ${name}`);
     return null;
 }
 
@@ -41,8 +85,14 @@ function findNestedCoords(obj) {
     return null;
 }
 
+// ── SEARCH MODE GLOBAL STATE ──
+window.SEARCH_MODE = 'route'; // 'poi' | 'route' | 'via'
+window.VIA_MODE_ACTIVE = false; // Legacy fallback for some components
+
+
 function initGlobalSearch() {
     const fromInput = document.getElementById('map-search-from');
+    const viaInput = document.getElementById('map-search-via');
     const toInput = document.getElementById('map-search-to');
     const runBtn = document.getElementById('btn-run-search');
     const container = document.getElementById('global-search-container');
@@ -53,89 +103,306 @@ function initGlobalSearch() {
 
     async function executeSearch() {
         const from = fromInput.value.trim();
+        const via = (viaInput && window.SEARCH_MODE === 'via') ? viaInput.value.trim() : '';
         const to = toInput.value.trim();
         
-        console.log(`Pathfinding Request: ${from} -> ${to}`);
+        console.log(`Search Request [${window.SEARCH_MODE}]: ${from} ${via ? 'via ' + via : ''} ${window.SEARCH_MODE !== 'poi' ? '-> ' + to : ''}`);
 
         const fromCoords = searchDeepLocation(from);
-        const toCoords = searchDeepLocation(to);
+        const viaCoords = (window.SEARCH_MODE === 'via' && via) ? searchDeepLocation(via) : null;
+        const toCoords = (window.SEARCH_MODE !== 'poi' && to) ? searchDeepLocation(to) : null;
 
-        if (fromCoords && toCoords) {
-            await drawQuantumPath(fromCoords, toCoords);
-            window.rotateGlobeToCoords(toCoords.lat, toCoords.lon);
-            runBtn.style.transform = 'scale(0.9)';
-            setTimeout(() => runBtn.style.transform = '', 100);
-            if (window.playSound) window.playSound('UI_QUANTUM_LOCK');
-            
-            // Sync Navbar Distance Calculator
-            if (window.updateNavbarMetrics) window.updateNavbarMetrics(fromCoords, toCoords);
-
-            // AUTOMATION: Zoom to 150 on search
-            window._mapTargetCameraZ = 150;
-            const zSlider = document.getElementById('globe-zoom-slider');
-            if (zSlider && typeof mapZToSlider === 'function') {
-                zSlider.value = mapZToSlider(150);
+        if (window.SEARCH_MODE === 'poi') {
+            if (fromCoords) {
+                if (window.rotateGlobeToCoords) window.rotateGlobeToCoords(fromCoords.lat, fromCoords.lon);
+                if (window.playSound) window.playSound('UI_QUANTUM_LOCK');
+                // Clear any existing path
+                if (window.drawQuantumPath) window.drawQuantumPath([]);
+                
+                // Show in metrics?
+                if (window.updateNavbarMetrics) window.updateNavbarMetrics(fromCoords, null, null);
+                
+                window._mapTargetCameraZ = 150;
+            } else {
+                showErrorShake();
             }
-        } else if (toCoords) {
-            window.rotateGlobeToCoords(toCoords.lat, toCoords.lon);
-        } else if (fromCoords) {
-            window.rotateGlobeToCoords(fromCoords.lat, fromCoords.lon);
         } else {
-            container.classList.add('error-shake');
-            setTimeout(() => container.classList.remove('error-shake'), 400);
-            if (window.playSound) window.playSound('UI_ERROR');
+            // Route or Via Mode
+            if (fromCoords && toCoords) {
+                const coordinateArray = viaCoords ? [fromCoords, viaCoords, toCoords] : [fromCoords, toCoords];
+                
+                if (window.drawQuantumPath) window.drawQuantumPath(coordinateArray);
+                if (window.playSound) window.playSound('UI_CONFIRM');
+                
+                window.rotateGlobeToCoords(toCoords.lat, toCoords.lon);
+                if (window.updateNavbarMetrics) window.updateNavbarMetrics(fromCoords, toCoords, viaCoords);
+
+                window._mapTargetCameraZ = 150;
+            } else {
+                showErrorShake();
+            }
         }
+        
+        runBtn.style.transform = 'scale(0.9)';
+        setTimeout(() => runBtn.style.transform = '', 100);
     }
 
+    function showErrorShake() {
+        container.classList.add('error-shake');
+        setTimeout(() => container.classList.remove('error-shake'), 400);
+        if (window.playSound) window.playSound('UI_ERROR');
+    }
+
+
     fromInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') executeSearch(); });
+    if (viaInput) viaInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') executeSearch(); });
     toInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') executeSearch(); });
     runBtn.addEventListener('click', executeSearch);
 
-    // Swap locations logic
-    const swapBtn = document.getElementById('btn-swap-locations');
-    if (swapBtn) {
-        swapBtn.onclick = () => {
-            const fromVal = fromInput.value;
-            const toVal = toInput.value;
-            fromInput.value = toVal;
-            toInput.value = fromVal;
+    initAutocomplete(fromInput, viaInput, toInput);
+    initClearButtons(fromInput, viaInput, toInput);
+    initSwapHandlers(fromInput, viaInput, toInput);
+    initSearchModeSelection(fromInput, viaInput, toInput);
 
-            // Visual feedback: rotate the icon
-            const icon = swapBtn.querySelector('.swap-icon');
-            if (icon) {
-                icon.style.transform = 'rotate(180deg)';
-                setTimeout(() => { icon.style.transform = ''; }, 300);
-            }
-
-            if (window.playSound) window.playSound('UI_CLICK');
-        };
-    }
-
-    // Initialize Auto-complete
-    initAutocomplete(fromInput, toInput);
-
-    // Initialize Pointer Selection
     initPointerSelection();
-
-    // Initialize Line Style Selection
     initLineStyleSelection();
-
-    // Initialize Path Type Selection
     initPathTypeSelection();
-
-    // Initialize Path Color Selection
     initPathColorSelection();
-
-    // Initialize Pointer Color Selection
     initPointerColorSelectionColor();
 
-    // Initial check (delay to allow datasets to load)
     setTimeout(() => {
         if (fromInput.value && toInput.value) executeSearch();
     }, 2000);
 }
 
+/**
+ * Initializes 'Clear' buttons for search fields.
+ */
+function initClearButtons(from, via, to) {
+    const fields = [
+        { input: from, btn: document.querySelector('.from-field .clear-input-btn') },
+        { input: via,  btn: document.querySelector('.via-field .clear-input-btn') },
+        { input: to,   btn: document.querySelector('.to-field .clear-input-btn') }
+    ];
+
+    fields.forEach(f => {
+        if (!f.input || !f.btn) return;
+
+        const updateVisibility = () => {
+            f.btn.classList.toggle('visible', f.input.value.length > 0);
+        };
+
+        f.input.addEventListener('input', updateVisibility);
+        
+        f.btn.onclick = (e) => {
+            e.stopPropagation();
+            f.input.value = '';
+            f.input.focus();
+            updateVisibility();
+            if (window.playSound) window.playSound('UI_GENERIC_TAP');
+        };
+
+        updateVisibility();
+    });
+}
+
+/**
+ * Initializes 'Swap' functionality between search inputs.
+ */
+function initSwapHandlers(from, via, to) {
+    const btnFromVia = document.getElementById('btn-swap-from-via');
+    const btnViaTo = document.getElementById('btn-swap-via-to');
+
+    if (btnFromVia) {
+        btnFromVia.onclick = (e) => {
+            e.stopPropagation();
+
+            if (!window.VIA_MODE_ACTIVE) {
+                // Swapping START and DESTINATION when VIA is disabled
+                const temp = from.value;
+                from.value = to.value;
+                to.value = temp;
+                animateSwap(from, to);
+            } else {
+                // Normal START & VIA swap
+                const temp = from.value;
+                from.value = via.value;
+                via.value = temp;
+                animateSwap(from, via);
+            }
+
+            if (window.playSound) window.playSound('UI_CLICK');
+
+            // Re-run search
+            const runBtn = document.getElementById('btn-run-search');
+            if (runBtn) runBtn.click();
+        };
+    }
+
+    if (btnViaTo) {
+        btnViaTo.onclick = (e) => {
+            e.stopPropagation();
+            if (window.SEARCH_MODE !== 'via') return;
+
+            const temp = via.value;
+            via.value = to.value;
+            to.value = temp;
+
+            animateSwap(via, to);
+            if (window.playSound) window.playSound('UI_CLICK');
+
+            const runBtn = document.getElementById('btn-run-search');
+            if (runBtn) runBtn.click();
+        };
+    }
+}
+
+/**
+ * Initializes the Search Mode Drop-up selection.
+ */
+function initSearchModeSelection(from, via, to) {
+    const selectorBtn = document.getElementById('btn-search-mode-selector');
+    const menu = document.getElementById('map-search-mode-menu');
+    const container = document.getElementById('global-search-container');
+    const swapFromVia = document.getElementById('btn-swap-from-via');
+
+    if (!selectorBtn || !menu || !container) return;
+
+    const modes = [
+        { id: 'poi',    label: 'Point Interest', icon: 'map-pin', badge: 'P', desc: 'Single location search' },
+        { id: 'route',  label: 'Direct Route',   icon: 'move-right', badge: 'R', desc: 'Start to Destination' },
+        { id: 'via',    label: 'Navigation Via', icon: 'map-pinned', badge: 'V', desc: 'Start, Via, and Destination' }
+    ];
+
+    // Populate menu
+    menu.innerHTML = '';
+    modes.forEach(m => {
+        const opt = document.createElement('div');
+        opt.className = `pointer-option ${window.SEARCH_MODE === m.id ? 'selected' : ''}`;
+        opt.innerHTML = `
+            <i data-lucide="${m.icon}"></i>
+            <div class="opt-content">
+                <span class="label">${m.label}</span>
+                <span class="desc">${m.desc}</span>
+            </div>
+        `;
+        opt.onclick = (e) => {
+            e.stopPropagation();
+            window.SEARCH_MODE = m.id;
+            window.VIA_MODE_ACTIVE = (m.id === 'via'); // Legacy sync
+            
+            updateSearchModeUI();
+            menu.classList.remove('active');
+            
+            if (window.playSound) window.playSound('UI_CLICK');
+            
+            // Re-run search if we have data
+            const runBtn = document.getElementById('btn-run-search');
+            if (runBtn && from.value) runBtn.click();
+        };
+        menu.appendChild(opt);
+    });
+
+    selectorBtn.onclick = (e) => {
+        e.stopPropagation();
+        const allMenus = [
+            'map-pointer-menu', 'map-line-style-menu', 
+            'map-path-type-menu', 'map-path-color-menu', 
+            'map-pointer-color-menu', 'map-altitude-menu', 'map-speed-menu'
+        ];
+        allMenus.forEach(id => document.getElementById(id)?.classList.remove('active'));
+        
+        menu.classList.toggle('active');
+        if (menu.classList.contains('active') && window.lucide) {
+            lucide.createIcons({ scope: menu });
+        }
+    };
+
+    document.addEventListener('click', () => {
+        if (menu) menu.classList.remove('active');
+    });
+
+    updateSearchModeUI();
+}
+
+function updateSearchModeUI() {
+    const selectorBtn = document.getElementById('btn-search-mode-selector');
+    const container = document.getElementById('global-search-container');
+    const menu = document.getElementById('map-search-mode-menu');
+    const fromInput = document.getElementById('map-search-from');
+    
+    if (!selectorBtn || !container) return;
+
+    const m = {
+        'poi':    { icon: 'map-pin', badge: 'P', placeholder: 'SEARCH CITY/NODE...' },
+        'route':  { icon: 'move-right', badge: 'R', placeholder: 'START...' },
+        'via':    { icon: 'map-pinned', badge: 'V', placeholder: 'START...' }
+    }[window.SEARCH_MODE];
+
+    selectorBtn.innerHTML = `<i data-lucide="${m.icon}"></i><span class="btn-badge">${m.badge}</span>`;
+    if (window.lucide) lucide.createIcons({ scope: selectorBtn });
+    
+    if (fromInput) fromInput.placeholder = m.placeholder;
+
+    // Update Container Classes
+    container.classList.toggle('mode-poi', window.SEARCH_MODE === 'poi');
+    container.classList.toggle('mode-route', window.SEARCH_MODE === 'route');
+    container.classList.toggle('mode-via', window.SEARCH_MODE === 'via');
+    
+    // Legacy support for CSS that uses .via-mode-disabled
+    container.classList.toggle('via-mode-disabled', window.SEARCH_MODE !== 'via');
+
+    // Update menu highlights
+    if (menu) {
+        menu.querySelectorAll('.pointer-option').forEach(opt => {
+            const label = opt.querySelector('.label').textContent;
+            const isSelected = label.toLowerCase().includes(window.SEARCH_MODE);
+            opt.classList.toggle('selected', isSelected);
+        });
+    }
+
+    // Sync Clear Buttons
+    const fromBtn = document.querySelector('.from-field .clear-input-btn');
+    const viaBtn = document.querySelector('.via-field .clear-input-btn');
+    const toBtn = document.querySelector('.to-field .clear-input-btn');
+    if (fromBtn) fromBtn.classList.toggle('visible', !!fromInput?.value);
+    if (viaBtn) viaBtn.classList.toggle('visible', !!document.getElementById('map-search-via')?.value);
+    if (toBtn) toBtn.classList.toggle('visible', !!document.getElementById('map-search-to')?.value);
+}
+
+// initViaModeToggle function REMOVED since it's replaced by Search Mode Selection
+
+
+function animateSwap(el1, el2) {
+    [el1, el2].forEach(el => {
+        el.style.transition = 'none';
+        el.style.opacity = '0.3';
+        el.style.transform = 'translateY(5px)';
+        setTimeout(() => {
+            el.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }, 10);
+    });
+
+    // Sync clear button visibility manually since 'input' event won't fire on value change
+    const fromBtn = document.querySelector('.from-field .clear-input-btn');
+    const viaBtn = document.querySelector('.via-field .clear-input-btn');
+    const toBtn = document.querySelector('.to-field .clear-input-btn');
+    
+    if (fromBtn) fromBtn.classList.toggle('visible', document.getElementById('map-search-from').value.length > 0);
+    if (viaBtn) viaBtn.classList.toggle('visible', document.getElementById('map-search-via').value.length > 0);
+    if (toBtn) toBtn.classList.toggle('visible', document.getElementById('map-search-to').value.length > 0);
+}
+
+// Route Selection UI Functions Removed
+
+
 // ── POINTER & TRAVEL MODE SELECTION ──────────────────
+window.ICON_ALTITUDE_MODE = 'auto'; // 'auto' | 'manual'
+window.ICON_ALTITUDE_LEVEL = 0;    // 0, 4, 8, 20 (offsets)
+window.ICON_SPEED_MODE = 'auto';    // 'auto' | 'manual'
+window.ICON_SPEED_MULTIPLIER = 1.0; // 0.25, 0.5, 1, 2, 4
 
 window.SELECTED_POINTER_ICON = 'circle';
 window.TRAVEL_MODES = [
@@ -173,6 +440,10 @@ function initPointerSelection() {
         opt.onclick = (e) => {
             e.stopPropagation();
             window.SELECTED_POINTER_ICON = mode.id;
+            
+            // Sync Auto-Altitude & Speed
+            updateAutoAltitudeAndSpeed();
+            
             updatePointerSelectionUI();
             menu.classList.remove('active');
             
@@ -183,6 +454,9 @@ function initPointerSelection() {
         };
         menu.appendChild(opt);
     });
+
+    initAltitudeControl();
+    initSpeedControl();
 
     selectorBtn.onclick = (e) => {
         e.stopPropagation();
@@ -203,6 +477,244 @@ function initPointerSelection() {
     document.addEventListener('click', () => {
         if (menu) menu.classList.remove('active');
     });
+
+    initAltitudeControl();
+    initSpeedControl();
+}
+
+function initAltitudeControl() {
+    const btn = document.getElementById('btn-altitude-control');
+    const menu = document.getElementById('map-altitude-menu');
+    if (!btn || !menu) return;
+
+    const levels = [
+        { id: 'auto', label: 'AUTO (Sync Mode)', offset: 0, badge: 'A', icon: 'refresh-cw' },
+        { id: 'l1', label: 'Level 1 (Surface)', offset: 0, badge: '1', icon: 'map' },
+        { id: 'l2', label: 'Level 2 (Low Air)', offset: 4, badge: '2', icon: 'cloud' },
+        { id: 'l3', label: 'Level 3 (Mid Air)', offset: 8, badge: '3', icon: 'wind' },
+        { id: 'l4', label: 'Level 4 (Orbital)', offset: 18, badge: '4', icon: 'orbit' }
+    ];
+
+    // Populate menu
+    menu.innerHTML = '';
+    levels.forEach(l => {
+        const opt = document.createElement('div');
+        opt.className = 'pointer-option';
+        opt.innerHTML = `
+            <i data-lucide="${l.icon}"></i>
+            <span class="label">${l.label}</span>
+        `;
+        opt.onclick = (e) => {
+            e.stopPropagation();
+            if (l.id === 'auto') {
+                window.ICON_ALTITUDE_MODE = 'auto';
+                updateAutoAltitudeAndSpeed();
+            } else {
+                window.ICON_ALTITUDE_MODE = 'manual';
+                window.ICON_ALTITUDE_LEVEL = l.offset;
+                updateAltitudeUI(l.badge, l.label);
+            }
+            menu.classList.remove('active');
+            if (window.updateCurrentPathPointer) window.updateCurrentPathPointer();
+            if (window.playSound) window.playSound('UI_CLICK');
+
+            // Re-run search to update path curve
+            const runBtn = document.getElementById('btn-run-search');
+            if (runBtn) runBtn.click();
+        };
+        menu.appendChild(opt);
+    });
+
+    btn.onclick = (e) => {
+        e.stopPropagation();
+        const allMenus = [
+            'map-pointer-menu', 'map-line-style-menu', 
+            'map-path-type-menu', 'map-path-color-menu', 
+            'map-pointer-color-menu', 'map-speed-menu'
+        ];
+        allMenus.forEach(id => document.getElementById(id)?.classList.remove('active'));
+        
+        menu.classList.toggle('active');
+        if (menu.classList.contains('active') && window.lucide) {
+            lucide.createIcons({ scope: menu });
+            updateAltitudeUI(); // Sync highlights
+        }
+    };
+
+    document.addEventListener('click', () => menu.classList.remove('active'));
+    updateAltitudeUI();
+}
+
+function updateAltitudeUI(badge, label) {
+    const btn = document.getElementById('btn-altitude-control');
+    const menu = document.getElementById('map-altitude-menu');
+    if (!btn) return;
+    
+    const badgeEl = btn.querySelector('.btn-badge');
+    
+    // If not provided, find from current state
+    if (!badge || !label) {
+        const levels = [
+            { id: 'auto', label: 'AUTO', offset: 0, badge: 'A' },
+            { id: 'l1', label: 'L1', offset: 0, badge: '1' },
+            { id: 'l2', label: 'L2', offset: 4, badge: '2' },
+            { id: 'l3', label: 'L3', offset: 8, badge: '3' },
+            { id: 'l4', label: 'L4', offset: 18, badge: '4' }
+        ];
+        const current = levels.find(l => (window.ICON_ALTITUDE_MODE === 'manual' && window.ICON_ALTITUDE_LEVEL === l.offset && l.id !== 'auto') || (window.ICON_ALTITUDE_MODE === 'auto' && l.id === 'auto'));
+        if (current) {
+            badge = current.badge;
+            label = current.label;
+        }
+    }
+
+    if (badgeEl) badgeEl.textContent = badge;
+    btn.title = `Icon Altitude: ${label}`;
+    btn.classList.toggle('active', window.ICON_ALTITUDE_MODE === 'manual');
+
+    // Update menu highlights
+    if (menu) {
+        const opts = menu.querySelectorAll('.pointer-option');
+        opts.forEach(opt => {
+            const optLabel = opt.querySelector('.label').textContent;
+            const isSelected = label && optLabel.includes(label.split(' ')[0]); // Relaxed match
+            opt.classList.toggle('selected', isSelected);
+        });
+    }
+}
+
+function initSpeedControl() {
+    const btn = document.getElementById('btn-speed-control');
+    const menu = document.getElementById('map-speed-menu');
+    if (!btn || !menu) return;
+
+    const speeds = [
+        { id: 'auto', label: 'AUTO (Sync Mode)', mult: 1, badge: 'A', icon: 'refresh-cw' },
+        { id: 's4', label: '4x Slower', mult: 0.25, badge: '¼', icon: 'minus-circle' },
+        { id: 's2', label: '2x Slower', mult: 0.5, badge: '½', icon: 'chevron-left' },
+        { id: 'n1', label: 'Normal Speed', mult: 1, badge: '1', icon: 'play' },
+        { id: 'f2', label: '2x Faster', mult: 2.0, badge: '2', icon: 'chevron-right' },
+        { id: 'f4', label: '4x Faster', mult: 4.0, badge: '4', icon: 'zap' }
+    ];
+
+    // Populate menu
+    menu.innerHTML = '';
+    speeds.forEach(s => {
+        const opt = document.createElement('div');
+        opt.className = 'pointer-option';
+        opt.innerHTML = `
+            <i data-lucide="${s.icon}"></i>
+            <span class="label">${s.label}</span>
+        `;
+        opt.onclick = (e) => {
+            e.stopPropagation();
+            if (s.id === 'auto') {
+                window.ICON_SPEED_MODE = 'auto';
+                updateAutoAltitudeAndSpeed();
+            } else {
+                window.ICON_SPEED_MODE = 'manual';
+                window.ICON_SPEED_MULTIPLIER = s.mult;
+                updateSpeedUI(s.badge, s.label);
+            }
+            menu.classList.remove('active');
+            if (window.playSound) window.playSound('UI_CLICK');
+        };
+        menu.appendChild(opt);
+    });
+
+    btn.onclick = (e) => {
+        e.stopPropagation();
+        const allMenus = [
+            'map-pointer-menu', 'map-line-style-menu', 
+            'map-path-type-menu', 'map-path-color-menu', 
+            'map-pointer-color-menu', 'map-altitude-menu'
+        ];
+        allMenus.forEach(id => document.getElementById(id)?.classList.remove('active'));
+        
+        menu.classList.toggle('active');
+        if (menu.classList.contains('active') && window.lucide) {
+            lucide.createIcons({ scope: menu });
+            updateSpeedUI(); // Sync highlights
+        }
+    };
+
+    document.addEventListener('click', () => menu.classList.remove('active'));
+    updateSpeedUI();
+}
+
+function updateSpeedUI(badge, label) {
+    const btn = document.getElementById('btn-speed-control');
+    const menu = document.getElementById('map-speed-menu');
+    if (!btn) return;
+    
+    const badgeEl = btn.querySelector('.btn-badge');
+    
+    if (!badge || !label) {
+        const speeds = [
+            { id: 'auto', label: 'AUTO', mult: 1, badge: 'A' },
+            { id: 's4', label: '4x Slower', mult: 0.25, badge: '¼' },
+            { id: 's2', label: '2x Slower', mult: 0.5, badge: '½' },
+            { id: 'n1', label: 'Normal', mult: 1, badge: '1' },
+            { id: 'f2', label: '2x Faster', mult: 2.0, badge: '2' },
+            { id: 'f4', label: '4x Faster', mult: 4.0, badge: '4' }
+        ];
+        const current = speeds.find(s => (window.ICON_SPEED_MODE === 'manual' && window.ICON_SPEED_MULTIPLIER === s.mult && s.id !== 'auto') || (window.ICON_SPEED_MODE === 'auto' && s.id === 'auto'));
+        if (current) {
+            badge = current.badge;
+            label = current.label;
+        }
+    }
+
+    if (badgeEl) badgeEl.textContent = badge;
+    btn.title = `Icon Speed: ${label}`;
+    btn.classList.toggle('active', window.ICON_SPEED_MODE === 'manual');
+
+    // Update menu highlights
+    if (menu) {
+        const opts = menu.querySelectorAll('.pointer-option');
+        opts.forEach(opt => {
+            const optLabel = opt.querySelector('.label').textContent;
+            const isSelected = label && optLabel.includes(label.split(' ')[0]);
+            opt.classList.toggle('selected', isSelected);
+        });
+    }
+}
+
+function updateAutoAltitudeAndSpeed() {
+    if (window.ICON_ALTITUDE_MODE !== 'auto' && window.ICON_SPEED_MODE !== 'auto') return;
+
+    const modeId = window.SELECTED_POINTER_ICON || 'circle';
+    
+    // Auto Altitude Mapping
+    if (window.ICON_ALTITUDE_MODE === 'auto') {
+        const altMap = {
+            'walking': 0, 'footprints': 0, 'car': 0, 'bus': 0, 'train': 0, 'bike': 0, 'ship': 0, 'submarine': 0, 'circle': 0,
+            'helicopter': 4, 'drone': 4, 'eye': 4,
+            'plane': 8, 'plane-takeoff': 12,
+            'satellite': 18, 'rocket': 22
+        };
+        window.ICON_ALTITUDE_LEVEL = altMap[modeId] !== undefined ? altMap[modeId] : 0;
+        updateAltitudeUI('A', `AUTO (${window.ICON_ALTITUDE_LEVEL} offset)`);
+    }
+
+    // Auto Speed Mapping
+    if (window.ICON_SPEED_MODE === 'auto') {
+        const speedMap = {
+            'walking': 0.25, 'footprints': 0.25,
+            'bike': 0.5,
+            'car': 1.0, 'bus': 0.8, 'train': 1.5,
+            'ship': 0.5, 'submarine': 0.6,
+            'helicopter': 1.2, 'drone': 1.5,
+            'plane': 2.5,
+            'jet': 4.0, 'rocket': 6.0, 'satellite': 8.0,
+            'circle': 1.0
+        };
+        window.ICON_SPEED_MULTIPLIER = speedMap[modeId] !== undefined ? speedMap[modeId] : 1.0;
+        let badgeValue = 'A';
+        if (window.ICON_SPEED_MULTIPLIER === 0.25) badgeValue = 'A¼';
+        else if (window.ICON_SPEED_MULTIPLIER === 4.0) badgeValue = 'A4';
+        updateSpeedUI(badgeValue, `AUTO (${window.ICON_SPEED_MULTIPLIER}x)`);
+    }
 }
 
 function updatePointerSelectionUI() {
@@ -721,7 +1233,7 @@ window.createIconTexture = async function(iconName) {
 window.SUGGESTIONS_ENABLED = true;
 let _suggestionDebounceTimer = null;
 
-function initAutocomplete(fromInput, toInput) {
+function initAutocomplete(fromInput, viaInput, toInput) {
     const suggestionsContainer = document.getElementById('map-search-suggestions');
     const toggleBtn = document.getElementById('btn-suggestion-toggle');
 
@@ -757,10 +1269,11 @@ function initAutocomplete(fromInput, toInput) {
     };
 
     fromInput.addEventListener('input', handleInput);
+    if (viaInput) viaInput.addEventListener('input', handleInput);
     toInput.addEventListener('input', handleInput);
 
     document.addEventListener('click', (e) => {
-        if (!suggestionsContainer.contains(e.target) && e.target !== fromInput && e.target !== toInput) {
+        if (!suggestionsContainer.contains(e.target) && e.target !== fromInput && (viaInput ? e.target !== viaInput : true) && e.target !== toInput) {
             hideSuggestions();
         }
     });

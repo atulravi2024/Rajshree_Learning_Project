@@ -429,6 +429,20 @@
                             <i data-lucide="settings-2"></i>
                         </button>
                         <div class="pointer-selector-wrap">
+                            <button class="icon-btn" id="btn-altitude-control" title="Icon Altitude: AUTO">
+                                <i data-lucide="layers"></i>
+                                <span class="btn-badge">A</span>
+                            </button>
+                            <div class="pointer-menu" id="map-altitude-menu"></div>
+                        </div>
+                        <div class="pointer-selector-wrap">
+                            <button class="icon-btn" id="btn-speed-control" title="Icon Speed: AUTO">
+                                <i data-lucide="zap"></i>
+                                <span class="btn-badge">A</span>
+                            </button>
+                            <div class="pointer-menu" id="map-speed-menu"></div>
+                        </div>
+                        <div class="pointer-selector-wrap">
                             <button class="icon-btn" id="btn-pointer-selector" title="Change Pointer Mode">
                                 <i data-lucide="circle"></i>
                             </button>
@@ -457,6 +471,13 @@
                                 <i data-lucide="pipette"></i>
                             </button>
                             <div class="pointer-menu" id="map-pointer-color-menu"></div>
+                        </div>
+                        <div class="pointer-selector-wrap">
+                            <button class="icon-btn" id="btn-search-mode-selector" title="Search Mode: Route">
+                                <i data-lucide="move-right"></i>
+                                <span class="btn-badge">R</span>
+                            </button>
+                            <div class="pointer-menu" id="map-search-mode-menu"></div>
                         </div>
                     </div>
                 </div>
@@ -515,52 +536,47 @@
                 </div>
             </div>
             
-            <div class="bottom-center-group">
-                <div class="bottom-center-search directional-search" id="global-search-container">
-                    <div class="search-field from-field">
+            <!-- ── CENTERED SEARCH UI ── -->
+            <div class="bottom-center-wrapper">
+                <div class="bottom-center-search directional-search via-mode-disabled" id="global-search-container">
+                    <div class="search-field from-field" title="Location: FROM">
                         <i data-lucide="map-pin" class="search-icon text-cyan"></i>
-                        <input type="text" id="map-search-from" placeholder="FROM: STARTING POINT..." autocomplete="off" value="Delhi">
+                        <input type="text" id="map-search-from" placeholder="START..." autocomplete="off" value="Delhi">
+                        <button class="clear-input-btn shadow-fx" data-target="map-search-from" title="Clear Field"><i data-lucide="x"></i></button>
                     </div>
-                    <div class="search-divider" id="btn-swap-locations" title="Swap Start and Destination">
-                        <i data-lucide="arrow-right-left" class="swap-icon"></i>
+
+                    <div class="search-separator">
+                        <button class="swap-input-btn" id="btn-swap-from-via" title="Swap Start & Via">
+                            <i data-lucide="repeat"></i>
+                        </button>
                     </div>
-                    <div class="search-field to-field">
+                    
+                    <div class="search-field via-field" title="Location: VIA (STOP)">
+                        <i data-lucide="milestone" class="search-icon text-yellow"></i>
+                        <input type="text" id="map-search-via" placeholder="VIA..." autocomplete="off" value="Mumbai">
+                        <button class="clear-input-btn shadow-fx" data-target="map-search-via" title="Clear Field"><i data-lucide="x"></i></button>
+                    </div>
+
+                    <div class="search-separator">
+                        <button class="swap-input-btn" id="btn-swap-via-to" title="Swap Via & Destination">
+                            <i data-lucide="repeat"></i>
+                        </button>
+                    </div>
+
+                    <div class="search-field to-field" title="Location: TO">
                         <i data-lucide="navigation" class="search-icon text-purple"></i>
-                        <input type="text" id="map-search-to" placeholder="TO: DESTINATION..." autocomplete="off" value="Mumbai">
+                        <input type="text" id="map-search-to" placeholder="DEST..." autocomplete="off" value="Bangalore">
+                        <button class="clear-input-btn shadow-fx" data-target="map-search-to" title="Clear Field"><i data-lucide="x"></i></button>
                     </div>
+
                     <button class="search-go-btn" id="btn-run-search" title="INITIATE QUANTUM SEARCH">
                         <i data-lucide="search"></i>
                     </button>
                     <!-- Holographic Drop-up Suggestions -->
                     <div class="suggestions-container" id="map-search-suggestions"></div>
                 </div>
-
-                <!-- ── DISTANCE CALCULATOR NAVBAR UI ── -->
-                <div class="distance-metrics-bar hidden" id="distance-metrics-bar">
-                    <div class="metric-segment" title="Actual Travel Distance">
-                        <i data-lucide="route" class="text-cyan"></i>
-                        <span id="metric-actual" class="text-cyan">-- KM</span>
-                    </div>
-                    <div class="metric-separator"></div>
-                    <div class="metric-segment" title="Straight Globe Distance">
-                        <i data-lucide="globe" class="text-dim"></i>
-                        <span id="metric-globe" class="text-dim">-- KM</span>
-                    </div>
-                    <div class="metric-separator"></div>
-                    <div class="metric-segment" title="Estimated Travel Time">
-                        <i data-lucide="clock" class="text-yellow"></i>
-                        <span id="metric-time" class="text-yellow">--</span>
-                    </div>
-                    <div class="metric-separator"></div>
-                    <div class="metric-segment" title="Delta vs Fastest Route">
-                        <i data-lucide="zap" class="text-red"></i>
-                        <span id="metric-delta">--</span>
-                    </div>
-                </div>
             </div>
 
-            <div class="bottom-right-icons">
-                <div class="nav-separator"></div>
                 <div class="navbar-category section-collapsed" data-cat="map-modes">
                     <span class="category-label">MAP.MODES</span>
                     <div class="bottom-tabs" id="bottom-tab-group">
@@ -568,6 +584,94 @@
                         <button class="nav-tab active" data-tab="sector-g">Sector Map G</button>
                         <button class="nav-tab" data-tab="scan">Scan Area</button>
                         <button class="nav-tab threat-btn" data-tab="threat">Threat Response</button>
+                    </div>
+                </div>
+
+                <div class="nav-separator"></div>
+
+                <!-- ── DISTANCE CALCULATOR NAVBAR UI (Far Right) ── -->
+                <div class="distance-metrics-bar hidden" id="distance-metrics-bar">
+                    <div class="metric-segment clickable" title="Actual Travel Distance" id="trigger-actual-metrics">
+                        <i data-lucide="route" class="text-cyan"></i>
+                        <span id="metric-actual" class="text-cyan">-- KM</span>
+                        <i data-lucide="chevron-down" class="icon-tiny dropdown-icon"></i>
+                    </div>
+
+                    <!-- ── HOLOGRAPHIC METRICS POPUP ── -->
+                    <div class="metrics-popup-container" id="metrics-popup">
+                        <div class="popup-item">
+                            <span class="popup-label">ESTIMATED TIME</span>
+                            <div class="popup-value">
+                                <i data-lucide="clock" class="text-yellow"></i>
+                                <span id="metric-time" class="text-yellow">--</span>
+                            </div>
+                        </div>
+                        <div class="popup-item">
+                            <span class="popup-label">STRAIGHT DISTANCE</span>
+                            <div class="popup-value">
+                                <i data-lucide="globe"></i>
+                                <span id="metric-globe-popup">-- KM</span>
+                            </div>
+                        </div>
+                        <div class="popup-item">
+                            <span class="popup-label">ROUTE DELTA</span>
+                            <div class="popup-value">
+                                <i data-lucide="zap"></i>
+                                <span id="metric-delta-popup">--</span>
+                            </div>
+                        </div>
+                        <div class="popup-item separator-top">
+                            <span class="popup-label">CURRENT SPEED</span>
+                            <div class="popup-value">
+                                <i data-lucide="gauge" class="text-cyan"></i>
+                                <span id="metric-speed">-- KM/H</span>
+                            </div>
+                        </div>
+                        <div class="popup-item">
+                            <span class="popup-label">SIGNAL STRENGTH</span>
+                            <div class="popup-value">
+                                <i data-lucide="signal" class="text-bright"></i>
+                                <span id="metric-signal">OPTIMAL</span>
+                            </div>
+                        </div>
+
+                        <!-- ── EFFICIENCY ANALYSIS SECTION ── -->
+                        <div class="efficiency-analysis separator-top">
+                            <span class="popup-label">EFFICIENCY ANALYSIS</span>
+                            
+                            <div class="efficiency-matrix">
+                                <div class="matrix-row">
+                                    <span class="matrix-label">FASTEST MODE</span>
+                                    <div class="matrix-value text-cyan">
+                                        <i data-lucide="zap"></i>
+                                        <span id="eff-fastest-name">SATELLITE</span>
+                                    </div>
+                                </div>
+                                <div class="matrix-row">
+                                    <span class="matrix-label">CURRENT MODE</span>
+                                    <div class="matrix-value" id="eff-current-container">
+                                        <i data-lucide="circle" id="eff-current-icon"></i>
+                                        <span id="eff-current-name">CIRCLE</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="efficiency-comparison">
+                                <div class="comp-bar-wrap">
+                                    <div class="comp-bar-fill fastest" id="eff-bar-fastest"></div>
+                                    <div class="comp-bar-fill current" id="eff-bar-current"></div>
+                                </div>
+                                <div class="comp-stats">
+                                    <span class="text-dim">GAP:</span>
+                                    <span id="eff-gap-value" class="text-red">--</span>
+                                </div>
+                            </div>
+
+                            <div class="efficiency-recommendation" id="eff-recommendation-box">
+                                <i data-lucide="info" class="icon-tiny"></i>
+                                <span id="eff-recommendation-text">ANALYZING OPTIMAL PATH...</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

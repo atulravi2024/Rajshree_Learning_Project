@@ -95,7 +95,7 @@ function calculateRouteDelta(distanceKm, pointerId) {
 /**
  * Hook to update the Distance Metrics UI on the bottom navbar.
  */
-window.updateNavbarMetrics = function(fromCoords, toCoords) {
+window.updateNavbarMetrics = function(fromCoords, toCoords, viaCoords = null) {
     const metricsBar = document.getElementById('distance-metrics-bar');
     if (!metricsBar) return;
     
@@ -104,7 +104,14 @@ window.updateNavbarMetrics = function(fromCoords, toCoords) {
         return;
     }
     
-    const gDist = calculateGlobeDistance(fromCoords.lat, fromCoords.lon, toCoords.lat, toCoords.lon);
+    let gDist = 0;
+    if (viaCoords) {
+        const d1 = calculateGlobeDistance(fromCoords.lat, fromCoords.lon, viaCoords.lat, viaCoords.lon);
+        const d2 = calculateGlobeDistance(viaCoords.lat, viaCoords.lon, toCoords.lat, toCoords.lon);
+        gDist = d1 + d2;
+    } else {
+        gDist = calculateGlobeDistance(fromCoords.lat, fromCoords.lon, toCoords.lat, toCoords.lon);
+    }
     
     // Get current UI states
     const pathType = window.SELECTED_PATH_TYPE || 'curve';
@@ -115,19 +122,92 @@ window.updateNavbarMetrics = function(fromCoords, toCoords) {
     const delta = calculateRouteDelta(aDist, pointerId);
     
     const elActual = document.getElementById('metric-actual');
-    const elGlobe = document.getElementById('metric-globe');
+    const elGlobe = document.getElementById('metric-globe-popup');
     const elTime = document.getElementById('metric-time');
-    const elDelta = document.getElementById('metric-delta');
+    const elDelta = document.getElementById('metric-delta-popup');
+    const elSpeed = document.getElementById('metric-speed');
+    const elSignal = document.getElementById('metric-signal');
     
     if (elActual) elActual.innerText = aDist.toLocaleString() + ' KM';
     if (elGlobe) elGlobe.innerText = gDist.toLocaleString() + ' KM';
     if (elTime) elTime.innerText = tTime;
     if (elDelta) elDelta.innerHTML = delta;
+
+    if (elSpeed) {
+        const speeds = { 'plane': 900, 'jet': 3500, 'rocket': 27000, 'helicopter': 250, 'drone': 150, 'satellite': 28000, 'train': 450, 'bus': 100, 'car': 120, 'motorcycle': 150, 'bicycle': 25, 'walking': 5, 'ship': 45, 'submarine': 70, 'circle': 1000 };
+        const speed = speeds[pointerId] || 1000;
+        elSpeed.innerText = speed.toLocaleString() + ' KM/H';
+    }
+    if (elSignal) {
+        const strength = Math.random() > 0.1 ? 'OPTIMAL' : 'INTERFERENCE';
+        elSignal.innerText = strength;
+        elSignal.className = strength === 'OPTIMAL' ? 'text-bright' : 'text-yellow';
+    }
+
+    // ── EFFICIENCY ANALYSIS LOGIC ──
+    const speedsRes = { 'plane': 900, 'jet': 3500, 'rocket': 27000, 'helicopter': 250, 'drone': 150, 'satellite': 28000, 'train': 450, 'bus': 100, 'car': 120, 'motorcycle': 150, 'bicycle': 25, 'walking': 5, 'ship': 45, 'submarine': 70, 'circle': 1000 };
+    const fastestSpeed = 28000;
+    const currentSpeed = speedsRes[pointerId] || 1000;
     
-    metricsBar.classList.remove('hidden');
+    const fastestHours = aDist / fastestSpeed;
+    const currentHours = aDist / currentSpeed;
+    const diffHours = currentHours - fastestHours;
     
-    // Animate the values to draw attention
-    metricsBar.classList.add('pulse-light');
-    setTimeout(() => metricsBar.classList.remove('pulse-light'), 600);
-    if (window.lucide) window.lucide.createIcons({ scope: metricsBar });
+    let gapText = '--';
+    if (diffHours <= 0.01) {
+        gapText = 'OPTIMAL';
+    } else if (diffHours < 1) {
+        gapText = `+${Math.round(diffHours * 60)}M LOSS`;
+    } else {
+        const h = Math.floor(diffHours);
+        const m = Math.round((diffHours - h) * 60);
+        gapText = `+${h}H ${m}M LOSS`;
+    }
+
+    const elEffGap = document.getElementById('eff-gap-value');
+    const elEffBarCurrent = document.getElementById('eff-bar-current');
+    const elEffBarFastest = document.getElementById('eff-bar-fastest');
+    const elEffCurrentName = document.getElementById('eff-current-name');
+    const elEffCurrentIcon = document.getElementById('eff-current-icon');
+    const elEffRecText = document.getElementById('eff-recommendation-text');
+
+    if (elEffGap) {
+        elEffGap.innerText = gapText;
+        elEffGap.className = gapText === 'OPTIMAL' ? 'text-cyan' : 'text-red';
+    }
+    
+    if (elEffBarFastest) elEffBarFastest.style.width = '100%';
+    if (elEffBarCurrent) {
+        const ratio = (currentSpeed / fastestSpeed) * 100;
+        elEffBarCurrent.style.width = Math.max(2, Math.min(100, ratio)) + '%';
+    }
+
+    if (elEffCurrentName) elEffCurrentName.innerText = (pointerId || 'CIRCLE').toUpperCase();
+    if (elEffCurrentIcon) {
+        elEffCurrentIcon.setAttribute('data-lucide', pointerId || 'circle');
+        if (window.lucide) window.lucide.createIcons({ scope: document.getElementById('eff-current-container') });
+    }
+
+    if (elEffRecText) {
+        if (currentSpeed >= fastestSpeed) {
+            elEffRecText.innerText = 'PEAK EFFICIENCY ACHIEVED.';
+        } else if (currentSpeed < 500) {
+            elEffRecText.innerText = 'CRITICAL DELAY: SWITCH TO JET/ROCKET.';
+        } else if (currentSpeed < 5000) {
+            elEffRecText.innerText = 'OPTIMIZATION POSSIBLE: USE ORBITAL PATH.';
+        } else {
+            elEffRecText.innerText = 'MINOR LATENCY: ASSESS FUEL PROTOCOLS.';
+        }
+    }
+    
+    // Show only if Search bar is active
+    if (window._manualSearchToggle) {
+        metricsBar.classList.remove('hidden');
+        // Animate the values to draw attention
+        metricsBar.classList.add('pulse-light');
+        setTimeout(() => metricsBar.classList.remove('pulse-light'), 600);
+        if (window.lucide) window.lucide.createIcons({ scope: metricsBar });
+    } else {
+        metricsBar.classList.add('hidden');
+    }
 };

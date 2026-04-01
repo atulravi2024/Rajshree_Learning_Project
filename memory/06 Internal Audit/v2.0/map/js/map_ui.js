@@ -161,6 +161,23 @@ function initBottomBar() {
 
     // Design Toggle
     document.getElementById('btn-globe-design')?.addEventListener('click', toggleGlobeDesign);
+
+    // Map Mode Toggle (Satellite / Map)
+    document.getElementById('btn-map-mode-toggle')?.addEventListener('click', () => {
+        if (typeof window.toggleGlobeMapView === 'function') {
+            window.toggleGlobeMapView();
+            if (window.playSound) window.playSound('UI_GENERIC_TAP');
+        }
+    });
+
+    // Theme Toggle (Light / Dark)
+    document.getElementById('btn-theme-toggle')?.addEventListener('click', () => {
+        if (typeof window.toggleGlobeTheme === 'function') {
+            window.toggleGlobeTheme();
+            if (window.playSound) window.playSound('UI_GENERIC_TAP');
+        }
+    });
+
     document.getElementById('btn-view-logs')?.addEventListener('click', () => {
         populateLogsModal();
         document.getElementById('modal-audit-logs')?.classList.add('open');
@@ -172,6 +189,28 @@ function initBottomBar() {
         lucide.createIcons();
         window._infoModalInterval = setInterval(populateInfoModal, 1500);
     });
+
+    // Distance Metrics Popup Toggle
+    const metricTrigger = document.getElementById('trigger-actual-metrics');
+    const metricPopup = document.getElementById('metrics-popup');
+    if (metricTrigger && metricPopup) {
+        metricTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = metricPopup.classList.toggle('active');
+            metricTrigger.classList.toggle('active', isActive);
+            if (isActive && window.lucide) {
+                window.lucide.createIcons({ scope: metricPopup });
+            }
+        });
+
+        // Close when clicking elsewhere
+        document.addEventListener('click', (e) => {
+            if (metricPopup.classList.contains('active') && !metricPopup.contains(e.target) && !metricTrigger.contains(e.target)) {
+                metricPopup.classList.remove('active');
+                metricTrigger.classList.remove('active');
+            }
+        });
+    }
 }
 
 function toggleGlobeDesign() {
@@ -563,6 +602,9 @@ function checkGlobalSearchVisibility() {
                 else sep.classList.remove('hidden');
             });
             document.getElementById('btn-ui-toggle')?.classList.remove('hidden');
+
+            // Hide distance metrics bar when search is closed
+            document.getElementById('distance-metrics-bar')?.classList.add('hidden');
         }
 
         // AUTOMATION: Update Zoom Level based on search toggle (150 active / 250 default)
