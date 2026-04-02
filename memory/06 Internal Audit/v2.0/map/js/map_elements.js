@@ -163,7 +163,8 @@ async function drawQuantumPath(coordinateArray) {
         for (let i = 0; i < intermediatePoints.length - 1; i++) {
             const p1 = intermediatePoints[i];
             const p2 = intermediatePoints[i+1];
-            for (let j = 0; j <= 20; j++) {
+            const startJ = (i === 0) ? 0 : 1;
+            for (let j = startJ; j <= 20; j++) {
                 const t = j / 20;
                 const p = new THREE.Vector3().lerpVectors(p1, p2, t);
                 // Direct Line: Matches globe distance perfectly everywhere (Geodesic)
@@ -179,10 +180,13 @@ async function drawQuantumPath(coordinateArray) {
         for (let i = 0; i < intermediatePoints.length - 1; i++) {
             const p1 = intermediatePoints[i];
             const p2 = intermediatePoints[i+1];
-            for (let j = 0; j <= 20; j++) {
-                const t = j / 20;
+            const startJ = (i === 0) ? 0 : 1;
+            
+            // Match Globe Arc with constant distance (Spherical Interpolation)
+            // By normalizing the linear interp, we create a perfect Great Circle at fixed altitude
+            for (let j = startJ; j <= 48; j++) {
+                const t = j / 48;
                 const p = new THREE.Vector3().lerpVectors(p1, p2, t);
-                // Orbital Line: Follow the globe orbit (Constant high altitude)
                 p.normalize().multiplyScalar(orbitalH);
                 densePoints.push(p);
             }
@@ -195,7 +199,8 @@ async function drawQuantumPath(coordinateArray) {
             const p1 = intermediatePoints[i];
             const p2 = intermediatePoints[i+1];
             const dist = p1.distanceTo(p2);
-            for (let j = 0; j <= 20; j++) {
+            const startJ = (i === 0) ? 0 : 1;
+            for (let j = startJ; j <= 20; j++) {
                 const t = j / 20;
                 const p = new THREE.Vector3().lerpVectors(p1, p2, t);
                 const h = 93 + (window.ICON_ALTITUDE_LEVEL || 0) + Math.sin(Math.PI * t) * (dist * 0.06 + 3);
@@ -256,6 +261,23 @@ async function drawQuantumPath(coordinateArray) {
     pathGroup.add(line);
     pathGroup.add(glowLine);
     pathGroup.add(particle);
+
+    // ── INJECT ACCURATE GROUND MARKERS ──
+    coordinateArray.forEach((coord) => {
+        const phi = (90 - coord.lat) * (Math.PI / 180);
+        const theta = (coord.lon + 180) * (Math.PI / 180);
+        const r_globe = 92.0; 
+        const x = -(r_globe * Math.sin(phi) * Math.cos(theta));
+        const z = (r_globe * Math.sin(phi) * Math.sin(theta));
+        const y = (r_globe * Math.cos(phi));
+
+        const dotGeo = new THREE.SphereGeometry(0.8, 16, 16);
+        const dotMat = new THREE.MeshBasicMaterial({ color: pathColor });
+        const marker = new THREE.Mesh(dotGeo, dotMat);
+        marker.position.set(x, y, z);
+
+        pathGroup.add(marker);
+    });
     
     pathGroup.renderOrder = 100;
     line.renderOrder = 100;
@@ -363,19 +385,9 @@ async function createPathParticle() {
  * Fallback particle generator
  */
 function createDefaultSphere(color) {
-    const pGeo = new THREE.SphereGeometry(2.0, 12, 12);
+    const pGeo = new THREE.SphereGeometry(0.8, 12, 12);
     const pMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 1.0 });
     const mesh = new THREE.Mesh(pGeo, pMat);
-    
-    const pGlow = new THREE.Sprite(new THREE.SpriteMaterial({
-        map: createGlowTexture(color),
-        color: color,
-        transparent: true,
-        opacity: 0.8,
-        blending: THREE.AdditiveBlending
-    }));
-    pGlow.scale.set(25, 25, 1);
-    mesh.add(pGlow);
     return mesh;
 }
 

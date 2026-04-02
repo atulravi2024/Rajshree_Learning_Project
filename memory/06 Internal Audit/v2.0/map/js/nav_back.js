@@ -44,8 +44,22 @@ function initNavBack() {
                 const coordinateArray = viaCoords ? [fromCoords, viaCoords, toCoords] : [fromCoords, toCoords];
                 if (window.drawQuantumPath) window.drawQuantumPath(coordinateArray);
                 if (window.playSound) window.playSound('UI_CONFIRM');
-                if (window.rotateGlobeToCoords) window.rotateGlobeToCoords(toCoords.lat, toCoords.lon);
+                
+                // CALCULATE MIDPOINT FOR FOCUS
+                const midLat = (fromCoords.lat + toCoords.lat) / 2;
+                let midLon;
+                const dLon = toCoords.lon - fromCoords.lon;
+                if (Math.abs(dLon) > 180) {
+                    midLon = (fromCoords.lon + toCoords.lon + 360) / 2;
+                    if (midLon > 180) midLon -= 360;
+                } else {
+                    midLon = (fromCoords.lon + toCoords.lon) / 2;
+                }
+
+                if (window.rotateGlobeToCoords) window.rotateGlobeToCoords(midLat, midLon);
                 if (window.updateNavbarMetrics) window.updateNavbarMetrics(fromCoords, toCoords, viaCoords);
+                
+                // BACK TO FIXED ZOOM (DEFAULT 150)
                 window._mapTargetCameraZ = 150;
             } else {
                 if (window.showErrorShake) window.showErrorShake();
