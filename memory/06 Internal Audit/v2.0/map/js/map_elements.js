@@ -152,50 +152,58 @@ async function drawQuantumPath(coordinateArray) {
     const points = [];
     const segments = 64;
 
-    if (pathType === 'straight' && coordinateArray.length === 2) {
-        const vStart = getPos(coordinateArray[0]);
-        const vEnd = getPos(coordinateArray[1]);
-        const mid = new THREE.Vector3().addVectors(vStart, vEnd).multiplyScalar(0.5);
-        mid.normalize().multiplyScalar(95.0); 
-        curve = new THREE.QuadraticBezierCurve3(vStart, mid, vEnd);
-    } else {
-        // Handle Multi-point or curved
-        const intermediatePoints = [];
-        for (let i = 0; i < coordinateArray.length; i++) {
-            intermediatePoints.push(getPos(coordinateArray[i]));
-        }
+    let curve;
+    const intermediatePoints = [];
+    for (let i = 0; i < coordinateArray.length; i++) {
+        intermediatePoints.push(getPos(coordinateArray[i]));
+    }
 
-        if (pathType === 'circle') {
-            const orbitalH = 100 + (window.ICON_ALTITUDE_LEVEL || 0);
-            const densePoints = [];
-            for (let i = 0; i < intermediatePoints.length - 1; i++) {
-                const p1 = intermediatePoints[i];
-                const p2 = intermediatePoints[i+1];
-                for (let j = 0; j <= 20; j++) {
-                    const t = j / 20;
-                    const p = new THREE.Vector3().lerpVectors(p1, p2, t);
-                    p.normalize().multiplyScalar(orbitalH);
-                    densePoints.push(p);
-                }
+    if (pathType === 'straight') {
+        const densePoints = [];
+        for (let i = 0; i < intermediatePoints.length - 1; i++) {
+            const p1 = intermediatePoints[i];
+            const p2 = intermediatePoints[i+1];
+            for (let j = 0; j <= 20; j++) {
+                const t = j / 20;
+                const p = new THREE.Vector3().lerpVectors(p1, p2, t);
+                // Direct Line: Matches globe distance perfectly everywhere (Geodesic)
+                const h = 93.5 + (window.ICON_ALTITUDE_LEVEL || 0);
+                p.normalize().multiplyScalar(h);
+                densePoints.push(p);
             }
-            curve = new THREE.CatmullRomCurve3(densePoints);
-        } else {
-            // Default Curve
-            const densePoints = [];
-            for (let i = 0; i < intermediatePoints.length - 1; i++) {
-                const p1 = intermediatePoints[i];
-                const p2 = intermediatePoints[i+1];
-                const dist = p1.distanceTo(p2);
-                for (let j = 0; j <= 20; j++) {
-                    const t = j / 20;
-                    const p = new THREE.Vector3().lerpVectors(p1, p2, t);
-                    const h = 93 + (window.ICON_ALTITUDE_LEVEL || 0) + Math.sin(Math.PI * t) * (dist * 0.06 + 3);
-                    p.normalize().multiplyScalar(h);
-                    densePoints.push(p);
-                }
-            }
-            curve = new THREE.CatmullRomCurve3(densePoints);
         }
+        curve = new THREE.CatmullRomCurve3(densePoints);
+    } else if (pathType === 'circle') {
+        const orbitalH = 100 + (window.ICON_ALTITUDE_LEVEL || 0);
+        const densePoints = [];
+        for (let i = 0; i < intermediatePoints.length - 1; i++) {
+            const p1 = intermediatePoints[i];
+            const p2 = intermediatePoints[i+1];
+            for (let j = 0; j <= 20; j++) {
+                const t = j / 20;
+                const p = new THREE.Vector3().lerpVectors(p1, p2, t);
+                // Orbital Line: Follow the globe orbit (Constant high altitude)
+                p.normalize().multiplyScalar(orbitalH);
+                densePoints.push(p);
+            }
+        }
+        curve = new THREE.CatmullRomCurve3(densePoints);
+    } else {
+        // Default Curve (Arched)
+        const densePoints = [];
+        for (let i = 0; i < intermediatePoints.length - 1; i++) {
+            const p1 = intermediatePoints[i];
+            const p2 = intermediatePoints[i+1];
+            const dist = p1.distanceTo(p2);
+            for (let j = 0; j <= 20; j++) {
+                const t = j / 20;
+                const p = new THREE.Vector3().lerpVectors(p1, p2, t);
+                const h = 93 + (window.ICON_ALTITUDE_LEVEL || 0) + Math.sin(Math.PI * t) * (dist * 0.06 + 3);
+                p.normalize().multiplyScalar(h);
+                densePoints.push(p);
+            }
+        }
+        curve = new THREE.CatmullRomCurve3(densePoints);
     }
 
     const geometry = new THREE.BufferGeometry().setFromPoints(curve.getPoints(120));

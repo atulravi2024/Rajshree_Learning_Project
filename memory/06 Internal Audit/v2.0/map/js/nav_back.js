@@ -1,8 +1,12 @@
-// ── SEARCH MODE GLOBAL STATE ──
-window.SEARCH_MODE = 'route'; // 'poi' | 'route' | 'via'
-window.VIA_MODE_ACTIVE = false; // Legacy fallback for some components
+/**
+ * nav_back.js - Logic for Back Side (Globe Search, Location, and Travel).
+ * Handles: Global Search, Distance Bar, metrics popup, and search mode selection.
+ */
 
-function initGlobalSearch() {
+window.SEARCH_MODE = 'route'; // POI | ROUTE | VIA
+window.VIA_MODE_ACTIVE = false;
+
+function initNavBack() {
     const fromInput = document.getElementById('map-search-from');
     const viaInput = document.getElementById('map-search-via');
     const toInput = document.getElementById('map-search-to');
@@ -20,35 +24,28 @@ function initGlobalSearch() {
         
         console.log(`Search Request [${window.SEARCH_MODE}]: ${from} ${via ? 'via ' + via : ''} ${window.SEARCH_MODE !== 'poi' ? '-> ' + to : ''}`);
 
-        const fromCoords = searchDeepLocation(from);
-        const viaCoords = (window.SEARCH_MODE === 'via' && via) ? searchDeepLocation(via) : null;
-        const toCoords = (window.SEARCH_MODE !== 'poi' && to) ? searchDeepLocation(to) : null;
+        // SearchDeepLocation should be available globally
+        const fromCoords = typeof searchDeepLocation === 'function' ? searchDeepLocation(from) : null;
+        const viaCoords = (window.SEARCH_MODE === 'via' && via && typeof searchDeepLocation === 'function') ? searchDeepLocation(via) : null;
+        const toCoords = (window.SEARCH_MODE !== 'poi' && to && typeof searchDeepLocation === 'function') ? searchDeepLocation(to) : null;
 
         if (window.SEARCH_MODE === 'poi') {
             if (fromCoords) {
                 if (window.rotateGlobeToCoords) window.rotateGlobeToCoords(fromCoords.lat, fromCoords.lon);
                 if (window.playSound) window.playSound('UI_QUANTUM_LOCK');
-                // Clear any existing path
                 if (window.drawQuantumPath) window.drawQuantumPath([]);
-                
-                // Show in metrics?
                 if (window.updateNavbarMetrics) window.updateNavbarMetrics(fromCoords, null, null);
-                
                 window._mapTargetCameraZ = 150;
             } else {
                 if (window.showErrorShake) window.showErrorShake();
             }
         } else {
-            // Route or Via Mode
             if (fromCoords && toCoords) {
                 const coordinateArray = viaCoords ? [fromCoords, viaCoords, toCoords] : [fromCoords, toCoords];
-                
                 if (window.drawQuantumPath) window.drawQuantumPath(coordinateArray);
                 if (window.playSound) window.playSound('UI_CONFIRM');
-                
-                window.rotateGlobeToCoords(toCoords.lat, toCoords.lon);
+                if (window.rotateGlobeToCoords) window.rotateGlobeToCoords(toCoords.lat, toCoords.lon);
                 if (window.updateNavbarMetrics) window.updateNavbarMetrics(fromCoords, toCoords, viaCoords);
-
                 window._mapTargetCameraZ = 150;
             } else {
                 if (window.showErrorShake) window.showErrorShake();
@@ -59,11 +56,13 @@ function initGlobalSearch() {
         setTimeout(() => runBtn.style.transform = '', 100);
     }
 
-    fromInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') executeSearch(); });
-    if (viaInput) viaInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') executeSearch(); });
-    toInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') executeSearch(); });
+    // Key Listeners
+    [fromInput, viaInput, toInput].forEach(inp => {
+        if (inp) inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') executeSearch(); });
+    });
     runBtn.addEventListener('click', executeSearch);
 
+    // Initializations
     if (window.initAutocomplete) window.initAutocomplete(fromInput, viaInput, toInput);
     if (window.initClearButtons) window.initClearButtons(fromInput, viaInput, toInput);
     if (window.initSwapHandlers) window.initSwapHandlers(fromInput, viaInput, toInput);
@@ -74,17 +73,35 @@ function initGlobalSearch() {
     if (window.initPathTypeSelection) window.initPathTypeSelection();
     if (window.initPathColorSelection) window.initPathColorSelection();
     if (window.initPointerColorSelectionColor) window.initPointerColorSelectionColor();
+
+    // --- DISTANCE METRICS (BACK SIDE) ---
+    const metricTrigger = document.getElementById('trigger-actual-metrics');
+    const metricPopup = document.getElementById('metrics-popup');
+    
+    if (metricTrigger && metricPopup) {
+        metricTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = metricPopup.classList.toggle('active');
+            metricTrigger.classList.toggle('active', isActive);
+        });
+
+        document.addEventListener('click', (e) => {
+            if (metricPopup.classList.contains('active') && !metricPopup.contains(e.target) && !metricTrigger.contains(e.target)) {
+                metricPopup.classList.remove('active');
+                metricTrigger.classList.remove('active');
+            }
+        });
+    }
 }
 
 /**
- * Initializes the Search Mode Drop-up selection.
+ * Selection of Search Mode (POI/Route/Via).
  */
 function initSearchModeSelection(from, via, to) {
     const selectorBtn = document.getElementById('btn-search-mode-selector');
     const menu = document.getElementById('map-search-mode-menu');
-    const container = document.getElementById('global-search-container');
 
-    if (!selectorBtn || !menu || !container) return;
+    if (!selectorBtn || !menu) return;
 
     const modes = [
         { id: 'poi',    label: 'Point Interest', icon: 'map-pin', badge: 'P', desc: 'Single location search' },
@@ -92,7 +109,6 @@ function initSearchModeSelection(from, via, to) {
         { id: 'via',    label: 'Navigation Via', icon: 'map-pinned', badge: 'V', desc: 'Start, Via, and Destination' }
     ];
 
-    // Populate menu
     menu.innerHTML = '';
     modes.forEach(m => {
         const opt = document.createElement('div');
@@ -107,16 +123,11 @@ function initSearchModeSelection(from, via, to) {
         opt.onclick = (e) => {
             e.stopPropagation();
             window.SEARCH_MODE = m.id;
-            window.VIA_MODE_ACTIVE = (m.id === 'via'); // Legacy sync
-            
+            window.VIA_MODE_ACTIVE = (m.id === 'via');
             updateSearchModeUI();
             menu.classList.remove('active');
-            
             if (window.playSound) window.playSound('UI_CLICK');
-            
-            // Re-run search if we have data
-            const runBtn = document.getElementById('btn-run-search');
-            if (runBtn && from.value) runBtn.click();
+            if (from.value) document.getElementById('btn-run-search')?.click();
         };
         menu.appendChild(opt);
     });
@@ -129,7 +140,7 @@ function initSearchModeSelection(from, via, to) {
             'map-pointer-color-menu', 'map-altitude-menu', 'map-speed-menu'
         ];
         allMenus.forEach(id => document.getElementById(id)?.classList.remove('active'));
-        
+
         menu.classList.toggle('active');
         if (menu.classList.contains('active') && window.lucide) {
             lucide.createIcons({ scope: menu });
@@ -140,53 +151,40 @@ function initSearchModeSelection(from, via, to) {
         if (menu) menu.classList.remove('active');
     });
 
+    
     updateSearchModeUI();
 }
 
 function updateSearchModeUI() {
     const selectorBtn = document.getElementById('btn-search-mode-selector');
     const container = document.getElementById('global-search-container');
-    const menu = document.getElementById('map-search-mode-menu');
     const fromInput = document.getElementById('map-search-from');
     
     if (!selectorBtn || !container) return;
 
     const m = {
-        'poi':    { icon: 'map-pin', badge: 'P', placeholder: 'SEARCH CITY/NODE...' },
-        'route':  { icon: 'move-right', badge: 'R', placeholder: 'START...' },
-        'via':    { icon: 'map-pinned', badge: 'V', placeholder: 'START...' }
+        'poi':    { icon: 'map-pin', badge: 'P', placeholder: 'SEARCH CITY/NODE...', title: 'Location: POINT' },
+        'route':  { icon: 'move-right', badge: 'R', placeholder: 'START...', title: 'Location: START' },
+        'via':    { icon: 'map-pinned', badge: 'V', placeholder: 'START...', title: 'Location: START' }
     }[window.SEARCH_MODE];
 
     selectorBtn.innerHTML = `<i data-lucide="${m.icon}"></i><span class="btn-badge">${m.badge}</span>`;
     if (window.lucide) lucide.createIcons({ scope: selectorBtn });
     
-    if (fromInput) fromInput.placeholder = m.placeholder;
+    if (fromInput) {
+        fromInput.placeholder = m.placeholder;
+        fromInput.parentElement.setAttribute('title', m.title); // Update Tooltip!
+    }
 
-    // Update Container Classes
+    // Toggle container classes for mode-specific styling
     container.classList.toggle('mode-poi', window.SEARCH_MODE === 'poi');
     container.classList.toggle('mode-route', window.SEARCH_MODE === 'route');
     container.classList.toggle('mode-via', window.SEARCH_MODE === 'via');
-    
-    // Legacy support for CSS that uses .via-mode-disabled
     container.classList.toggle('via-mode-disabled', window.SEARCH_MODE !== 'via');
-
-    // Update menu highlights
-    if (menu) {
-        menu.querySelectorAll('.pointer-option').forEach(opt => {
-            const label = opt.querySelector('.label') ? opt.querySelector('.label').textContent : '';
-            const isSelected = label.toLowerCase().includes(window.SEARCH_MODE);
-            opt.classList.toggle('selected', isSelected);
-        });
-    }
-
-    // Sync Clear Buttons
-    const fromBtn = document.querySelector('.from-field .clear-input-btn');
-    const viaBtn = document.querySelector('.via-field .clear-input-btn');
-    const toBtn = document.querySelector('.to-field .clear-input-btn');
-    if (fromBtn) fromBtn.classList.toggle('visible', !!fromInput?.value);
-    if (viaBtn) viaBtn.classList.toggle('visible', !!document.getElementById('map-search-via')?.value);
-    if (toBtn) toBtn.classList.toggle('visible', !!document.getElementById('map-search-to')?.value);
 }
+
+window.initNavBack = initNavBack;
+window.updateSearchModeUI = updateSearchModeUI;
 
 /**
  * Creates a Sprite from a Lucide icon using DOM-Proxy extraction
@@ -209,7 +207,6 @@ window.createIconTexture = async function(iconName) {
         const proxyDiv = document.createElement('div');
         proxyDiv.style.display = 'none';
         
-        // Direct mapping (Lucide-browser handles data-lucide kebab-case names natively)
         proxyDiv.innerHTML = `<i data-lucide="${iconName}"></i>`;
         document.body.appendChild(proxyDiv);
 
@@ -250,4 +247,4 @@ window.createIconTexture = async function(iconName) {
         console.warn('Pointer Texture Generation Failed:', e);
         return null;
     }
-}
+};

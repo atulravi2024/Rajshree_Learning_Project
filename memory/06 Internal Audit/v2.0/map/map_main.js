@@ -26,10 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof initRealDataFeeds === 'function') initRealDataFeeds();
     
     // UI Interaction Initialization
-    if (typeof initCardCollapsibility === 'function') initCardCollapsibility();
-    if (typeof initBottomBar === 'function') initBottomBar();
-    if (typeof initGlobalSearch === 'function') initGlobalSearch();
-    if (typeof initNavCollapsing === 'function') initNavCollapsing();
+    if (typeof initNavMaster === 'function') initNavMaster();
+    if (typeof initNavFront === 'function') initNavFront();
+    if (typeof initNavBack === 'function') initNavBack();
     
-    console.log("Holographic Map: All modules initialized successfully.");
+    // Legacy support (fallback)
+    if (typeof initCardCollapsibility === 'function') initCardCollapsibility();
+    
+    console.log("Holographic Map: All modular systems initialized successfully.");
 });
+

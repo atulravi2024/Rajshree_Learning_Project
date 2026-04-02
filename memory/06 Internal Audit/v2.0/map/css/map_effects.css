@@ -66,9 +66,39 @@
 }
 
 /* ── LOCKDOWN & THEME STATES ── */
-body.holo-v2.lockdown-active .holo-widget { border-color: rgba(255, 62, 62, 0.45) !important; }
-body.holo-v2.lockdown-active .holo-app-container { background: radial-gradient(circle at center, #1a0202 0%, #0a0101 100%); }
-body.holo-v2.lockdown-active .holo-bottom-bar { border-top-color: rgba(255, 62, 62, 0.5); }
+body.holo-v2.lockdown-active {
+    --theme-accent: #ff3e3e !important;
+}
+body.holo-v2.lockdown-active .holo-widget { 
+    border-color: rgba(255, 62, 62, 0.7) !important; 
+    box-shadow: 0 0 20px rgba(255, 62, 62, 0.2) inset;
+}
+body.holo-v2.lockdown-active .holo-app-container { background: radial-gradient(circle at center, #2a0404 0%, #0a0101 100%); }
+body.holo-v2.lockdown-active .holo-bottom-bar { border-top-color: rgba(255, 62, 62, 0.8); }
+body.holo-v2.lockdown-active .map-grid-overlay {
+    background-image: linear-gradient(rgba(255, 62, 62, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 62, 62, 0.15) 1px, transparent 1px) !important;
+}
+
+/* ── DEEP SCAN EFFECTS ── */
+body.deep-scan-active .holo-app-container::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 15%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 240, 255, 0.6), transparent);
+    animation: deepScanSweep 1.2s linear infinite;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+body.deep-scan-active .holo-widget {
+    animation: scanFlash 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes deepScanSweep {
+    0%   { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
 
 body.holo-v2.theme-amber {
     --accent-rgb: 251, 191, 36;

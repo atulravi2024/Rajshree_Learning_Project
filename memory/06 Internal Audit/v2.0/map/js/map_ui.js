@@ -71,12 +71,15 @@ function initBottomBar() {
         btnAtmosphere.addEventListener('click', () => {
             const isActive = btnAtmosphere.classList.toggle('active');
             if (window._mapGlobeMat) {
-                window._mapGlobeMat.emissiveIntensity = isActive ? 0.6 : 0.0;
+                // If visual boost is active, glow might be stronger
+                const isBoosted = window._isVisualBoostActive;
+                window._mapGlobeMat.emissiveIntensity = isActive ? (isBoosted ? 0.9 : 0.6) : 0.0;
             }
             if (window._mapAtmosphere) {
                 window._mapAtmosphere[0].visible = isActive;
                 window._mapAtmosphere[1].visible = isActive;
             }
+            if (window.playSound) window.playSound('UI_GENERIC_TAP');
         });
     }
 
@@ -95,6 +98,7 @@ function initBottomBar() {
                     window._mapAmbientLight.intensity = 1.25;
                 }
             }
+            if (window.playSound) window.playSound('UI_GENERIC_TAP');
         });
     }
 
@@ -102,7 +106,14 @@ function initBottomBar() {
     const satSpeedSlider = document.getElementById('sat-speed-slider');
     if (satSpeedSlider) {
         satSpeedSlider.addEventListener('input', (e) => {
-            window._satSpeedMultiplier = parseFloat(e.target.value);
+            const val = parseFloat(e.target.value);
+            window._satSpeedMultiplier = val;
+            
+            // Also tie it to the main globe rotation, restoring it if it was manually stopped
+            if (window.controls) {
+                window.controls.autoRotate = val > 0;
+                window.controls.autoRotateSpeed = 0.5 * val;
+            }
         });
     }
 
@@ -156,11 +167,15 @@ function initBottomBar() {
             window._isVisualBoostActive = !window._isVisualBoostActive;
             visualBoostBtn.classList.toggle('active', window._isVisualBoostActive);
             if (typeof window.applyVisualBoostState === 'function') window.applyVisualBoostState();
+            if (window.playSound) window.playSound('UI_GENERIC_TAP');
         });
     }
 
     // Design Toggle
-    document.getElementById('btn-globe-design')?.addEventListener('click', toggleGlobeDesign);
+    document.getElementById('btn-globe-design')?.addEventListener('click', () => {
+        toggleGlobeDesign();
+        if (window.playSound) window.playSound('UI_GENERIC_TAP');
+    });
 
     // Map Mode Toggle (Satellite / Map)
     document.getElementById('btn-map-mode-toggle')?.addEventListener('click', () => {
@@ -188,6 +203,44 @@ function initBottomBar() {
         document.getElementById('modal-system-info')?.classList.add('open');
         lucide.createIcons();
         window._infoModalInterval = setInterval(populateInfoModal, 1500);
+    });
+
+    // ── DEAD BUTTONS IMPLEMENTATION ──
+    document.getElementById('btn-deep-scan')?.addEventListener('click', () => {
+        runDeepScan();
+    });
+
+    document.getElementById('btn-history')?.addEventListener('click', () => {
+        populateHistoryList();
+        document.getElementById('modal-search-history')?.classList.add('open');
+        lucide.createIcons();
+    });
+
+    document.getElementById('btn-export')?.addEventListener('click', () => {
+        const data = JSON.stringify(window.DEFAULT_GLOBAL_METRICS || {}, null, 2);
+        const blob = new Blob([data], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'audit_report_' + new Date().toISOString().replace(/[:.]/g, '-') + '.json';
+        a.click();
+        if (window.playSound) window.playSound('UI_GENERIC_TAP');
+    });
+
+    document.getElementById('btn-lockdown')?.addEventListener('click', () => {
+        triggerLockdown();
+    });
+
+    // Modal Close Generic Logic
+    document.body.addEventListener('click', (e) => {
+        if (e.target.closest('.hud-modal-close')) {
+            const modal = e.target.closest('.hud-modal');
+            if (modal) modal.classList.remove('open');
+            if (e.target.id === 'close-info-modal' && window._infoModalInterval) {
+                clearInterval(window._infoModalInterval);
+                window._infoModalInterval = null;
+            }
+        }
     });
 
     // Distance Metrics Popup Toggle
@@ -248,14 +301,157 @@ function toggleGlobeDesign() {
     } else {
         if (hfGlobe) hfGlobe.visible = true;
         if (wireframeGlobe) wireframeGlobe.visible = false;
-        if (cloudMesh) cloudMesh.visible = true;
+        // Restore cloud map to the state of tg-cloud-map if we have it, else true
+        const cloudToggle = document.getElementById('tg-cloud-map');
+        if (cloudMesh) cloudMesh.visible = cloudToggle ? cloudToggle.checked : true;
+        // Restore atmosphere to the state of btn-atmosphere
+        const atmToggle = document.getElementById('btn-atmosphere');
+        const atmActive = atmToggle ? atmToggle.classList.contains('active') : true;
+        if (atmosphere) atmosphere.forEach(m => m.visible = atmActive);
+        
         if (globeGlow) {
             globeGlow.visible = true;
             globeGlow.material.color.setHex(0xffffff);
             globeGlow.material.opacity = 0.15;
         }
-        if (window._mapSunLight) window._mapSunLight.visible = true;
-        if (window._mapAmbientLight) window._mapAmbientLight.intensity = 0.25;
+        // Restore spotlight to the state of btn-spotlight
+        const spotlightToggle = document.getElementById('btn-spotlight');
+        const spotlightActive = spotlightToggle ? spotlightToggle.classList.contains('active') : true;
+        if (window._mapSunLight) window._mapSunLight.visible = spotlightActive;
+        if (window._mapAmbientLight) window._mapAmbientLight.intensity = spotlightActive ? 0.25 : 1.25;
+    }
+}
+
+// ── NEW DEAD BUTTONS LOGIC ──
+
+function runDeepScan() {
+    if (window._isDeepScanning) return;
+    window._isDeepScanning = true;
+
+    // Play sound if available
+    if (window.playSound) window.playSound('SCAN_INITIATE');
+
+    const btn = document.getElementById('btn-deep-scan');
+    if (btn) btn.classList.add('active');
+
+    // Trigger subtle globe rotation animation
+    if (typeof activateMapMode === 'function') {
+        activateMapMode('scan');
+    }
+
+    // Simulate scan duration without flashy CSS animation
+    setTimeout(() => {
+        if (btn) btn.classList.remove('active');
+        window._isDeepScanning = false;
+        
+        if (window.playSound) window.playSound('UI_GENERIC_TAP');
+
+        // Logic for Deep Scan: clear out warnings, optimize metrics
+        if (window.DEFAULT_GLOBAL_METRICS) {
+            window.DEFAULT_GLOBAL_METRICS.activeNodes = 1450 + Math.floor(Math.random() * 50);
+            window.DEFAULT_GLOBAL_METRICS.systemLoad = (Math.floor(Math.random() * 15) + 20) + '%'; // Optimized load
+            window.DEFAULT_GLOBAL_METRICS.latency = (Math.floor(Math.random() * 3) + 1) + '.' + Math.floor(Math.random() * 9) + ' ms';
+            window.DEFAULT_GLOBAL_METRICS.netIntegrity = '100% SECURE';
+            window.DEFAULT_GLOBAL_METRICS.sectorStatus = '1 OPTIMAL';
+            window.DEFAULT_GLOBAL_METRICS.activeThreats = 0;
+            updateSidebarForSelection();
+        }
+
+        // Push a log to history if AUDIT_LOG_HISTORY exists
+        if (window.AUDIT_LOG_HISTORY) {
+            window.AUDIT_LOG_HISTORY.unshift({
+                ts: new Date().toLocaleTimeString(),
+                type: 'info',
+                event: 'DEEP SCAN COMPLETE',
+                text: 'Network integrity verified. Anomalies resolved.',
+                loc: 'GLOBAL'
+            });
+            if (typeof syncAuditTrail === 'function') syncAuditTrail();
+        }
+    }, 4000); // 4 seconds to match the activateMapMode('scan') interval
+}
+
+function triggerLockdown() {
+    const isLockdown = document.body.classList.toggle('lockdown-active');
+    
+    // Play sound
+    if (window.playSound) {
+        window.playSound(isLockdown ? 'LOCKDOWN_ALARM' : 'UI_GENERIC_TAP');
+    }
+
+    // Toggle critical state locally
+    const btnLockdown = document.getElementById('btn-lockdown');
+    if (btnLockdown) {
+        btnLockdown.classList.toggle('active', isLockdown);
+    }
+    
+    // Clear paths immediately when lockdown initiates
+    if (isLockdown && window.drawQuantumPath) {
+        window.drawQuantumPath([]);
+        // Ensure distance metrics bar is hidden since path is cleared
+        document.getElementById('distance-metrics-bar')?.classList.add('hidden');
+    }
+    
+    // Update global metrics to critical if lockdown active
+    if (window.DEFAULT_GLOBAL_METRICS) {
+        if (isLockdown) {
+            window._prevSectorStatus = window.DEFAULT_GLOBAL_METRICS.sectorStatus;
+            window.DEFAULT_GLOBAL_METRICS.sectorStatus = 'CRITICAL ALERT';
+        } else {
+            window.DEFAULT_GLOBAL_METRICS.sectorStatus = window._prevSectorStatus || '2 warn';
+        }
+        updateSidebarForSelection();
+    }
+}
+
+function populateHistoryList() {
+    const listBody = document.getElementById('history-modal-body');
+    if (!listBody) return;
+
+    let contentHtml = '';
+
+    // Section 1: Information about the project
+    contentHtml += '<div style="color:var(--theme-accent); font-weight:bold; margin-bottom:10px; font-size:0.85rem; border-bottom:1px solid rgba(0,240,255,0.2); padding-bottom:5px;">PROJECT INFORMATION</div>';
+    if (window.SYSTEM_METRICS) {
+        const infoItems = window.SYSTEM_METRICS.slice(0, 4); // Show top 4 metrics
+        contentHtml += '<div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.5rem; margin-bottom:15px; font-size:0.75rem;">';
+        infoItems.forEach(item => {
+            const val = typeof item.value === 'function' ? item.value() : item.value;
+            contentHtml += `<div style="background:rgba(255,255,255,0.02); padding:5px; border-radius:4px;"><span style="color:var(--text-dim)">${item.label}:</span> <span style="color:var(--text-bright)">${val}</span></div>`;
+        });
+        contentHtml += '</div>';
+    }
+
+    // Section 2: Log of warnings and criticals
+    contentHtml += '<div style="color:#facc15; font-weight:bold; margin-bottom:10px; font-size:0.85rem; border-bottom:1px solid rgba(250,204,21,0.2); padding-bottom:5px; margin-top:20px;">WARNING & CRITICAL LOGS</div>';
+    
+    if (window.AUDIT_LOG_HISTORY) {
+        // Filter specifically for warning, threat (critical), or error
+        const alerts = window.AUDIT_LOG_HISTORY.filter(log => log.type === 'warning' || log.type === 'threat' || log.status === 'critical');
+        if (alerts.length > 0) {
+            contentHtml += alerts.map(log => {
+                const color = log.type === 'warning' ? '#facc15' : '#ff3e3e';
+                return `
+                <div class="log-row" style="padding: 0.6rem 0; border-bottom: 1px dashed rgba(255,255,255,0.05); display:flex; flex-direction:column; gap:4px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="color:${color}; font-weight:700; font-size:0.75rem;">[${log.type.toUpperCase()}] ${log.event}</span>
+                        <span style="font-size:0.65rem; color:var(--text-dim)">${log.ts}</span>
+                    </div>
+                    <div style="color:var(--text-mid); font-size:0.8rem;">${log.text}</div>
+                    <div style="color:var(--text-dim); font-size:0.7rem; font-family:var(--font-mono);">LOC: ${log.loc}</div>
+                </div>`;
+            }).join('');
+        } else {
+            contentHtml += '<div style="color:var(--text-dim); padding:1rem; text-align:center;">No warnings or critical alerts found.</div>';
+        }
+    }
+
+    listBody.innerHTML = contentHtml;
+
+    // Dynamically update the modal title to match the new functionality
+    const modalTitle = document.querySelector('#modal-search-history .hud-modal-title');
+    if (modalTitle) {
+        modalTitle.innerHTML = '<i data-lucide="info"></i> Project History & Alerts';
     }
 }
 
@@ -330,7 +526,7 @@ function initOrbitalSystem(scene, camera, renderer) {
 }
 
 function updateOrbitalAnimation(now) {
-    const mult = window._satSpeedMultiplier || 1.0;
+    const mult = typeof window._satSpeedMultiplier === 'number' ? window._satSpeedMultiplier : 1.0;
     const rings = window._mapOrbitalGroup.children.filter(c => c.type === 'Mesh');
     if (rings.length >= 3) {
         rings[0].rotation.z += 0.002 * mult;
@@ -606,14 +802,6 @@ function checkGlobalSearchVisibility() {
             // Hide distance metrics bar when search is closed
             document.getElementById('distance-metrics-bar')?.classList.add('hidden');
         }
-
-        // AUTOMATION: Update Zoom Level based on search toggle (150 active / 250 default)
-        const targetZ = window._manualSearchToggle ? 150 : 250;
-        window._mapTargetCameraZ = targetZ;
-        const zSlider = document.getElementById('globe-zoom-slider');
-        if (zSlider && typeof mapZToSlider === 'function') {
-            zSlider.value = mapZToSlider(targetZ);
-        }
     }
 }
 
@@ -649,11 +837,13 @@ function initNavCollapsing() {
 }
 
 window.applyVisualBoostState = function() {
+    const atmActive = document.getElementById('btn-atmosphere')?.classList.contains('active') ?? true;
+    
     if (!window._isVisualBoostActive) {
         document.body.classList.remove('visual-boost-hf', 'visual-boost-wire');
         if (window._mapSunLight) window._mapSunLight.intensity = 0.8;
         if (window._mapAmbientLight) window._mapAmbientLight.intensity = window._mapGlobeDesign === 'wireframe' ? 0.8 : 0.25;
-        if (window._mapGlobeMat) window._mapGlobeMat.emissiveIntensity = 0.6;
+        if (window._mapGlobeMat) window._mapGlobeMat.emissiveIntensity = atmActive ? 0.6 : 0.0;
         if (window._mapGlobeWireframe) window._mapGlobeWireframe.material.opacity = 0.35;
         if (window._mapGlobeGlow) window._mapGlobeGlow.material.opacity = window._mapGlobeDesign === 'wireframe' ? 0.4 : 0.15;
         return;
@@ -663,7 +853,7 @@ window.applyVisualBoostState = function() {
     document.body.classList.toggle('visual-boost-wire', !isHF);
     if (isHF) {
         if (window._mapSunLight) window._mapSunLight.intensity = 1.35;
-        if (window._mapGlobeMat) window._mapGlobeMat.emissiveIntensity = 0.9;
+        if (window._mapGlobeMat) window._mapGlobeMat.emissiveIntensity = atmActive ? 0.9 : 0.0;
     } else {
         if (window._mapGlobeWireframe) window._mapGlobeWireframe.material.opacity = 0.8;
         if (window._mapGlobeGlow) window._mapGlobeGlow.material.opacity = 0.7;

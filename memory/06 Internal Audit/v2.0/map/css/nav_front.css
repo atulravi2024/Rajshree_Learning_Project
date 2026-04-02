@@ -1,0 +1,63 @@
+/**
+ * nav_front.css - Styles for Front Side (Analysis/Reports/Critical).
+ * Focuses on category tabs, icons, and mode-switching tabs.
+ */
+
+.bottom-tabs {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.nav-tab {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    color: var(--text-mid);
+    padding: 0.4rem 1.1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.nav-tab:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-bright);
+    border-color: var(--theme-accent);
+}
+
+.nav-tab.active {
+    background: var(--theme-accent-soft);
+    border-color: var(--theme-accent);
+    color: var(--theme-accent);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.15);
+}
+
+/* Category Collapsing (Analysis UI) */
+.navbar-category.section-collapsed {
+    padding: 0.2rem 1rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.navbar-category.section-collapsed .category-icons,
+.navbar-category.section-collapsed .bottom-tabs {
+    display: none !important;
+}
+
+.navbar-category:not(.section-collapsed) .category-label {
+    display: none;
+}
+
+.navbar-category.section-collapsed .category-label {
+    display: block;
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.65rem;
+}
+
+.navbar-category.section-collapsed:hover .category-label {
+    color: var(--theme-accent);
+}

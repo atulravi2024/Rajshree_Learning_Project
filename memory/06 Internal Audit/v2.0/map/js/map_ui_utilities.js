@@ -92,6 +92,14 @@ function animateSwap(el1, el2) {
             el.style.transform = 'translateY(0)';
         }, 10);
     });
+    // Sync tooltips as well to ensure front/back end data matches
+    const title1 = el1.parentElement.getAttribute('title');
+    const title2 = el2.parentElement.getAttribute('title');
+    if (title1 && title2) {
+        el1.parentElement.setAttribute('title', title2);
+        el2.parentElement.setAttribute('title', title1);
+    }
+
 
     // Sync clear button visibility manually since 'input' event won't fire on value change
     const fromBtn = document.querySelector('.from-field .clear-input-btn');
