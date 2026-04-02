@@ -1,4 +1,5 @@
 // map_state.js - Global state for the Holographic Map
+window.startTime = Date.now();
 
 // Exposed globe state for tab controls
 window._mapGlobe = null; // Will hold { globeGroup, camera, scene, renderer, nodes }

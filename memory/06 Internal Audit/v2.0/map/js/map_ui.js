@@ -1,8 +1,19 @@
-// map_ui.js - Sidebar, Bottom Bar, Modals, and UI Logic
+// map_ui.js - Sidebar, Bottom Bar, Visual Boost, and UI Logic
+
+window.updateSidebarForSelection = updateSidebarForSelection;
+window.initBottomBar = initBottomBar;
+window.toggleGlobeDesign = toggleGlobeDesign;
+window.activateMapMode = activateMapMode;
+window.checkGlobalSearchVisibility = checkGlobalSearchVisibility;
+window.initNavCollapsing = initNavCollapsing;
+window.applyVisualBoostState = applyVisualBoostState;
+window.initCardCollapsibility = initCardCollapsibility;
 
 function updateSidebarForSelection() {
     const nodeId = window.selectedNodeId;
     const globalData = window.DEFAULT_GLOBAL_METRICS;
+    if (!globalData) return;
+
     const selectedNode = (window.NODE_DATA || []).find(n => n.id === nodeId);
     const data = (nodeId && selectedNode) ? selectedNode : null;
     const baseData = data || globalData;
@@ -12,12 +23,14 @@ function updateSidebarForSelection() {
     if (overviewHeader) overviewHeader.textContent = data ? `NODE ${nodeId} INTEL` : 'AUDIT OVERVIEW';
     if (scanHeader) scanHeader.textContent = data ? `NODE ${nodeId} FEED` : 'NETWORK SCAN';
 
-    setText('stat-active-audits', data ? data.audits : globalData.activeAudits);
-    setText('stat-net-integrity', data ? data.integrity : globalData.netIntegrity);
-    setText('stat-active-threats', (data ? data.threats : globalData.activeThreats) + ' ');
-    setText('stat-sector-status', data ? data.status : globalData.sectorStatus);
-    setText('stat-latency', data ? data.latency : globalData.latency);
-    setText('stat-data-flow', data ? data.flow : globalData.dataFlow);
+    if (typeof setText === 'function') {
+        setText('stat-active-audits', data ? data.audits : globalData.activeAudits);
+        setText('stat-net-integrity', data ? data.integrity : globalData.netIntegrity);
+        setText('stat-active-threats', (data ? data.threats : globalData.activeThreats) + ' ');
+        setText('stat-sector-status', data ? data.status : globalData.sectorStatus);
+        setText('stat-latency', data ? data.latency : globalData.latency);
+        setText('stat-data-flow', data ? data.flow : globalData.dataFlow);
+    }
 
     const analysis = baseData.analysis;
     if (analysis) {
@@ -40,14 +53,14 @@ function updateSidebarForSelection() {
     }
 
     const threat = baseData.threatProfile;
-    if (threat) {
+    if (threat && typeof setText === 'function') {
         setText('threat-title', threat.title);
         setText('threat-type', threat.type);
         setText('threat-source', threat.source);
     }
 
     const metrics = data ? data.metrics : { activeNodes: globalData.activeNodes, systemLoad: globalData.systemLoad };
-    if (metrics) {
+    if (metrics && typeof setText === 'function') {
         setText('metric-active-nodes', metrics.activeNodes);
         setText('metric-system-load', metrics.systemLoad);
     }
@@ -61,7 +74,7 @@ function initBottomBar() {
             if (!tab) return;
             tabGroup.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            activateMapMode(tab.dataset.tab);
+            if (typeof activateMapMode === 'function') activateMapMode(tab.dataset.tab);
         });
     }
 
@@ -71,7 +84,6 @@ function initBottomBar() {
         btnAtmosphere.addEventListener('click', () => {
             const isActive = btnAtmosphere.classList.toggle('active');
             if (window._mapGlobeMat) {
-                // If visual boost is active, glow might be stronger
                 const isBoosted = window._isVisualBoostActive;
                 window._mapGlobeMat.emissiveIntensity = isActive ? (isBoosted ? 0.9 : 0.6) : 0.0;
             }
@@ -108,8 +120,6 @@ function initBottomBar() {
         satSpeedSlider.addEventListener('input', (e) => {
             const val = parseFloat(e.target.value);
             window._satSpeedMultiplier = val;
-            
-            // Also tie it to the main globe rotation, restoring it if it was manually stopped
             if (window.controls) {
                 window.controls.autoRotate = val > 0;
                 window.controls.autoRotateSpeed = 0.5 * val;
@@ -121,7 +131,9 @@ function initBottomBar() {
     const zoomSlider = document.getElementById('globe-zoom-slider');
     if (zoomSlider) {
         zoomSlider.addEventListener('input', (e) => {
-            window._mapTargetCameraZ = mapSliderToZ(parseFloat(e.target.value));
+            if (typeof mapSliderToZ === 'function') {
+                window._mapTargetCameraZ = mapSliderToZ(parseFloat(e.target.value));
+            }
         });
 
         const zoomSliderWrapper = document.querySelector('.zoom-control-wrap');
@@ -150,12 +162,12 @@ function initBottomBar() {
             const icon = uiToggleBtn.querySelector('i');
             if (icon) {
                 icon.setAttribute('data-lucide', isMinimized ? 'eye-off' : 'eye');
-                lucide.createIcons();
+                if (window.lucide) lucide.createIcons();
             }
             const zSlider = document.getElementById('globe-zoom-slider');
             const targetZ = isMinimized ? 150 : 250;
             window._mapTargetCameraZ = targetZ;
-            if (zSlider) zSlider.value = mapZToSlider(targetZ);
+            if (zSlider && typeof mapZToSlider === 'function') zSlider.value = mapZToSlider(targetZ);
             setTimeout(() => window.dispatchEvent(new Event('resize')), 520);
         });
     }
@@ -173,7 +185,7 @@ function initBottomBar() {
 
     // Design Toggle
     document.getElementById('btn-globe-design')?.addEventListener('click', () => {
-        toggleGlobeDesign();
+        if (typeof toggleGlobeDesign === 'function') toggleGlobeDesign();
         if (window.playSound) window.playSound('UI_GENERIC_TAP');
     });
 
@@ -194,26 +206,28 @@ function initBottomBar() {
     });
 
     document.getElementById('btn-view-logs')?.addEventListener('click', () => {
-        populateLogsModal();
+        if (typeof populateLogsModal === 'function') populateLogsModal();
         document.getElementById('modal-audit-logs')?.classList.add('open');
-        lucide.createIcons();
+        if (window.lucide) lucide.createIcons();
     });
     document.getElementById('btn-view-info')?.addEventListener('click', () => {
-        populateInfoModal();
+        if (typeof populateInfoModal === 'function') populateInfoModal();
         document.getElementById('modal-system-info')?.classList.add('open');
-        lucide.createIcons();
-        window._infoModalInterval = setInterval(populateInfoModal, 1500);
+        if (window.lucide) lucide.createIcons();
+        window._infoModalInterval = setInterval(() => {
+            if (typeof populateInfoModal === 'function') populateInfoModal();
+        }, 1500);
     });
 
-    // ── DEAD BUTTONS IMPLEMENTATION ──
+    // Subscribed Actions for New Operations (Moved to map_ops.js/map_modals.js)
     document.getElementById('btn-deep-scan')?.addEventListener('click', () => {
-        runDeepScan();
+        if (typeof runDeepScan === 'function') runDeepScan();
     });
 
     document.getElementById('btn-history')?.addEventListener('click', () => {
-        populateHistoryList();
+        if (typeof populateHistoryList === 'function') populateHistoryList();
         document.getElementById('modal-search-history')?.classList.add('open');
-        lucide.createIcons();
+        if (window.lucide) lucide.createIcons();
     });
 
     document.getElementById('btn-export')?.addEventListener('click', () => {
@@ -228,10 +242,10 @@ function initBottomBar() {
     });
 
     document.getElementById('btn-lockdown')?.addEventListener('click', () => {
-        triggerLockdown();
+        if (typeof triggerLockdown === 'function') triggerLockdown();
     });
 
-    // Modal Close Generic Logic
+    // Modal Close Logic
     document.body.addEventListener('click', (e) => {
         if (e.target.closest('.hud-modal-close')) {
             const modal = e.target.closest('.hud-modal');
@@ -256,7 +270,6 @@ function initBottomBar() {
             }
         });
 
-        // Close when clicking elsewhere
         document.addEventListener('click', (e) => {
             if (metricPopup.classList.contains('active') && !metricPopup.contains(e.target) && !metricTrigger.contains(e.target)) {
                 metricPopup.classList.remove('active');
@@ -301,10 +314,8 @@ function toggleGlobeDesign() {
     } else {
         if (hfGlobe) hfGlobe.visible = true;
         if (wireframeGlobe) wireframeGlobe.visible = false;
-        // Restore cloud map to the state of tg-cloud-map if we have it, else true
         const cloudToggle = document.getElementById('tg-cloud-map');
         if (cloudMesh) cloudMesh.visible = cloudToggle ? cloudToggle.checked : true;
-        // Restore atmosphere to the state of btn-atmosphere
         const atmToggle = document.getElementById('btn-atmosphere');
         const atmActive = atmToggle ? atmToggle.classList.contains('active') : true;
         if (atmosphere) atmosphere.forEach(m => m.visible = atmActive);
@@ -314,418 +325,11 @@ function toggleGlobeDesign() {
             globeGlow.material.color.setHex(0xffffff);
             globeGlow.material.opacity = 0.15;
         }
-        // Restore spotlight to the state of btn-spotlight
         const spotlightToggle = document.getElementById('btn-spotlight');
         const spotlightActive = spotlightToggle ? spotlightToggle.classList.contains('active') : true;
         if (window._mapSunLight) window._mapSunLight.visible = spotlightActive;
         if (window._mapAmbientLight) window._mapAmbientLight.intensity = spotlightActive ? 0.25 : 1.25;
     }
-}
-
-// ── NEW DEAD BUTTONS LOGIC ──
-
-function runDeepScan() {
-    if (window._isDeepScanning) return;
-    window._isDeepScanning = true;
-
-    // Play sound if available
-    if (window.playSound) window.playSound('SCAN_INITIATE');
-
-    const btn = document.getElementById('btn-deep-scan');
-    if (btn) btn.classList.add('active');
-
-    // Trigger subtle globe rotation animation
-    if (typeof activateMapMode === 'function') {
-        activateMapMode('scan');
-    }
-
-    // Simulate scan duration without flashy CSS animation
-    setTimeout(() => {
-        if (btn) btn.classList.remove('active');
-        window._isDeepScanning = false;
-        
-        if (window.playSound) window.playSound('UI_GENERIC_TAP');
-
-        // Logic for Deep Scan: clear out warnings, optimize metrics
-        if (window.DEFAULT_GLOBAL_METRICS) {
-            window.DEFAULT_GLOBAL_METRICS.activeNodes = 1450 + Math.floor(Math.random() * 50);
-            window.DEFAULT_GLOBAL_METRICS.systemLoad = (Math.floor(Math.random() * 15) + 20) + '%'; // Optimized load
-            window.DEFAULT_GLOBAL_METRICS.latency = (Math.floor(Math.random() * 3) + 1) + '.' + Math.floor(Math.random() * 9) + ' ms';
-            window.DEFAULT_GLOBAL_METRICS.netIntegrity = '100% SECURE';
-            window.DEFAULT_GLOBAL_METRICS.sectorStatus = '1 OPTIMAL';
-            window.DEFAULT_GLOBAL_METRICS.activeThreats = 0;
-            updateSidebarForSelection();
-        }
-
-        // Push a log to history if AUDIT_LOG_HISTORY exists
-        if (window.AUDIT_LOG_HISTORY) {
-            window.AUDIT_LOG_HISTORY.unshift({
-                ts: new Date().toLocaleTimeString(),
-                type: 'info',
-                event: 'DEEP SCAN COMPLETE',
-                text: 'Network integrity verified. Anomalies resolved.',
-                loc: 'GLOBAL'
-            });
-            if (typeof syncAuditTrail === 'function') syncAuditTrail();
-        }
-    }, 4000); // 4 seconds to match the activateMapMode('scan') interval
-}
-
-function triggerLockdown() {
-    const isLockdown = document.body.classList.toggle('lockdown-active');
-    
-    // Play sound
-    if (window.playSound) {
-        window.playSound(isLockdown ? 'LOCKDOWN_ALARM' : 'UI_GENERIC_TAP');
-    }
-
-    // Toggle critical state locally
-    const btnLockdown = document.getElementById('btn-lockdown');
-    if (btnLockdown) {
-        btnLockdown.classList.toggle('active', isLockdown);
-    }
-    
-    // Clear paths immediately when lockdown initiates
-    if (isLockdown && window.drawQuantumPath) {
-        window.drawQuantumPath([]);
-        // Ensure distance metrics bar is hidden since path is cleared
-        document.getElementById('distance-metrics-bar')?.classList.add('hidden');
-    }
-    
-    // Update global metrics to critical if lockdown active
-    if (window.DEFAULT_GLOBAL_METRICS) {
-        if (isLockdown) {
-            window._prevSectorStatus = window.DEFAULT_GLOBAL_METRICS.sectorStatus;
-            window.DEFAULT_GLOBAL_METRICS.sectorStatus = 'CRITICAL ALERT';
-        } else {
-            window.DEFAULT_GLOBAL_METRICS.sectorStatus = window._prevSectorStatus || '2 warn';
-        }
-        updateSidebarForSelection();
-    }
-}
-
-function populateHistoryList() {
-    const listBody = document.getElementById('history-modal-body');
-    if (!listBody) return;
-
-    let contentHtml = '';
-
-    // Section 1: Information about the project
-    contentHtml += '<div style="color:var(--theme-accent); font-weight:bold; margin-bottom:10px; font-size:0.85rem; border-bottom:1px solid rgba(0,240,255,0.2); padding-bottom:5px;">PROJECT INFORMATION</div>';
-    if (window.SYSTEM_METRICS) {
-        const infoItems = window.SYSTEM_METRICS.slice(0, 4); // Show top 4 metrics
-        contentHtml += '<div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.5rem; margin-bottom:15px; font-size:0.75rem;">';
-        infoItems.forEach(item => {
-            const val = typeof item.value === 'function' ? item.value() : item.value;
-            contentHtml += `<div style="background:rgba(255,255,255,0.02); padding:5px; border-radius:4px;"><span style="color:var(--text-dim)">${item.label}:</span> <span style="color:var(--text-bright)">${val}</span></div>`;
-        });
-        contentHtml += '</div>';
-    }
-
-    // Section 2: Log of warnings and criticals
-    contentHtml += '<div style="color:#facc15; font-weight:bold; margin-bottom:10px; font-size:0.85rem; border-bottom:1px solid rgba(250,204,21,0.2); padding-bottom:5px; margin-top:20px;">WARNING & CRITICAL LOGS</div>';
-    
-    if (window.AUDIT_LOG_HISTORY) {
-        // Filter specifically for warning, threat (critical), or error
-        const alerts = window.AUDIT_LOG_HISTORY.filter(log => log.type === 'warning' || log.type === 'threat' || log.status === 'critical');
-        if (alerts.length > 0) {
-            contentHtml += alerts.map(log => {
-                const color = log.type === 'warning' ? '#facc15' : '#ff3e3e';
-                return `
-                <div class="log-row" style="padding: 0.6rem 0; border-bottom: 1px dashed rgba(255,255,255,0.05); display:flex; flex-direction:column; gap:4px;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <span style="color:${color}; font-weight:700; font-size:0.75rem;">[${log.type.toUpperCase()}] ${log.event}</span>
-                        <span style="font-size:0.65rem; color:var(--text-dim)">${log.ts}</span>
-                    </div>
-                    <div style="color:var(--text-mid); font-size:0.8rem;">${log.text}</div>
-                    <div style="color:var(--text-dim); font-size:0.7rem; font-family:var(--font-mono);">LOC: ${log.loc}</div>
-                </div>`;
-            }).join('');
-        } else {
-            contentHtml += '<div style="color:var(--text-dim); padding:1rem; text-align:center;">No warnings or critical alerts found.</div>';
-        }
-    }
-
-    listBody.innerHTML = contentHtml;
-
-    // Dynamically update the modal title to match the new functionality
-    const modalTitle = document.querySelector('#modal-search-history .hud-modal-title');
-    if (modalTitle) {
-        modalTitle.innerHTML = '<i data-lucide="info"></i> Project History & Alerts';
-    }
-}
-
-// ── ORBITAL SETTINGS SYSTEM ──
-
-function initOrbitalSystem(scene, camera, renderer) {
-    const orbitalGroup = new THREE.Group();
-    scene.add(orbitalGroup);
-    orbitalGroup.visible = false;
-    window._mapOrbitalGroup = orbitalGroup;
-
-    function createRingMesh(radius, tube, color, opacity) {
-        const geo = new THREE.TorusGeometry(radius, tube, 2, 120);
-        const mat = new THREE.MeshBasicMaterial({ color, transparent: true, opacity, blending: THREE.AdditiveBlending });
-        return new THREE.Mesh(geo, mat);
-    }
-
-    const ring1 = createRingMesh(118, 0.5, 0x00f0ff, 0.6);
-    orbitalGroup.add(ring1);
-    const ring2 = createRingMesh(130, 0.4, 0xfacc15, 0.4);
-    ring2.rotation.x = Math.PI / 6;
-    ring2.rotation.z = Math.PI / 10;
-    orbitalGroup.add(ring2);
-    const ring3 = createRingMesh(143, 0.3, 0x00f0ff, 0.2);
-    ring3.rotation.x = Math.PI / 3;
-    ring3.rotation.y = Math.PI / 8;
-    orbitalGroup.add(ring3);
-
-    const SATELLITE_DEFS = [
-        { id: 'system-ops',        label: 'SYSTEM OPS',        color: 0x00f0ff, icon: '⚙', angle: 0,               ring: ring1, radius: 118 },
-        { id: 'visual-protocol',   label: 'VISUAL PROTOCOL',   color: 0xa78bfa, icon: '🖥', angle: Math.PI * 2/5,   ring: ring1, radius: 118 },
-        { id: 'user-gateway',      label: 'USER GATEWAY',      color: 0x22c55e, icon: '👤', angle: Math.PI * 4/5,   ring: ring2, radius: 130 },
-        { id: 'neural-audio',      label: 'NEURAL AUDIO',      color: 0xfacc15, icon: '🔊', angle: Math.PI * 6/5,   ring: ring2, radius: 130 },
-        { id: 'security-guardrails',label: 'SECURITY GUARDRAILS',color: 0xff3e3e, icon: '🛡', angle: Math.PI * 8/5,   ring: ring3, radius: 143 },
-    ];
-
-    const satellites = [];
-    const mapViewport = document.getElementById('threejs-container');
-
-    SATELLITE_DEFS.forEach(def => {
-        const sGeo = new THREE.SphereGeometry(3.5, 12, 12);
-        const sMat = new THREE.MeshBasicMaterial({ color: def.color });
-        const sMesh = new THREE.Mesh(sGeo, sMat);
-        sMesh.userData = { satelliteId: def.id, def };
-        const sSprite = new THREE.Sprite(new THREE.SpriteMaterial({
-            map: createGlowTexture(def.color),
-            color: def.color,
-            transparent: true,
-            blending: THREE.AdditiveBlending,
-            depthWrite: false,
-        }));
-        sSprite.scale.set(30, 30, 1);
-        sMesh.add(sSprite);
-        orbitalGroup.add(sMesh);
-        satellites.push({ mesh: sMesh, def, angle: def.angle });
-
-        const el = document.createElement('div');
-        el.className = 'sat-label';
-        el.dataset.satId = def.id;
-        el.innerHTML = `<span class="sat-icon">${def.icon}</span><span class="sat-text">${def.label}</span>`;
-        el.style.display = 'none';
-        mapViewport.appendChild(el);
-        el.addEventListener('click', (e) => { e.stopPropagation(); openOrbitalPanel(def.id); });
-    });
-
-    window._mapSatellites = satellites;
-    initOrbitalPanelListeners();
-
-    setTimeout(() => {
-        window.showSettingsMenu = function () { toggleOrbitalSettings(); };
-    }, 0);
-}
-
-function updateOrbitalAnimation(now) {
-    const mult = typeof window._satSpeedMultiplier === 'number' ? window._satSpeedMultiplier : 1.0;
-    const rings = window._mapOrbitalGroup.children.filter(c => c.type === 'Mesh');
-    if (rings.length >= 3) {
-        rings[0].rotation.z += 0.002 * mult;
-        rings[1].rotation.y -= 0.0015 * mult;
-        rings[2].rotation.x += 0.001 * mult;
-    }
-
-    const camera = window._mapGlobe.camera;
-    const renderer = window._mapGlobe.renderer;
-
-    window._mapSatellites.forEach((sat, idx) => {
-        sat.angle += (idx < 2 ? 0.005 : idx < 4 ? -0.004 : 0.003) * mult;
-        const r = sat.def.radius;
-        const localPos = new THREE.Vector3(r * Math.cos(sat.angle), r * Math.sin(sat.angle), 0);
-        const ringWorld = new THREE.Quaternion();
-        sat.def.ring.getWorldQuaternion(ringWorld);
-        localPos.applyQuaternion(ringWorld);
-        sat.mesh.position.copy(localPos);
-
-        const pulse = 1 + 0.25 * Math.sin(now * 0.003 + idx);
-        sat.mesh.scale.set(pulse, pulse, pulse);
-
-        const label = document.querySelector(`.sat-label[data-sat-id="${sat.def.id}"]`);
-        if (label && label.style.display !== 'none') {
-            const worldPos = new THREE.Vector3();
-            sat.mesh.getWorldPosition(worldPos);
-            const screenPos = worldPos.project(camera);
-            const rect = renderer.domElement.getBoundingClientRect();
-            const sx = (screenPos.x * 0.5 + 0.5) * rect.width + rect.left;
-            const sy = (-(screenPos.y * 0.5) + 0.5) * rect.height + rect.top;
-            label.style.left = sx + 'px';
-            label.style.top = sy + 'px';
-        }
-    });
-}
-
-function toggleOrbitalSettings() {
-    const orbitalGroup = window._mapOrbitalGroup;
-    const isActive = orbitalGroup && orbitalGroup.visible;
-    if (isActive) closeOrbitalSettings();
-    else openOrbitalSettings();
-}
-
-function openOrbitalSettings() {
-    window._mapTargetGlobeScale = 0.65;
-    if (window._mapOrbitalGroup) window._mapOrbitalGroup.visible = true;
-    document.querySelectorAll('.sat-label').forEach(el => {
-        el.style.display = 'flex';
-        setTimeout(() => el.classList.add('visible'), 50);
-    });
-    const overlay = document.getElementById('orbital-settings-overlay');
-    if (overlay) overlay.classList.add('active');
-    const legacyOverlay = document.querySelector('.settings-global-overlay');
-    if (legacyOverlay) legacyOverlay.removeAttribute('data-mode');
-}
-
-function closeOrbitalSettings() {
-    window._mapTargetGlobeScale = 1.0;
-    if (window._mapOrbitalGroup) window._mapOrbitalGroup.visible = false;
-    document.querySelectorAll('.sat-label').forEach(el => {
-        el.classList.remove('visible');
-        setTimeout(() => el.style.display = 'none', 300);
-    });
-    document.querySelectorAll('.orbital-panel').forEach(p => p.classList.remove('active'));
-    const overlay = document.getElementById('orbital-settings-overlay');
-    if (overlay) overlay.classList.remove('active');
-}
-
-function openOrbitalPanel(satelliteId) {
-    document.querySelectorAll('.orbital-panel').forEach(p => p.classList.remove('active'));
-    const panelId = `orbital-panel-${satelliteId}`;
-    const panel = document.getElementById(panelId);
-    if (panel) {
-        panel.classList.add('active');
-        if (window.lucide) lucide.createIcons({ scope: panel });
-    }
-}
-
-function initOrbitalPanelListeners() {
-    const root = document.documentElement;
-    const bindOrbitalSlider = (id, effectId, valId, suffix = '') => {
-        const slider = document.getElementById(id);
-        const display = document.getElementById(valId);
-        if (!slider) return;
-        slider.addEventListener('input', (e) => {
-            const val = e.target.value;
-            if (display) display.textContent = val + suffix;
-            if (window.applySettingEffect) window.applySettingEffect(effectId, val);
-            if (effectId === 'glow' && window._mapAtmosphere) {
-                window._mapAtmosphere[0].material.opacity = 0.25 * (val / 100);
-                window._mapAtmosphere[1].material.opacity = 0.1 * (val / 100);
-            }
-            if (effectId === 'scanline') root.style.setProperty('--scanline-opacity', (val / 100) * 0.15);
-            if (effectId === 'glare') root.style.setProperty('--glare-opacity', (val / 100) * 0.8);
-        });
-    };
-
-    const bindOrbitalToggle = (id, effectId) => {
-        const tg = document.getElementById(id);
-        if (!tg) return;
-        tg.addEventListener('change', (e) => {
-            if (window.applySettingEffect) window.applySettingEffect(effectId, e.target.checked);
-            if (effectId === 'grid') {
-                const gridOverlay = document.querySelector('.map-grid-overlay');
-                if (gridOverlay) gridOverlay.style.opacity = e.target.checked ? '1' : '0';
-            }
-            if (id === 'tg-cloud-map') {
-                if (window._mapCloudMesh) window._mapCloudMesh.visible = e.target.checked;
-            }
-        });
-    };
-
-    bindOrbitalSlider('sl-refresh-map', 'refresh', 'val-refresh-map', 's');
-    bindOrbitalToggle('tg-sync-map', 'sync');
-    bindOrbitalSlider('sl-glow-map', 'glow', 'val-glow-map', '%');
-    bindOrbitalSlider('sl-scan-map', 'scanline', 'val-scan-map', '%');
-    bindOrbitalSlider('sl-glare-map', 'glare', 'val-glare-map', '%');
-    bindOrbitalToggle('tg-grid-map', 'grid');
-    bindOrbitalToggle('tg-cloud-map', 'cloud-layer');
-
-    const auditorInput = document.getElementById('in-auditor-map');
-    if (auditorInput) {
-        auditorInput.addEventListener('input', (e) => {
-            if (window.applySettingEffect) window.applySettingEffect('auditor-name', e.target.value);
-        });
-    }
-    document.getElementById('btn-activity-logs-map')?.addEventListener('click', () => {
-        document.getElementById('btn-view-logs')?.click();
-    });
-    bindOrbitalSlider('sl-vol-map', 'volume', 'val-vol-map', '%');
-    bindOrbitalToggle('tg-bleeps-map', 'bleeps');
-    bindOrbitalToggle('tg-mask-map', 'masking');
-    bindOrbitalToggle('tg-lock-map', 'lock');
-
-    setInterval(() => {
-        const lat = document.getElementById('conn-latency');
-        if (lat) lat.textContent = (24 + Math.floor(Math.random() * 12)) + ' ms';
-        const ses = document.getElementById('profile-session-time');
-        if (ses && window.startTime) {
-            const diff = Math.floor((Date.now() - window.startTime) / 1000);
-            const m = Math.floor(diff / 60).toString().padStart(2, '0');
-            const s = (diff % 60).toString().padStart(2, '0');
-            ses.textContent = `00:${m}:${s}`;
-        }
-    }, 1000);
-}
-
-function runQuarantineSequence() {
-    const btn = document.getElementById('btn-quarantine');
-    const log = document.getElementById('threat-action-log');
-    if (!btn || !log || window._threatQuarantined) return;
-    btn.disabled = true;
-    const steps = [
-        { delay: 0, cls: 'warn', text: '> Initiating Quarantine Protocol…' },
-        { delay: 600, cls: 'ok', text: '  [OK] Isolating Node G-14 from Sector G mesh…' },
-        { delay: 1300, cls: 'ok', text: '  [OK] Neural pathway override: CMDR-77X applied.' },
-        { delay: 2100, cls: 'warn', text: '  [~]  Scrubbing exfil packet queue…' },
-        { delay: 3000, cls: 'ok', text: '  [OK] 847 anomalous packets discarded.' },
-        { delay: 3800, cls: 'ok', text: '  [OK] Node G-14 sealed in sandbox layer.' },
-        { delay: 4600, cls: 'done', text: '  ✓ QUARANTINE COMPLETE — Sector G integrity restored.' },
-    ];
-    log.innerHTML = '';
-    steps.forEach(s => {
-        setTimeout(() => {
-            const line = document.createElement('div');
-            line.className = `threat-log-line ${s.cls}`;
-            line.textContent = s.text;
-            log.appendChild(line);
-            log.scrollTop = log.scrollHeight;
-        }, s.delay);
-    });
-
-    setTimeout(() => {
-        window._threatQuarantined = true;
-        btn.textContent = '✓ QUARANTINE SEALED';
-        const callout = document.getElementById('breach-callout');
-        if (callout) {
-            callout.style.transition = 'opacity 1s';
-            callout.style.opacity = '0';
-            setTimeout(() => callout.classList.add('hidden'), 1000);
-        }
-        if (window._mapGlobe && window._mapGlobe.nodes) {
-            window._mapGlobe.nodes.forEach(n => {
-                if (n.userData.status === 'critical') {
-                    n.userData.status = 'resolved';
-                    n.material.color.setHex(0x22c55e);
-                    n.scale.set(1, 1, 1);
-                }
-            });
-        }
-        const alertBanner = document.querySelector('.red-alert');
-        if (alertBanner) {
-            alertBanner.style.background = 'rgba(34, 197, 94, 0.15)';
-            alertBanner.style.borderColor = 'rgba(34, 197, 94, 0.4)';
-            alertBanner.style.color = '#22c55e';
-            alertBanner.innerHTML = '<i data-lucide="shield-check"></i> Quarantine Sealed';
-            lucide.createIcons();
-        }
-    }, steps[steps.length - 1].delay + 800);
 }
 
 function activateMapMode(mode) {
@@ -737,11 +341,11 @@ function activateMapMode(mode) {
 
     switch (mode) {
         case 'monitoring':
-            if (globe) gsap_like_rotate(globe.globeGroup, 1.6, 900);
+            if (globe && typeof gsap_like_rotate === 'function') gsap_like_rotate(globe.globeGroup, 1.6, 900);
             if (breachCallout && !window._threatQuarantined) breachCallout.classList.add('hidden');
             break;
         case 'sector-g':
-            if (globe) gsap_like_rotate(globe.globeGroup, 1.8, 1000);
+            if (globe && typeof gsap_like_rotate === 'function') gsap_like_rotate(globe.globeGroup, 1.8, 1000);
             if (breachCallout && !window._threatQuarantined) breachCallout.classList.remove('hidden');
             break;
         case 'scan':
@@ -753,13 +357,13 @@ function activateMapMode(mode) {
                     if (elapsed > 4000) {
                         clearInterval(window._mapScanInterval);
                         window._mapScanInterval = null;
-                        gsap_like_rotate(globe.globeGroup, globe.globeGroup.rotation.y % (2 * Math.PI), 600);
+                        if (typeof gsap_like_rotate === 'function') gsap_like_rotate(globe.globeGroup, globe.globeGroup.rotation.y % (2 * Math.PI), 600);
                     }
                 }, 16);
             }
             break;
         case 'threat':
-            if (globe) gsap_like_rotate(globe.globeGroup, 1.0, 800);
+            if (globe && typeof gsap_like_rotate === 'function') gsap_like_rotate(globe.globeGroup, 1.0, 800);
             if (breachCallout && !window._threatQuarantined) breachCallout.classList.remove('hidden');
             const panel = document.getElementById('panel-threat-action');
             if (panel && !window._threatQuarantined) panel.classList.remove('hidden');
@@ -771,8 +375,6 @@ function checkGlobalSearchVisibility() {
     const searchContainer = document.getElementById('global-search-container');
     const allCategories = document.querySelectorAll('.navbar-category');
     const allSeparators = document.querySelectorAll('.nav-separator');
-    const cfgSection = document.getElementById('search-settings-section');
-    const cfgSeparator = document.getElementById('search-cfg-separator');
 
     if (searchContainer) {
         if (window._manualSearchToggle) {
@@ -798,9 +400,6 @@ function checkGlobalSearchVisibility() {
                 else sep.classList.remove('hidden');
             });
             document.getElementById('btn-ui-toggle')?.classList.remove('hidden');
-
-            // Hide distance metrics bar when search is closed
-            document.getElementById('distance-metrics-bar')?.classList.add('hidden');
         }
     }
 }
@@ -859,3 +458,13 @@ window.applyVisualBoostState = function() {
         if (window._mapGlobeGlow) window._mapGlobeGlow.material.opacity = 0.7;
     }
 };
+
+function initCardCollapsibility() {
+    // Shared between sidebar widgets
+    document.querySelectorAll('.widget-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const widget = header.closest('.holo-widget');
+            if (widget) widget.classList.toggle('collapsed');
+        });
+    });
+}

@@ -245,27 +245,5 @@ function renderSignalInterference() {
     setTimeout(renderSignalInterference, 100);
 }
 
-function populateLogsModal() {
-    const body = document.getElementById('logs-modal-body');
-    if (!body || !window.AUDIT_LOG_HISTORY) return;
-    body.innerHTML = window.AUDIT_LOG_HISTORY.map(log => `<div class="log-row"><span class="log-ts">${log.ts}</span><span class="log-badge ${log.type}">${log.type.toUpperCase()}</span><div><div class="log-content"><span class="log-event">${log.event}</span>${log.text}</div><div class="log-loc">↳ ${log.loc}</div></div></div>`).join('');
-}
-
-function populateInfoModal() {
-    const body = document.getElementById('info-modal-body');
-    if (!body || !window.SYSTEM_METRICS) return;
-    body.innerHTML = window.SYSTEM_METRICS.map(m => {
-        const val = typeof m.value === 'function' ? m.value() : m.value;
-        const status = typeof m.status === 'function' ? m.status() : m.status;
-        return `<div class="metric-row"><span class="m-label">${m.label}</span><span class="m-value ${status === 'critical' ? 'critical' : (val === 'SEALED' ? 'sealed' : '')}">${val}</span></div>`;
-    }).join('');
-}
-
-function initCardCollapsibility() {
-    document.querySelectorAll('.widget-header').forEach(header => {
-        header.addEventListener('click', () => {
-            const widget = header.closest('.holo-widget');
-            if (widget) widget.classList.toggle('collapsed');
-        });
-    });
-}
+// Redundant functions (populateLogsModal, populateInfoModal, initCardCollapsibility) removed.
+// They are now managed modularly in js/map_modals.js and js/map_ui.js.
