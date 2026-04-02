@@ -172,6 +172,7 @@ function initSearchModeSelection(from, via, to) {
 function updateSearchModeUI() {
     const selectorBtn = document.getElementById('btn-search-mode-selector');
     const container = document.getElementById('global-search-container');
+    const menu = document.getElementById('map-search-mode-menu');
     const fromInput = document.getElementById('map-search-from');
     
     if (!selectorBtn || !container) return;
@@ -187,14 +188,34 @@ function updateSearchModeUI() {
     
     if (fromInput) {
         fromInput.placeholder = m.placeholder;
-        fromInput.parentElement.setAttribute('title', m.title); // Update Tooltip!
+        if (fromInput.parentElement) fromInput.parentElement.setAttribute('title', m.title);
     }
 
-    // Toggle container classes for mode-specific styling
     container.classList.toggle('mode-poi', window.SEARCH_MODE === 'poi');
     container.classList.toggle('mode-route', window.SEARCH_MODE === 'route');
     container.classList.toggle('mode-via', window.SEARCH_MODE === 'via');
     container.classList.toggle('via-mode-disabled', window.SEARCH_MODE !== 'via');
+
+    if (menu) {
+        menu.querySelectorAll('.pointer-option').forEach(opt => {
+            const labelEl = opt.querySelector('.label');
+            if (labelEl) {
+                const text = labelEl.textContent.trim().toLowerCase();
+                let isSelected = false;
+                if (window.SEARCH_MODE === 'poi' && text.includes('point interest')) isSelected = true;
+                if (window.SEARCH_MODE === 'route' && text.includes('direct route')) isSelected = true;
+                if (window.SEARCH_MODE === 'via' && text.includes('navigation via')) isSelected = true;
+                opt.classList.toggle('selected', isSelected);
+            }
+        });
+    }
+
+    const fromBtn = document.querySelector('.from-field .clear-input-btn');
+    const viaBtn = document.querySelector('.via-field .clear-input-btn');
+    const toBtn = document.querySelector('.to-field .clear-input-btn');
+    if (fromBtn) fromBtn.classList.toggle('visible', !!fromInput?.value);
+    if (viaBtn) viaBtn.classList.toggle('visible', !!document.getElementById('map-search-via')?.value);
+    if (toBtn) toBtn.classList.toggle('visible', !!document.getElementById('map-search-to')?.value);
 }
 
 window.initNavBack = initNavBack;

@@ -164,34 +164,38 @@ function updateSearchModeUI() {
     if (!selectorBtn || !container) return;
 
     const m = {
-        'poi':    { icon: 'map-pin', badge: 'P', placeholder: 'SEARCH CITY/NODE...' },
-        'route':  { icon: 'move-right', badge: 'R', placeholder: 'START...' },
-        'via':    { icon: 'map-pinned', badge: 'V', placeholder: 'START...' }
+        'poi':    { icon: 'map-pin', badge: 'P', placeholder: 'SEARCH CITY/NODE...', title: 'Location: POINT' },
+        'route':  { icon: 'move-right', badge: 'R', placeholder: 'START...', title: 'Location: START' },
+        'via':    { icon: 'map-pinned', badge: 'V', placeholder: 'START...', title: 'Location: START' }
     }[window.SEARCH_MODE];
 
     selectorBtn.innerHTML = `<i data-lucide="${m.icon}"></i><span class="btn-badge">${m.badge}</span>`;
     if (window.lucide) lucide.createIcons({ scope: selectorBtn });
     
-    if (fromInput) fromInput.placeholder = m.placeholder;
+    if (fromInput) {
+        fromInput.placeholder = m.placeholder;
+        if (fromInput.parentElement) fromInput.parentElement.setAttribute('title', m.title);
+    }
 
-    // Update Container Classes
     container.classList.toggle('mode-poi', window.SEARCH_MODE === 'poi');
     container.classList.toggle('mode-route', window.SEARCH_MODE === 'route');
     container.classList.toggle('mode-via', window.SEARCH_MODE === 'via');
-    
-    // Legacy support for CSS that uses .via-mode-disabled
     container.classList.toggle('via-mode-disabled', window.SEARCH_MODE !== 'via');
 
-    // Update menu highlights
     if (menu) {
         menu.querySelectorAll('.pointer-option').forEach(opt => {
-            const label = opt.querySelector('.label') ? opt.querySelector('.label').textContent : '';
-            const isSelected = label.toLowerCase().includes(window.SEARCH_MODE);
-            opt.classList.toggle('selected', isSelected);
+            const labelEl = opt.querySelector('.label');
+            if (labelEl) {
+                const text = labelEl.textContent.trim().toLowerCase();
+                let isSelected = false;
+                if (window.SEARCH_MODE === 'poi' && text.includes('point interest')) isSelected = true;
+                if (window.SEARCH_MODE === 'route' && text.includes('direct route')) isSelected = true;
+                if (window.SEARCH_MODE === 'via' && text.includes('navigation via')) isSelected = true;
+                opt.classList.toggle('selected', isSelected);
+            }
         });
     }
 
-    // Sync Clear Buttons
     const fromBtn = document.querySelector('.from-field .clear-input-btn');
     const viaBtn = document.querySelector('.via-field .clear-input-btn');
     const toBtn = document.querySelector('.to-field .clear-input-btn');

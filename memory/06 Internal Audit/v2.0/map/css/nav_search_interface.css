@@ -228,10 +228,14 @@
 .mode-poi .via-field,
 .mode-poi .to-field,
 .mode-poi .search-separator,
+.mode-poi .from-field + .nav-separator, /* Hide first separator in POI */
+.mode-poi .via-field + .nav-separator,
 .mode-route .via-field,
 .mode-route .via-field + .search-separator,
+.mode-route .via-field + .nav-separator,
 .via-mode-disabled .via-field,
-.via-mode-disabled .via-field + .search-separator {
+.via-mode-disabled .via-field + .search-separator,
+.via-mode-disabled .via-field + .nav-separator {
     display: none !important;
 }
 

@@ -158,6 +158,7 @@ async function drawQuantumPath(coordinateArray) {
         intermediatePoints.push(getPos(coordinateArray[i]));
     }
 
+    const baseGroundR = 92.0;
     if (pathType === 'straight') {
         const densePoints = [];
         for (let i = 0; i < intermediatePoints.length - 1; i++) {
@@ -167,27 +168,36 @@ async function drawQuantumPath(coordinateArray) {
             for (let j = startJ; j <= 20; j++) {
                 const t = j / 20;
                 const p = new THREE.Vector3().lerpVectors(p1, p2, t);
-                // Direct Line: Matches globe distance perfectly everywhere (Geodesic)
-                const h = 93.5 + (window.ICON_ALTITUDE_LEVEL || 0);
+                
+                const targetH = 93.5 + (window.ICON_ALTITUDE_LEVEL || 0);
+                let ht = 1.0;
+                if (t < 0.1) ht = t / 0.1;
+                else if (t > 0.9) ht = (1.0 - t) / 0.1;
+                const h = baseGroundR + (targetH - baseGroundR) * Math.sin(ht * Math.PI / 2);
+
                 p.normalize().multiplyScalar(h);
                 densePoints.push(p);
             }
         }
         curve = new THREE.CatmullRomCurve3(densePoints);
     } else if (pathType === 'circle') {
-        const orbitalH = 100 + (window.ICON_ALTITUDE_LEVEL || 0);
+        const orbitalH = 94.5 + (window.ICON_ALTITUDE_LEVEL || 0); // Lowered from 100 to sit realistically above the globe
         const densePoints = [];
         for (let i = 0; i < intermediatePoints.length - 1; i++) {
             const p1 = intermediatePoints[i];
             const p2 = intermediatePoints[i+1];
             const startJ = (i === 0) ? 0 : 1;
             
-            // Match Globe Arc with constant distance (Spherical Interpolation)
-            // By normalizing the linear interp, we create a perfect Great Circle at fixed altitude
             for (let j = startJ; j <= 48; j++) {
                 const t = j / 48;
                 const p = new THREE.Vector3().lerpVectors(p1, p2, t);
-                p.normalize().multiplyScalar(orbitalH);
+                
+                let ht = 1.0;
+                if (t < 0.1) ht = t / 0.1;
+                else if (t > 0.9) ht = (1.0 - t) / 0.1;
+                const h = baseGroundR + (orbitalH - baseGroundR) * Math.sin(ht * Math.PI / 2);
+
+                p.normalize().multiplyScalar(h);
                 densePoints.push(p);
             }
         }
@@ -203,7 +213,13 @@ async function drawQuantumPath(coordinateArray) {
             for (let j = startJ; j <= 20; j++) {
                 const t = j / 20;
                 const p = new THREE.Vector3().lerpVectors(p1, p2, t);
-                const h = 93 + (window.ICON_ALTITUDE_LEVEL || 0) + Math.sin(Math.PI * t) * (dist * 0.06 + 3);
+                
+                const curH = 93 + (window.ICON_ALTITUDE_LEVEL || 0) + Math.sin(Math.PI * t) * (dist * 0.06 + 3);
+                let ht = 1.0;
+                if (t < 0.15) ht = t / 0.15;
+                else if (t > 0.85) ht = (1.0 - t) / 0.15;
+                const h = baseGroundR + (curH - baseGroundR) * Math.sin(ht * Math.PI / 2);
+
                 p.normalize().multiplyScalar(h);
                 densePoints.push(p);
             }
