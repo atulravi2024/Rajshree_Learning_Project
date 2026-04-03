@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof initNavFront === 'function') initNavFront();
     if (typeof initNavBack === 'function') initNavBack();
     if (typeof initBottomBar === 'function') initBottomBar();
+    if (typeof initMapRecording === 'function') initMapRecording();
     
     // Legacy support (fallback)
     if (typeof initCardCollapsibility === 'function') initCardCollapsibility();

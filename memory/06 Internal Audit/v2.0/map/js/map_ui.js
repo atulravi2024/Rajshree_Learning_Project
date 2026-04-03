@@ -237,15 +237,66 @@ function initBottomBar() {
 
     document.getElementById('btn-export')?.addEventListener('click', () => {
         if (window._isLockedDown) return;
-        const data = JSON.stringify(window.DEFAULT_GLOBAL_METRICS || {}, null, 2);
-        const blob = new Blob([data], { type: 'application/json' });
+        
+        // CHECK MODE: Only allow export in Audit Mode (Front Side)
+        if (window._manualSearchToggle) {
+            console.warn('EXPORT_ABORTED: System is in Search Mode.');
+            if (window.showNotification) {
+                window.showNotification('SYSTEM_MODE_CONFLICT', 'Export is only available in Audit Mode.', 'warning');
+            } else {
+                alert('Export is only available in Audit Mode.');
+            }
+            return;
+        }
+
+        // AGGREGATE COMPREHENSIVE DATA
+        const reportData = {
+            metadata: {
+                reportType: 'FRONT_AUDIT_INTEL',
+                timestamp: new Date().toISOString(),
+                auditor: window.CONFIG ? window.CONFIG.auditorName : 'ATUL VERMA',
+                credentialLevel: window.CREDENTIAL_LEVEL || 'LEAD AUDITOR',
+                mode: window._mapTabState || 'default'
+            },
+            globalMetrics: window.DEFAULT_GLOBAL_METRICS || {},
+            systemMetrics: (window.SYSTEM_METRICS || []).map(m => ({
+                label: m.label,
+                value: typeof m.value === 'function' ? m.value() : m.value,
+                status: (typeof m.status === 'function') ? m.status() : (typeof m.status === 'string' ? m.status : 'nominal')
+            })),
+            nodeStates: (window.NODE_DATA || []).map(n => ({...n})),
+            compliance: window.COMPLIANCE_DATA || [],
+            resources: window.RESOURCE_DATA || [],
+            auditTrail: window.AUDIT_LOG_HISTORY || [],
+            adminActivity: window.ADMIN_ACTIVITY || [],
+            userSessions: window.SESSION_DATA || [],
+            hardware: (window.HARDWARE_METRICS || []).map(m => {
+                const val = Math.min(100, Math.max(10, m.base + Math.floor(Math.random() * m.variance * 2) - m.variance));
+                return { label: m.label, currentTemp: val + '°C' };
+            }),
+            latencyNodes: window.LATENCY_MATRIX_DATA || [],
+            integritySeals: window.INTEGRITY_SEAL_DATA || [],
+            incidents: window.INCIDENT_DATA || [],
+            backups: window.BACKUP_DATA || [],
+            threatVectors: window.THREAT_VECTOR_DATA || [],
+            quarantine: window.QUARANTINE_DATA || [],
+            uptime: window.UPTIME_DATA || [],
+            memoryMatrix: window.MEMORY_MATRIX_DATA || []
+        };
+
+        const jsonStr = JSON.stringify(reportData, null, 2);
+        const blob = new Blob([jsonStr], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'audit_report_' + new Date().toISOString().replace(/[:.]/g, '-') + '.json';
+        const ts = new Date().toISOString().slice(0, 19).replace(/T/g, '_').replace(/:/g, '-');
+        a.download = `audit_report_frontier_${ts}.json`;
         a.click();
+        
         if (window.playSound) window.playSound('UI_GENERIC_TAP');
+        console.log('AUDIT_REPORT_EXPORTED: Successfully compiled all real-time datasets.');
     });
+
 
     document.getElementById('btn-lockdown')?.addEventListener('click', () => {
         if (typeof triggerLockdown === 'function') triggerLockdown();
