@@ -1,0 +1,23 @@
+/* ── SECURITY GUARDRAILS SECTION ── */
+.sat-label[data-sat-id="security-guardrails"] { 
+    border-color: rgba(255, 62, 62, 0.4); 
+    color: #ff3e3e; 
+}
+
+#orbital-panel-security-guardrails {
+    border-color: rgba(255, 62, 62, 0.4);
+    box-shadow: 0 0 30px rgba(255, 62, 62, 0.15);
+}
+
+#orbital-panel-security-guardrails .orbital-panel-header {
+    background: rgba(255, 62, 62, 0.08);
+}
+
+#orbital-panel-security-guardrails .orbital-stat-val {
+    color: #ff3e3e;
+}
+
+#orbital-panel-security-guardrails .orbital-toggle input:checked + .orbital-toggle-track::before {
+    background-color: #ff3e3e;
+    box-shadow: 0 0 8px #ff3e3e;
+}

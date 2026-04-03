@@ -1,0 +1,23 @@
+/* ── NEURAL AUDIO SECTION ── */
+.sat-label[data-sat-id="neural-audio"] { 
+    border-color: rgba(250, 204, 21, 0.4); 
+    color: #facc15; 
+}
+
+#orbital-panel-neural-audio {
+    border-color: rgba(250, 204, 21, 0.4);
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.15);
+}
+
+#orbital-panel-neural-audio .orbital-panel-header {
+    background: rgba(250, 204, 21, 0.08);
+}
+
+#orbital-panel-neural-audio .orbital-slider::-webkit-slider-thumb {
+    background: #facc15;
+    box-shadow: 0 0 8px #facc15;
+}
+
+#orbital-panel-neural-audio .orbital-slider-val {
+    color: #facc15;
+}

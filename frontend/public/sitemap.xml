@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- GitHub Pages Root -->
+  <url>
+    <loc>https://atulravi2024.github.io/Rajshree_Learning_Project/</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Varnamala Categories -->
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#swar</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#vyanjan</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#samyukt</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#matra</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Math Categories -->
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#numbers_10</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#numbers_100</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#tables_10_m1</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#shapes</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Mera Sansar Categories -->
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#family</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#body_parts</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#animals_wild</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#fruits</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#vegetables</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#vehicles</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#space</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#festivals</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Rangon ka Sansar -->
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#colors_primary</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#colors_secondary</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Games -->
+  <url><loc>https://atulravi2024.github.io/Rajshree_Learning_Project/#games</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+
+  <!-- Settings -->
+  <url>
+    <loc>https://atulravi2024.github.io/Rajshree_Learning_Project/settings/settings.html</loc>
+    <lastmod>2026-04-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

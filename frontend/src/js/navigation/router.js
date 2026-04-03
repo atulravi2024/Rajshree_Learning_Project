@@ -236,6 +236,11 @@ function finishSetup(category) {
         window.currentAudio.play();
     }
 
+    // Update URL hash for SEO & Deep-linking
+    if (location.hash !== '#' + category) {
+        history.replaceState(null, null, '#' + category);
+    }
+
     // Update Icons
     const iconMap = {
         'swar': 'अ', 'vyanjan': 'क', 'samyukt': '🔗', 'matra': '✍️', 'numbers_10': '🧮', 'numbers_100': '💯', 'tables_10_m1': '📝', 'tables_10_m2': '🎵', 'shapes': '📐', 'comparisons': '⚖️',
@@ -252,3 +257,27 @@ function finishSetup(category) {
         activeLink.classList.add('active-menu-icon');
     }
 }
+
+/**
+ * Handle Hash-Based Routing
+ * Automatically loads a category if present in the URL hash.
+ */
+function handleHashRouting() {
+    const hash = location.hash.substring(1); // Remove #
+    if (!hash) return;
+
+    // List of valid categories from iconMap
+    const validCategories = [
+        'swar', 'vyanjan', 'samyukt', 'matra', 'numbers_10', 'numbers_100', 'tables_10_m1', 'tables_10_m2', 'shapes', 'comparisons',
+        'family', 'body_parts', 'animals_domestic', 'animals_wild', 'birds', 'insects', 'nature', 'fruits', 'vegetables', 'habits', 'days_week', 'months_year', 'directions',
+        'colors_primary', 'colors_secondary', 'colors_natural', 'colors_pink_red', 'colors_blue_green', 'colors_brown_beige', 'colors_metallic', 'colors_special',
+        'vehicles', 'emotions', 'clothes', 'actions', 'helpers', 'toys', 'space', 'festivals', 'objects', 'sounds', 'places', 'games', 'food', 'instruments', 'imagination', 'activities', 'animals_smaller', 'magic'
+    ];
+
+    if (validCategories.includes(hash)) {
+        finishSetup(hash);
+    }
+}
+
+// Listen for back/forward buttons or manual hash changes
+window.addEventListener('hashchange', handleHashRouting);

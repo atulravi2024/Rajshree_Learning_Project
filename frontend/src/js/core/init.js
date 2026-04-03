@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     initializeAppElements();
+    
+    // Support Deep-linking and Hash-based SEO
+    if (window.handleHashRouting) window.handleHashRouting();
 });
 
 function initializeAppElements() {

@@ -6,6 +6,7 @@ function initMapElements(globeGroup, camera) {
 
     // Connect lines group
     const linesGroup = new THREE.Group();
+    window._mapLinesGroup = linesGroup;
     globeGroup.add(linesGroup);
 
     nodeData.forEach(data => {
@@ -25,9 +26,10 @@ function initMapElements(globeGroup, camera) {
             if (callout) callout.classList.remove('hidden');
         }
 
-        const nodeGeo = new THREE.SphereGeometry(size, 16, 16);
-        const nodeMat = new THREE.MeshBasicMaterial({ color });
-        const node = new THREE.Mesh(nodeGeo, nodeMat);
+        const dotGeo = new THREE.SphereGeometry(size, 16, 16);
+        const dotMat = new THREE.MeshBasicMaterial({ color });
+        const node = new THREE.Mesh(dotGeo, dotMat);
+        node.userData = data;
 
         const glowMaterial = new THREE.SpriteMaterial({
             map: createGlowTexture(color),
@@ -41,8 +43,12 @@ function initMapElements(globeGroup, camera) {
         node.add(glow);
 
         node.position.set(x, y, z);
-        node.userData = data;
-        globeGroup.add(node);
+        
+        if (!window._mapStatusNodesGroup) {
+            window._mapStatusNodesGroup = new THREE.Group();
+            globeGroup.add(window._mapStatusNodesGroup);
+        }
+        window._mapStatusNodesGroup.add(node);
         nodes.push(node);
     });
 

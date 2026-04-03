@@ -1,0 +1,14 @@
+/* ── SYSTEM OPS SECTION ── */
+.sat-label[data-sat-id="system-ops"] { 
+    border-color: rgba(0, 240, 255, 0.4); 
+    color: #00f0ff; 
+}
+
+#orbital-panel-system-ops {
+    border-color: rgba(0, 240, 255, 0.4);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);
+}
+
+#orbital-panel-system-ops .orbital-panel-header {
+    background: rgba(0, 240, 255, 0.08);
+}

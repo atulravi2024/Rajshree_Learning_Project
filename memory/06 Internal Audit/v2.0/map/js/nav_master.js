@@ -89,6 +89,26 @@ function updateNavModeVisibility() {
         // Hide search-related items
         if (metricsBar) metricsBar.classList.add('hidden');
     }
+
+    // --- GLOBE ELEMENT VISIBILITY (Audit vs Search) ---
+    const showAuditElements = !window._manualSearchToggle;
+    
+    if (window._mapLinesGroup) window._mapLinesGroup.visible = showAuditElements;
+    if (window._mapStatusNodesGroup) window._mapStatusNodesGroup.visible = showAuditElements;
+    if (window._mapRegionGroup) window._mapRegionGroup.visible = showAuditElements;
+    if (window._mapCityGroup) window._mapCityGroup.visible = showAuditElements;
+
+    // Handle breach callout (only show in Audit mode if node is critical)
+    const callout = document.getElementById('breach-callout');
+    if (callout) {
+        if (!showAuditElements) {
+            callout.classList.add('hidden');
+        } else {
+            // Re-check if it should be visible based on critical nodes
+            const criticalNode = (window.NODE_DATA || []).some(n => n.status === 'critical');
+            if (criticalNode) callout.classList.remove('hidden');
+        }
+    }
 }
 
 // Export for other scripts if needed

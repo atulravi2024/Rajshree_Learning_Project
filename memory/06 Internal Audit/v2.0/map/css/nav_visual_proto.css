@@ -1,0 +1,28 @@
+/* ── VISUAL PROTOCOL SECTION ── */
+.sat-label[data-sat-id="visual-protocol"] { 
+    border-color: rgba(167, 139, 250, 0.4); 
+    color: #a78bfa; 
+}
+
+#orbital-panel-visual-protocol {
+    border-color: rgba(167, 139, 250, 0.4);
+    box-shadow: 0 0 30px rgba(167, 139, 250, 0.15);
+}
+
+#orbital-panel-visual-protocol .orbital-panel-header {
+    background: rgba(167, 139, 250, 0.08);
+}
+
+#orbital-panel-visual-protocol .orbital-slider::-webkit-slider-thumb {
+    background: #a78bfa;
+    box-shadow: 0 0 8px #a78bfa;
+}
+
+#orbital-panel-visual-protocol .orbital-slider-val {
+    color: #a78bfa;
+}
+
+#orbital-panel-visual-protocol .orbital-toggle input:checked + .orbital-toggle-track::before {
+    background-color: #a78bfa;
+    box-shadow: 0 0 8px #a78bfa;
+}

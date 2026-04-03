@@ -31,8 +31,8 @@ function initGlobalSearch() {
                 // Clear any existing path
                 if (window.drawQuantumPath) window.drawQuantumPath([]);
                 
-                // Show in metrics?
-                if (window.updateNavbarMetrics) window.updateNavbarMetrics(fromCoords, null, null);
+                // Show in holographic info panel
+                if (window.updateInfoPanel) window.updateInfoPanel(fromCoords, null, null);
                 
                 window._mapTargetCameraZ = 150;
             } else {
@@ -58,7 +58,7 @@ function initGlobalSearch() {
                 }
                 
                 if (window.rotateGlobeToCoords) window.rotateGlobeToCoords(midLat, midLon);
-                if (window.updateNavbarMetrics) window.updateNavbarMetrics(fromCoords, toCoords, viaCoords);
+                if (window.updateInfoPanel) window.updateInfoPanel(fromCoords, toCoords, viaCoords);
 
                 // BACK TO FIXED ZOOM (DEFAULT 150)
                 window._mapTargetCameraZ = 150;
@@ -202,6 +202,9 @@ function updateSearchModeUI() {
     if (fromBtn) fromBtn.classList.toggle('visible', !!fromInput?.value);
     if (viaBtn) viaBtn.classList.toggle('visible', !!document.getElementById('map-search-via')?.value);
     if (toBtn) toBtn.classList.toggle('visible', !!document.getElementById('map-search-to')?.value);
+
+    // Sync the holographic info panel mode instantly
+    if (window.updateInfoPanel) window.updateInfoPanel(null, null, null);
 }
 
 /**

@@ -225,9 +225,10 @@ function initBottomBar() {
     });
 
     document.getElementById('btn-history')?.addEventListener('click', () => {
-        if (typeof populateHistoryList === 'function') populateHistoryList();
-        document.getElementById('modal-search-history')?.classList.add('open');
+        if (typeof populateAuditLogHistoryList === 'function') populateAuditLogHistoryList();
+        document.getElementById('modal-audit-logs')?.classList.add('open');
         if (window.lucide) lucide.createIcons();
+        if (window.playSound) window.playSound('UI_CLICK');
     });
 
     document.getElementById('btn-export')?.addEventListener('click', () => {
@@ -274,6 +275,26 @@ function initBottomBar() {
             if (metricPopup.classList.contains('active') && !metricPopup.contains(e.target) && !metricTrigger.contains(e.target)) {
                 metricPopup.classList.remove('active');
                 metricTrigger.classList.remove('active');
+            }
+        });
+    }
+
+    // Holographic Info Panel Toggle
+    const intelTrigger = document.getElementById('trigger-intel-panel');
+    const intelDropUp = document.getElementById('intel-drop-up');
+    if (intelTrigger && intelDropUp) {
+        intelTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = intelDropUp.classList.toggle('active');
+            intelTrigger.classList.toggle('active', isActive);
+            if (isActive && window.lucide) {
+                window.lucide.createIcons({ scope: intelDropUp });
+            }
+        });
+        document.addEventListener('click', (e) => {
+            if (intelDropUp.classList.contains('active') && !intelDropUp.contains(e.target) && !intelTrigger.contains(e.target)) {
+                intelDropUp.classList.remove('active');
+                intelTrigger.classList.remove('active');
             }
         });
     }
@@ -401,6 +422,9 @@ function checkGlobalSearchVisibility() {
             });
             document.getElementById('btn-ui-toggle')?.classList.remove('hidden');
         }
+
+        // Always sync the info panel to match the search visibility
+        if (window.updateInfoPanel) window.updateInfoPanel(null, null, null);
     }
 }
 

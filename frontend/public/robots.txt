@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://atulravi2024.github.io/Rajshree_Learning_Project/sitemap.xml

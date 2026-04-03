@@ -68,7 +68,7 @@
     font-size: 0.8rem;
     width: 140px;
     outline: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .search-field input:focus {
@@ -239,7 +239,21 @@
     display: none !important;
 }
 
-.directional-search.mode-poi { min-width: 200px; width: auto; }
+.directional-search.mode-poi { 
+    min-width: 280px; 
+    width: auto; 
+    padding: 0 0.8rem;
+}
+
+.mode-poi .from-field {
+    flex: 1;
+}
+
+.mode-poi .from-field input {
+    width: 100%;
+    min-width: 180px;
+}
+
 .directional-search.mode-route,
 .directional-search.via-mode-disabled { min-width: 440px; }
 

@@ -5,15 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOLOGRAPHIC MAP // FRONTIER</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="map.css">
-    <link rel="stylesheet" href="css/future.css">
     <link rel="stylesheet" href="../shared/background.css">
     <link rel="stylesheet" href="../shared/navbar.css">
     <link rel="stylesheet" href="../shared/notifications.css">
     <link rel="stylesheet" href="../shared/settings.css">
+    <!-- SYSTEM BASE & LAYOUT -->
+    <link rel="stylesheet" href="css/map_base.css">
+    <link rel="stylesheet" href="css/map_layout.css">
+    <link rel="stylesheet" href="css/map_widgets.css">
+    
+    <!-- NAVIGATION & INTERFACE SECTIONS -->
+    <link rel="stylesheet" href="css/nav_layout_core.css">
     <link rel="stylesheet" href="css/nav_master.css">
     <link rel="stylesheet" href="css/nav_front.css">
     <link rel="stylesheet" href="css/nav_back.css">
+    <link rel="stylesheet" href="css/nav_search_interface.css">
+    <link rel="stylesheet" href="css/nav_control_menus.css">
+    <link rel="stylesheet" href="css/nav_status_widgets.css">
+    <link rel="stylesheet" href="css/nav_theme_effects.css">
+
+    <!-- ORBITAL SETTINGS MODULAR SYSTEM -->
+    <link rel="stylesheet" href="css/nav_orbital_core.css">
+    <link rel="stylesheet" href="css/nav_sys_ops.css">
+    <link rel="stylesheet" href="css/nav_visual_proto.css">
+    <link rel="stylesheet" href="css/nav_user_gateway.css">
+    <link rel="stylesheet" href="css/nav_neural_audio.css">
+    <link rel="stylesheet" href="css/nav_security.css">
+    
+    <!-- MODALS & EFFECTS -->
+    <link rel="stylesheet" href="css/map_modals.css">
+    <link rel="stylesheet" href="css/map_effects.css">
+    <link rel="stylesheet" href="css/map_utils.css">
+    <link rel="stylesheet" href="css/map_responsive.css">
+    <link rel="stylesheet" href="css/future.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
@@ -482,6 +506,9 @@
                             </button>
                             <div class="pointer-menu" id="map-search-mode-menu"></div>
                         </div>
+                        <button class="icon-btn" id="btn-search-history-settings" title="Search History">
+                            <i data-lucide="history"></i>
+                        </button>
                     </div>
                 </div>
 
@@ -592,88 +619,105 @@
 
                 <div class="nav-separator"></div>
 
-                <!-- ── DISTANCE CALCULATOR NAVBAR UI (Far Right) ── -->
-                <div class="distance-metrics-bar hidden" id="distance-metrics-bar">
-                    <div class="metric-segment clickable" title="Actual Travel Distance" id="trigger-actual-metrics">
-                        <i data-lucide="route" class="text-cyan"></i>
-                        <span id="metric-actual" class="text-cyan">-- KM</span>
-                        <i data-lucide="chevron-down" class="icon-tiny dropdown-icon"></i>
+                <!-- ── DYNAMIC HOLOGRAPHIC INFO PANEL (Far Right) ── -->
+                <div class="info-panel-bar hidden" id="info-panel-bar">
+                    <div class="panel-trigger-segment clickable" id="trigger-intel-panel">
+                        <i data-lucide="info" class="text-cyan"></i>
+                        <span id="nav-primary-val" class="panel-title text-cyan">ANALYZING...</span>
                     </div>
 
-                    <!-- ── HOLOGRAPHIC METRICS POPUP ── -->
-                    <div class="metrics-popup-container" id="metrics-popup">
-                        <div class="popup-item">
-                            <span class="popup-label">ESTIMATED TIME</span>
-                            <div class="popup-value">
-                                <i data-lucide="clock" class="text-yellow"></i>
-                                <span id="metric-time" class="text-yellow">--</span>
-                            </div>
+                    <!-- ── HOLOGRAPHIC INTEL DROP-UP ── -->
+                    <div class="intel-drop-up-container" id="intel-drop-up">
+                        <div class="intel-header">
+                            <i data-lucide="database" class="icon-tiny"></i>
+                            <span id="intel-main-title">LOCATION ANALYSIS</span>
                         </div>
-                        <div class="popup-item">
-                            <span class="popup-label">STRAIGHT DISTANCE</span>
-                            <div class="popup-value">
-                                <i data-lucide="globe"></i>
-                                <span id="metric-globe-popup">-- KM</span>
+                        
+                        <!-- ── ROUTE NAV LAYOUT (A -> B) ── -->
+                        <div id="intel-layout-route" class="intel-grid hidden">
+                            <div class="intel-item">
+                                <span class="intel-label">ESTIMATED TIME</span>
+                                <div class="intel-value">
+                                    <i data-lucide="clock" class="text-yellow"></i>
+                                    <span id="nav-metric-time" class="text-yellow">--</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="popup-item">
-                            <span class="popup-label">ROUTE DELTA</span>
-                            <div class="popup-value">
-                                <i data-lucide="zap"></i>
-                                <span id="metric-delta-popup">--</span>
+                            <div class="intel-item">
+                                <span class="intel-label">TRAVEL DISTANCE</span>
+                                <div class="intel-value">
+                                    <i data-lucide="route" class="text-cyan"></i>
+                                    <span id="nav-metric-actual" class="text-cyan">-- KM</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="popup-item separator-top">
-                            <span class="popup-label">CURRENT SPEED</span>
-                            <div class="popup-value">
-                                <i data-lucide="gauge" class="text-cyan"></i>
-                                <span id="metric-speed">-- KM/H</span>
+                            <div class="intel-item">
+                                <span class="intel-label">LOOP DISTANCE</span>
+                                <div class="intel-value">
+                                    <i data-lucide="globe" class="text-bright"></i>
+                                    <span id="nav-metric-loop" class="text-bright">-- KM</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="popup-item">
-                            <span class="popup-label">SIGNAL STRENGTH</span>
-                            <div class="popup-value">
-                                <i data-lucide="signal" class="text-bright"></i>
-                                <span id="metric-signal">OPTIMAL</span>
+                            <div class="intel-item">
+                                <span class="intel-label">ROUTE DELTA</span>
+                                <div class="intel-value">
+                                    <i data-lucide="zap" class="text-purple"></i>
+                                    <span id="nav-metric-delta" class="text-purple">--</span>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- ── EFFICIENCY ANALYSIS SECTION ── -->
-                        <div class="efficiency-analysis separator-top">
-                            <span class="popup-label">EFFICIENCY ANALYSIS</span>
-                            
-                            <div class="efficiency-matrix">
-                                <div class="matrix-row">
-                                    <span class="matrix-label">FASTEST MODE</span>
-                                    <div class="matrix-value text-cyan">
-                                        <i data-lucide="zap"></i>
-                                        <span id="eff-fastest-name">SATELLITE</span>
-                                    </div>
-                                </div>
-                                <div class="matrix-row">
-                                    <span class="matrix-label">CURRENT MODE</span>
-                                    <div class="matrix-value" id="eff-current-container">
-                                        <i data-lucide="circle" id="eff-current-icon"></i>
-                                        <span id="eff-current-name">CIRCLE</span>
-                                    </div>
+                        <!-- ── SINGLE POI LAYOUT ── -->
+                        <div id="intel-layout-poi" class="intel-grid hidden">
+                            <div class="intel-item">
+                                <span class="intel-label">TOTAL AREA</span>
+                                <div class="intel-value">
+                                    <i data-lucide="maximize" class="text-cyan"></i>
+                                    <span id="poi-metric-area">-- KM²</span>
                                 </div>
                             </div>
+                            <div class="intel-item">
+                                <span class="intel-label">OCEAN ALTITUDE</span>
+                                <div class="intel-value">
+                                    <i data-lucide="waves" class="text-blue"></i>
+                                    <span id="poi-metric-altitude">-- M</span>
+                                </div>
+                            </div>
+                            <div class="intel-item">
+                                <span class="intel-label">AIR QUALITY (AQI)</span>
+                                <div class="intel-value">
+                                    <i data-lucide="wind" class="text-green"></i>
+                                    <span id="poi-metric-aqi">--</span>
+                                </div>
+                            </div>
+                            <div class="intel-item">
+                                <span class="intel-label">WIND VELOCITY</span>
+                                <div class="intel-value">
+                                    <i data-lucide="fan" class="text-yellow"></i>
+                                    <span id="poi-metric-wind">-- KM/H</span>
+                                </div>
+                            </div>
+                            <div class="intel-item">
+                                <span class="intel-label">POPULATION</span>
+                                <div class="intel-value">
+                                    <i data-lucide="users" class="text-bright"></i>
+                                    <span id="poi-metric-pop">--</span>
+                                </div>
+                            </div>
+                            <div class="intel-item">
+                                <span class="intel-label">DENSITY</span>
+                                <div class="intel-value">
+                                    <i data-lucide="user-check" class="text-orange"></i>
+                                    <span id="poi-metric-density">--/KM²</span>
+                                </div>
+                            </div>
+                        </div>
 
-                            <div class="efficiency-comparison">
-                                <div class="comp-bar-wrap">
-                                    <div class="comp-bar-fill fastest" id="eff-bar-fastest"></div>
-                                    <div class="comp-bar-fill current" id="eff-bar-current"></div>
-                                </div>
-                                <div class="comp-stats">
-                                    <span class="text-dim">GAP:</span>
-                                    <span id="eff-gap-value" class="text-red">--</span>
-                                </div>
+                        <!-- ── COMMON EFFICIENCY (Small Footer) ── -->
+                        <div class="intel-footer separator-top">
+                            <div class="efficiency-mini">
+                                <span class="intel-label">SYS.EFFICIENCY:</span>
+                                <span id="intel-eff-value" class="text-cyan">OPTIMAL</span>
                             </div>
-
-                            <div class="efficiency-recommendation" id="eff-recommendation-box">
-                                <i data-lucide="info" class="icon-tiny"></i>
-                                <span id="eff-recommendation-text">ANALYZING OPTIMAL PATH...</span>
-                            </div>
+                            <div class="intel-status-beam"></div>
                         </div>
                     </div>
                 </div>

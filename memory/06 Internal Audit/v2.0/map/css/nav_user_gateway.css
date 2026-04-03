@@ -1,0 +1,14 @@
+/* ── USER GATEWAY SECTION ── */
+.sat-label[data-sat-id="user-gateway"] { 
+    border-color: rgba(34, 197, 94, 0.4); 
+    color: #22c55e; 
+}
+
+#orbital-panel-user-gateway {
+    border-color: rgba(34, 197, 94, 0.4);
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.15);
+}
+
+#orbital-panel-user-gateway .orbital-panel-header {
+    background: rgba(34, 197, 94, 0.08);
+}

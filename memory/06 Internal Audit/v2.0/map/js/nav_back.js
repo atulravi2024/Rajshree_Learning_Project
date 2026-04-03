@@ -36,6 +36,7 @@ function initNavBack() {
                 if (window.drawQuantumPath) window.drawQuantumPath([]);
                 if (window.updateNavbarMetrics) window.updateNavbarMetrics(fromCoords, null, null);
                 window._mapTargetCameraZ = 150;
+                recordSearchHistory(from, '', '', 'poi');
             } else {
                 if (window.showErrorShake) window.showErrorShake();
             }
@@ -61,6 +62,7 @@ function initNavBack() {
                 
                 // BACK TO FIXED ZOOM (DEFAULT 150)
                 window._mapTargetCameraZ = 150;
+                recordSearchHistory(from, via, to, window.SEARCH_MODE);
             } else {
                 if (window.showErrorShake) window.showErrorShake();
             }
@@ -75,6 +77,17 @@ function initNavBack() {
         if (inp) inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') executeSearch(); });
     });
     runBtn.addEventListener('click', executeSearch);
+
+    // New Search History Button (Back Side)
+    const historyBtn = document.getElementById('btn-search-history-settings');
+    if (historyBtn) {
+        historyBtn.addEventListener('click', () => {
+            if (typeof populateSearchHistoryList === 'function') populateSearchHistoryList();
+            document.getElementById('modal-search-history')?.classList.add('open');
+            if (window.lucide) lucide.createIcons();
+            if (window.playSound) window.playSound('UI_CLICK');
+        });
+    }
 
     // Initializations
     if (window.initAutocomplete) window.initAutocomplete(fromInput, viaInput, toInput);
@@ -107,6 +120,32 @@ function initNavBack() {
         });
     }
 }
+
+// ── SEARCH HISTORY SYSTEM ──────────────────────────────
+
+window.SEARCH_HISTORY = JSON.parse(localStorage.getItem('FRONTIER_SEARCH_HISTORY') || '[]');
+
+function recordSearchHistory(from, via, to, mode) {
+    const entry = {
+        ts: new Date().toISOString(),
+        mode: mode,
+        from: from,
+        via: via,
+        to: to
+    };
+    
+    // Check if duplicate of last entry
+    const last = window.SEARCH_HISTORY[0];
+    if (last && last.from === from && last.via === via && last.to === to && last.mode === mode) return;
+
+    window.SEARCH_HISTORY.unshift(entry);
+    if (window.SEARCH_HISTORY.length > 50) window.SEARCH_HISTORY.pop();
+    
+    localStorage.setItem('FRONTIER_SEARCH_HISTORY', JSON.stringify(window.SEARCH_HISTORY));
+    console.log('[History] Search Recorded:', entry);
+}
+
+window.recordSearchHistory = recordSearchHistory;
 
 /**
  * Selection of Search Mode (POI/Route/Via).

@@ -160,13 +160,6 @@ function initNavFront() {
         if (window.runDeepScan) window.runDeepScan();
     });
 
-    document.getElementById('btn-history')?.addEventListener('click', () => {
-        if (window.populateHistoryList) {
-            window.populateHistoryList();
-            document.getElementById('modal-search-history')?.classList.add('open');
-            if (window.lucide) lucide.createIcons();
-        }
-    });
 
     document.getElementById('btn-export')?.addEventListener('click', () => {
         const data = JSON.stringify(window.DEFAULT_GLOBAL_METRICS || {}, null, 2);
