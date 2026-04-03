@@ -506,6 +506,9 @@
                             </button>
                             <div class="pointer-menu" id="map-search-mode-menu"></div>
                         </div>
+                        <button class="icon-btn active" id="btn-toggle-points" title="पॉइंट्स दिखाएं/छुपाएं (Toggle Points)">
+                            <i data-lucide="map-pin"></i>
+                        </button>
                         <button class="icon-btn" id="btn-search-history-settings" title="Search History">
                             <i data-lucide="history"></i>
                         </button>
@@ -965,6 +968,42 @@
                 <button class="quarantine-btn" id="btn-quarantine">⚡ INITIATE QUARANTINE</button>
                 <button class="hud-modal-close small" id="close-threat-panel">Dismiss</button>
             </div>
+        <!-- Lockdown Overlay & Manual Override -->
+        <div id="lockdown-overlay" class="lockdown-overlay hidden">
+            <div class="lockdown-noise"></div>
+            <div class="lockdown-content">
+                <div class="lockdown-alert-icon">
+                    <i data-lucide="shield-alert"></i>
+                </div>
+                <h2 class="lockdown-title">SYSTEM PURGE & QUARANTINE</h2>
+                <p class="lockdown-subtitle">PROTOCOL SIGMA-9: DATA SANITIZATION ACTIVE</p>
+                
+                <!-- Live Security Feed -->
+                <div id="lockdown-live-logs" class="lockdown-live-logs">
+                    <!-- Technical events injected via JS -->
+                </div>
+
+                <div class="override-progress-container hidden" id="override-progress-wrap">
+                    <div class="override-progress-bar">
+                        <div class="override-progress-fill" id="override-progress-fill"></div>
+                    </div>
+                    <span class="override-status" id="override-progress-label">BYPASSING NEURAL FIREWALL...</span>
+                </div>
+
+                <div class="lockdown-actions" id="lockdown-actions">
+                    <button class="override-btn" id="btn-manual-override">
+                        <i data-lucide="zap"></i>
+                        <span id="override-btn-text">HOLD FOR MANUAL OVERRIDE</span>
+                    </button>
+                    <div class="lockdown-auth-note">[ AUTHENTICATION REQUIRED ]</div>
+                </div>
+
+                <div class="security-readout">
+                    <div class="readout-line">AUTH_STATE: <span class="text-red">LOCKED</span></div>
+                    <div class="readout-line">INTERFACES: <span class="text-red">DISABLED</span></div>
+                    <div class="readout-line">GEO_LOCATION: <span class="text-red">ENCRYPTED</span></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -992,6 +1031,7 @@
     <script src="js/nav_master.js"></script>
     <script src="js/nav_front.js"></script>
     <script src="js/nav_back.js"></script>
+    <script src="js/map_point_toggle.js"></script>
     <script src="js/map_widgets.js"></script>
     <script src="map_main.js"></script>
 </body>

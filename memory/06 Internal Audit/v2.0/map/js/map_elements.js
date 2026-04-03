@@ -286,9 +286,11 @@ async function drawQuantumPath(coordinateArray) {
         const y = (r_globe * Math.cos(phi));
 
         const dotGeo = new THREE.SphereGeometry(0.8, 16, 16);
-        const dotMat = new THREE.MeshBasicMaterial({ color: pathColor });
-        const marker = new THREE.Mesh(dotGeo, dotMat);
+        const indicatorMat = new THREE.MeshBasicMaterial({ color: pathColor });
+        const marker = new THREE.Mesh(dotGeo, indicatorMat);
         marker.position.set(x, y, z);
+        marker.userData.isMapPoint = true;
+        marker.visible = !!window.MAP_POINTS_VISIBLE;
 
         pathGroup.add(marker);
     });

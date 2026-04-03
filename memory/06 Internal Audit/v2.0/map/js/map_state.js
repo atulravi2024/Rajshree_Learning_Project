@@ -40,6 +40,7 @@ window._isVisualBoostActive = false;
 // Path State
 window._currentPathObj = null;
 window._pathAnimId = null;
+window.MAP_POINTS_VISIBLE = true;
 
 // Threat State
 window._threatQuarantined = false;

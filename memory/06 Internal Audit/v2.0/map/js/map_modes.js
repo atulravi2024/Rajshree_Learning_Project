@@ -78,10 +78,9 @@ function setGlobeMode(mapType, theme) {
         }
     }
     
-    // 4. Update LOD labels focus
-    if (typeof window.updateLOD === 'function') {
-        // Force a resize/LOD update check if needed?
-        // Usually, the animate loop handles it.
+    // 4. Update Visual Boost if active
+    if (typeof window.applyVisualBoostState === 'function') {
+        window.applyVisualBoostState();
     }
 }
 
@@ -214,13 +213,14 @@ window.loadGeoBorders = function() {
     window._mapBordersGroup.visible = (window._mapViewMode === 'map');
     scene.add(window._mapBordersGroup);
     
-    const borderMaterial = new THREE.LineBasicMaterial({
+    window._mapBorderMat = new THREE.LineBasicMaterial({
         color: 0x00f0ff,
         transparent: true,
-        opacity: 0.15,
+        opacity: 0.35, // Increased from 0.15 for better default visibility
         blending: THREE.AdditiveBlending,
         depthWrite: false
     });
+    const borderMaterial = window._mapBorderMat;
     
     const parseGeoJSONFeatures = (data) => {
         const processCoords = (coords) => {

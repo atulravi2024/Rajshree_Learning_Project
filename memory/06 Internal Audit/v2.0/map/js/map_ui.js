@@ -70,6 +70,7 @@ function initBottomBar() {
     const tabGroup = document.getElementById('bottom-tab-group');
     if (tabGroup) {
         tabGroup.addEventListener('click', (e) => {
+            if (window._isLockedDown) return;
             const tab = e.target.closest('.nav-tab');
             if (!tab) return;
             tabGroup.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
@@ -157,6 +158,8 @@ function initBottomBar() {
     // UI Minimize
     const uiToggleBtn = document.getElementById('btn-ui-toggle');
     if (uiToggleBtn) {
+        // Remove any existing listener to be safe (though we already cleaned nav_front.js)
+        uiToggleBtn.onclick = null; 
         uiToggleBtn.addEventListener('click', () => {
             const isMinimized = document.body.classList.toggle('ui-minimized');
             const icon = uiToggleBtn.querySelector('i');
@@ -167,8 +170,9 @@ function initBottomBar() {
             const zSlider = document.getElementById('globe-zoom-slider');
             const targetZ = isMinimized ? 150 : 250;
             window._mapTargetCameraZ = targetZ;
-            if (zSlider && typeof mapZToSlider === 'function') zSlider.value = mapZToSlider(targetZ);
+            if (zSlider && typeof window.mapZToSlider === 'function') zSlider.value = window.mapZToSlider(targetZ);
             setTimeout(() => window.dispatchEvent(new Event('resize')), 520);
+            if (window.playSound) window.playSound('UI_GENERIC_TAP');
         });
     }
 
@@ -232,6 +236,7 @@ function initBottomBar() {
     });
 
     document.getElementById('btn-export')?.addEventListener('click', () => {
+        if (window._isLockedDown) return;
         const data = JSON.stringify(window.DEFAULT_GLOBAL_METRICS || {}, null, 2);
         const blob = new Blob([data], { type: 'application/json' });
         const url = URL.createObjectURL(blob);
@@ -328,10 +333,16 @@ function toggleGlobeDesign() {
         if (globeGlow) {
             globeGlow.visible = true;
             globeGlow.material.color.setHex(0x00f0ff);
-            globeGlow.material.opacity = 0.4;
+            globeGlow.material.opacity = 0.25; // "Good enough" default
+            globeGlow.scale.set(245, 245, 1);
+            globeGlow.material.needsUpdate = true;
+        }
+        if (window._mapGridMat) {
+            window._mapGridMat.opacity = 0.35; // Sharp but thin
+            window._mapGridMat.needsUpdate = true;
         }
         if (window._mapSunLight) window._mapSunLight.visible = false;
-        if (window._mapAmbientLight) window._mapAmbientLight.intensity = 0.8;
+        if (window._mapAmbientLight) window._mapAmbientLight.intensity = 0.35; // Lower default light
     } else {
         if (hfGlobe) hfGlobe.visible = true;
         if (wireframeGlobe) wireframeGlobe.visible = false;
@@ -344,7 +355,9 @@ function toggleGlobeDesign() {
         if (globeGlow) {
             globeGlow.visible = true;
             globeGlow.material.color.setHex(0xffffff);
-            globeGlow.material.opacity = 0.15;
+            globeGlow.material.opacity = 0.12; // Very subtle HF glow
+            globeGlow.scale.set(240, 240, 1);
+            globeGlow.material.needsUpdate = true;
         }
         const spotlightToggle = document.getElementById('btn-spotlight');
         const spotlightActive = spotlightToggle ? spotlightToggle.classList.contains('active') : true;
@@ -393,38 +406,15 @@ function activateMapMode(mode) {
 }
 
 function checkGlobalSearchVisibility() {
-    const searchContainer = document.getElementById('global-search-container');
-    const allCategories = document.querySelectorAll('.navbar-category');
-    const allSeparators = document.querySelectorAll('.nav-separator');
-
-    if (searchContainer) {
-        if (window._manualSearchToggle) {
-            searchContainer.classList.add('active');
-            allCategories.forEach(cat => {
-                const catId = cat.getAttribute('data-cat');
-                if (catId !== 'sys-ui' && catId !== 'search-settings') cat.classList.add('hidden');
-                else cat.classList.remove('hidden');
-            });
-            allSeparators.forEach(sep => {
-                if (sep.id === 'search-cfg-separator') sep.classList.remove('hidden');
-                else sep.classList.add('hidden');
-            });
-            document.getElementById('btn-ui-toggle')?.classList.add('hidden');
-        } else {
-            searchContainer.classList.remove('active');
-            allCategories.forEach(cat => {
-                if (cat.getAttribute('data-cat') !== 'search-settings') cat.classList.remove('hidden');
-                else cat.classList.add('hidden');
-            });
-            allSeparators.forEach(sep => {
-                if (sep.id === 'search-cfg-separator') sep.classList.add('hidden');
-                else sep.classList.remove('hidden');
-            });
-            document.getElementById('btn-ui-toggle')?.classList.remove('hidden');
+    // Defer to the more robust nav_master.js logic if available
+    if (typeof window.updateNavModeVisibility === 'function') {
+        window.updateNavModeVisibility();
+    } else {
+        // Fallback (minimal version)
+        const searchContainer = document.getElementById('global-search-container');
+        if (searchContainer) {
+            searchContainer.classList.toggle('active', !!window._manualSearchToggle);
         }
-
-        // Always sync the info panel to match the search visibility
-        if (window.updateInfoPanel) window.updateInfoPanel(null, null, null);
     }
 }
 
@@ -448,8 +438,8 @@ window.toggleSectionCollapse = function(catId) {
 
 function initNavCollapsing() {
     const categories = document.querySelectorAll('.navbar-category');
-    const masterBtn = document.getElementById('btn-nav-toggle-all');
-    if (masterBtn) masterBtn.onclick = (e) => { e.stopPropagation(); window._manualSearchToggle = !window._manualSearchToggle; checkGlobalSearchVisibility(); };
+    // REMOVED redundant btn-nav-toggle-all onclick assignment. 
+    // It is now handled exclusively in nav_master.js to avoid overwriting robust logic.
     categories.forEach(cat => {
         cat.addEventListener('click', (e) => {
             if (e.target.closest('.icon-btn, .nav-tab, input, button, a')) return;
@@ -459,29 +449,85 @@ function initNavCollapsing() {
     checkGlobalSearchVisibility();
 }
 
-window.applyVisualBoostState = function() {
+function applyVisualBoostState() {
+    const isBoosted = window._isVisualBoostActive;
+    const isHF = window._mapGlobeDesign === 'high-fidelity';
+    const isDark = window._mapThemeMode === 'dark';
     const atmActive = document.getElementById('btn-atmosphere')?.classList.contains('active') ?? true;
     
-    if (!window._isVisualBoostActive) {
-        document.body.classList.remove('visual-boost-hf', 'visual-boost-wire');
+    // Update body classes for CSS filters (map_effects.css)
+    document.body.classList.toggle('visual-boost-hf', isBoosted && isHF);
+    document.body.classList.toggle('visual-boost-wire', isBoosted && !isHF);
+
+    if (!isBoosted) {
+        // RESET TO DEFAULTS (The "Good Enough" default state)
         if (window._mapSunLight) window._mapSunLight.intensity = 0.8;
-        if (window._mapAmbientLight) window._mapAmbientLight.intensity = window._mapGlobeDesign === 'wireframe' ? 0.8 : 0.25;
-        if (window._mapGlobeMat) window._mapGlobeMat.emissiveIntensity = atmActive ? 0.6 : 0.0;
-        if (window._mapGlobeWireframe) window._mapGlobeWireframe.material.opacity = 0.35;
-        if (window._mapGlobeGlow) window._mapGlobeGlow.material.opacity = window._mapGlobeDesign === 'wireframe' ? 0.4 : 0.15;
+        if (window._mapAmbientLight) window._mapAmbientLight.intensity = (!isHF) ? 0.35 : 0.25;
+        if (window._mapGlobeMat) {
+            window._mapGlobeMat.emissiveIntensity = atmActive ? (isDark ? 0.7 : 0.1) : 0.0;
+            window._mapGlobeMat.shininess = isHF ? 25 : 5;
+            window._mapGlobeMat.bumpScale = isHF ? 0.4 : 0.0;
+            window._mapGlobeMat.needsUpdate = true;
+        }
+        if (window._mapGridMat) {
+            window._mapGridMat.opacity = 0.35;
+            window._mapGridMat.needsUpdate = true;
+        }
+        if (window._mapBorderMat) {
+            window._mapBorderMat.opacity = 0.35;
+            window._mapBorderMat.needsUpdate = true;
+        }
+        if (window._mapGlobeGlow) {
+            window._mapGlobeGlow.material.opacity = (!isHF) ? 0.25 : 0.12;
+            window._mapGlobeGlow.material.color.setHex(isHF ? 0xffffff : 0x00f0ff);
+            window._mapGlobeGlow.scale.set((!isHF) ? 245 : 240, (!isHF) ? 245 : 240, 1);
+            window._mapGlobeGlow.material.needsUpdate = true;
+        }
         return;
     }
-    const isHF = window._mapGlobeDesign === 'high-fidelity';
-    document.body.classList.toggle('visual-boost-hf', isHF);
-    document.body.classList.toggle('visual-boost-wire', !isHF);
+
+    // APPLY DYNAMIC BOOST
     if (isHF) {
-        if (window._mapSunLight) window._mapSunLight.intensity = 1.35;
-        if (window._mapGlobeMat) window._mapGlobeMat.emissiveIntensity = atmActive ? 0.9 : 0.0;
+        // High-Fidelity Boost (Satellite/Map)
+        if (window._mapSunLight) window._mapSunLight.intensity = 1.45; 
+        if (window._mapAmbientLight) window._mapAmbientLight.intensity = 0.15; 
+        
+        if (window._mapGlobeMat) {
+            window._mapGlobeMat.emissiveIntensity = atmActive ? (isDark ? 1.0 : 0.3) : 0.0;
+            window._mapGlobeMat.shininess = 50; 
+            window._mapGlobeMat.bumpScale = 0.75;
+            window._mapGlobeMat.needsUpdate = true;
+        }
+        if (window._mapGlobeGlow) {
+            window._mapGlobeGlow.material.opacity = 0.25;
+            window._mapGlobeGlow.material.color.setHex(0xffffff);
+            window._mapGlobeGlow.material.needsUpdate = true;
+        }
     } else {
-        if (window._mapGlobeWireframe) window._mapGlobeWireframe.material.opacity = 0.8;
-        if (window._mapGlobeGlow) window._mapGlobeGlow.material.opacity = 0.7;
+        // Wireframe Boost (The "Fine" Holographic Glow)
+        // Ensure "finer" clarity rather than "too much light"
+        if (window._mapSunLight) window._mapSunLight.intensity = 0.0; 
+        if (window._mapAmbientLight) window._mapAmbientLight.intensity = 0.25; // Lower ambient for deeper contrast
+        
+        if (window._mapGridMat) {
+            window._mapGridMat.opacity = 0.65; // "Finer" boost, not overwhelming
+            window._mapGridMat.color.setHex(0x00f0ff);
+            window._mapGridMat.needsUpdate = true;
+        }
+        if (window._mapBorderMat) {
+            window._mapBorderMat.opacity = 0.75;
+            window._mapBorderMat.needsUpdate = true;
+        }
+        
+        if (window._mapGlobeGlow) {
+            window._mapGlobeGlow.material.opacity = 0.45; // Subtle aura
+            window._mapGlobeGlow.material.color.setHex(0x00f0ff);
+            window._mapGlobeGlow.scale.set(255, 255, 1); // Expand the aura for "fine depth"
+            window._mapGlobeGlow.material.needsUpdate = true;
+        }
     }
-};
+}
+
 
 function initCardCollapsibility() {
     // Shared between sidebar widgets

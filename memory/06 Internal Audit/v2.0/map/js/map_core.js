@@ -82,12 +82,13 @@ function initGlobe() {
 
     // Main Simplified Wireframe Mesh (Holographic Grid)
     const wireframeGeo = new THREE.SphereGeometry(90.1, 64, 48); // Denser, high-tech grid
-    const wireframeMat = new THREE.MeshBasicMaterial({
+    window._mapGridMat = new THREE.MeshBasicMaterial({
         color: 0x00f0ff,
         wireframe: true,
         transparent: true,
-        opacity: 0.35 // Lowered opacity due to increased density
+        opacity: 0.45 // Increased for better default visibility
     });
+    const wireframeMat = window._mapGridMat;
     const wireframeGlobe = new THREE.Mesh(wireframeGeo, wireframeMat);
     wireframeGlobe.visible = false; // Explicitly hidden
     globeGroup.add(wireframeGlobe);
