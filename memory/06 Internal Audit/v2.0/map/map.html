@@ -602,38 +602,20 @@
                     <button class="search-go-btn" id="btn-run-search" title="INITIATE QUANTUM SEARCH">
                         <i data-lucide="search"></i>
                     </button>
-                    <!-- Holographic Drop-up Suggestions -->
-                    <div class="suggestions-container" id="map-search-suggestions"></div>
-                </div>
-            </div>
 
-                <div class="navbar-category section-collapsed" data-cat="map-modes">
-                    <span class="category-label">MAP.MODES</span>
-                    <div class="bottom-tabs" id="bottom-tab-group">
-                        <button class="nav-tab" data-tab="monitoring">Active Monitoring</button>
-                        <button class="nav-tab active" data-tab="sector-g">Sector Map G</button>
-                        <button class="nav-tab" data-tab="scan">Scan Area</button>
-                        <button class="nav-tab threat-btn" data-tab="threat">Threat Response</button>
-                    </div>
-                </div>
-
-                <div class="nav-separator"></div>
-
-                <!-- ── DYNAMIC HOLOGRAPHIC INFO PANEL (Far Right) ── -->
-                <div class="info-panel-bar hidden" id="info-panel-bar">
+                    <!-- Integrated Distance/Intel Display -->
                     <div class="panel-trigger-segment clickable" id="trigger-intel-panel">
-                        <i data-lucide="info" class="text-cyan"></i>
                         <span id="nav-primary-val" class="panel-title text-cyan">ANALYZING...</span>
                     </div>
 
-                    <!-- ── HOLOGRAPHIC INTEL DROP-UP ── -->
+                    <!-- Holographic Intel Drop-up -->
                     <div class="intel-drop-up-container" id="intel-drop-up">
                         <div class="intel-header">
                             <i data-lucide="database" class="icon-tiny"></i>
                             <span id="intel-main-title">LOCATION ANALYSIS</span>
                         </div>
                         
-                        <!-- ── ROUTE NAV LAYOUT (A -> B) ── -->
+                        <!-- ROUTE NAV LAYOUT (A -> B) -->
                         <div id="intel-layout-route" class="intel-grid hidden">
                             <div class="intel-item">
                                 <span class="intel-label">ESTIMATED TIME</span>
@@ -665,7 +647,7 @@
                             </div>
                         </div>
 
-                        <!-- ── SINGLE POI LAYOUT ── -->
+                        <!-- SINGLE POI LAYOUT -->
                         <div id="intel-layout-poi" class="intel-grid hidden">
                             <div class="intel-item">
                                 <span class="intel-label">TOTAL AREA</span>
@@ -709,9 +691,23 @@
                                     <span id="poi-metric-density">--/KM²</span>
                                 </div>
                             </div>
+                            <div class="intel-item">
+                                <span class="intel-label">AREA TYPE</span>
+                                <div class="intel-value">
+                                    <i data-lucide="building" class="text-purple"></i>
+                                    <span id="poi-metric-type">--</span>
+                                </div>
+                            </div>
+                            <div class="intel-item">
+                                <span class="intel-label">PER CAPITA INCOME</span>
+                                <div class="intel-value">
+                                    <i data-lucide="dollar-sign" class="text-green"></i>
+                                    <span id="poi-metric-income">--</span>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- ── COMMON EFFICIENCY (Small Footer) ── -->
+                        <!-- COMMON EFFICIENCY (Small Footer) -->
                         <div class="intel-footer separator-top">
                             <div class="efficiency-mini">
                                 <span class="intel-label">SYS.EFFICIENCY:</span>
@@ -719,6 +715,20 @@
                             </div>
                             <div class="intel-status-beam"></div>
                         </div>
+                    </div>
+
+                    <!-- Holographic Drop-up Suggestions -->
+                    <div class="suggestions-container" id="map-search-suggestions"></div>
+                </div>
+            </div>
+
+                <div class="navbar-category section-collapsed" data-cat="map-modes">
+                    <span class="category-label">MAP.MODES</span>
+                    <div class="bottom-tabs" id="bottom-tab-group">
+                        <button class="nav-tab" data-tab="monitoring">Active Monitoring</button>
+                        <button class="nav-tab active" data-tab="sector-g">Sector Map G</button>
+                        <button class="nav-tab" data-tab="scan">Scan Area</button>
+                        <button class="nav-tab threat-btn" data-tab="threat">Threat Response</button>
                     </div>
                 </div>
             </div>

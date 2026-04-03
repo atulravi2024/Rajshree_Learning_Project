@@ -97,17 +97,22 @@ function calculateRouteDelta(distanceKm, pointerId) {
  * Uses a deterministic approach based on the location name for consistency.
  */
 function generateLocationIntel(name) {
-    if (!name) return { area: '--', altitude: '--', aqi: '--', wind: '--', pop: '--', density: '--' };
+    if (!name) return { area: '--', altitude: '--', aqi: '--', wind: '--', pop: '--', density: '--', type: '--', income: '--' };
     const seed = name.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
     const rng = (mult) => Math.abs(Math.sin(seed * mult));
+
+    const areaTypes = ['URBAN', 'RURAL', 'INDUSTRIAL', 'METROPOLITAN', 'SEZ', 'TECH-HUB'];
+    const areaType = areaTypes[seed % areaTypes.length];
     
     return {
         area: (Math.floor(rng(1.1) * 1500) + 200).toLocaleString(),
-        altitude: Math.floor(rng(1.2) * 800) - 10, // -10 to 790m
+        altitude: Math.floor(rng(1.2) * 800) - 10,
         aqi: Math.floor(rng(1.3) * 180) + 15,
         wind: (rng(1.4) * 65 + 2).toFixed(1),
         pop: (rng(1.5) * 18 + 0.2).toFixed(1) + 'M',
-        density: (Math.floor(rng(1.6) * 15000) + 800).toLocaleString()
+        density: (Math.floor(rng(1.6) * 15000) + 800).toLocaleString(),
+        type: areaType,
+        income: '$' + (Math.floor(rng(1.7) * 75000) + 12000).toLocaleString()
     };
 }
 
@@ -116,12 +121,9 @@ function generateLocationIntel(name) {
  * Automatically switches between Navigation (Route) and Location (POI) layouts.
  */
 window.updateInfoPanel = function(fromCoords, toCoords, viaCoords = null) {
-    const infoBar = document.getElementById('info-panel-bar');
     const intelDropUp = document.getElementById('intel-drop-up');
     const primaryVal = document.getElementById('nav-primary-val');
     const mainTitle = document.getElementById('intel-main-title');
-    
-    if (!infoBar) return;
     
     const searchMode = window.SEARCH_MODE || 'route';
     const isPOI = searchMode === 'poi';
@@ -139,7 +141,7 @@ window.updateInfoPanel = function(fromCoords, toCoords, viaCoords = null) {
         const locName = document.getElementById('map-search-from')?.value || 'SEARCHING...';
         const intel = generateLocationIntel(locName === 'SEARCHING...' ? null : locName);
 
-        // PRIMARY NAVBAR DISPLAY
+        // PRIMARY BAR DISPLAY
         if (primaryVal) primaryVal.innerText = locName.toUpperCase();
 
         // DETAILED DROP-UP DISPLAY:
@@ -149,6 +151,8 @@ window.updateInfoPanel = function(fromCoords, toCoords, viaCoords = null) {
         setText('poi-metric-wind', locName === 'SEARCHING...' ? '-- KM/H' : intel.wind + ' KM/H');
         setText('poi-metric-pop', locName === 'SEARCHING...' ? '--' : intel.pop);
         setText('poi-metric-density', locName === 'SEARCHING...' ? '--/KM²' : intel.density + '/KM²');
+        setText('poi-metric-type', locName === 'SEARCHING...' ? '--' : intel.type);
+        setText('poi-metric-income', locName === 'SEARCHING...' ? '--' : intel.income);
     } else {
         layoutPOI?.classList.add('hidden');
         layoutRoute?.classList.remove('hidden');
@@ -172,12 +176,12 @@ window.updateInfoPanel = function(fromCoords, toCoords, viaCoords = null) {
             const pointerId = window.SELECTED_POINTER_ICON || 'circle';
             const aDist = calculateActualDistance(gDist, pathType);
             
-            actualDistText = aDist.toLocaleString() + ' KM TOTAL';
+            actualDistText = aDist.toLocaleString() + ' KM';
             tTime = calculateTravelTime(aDist, pointerId);
             delta = calculateRouteDelta(aDist, pointerId);
         }
 
-        // PRIMARY NAVBAR DISPLAY
+        // PRIMARY BAR DISPLAY
         if (primaryVal) primaryVal.innerText = actualDistText;
 
         // DETAILED DROP-UP DISPLAY:
@@ -188,17 +192,12 @@ window.updateInfoPanel = function(fromCoords, toCoords, viaCoords = null) {
         if (elDelta) elDelta.innerHTML = delta;
     }
 
-    // Always show if search bar is active globally
-    if (window._manualSearchToggle) {
-        infoBar.classList.remove('hidden');
-        if (window.lucide) {
-            window.lucide.createIcons({ scope: infoBar });
-            window.lucide.createIcons({ scope: intelDropUp });
-        }
-    } else {
-        infoBar.classList.add('hidden');
+    // Always update icons if Lucide is present
+    if (window.lucide) {
+        if (intelDropUp) window.lucide.createIcons({ scope: intelDropUp });
+        // Trigger icon removed per user request
     }
-};
+}
 
 function setText(id, val) {
     const el = document.getElementById(id);
