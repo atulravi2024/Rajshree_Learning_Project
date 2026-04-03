@@ -88,6 +88,9 @@ function updateNavModeVisibility() {
 
         // Hide search-related items
         if (metricsBar) metricsBar.classList.add('hidden');
+        
+        // --- CLEAR SEARCH GRAPHICS ---
+        if (typeof window.clearQuantumPath === 'function') window.clearQuantumPath();
     }
 
     // --- GLOBE ELEMENT VISIBILITY (Audit vs Search) ---
@@ -108,6 +111,16 @@ function updateNavModeVisibility() {
             const criticalNode = (window.NODE_DATA || []).some(n => n.status === 'critical');
             if (criticalNode) callout.classList.remove('hidden');
         }
+    }
+
+    // --- AUTOMATIC ZOOM TOGGLES ---
+    const targetZ = window._manualSearchToggle ? 150 : 250;
+    window._mapTargetCameraZ = targetZ;
+
+    // Sync zoom slider UI with the new automated target
+    const zSlider = document.getElementById('globe-zoom-slider');
+    if (zSlider && typeof window.mapZToSlider === 'function') {
+        zSlider.value = window.mapZToSlider(targetZ);
     }
 }
 

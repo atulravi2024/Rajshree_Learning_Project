@@ -144,15 +144,7 @@ async function drawQuantumPath(coordinateArray) {
         );
     };
 
-    // Clear previous
-    if (window._currentPathObj) {
-        globeGroup.remove(window._currentPathObj);
-        window._currentPathObj.traverse(child => {
-            if (child.geometry) child.geometry.dispose();
-            if (child.material) child.material.dispose();
-        });
-    }
-    if (window._pathAnimId) cancelAnimationFrame(window._pathAnimId);
+    clearQuantumPath();
 
     const pathType = window.SELECTED_PATH_TYPE || 'curve';
     const points = [];
@@ -435,4 +427,22 @@ async function updateCurrentPathPointer() {
         });
     }
     pathGroup.add(newP);
+}
+window.clearQuantumPath = clearQuantumPath;
+function clearQuantumPath() {
+    if (!window._mapGlobe || !window._mapGlobe.globeGroup) return;
+    const globeGroup = window._mapGlobe.globeGroup;
+
+    if (window._currentPathObj) {
+        globeGroup.remove(window._currentPathObj);
+        window._currentPathObj.traverse(child => {
+            if (child.geometry) child.geometry.dispose();
+            if (child.material) child.material.dispose();
+        });
+        window._currentPathObj = null;
+    }
+    if (window._pathAnimId) {
+        cancelAnimationFrame(window._pathAnimId);
+        window._pathAnimId = null;
+    }
 }

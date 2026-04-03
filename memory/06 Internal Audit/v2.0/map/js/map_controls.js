@@ -120,6 +120,9 @@ function mapZToSlider(z) {
     return Math.round(p * 100);
 }
 
+window.mapSliderToZ = mapSliderToZ;
+window.mapZToSlider = mapZToSlider;
+
 /**
  * Public function to smoothly rotate the globe.
  */

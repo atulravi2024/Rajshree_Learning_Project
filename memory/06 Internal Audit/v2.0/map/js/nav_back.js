@@ -36,6 +36,11 @@ function initNavBack() {
                 if (window.drawQuantumPath) window.drawQuantumPath([]);
                 if (window.updateNavbarMetrics) window.updateNavbarMetrics(fromCoords, null, null);
                 window._mapTargetCameraZ = 150;
+                // Sync zoom slider UI
+                const zSlider = document.getElementById('globe-zoom-slider');
+                if (zSlider && typeof window.mapZToSlider === 'function') {
+                    zSlider.value = window.mapZToSlider(150);
+                }
                 recordSearchHistory(from, '', '', 'poi');
             } else {
                 if (window.showErrorShake) window.showErrorShake();
@@ -62,6 +67,11 @@ function initNavBack() {
                 
                 // BACK TO FIXED ZOOM (DEFAULT 150)
                 window._mapTargetCameraZ = 150;
+                // Sync zoom slider UI
+                const zSlider = document.getElementById('globe-zoom-slider');
+                if (zSlider && typeof window.mapZToSlider === 'function') {
+                    zSlider.value = window.mapZToSlider(150);
+                }
                 recordSearchHistory(from, via, to, window.SEARCH_MODE);
             } else {
                 if (window.showErrorShake) window.showErrorShake();
