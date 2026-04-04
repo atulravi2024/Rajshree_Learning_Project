@@ -34,6 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Legacy support (fallback)
     if (typeof initCardCollapsibility === 'function') initCardCollapsibility();
+
+    // Apply initial CONFIG state to all 3D objects and CSS layers
+    // Deferred to allow Three.js to set up materials first
+    setTimeout(() => {
+        if (typeof window.updateVisualSettings === 'function') window.updateVisualSettings();
+    }, 500);
     
     console.log("Holographic Map: All modular systems initialized successfully.");
 });

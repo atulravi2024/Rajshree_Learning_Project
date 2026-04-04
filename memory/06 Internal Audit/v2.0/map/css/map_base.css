@@ -21,6 +21,28 @@
 
     --font-main: 'Outfit', sans-serif;
     --font-mono: 'Fira Code', monospace;
+
+    /* ── NEURAL GLOW SYSTEM ── */
+    /* Set by map_visual_sync.js via updateVisualSettings().
+       Range: 0.0 (no glow) → 1.0 (default) → 1.5 (max boost).
+       All UI glows multiply against this value using calc(). */
+    --glow-intensity: 1;
+    --neural-glow-opacity: 1;
+
+    /* Derived glow shortcuts used throughout UI */
+    --glow-widget:     calc(4px + 8px * var(--glow-intensity));
+    --glow-btn-hover:  calc(6px + 9px * var(--glow-intensity));
+    --glow-btn-active: calc(4px + 6px * var(--glow-intensity));
+    --glow-text:       calc(2px + 4px * var(--glow-intensity));
+    --glow-dot:        calc(2px + 3px * var(--glow-intensity));
+    --glow-orb-panel:  calc(10px + 30px * var(--glow-intensity));
+
+    /* Scanlines, glare, grid — also set by sync engine */
+    --scanline-opacity: 0.12;
+    --glare-opacity: 0.0;
+    --grid-opacity: 1.0;
+    --glass-blur: 12px;
+    --chroma-shift: 0px;
 }
 
 body.holo-v2 {

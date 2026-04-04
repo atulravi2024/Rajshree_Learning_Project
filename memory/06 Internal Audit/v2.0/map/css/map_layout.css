@@ -55,12 +55,13 @@
     position: absolute;
     inset: -50%;
     background-image: 
-        linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(0, 240, 255, calc(0.03 * var(--grid-opacity, 1) * var(--neural-glow-opacity, 1))) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, calc(0.03 * var(--grid-opacity, 1) * var(--neural-glow-opacity, 1))) 1px, transparent 1px);
     background-size: 40px 40px;
     transform: perspective(1000px) rotateX(60deg);
     z-index: 1;
     pointer-events: none;
+    transition: background-image 0.4s ease;
 }
 
 .map-overlay-center {
@@ -133,7 +134,7 @@ body.ui-minimized .navbar-category[data-cat="sys-ui"] {
 body.ui-minimized #btn-ui-toggle {
     background: rgba(var(--accent-rgb), 0.15);
     border-color: var(--theme-accent);
-    box-shadow: 0 0 15px var(--theme-accent-glow);
+    box-shadow: 0 0 var(--glow-btn-active) var(--theme-accent-glow);
     transform: scale(1.1);
 }
 

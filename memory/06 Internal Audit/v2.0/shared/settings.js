@@ -1,24 +1,30 @@
 /**
  * SHARED SETTINGS ENGINE
  * Handles global configuration and visual protocol effects.
+ *
+ * NOTE: window.CONFIG is now initialized and persisted by shared/visual_sync.js.
+ * This file only manages the UI, bindings, and effect application.
  */
 
-window.CONFIG = {
-    theme: 'frontier',
-    glowIntensity: 85,
-    scanlineIntensity: 40,
-    glareIntensity: 40,
-    gridOpacity: 100,
-    glassBlur: 10,
-    chromaShift: 0,
-    refreshRate: 2.5,
-    autoSync: true,
-    masterVolume: 75,
-    feedbackBleeps: true,
-    dataMasking: false,
-    protocolLock: false,
-    auditorName: 'ATUL VERMA'
-};
+// Ensure CONFIG exists with defaults (visual_sync.js sets it, but guard for load order)
+if (!window.CONFIG) {
+    window.CONFIG = {
+        theme: 'frontier',
+        glowIntensity: 85,
+        scanlineIntensity: 40,
+        glareIntensity: 40,
+        gridOpacity: 100,
+        glassBlur: 10,
+        chromaShift: 0,
+        refreshRate: 2.5,
+        autoSync: true,
+        masterVolume: 75,
+        feedbackBleeps: true,
+        dataMasking: false,
+        protocolLock: false,
+        auditorName: 'ATUL VERMA'
+    };
+}
 
 /**
  * Initializes the settings component by injecting the HTML and binding listeners.
@@ -27,7 +33,8 @@ function initSettings() {
     const container = document.getElementById('settings-sidebar-container');
     if (!container) return;
 
-    // Inject Settings HTML Template
+    // Inject Settings HTML Template — values are pulled from the live CONFIG object
+    const cfg = window.CONFIG;
     container.innerHTML = `
         <div class="settings-view" id="settings-view">
             <!-- SYSTEM OPS -->
@@ -82,44 +89,44 @@ function initSettings() {
                         <div class="settings-field">
                             <div class="field-header">
                                 <span class="field-label">Neural Glow</span>
-                                <span class="field-value" id="val-glow">85%</span>
+                                <span class="field-value" id="val-glow">${cfg.glowIntensity}%</span>
                             </div>
-                            <input type="range" class="console-slider" id="sl-glow" min="0" max="100" value="85" title="Neural Glow Intensity">
+                            <input type="range" class="console-slider" id="sl-glow" min="0" max="100" value="${cfg.glowIntensity}" title="Neural Glow Intensity">
                         </div>
                         <div class="settings-field">
                             <div class="field-header">
                                 <span class="field-label">Scanline Intensity</span>
-                                <span class="field-value" id="val-scan">40%</span>
+                                <span class="field-value" id="val-scan">${cfg.scanlineIntensity}%</span>
                             </div>
-                            <input type="range" class="console-slider" id="sl-scan" min="0" max="100" value="40" title="Scanline Intensity">
+                            <input type="range" class="console-slider" id="sl-scan" min="0" max="100" value="${cfg.scanlineIntensity}" title="Scanline Intensity">
                         </div>
                         <div class="settings-field">
                             <div class="field-header">
                                 <span class="field-label">Holographic Glare</span>
-                                <span class="field-value" id="val-glare">40%</span>
+                                <span class="field-value" id="val-glare">${cfg.glareIntensity}%</span>
                             </div>
-                            <input type="range" class="console-slider" id="sl-glare" min="0" max="100" value="40" title="Holographic Glare Intensity">
+                            <input type="range" class="console-slider" id="sl-glare" min="0" max="100" value="${cfg.glareIntensity}" title="Holographic Glare Intensity">
                         </div>
                         <div class="settings-field">
                             <div class="field-header">
                                 <span class="field-label">Grid Background</span>
-                                <span class="field-value" id="val-grid">100%</span>
+                                <span class="field-value" id="val-grid">${cfg.gridOpacity}%</span>
                             </div>
-                            <input type="range" class="console-slider" id="sl-grid" min="0" max="100" value="100" title="Grid Background Opacity">
+                            <input type="range" class="console-slider" id="sl-grid" min="0" max="100" value="${cfg.gridOpacity}" title="Grid Background Opacity">
                         </div>
                         <div class="settings-field">
                             <div class="field-header">
                                 <span class="field-label">Backdrop Blur</span>
-                                <span class="field-value" id="val-glass">10px</span>
+                                <span class="field-value" id="val-glass">${cfg.glassBlur}px</span>
                             </div>
-                            <input type="range" class="console-slider" id="sl-glass" min="0" max="40" value="10" title="Backdrop Blur Intensity">
+                            <input type="range" class="console-slider" id="sl-glass" min="0" max="40" value="${cfg.glassBlur}" title="Backdrop Blur Intensity">
                         </div>
                         <div class="settings-field">
                             <div class="field-header">
                                 <span class="field-label">Chroma Distortion</span>
-                                <span class="field-value" id="val-chroma">0%</span>
+                                <span class="field-value" id="val-chroma">${cfg.chromaShift}%</span>
                             </div>
-                            <input type="range" class="console-slider" id="sl-chroma" min="0" max="100" value="0" title="Chroma Distortion Amount">
+                            <input type="range" class="console-slider" id="sl-chroma" min="0" max="100" value="${cfg.chromaShift}" title="Chroma Distortion Amount">
                         </div>
                     </div>
                 </div>
@@ -249,6 +256,10 @@ function initSettings() {
     bindControl('tg-lock', 'lock');
 
     updateVolIndicator(window.CONFIG.masterVolume);
+
+    // Sync the vol display value on init too
+    const valVol = document.getElementById('val-vol');
+    if (valVol) valVol.textContent = window.CONFIG.masterVolume + '%';
 }
 
 /**
@@ -325,40 +336,39 @@ function applySettingEffect(id, value) {
             if (value !== 'frontier') body.classList.add(`theme-${value}`);
             else body.classList.add('theme-frontier');
             window.CONFIG.theme = value;
-            if (window.updateVisualSettings) window.updateVisualSettings();
+            if (window.saveAndSyncVisuals) window.saveAndSyncVisuals();
+            else if (window.updateVisualSettings) window.updateVisualSettings();
             if (window.hapticPulse) window.hapticPulse();
             break;
 
         case 'glow':
-            window.CONFIG.glowIntensity = value;
-            root.style.setProperty('--neural-glow-opacity', value / 100);
-            if (window.updateVisualSettings) window.updateVisualSettings();
+            window.CONFIG.glowIntensity = Number(value);
+            if (window.saveAndSyncVisuals) window.saveAndSyncVisuals();
             break;
 
         case 'scanline':
-            window.CONFIG.scanlineIntensity = value;
-            root.style.setProperty('--scanline-opacity', (value / 100) * 1.5);
+            window.CONFIG.scanlineIntensity = Number(value);
+            if (window.saveAndSyncVisuals) window.saveAndSyncVisuals();
             break;
 
         case 'glare':
-            window.CONFIG.glareIntensity = value;
-            root.style.setProperty('--glare-opacity', value / 100);
+            window.CONFIG.glareIntensity = Number(value);
+            if (window.saveAndSyncVisuals) window.saveAndSyncVisuals();
             break;
 
         case 'grid':
-            window.CONFIG.gridOpacity = value;
-            root.style.setProperty('--grid-opacity', value / 100);
+            window.CONFIG.gridOpacity = Number(value);
+            if (window.saveAndSyncVisuals) window.saveAndSyncVisuals();
             break;
 
         case 'glass':
-            window.CONFIG.glassBlur = value;
-            root.style.setProperty('--glass-blur', `${value}px`);
+            window.CONFIG.glassBlur = Number(value);
+            if (window.saveAndSyncVisuals) window.saveAndSyncVisuals();
             break;
 
         case 'chroma':
-            window.CONFIG.chromaShift = value;
-            root.style.setProperty('--chroma-shift', `${value / 5}px`);
-            body.classList.toggle('chroma-distort', value > 0);
+            window.CONFIG.chromaShift = Number(value);
+            if (window.saveAndSyncVisuals) window.saveAndSyncVisuals();
             break;
 
         case 'refresh':

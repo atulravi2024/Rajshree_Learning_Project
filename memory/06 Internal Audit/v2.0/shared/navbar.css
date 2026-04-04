@@ -47,7 +47,8 @@
     justify-content: center;
     color: var(--theme-accent);
     font-size: 1.1rem;
-    box-shadow: 0 0 10px var(--accent-glow-subtle);
+    box-shadow: 0 0 var(--glow-btn-active, 10px) var(--accent-glow-soft);
+    transition: box-shadow 0.4s ease;
 }
 
 .brand-text h1 {
@@ -106,7 +107,8 @@
     right: 10%;
     height: 2px;
     background: var(--theme-accent);
-    box-shadow: 0 0 12px rgba(var(--accent-rgb), var(--neural-glow-opacity, 0.85));
+    box-shadow: 0 0 var(--glow-text, 8px) rgba(var(--accent-rgb), var(--neural-glow-opacity, 0.85));
+    transition: box-shadow 0.4s ease;
 }
 
 .nav-user {
@@ -122,7 +124,7 @@
     overflow: hidden;
     border: 2px solid var(--border-glow);
     background: var(--accent-glow-subtle);
-    box-shadow: 0 0 6px var(--accent-glow-subtle);
+    box-shadow: 0 0 var(--glow-dot, 6px) var(--accent-glow-soft);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 }
@@ -130,7 +132,7 @@
 .nav-avatar:hover {
     transform: scale(1.1);
     border-color: #fff;
-    box-shadow: 0 0 8px var(--accent-glow-soft);
+    box-shadow: 0 0 var(--glow-btn-hover, 12px) var(--accent-glow-mid);
 }
 
 .nav-avatar img {
@@ -187,7 +189,8 @@
     transform: translateY(-2px);
     box-shadow: 
         0 5px 15px rgba(0, 0, 0, 0.3),
-        0 0 10px var(--accent-glow-subtle);
+        0 0 var(--glow-btn-hover, 12px) var(--accent-glow-mid);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
 .nav-icon-wrapper.logout:hover {

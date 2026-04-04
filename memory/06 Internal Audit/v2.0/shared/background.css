@@ -15,11 +15,12 @@
     inset: 0;
     z-index: -2;
     background-image:
-        linear-gradient(var(--accent-glow-subtle) 1px, transparent 1px),
-        linear-gradient(90deg, var(--accent-glow-subtle) 1px, transparent 1px);
+        linear-gradient(var(--accent-glow-subtle, rgba(0,240,255,0.05)) 1px, transparent 1px),
+        linear-gradient(90deg, var(--accent-glow-subtle, rgba(0,240,255,0.05)) 1px, transparent 1px);
     background-size: 55px 55px;
     opacity: var(--grid-opacity, 1);
     animation: gridPulse 8s ease-in-out infinite alternate;
+    transition: opacity 0.4s ease;
 }
 
 @keyframes gridPulse {
@@ -31,10 +32,11 @@
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: radial-gradient(circle at 50% -20%, var(--accent-glow-subtle), transparent 70%);
+    background: radial-gradient(circle at 50% -20%, var(--accent-glow-soft, rgba(0,240,255,0.1)), transparent 70%);
     pointer-events: none;
     mix-blend-mode: color-dodge;
     opacity: var(--glare-opacity, 0.4);
+    transition: opacity 0.4s ease;
 }
 
 .bg-scanlines {
@@ -42,12 +44,13 @@
     inset: 0;
     z-index: 9998;
     background: repeating-linear-gradient(0deg,
-            var(--scanline-color),
-            var(--scanline-color) 1px,
+            var(--scanline-color, rgba(0,0,0,0.06)),
+            var(--scanline-color, rgba(0,0,0,0.06)) 1px,
             transparent 1px,
             transparent 3px);
-    opacity: var(--scanline-opacity, 0.4);
+    opacity: var(--scanline-opacity, 0.12);
     pointer-events: none;
+    transition: opacity 0.4s ease;
 }
 
 .bg-glow-top {

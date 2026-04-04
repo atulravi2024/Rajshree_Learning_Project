@@ -148,11 +148,12 @@ function openOrbitalPanel(satelliteId) {
     if (panel) {
         panel.classList.add('active');
         if (window.lucide) lucide.createIcons({ scope: panel });
+        // Sync panel controls to current CONFIG state
+        if (window.syncOrbitalPanelUI) window.syncOrbitalPanelUI();
     }
 }
 
 function initOrbitalPanelListeners() {
-    const root = document.documentElement;
     const bindOrbitalSlider = (id, effectId, valId, suffix = '') => {
         const slider = document.getElementById(id);
         const display = document.getElementById(valId);
@@ -160,13 +161,9 @@ function initOrbitalPanelListeners() {
         slider.addEventListener('input', (e) => {
             const val = e.target.value;
             if (display) display.textContent = val + suffix;
+            // Route through shared settings engine, then sync all 3D objects
             if (window.applySettingEffect) window.applySettingEffect(effectId, val);
-            if (effectId === 'glow' && window._mapAtmosphere) {
-                window._mapAtmosphere[0].material.opacity = 0.25 * (val / 100);
-                window._mapAtmosphere[1].material.opacity = 0.1 * (val / 100);
-            }
-            if (effectId === 'scanline') root.style.setProperty('--scanline-opacity', (val / 100) * 0.15);
-            if (effectId === 'glare') root.style.setProperty('--glare-opacity', (val / 100) * 0.8);
+            if (window.updateVisualSettings) window.updateVisualSettings();
         });
     };
 
@@ -175,13 +172,16 @@ function initOrbitalPanelListeners() {
         if (!tg) return;
         tg.addEventListener('change', (e) => {
             if (window.applySettingEffect) window.applySettingEffect(effectId, e.target.checked);
+            // Cloud layer has direct 3D visibility control
+            if (id === 'tg-cloud-map') {
+                if (window._mapCloudMesh) window._mapCloudMesh.visible = e.target.checked;
+            }
+            // Grid overlay CSS layer
             if (effectId === 'grid') {
                 const gridOverlay = document.querySelector('.map-grid-overlay');
                 if (gridOverlay) gridOverlay.style.opacity = e.target.checked ? '1' : '0';
             }
-            if (id === 'tg-cloud-map') {
-                if (window._mapCloudMesh) window._mapCloudMesh.visible = e.target.checked;
-            }
+            if (window.updateVisualSettings) window.updateVisualSettings();
         });
     };
 
