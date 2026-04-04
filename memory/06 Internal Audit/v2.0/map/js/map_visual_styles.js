@@ -176,9 +176,11 @@ function updatePathTypeUI() {
     });
 }
 
-// ── PATH COLOR SELECTION ──────────────────
+// ── PALETTE (COLOR) SELECTION ──────────────────
 
 window.SELECTED_PATH_COLOR = 0x00f0ff;
+window.SELECTED_POINTER_COLOR = 0x00f0ff;
+
 window.PATH_COLORS = [
     { id: 0x00f0ff, label: 'Frontier Cyan', hex: '#00f0ff' },
     { id: 0xff3e3e, label: 'Pulse Red',    hex: '#ff3e3e' },
@@ -190,153 +192,103 @@ window.PATH_COLORS = [
     { id: 0xec4899, label: 'Prism Pink',   hex: '#ec4899' }
 ];
 
-function initPathColorSelection() {
-    const selectorBtn = document.getElementById('btn-path-color-selector');
-    const menu = document.getElementById('map-path-color-menu');
+function initPaletteSelection() {
+    const selectorBtn = document.getElementById('btn-palette-selector');
+    const menu = document.getElementById('map-palette-menu');
     if (!selectorBtn || !menu) return;
 
-    // Populate menu
+    function renderSection(title, icon, type) {
+        const header = document.createElement('div');
+        header.className = 'palette-header';
+        header.innerHTML = `<i data-lucide="${icon}"></i> <span>${title}</span>`;
+        menu.appendChild(header);
+
+        window.PATH_COLORS.forEach(color => {
+            const opt = document.createElement('div');
+            const isSelected = type === 'path' ? window.SELECTED_PATH_COLOR === color.id : window.SELECTED_POINTER_COLOR === color.id;
+            opt.className = `pointer-option ${isSelected ? 'selected' : ''}`;
+            opt.dataset.type = type;
+            opt.dataset.colorId = color.id;
+            opt.title = color.label;
+            
+            opt.innerHTML = `
+                <div class="color-dot" style="color: ${color.hex}; background-color: ${color.hex}"></div>
+                <span class="label">${color.label}</span>
+            `;
+
+            opt.onclick = (e) => {
+                e.stopPropagation();
+                if (type === 'path') {
+                    window.SELECTED_PATH_COLOR = color.id;
+                    // Re-run search if path exists
+                    const fromField = document.getElementById('map-search-from');
+                    const toField = document.getElementById('map-search-to');
+                    if (fromField && toField && fromField.value && toField.value) {
+                        const runBtn = document.getElementById('btn-run-search');
+                        if (runBtn) runBtn.click();
+                    }
+                } else {
+                    window.SELECTED_POINTER_COLOR = color.id;
+                    if (window.updateCurrentPathPointer) window.updateCurrentPathPointer();
+                }
+                
+                updatePaletteUI();
+                if (window.playSound) window.playSound('UI_CLICK');
+            };
+            menu.appendChild(opt);
+        });
+    }
+
     menu.innerHTML = '';
-    window.PATH_COLORS.forEach(color => {
-        const opt = document.createElement('div');
-        opt.className = `pointer-option ${window.SELECTED_PATH_COLOR === color.id ? 'selected' : ''}`;
-        opt.innerHTML = `
-            <div class="color-dot" style="color: ${color.hex}; background-color: ${color.hex}"></div>
-            <span class="label">${color.label}</span>
-        `;
-        opt.onclick = (e) => {
-            e.stopPropagation();
-            window.SELECTED_PATH_COLOR = color.id;
-            updatePathColorUI();
-            menu.classList.remove('active');
-            
-            // Re-run search to update path if coordinates exist
-            const fromField = document.getElementById('map-search-from');
-            const toField = document.getElementById('map-search-to');
-            if (fromField && toField && fromField.value && toField.value) {
-                const runBtn = document.getElementById('btn-run-search');
-                if (runBtn) runBtn.click();
-            }
-            
-            if (window.playSound) window.playSound('UI_CLICK');
-        };
-        menu.appendChild(opt);
-    });
+    renderSection('POINTER COLOR', 'pipette', 'pointer');
+    
+    const separator = document.createElement('div');
+    separator.className = 'palette-separator';
+    menu.appendChild(separator);
+    
+    renderSection('ROUTE COLOR', 'route', 'path');
 
     selectorBtn.onclick = (e) => {
         e.stopPropagation();
 
-        // Close other menus if open
+        // Close other menus
         const allMenus = [
             'map-pointer-menu', 'map-line-style-menu', 
-            'map-path-type-menu', 'map-pointer-color-menu', 'map-altitude-menu', 'map-speed-menu', 'map-search-mode-menu'
+            'map-path-type-menu', 'map-altitude-menu', 'map-speed-menu', 'map-search-mode-menu'
         ];
         allMenus.forEach(id => document.getElementById(id)?.classList.remove('active'));
 
         menu.classList.toggle('active');
+        if (menu.classList.contains('active') && window.lucide) {
+            lucide.createIcons({ scope: menu });
+        }
     };
 
     document.addEventListener('click', () => {
         if (menu) menu.classList.remove('active');
     });
 
-    updatePathColorUI();
+    updatePaletteUI();
 }
 
-function updatePathColorUI() {
-    const menu = document.getElementById('map-path-color-menu');
-    const selectorBtn = document.getElementById('btn-path-color-selector');
-    if (!menu) return;
+function updatePaletteUI() {
+    const menu = document.getElementById('map-palette-menu');
+    const selectorBtn = document.getElementById('btn-palette-selector');
+    if (!menu || !selectorBtn) return;
     
     const opts = menu.querySelectorAll('.pointer-option');
     opts.forEach(opt => {
-        const labelSpan = opt.querySelector('.label');
-        const label = labelSpan ? labelSpan.textContent : '';
-        const color = window.PATH_COLORS.find(c => c.label === label);
-        const isSelected = window.SELECTED_PATH_COLOR === (color ? color.id : '');
+        const type = opt.dataset.type;
+        const colorId = parseInt(opt.dataset.colorId);
+        const isSelected = type === 'path' ? window.SELECTED_PATH_COLOR === colorId : window.SELECTED_POINTER_COLOR === colorId;
         opt.classList.toggle('selected', isSelected);
-        
-        // SYNC MAIN BUTTON COLOR
-        if (isSelected && selectorBtn && color) {
-            selectorBtn.style.color = color.hex;
-            selectorBtn.style.borderColor = color.hex;
-            selectorBtn.style.boxShadow = `0 0 10px ${color.hex}`;
-            selectorBtn.title = `Route Color: ${color.label}`;
-        }
-    });
-}
-
-// ── POINTER (ICON) COLOR SELECTION ──────────────────
-
-window.SELECTED_POINTER_COLOR = 0x00f0ff;
-
-function initPointerColorSelectionColor() {
-    const selectorBtn = document.getElementById('btn-pointer-color-selector');
-    const menu = document.getElementById('map-pointer-color-menu');
-    if (!selectorBtn || !menu) return;
-
-    // Use same colors as path for consistency
-    menu.innerHTML = '';
-    window.PATH_COLORS.forEach(color => {
-        const opt = document.createElement('div');
-        opt.className = `pointer-option ${window.SELECTED_POINTER_COLOR === color.id ? 'selected' : ''}`;
-        opt.innerHTML = `
-            <div class="color-dot" style="color: ${color.hex}; background-color: ${color.hex}"></div>
-            <span class="label">${color.label}</span>
-        `;
-        opt.onclick = (e) => {
-            e.stopPropagation();
-            window.SELECTED_POINTER_COLOR = color.id;
-            updatePointerColorUI();
-            menu.classList.remove('active');
-            
-            // Sync current path pointer immediately
-            if (window.updateCurrentPathPointer) window.updateCurrentPathPointer();
-            
-            if (window.playSound) window.playSound('UI_CLICK');
-        };
-        menu.appendChild(opt);
     });
 
-    selectorBtn.onclick = (e) => {
-        e.stopPropagation();
-
-        // Close other menus if open
-        const allMenus = [
-            'map-pointer-menu', 'map-line-style-menu', 
-            'map-path-type-menu', 'map-path-color-menu', 'map-altitude-menu', 'map-speed-menu', 'map-search-mode-menu'
-        ];
-        allMenus.forEach(id => document.getElementById(id)?.classList.remove('active'));
-
-        menu.classList.toggle('active');
-    };
-
-    document.addEventListener('click', () => {
-        if (menu) menu.classList.remove('active');
-    });
-
-    updatePointerColorUI();
-}
-
-function updatePointerColorUI() {
-    const menu = document.getElementById('map-pointer-color-menu');
-    const selectorBtn = document.getElementById('btn-pointer-color-selector');
-    if (!menu) return;
-    
-    const opts = menu.querySelectorAll('.pointer-option');
-    opts.forEach(opt => {
-        const labelSpan = opt.querySelector('.label');
-        const label = labelSpan ? labelSpan.textContent : '';
-        const color = window.PATH_COLORS.find(c => c.label === label);
-        const isSelected = window.SELECTED_POINTER_COLOR === (color ? color.id : '');
-        opt.classList.toggle('selected', isSelected);
-        
-        // SYNC MAIN BUTTON COLOR
-        if (isSelected && selectorBtn && color) {
-            selectorBtn.style.color = color.hex;
-            selectorBtn.style.borderColor = color.hex;
-            selectorBtn.style.boxShadow = `0 0 10px ${color.hex}`;
-            selectorBtn.title = `Pointer Color: ${color.label}`;
-        }
-    });
+    // Sync button color with Route Color for visual feedback
+    const activeRouteColor = window.PATH_COLORS.find(c => c.id === window.SELECTED_PATH_COLOR);
+    if (activeRouteColor) {
+        selectorBtn.style.color = activeRouteColor.hex;
+        selectorBtn.style.borderColor = activeRouteColor.hex;
+        selectorBtn.style.boxShadow = `0 0 10px ${activeRouteColor.hex}`;
+    }
 }

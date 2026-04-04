@@ -108,8 +108,8 @@ function initNavBack() {
     if (window.initPointerSelection) window.initPointerSelection();
     if (window.initLineStyleSelection) window.initLineStyleSelection();
     if (window.initPathTypeSelection) window.initPathTypeSelection();
-    if (window.initPathColorSelection) window.initPathColorSelection();
-    if (window.initPointerColorSelectionColor) window.initPointerColorSelectionColor();
+    if (window.initPathTypeSelection) window.initPathTypeSelection();
+    if (window.initPaletteSelection) window.initPaletteSelection();
 
     // --- DISTANCE METRICS (BACK SIDE) ---
     const metricTrigger = document.getElementById('trigger-actual-metrics');
@@ -199,8 +199,8 @@ function initSearchModeSelection(from, via, to) {
         e.stopPropagation();
         const allMenus = [
             'map-pointer-menu', 'map-line-style-menu', 
-            'map-path-type-menu', 'map-path-color-menu', 
-            'map-pointer-color-menu', 'map-altitude-menu', 'map-speed-menu'
+            'map-path-type-menu', 'map-palette-menu', 
+            'map-altitude-menu', 'map-speed-menu'
         ];
         allMenus.forEach(id => document.getElementById(id)?.classList.remove('active'));
 

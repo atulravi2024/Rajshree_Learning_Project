@@ -87,3 +87,72 @@
     flex-shrink: 0;
     box-shadow: 0 0 10px currentColor;
 }
+
+/* ── PALETTE GRID MENU ── */
+.palette-grid-menu {
+    min-width: 180px;
+    padding: 12px;
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.palette-grid-menu.active {
+    display: grid;
+}
+
+.palette-header {
+    grid-column: span 4;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--text-mid);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    margin-top: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.palette-header:first-child {
+    margin-top: 0;
+}
+
+.palette-header i {
+    width: 10px;
+    height: 10px;
+    opacity: 0.7;
+}
+
+.palette-separator {
+    grid-column: span 4;
+    height: 1px;
+    background: rgba(0, 240, 255, 0.15);
+    margin: 8px 0;
+}
+
+.palette-grid-menu .pointer-option {
+    padding: 8px;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 240, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.palette-grid-menu .pointer-option:hover {
+    padding-left: 8px; /* Reset the padding animation from base pointer-option */
+    background: rgba(0, 240, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.palette-grid-menu .pointer-option.selected {
+    background: rgba(0, 240, 255, 0.25);
+    border-color: var(--theme-accent);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.palette-grid-menu .pointer-option .label {
+    display: none; /* Hide labels in grid mode to stay compact */
+}
