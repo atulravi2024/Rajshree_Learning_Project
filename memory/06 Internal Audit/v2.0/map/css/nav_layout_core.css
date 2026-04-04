@@ -10,12 +10,21 @@
     z-index: 10;
 }
 
-.bottom-left-icons,
+.bottom-left-icons {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    flex-shrink: 0;
+}
+
 .bottom-right-icons {
     display: flex;
     gap: 0;
-    width: auto;
     align-items: center;
+    flex-shrink: 0;
+    padding-right: 0.5rem;
+    position: relative;
+    z-index: 30;
 }
 
 .bottom-center-title {
@@ -169,14 +178,15 @@
 .navbar-category.section-collapsed {
     padding: 0.2rem 1.2rem;
     background: rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 255, 255, 0.05);
-    opacity: 0.7;
+    border-color: rgba(255, 255, 255, 0.08);
+    opacity: 1;
 }
 
 .navbar-category.section-collapsed:hover {
     opacity: 1;
     background: rgba(var(--accent-rgb), 0.08);
     border-color: var(--glass-border);
+    box-shadow: 0 0 8px rgba(var(--accent-rgb), 0.15);
 }
 
 /* In collapsed state, hide icons/tabs and show label */
@@ -188,10 +198,12 @@
 .navbar-category.section-collapsed .category-label {
     display: block;
     margin: 0;
-    color: var(--text-dim);
+    color: var(--text-mid);
     font-size: 0.65rem;
+    letter-spacing: 2px;
 }
 
 .navbar-category.section-collapsed:hover .category-label {
     color: var(--theme-accent);
+    text-shadow: 0 0 8px rgba(var(--accent-rgb), 0.6);
 }

@@ -354,6 +354,9 @@ function initBottomBar() {
             }
         });
     }
+
+    // Initialize nav section collapse/expand (MAP.MODS toggle)
+    initNavCollapsing();
 }
 
 function toggleGlobeDesign() {
