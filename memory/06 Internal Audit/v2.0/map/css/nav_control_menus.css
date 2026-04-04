@@ -156,3 +156,73 @@
 .palette-grid-menu .pointer-option .label {
     display: none; /* Hide labels in grid mode to stay compact */
 }
+
+/* ── MODE SELECTOR (MAP.MODS) ── */
+.mode-selector-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-mode-trigger {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-mid);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.nav-mode-trigger:hover {
+    background: rgba(0, 240, 255, 0.08);
+    color: var(--text-bright);
+    border-color: var(--theme-accent);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.1);
+}
+
+.nav-mode-trigger.active {
+    background: rgba(0, 240, 255, 0.12);
+    border-color: var(--theme-accent);
+    color: var(--theme-accent);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+.nav-mode-trigger i {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s;
+    opacity: 0.7;
+}
+
+.nav-mode-trigger.active i {
+    transform: rotate(180deg);
+    opacity: 1;
+}
+
+#map-modes-menu {
+    min-width: 210px;
+    left: auto;
+    right: 0;
+}
+
+#map-modes-menu .pointer-option.threat-btn:hover {
+    background: rgba(255, 62, 62, 0.15);
+    color: #ff3e3e;
+    border-color: rgba(255, 62, 62, 0.3);
+}
+
+#map-modes-menu .pointer-option.threat-btn.selected {
+    background: rgba(255, 62, 62, 0.1);
+    color: #ff3e3e;
+    box-shadow: inset 4px 0 0 #ff3e3e;
+}

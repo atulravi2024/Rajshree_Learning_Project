@@ -101,7 +101,7 @@ function initSearchModeSelection(from, via, to) {
     const modes = [
         { id: 'poi',    label: 'Point Interest', icon: 'map-pin', badge: 'P', desc: 'Single location search' },
         { id: 'route',  label: 'Direct Route',   icon: 'move-right', badge: 'R', desc: 'Start to Destination' },
-        { id: 'via',    label: 'Navigation Via', icon: 'map-pinned', badge: 'V', desc: 'Start, Via, and Destination' }
+        { id: 'via',    label: 'Navigation Checkpoint', icon: 'map-pinned', badge: 'V', desc: 'Start, Checkpoint, and Destination' }
     ];
 
     // Populate menu

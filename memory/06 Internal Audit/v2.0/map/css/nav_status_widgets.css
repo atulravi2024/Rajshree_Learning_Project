@@ -91,7 +91,8 @@ input[type="range"]::-webkit-slider-thumb:hover {
     cursor: pointer;
     -webkit-user-select: none;
     user-select: none;
-    max-width: 250px;
+    min-width: 140px;
+    max-width: 280px;
 }
 
 .panel-title {
@@ -114,7 +115,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
     border: 1px solid rgba(0, 240, 255, 0.4);
     border-radius: 12px;
     padding: 1.5rem;
-    min-width: 320px;
+    min-width: 380px;
     display: flex;
     flex-direction: column;
     gap: 15px;

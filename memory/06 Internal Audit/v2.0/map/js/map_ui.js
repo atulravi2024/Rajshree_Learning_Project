@@ -67,15 +67,40 @@ function updateSidebarForSelection() {
 }
 
 function initBottomBar() {
-    const tabGroup = document.getElementById('bottom-tab-group');
-    if (tabGroup) {
-        tabGroup.addEventListener('click', (e) => {
-            if (window._isLockedDown) return;
-            const tab = e.target.closest('.nav-tab');
-            if (!tab) return;
-            tabGroup.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            if (typeof activateMapMode === 'function') activateMapMode(tab.dataset.tab);
+    // Mode Selector (MAP.MODS) Drop-up Logic
+    const modeTrigger = document.getElementById('btn-map-mode-selector');
+    const modeMenu = document.getElementById('map-modes-menu');
+    
+    if (modeTrigger && modeMenu) {
+        modeTrigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = modeMenu.classList.toggle('active');
+            modeTrigger.classList.toggle('active', isActive);
+            if (isActive && window.lucide) {
+                window.lucide.createIcons({ scope: modeMenu });
+            }
+            if (window.playSound) window.playSound('UI_GENERIC_TAP');
+        });
+
+        modeMenu.addEventListener('click', (e) => {
+            const option = e.target.closest('.pointer-option');
+            if (option) {
+                if (window._isLockedDown) return;
+                const mode = option.dataset.tab;
+                if (typeof activateMapMode === 'function') activateMapMode(mode);
+                
+                modeMenu.classList.remove('active');
+                modeTrigger.classList.remove('active');
+                if (window.playSound) window.playSound('UI_CLICK');
+            }
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (modeMenu.classList.contains('active') && !modeMenu.contains(e.target) && !modeTrigger.contains(e.target)) {
+                modeMenu.classList.remove('active');
+                modeTrigger.classList.remove('active');
+            }
         });
     }
 
@@ -425,6 +450,22 @@ function activateMapMode(mode) {
     const breachCallout = document.getElementById('breach-callout');
     if (window._mapScanInterval) { clearInterval(window._mapScanInterval); window._mapScanInterval = null; }
     window._mapTabState = mode;
+    
+    // Update Trigger UI
+    const triggerText = document.getElementById('current-map-mode-text');
+    const modeMenu = document.getElementById('map-modes-menu');
+    const options = modeMenu?.querySelectorAll('.pointer-option');
+    
+    if (options) {
+        options.forEach(opt => {
+            const isActive = opt.dataset.tab === mode;
+            opt.classList.toggle('selected', isActive);
+            if (isActive && triggerText) {
+                triggerText.textContent = opt.querySelector('span:first-child').textContent;
+            }
+        });
+    }
+
     if (mode !== 'threat') document.getElementById('panel-threat-action')?.classList.add('hidden');
 
     switch (mode) {

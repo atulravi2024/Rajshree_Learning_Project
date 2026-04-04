@@ -578,19 +578,19 @@
                     </div>
 
                     <div class="search-separator">
-                        <button class="swap-input-btn" id="btn-swap-from-via" title="Swap Start & Via">
+                        <button class="swap-input-btn" id="btn-swap-from-via" title="Swap Start & Checkpoint">
                             <i data-lucide="repeat"></i>
                         </button>
                     </div>
                     
-                    <div class="search-field via-field" title="Location: VIA (STOP)">
+                    <div class="search-field via-field" title="Location: CHECKPOINT (STOP)">
                         <i data-lucide="milestone" class="search-icon text-yellow"></i>
-                        <input type="text" id="map-search-via" placeholder="VIA..." autocomplete="off" value="Mumbai">
+                        <input type="text" id="map-search-via" placeholder="CHECKPOINT..." autocomplete="off" value="Mumbai">
                         <button class="clear-input-btn shadow-fx" data-target="map-search-via" title="Clear Field"><i data-lucide="x"></i></button>
                     </div>
 
                     <div class="search-separator">
-                        <button class="swap-input-btn" id="btn-swap-via-to" title="Swap Via & Destination">
+                        <button class="swap-input-btn" id="btn-swap-via-to" title="Swap Checkpoint & Destination">
                             <i data-lucide="repeat"></i>
                         </button>
                     </div>
@@ -727,11 +727,41 @@
             <div class="bottom-right-icons">
                 <div class="navbar-category section-collapsed" data-cat="map-modes">
                     <span class="category-label">MAP.MODS</span>
-                    <div class="bottom-tabs" id="bottom-tab-group">
-                        <button class="nav-tab" data-tab="monitoring">Active Monitoring</button>
-                        <button class="nav-tab active" data-tab="sector-g">Sector Map G</button>
-                        <button class="nav-tab" data-tab="scan">Scan Area</button>
-                        <button class="nav-tab threat-btn" data-tab="threat">Threat Response</button>
+                    <div class="mode-selector-wrap">
+                        <button class="nav-mode-trigger" id="btn-map-mode-selector" title="Change Map Mode">
+                            <span id="current-map-mode-text">SECTOR MAP G</span>
+                            <i data-lucide="chevron-up"></i>
+                        </button>
+                        <div class="pointer-menu" id="map-modes-menu">
+                            <div class="pointer-option" data-tab="monitoring">
+                                <i data-lucide="activity"></i>
+                                <div class="opt-content">
+                                    <span>Active Monitoring</span>
+                                    <span class="desc">REAL-TIME NODE SURVEILLANCE</span>
+                                </div>
+                            </div>
+                            <div class="pointer-option selected" data-tab="sector-g">
+                                <i data-lucide="layout-grid"></i>
+                                <div class="opt-content">
+                                    <span>Sector Map G</span>
+                                    <span class="desc">PRIMARY SECTOR VISUALIZATION</span>
+                                </div>
+                            </div>
+                            <div class="pointer-option" data-tab="scan">
+                                <i data-lucide="scan-line"></i>
+                                <div class="opt-content">
+                                    <span>Scan Area</span>
+                                    <span class="desc">DEEP TOPOLOGICAL ANALYSIS</span>
+                                </div>
+                            </div>
+                            <div class="pointer-option threat-btn" data-tab="threat">
+                                <i data-lucide="shield-alert"></i>
+                                <div class="opt-content">
+                                    <span>Threat Response</span>
+                                    <span class="desc">CRITICAL BREACH MANAGEMENT</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

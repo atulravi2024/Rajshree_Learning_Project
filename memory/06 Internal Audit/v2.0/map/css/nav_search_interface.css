@@ -311,8 +311,12 @@
     padding-left: 12px;
     border-left: 1px solid rgba(0, 240, 255, 0.2);
     height: 24px;
-    max-width: 180px;
+    min-width: 120px;
+    max-width: 240px;
     gap: 8px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
 }
 
 .directional-search .panel-title {
@@ -336,3 +340,7 @@
 /* Adjust search bar width to accommodate the new display */
 .directional-search.mode-route,
 .directional-search.via-mode-disabled { min-width: 580px; }
+
+.directional-search.mode-via { 
+    min-width: 840px; 
+}
