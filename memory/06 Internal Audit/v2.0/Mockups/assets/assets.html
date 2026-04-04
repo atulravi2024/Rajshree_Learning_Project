@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSET REPOSITORY // MOCKUP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Hind:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="theme-frontier">
+    <div class="hud-grid"></div>
+    <div class="hud-scanlines"></div>
+
+    <nav class="mockup-nav">
+        <div class="nav-brand-mockup">
+            <i data-lucide="shield"></i>
+            <span>RAJSHREE // ASSETS</span>
+        </div>
+        <div class="nav-links-mockup">
+            <span class="nav-link-mockup">DASHBOARD</span>
+            <span class="nav-link-active-mockup">REPO</span>
+            <span class="nav-link-mockup">SETTINGS</span>
+        </div>
+    </nav>
+
+    <main class="mockup-main">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header" onclick="toggleSidebar()">
+                <i data-lucide="layers"></i>
+                <span>LIBRARY</span>
+            </div>
+            <ul class="category-list">
+                <li class="category-item active" data-filter="all">
+                    <i data-lucide="hexagon"></i>
+                    <span>All Assets</span>
+                </li>
+                <li class="category-item" data-filter="voice">
+                    <i data-lucide="mic"></i>
+                    <span>Voice Library</span>
+                </li>
+                <li class="category-item" data-filter="audio">
+                    <i data-lucide="volume-2"></i>
+                    <span>Audio FX</span>
+                </li>
+                <li class="category-item" data-filter="visual">
+                    <i data-lucide="image"></i>
+                    <span>Visual Assets</span>
+                </li>
+                <li class="category-item" data-filter="icon">
+                    <i data-lucide="box"></i>
+                    <span>Icon Library</span>
+                </li>
+                <li class="category-item" data-filter="doc">
+                    <i data-lucide="file-text"></i>
+                    <span>System Docs</span>
+                </li>
+                <li class="category-item" data-filter="data">
+                    <i data-lucide="database"></i>
+                    <span>Data Schemas</span>
+                </li>
+                <li class="category-item" data-filter="log">
+                    <i data-lucide="shield-check"></i>
+                    <span>Audit Logs</span>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <div class="status-label">STORAGE STATUS</div>
+                <div class="progress-track">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="status-meta">
+                    <span>6.4 GB Used</span>
+                    <span>10.0 GB Total</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Repository Area -->
+        <section class="repo-content">
+            <header class="repo-header">
+                <!-- Search (Left) -->
+                <div class="search-wrap">
+                    <i data-lucide="search"></i>
+                    <input type="text" class="search-input" placeholder="Search Global Repository (Ctrl + K)...">
+                </div>
+
+                <!-- Multi-Sort Suite (Right) -->
+                <div class="sort-actions-group">
+                    <!-- Audit Dropdown -->
+                    <div class="sort-dropdown-wrap" id="audit-sort-wrap">
+                        <button class="sort-btn" id="audit-sort-btn" onclick="toggleMenu('audit-menu')">
+                            <i data-lucide="shield"></i>
+                            <span class="btn-text">Audit Scope</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="sort-menu" id="audit-menu">
+                            <div class="sort-group">AUDIT CRITERIA</div>
+                            <div class="sort-option active" data-sort="risk_high">Risk Level (Critical to Low)</div>
+                            <div class="sort-option" data-sort="risk_low">Risk Level (Low to Critical)</div>
+                            <div class="sort-option" data-sort="compliance_fail">Compliance Status (Non-Compliant)</div>
+                            <div class="sort-option" data-sort="compliance_pass">Compliance Status (Compliant)</div>
+                            <div class="sort-option" data-sort="audited_recent">Last Audited (Most Recent)</div>
+                            <div class="sort-option" data-sort="audited_oldest">Last Audited (Oldest)</div>
+                            <div class="sort-option" data-sort="vulnerability">Vulnerability Score (Highest)</div>
+                            <div class="sort-option" data-sort="criticality">Criticality (High First)</div>
+                            <div class="sort-option" data-sort="pending_first">Audit Progress (Pending)</div>
+                            <div class="sort-option" data-sort="score_low">Audit Score (Lowest First)</div>
+                        </div>
+                    </div>
+
+                    <!-- Dev Dropdown -->
+                    <div class="sort-dropdown-wrap" id="dev-sort-wrap">
+                        <button class="sort-btn" id="dev-sort-btn" onclick="toggleMenu('dev-menu')">
+                            <i data-lucide="code"></i>
+                            <span class="btn-text">Alphabetical (A-Z)</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="sort-menu" id="dev-menu">
+                            <div class="sort-group">DEV & OPS CRITERIA</div>
+                            <div class="sort-option active" data-sort="alpha_az">Alphabetical (A-Z)</div>
+                            <div class="sort-option" data-sort="alpha_za">Alphabetical (Z-A)</div>
+                            <div class="sort-option" data-sort="commit_recent">Date Committed (Newest)</div>
+                            <div class="sort-option" data-sort="commit_oldest">Date Committed (Oldest)</div>
+                            <div class="sort-option" data-sort="size_large">File Size (Largest)</div>
+                            <div class="sort-option" data-sort="size_small">File Size (Smallest)</div>
+                            <div class="sort-option" data-sort="perf_high">Performance Score (High)</div>
+                            <div class="sort-option" data-sort="perf_low">Performance Score (Low)</div>
+                            <div class="sort-option" data-sort="dependency">Dependency Count (Highest)</div>
+                            <div class="sort-option" data-sort="exec_fast">Execution Time (Fastest)</div>
+                            <div class="sort-option" data-sort="build_fail">Build Status (Failed First)</div>
+                            <div class="sort-option" data-sort="coverage">Code Coverage (Highest)</div>
+                        </div>
+                    </div>
+
+                    <!-- Lifecycle Dropdown -->
+                    <div class="sort-dropdown-wrap" id="life-sort-wrap">
+                        <button class="sort-btn" id="life-sort-btn" onclick="toggleMenu('life-menu')">
+                            <i data-lucide="refresh-cw"></i>
+                            <span class="btn-text">Lifecycle Status</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="sort-menu" id="life-menu">
+                            <div class="sort-group">LIFECYCLE STATUS</div>
+                            <div class="sort-option active" data-sort="status_active">Status: Active First</div>
+                            <div class="sort-option" data-sort="status_archived">Status: Archived First</div>
+                            <div class="sort-option" data-sort="status_draft">Status: Draft First</div>
+                            <div class="sort-option" data-sort="modified_recent">Recently Modified</div>
+                            <div class="sort-option" data-sort="modified_oldest">Oldest Modified</div>
+                            <div class="sort-option" data-sort="contributor">Contributor (A-Z)</div>
+                            <div class="sort-option" data-sort="version">Asset Version (Latest)</div>
+                            <div class="sort-option" data-sort="usage_most">Usage Frequency (H-L)</div>
+                            <div class="sort-option" data-sort="usage_least">Usage Frequency (L-H)</div>
+                            <div class="sort-option" data-sort="last_access">Last Accessed Date</div>
+                            <div class="sort-option" data-sort="maintenance">Maintenance Level (High)</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="assets-grid">
+                <!-- Real Project Assets -->
+                <div class="asset-card" data-type="doc" data-risk="10" data-size-bytes="3622" data-commit-date="2024-04-01" data-compliance="1" data-vulnerability="0" data-perf-score="100" onclick="showDetails('AGENTS.md', 'Document', 'System Rules', '3.6 KB', '../../../../../AGENTS.md')">
+                    <div class="asset-preview">
+                        <i data-lucide="file-text"></i>
+                        <span class="asset-type-badge">MD</span>
+                    </div>
+                    <div class="asset-info">
+                        <h3>AGENTS.md</h3>
+                        <p>System Rules</p>
+                    </div>
+                </div>
+
+                <div class="asset-card" data-type="data" data-risk="20" data-size-bytes="6470875" data-commit-date="2024-03-31" data-compliance="1" data-vulnerability="1" data-perf-score="90" onclick="showDetails('global_states.json', 'Data', 'Global Config', '6.5 MB', '../../../../../global_states.json')">
+                    <div class="asset-preview">
+                        <i data-lucide="database"></i>
+                        <span class="asset-type-badge">JSON</span>
+                    </div>
+                    <div class="asset-info">
+                        <h3>global_states.json</h3>
+                        <p>Global Configuration</p>
+                    </div>
+                </div>
+
+                <div class="asset-card" data-type="data" data-risk="15" data-size-bytes="4401655" data-commit-date="2024-03-30" data-compliance="1" data-vulnerability="0" data-perf-score="95" onclick="showDetails('india_exhaustive.json', 'Data', 'Geographical GIS', '4.4 MB', '../../../../../india_exhaustive.json')">
+                    <div class="asset-preview">
+                        <i data-lucide="database"></i>
+                        <span class="asset-type-badge">JSON</span>
+                    </div>
+                    <div class="asset-info">
+                        <h3>india_exhaustive.json</h3>
+                        <p>Geographical Data</p>
+                    </div>
+                </div>
+
+                <div class="asset-card" data-type="data" data-risk="5" data-size-bytes="1750" data-commit-date="2024-03-25" data-compliance="1" data-vulnerability="0" data-perf-score="100" onclick="showDetails('swar.js', 'Data', 'Varnamala', '1.7 KB', '../../../../../frontend/src/js/data/varnamala/swar.js')">
+                    <div class="asset-preview">
+                        <i data-lucide="code"></i>
+                        <span class="asset-type-badge">JS</span>
+                    </div>
+                    <div class="asset-info">
+                        <h3>swar.js</h3>
+                        <p>Varnamala Script</p>
+                    </div>
+                </div>
+
+                <div class="asset-card" data-type="doc" data-risk="5" data-size-bytes="4727" data-commit-date="2024-03-20" data-compliance="1" data-vulnerability="0" data-perf-score="100" onclick="showDetails('README.md', 'Document', 'Project Overview', '4.7 KB', '../../../../../README.md')">
+                    <div class="asset-preview">
+                        <i data-lucide="file-text"></i>
+                        <span class="asset-type-badge">MD</span>
+                    </div>
+                    <div class="asset-info">
+                        <h3>README.md</h3>
+                        <p>System Overview</p>
+                    </div>
+                </div>
+
+                <div class="asset-card" data-type="log" data-risk="50" data-size-bytes="63582" data-commit-date="2024-03-28" data-compliance="1" data-vulnerability="2" data-perf-score="85" onclick="showDetails('audio_analysis.txt', 'Log', 'Processing Logs', '63.5 KB', '../../../../../audio_analysis.txt')">
+                    <div class="asset-preview">
+                        <i data-lucide="shield-alert"></i>
+                        <span class="asset-type-badge">TXT</span>
+                    </div>
+                    <div class="asset-info">
+                        <h3>audio_analysis.txt</h3>
+                        <p>Analytics Output</p>
+                    </div>
+                </div>
+
+                <div class="asset-card" data-type="doc" data-risk="5" data-size-bytes="4089" data-commit-date="2024-02-15" data-compliance="1" data-vulnerability="0" data-perf-score="98" onclick="showDetails('CONTRIBUTING.md', 'Document', 'Dev Guidelines', '4.1 KB', '../../../../../CONTRIBUTING.md')">
+                    <div class="asset-preview">
+                        <i data-lucide="file-text"></i>
+                        <span class="asset-type-badge">MD</span>
+                    </div>
+                    <div class="asset-info">
+                        <h3>CONTRIBUTING.md</h3>
+                        <p>Dev Standards</p>
+                    </div>
+                </div>
+
+                <div class="asset-card" data-type="data" data-risk="10" data-size-bytes="4342" data-commit-date="2024-03-25" data-compliance="1" data-vulnerability="0" data-perf-score="99" onclick="showDetails('vyanjan.js', 'Data', 'Varnamala', '4.3 KB', '../../../../../frontend/src/js/data/varnamala/vyanjan.js')">
+                    <div class="asset-preview">
+                        <i data-lucide="code"></i>
+                        <span class="asset-type-badge">JS</span>
+                    </div>
+                    <div class="asset-info">
+                        <h3>vyanjan.js</h3>
+                        <p>Varnamala Script</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information Panel -->
+        <aside class="details-panel" id="details-panel">
+            <div class="details-header">
+                <h2>ASSET DETAILS</h2>
+                <i data-lucide="x" class="details-close" onclick="hideDetails()"></i>
+            </div>
+            
+            <div id="details-view" class="details-content-view">
+                <div class="details-preview-large">
+                    <i data-lucide="image" id="detail-icon"></i>
+                </div>
+
+                <div class="details-info-text">
+                    <h3 id="detail-name">-</h3>
+                    <p id="detail-category">-</p>
+                </div>
+
+                <div class="details-stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-label">TYPE</span>
+                        <span id="detail-type" class="stat-value accent">-</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">SIZE</span>
+                        <span id="detail-size" class="stat-value mid">-</span>
+                    </div>
+                </div>
+
+                <div class="details-footer-actions">
+                    <button class="btn-mockup primary" onclick="downloadAsset()">DOWNLOAD ASSET</button>
+                    <button class="btn-mockup secondary" onclick="copyAssetPath()">COPY PATH</button>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script src="assets.js"></script>
+</body>
+</html>
