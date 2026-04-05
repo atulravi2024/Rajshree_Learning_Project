@@ -16581,13 +16581,13 @@ window.PROJECT_ASSETS = [
         "name": "asset_manifest.js",
         "type": "data",
         "category": "Memory",
-        "size": "5.8 KB",
-        "sizeBytes": 5980,
+        "size": "522.3 KB",
+        "sizeBytes": 534839,
         "date": "2026-04-06",
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/assets/asset_manifest.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 90
     },
     {
         "name": "hybrid_hub_mockup.png",
