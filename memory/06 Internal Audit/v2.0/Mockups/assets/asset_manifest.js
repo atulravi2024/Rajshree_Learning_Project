@@ -15,7 +15,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../AGENTS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "audio_analysis.txt",
@@ -27,7 +29,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../audio_analysis.txt",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "CONTRIBUTING.md",
@@ -39,7 +43,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../CONTRIBUTING.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "global_states.json",
@@ -51,7 +57,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../global_states.json",
         "risk": 15,
         "compliance": 1,
-        "perf": 80
+        "perf": 80,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "india_exhaustive.json",
@@ -63,7 +71,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../india_exhaustive.json",
         "risk": 15,
         "compliance": 1,
-        "perf": 80
+        "perf": 80,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "package.json",
@@ -75,7 +85,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../package.json",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "pyrightconfig.json",
@@ -87,7 +99,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../pyrightconfig.json",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "README.md",
@@ -99,7 +113,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../README.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "requirements.txt",
@@ -111,7 +127,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../requirements.txt",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "demo.mp3",
@@ -123,7 +141,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../backend/tts_engine/Edge-TTS/demo.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Infrastructure Logic",
+        "purpose": "Handles critical server-side operations, including TTS generation and data processing."
     },
     {
         "name": "demo_script.py",
@@ -135,7 +155,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../backend/tts_engine/Edge-TTS/demo_script.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Infrastructure Logic",
+        "purpose": "Handles critical server-side operations, including TTS generation and data processing."
     },
     {
         "name": "demo.mp3",
@@ -147,7 +169,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../backend/tts_engine/Edge-TTS/en-US-AnaNeural/demo.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Infrastructure Logic",
+        "purpose": "Handles critical server-side operations, including TTS generation and data processing."
     },
     {
         "name": "demo_script.py",
@@ -159,7 +183,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../backend/tts_engine/Edge-TTS/en-US-AnaNeural/demo_script.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Infrastructure Logic",
+        "purpose": "Handles critical server-side operations, including TTS generation and data processing."
     },
     {
         "name": "demo.mp3",
@@ -171,7 +197,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../backend/tts_engine/Edge-TTS/hi-IN-MadhurNeural-Child/demo.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Infrastructure Logic",
+        "purpose": "Handles critical server-side operations, including TTS generation and data processing."
     },
     {
         "name": "demo_script.py",
@@ -183,7 +211,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../backend/tts_engine/Edge-TTS/hi-IN-MadhurNeural-Child/demo_script.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Infrastructure Logic",
+        "purpose": "Handles critical server-side operations, including TTS generation and data processing."
     },
     {
         "name": "demo.mp3",
@@ -195,7 +225,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../backend/tts_engine/Edge-TTS/hi-IN-NeerjaExpressive-Child/demo.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Infrastructure Logic",
+        "purpose": "Handles critical server-side operations, including TTS generation and data processing."
     },
     {
         "name": "demo_script.py",
@@ -207,7 +239,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../backend/tts_engine/Edge-TTS/hi-IN-NeerjaExpressive-Child/demo_script.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Infrastructure Logic",
+        "purpose": "Handles critical server-side operations, including TTS generation and data processing."
     },
     {
         "name": "demo.mp3",
@@ -219,7 +253,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../backend/tts_engine/Edge-TTS/hi-IN-SwaraNeural-Child/demo.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Infrastructure Logic",
+        "purpose": "Handles critical server-side operations, including TTS generation and data processing."
     },
     {
         "name": "demo_script.py",
@@ -231,7 +267,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../backend/tts_engine/Edge-TTS/hi-IN-SwaraNeural-Child/demo_script.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Infrastructure Logic",
+        "purpose": "Handles critical server-side operations, including TTS generation and data processing."
     },
     {
         "name": "append_250_columns.py",
@@ -243,7 +281,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../database/schemas/append_250_columns.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Data Architecture",
+        "purpose": "Maintains project state and provides structured schemas for application scaling."
     },
     {
         "name": "read_excel_cols.py",
@@ -255,7 +295,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../database/schemas/read_excel_cols.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Data Architecture",
+        "purpose": "Maintains project state and provides structured schemas for application scaling."
     },
     {
         "name": "upgrade_excel.js",
@@ -267,7 +309,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../database/schemas/upgrade_excel.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Data Architecture",
+        "purpose": "Maintains project state and provides structured schemas for application scaling."
     },
     {
         "name": "index.html",
@@ -279,7 +323,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/index.html",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "robots.txt",
@@ -291,7 +337,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/robots.txt",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "comp_big_small.mp3",
@@ -303,7 +351,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_big_small.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_clean_dirty.mp3",
@@ -315,7 +365,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_clean_dirty.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_day_night.mp3",
@@ -327,7 +379,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_day_night.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_dry_wet.mp3",
@@ -339,7 +393,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_dry_wet.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_fast_slow.mp3",
@@ -351,7 +407,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_fast_slow.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_fat_thin.mp3",
@@ -363,7 +421,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_fat_thin.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_full_empty.mp3",
@@ -375,7 +435,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_full_empty.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_hard_soft.mp3",
@@ -387,7 +449,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_hard_soft.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_heavy_light.mp3",
@@ -399,7 +463,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_heavy_light.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_in_out.mp3",
@@ -411,7 +477,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_in_out.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_light_dark.mp3",
@@ -423,7 +491,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_light_dark.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_near_far.mp3",
@@ -435,7 +505,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_near_far.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_open_closed.mp3",
@@ -447,7 +519,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_open_closed.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_tall_short.mp3",
@@ -459,7 +533,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_tall_short.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_up_down.mp3",
@@ -471,7 +547,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_up_down.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "comp_wide_narrow.mp3",
@@ -483,7 +561,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/comparisons/comp_wide_narrow.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "num_1.mp3",
@@ -495,7 +575,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_1.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_10.mp3",
@@ -507,7 +589,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_10.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_100.mp3",
@@ -519,7 +603,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_100.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_11.mp3",
@@ -531,7 +617,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_11.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_12.mp3",
@@ -543,7 +631,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_12.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_13.mp3",
@@ -555,7 +645,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_13.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_14.mp3",
@@ -567,7 +659,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_14.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_15.mp3",
@@ -579,7 +673,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_15.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_16.mp3",
@@ -591,7 +687,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_16.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_17.mp3",
@@ -603,7 +701,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_17.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_18.mp3",
@@ -615,7 +715,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_18.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_19.mp3",
@@ -627,7 +729,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_19.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_2.mp3",
@@ -639,7 +743,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_20.mp3",
@@ -651,7 +757,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_20.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_21.mp3",
@@ -663,7 +771,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_21.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_22.mp3",
@@ -675,7 +785,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_22.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_23.mp3",
@@ -687,7 +799,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_23.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_24.mp3",
@@ -699,7 +813,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_24.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_25.mp3",
@@ -711,7 +827,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_25.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_26.mp3",
@@ -723,7 +841,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_26.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_27.mp3",
@@ -735,7 +855,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_27.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_28.mp3",
@@ -747,7 +869,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_28.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_29.mp3",
@@ -759,7 +883,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_29.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_3.mp3",
@@ -771,7 +897,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_3.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_30.mp3",
@@ -783,7 +911,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_30.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_31.mp3",
@@ -795,7 +925,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_31.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_32.mp3",
@@ -807,7 +939,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_32.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_33.mp3",
@@ -819,7 +953,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_33.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_34.mp3",
@@ -831,7 +967,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_34.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_35.mp3",
@@ -843,7 +981,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_35.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_36.mp3",
@@ -855,7 +995,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_36.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_37.mp3",
@@ -867,7 +1009,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_37.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_38.mp3",
@@ -879,7 +1023,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_38.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_39.mp3",
@@ -891,7 +1037,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_39.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_4.mp3",
@@ -903,7 +1051,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_4.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_40.mp3",
@@ -915,7 +1065,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_40.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_41.mp3",
@@ -927,7 +1079,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_41.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_42.mp3",
@@ -939,7 +1093,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_42.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_43.mp3",
@@ -951,7 +1107,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_43.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_44.mp3",
@@ -963,7 +1121,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_44.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_45.mp3",
@@ -975,7 +1135,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_45.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_46.mp3",
@@ -987,7 +1149,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_46.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_47.mp3",
@@ -999,7 +1163,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_47.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_48.mp3",
@@ -1011,7 +1177,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_48.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_49.mp3",
@@ -1023,7 +1191,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_49.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_5.mp3",
@@ -1035,7 +1205,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_5.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_50.mp3",
@@ -1047,7 +1219,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_50.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_51.mp3",
@@ -1059,7 +1233,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_51.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_52.mp3",
@@ -1071,7 +1247,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_52.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_53.mp3",
@@ -1083,7 +1261,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_53.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_54.mp3",
@@ -1095,7 +1275,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_54.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_55.mp3",
@@ -1107,7 +1289,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_55.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_56.mp3",
@@ -1119,7 +1303,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_56.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_57.mp3",
@@ -1131,7 +1317,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_57.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_58.mp3",
@@ -1143,7 +1331,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_58.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_59.mp3",
@@ -1155,7 +1345,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_59.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_6.mp3",
@@ -1167,7 +1359,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_6.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_60.mp3",
@@ -1179,7 +1373,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_60.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_61.mp3",
@@ -1191,7 +1387,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_61.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_62.mp3",
@@ -1203,7 +1401,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_62.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_63.mp3",
@@ -1215,7 +1415,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_63.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_64.mp3",
@@ -1227,7 +1429,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_64.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_65.mp3",
@@ -1239,7 +1443,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_65.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_66.mp3",
@@ -1251,7 +1457,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_66.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_67.mp3",
@@ -1263,7 +1471,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_67.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_68.mp3",
@@ -1275,7 +1485,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_68.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_69.mp3",
@@ -1287,7 +1499,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_69.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_7.mp3",
@@ -1299,7 +1513,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_7.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_70.mp3",
@@ -1311,7 +1527,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_70.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_71.mp3",
@@ -1323,7 +1541,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_71.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_72.mp3",
@@ -1335,7 +1555,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_72.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_73.mp3",
@@ -1347,7 +1569,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_73.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_74.mp3",
@@ -1359,7 +1583,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_74.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_75.mp3",
@@ -1371,7 +1597,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_75.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_76.mp3",
@@ -1383,7 +1611,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_76.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_77.mp3",
@@ -1395,7 +1625,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_77.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_78.mp3",
@@ -1407,7 +1639,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_78.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_79.mp3",
@@ -1419,7 +1653,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_79.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_8.mp3",
@@ -1431,7 +1667,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_8.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_80.mp3",
@@ -1443,7 +1681,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_80.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_81.mp3",
@@ -1455,7 +1695,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_81.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_82.mp3",
@@ -1467,7 +1709,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_82.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_83.mp3",
@@ -1479,7 +1723,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_83.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_84.mp3",
@@ -1491,7 +1737,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_84.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_85.mp3",
@@ -1503,7 +1751,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_85.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_86.mp3",
@@ -1515,7 +1765,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_86.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_87.mp3",
@@ -1527,7 +1779,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_87.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_88.mp3",
@@ -1539,7 +1793,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_88.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_89.mp3",
@@ -1551,7 +1807,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_89.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_9.mp3",
@@ -1563,7 +1821,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_9.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_90.mp3",
@@ -1575,7 +1835,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_90.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_91.mp3",
@@ -1587,7 +1849,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_91.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_92.mp3",
@@ -1599,7 +1863,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_92.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_93.mp3",
@@ -1611,7 +1877,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_93.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_94.mp3",
@@ -1623,7 +1891,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_94.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_95.mp3",
@@ -1635,7 +1905,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_95.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_96.mp3",
@@ -1647,7 +1919,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_96.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_97.mp3",
@@ -1659,7 +1933,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_97.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_98.mp3",
@@ -1671,7 +1947,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_98.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "num_99.mp3",
@@ -1683,7 +1961,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/numbers/num_99.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Facilitates number recognition and counting skills for preschool learners."
     },
     {
         "name": "shape_circle.mp3",
@@ -1695,7 +1975,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_circle.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_cone.mp3",
@@ -1707,7 +1989,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_cone.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_crescent.mp3",
@@ -1719,7 +2003,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_crescent.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_cube.mp3",
@@ -1731,7 +2017,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_cube.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_cylinder.mp3",
@@ -1743,7 +2031,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_cylinder.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_diamond.mp3",
@@ -1755,7 +2045,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_diamond.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_heart.mp3",
@@ -1767,7 +2059,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_heart.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_hexagon.mp3",
@@ -1779,7 +2073,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_hexagon.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_oval.mp3",
@@ -1791,7 +2087,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_oval.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_pentagon.mp3",
@@ -1803,7 +2101,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_pentagon.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_pyramid.mp3",
@@ -1815,7 +2115,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_pyramid.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_rectangle.mp3",
@@ -1827,7 +2129,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_rectangle.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_sphere.mp3",
@@ -1839,7 +2143,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_sphere.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_square.mp3",
@@ -1851,7 +2157,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_square.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_star.mp3",
@@ -1863,7 +2171,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_star.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_star_funny.mp3",
@@ -1875,7 +2185,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_star_funny.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "shape_triangle.mp3",
@@ -1887,7 +2199,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/shapes/shape_triangle.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_10_m1.mp3",
@@ -1899,7 +2213,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_1/table_10_m1.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_2_m1.mp3",
@@ -1911,7 +2227,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_1/table_2_m1.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_3_m1.mp3",
@@ -1923,7 +2241,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_1/table_3_m1.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_4_m1.mp3",
@@ -1935,7 +2255,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_1/table_4_m1.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_5_m1.mp3",
@@ -1947,7 +2269,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_1/table_5_m1.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_6_m1.mp3",
@@ -1959,7 +2283,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_1/table_6_m1.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_7_m1.mp3",
@@ -1971,7 +2297,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_1/table_7_m1.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_8_m1.mp3",
@@ -1983,7 +2311,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_1/table_8_m1.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_9_m1.mp3",
@@ -1995,7 +2325,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_1/table_9_m1.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_10_m2.mp3",
@@ -2007,7 +2339,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_2/table_10_m2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_2_m2.mp3",
@@ -2019,7 +2353,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_2/table_2_m2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_3_m2.mp3",
@@ -2031,7 +2367,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_2/table_3_m2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_4_m2.mp3",
@@ -2043,7 +2381,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_2/table_4_m2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_5_m2.mp3",
@@ -2055,7 +2395,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_2/table_5_m2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_6_m2.mp3",
@@ -2067,7 +2409,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_2/table_6_m2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_7_m2.mp3",
@@ -2079,7 +2423,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_2/table_7_m2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_8_m2.mp3",
@@ -2091,7 +2437,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_2/table_8_m2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "table_9_m2.mp3",
@@ -2103,7 +2451,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/ganit/tables/method_2/table_9_m2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Mathematical Literacy",
+        "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
     },
     {
         "name": "aladdin_lamp.mp3",
@@ -2115,7 +2465,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/magic/realms/aladdin_lamp.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cinderella_shoe.mp3",
@@ -2127,7 +2479,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/magic/realms/cinderella_shoe.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "fairy_queen.mp3",
@@ -2139,7 +2493,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/magic/realms/fairy_queen.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "flying_horse.mp3",
@@ -2151,7 +2507,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/magic/realms/flying_horse.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "golden_goose.mp3",
@@ -2163,7 +2521,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/magic/realms/golden_goose.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "magic_carpet.mp3",
@@ -2175,7 +2535,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/magic/realms/magic_carpet.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "magic_wand.mp3",
@@ -2187,7 +2549,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/magic/realms/magic_wand.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "talking_trees.mp3",
@@ -2199,7 +2563,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/magic/realms/talking_trees.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "treasure_map.mp3",
@@ -2211,7 +2577,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/magic/realms/treasure_map.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "big_heavy.mp3",
@@ -2223,7 +2591,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/math/comparisons/big_heavy.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "small_light.mp3",
@@ -2235,7 +2605,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/math/comparisons/small_light.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "connect_dots.mp3",
@@ -2247,7 +2619,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/math/shapes/connect_dots.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "curve.mp3",
@@ -2259,7 +2633,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/math/shapes/curve.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "dot.mp3",
@@ -2271,7 +2647,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/math/shapes/dot.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "line.mp3",
@@ -2283,7 +2661,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/math/shapes/line.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "dancing.mp3",
@@ -2295,7 +2675,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/actions/dancing.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "drawing.mp3",
@@ -2307,7 +2689,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/actions/drawing.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "eating.mp3",
@@ -2319,7 +2703,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/actions/eating.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "jumping.mp3",
@@ -2331,7 +2717,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/actions/jumping.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "laughing.mp3",
@@ -2343,7 +2731,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/actions/laughing.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "playing.mp3",
@@ -2355,7 +2745,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/actions/playing.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "reading.mp3",
@@ -2367,7 +2759,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/actions/reading.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "running.mp3",
@@ -2379,7 +2773,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/actions/running.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "singing.mp3",
@@ -2391,7 +2787,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/actions/singing.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sleeping.mp3",
@@ -2403,7 +2801,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/actions/sleeping.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "writing.mp3",
@@ -2415,7 +2815,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/actions/writing.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cutting_veg.mp3",
@@ -2427,7 +2829,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/activities/cutting_veg.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "drying_clothes.mp3",
@@ -2439,7 +2843,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/activities/drying_clothes.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "eat_food.mp3",
@@ -2451,7 +2857,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/activities/eat_food.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "get_ready.mp3",
@@ -2463,7 +2871,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/activities/get_ready.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "ironing.mp3",
@@ -2475,7 +2885,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/activities/ironing.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "kneading_dough.mp3",
@@ -2487,7 +2899,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/activities/kneading_dough.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "lets_play.mp3",
@@ -2499,7 +2913,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/activities/lets_play.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "making_tea.mp3",
@@ -2511,7 +2927,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/activities/making_tea.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pack_toys.mp3",
@@ -2523,7 +2941,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/activities/pack_toys.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sleep_time.mp3",
@@ -2535,7 +2955,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/activities/sleep_time.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "study_time.mp3",
@@ -2547,7 +2969,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/activities/study_time.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "wake_up.mp3",
@@ -2559,7 +2983,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/activities/wake_up.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "washing_clothes.mp3",
@@ -2571,7 +2997,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/activities/washing_clothes.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "washing_dishes.mp3",
@@ -2583,7 +3011,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/activities/washing_dishes.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "animal_cow.mp3",
@@ -2595,7 +3025,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/domestic/animal_cow.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "camel.mp3",
@@ -2607,7 +3039,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/domestic/camel.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cat.mp3",
@@ -2619,7 +3053,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/domestic/cat.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "dog.mp3",
@@ -2631,7 +3067,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/domestic/dog.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "donkey.mp3",
@@ -2643,7 +3081,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/domestic/donkey.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "duck.mp3",
@@ -2655,7 +3095,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/domestic/duck.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "horse.mp3",
@@ -2667,7 +3109,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/domestic/horse.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "rabbit.mp3",
@@ -2679,7 +3123,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/domestic/rabbit.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sheep.mp3",
@@ -2691,7 +3137,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/domestic/sheep.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bear.mp3",
@@ -2703,7 +3151,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/wild/bear.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "deer.mp3",
@@ -2715,7 +3165,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/wild/deer.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "elephant.mp3",
@@ -2727,7 +3179,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/wild/elephant.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "fox.mp3",
@@ -2739,7 +3193,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/wild/fox.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hippopotamus.mp3",
@@ -2751,7 +3207,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/wild/hippopotamus.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "lion.mp3",
@@ -2763,7 +3221,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/wild/lion.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "rhinoceros.mp3",
@@ -2775,7 +3235,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/wild/rhinoceros.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "snake.mp3",
@@ -2787,7 +3249,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/wild/snake.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tiger.mp3",
@@ -2799,7 +3263,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/wild/tiger.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "wolf.mp3",
@@ -2811,7 +3277,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/wild/wolf.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "zebra.mp3",
@@ -2823,7 +3291,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals/wild/zebra.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "earthworm.mp3",
@@ -2835,7 +3305,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals_smaller/earthworm.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "frog.mp3",
@@ -2847,7 +3319,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals_smaller/frog.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "lizard.mp3",
@@ -2859,7 +3333,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals_smaller/lizard.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "mouse.mp3",
@@ -2871,7 +3347,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals_smaller/mouse.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "snail.mp3",
@@ -2883,7 +3361,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals_smaller/snail.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "squirrel.mp3",
@@ -2895,7 +3375,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals_smaller/squirrel.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "crocodile.mp3",
@@ -2907,7 +3389,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals_wild/crocodile.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "giraffe.mp3",
@@ -2919,7 +3403,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals_wild/giraffe.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hippo.mp3",
@@ -2931,7 +3417,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals_wild/hippo.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "kangaroo.mp3",
@@ -2943,7 +3431,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals_wild/kangaroo.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "monkey.mp3",
@@ -2955,7 +3445,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals_wild/monkey.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "rhino.mp3",
@@ -2967,7 +3459,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals_wild/rhino.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "turtle.mp3",
@@ -2979,7 +3473,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/animals_wild/turtle.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "crow.mp3",
@@ -2991,7 +3487,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/birds/crow.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "eagle.mp3",
@@ -3003,7 +3501,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/birds/eagle.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "owl.mp3",
@@ -3015,7 +3515,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/birds/owl.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "parrot.mp3",
@@ -3027,7 +3529,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/birds/parrot.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "peacock.mp3",
@@ -3039,7 +3543,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/birds/peacock.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pigeon.mp3",
@@ -3051,7 +3557,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/birds/pigeon.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sparrow.mp3",
@@ -3063,7 +3571,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/birds/sparrow.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "swan.mp3",
@@ -3075,7 +3585,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/birds/swan.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "breathing.mp3",
@@ -3087,7 +3599,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/breathing.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "burp.mp3",
@@ -3099,7 +3613,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/burp.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "compassion.mp3",
@@ -3111,7 +3627,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/compassion.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cough.mp3",
@@ -3123,7 +3641,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/cough.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "goosebumps.mp3",
@@ -3135,7 +3655,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/goosebumps.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "heartbeat.mp3",
@@ -3147,7 +3669,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/heartbeat.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hiccup.mp3",
@@ -3159,7 +3683,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/hiccup.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hunger.mp3",
@@ -3171,7 +3697,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/hunger.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "itch.mp3",
@@ -3183,7 +3711,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/itch.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pain.mp3",
@@ -3195,7 +3725,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/pain.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "shivering.mp3",
@@ -3207,7 +3739,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/shivering.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sleep_dreams.mp3",
@@ -3219,7 +3753,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/sleep_dreams.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "smile.mp3",
@@ -3231,7 +3767,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/smile.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sneeze.mp3",
@@ -3243,7 +3781,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/sneeze.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sweat.mp3",
@@ -3255,7 +3795,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/sweat.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sweat_heat.mp3",
@@ -3267,7 +3809,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/sweat_heat.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tears.mp3",
@@ -3279,7 +3823,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/tears.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "thirst.mp3",
@@ -3291,7 +3837,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/thirst.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tiredness.mp3",
@@ -3303,7 +3851,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/tiredness.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "yawn.mp3",
@@ -3315,7 +3865,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body/yawn.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "back.mp3",
@@ -3327,7 +3879,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/back.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cheeks.mp3",
@@ -3339,7 +3893,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/cheeks.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "chest.mp3",
@@ -3351,7 +3907,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/chest.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "ears.mp3",
@@ -3363,7 +3921,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/ears.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "eyes.mp3",
@@ -3375,7 +3935,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/eyes.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "face.mp3",
@@ -3387,7 +3949,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/face.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "finger.mp3",
@@ -3399,7 +3963,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/finger.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "forehead.mp3",
@@ -3411,7 +3977,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/forehead.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hair.mp3",
@@ -3423,7 +3991,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/hair.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hands.mp3",
@@ -3435,7 +4005,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/hands.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "heel.mp3",
@@ -3447,7 +4019,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/heel.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "knees.mp3",
@@ -3459,7 +4033,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/knees.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "legs.mp3",
@@ -3471,7 +4047,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/legs.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "lips.mp3",
@@ -3483,7 +4061,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/lips.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "mouth.mp3",
@@ -3495,7 +4075,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/mouth.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "nails.mp3",
@@ -3507,7 +4089,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/nails.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "neck.mp3",
@@ -3519,7 +4103,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/neck.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "nose.mp3",
@@ -3531,7 +4117,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/nose.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "shoulders.mp3",
@@ -3543,7 +4131,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/shoulders.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "stomach.mp3",
@@ -3555,7 +4145,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/stomach.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "teeth.mp3",
@@ -3567,7 +4159,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/teeth.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "thumb.mp3",
@@ -3579,7 +4173,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/thumb.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tongue.mp3",
@@ -3591,7 +4187,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/body_parts/tongue.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "dhoti_kurta.mp3",
@@ -3603,7 +4201,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/dhoti_kurta.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "frock.mp3",
@@ -3615,7 +4215,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/frock.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "gloves.mp3",
@@ -3627,7 +4229,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/gloves.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "handkerchief.mp3",
@@ -3639,7 +4243,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/handkerchief.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hat.mp3",
@@ -3651,7 +4257,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/hat.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "jacket.mp3",
@@ -3663,7 +4271,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/jacket.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "muffler.mp3",
@@ -3675,7 +4285,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/muffler.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pants.mp3",
@@ -3687,7 +4299,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/pants.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pyjama.mp3",
@@ -3699,7 +4313,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/pyjama.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "saree.mp3",
@@ -3711,7 +4327,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/saree.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "scarf.mp3",
@@ -3723,7 +4341,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/scarf.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "shirt.mp3",
@@ -3735,7 +4355,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/shirt.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "shoes.mp3",
@@ -3747,7 +4369,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/shoes.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "skirt.mp3",
@@ -3759,7 +4383,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/skirt.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "socks.mp3",
@@ -3771,7 +4397,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/socks.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "suit_salwar.mp3",
@@ -3783,7 +4411,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/suit_salwar.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sweater.mp3",
@@ -3795,7 +4425,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/sweater.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tie.mp3",
@@ -3807,7 +4439,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/tie.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "towel_gamcha.mp3",
@@ -3819,7 +4453,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/towel_gamcha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "turban.mp3",
@@ -3831,7 +4467,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/turban.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "veil.mp3",
@@ -3843,7 +4481,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/clothes/veil.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "angry.mp3",
@@ -3855,7 +4495,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/angry.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "compassion.mp3",
@@ -3867,7 +4509,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/compassion.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "contentment.mp3",
@@ -3879,7 +4523,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/contentment.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cooperation.mp3",
@@ -3891,7 +4537,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/cooperation.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "courage.mp3",
@@ -3903,7 +4551,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/courage.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "discipline.mp3",
@@ -3915,7 +4565,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/discipline.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "excited.mp3",
@@ -3927,7 +4579,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/excited.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "excitement.mp3",
@@ -3939,7 +4593,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/excitement.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "forgiveness.mp3",
@@ -3951,7 +4607,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/forgiveness.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "friendship.mp3",
@@ -3963,7 +4621,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/friendship.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "happy.mp3",
@@ -3975,7 +4635,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/happy.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "honesty.mp3",
@@ -3987,7 +4649,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/honesty.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hungry.mp3",
@@ -3999,7 +4663,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/hungry.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "kindness.mp3",
@@ -4011,7 +4677,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/kindness.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "love.mp3",
@@ -4023,7 +4691,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/love.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "patience.mp3",
@@ -4035,7 +4705,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/patience.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pride.mp3",
@@ -4047,7 +4719,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/pride.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "respect.mp3",
@@ -4059,7 +4733,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/respect.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sad.mp3",
@@ -4071,7 +4747,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/sad.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "scared.mp3",
@@ -4083,7 +4761,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/scared.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "shame.mp3",
@@ -4095,7 +4775,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/shame.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "shy.mp3",
@@ -4107,7 +4789,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/shy.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sleepy.mp3",
@@ -4119,7 +4803,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/sleepy.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "surprised.mp3",
@@ -4131,7 +4817,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/surprised.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "thirsty.mp3",
@@ -4143,7 +4831,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/thirsty.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tired.mp3",
@@ -4155,7 +4845,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/emotions/tired.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "aunt.mp3",
@@ -4167,7 +4859,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/aunt.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bahu.mp3",
@@ -4179,7 +4873,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/bahu.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bhanja_bhanji.mp3",
@@ -4191,7 +4887,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/bhanja_bhanji.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bhatija_bhatiji.mp3",
@@ -4203,7 +4901,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/bhatija_bhatiji.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "brother.mp3",
@@ -4215,7 +4915,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/brother.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "chacha_ji.mp3",
@@ -4227,7 +4929,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/chacha_ji.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "chachi_ji.mp3",
@@ -4239,7 +4943,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/chachi_ji.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "damad.mp3",
@@ -4251,7 +4957,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/damad.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "devar_jeth.mp3",
@@ -4263,7 +4971,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/devar_jeth.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "elders.mp3",
@@ -4275,7 +4985,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/elders.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "family_dadaji.mp3",
@@ -4287,7 +4999,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/family_dadaji.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "family_dadiji.mp3",
@@ -4299,7 +5013,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/family_dadiji.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "family_mummy.mp3",
@@ -4311,7 +5027,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/family_mummy.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "family_papa.mp3",
@@ -4323,7 +5041,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/family_papa.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "father_elder_brother.mp3",
@@ -4335,7 +5055,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/father_elder_brother.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "father_elder_brother_wife.mp3",
@@ -4347,7 +5069,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/father_elder_brother_wife.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "father_sister.mp3",
@@ -4359,7 +5083,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/father_sister.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "father_sister_husband.mp3",
@@ -4371,7 +5097,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/father_sister_husband.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "friend.mp3",
@@ -4383,7 +5111,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/friend.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "friend_female.mp3",
@@ -4395,7 +5125,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/friend_female.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "grandfather_2.mp3",
@@ -4407,7 +5139,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/grandfather_2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "grandmother_2.mp3",
@@ -4419,7 +5153,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/grandmother_2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "guest.mp3",
@@ -4431,7 +5167,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/guest.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "infant.mp3",
@@ -4443,7 +5181,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/infant.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "mama_ji.mp3",
@@ -4455,7 +5195,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/mama_ji.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "mausi.mp3",
@@ -4467,7 +5209,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/mausi.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "nanad_jethani.mp3",
@@ -4479,7 +5223,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/nanad_jethani.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "nana_ji.mp3",
@@ -4491,7 +5237,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/nana_ji.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "nani_ji.mp3",
@@ -4503,7 +5251,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/nani_ji.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "neighbor.mp3",
@@ -4515,7 +5265,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/neighbor.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "parents.mp3",
@@ -4527,7 +5279,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/parents.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sala_sali.mp3",
@@ -4539,7 +5293,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/sala_sali.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sasur_sas.mp3",
@@ -4551,7 +5307,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/sasur_sas.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sister.mp3",
@@ -4563,7 +5321,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/sister.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "teacher.mp3",
@@ -4575,7 +5335,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/teacher.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "uncle.mp3",
@@ -4587,7 +5349,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/family/uncle.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "diwali.mp3",
@@ -4599,7 +5363,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/festivals/diwali.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "holi.mp3",
@@ -4611,7 +5377,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/festivals/holi.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "barfi.mp3",
@@ -4623,7 +5391,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/barfi.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "batasha.mp3",
@@ -4635,7 +5405,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/batasha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bhelpuri.mp3",
@@ -4647,7 +5419,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/bhelpuri.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "biscuit.mp3",
@@ -4659,7 +5433,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/biscuit.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "butter.mp3",
@@ -4671,7 +5447,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/butter.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "buttermilk.mp3",
@@ -4683,7 +5461,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/buttermilk.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "butter_roti.mp3",
@@ -4695,7 +5475,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/butter_roti.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "chaat_papdi.mp3",
@@ -4707,7 +5489,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/chaat_papdi.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "churma_laddu.mp3",
@@ -4719,7 +5503,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/churma_laddu.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "chutney.mp3",
@@ -4731,7 +5517,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/chutney.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "curd.mp3",
@@ -4743,7 +5531,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/curd.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "dal.mp3",
@@ -4755,7 +5545,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/dal.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "gajak.mp3",
@@ -4767,7 +5559,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/gajak.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "gajar_halwa.mp3",
@@ -4779,7 +5573,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/gajar_halwa.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "ghee.mp3",
@@ -4791,7 +5587,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/ghee.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "gulab_jamun.mp3",
@@ -4803,7 +5601,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/gulab_jamun.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "halwa.mp3",
@@ -4815,7 +5615,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/halwa.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "jalebi.mp3",
@@ -4827,7 +5629,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/jalebi.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "jalebi_milk.mp3",
@@ -4839,7 +5643,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/jalebi_milk.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "kachori.mp3",
@@ -4851,7 +5657,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/kachori.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "kheer.mp3",
@@ -4863,7 +5671,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/kheer.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "khichdi.mp3",
@@ -4875,7 +5685,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/khichdi.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "kulfi.mp3",
@@ -4887,7 +5699,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/kulfi.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "laddu.mp3",
@@ -4899,7 +5713,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/laddu.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "lassi.mp3",
@@ -4911,7 +5727,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/lassi.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "lassi_thick.mp3",
@@ -4923,7 +5741,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/lassi_thick.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "milk.mp3",
@@ -4935,7 +5755,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/milk.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "namkeen.mp3",
@@ -4947,7 +5769,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/namkeen.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pakora.mp3",
@@ -4959,7 +5783,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/pakora.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "paneer.mp3",
@@ -4971,7 +5797,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/paneer.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "panipuri.mp3",
@@ -4983,7 +5811,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/panipuri.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "papad.mp3",
@@ -4995,7 +5825,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/papad.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "paratha.mp3",
@@ -5007,7 +5839,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/paratha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "peda.mp3",
@@ -5019,7 +5853,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/peda.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pickle.mp3",
@@ -5031,7 +5867,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/pickle.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "poha.mp3",
@@ -5043,7 +5881,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/poha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pulao.mp3",
@@ -5055,7 +5895,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/pulao.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "puri.mp3",
@@ -5067,7 +5909,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/puri.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "rabri.mp3",
@@ -5079,7 +5923,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/rabri.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "raita.mp3",
@@ -5091,7 +5937,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/raita.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "rasgulla.mp3",
@@ -5103,7 +5951,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/rasgulla.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "rewri.mp3",
@@ -5115,7 +5965,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/rewri.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "rice.mp3",
@@ -5127,7 +5979,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/rice.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "roti.mp3",
@@ -5139,7 +5993,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/roti.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "samosa.mp3",
@@ -5151,7 +6007,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/samosa.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sharbat.mp3",
@@ -5163,7 +6021,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/sharbat.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sheera.mp3",
@@ -5175,7 +6035,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/sheera.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sugarcane.mp3",
@@ -5187,7 +6049,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/sugarcane.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sweets.mp3",
@@ -5199,7 +6063,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/sweets.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tea.mp3",
@@ -5211,7 +6077,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/food/tea.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "banana.mp3",
@@ -5223,7 +6091,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits/banana.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cherry.mp3",
@@ -5235,7 +6105,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits/cherry.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "grapes.mp3",
@@ -5247,7 +6119,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits/grapes.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "guava.mp3",
@@ -5259,7 +6133,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits/guava.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "kiwi.mp3",
@@ -5271,7 +6147,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits/kiwi.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "mango.mp3",
@@ -5283,7 +6161,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits/mango.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "orange.mp3",
@@ -5295,7 +6175,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits/orange.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "papaya.mp3",
@@ -5307,7 +6189,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits/papaya.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pineapple.mp3",
@@ -5319,7 +6203,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits/pineapple.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pomegranate.mp3",
@@ -5331,7 +6217,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits/pomegranate.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "strawberry.mp3",
@@ -5343,7 +6231,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits/strawberry.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "watermelon.mp3",
@@ -5355,7 +6245,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits/watermelon.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "apple.mp3",
@@ -5367,7 +6259,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits_vegetables/fruits/apple.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "potato.mp3",
@@ -5379,7 +6273,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits_vegetables/vegetables/potato.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tomato.mp3",
@@ -5391,7 +6287,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/fruits_vegetables/vegetables/tomato.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "ball_tadi.mp3",
@@ -5403,7 +6301,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/ball_tadi.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "blindfold.mp3",
@@ -5415,7 +6315,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/blindfold.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "carrom.mp3",
@@ -5427,7 +6329,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/carrom.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "chess.mp3",
@@ -5439,7 +6343,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/chess.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cricket.mp3",
@@ -5451,7 +6357,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/cricket.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "football.mp3",
@@ -5463,7 +6371,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/football.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "gilli_danda.mp3",
@@ -5475,7 +6385,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/gilli_danda.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hide_seek.mp3",
@@ -5487,7 +6399,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/hide_seek.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hopscotch.mp3",
@@ -5499,7 +6413,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/hopscotch.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "ice_water_game.mp3",
@@ -5511,7 +6427,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/ice_water_game.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "kho_kho.mp3",
@@ -5523,7 +6441,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/kho_kho.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "kite_flying.mp3",
@@ -5535,7 +6455,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/kite_flying.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "ludo.mp3",
@@ -5547,7 +6469,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/ludo.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "marbles.mp3",
@@ -5559,7 +6483,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/marbles.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pebbles.mp3",
@@ -5571,7 +6497,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/pebbles.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pitthu.mp3",
@@ -5583,7 +6511,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/pitthu.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "poshampa.mp3",
@@ -5595,7 +6525,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/poshampa.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "rope_skipping.mp3",
@@ -5607,7 +6539,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/rope_skipping.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "rumal_jhapatta.mp3",
@@ -5619,7 +6553,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/rumal_jhapatta.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "snakes_ladders.mp3",
@@ -5631,7 +6567,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/snakes_ladders.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "spinning.mp3",
@@ -5643,7 +6581,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/spinning.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tag.mp3",
@@ -5655,7 +6595,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/tag.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "top_spinning.mp3",
@@ -5667,7 +6609,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/top_spinning.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tug_of_war.mp3",
@@ -5679,7 +6623,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/tug_of_war.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "up_down_game.mp3",
@@ -5691,7 +6637,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/games/up_down_game.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bathing.mp3",
@@ -5703,7 +6651,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/bathing.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "best_wishes.mp3",
@@ -5715,7 +6665,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/best_wishes.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "birthday_joy.mp3",
@@ -5727,7 +6679,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/birthday_joy.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "brushing.mp3",
@@ -5739,7 +6693,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/brushing.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "clean_clothes.mp3",
@@ -5751,7 +6707,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/clean_clothes.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "eating_healthy.mp3",
@@ -5763,7 +6721,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/eating_healthy.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "exam_day.mp3",
@@ -5775,7 +6735,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/exam_day.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "god_bless.mp3",
@@ -5787,7 +6749,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/god_bless.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "good_morning_alt.mp3",
@@ -5799,7 +6763,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/good_morning_alt.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "greeting_ram_ram.mp3",
@@ -5811,7 +6777,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/greeting_ram_ram.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "help_elders.mp3",
@@ -5823,7 +6791,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/help_elders.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "help_weak_child.mp3",
@@ -5835,7 +6805,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/help_weak_child.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hospitality.mp3",
@@ -5847,7 +6819,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/hospitality.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "its_okay.mp3",
@@ -5859,7 +6833,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/its_okay.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "loving_animals.mp3",
@@ -5871,7 +6847,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/loving_animals.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "namaste.mp3",
@@ -5883,7 +6861,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/namaste.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "read_daily.mp3",
@@ -5895,7 +6875,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/read_daily.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "respectful_word.mp3",
@@ -5907,7 +6889,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/respectful_word.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "respect_elders.mp3",
@@ -5919,7 +6903,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/respect_elders.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "saying_please.mp3",
@@ -5931,7 +6917,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/saying_please.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "saying_sorry.mp3",
@@ -5943,7 +6931,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/saying_sorry.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "saying_thanks.mp3",
@@ -5955,7 +6945,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/saying_thanks.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sharing_food.mp3",
@@ -5967,7 +6959,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/sharing_food.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "shubh_ratri.mp3",
@@ -5979,7 +6973,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/shubh_ratri.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sleeping_on_time.mp3",
@@ -5991,7 +6987,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/sleeping_on_time.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "stranger_safety.mp3",
@@ -6003,7 +7001,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/stranger_safety.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "suprabhat.mp3",
@@ -6015,7 +7015,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/suprabhat.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "very_good.mp3",
@@ -6027,7 +7029,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/very_good.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "waking_early.mp3",
@@ -6039,7 +7043,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/waking_early.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "washing_hands.mp3",
@@ -6051,7 +7057,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/washing_hands.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "welcome.mp3",
@@ -6063,7 +7071,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/welcome.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "welcome_new_friend.mp3",
@@ -6075,7 +7085,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/welcome_new_friend.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "well_done.mp3",
@@ -6087,7 +7099,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/habits/well_done.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "barber.mp3",
@@ -6099,7 +7113,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/barber.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cleaner.mp3",
@@ -6111,7 +7127,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/cleaner.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cobbler.mp3",
@@ -6123,7 +7141,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/cobbler.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "doctor.mp3",
@@ -6135,7 +7155,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/doctor.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "driver.mp3",
@@ -6147,7 +7169,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/driver.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "farmer.mp3",
@@ -6159,7 +7183,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/farmer.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "firefighter.mp3",
@@ -6171,7 +7197,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/firefighter.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "nurse.mp3",
@@ -6183,7 +7211,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/nurse.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pilot.mp3",
@@ -6195,7 +7225,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/pilot.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "police.mp3",
@@ -6207,7 +7239,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/police.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "postman.mp3",
@@ -6219,7 +7253,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/postman.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "potter.mp3",
@@ -6231,7 +7267,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/potter.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "shopkeeper.mp3",
@@ -6243,7 +7281,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/shopkeeper.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "soldier.mp3",
@@ -6255,7 +7295,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/soldier.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tailor.mp3",
@@ -6267,7 +7309,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/helpers/tailor.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "if_i_were_bird.mp3",
@@ -6279,7 +7323,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/imagination/if_i_were_bird.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "if_i_were_cloud.mp3",
@@ -6291,7 +7337,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/imagination/if_i_were_cloud.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "if_i_were_fish.mp3",
@@ -6303,7 +7351,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/imagination/if_i_were_fish.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "if_i_were_king.mp3",
@@ -6315,7 +7365,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/imagination/if_i_were_king.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "if_i_were_tree.mp3",
@@ -6327,7 +7379,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/imagination/if_i_were_tree.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bedbug.mp3",
@@ -6339,7 +7393,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/insects/bedbug.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bee.mp3",
@@ -6351,7 +7407,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/insects/bee.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "butterfly.mp3",
@@ -6363,7 +7421,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/insects/butterfly.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "firefly.mp3",
@@ -6375,7 +7435,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/insects/firefly.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "fly.mp3",
@@ -6387,7 +7449,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/insects/fly.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "grasshopper.mp3",
@@ -6399,7 +7463,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/insects/grasshopper.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "leech.mp3",
@@ -6411,7 +7477,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/insects/leech.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "mosquito.mp3",
@@ -6423,7 +7491,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/insects/mosquito.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "spider.mp3",
@@ -6435,7 +7505,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/insects/spider.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "termite.mp3",
@@ -6447,7 +7519,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/insects/termite.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bell.mp3",
@@ -6459,7 +7533,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/instruments/bell.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "damru.mp3",
@@ -6471,7 +7547,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/instruments/damru.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "dholak.mp3",
@@ -6483,7 +7561,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/instruments/dholak.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "flute.mp3",
@@ -6495,7 +7575,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/instruments/flute.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "harmonium.mp3",
@@ -6507,7 +7589,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/instruments/harmonium.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "manjira.mp3",
@@ -6519,7 +7603,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/instruments/manjira.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "shankh.mp3",
@@ -6531,7 +7617,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/instruments/shankh.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tabla.mp3",
@@ -6543,7 +7631,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/instruments/tabla.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "nature_rainy.mp3",
@@ -6555,7 +7645,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/nature_habits/nature_rainy.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "almirah.mp3",
@@ -6567,7 +7659,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/almirah.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "axe.mp3",
@@ -6579,7 +7673,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/axe.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bed.mp3",
@@ -6591,7 +7687,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/bed.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bedsheet.mp3",
@@ -6603,7 +7701,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/bedsheet.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "book.mp3",
@@ -6615,7 +7715,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/book.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bowl_large.mp3",
@@ -6627,7 +7729,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/bowl_large.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bowl_small.mp3",
@@ -6639,7 +7743,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/bowl_small.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "broom.mp3",
@@ -6651,7 +7757,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/broom.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bucket.mp3",
@@ -6663,7 +7771,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/bucket.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "chair.mp3",
@@ -6675,7 +7785,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/chair.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "churner.mp3",
@@ -6687,7 +7799,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/churner.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cinema.mp3",
@@ -6699,7 +7813,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/cinema.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "clock.mp3",
@@ -6711,7 +7827,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/clock.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "comb.mp3",
@@ -6723,7 +7841,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/comb.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cooking_pot.mp3",
@@ -6735,7 +7855,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/cooking_pot.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "curtain.mp3",
@@ -6747,7 +7869,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/curtain.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "door.mp3",
@@ -6759,7 +7883,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/door.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "dustbin.mp3",
@@ -6771,7 +7897,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/dustbin.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "eraser.mp3",
@@ -6783,7 +7911,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/eraser.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "fan.mp3",
@@ -6795,7 +7925,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/fan.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "floor.mp3",
@@ -6807,7 +7939,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/floor.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "glass.mp3",
@@ -6819,7 +7953,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/glass.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "griddle_tawa.mp3",
@@ -6831,7 +7967,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/griddle_tawa.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "grinding_stone.mp3",
@@ -6843,7 +7981,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/grinding_stone.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hammer.mp3",
@@ -6855,7 +7995,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/hammer.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hand_hoe.mp3",
@@ -6867,7 +8009,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/hand_hoe.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "key.mp3",
@@ -6879,7 +8023,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/key.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "ladle.mp3",
@@ -6891,7 +8037,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/ladle.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "lamp.mp3",
@@ -6903,7 +8051,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/lamp.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "large_plate.mp3",
@@ -6915,7 +8065,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/large_plate.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "lid.mp3",
@@ -6927,7 +8079,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/lid.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "lock.mp3",
@@ -6939,7 +8093,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/lock.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "lota.mp3",
@@ -6951,7 +8107,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/lota.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "matka_pot.mp3",
@@ -6963,7 +8121,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/matka_pot.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "mirror.mp3",
@@ -6975,7 +8135,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/mirror.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "mortar_pestle.mp3",
@@ -6987,7 +8149,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/mortar_pestle.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "mug.mp3",
@@ -6999,7 +8163,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/mug.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "nail.mp3",
@@ -7011,7 +8177,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/nail.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "needle_thread.mp3",
@@ -7023,7 +8191,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/needle_thread.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "peeler.mp3",
@@ -7035,7 +8205,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/peeler.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pen.mp3",
@@ -7047,7 +8219,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/pen.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pencil.mp3",
@@ -7059,7 +8233,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/pencil.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pillow.mp3",
@@ -7071,7 +8247,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/pillow.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pincers.mp3",
@@ -7083,7 +8261,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/pincers.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "plate.mp3",
@@ -7095,7 +8275,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/plate.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "plate_thali.mp3",
@@ -7107,7 +8289,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/plate_thali.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "plough.mp3",
@@ -7119,7 +8303,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/plough.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pressure_cooker.mp3",
@@ -7131,7 +8317,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/pressure_cooker.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "radio.mp3",
@@ -7143,7 +8331,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/radio.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "rolling_board.mp3",
@@ -7155,7 +8345,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/rolling_board.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "rolling_pin.mp3",
@@ -7167,7 +8359,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/rolling_pin.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "roof.mp3",
@@ -7179,7 +8373,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/roof.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "saw.mp3",
@@ -7191,7 +8387,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/saw.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "school_bag.mp3",
@@ -7203,7 +8401,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/school_bag.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "scissors.mp3",
@@ -7215,7 +8415,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/scissors.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "screwdriver.mp3",
@@ -7227,7 +8429,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/screwdriver.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "shovel.mp3",
@@ -7239,7 +8443,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/shovel.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sickle.mp3",
@@ -7251,7 +8457,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/sickle.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sieve.mp3",
@@ -7263,7 +8471,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/sieve.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "soap.mp3",
@@ -7275,7 +8485,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/soap.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "stove.mp3",
@@ -7287,7 +8499,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/stove.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "surahi.mp3",
@@ -7299,7 +8513,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/surahi.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "table.mp3",
@@ -7311,7 +8527,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/table.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "television.mp3",
@@ -7323,7 +8541,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/television.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tongs.mp3",
@@ -7335,7 +8555,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/tongs.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "towel.mp3",
@@ -7347,7 +8569,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/towel.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "umbrella.mp3",
@@ -7359,7 +8583,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/umbrella.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "wall.mp3",
@@ -7371,7 +8597,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/wall.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "wheel.mp3",
@@ -7383,7 +8611,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/wheel.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "window.mp3",
@@ -7395,7 +8625,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/window.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "wok_kadai.mp3",
@@ -7407,7 +8639,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/objects/wok_kadai.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "airport.mp3",
@@ -7419,7 +8653,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/places/airport.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "circus.mp3",
@@ -7431,7 +8667,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/places/circus.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "fair.mp3",
@@ -7443,7 +8681,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/places/fair.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hospital.mp3",
@@ -7455,7 +8695,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/places/hospital.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "library.mp3",
@@ -7467,7 +8709,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/places/library.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "market.mp3",
@@ -7479,7 +8723,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/places/market.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "police_station.mp3",
@@ -7491,7 +8737,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/places/police_station.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "post_office.mp3",
@@ -7503,7 +8751,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/places/post_office.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "railway_station.mp3",
@@ -7515,7 +8765,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/places/railway_station.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "school.mp3",
@@ -7527,7 +8779,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/places/school.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "zoo.mp3",
@@ -7539,7 +8793,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/places/zoo.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "courtyard.mp3",
@@ -7551,7 +8807,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/rooms/courtyard.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "guest_room.mp3",
@@ -7563,7 +8821,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/rooms/guest_room.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "ledge.mp3",
@@ -7575,7 +8835,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/rooms/ledge.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "store_room.mp3",
@@ -7587,7 +8849,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/rooms/store_room.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "ventilator.mp3",
@@ -7599,7 +8863,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/rooms/ventilator.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "clapping.mp3",
@@ -7611,7 +8877,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/clapping.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "clock_ticking.mp3",
@@ -7623,7 +8891,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/clock_ticking.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "coughing.mp3",
@@ -7635,7 +8905,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/coughing.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "crow_caw.mp3",
@@ -7647,7 +8919,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/crow_caw.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "crying.mp3",
@@ -7659,7 +8933,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/crying.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "door_creaking.mp3",
@@ -7671,7 +8947,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/door_creaking.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "drum.mp3",
@@ -7683,7 +8961,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/drum.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "fire_burning.mp3",
@@ -7695,7 +8975,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/fire_burning.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "footsteps.mp3",
@@ -7707,7 +8989,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/footsteps.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "page_turning.mp3",
@@ -7719,7 +9003,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/page_turning.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "paper_tearing.mp3",
@@ -7731,7 +9017,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/paper_tearing.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sneezing.mp3",
@@ -7743,7 +9031,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/sneezing.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "snoring.mp3",
@@ -7755,7 +9045,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/snoring.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "water_dripping.mp3",
@@ -7767,7 +9059,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/water_dripping.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "whistle.mp3",
@@ -7779,7 +9073,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/whistle.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "wind_storm.mp3",
@@ -7791,7 +9087,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/sounds/wind_storm.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "ball.mp3",
@@ -7803,7 +9101,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/ball.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "balloons.mp3",
@@ -7815,7 +9115,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/balloons.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "blocks.mp3",
@@ -7827,7 +9129,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/blocks.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bubbles.mp3",
@@ -7839,7 +9143,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/bubbles.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "doll.mp3",
@@ -7851,7 +9157,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/doll.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "kitchen_set.mp3",
@@ -7863,7 +9171,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/kitchen_set.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "musical_toy.mp3",
@@ -7875,7 +9185,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/musical_toy.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "paper_plane.mp3",
@@ -7887,7 +9199,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/paper_plane.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "seesaw.mp3",
@@ -7899,7 +9213,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/seesaw.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "slide.mp3",
@@ -7911,7 +9227,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/slide.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "swing.mp3",
@@ -7923,7 +9241,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/swing.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "teddy_bear.mp3",
@@ -7935,7 +9255,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/teddy_bear.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "toy_car.mp3",
@@ -7947,7 +9269,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/toy_car.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "toy_train.mp3",
@@ -7959,7 +9283,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/toy_train.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "whirligig.mp3",
@@ -7971,7 +9297,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/whirligig.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "wooden_horse.mp3",
@@ -7983,7 +9311,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/toys/wooden_horse.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "airplane.mp3",
@@ -7995,7 +9325,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/transport/airplane.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "autorickshaw.mp3",
@@ -8007,7 +9339,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/transport/autorickshaw.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "car.mp3",
@@ -8019,7 +9353,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/transport/car.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "train.mp3",
@@ -8031,7 +9367,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/transport/train.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cabbage.mp3",
@@ -8043,7 +9381,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vegetables/cabbage.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "capsicum.mp3",
@@ -8055,7 +9395,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vegetables/capsicum.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "carrot.mp3",
@@ -8067,7 +9409,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vegetables/carrot.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cauliflower.mp3",
@@ -8079,7 +9423,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vegetables/cauliflower.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "garlic.mp3",
@@ -8091,7 +9437,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vegetables/garlic.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "onion.mp3",
@@ -8103,7 +9451,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vegetables/onion.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "peas.mp3",
@@ -8115,7 +9465,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vegetables/peas.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "pumpkin.mp3",
@@ -8127,7 +9479,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vegetables/pumpkin.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "radish.mp3",
@@ -8139,7 +9493,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vegetables/radish.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "spinach.mp3",
@@ -8151,7 +9507,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vegetables/spinach.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "auto_rickshaw.mp3",
@@ -8163,7 +9521,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vehicles/auto_rickshaw.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bicycle.mp3",
@@ -8175,7 +9535,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vehicles/bicycle.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "boat.mp3",
@@ -8187,7 +9549,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vehicles/boat.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bullock_cart.mp3",
@@ -8199,7 +9563,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vehicles/bullock_cart.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "bus.mp3",
@@ -8211,7 +9577,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vehicles/bus.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hand_cart.mp3",
@@ -8223,7 +9591,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vehicles/hand_cart.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "helicopter.mp3",
@@ -8235,7 +9605,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vehicles/helicopter.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "horse_carriage.mp3",
@@ -8247,7 +9619,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vehicles/horse_carriage.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "motorcycle.mp3",
@@ -8259,7 +9633,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vehicles/motorcycle.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "palanquin.mp3",
@@ -8271,7 +9647,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vehicles/palanquin.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "scooter.mp3",
@@ -8283,7 +9661,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vehicles/scooter.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "ship.mp3",
@@ -8295,7 +9675,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vehicles/ship.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tractor.mp3",
@@ -8307,7 +9689,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vehicles/tractor.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "truck.mp3",
@@ -8319,7 +9703,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/mera_sansar/vehicles/truck.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "goat.mp3",
@@ -8331,7 +9717,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/names/animals_domestic/goat.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_darkgreen.mp3",
@@ -8343,7 +9731,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/blue_green/col_darkgreen.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_lightblue.mp3",
@@ -8355,7 +9745,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/blue_green/col_lightblue.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_lightgreen.mp3",
@@ -8367,7 +9759,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/blue_green/col_lightgreen.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_mossgreen_bluegreen.mp3",
@@ -8379,7 +9773,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/blue_green/col_mossgreen_bluegreen.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_munggreen_bluegreen.mp3",
@@ -8391,7 +9787,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/blue_green/col_munggreen_bluegreen.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_navyblue.mp3",
@@ -8403,7 +9801,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/blue_green/col_navyblue.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_parrotgreen_bluegreen.mp3",
@@ -8415,7 +9815,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/blue_green/col_parrotgreen_bluegreen.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_turquoise_bluegreen.mp3",
@@ -8427,7 +9829,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/blue_green/col_turquoise_bluegreen.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_beige_brown.mp3",
@@ -8439,7 +9843,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/brown_beige/col_beige_brown.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_clay.mp3",
@@ -8451,7 +9857,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/brown_beige/col_clay.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_darkbrown.mp3",
@@ -8463,7 +9871,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/brown_beige/col_darkbrown.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_khaki_brown.mp3",
@@ -8475,7 +9885,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/brown_beige/col_khaki_brown.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_lightbrown.mp3",
@@ -8487,7 +9899,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/brown_beige/col_lightbrown.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_sandalwood.mp3",
@@ -8499,7 +9913,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/brown_beige/col_sandalwood.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_stay_brown.mp3",
@@ -8511,7 +9927,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/brown_beige/col_stay_brown.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "dusty.mp3",
@@ -8523,7 +9941,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/colors_special/dusty.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "golden.mp3",
@@ -8535,7 +9955,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/colors_special/golden.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "navy_blue.mp3",
@@ -8547,7 +9969,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/colors_special/navy_blue.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "silver.mp3",
@@ -8559,7 +9983,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/colors_special/silver.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "turquoise.mp3",
@@ -8571,7 +9997,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/colors_special/turquoise.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_bronze.mp3",
@@ -8583,7 +10011,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/metallic/col_bronze.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_copper.mp3",
@@ -8595,7 +10025,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/metallic/col_copper.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_matte.mp3",
@@ -8607,7 +10039,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/metallic/col_matte.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_shiny.mp3",
@@ -8619,7 +10053,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/metallic/col_shiny.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_silvery.mp3",
@@ -8631,7 +10067,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/metallic/col_silvery.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_brinjalpurple.mp3",
@@ -8643,7 +10081,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_brinjalpurple.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_dustcolor.mp3",
@@ -8655,7 +10095,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_dustcolor.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_goldenyellow.mp3",
@@ -8667,7 +10109,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_goldenyellow.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_hennagreen.mp3",
@@ -8679,7 +10123,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_hennagreen.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_jamunpurple.mp3",
@@ -8691,7 +10137,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_jamunpurple.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_khaki.mp3",
@@ -8703,7 +10151,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_khaki.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_mossgreen.mp3",
@@ -8715,7 +10165,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_mossgreen.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_munggreen.mp3",
@@ -8727,7 +10179,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_munggreen.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_natural_orange.mp3",
@@ -8739,7 +10193,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_natural_orange.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_ochre.mp3",
@@ -8751,7 +10207,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_ochre.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_parrotgreen.mp3",
@@ -8763,7 +10221,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_parrotgreen.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_pomegranatered.mp3",
@@ -8775,7 +10235,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_pomegranatered.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_rubyred.mp3",
@@ -8787,7 +10249,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_rubyred.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_slategrey.mp3",
@@ -8799,7 +10263,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_slategrey.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_springyellow.mp3",
@@ -8811,7 +10277,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_springyellow.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_turmericyellow.mp3",
@@ -8823,7 +10291,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/natural/col_turmericyellow.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_brickred.mp3",
@@ -8835,7 +10305,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/pink_red/col_brickred.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_brightpink.mp3",
@@ -8847,7 +10319,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/pink_red/col_brightpink.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_crimson.mp3",
@@ -8859,7 +10333,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/pink_red/col_crimson.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_darkpink.mp3",
@@ -8871,7 +10347,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/pink_red/col_darkpink.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_lightpink.mp3",
@@ -8883,7 +10361,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/pink_red/col_lightpink.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_magenta_special.mp3",
@@ -8895,7 +10375,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/pink_red/col_magenta_special.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_onionpink.mp3",
@@ -8907,7 +10389,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/pink_red/col_onionpink.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_black.mp3",
@@ -8919,7 +10403,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/primary/col_black.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_blue.mp3",
@@ -8931,7 +10417,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/primary/col_blue.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_brown.mp3",
@@ -8943,7 +10431,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/primary/col_brown.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_green.mp3",
@@ -8955,7 +10445,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/primary/col_green.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_indigo.mp3",
@@ -8967,7 +10459,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/primary/col_indigo.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_pink.mp3",
@@ -8979,7 +10473,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/primary/col_pink.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_purple.mp3",
@@ -8991,7 +10487,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/primary/col_purple.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_red.mp3",
@@ -9003,7 +10501,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/primary/col_red.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_white.mp3",
@@ -9015,7 +10515,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/primary/col_white.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_yellow.mp3",
@@ -9027,7 +10529,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/primary/col_yellow.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_beige.mp3",
@@ -9039,7 +10543,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/secondary/col_beige.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_black.mp3",
@@ -9051,7 +10557,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/secondary/col_black.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_brown.mp3",
@@ -9063,7 +10571,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/secondary/col_brown.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_gold.mp3",
@@ -9075,7 +10585,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/secondary/col_gold.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_grey.mp3",
@@ -9087,7 +10599,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/secondary/col_grey.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_khaki.mp3",
@@ -9099,7 +10613,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/secondary/col_khaki.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_magenta.mp3",
@@ -9111,7 +10627,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/secondary/col_magenta.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_maroon.mp3",
@@ -9123,7 +10641,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/secondary/col_maroon.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_offwhite.mp3",
@@ -9135,7 +10655,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/secondary/col_offwhite.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_pink.mp3",
@@ -9147,7 +10669,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/secondary/col_pink.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_silver.mp3",
@@ -9159,7 +10683,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/secondary/col_silver.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_turquoise.mp3",
@@ -9171,7 +10697,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/secondary/col_turquoise.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_white.mp3",
@@ -9183,7 +10711,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/secondary/col_white.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_antimony.mp3",
@@ -9195,7 +10725,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/special/col_antimony.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_camphorwhite.mp3",
@@ -9207,7 +10739,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/special/col_camphorwhite.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_plum.mp3",
@@ -9219,7 +10753,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/special/col_plum.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_slate.mp3",
@@ -9231,7 +10767,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/special/col_slate.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "col_violet_special.mp3",
@@ -9243,7 +10781,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/rangon_ka_sansar/special/col_violet_special.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "day_1.mp3",
@@ -9255,7 +10795,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/din/day_1.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "day_2.mp3",
@@ -9267,7 +10809,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/din/day_2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "day_3.mp3",
@@ -9279,7 +10823,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/din/day_3.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "day_4.mp3",
@@ -9291,7 +10837,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/din/day_4.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "day_5.mp3",
@@ -9303,7 +10851,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/din/day_5.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "day_6.mp3",
@@ -9315,7 +10865,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/din/day_6.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "day_7.mp3",
@@ -9327,7 +10879,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/din/day_7.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "month_1.mp3",
@@ -9339,7 +10893,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/maheene/month_1.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "month_10.mp3",
@@ -9351,7 +10907,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/maheene/month_10.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "month_11.mp3",
@@ -9363,7 +10921,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/maheene/month_11.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "month_12.mp3",
@@ -9375,7 +10935,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/maheene/month_12.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "month_2.mp3",
@@ -9387,7 +10949,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/maheene/month_2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "month_3.mp3",
@@ -9399,7 +10963,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/maheene/month_3.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "month_4.mp3",
@@ -9411,7 +10977,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/maheene/month_4.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "month_5.mp3",
@@ -9423,7 +10991,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/maheene/month_5.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "month_6.mp3",
@@ -9435,7 +11005,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/maheene/month_6.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "month_7.mp3",
@@ -9447,7 +11019,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/maheene/month_7.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "month_8.mp3",
@@ -9459,7 +11033,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/maheene/month_8.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "month_9.mp3",
@@ -9471,7 +11047,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/din_maheene/maheene/month_9.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "dir_inside.mp3",
@@ -9483,7 +11061,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/dishayen/dir_inside.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "dir_left.mp3",
@@ -9495,7 +11075,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/dishayen/dir_left.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "dir_outside.mp3",
@@ -9507,7 +11089,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/dishayen/dir_outside.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "east.mp3",
@@ -9519,7 +11103,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/dishayen/east.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "north.mp3",
@@ -9531,7 +11117,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/dishayen/north.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "south.mp3",
@@ -9543,7 +11131,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/dishayen/south.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "west.mp3",
@@ -9555,7 +11145,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/dishayen/west.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "astronaut.mp3",
@@ -9567,7 +11159,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/astronaut.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "barren_land.mp3",
@@ -9579,7 +11173,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/barren_land.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "beach.mp3",
@@ -9591,7 +11187,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/beach.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cave.mp3",
@@ -9603,7 +11201,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/cave.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "cloud.mp3",
@@ -9615,7 +11215,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/cloud.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "desert.mp3",
@@ -9627,7 +11229,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/desert.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "dew_drop.mp3",
@@ -9639,7 +11243,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/dew_drop.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "earth.mp3",
@@ -9651,7 +11257,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/earth.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "earthquake.mp3",
@@ -9663,7 +11271,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/earthquake.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "eclipse.mp3",
@@ -9675,7 +11285,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/eclipse.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "flower.mp3",
@@ -9687,7 +11299,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/flower.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "fog.mp3",
@@ -9699,7 +11313,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/fog.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "forest.mp3",
@@ -9711,7 +11327,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/forest.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "hailstones.mp3",
@@ -9723,7 +11341,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/hailstones.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "island.mp3",
@@ -9735,7 +11355,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/island.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "leaf.mp3",
@@ -9747,7 +11369,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/leaf.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "moon.mp3",
@@ -9759,7 +11383,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/moon.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "mound.mp3",
@@ -9771,7 +11397,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/mound.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "mountain.mp3",
@@ -9783,7 +11411,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/mountain.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "rainbow.mp3",
@@ -9795,7 +11425,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/rainbow.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "river.mp3",
@@ -9807,7 +11439,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/river.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "rocket.mp3",
@@ -9819,7 +11453,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/rocket.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "season_autumn.mp3",
@@ -9831,7 +11467,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/season_autumn.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "season_monsoon.mp3",
@@ -9843,7 +11481,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/season_monsoon.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "season_spring.mp3",
@@ -9855,7 +11495,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/season_spring.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "season_summer.mp3",
@@ -9867,7 +11509,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/season_summer.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "season_winter.mp3",
@@ -9879,7 +11523,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/season_winter.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sky.mp3",
@@ -9891,7 +11537,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/sky.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "snowfall.mp3",
@@ -9903,7 +11551,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/snowfall.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "soil.mp3",
@@ -9915,7 +11565,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/soil.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "star.mp3",
@@ -9927,7 +11579,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/star.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "stone.mp3",
@@ -9939,7 +11593,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/stone.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "storm.mp3",
@@ -9951,7 +11607,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/storm.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sun.mp3",
@@ -9963,7 +11621,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/sun.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "swamp.mp3",
@@ -9975,7 +11635,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/swamp.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "time_afternoon.mp3",
@@ -9987,7 +11649,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/time_afternoon.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "time_evening.mp3",
@@ -9999,7 +11663,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/time_evening.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "time_morning.mp3",
@@ -10011,7 +11677,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/time_morning.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "time_night.mp3",
@@ -10023,7 +11691,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/time_night.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tree.mp3",
@@ -10035,7 +11705,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/tree.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "tsunami.mp3",
@@ -10047,7 +11719,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/tsunami.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "valley.mp3",
@@ -10059,7 +11733,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/valley.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "volcano.mp3",
@@ -10071,7 +11747,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/volcano.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "waterfall.mp3",
@@ -10083,7 +11761,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/waterfall.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "wind.mp3",
@@ -10095,7 +11775,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/samay_prakriti/nature/wind.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "welcome_short.mp3",
@@ -10107,7 +11789,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/welcome_short.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "reward_excellent.mp3",
@@ -10119,7 +11803,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/effects/reward_excellent.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "reward_keep_going.mp3",
@@ -10131,7 +11817,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/effects/reward_keep_going.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_animals_domestic.mp3",
@@ -10143,7 +11831,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_animals_domestic.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_animals_wild.mp3",
@@ -10155,7 +11845,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_animals_wild.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_body_parts.mp3",
@@ -10167,7 +11859,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_body_parts.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_colors_natural.mp3",
@@ -10179,7 +11873,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_colors_natural.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_colors_primary.mp3",
@@ -10191,7 +11887,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_colors_primary.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_colors_secondary.mp3",
@@ -10203,7 +11901,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_colors_secondary.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_comparisons.mp3",
@@ -10215,7 +11915,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_comparisons.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_days_week.mp3",
@@ -10227,7 +11929,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_days_week.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_directions.mp3",
@@ -10239,7 +11943,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_directions.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_family.mp3",
@@ -10251,7 +11957,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_family.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_fruits.mp3",
@@ -10263,7 +11971,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_fruits.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_habits.mp3",
@@ -10275,7 +11985,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_habits.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_matra.mp3",
@@ -10287,7 +11999,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_matra.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_months_year.mp3",
@@ -10299,7 +12013,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_months_year.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_nature.mp3",
@@ -10311,7 +12027,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_nature.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_numbers_10.mp3",
@@ -10323,7 +12041,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_numbers_10.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_numbers_100.mp3",
@@ -10335,7 +12055,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_numbers_100.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_samyukt.mp3",
@@ -10347,7 +12069,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_samyukt.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_shapes.mp3",
@@ -10359,7 +12083,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_shapes.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_swar.mp3",
@@ -10371,7 +12097,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_swar.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_tables_m1.mp3",
@@ -10383,7 +12111,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_tables_m1.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_tables_m2.mp3",
@@ -10395,7 +12125,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_tables_m2.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_vegetables.mp3",
@@ -10407,7 +12139,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_vegetables.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "final_vyanjan.mp3",
@@ -10419,7 +12153,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/final_vyanjan.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "intro_ganit.mp3",
@@ -10431,7 +12167,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/intro_ganit.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "intro_names.mp3",
@@ -10443,7 +12181,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/intro_names.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "intro_samay.mp3",
@@ -10455,7 +12195,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/intro_samay.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "intro_varnamala.mp3",
@@ -10467,7 +12209,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/intro_varnamala.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_animals.mp3",
@@ -10479,7 +12223,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_animals.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_blue_green.mp3",
@@ -10491,7 +12237,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_blue_green.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_brown_beige.mp3",
@@ -10503,7 +12251,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_brown_beige.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_colors.mp3",
@@ -10515,7 +12265,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_colors.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_directions.mp3",
@@ -10527,7 +12279,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_directions.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_family.mp3",
@@ -10539,7 +12293,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_family.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_fruits.mp3",
@@ -10551,7 +12307,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_fruits.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_habits.mp3",
@@ -10563,7 +12321,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_habits.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_matra.mp3",
@@ -10575,7 +12335,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_matra.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_metallic.mp3",
@@ -10587,7 +12349,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_metallic.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_nature.mp3",
@@ -10599,7 +12363,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_nature.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_numbers.mp3",
@@ -10611,7 +12377,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_numbers.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_pink_red.mp3",
@@ -10623,7 +12391,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_pink_red.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_samyukt.mp3",
@@ -10635,7 +12405,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_samyukt.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_shapes.mp3",
@@ -10647,7 +12419,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_shapes.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_special.mp3",
@@ -10659,7 +12433,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_special.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_swar.mp3",
@@ -10671,7 +12447,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_swar.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_tables.mp3",
@@ -10683,7 +12461,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_tables.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_time.mp3",
@@ -10695,7 +12475,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_time.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "sub_vyanjan.mp3",
@@ -10707,7 +12489,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/intros/sub_vyanjan.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "quiz_correct.mp3",
@@ -10719,7 +12503,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/quiz/quiz_correct.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "quiz_start.mp3",
@@ -10731,7 +12517,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/quiz/quiz_start.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "quiz_wrong.mp3",
@@ -10743,7 +12531,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/system/quiz/quiz_wrong.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "matra_a.mp3",
@@ -10755,7 +12545,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/matra/matra_a.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "matra_aa.mp3",
@@ -10767,7 +12559,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/matra/matra_aa.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "matra_ah.mp3",
@@ -10779,7 +12573,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/matra/matra_ah.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "matra_aha.mp3",
@@ -10791,7 +12587,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/matra/matra_aha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "matra_ai.mp3",
@@ -10803,7 +12601,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/matra/matra_ai.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "matra_am.mp3",
@@ -10815,7 +12615,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/matra/matra_am.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "matra_au.mp3",
@@ -10827,7 +12629,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/matra/matra_au.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "matra_e.mp3",
@@ -10839,7 +12643,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/matra/matra_e.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "matra_ee.mp3",
@@ -10851,7 +12657,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/matra/matra_ee.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "matra_i.mp3",
@@ -10863,7 +12671,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/matra/matra_i.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "matra_o.mp3",
@@ -10875,7 +12685,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/matra/matra_o.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "matra_oo.mp3",
@@ -10887,7 +12699,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/matra/matra_oo.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "matra_ri.mp3",
@@ -10899,7 +12713,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/matra/matra_ri.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "matra_u.mp3",
@@ -10911,7 +12727,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/matra/matra_u.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "gya.mp3",
@@ -10923,7 +12741,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/samyukt/gya.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "ksha.mp3",
@@ -10935,7 +12755,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/samyukt/ksha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "tra.mp3",
@@ -10947,7 +12769,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/samyukt/tra.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "v_shra.mp3",
@@ -10959,7 +12783,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/samyukt/v_shra.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "v_aa_aam.mp3",
@@ -10971,7 +12797,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/swar/v_aa_aam.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module."
     },
     {
         "name": "v_ai.mp3",
@@ -10983,7 +12811,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/swar/v_ai.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module."
     },
     {
         "name": "v_ang_angur.mp3",
@@ -10995,7 +12825,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/swar/v_ang_angur.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module."
     },
     {
         "name": "v_au.mp3",
@@ -11007,7 +12839,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/swar/v_au.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module."
     },
     {
         "name": "v_a_anar.mp3",
@@ -11019,7 +12853,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/swar/v_a_anar.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module."
     },
     {
         "name": "v_ee.mp3",
@@ -11031,7 +12867,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/swar/v_ee.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module."
     },
     {
         "name": "v_i.mp3",
@@ -11043,7 +12881,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/swar/v_i.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module."
     },
     {
         "name": "v_oo.mp3",
@@ -11055,7 +12895,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/swar/v_oo.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module."
     },
     {
         "name": "v_o_okhli.mp3",
@@ -11067,7 +12909,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/swar/v_o_okhli.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module."
     },
     {
         "name": "v_ri.mp3",
@@ -11079,7 +12923,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/swar/v_ri.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module."
     },
     {
         "name": "v_u.mp3",
@@ -11091,7 +12937,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/swar/v_u.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module."
     },
     {
         "name": "ba.mp3",
@@ -11103,7 +12951,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/ba.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "bha.mp3",
@@ -11115,7 +12965,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/bha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "cha.mp3",
@@ -11127,7 +12979,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/cha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "chha.mp3",
@@ -11139,7 +12993,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/chha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "da.mp3",
@@ -11151,7 +13007,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/da.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "daa.mp3",
@@ -11163,7 +13021,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/daa.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "ddha_new.mp3",
@@ -11175,7 +13035,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/ddha_new.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "dha.mp3",
@@ -11187,7 +13049,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/dha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "ga_new.mp3",
@@ -11199,7 +13063,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/ga_new.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "gha.mp3",
@@ -11211,7 +13077,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/gha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "ha.mp3",
@@ -11223,7 +13091,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/ha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "ja.mp3",
@@ -11235,7 +13105,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/ja.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "jha.mp3",
@@ -11247,7 +13119,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/jha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "ka.mp3",
@@ -11259,7 +13133,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/ka.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "kha.mp3",
@@ -11271,7 +13147,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/kha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "la.mp3",
@@ -11283,7 +13161,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/la.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "ma.mp3",
@@ -11295,7 +13175,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/ma.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "na.mp3",
@@ -11307,7 +13189,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/na.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "nga.mp3",
@@ -11319,7 +13203,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/nga.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "nna.mp3",
@@ -11331,7 +13217,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/nna.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "nya.mp3",
@@ -11343,7 +13231,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/nya.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "pa.mp3",
@@ -11355,7 +13245,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/pa.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "pha.mp3",
@@ -11367,7 +13259,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/pha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "sa.mp3",
@@ -11379,7 +13273,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/sa.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "sha.mp3",
@@ -11391,7 +13287,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/sha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "shha.mp3",
@@ -11403,7 +13301,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/shha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "ta.mp3",
@@ -11415,7 +13315,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/ta.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "taa.mp3",
@@ -11427,7 +13329,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/taa.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "tha.mp3",
@@ -11439,7 +13343,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/tha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "ttha.mp3",
@@ -11451,7 +13357,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/ttha.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "va.mp3",
@@ -11463,7 +13371,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/va.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "v_r_rajshree.mp3",
@@ -11475,7 +13385,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/v_r_rajshree.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "ya.mp3",
@@ -11487,7 +13399,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/audio/varnamala/vyanjan/ya.mp3",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Linguistic Education",
+        "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module."
     },
     {
         "name": "khali_icon.png",
@@ -11499,7 +13413,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/assets/images/icons/khali_icon.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Interface Asset",
+        "purpose": "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
     },
     {
         "name": "settings.css",
@@ -11511,7 +13427,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/settings/settings.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "settings.html",
@@ -11523,7 +13441,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/settings/settings.html",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "settings.js",
@@ -11535,7 +13455,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/public/settings/settings.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "main.css",
@@ -11547,7 +13469,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/css/main.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "animations.css",
@@ -11559,7 +13483,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/css/base/animations.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "base.css",
@@ -11571,7 +13497,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/css/base/base.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "counting.css",
@@ -11583,7 +13511,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/css/features/counting.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "navigation.css",
@@ -11595,7 +13525,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/css/features/navigation.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "cards.css",
@@ -11607,7 +13539,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/css/layout/cards.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "navbar.css",
@@ -11619,7 +13553,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/css/layout/navbar.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "overlay.css",
@@ -11631,7 +13567,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/css/layout/overlay.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "kids.css",
@@ -11643,7 +13581,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/css/themes/kids.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "interactive.css",
@@ -11655,7 +13595,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/css/ui/interactive.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "settings-modal.css",
@@ -11667,7 +13609,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/css/ui/settings-modal.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "init.js",
@@ -11679,7 +13623,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/core/init.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "main.js",
@@ -11691,7 +13637,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/core/main.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "comparisons.js",
@@ -11703,7 +13651,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/ganit/comparisons.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "numbers_10.js",
@@ -11715,7 +13665,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/ganit/numbers_10.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "numbers_100.js",
@@ -11727,7 +13679,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/ganit/numbers_100.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "shapes.js",
@@ -11739,7 +13693,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/ganit/shapes.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "tables_10_m1.js",
@@ -11751,7 +13707,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/ganit/tables_10_m1.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "tables_10_m2.js",
@@ -11763,7 +13721,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/ganit/tables_10_m2.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "tables_m1.js",
@@ -11775,7 +13735,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/ganit/tables_m1.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "tables_m2.js",
@@ -11787,7 +13749,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/ganit/tables_m2.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "actions.js",
@@ -11799,7 +13763,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/actions.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "activities.js",
@@ -11811,7 +13777,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/activities.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "animals_domestic.js",
@@ -11823,7 +13791,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/animals_domestic.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "animals_smaller.js",
@@ -11835,7 +13805,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/animals_smaller.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "animals_wild.js",
@@ -11847,7 +13819,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/animals_wild.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "birds.js",
@@ -11859,7 +13833,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/birds.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "body_parts.js",
@@ -11871,7 +13847,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/body_parts.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "clothes.js",
@@ -11883,7 +13861,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/clothes.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "emotions.js",
@@ -11895,7 +13875,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/emotions.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "family.js",
@@ -11907,7 +13889,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/family.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "festivals.js",
@@ -11919,7 +13903,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/festivals.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "food.js",
@@ -11931,7 +13917,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/food.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "fruits.js",
@@ -11943,7 +13931,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/fruits.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "games.js",
@@ -11955,7 +13945,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/games.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "habits.js",
@@ -11967,7 +13959,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/habits.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "helpers.js",
@@ -11979,7 +13973,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/helpers.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "imagination.js",
@@ -11991,7 +13987,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/imagination.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "insects.js",
@@ -12003,7 +14001,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/insects.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "instruments.js",
@@ -12015,7 +14015,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/instruments.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "magic.js",
@@ -12027,7 +14029,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/magic.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "objects.js",
@@ -12039,7 +14043,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/objects.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "places.js",
@@ -12051,7 +14057,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/places.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "sounds.js",
@@ -12063,7 +14071,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/sounds.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "space.js",
@@ -12075,7 +14085,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/space.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "toys.js",
@@ -12087,7 +14099,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/toys.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "vegetables.js",
@@ -12099,7 +14113,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/vegetables.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "vehicles.js",
@@ -12111,7 +14127,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/mera_sansar/vehicles.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "colors_blue_green.js",
@@ -12123,7 +14141,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/rangon_ka_sansar/colors_blue_green.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "colors_brown_beige.js",
@@ -12135,7 +14155,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/rangon_ka_sansar/colors_brown_beige.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "colors_metallic.js",
@@ -12147,7 +14169,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/rangon_ka_sansar/colors_metallic.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "colors_natural.js",
@@ -12159,7 +14183,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/rangon_ka_sansar/colors_natural.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "colors_pink_red.js",
@@ -12171,7 +14197,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/rangon_ka_sansar/colors_pink_red.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "colors_primary.js",
@@ -12183,7 +14211,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/rangon_ka_sansar/colors_primary.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "colors_secondary.js",
@@ -12195,7 +14225,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/rangon_ka_sansar/colors_secondary.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "colors_special.js",
@@ -12207,7 +14239,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/rangon_ka_sansar/colors_special.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "colors_world_main.js",
@@ -12219,7 +14253,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/rangon_ka_sansar/colors_world_main.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "days_week.js",
@@ -12231,7 +14267,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/samay_prakriti/days_week.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "directions.js",
@@ -12243,7 +14281,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/samay_prakriti/directions.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "months_year.js",
@@ -12255,7 +14295,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/samay_prakriti/months_year.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nature.js",
@@ -12267,7 +14309,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/samay_prakriti/nature.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "matra.js",
@@ -12279,7 +14323,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/varnamala/matra.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "samyukt.js",
@@ -12291,7 +14337,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/varnamala/samyukt.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "swar.js",
@@ -12303,7 +14351,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/varnamala/swar.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "vyanjan.js",
@@ -12315,7 +14365,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/data/varnamala/vyanjan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "router.js",
@@ -12327,7 +14379,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/navigation/router.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "controller.js",
@@ -12339,7 +14393,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/slideshow/controller.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "animations.js",
@@ -12351,7 +14407,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/ui/animations.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "display.js",
@@ -12363,7 +14421,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/ui/display.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "settings-modal.js",
@@ -12375,7 +14435,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/ui/settings-modal.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "child-safety.js",
@@ -12387,7 +14449,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/utils/child-safety.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "helpers.js",
@@ -12399,7 +14463,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../frontend/src/js/utils/helpers.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "00.00_MEMORY_MAP.js",
@@ -12411,7 +14477,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/00 System & Guardrails/00.00_MEMORY_MAP.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "00.01_STRICT_BOUNDARIES.md",
@@ -12423,7 +14491,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/00 System & Guardrails/00.01_STRICT_BOUNDARIES.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "00.02_MEMORY_ARCHITECTURE.md",
@@ -12435,7 +14505,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/00 System & Guardrails/00.02_MEMORY_ARCHITECTURE.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "00.03_OLD_MEMORY_ARCHITECTURE.md",
@@ -12447,7 +14519,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/00 System & Guardrails/00.03_OLD_MEMORY_ARCHITECTURE.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "00.04_EXCEL_CSV_GUARDRAIL.md",
@@ -12459,7 +14533,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/00 System & Guardrails/00.04_EXCEL_CSV_GUARDRAIL.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "local_run_guardrails.md",
@@ -12471,7 +14547,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/00 System & Guardrails/local_run_guardrails.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.00_PROJECT_INDEX.md",
@@ -12483,7 +14561,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.00_PROJECT_INDEX.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.01_PROJECT_HTML.md",
@@ -12495,7 +14575,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.01_PROJECT_HTML.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.02_PROJECT_CSS.md",
@@ -12507,7 +14589,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.02_PROJECT_CSS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.03_PROJECT_JS.md",
@@ -12519,7 +14603,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.03_PROJECT_JS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.04_PROJECT_ASSETS.md",
@@ -12531,7 +14617,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.04_PROJECT_ASSETS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.05_PROJECT_MEMORY.md",
@@ -12543,7 +14631,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.05_PROJECT_MEMORY.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.06_PROJECT_CHANGELOG.md",
@@ -12555,7 +14645,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.06_PROJECT_CHANGELOG.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.07_AUDIO_PLAYBACK_STANDARDS.md",
@@ -12567,7 +14659,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.07_AUDIO_PLAYBACK_STANDARDS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.08_PROJECT_ICONS.md",
@@ -12579,7 +14673,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.08_PROJECT_ICONS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.09_PROJECT_AUDIO_MAPPING.md",
@@ -12591,7 +14687,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.09_PROJECT_AUDIO_MAPPING.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.10_MENU_NAVBAR_STRUCTURE.md",
@@ -12603,7 +14701,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.10_MENU_NAVBAR_STRUCTURE.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.11_PROJECT_SETTINGS.md",
@@ -12615,7 +14715,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.11_PROJECT_SETTINGS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.12_CHILD_SAFETY_FEATURES.md",
@@ -12627,7 +14729,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.12_CHILD_SAFETY_FEATURES.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.13_DEVELOPMENT_WORKFLOW.md",
@@ -12639,7 +14743,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.13_DEVELOPMENT_WORKFLOW.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.14_GLOBAL_REGISTRY.md",
@@ -12651,7 +14757,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.14_GLOBAL_REGISTRY.md",
         "risk": 20,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.15_PROJECT_GLOSSARY.md",
@@ -12663,7 +14771,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.15_PROJECT_GLOSSARY.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.16_UI_UX_PRINCIPLES.md",
@@ -12675,7 +14785,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.16_UI_UX_PRINCIPLES.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.17_DATA_SCHEMAS.md",
@@ -12687,7 +14799,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.17_DATA_SCHEMAS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.18_RESOURCE_VAULT.md",
@@ -12699,7 +14813,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.18_RESOURCE_VAULT.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.19_UI_STYLE_GUIDE.md",
@@ -12711,7 +14827,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.19_UI_STYLE_GUIDE.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.20_NAMING_STANDARDS.md",
@@ -12723,7 +14841,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.20_NAMING_STANDARDS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.21_EXPANSION_STRATEGY.md",
@@ -12735,7 +14855,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.21_EXPANSION_STRATEGY.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.22_CONTRIBUTOR_GUIDE.md",
@@ -12747,7 +14869,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.22_CONTRIBUTOR_GUIDE.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.23_SECURITY_ARCHITECTURE.md",
@@ -12759,7 +14883,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.23_SECURITY_ARCHITECTURE.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "01.24_KHEL_KOOD_GAMES.md",
@@ -12771,7 +14897,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/01 Current State/01.24_KHEL_KOOD_GAMES.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "DATABASE_CHANGELOG.md",
@@ -12783,7 +14911,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/02 Research & Knowledge/02.01_Database_Schemas/DATABASE_CHANGELOG.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Data Architecture",
+        "purpose": "Maintains project state and provides structured schemas for application scaling."
     },
     {
         "name": "DATABASE_MEMORY.md",
@@ -12795,7 +14925,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/02 Research & Knowledge/02.01_Database_Schemas/DATABASE_MEMORY.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Data Architecture",
+        "purpose": "Maintains project state and provides structured schemas for application scaling."
     },
     {
         "name": "BANK_FEES_SUMMARY.md",
@@ -12807,7 +14939,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/BANK_FEES_SUMMARY.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "child_voices_methodology.md",
@@ -12819,7 +14953,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/child_voices_methodology.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "FREE_OFFLINE_COMPARISON.md",
@@ -12831,7 +14967,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/FREE_OFFLINE_COMPARISON.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "FREE_OFFLINE_OPTIONS.md",
@@ -12843,7 +14981,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/FREE_OFFLINE_OPTIONS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "SESSION_DETAILS.md",
@@ -12855,7 +14995,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/SESSION_DETAILS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "TTS_PAYMENT_STRATEGY.md",
@@ -12867,7 +15009,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/TTS_PAYMENT_STRATEGY.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "AGE_THEMES.md",
@@ -12879,7 +15023,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/02 Research & Knowledge/02.03_Roadmap/AGE_THEMES.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "DATABASE_STRUCTURE_250_COLS.md",
@@ -12891,7 +15037,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/02 Research & Knowledge/02.04_Expansion/DATABASE_STRUCTURE_250_COLS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Data Architecture",
+        "purpose": "Maintains project state and provides structured schemas for application scaling."
     },
     {
         "name": "SAFETY_AND_ENGAGEMENT_SUGGESTIONS.md",
@@ -12903,7 +15051,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/02 Research & Knowledge/02.05_Safety_and_Engagement_Ideas/SAFETY_AND_ENGAGEMENT_SUGGESTIONS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "03.01_Current_Architecture_Map.md",
@@ -12915,7 +15065,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/03 Architecture & Planning/03.01_Current_Architecture_Map.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "03.02_PROJECT_ROADMAP.md",
@@ -12927,7 +15079,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/03 Architecture & Planning/03.02_PROJECT_ROADMAP.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "03.03_Ultra_Refined_Modular_Architecture.md",
@@ -12939,7 +15093,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/03 Architecture & Planning/03.03_Ultra_Refined_Modular_Architecture.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "03.04_Domain_Driven_Architecture.md",
@@ -12951,7 +15107,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/03 Architecture & Planning/03.04_Domain_Driven_Architecture.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "03.05_Johnny_Decimal_Memory_Architecture.md",
@@ -12963,7 +15121,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/03 Architecture & Planning/03.05_Johnny_Decimal_Memory_Architecture.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "03.06_Peak_Domain_Driven_Memory.md",
@@ -12975,7 +15135,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/03 Architecture & Planning/03.06_Peak_Domain_Driven_Memory.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "04.01_DEMO_ASSETS.md",
@@ -12987,7 +15149,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/04 Sandbox & Demos/04.01_DEMO_ASSETS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "04.01_SANDBOX_MEMORY.md",
@@ -12999,7 +15163,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/04 Sandbox & Demos/04.01_SANDBOX_MEMORY.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "04.02_README.md",
@@ -13011,7 +15177,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/04 Sandbox & Demos/04.02_README.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "05.01_GITHUB_CHANGELOG.md",
@@ -13023,7 +15191,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/05 Infrastructure & Workflows/05.01_GITHUB_CHANGELOG.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "05.02_GITHUB_MEMORY.md",
@@ -13035,7 +15205,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/05 Infrastructure & Workflows/05.02_GITHUB_MEMORY.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "audit_styles.css",
@@ -13047,7 +15219,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v1.0/audit_styles.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "internal_audit.html",
@@ -13059,7 +15233,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v1.0/internal_audit.html",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "index.html",
@@ -13071,7 +15247,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/index.html",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "assets.css",
@@ -13083,7 +15261,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/assets/assets.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "assets.html",
@@ -13095,7 +15275,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/assets/assets.html",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "assets.js",
@@ -13107,7 +15289,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/assets/assets.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "06.00_AUDIT_INDEX.md",
@@ -13119,7 +15303,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.00_AUDIT_INDEX.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.01_AUDIT_HTML_LAYOUT.md",
@@ -13131,7 +15317,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.01_AUDIT_HTML_LAYOUT.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.02_AUDIT_CSS_DYNAMICS.md",
@@ -13143,7 +15331,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.02_AUDIT_CSS_DYNAMICS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.03_AUDIT_JS_LOGIC_FLOW.md",
@@ -13155,7 +15345,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.03_AUDIT_JS_LOGIC_FLOW.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.04_AUDIT_WORKFLOW.md",
@@ -13167,7 +15359,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.04_AUDIT_WORKFLOW.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.05_AUDIT_SIDEBAR_FLIP.md",
@@ -13179,7 +15373,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.05_AUDIT_SIDEBAR_FLIP.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.06_AUDIT_ALERTS_MODAL.md",
@@ -13191,7 +15387,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.06_AUDIT_ALERTS_MODAL.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.07_AUDIT_VISUAL_SYSTEM.md",
@@ -13203,7 +15401,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.07_AUDIT_VISUAL_SYSTEM.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.08_AUDIT_FIDELITY_ANOMALIES.md",
@@ -13215,7 +15415,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.08_AUDIT_FIDELITY_ANOMALIES.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.09_LINE_BY_LINE_AUDIT.md",
@@ -13227,7 +15429,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.09_LINE_BY_LINE_AUDIT.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.10_AUDIT_EVOLUTION_REPORT.md",
@@ -13239,7 +15443,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.10_AUDIT_EVOLUTION_REPORT.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.11_AUDIT_SETTINGS_ENGINE.md",
@@ -13251,7 +15457,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.11_AUDIT_SETTINGS_ENGINE.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.12_AUDIT_MEMORY.md",
@@ -13263,7 +15471,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.12_AUDIT_MEMORY.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.13_AUDIT_DASHBOARD_DOMAINS.md",
@@ -13275,7 +15485,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.13_AUDIT_DASHBOARD_DOMAINS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.14_AUDIT_HOLOGRAPHIC_MAP.md",
@@ -13287,7 +15499,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.14_AUDIT_HOLOGRAPHIC_MAP.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.15_AUDIT_ORBITAL_SETTINGS.md",
@@ -13299,7 +15513,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.15_AUDIT_ORBITAL_SETTINGS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.16_AUDIT_SHARED_CORE.md",
@@ -13311,7 +15527,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.16_AUDIT_SHARED_CORE.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.17_AUDIT_LOCKDOWN_PROTOCOL.md",
@@ -13323,7 +15541,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.17_AUDIT_LOCKDOWN_PROTOCOL.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.18_AUDIT_GEOSPATIAL_DATA.md",
@@ -13335,7 +15555,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.18_AUDIT_GEOSPATIAL_DATA.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.19_AUDIT_SCENE_SHADERS.md",
@@ -13347,7 +15569,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.19_AUDIT_SCENE_SHADERS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.20_AUDIT_DATA_EXPORT_PROTOCOLS.md",
@@ -13359,7 +15583,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.20_AUDIT_DATA_EXPORT_PROTOCOLS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.21_AUDIT_INTERACTIVE_CONTROLLERS.md",
@@ -13371,7 +15597,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.21_AUDIT_INTERACTIVE_CONTROLLERS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.22_AUDIT_SEARCH_ENGINE_LOGIC.md",
@@ -13383,7 +15611,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.22_AUDIT_SEARCH_ENGINE_LOGIC.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.23_AUDIT_NAVIGATION_PROTOCOLS.md",
@@ -13395,7 +15625,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.23_AUDIT_NAVIGATION_PROTOCOLS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.24_AUDIT_POINTER_TEXTURE_GEN.md",
@@ -13407,7 +15639,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.24_AUDIT_POINTER_TEXTURE_GEN.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.25_AUDIT_HOLOGRAPHIC_WIDGET_SYSTEM.md",
@@ -13419,7 +15653,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.25_AUDIT_HOLOGRAPHIC_WIDGET_SYSTEM.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.26_AUDIT_ROUTE_INTELLIGENCE_MATH.md",
@@ -13431,7 +15667,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.26_AUDIT_ROUTE_INTELLIGENCE_MATH.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.27_AUDIT_VISUAL_STYLIZERS_PIPELINES.md",
@@ -13443,7 +15681,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.27_AUDIT_VISUAL_STYLIZERS_PIPELINES.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.28_AUDIT_MEDIA_INTERFACE_EXTENSIONS.md",
@@ -13455,7 +15695,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.28_AUDIT_MEDIA_INTERFACE_EXTENSIONS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.29_AUDIT_DASHBOARD_VISUAL_ENGINE.md",
@@ -13467,7 +15709,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.29_AUDIT_DASHBOARD_VISUAL_ENGINE.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.30_AUDIT_DASHBOARD_SENTINEL_TOOLTIPS.md",
@@ -13479,7 +15723,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.30_AUDIT_DASHBOARD_SENTINEL_TOOLTIPS.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.31_AUDIT_DASHBOARD_CONSOLE_ORCHESTRATION.md",
@@ -13491,7 +15737,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.31_AUDIT_DASHBOARD_CONSOLE_ORCHESTRATION.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.32_AUDIT_MAP_TRAVEL_STATE_LOGIC.md",
@@ -13503,7 +15751,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.32_AUDIT_MAP_TRAVEL_STATE_LOGIC.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.33_AUDIT_MAP_UI_FRAMEWORK.md",
@@ -13515,7 +15765,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.33_AUDIT_MAP_UI_FRAMEWORK.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "06.34_AUDIT_GLOBAL_NAV_ENGINE.md",
@@ -13527,7 +15779,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.34_AUDIT_GLOBAL_NAV_ENGINE.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "dashboard.css",
@@ -13539,7 +15793,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/dashboard/dashboard.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "dashboard.html",
@@ -13551,7 +15807,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/dashboard/dashboard.html",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "dashboard.js",
@@ -13563,7 +15821,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/dashboard/dashboard.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map.css",
@@ -13575,7 +15835,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/map.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map.html",
@@ -13587,7 +15849,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/map.html",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "map_main.js",
@@ -13599,7 +15863,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/map_main.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "afghanistan.js",
@@ -13611,7 +15877,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/afghanistan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "albania.js",
@@ -13623,7 +15891,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/albania.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "algeria.js",
@@ -13635,7 +15905,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/algeria.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "andorra.js",
@@ -13647,7 +15919,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/andorra.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "angola.js",
@@ -13659,7 +15933,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/angola.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "antigua_and_barbuda.js",
@@ -13671,7 +15947,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/antigua_and_barbuda.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "argentina.js",
@@ -13683,7 +15961,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/argentina.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "armenia.js",
@@ -13695,7 +15975,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/armenia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "australia.js",
@@ -13707,7 +15989,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/australia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "austria.js",
@@ -13719,7 +16003,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/austria.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "azerbaijan.js",
@@ -13731,7 +16017,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/azerbaijan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "bahamas.js",
@@ -13743,7 +16031,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/bahamas.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "bahrain.js",
@@ -13755,7 +16045,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/bahrain.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "bangladesh.js",
@@ -13767,7 +16059,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/bangladesh.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "barbados.js",
@@ -13779,7 +16073,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/barbados.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "belarus.js",
@@ -13791,7 +16087,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/belarus.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "belgium.js",
@@ -13803,7 +16101,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/belgium.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "belize.js",
@@ -13815,7 +16115,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/belize.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "benin.js",
@@ -13827,7 +16129,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/benin.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "bhutan.js",
@@ -13839,7 +16143,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/bhutan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "bolivia.js",
@@ -13851,7 +16157,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/bolivia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "bosnia_and_herzegovina.js",
@@ -13863,7 +16171,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/bosnia_and_herzegovina.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "botswana.js",
@@ -13875,7 +16185,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/botswana.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "brazil.js",
@@ -13887,7 +16199,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/brazil.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "brunei.js",
@@ -13899,7 +16213,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/brunei.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "bulgaria.js",
@@ -13911,7 +16227,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/bulgaria.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "burkina_faso.js",
@@ -13923,7 +16241,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/burkina_faso.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "burundi.js",
@@ -13935,7 +16255,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/burundi.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "cambodia.js",
@@ -13947,7 +16269,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/cambodia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "cameroon.js",
@@ -13959,7 +16283,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/cameroon.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "canada.js",
@@ -13971,7 +16297,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/canada.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "cape_verde.js",
@@ -13983,7 +16311,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/cape_verde.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "central_african_republic.js",
@@ -13995,7 +16325,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/central_african_republic.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "chad.js",
@@ -14007,7 +16339,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/chad.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "chile.js",
@@ -14019,7 +16353,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/chile.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "china.js",
@@ -14031,7 +16367,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/china.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "colombia.js",
@@ -14043,7 +16381,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/colombia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "comoros.js",
@@ -14055,7 +16395,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/comoros.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "costa_rica.js",
@@ -14067,7 +16409,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/costa_rica.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "cote_divoire.js",
@@ -14079,7 +16423,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/cote_divoire.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "croatia.js",
@@ -14091,7 +16437,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/croatia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "cuba.js",
@@ -14103,7 +16451,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/cuba.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "cyprus.js",
@@ -14115,7 +16465,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/cyprus.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "czech_republic.js",
@@ -14127,7 +16479,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/czech_republic.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "denmark.js",
@@ -14139,7 +16493,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/denmark.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "djibouti.js",
@@ -14151,7 +16507,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/djibouti.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "dominica.js",
@@ -14163,7 +16521,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/dominica.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "dominican_republic.js",
@@ -14175,7 +16535,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/dominican_republic.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "drc.js",
@@ -14187,7 +16549,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/drc.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "east_timor.js",
@@ -14199,7 +16563,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/east_timor.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "ecuador.js",
@@ -14211,7 +16577,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/ecuador.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "egypt.js",
@@ -14223,7 +16591,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/egypt.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "el_salvador.js",
@@ -14235,7 +16605,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/el_salvador.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "equatorial_guinea.js",
@@ -14247,7 +16619,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/equatorial_guinea.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "eritrea.js",
@@ -14259,7 +16633,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/eritrea.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "estonia.js",
@@ -14271,7 +16647,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/estonia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "eswatini.js",
@@ -14283,7 +16661,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/eswatini.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "ethiopia.js",
@@ -14295,7 +16675,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/ethiopia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "fiji.js",
@@ -14307,7 +16689,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/fiji.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "finland.js",
@@ -14319,7 +16703,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/finland.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "france.js",
@@ -14331,7 +16717,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/france.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "gabon.js",
@@ -14343,7 +16731,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/gabon.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "gambia.js",
@@ -14355,7 +16745,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/gambia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "georgia.js",
@@ -14367,7 +16759,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/georgia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "germany.js",
@@ -14379,7 +16773,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/germany.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "ghana.js",
@@ -14391,7 +16787,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/ghana.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "greece.js",
@@ -14403,7 +16801,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/greece.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "grenada.js",
@@ -14415,7 +16815,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/grenada.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "guatemala.js",
@@ -14427,7 +16829,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/guatemala.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "guinea.js",
@@ -14439,7 +16843,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/guinea.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "guinea_bissau.js",
@@ -14451,7 +16857,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/guinea_bissau.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "guyana.js",
@@ -14463,7 +16871,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/guyana.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "haiti.js",
@@ -14475,7 +16885,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/haiti.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "honduras.js",
@@ -14487,7 +16899,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/honduras.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "hungary.js",
@@ -14499,7 +16913,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/hungary.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "iceland.js",
@@ -14511,7 +16927,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/iceland.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "india.js",
@@ -14523,7 +16941,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/india.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "indonesia.js",
@@ -14535,7 +16955,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/indonesia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "iran.js",
@@ -14547,7 +16969,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/iran.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "iraq.js",
@@ -14559,7 +16983,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/iraq.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "ireland.js",
@@ -14571,7 +16997,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/ireland.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "israel.js",
@@ -14583,7 +17011,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/israel.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "italy.js",
@@ -14595,7 +17025,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/italy.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "jamaica.js",
@@ -14607,7 +17039,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/jamaica.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "japan.js",
@@ -14619,7 +17053,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/japan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "jordan.js",
@@ -14631,7 +17067,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/jordan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "kazakhstan.js",
@@ -14643,7 +17081,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/kazakhstan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "kenya.js",
@@ -14655,7 +17095,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/kenya.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "kiribati.js",
@@ -14667,7 +17109,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/kiribati.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "kosovo.js",
@@ -14679,7 +17123,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/kosovo.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "kuwait.js",
@@ -14691,7 +17137,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/kuwait.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "kyrgyzstan.js",
@@ -14703,7 +17151,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/kyrgyzstan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "laos.js",
@@ -14715,7 +17165,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/laos.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "latvia.js",
@@ -14727,7 +17179,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/latvia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "lebanon.js",
@@ -14739,7 +17193,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/lebanon.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "lesotho.js",
@@ -14751,7 +17207,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/lesotho.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "liberia.js",
@@ -14763,7 +17221,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/liberia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "libya.js",
@@ -14775,7 +17235,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/libya.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "liechtenstein.js",
@@ -14787,7 +17249,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/liechtenstein.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "lithuania.js",
@@ -14799,7 +17263,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/lithuania.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "luxembourg.js",
@@ -14811,7 +17277,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/luxembourg.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "madagascar.js",
@@ -14823,7 +17291,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/madagascar.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "malawi.js",
@@ -14835,7 +17305,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/malawi.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "malaysia.js",
@@ -14847,7 +17319,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/malaysia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "maldives.js",
@@ -14859,7 +17333,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/maldives.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "mali.js",
@@ -14871,7 +17347,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/mali.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "malta.js",
@@ -14883,7 +17361,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/malta.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "marshall_islands.js",
@@ -14895,7 +17375,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/marshall_islands.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "mauritania.js",
@@ -14907,7 +17389,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/mauritania.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "mauritius.js",
@@ -14919,7 +17403,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/mauritius.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "mexico.js",
@@ -14931,7 +17417,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/mexico.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "micronesia.js",
@@ -14943,7 +17431,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/micronesia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "moldova.js",
@@ -14955,7 +17445,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/moldova.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "monaco.js",
@@ -14967,7 +17459,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/monaco.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "mongolia.js",
@@ -14979,7 +17473,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/mongolia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "montenegro.js",
@@ -14991,7 +17487,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/montenegro.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "morocco.js",
@@ -15003,7 +17501,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/morocco.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "mozambique.js",
@@ -15015,7 +17515,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/mozambique.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "myanmar.js",
@@ -15027,7 +17529,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/myanmar.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "namibia.js",
@@ -15039,7 +17543,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/namibia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nauru.js",
@@ -15051,7 +17557,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/nauru.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nepal.js",
@@ -15063,7 +17571,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/nepal.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "netherlands.js",
@@ -15075,7 +17585,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/netherlands.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "new_zealand.js",
@@ -15087,7 +17599,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/new_zealand.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nicaragua.js",
@@ -15099,7 +17613,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/nicaragua.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "niger.js",
@@ -15111,7 +17627,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/niger.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nigeria.js",
@@ -15123,7 +17641,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/nigeria.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "north_korea.js",
@@ -15135,7 +17655,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/north_korea.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "north_macedonia.js",
@@ -15147,7 +17669,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/north_macedonia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "norway.js",
@@ -15159,7 +17683,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/norway.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "oman.js",
@@ -15171,7 +17697,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/oman.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "pakistan.js",
@@ -15183,7 +17711,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/pakistan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "palau.js",
@@ -15195,7 +17725,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/palau.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "palestine.js",
@@ -15207,7 +17739,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/palestine.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "panama.js",
@@ -15219,7 +17753,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/panama.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "papua_new_guinea.js",
@@ -15231,7 +17767,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/papua_new_guinea.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "paraguay.js",
@@ -15243,7 +17781,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/paraguay.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "peru.js",
@@ -15255,7 +17795,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/peru.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "philippines.js",
@@ -15267,7 +17809,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/philippines.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "poland.js",
@@ -15279,7 +17823,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/poland.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "portugal.js",
@@ -15291,7 +17837,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/portugal.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "qatar.js",
@@ -15303,7 +17851,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/qatar.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "republic_of_congo.js",
@@ -15315,7 +17865,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/republic_of_congo.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "romania.js",
@@ -15327,7 +17879,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/romania.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "russia.js",
@@ -15339,7 +17893,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/russia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "rwanda.js",
@@ -15351,7 +17907,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/rwanda.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "samoa.js",
@@ -15363,7 +17921,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/samoa.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "san_marino.js",
@@ -15375,7 +17935,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/san_marino.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "sao_tome_and_principe.js",
@@ -15387,7 +17949,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/sao_tome_and_principe.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "saudi_arabia.js",
@@ -15399,7 +17963,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/saudi_arabia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "senegal.js",
@@ -15411,7 +17977,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/senegal.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "serbia.js",
@@ -15423,7 +17991,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/serbia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "seychelles.js",
@@ -15435,7 +18005,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/seychelles.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "sierra_leone.js",
@@ -15447,7 +18019,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/sierra_leone.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "singapore.js",
@@ -15459,7 +18033,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/singapore.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "slovakia.js",
@@ -15471,7 +18047,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/slovakia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "slovenia.js",
@@ -15483,7 +18061,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/slovenia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "solomon_islands.js",
@@ -15495,7 +18075,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/solomon_islands.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "somalia.js",
@@ -15507,7 +18089,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/somalia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "south_africa.js",
@@ -15519,7 +18103,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/south_africa.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "south_korea.js",
@@ -15531,7 +18117,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/south_korea.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "south_sudan.js",
@@ -15543,7 +18131,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/south_sudan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "spain.js",
@@ -15555,7 +18145,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/spain.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "sri_lanka.js",
@@ -15567,7 +18159,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/sri_lanka.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "st_kitts_and_nevis.js",
@@ -15579,7 +18173,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/st_kitts_and_nevis.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "st_lucia.js",
@@ -15591,7 +18187,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/st_lucia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "st_vincent.js",
@@ -15603,7 +18201,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/st_vincent.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "sudan.js",
@@ -15615,7 +18215,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/sudan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "suriname.js",
@@ -15627,7 +18229,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/suriname.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "sweden.js",
@@ -15639,7 +18243,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/sweden.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "switzerland.js",
@@ -15651,7 +18257,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/switzerland.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "syria.js",
@@ -15663,7 +18271,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/syria.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "taiwan.js",
@@ -15675,7 +18285,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/taiwan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "tajikistan.js",
@@ -15687,7 +18299,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/tajikistan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "tanzania.js",
@@ -15699,7 +18313,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/tanzania.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "thailand.js",
@@ -15711,7 +18327,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/thailand.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "togo.js",
@@ -15723,7 +18341,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/togo.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "tonga.js",
@@ -15735,7 +18355,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/tonga.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "trinidad_and_tobago.js",
@@ -15747,7 +18369,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/trinidad_and_tobago.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "tunisia.js",
@@ -15759,7 +18383,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/tunisia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "turkey.js",
@@ -15771,7 +18397,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/turkey.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "turkmenistan.js",
@@ -15783,7 +18411,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/turkmenistan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "tuvalu.js",
@@ -15795,7 +18425,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/tuvalu.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "uae.js",
@@ -15807,7 +18439,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/uae.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "uganda.js",
@@ -15819,7 +18453,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/uganda.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "uk.js",
@@ -15831,7 +18467,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/uk.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "ukraine.js",
@@ -15843,7 +18481,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/ukraine.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "uruguay.js",
@@ -15855,7 +18495,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/uruguay.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "usa.js",
@@ -15867,7 +18509,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/usa.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "uzbekistan.js",
@@ -15879,7 +18523,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/uzbekistan.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "vanuatu.js",
@@ -15891,7 +18537,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/vanuatu.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "vatican_city.js",
@@ -15903,7 +18551,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/vatican_city.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "venezuela.js",
@@ -15915,7 +18565,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/venezuela.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "vietnam.js",
@@ -15927,7 +18579,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/vietnam.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "yemen.js",
@@ -15939,7 +18593,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/yemen.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "zambia.js",
@@ -15951,7 +18607,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/zambia.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "zimbabwe.js",
@@ -15963,7 +18621,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/zimbabwe.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "future.css",
@@ -15975,7 +18635,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/future.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_base.css",
@@ -15987,7 +18649,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/map_base.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_effects.css",
@@ -15999,7 +18663,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/map_effects.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_layout.css",
@@ -16011,7 +18677,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/map_layout.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_modals.css",
@@ -16023,7 +18691,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/map_modals.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_responsive.css",
@@ -16035,7 +18705,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/map_responsive.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_utils.css",
@@ -16047,7 +18719,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/map_utils.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_widgets.css",
@@ -16059,7 +18733,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/map_widgets.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_back.css",
@@ -16071,7 +18747,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_back.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_control_menus.css",
@@ -16083,7 +18761,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_control_menus.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_front.css",
@@ -16095,7 +18775,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_front.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_layout_core.css",
@@ -16107,7 +18789,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_layout_core.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_master.css",
@@ -16119,7 +18803,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_master.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_neural_audio.css",
@@ -16131,7 +18817,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_neural_audio.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_orbital_core.css",
@@ -16143,7 +18831,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_orbital_core.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_search_interface.css",
@@ -16155,7 +18845,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_search_interface.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_security.css",
@@ -16167,7 +18859,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_security.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_status_widgets.css",
@@ -16179,7 +18873,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_status_widgets.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_sys_ops.css",
@@ -16191,7 +18887,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_sys_ops.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_theme_effects.css",
@@ -16203,7 +18901,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_theme_effects.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_user_gateway.css",
@@ -16215,7 +18915,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_user_gateway.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_visual_proto.css",
@@ -16227,7 +18929,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_visual_proto.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_controls.js",
@@ -16239,7 +18943,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_controls.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_core.js",
@@ -16251,7 +18957,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_core.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_data.js",
@@ -16263,7 +18971,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_data.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_distance.js",
@@ -16275,7 +18985,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_distance.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_elements.js",
@@ -16287,7 +18999,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_elements.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_locations.js",
@@ -16299,7 +19013,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_locations.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_modals.js",
@@ -16311,7 +19027,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_modals.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_modes.js",
@@ -16323,7 +19041,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_modes.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_nav_core.js",
@@ -16335,7 +19055,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_nav_core.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_ops.js",
@@ -16347,7 +19069,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_ops.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_orbital.js",
@@ -16359,7 +19083,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_orbital.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_point_toggle.js",
@@ -16371,7 +19097,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_point_toggle.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_record.js",
@@ -16383,7 +19111,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_record.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_search_engine.js",
@@ -16395,7 +19125,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_search_engine.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_state.js",
@@ -16407,7 +19139,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_state.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_travel_settings.js",
@@ -16419,7 +19153,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_travel_settings.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_ui.js",
@@ -16431,7 +19167,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_ui.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_ui_utilities.js",
@@ -16443,7 +19181,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_ui_utilities.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_utils.js",
@@ -16455,7 +19195,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_utils.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_visual_styles.js",
@@ -16467,7 +19209,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_visual_styles.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_visual_sync.js",
@@ -16479,7 +19223,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_visual_sync.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "map_widgets.js",
@@ -16491,7 +19237,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_widgets.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_back.js",
@@ -16503,7 +19251,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/nav_back.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_front.js",
@@ -16515,7 +19265,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/nav_front.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "nav_master.js",
@@ -16527,7 +19279,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/nav_master.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "implementation_plan.md",
@@ -16539,7 +19293,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/implementation_plan.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "assets.css",
@@ -16551,7 +19307,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/assets/assets.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "assets.html",
@@ -16563,7 +19321,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/assets/assets.html",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "assets.js",
@@ -16575,19 +19335,23 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/assets/assets.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "asset_manifest.js",
         "type": "data",
         "category": "Memory",
         "size": "522.3 KB",
-        "sizeBytes": 534839,
+        "sizeBytes": 534842,
         "date": "2026-04-06",
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/assets/asset_manifest.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "hybrid_hub_mockup.png",
@@ -16599,7 +19363,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/dashboard/hybrid_hub_mockup.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "nav_entry_mockup.png",
@@ -16611,7 +19377,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/dashboard/nav_entry_mockup.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "centered_neon_command_hub_mockup_3_1774465614944.png",
@@ -16623,7 +19391,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/centered_neon_command_hub_mockup_3_1774465614944.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "frontal_high_tech_wireframe_mockup_4_1774465632074.png",
@@ -16635,7 +19405,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/frontal_high_tech_wireframe_mockup_4_1774465632074.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "front_facing_holographic_globe_mockup_1_1774465579059.png",
@@ -16647,7 +19419,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/front_facing_holographic_globe_mockup_1_1774465579059.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "holographic_glass_slide_out_mockup.png",
@@ -16659,7 +19433,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/holographic_glass_slide_out_mockup.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "holographic_map_mockup_1774464303274.png",
@@ -16671,7 +19447,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/holographic_map_mockup_1774464303274.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "holographic_map_modern_ui_mockup_1774465279368.png",
@@ -16683,7 +19461,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/holographic_map_modern_ui_mockup_1774465279368.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "holographic_space_map_mockup_1_1774465441662.png",
@@ -16695,7 +19475,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/holographic_space_map_mockup_1_1774465441662.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "minimalist_high_tech_ui_mockup_4_1774465506087.png",
@@ -16707,7 +19489,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/minimalist_high_tech_ui_mockup_4_1774465506087.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "neon_frontier_dashboard_mockup_3_1774465485474.png",
@@ -16719,7 +19503,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/neon_frontier_dashboard_mockup_3_1774465485474.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "neural_projection_sidebar_mockup.png",
@@ -16731,7 +19517,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/neural_projection_sidebar_mockup.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "orbital_command_ring_mockup.png",
@@ -16743,7 +19531,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/orbital_command_ring_mockup.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "orbital_command_variation_1.png",
@@ -16755,7 +19545,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/orbital_command_variation_1.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "orbital_command_variation_2.png",
@@ -16767,7 +19559,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/orbital_command_variation_2.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "orbital_command_variation_3.png",
@@ -16779,7 +19573,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/orbital_command_variation_3.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "settings_orbital_variation_1.png",
@@ -16791,7 +19587,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_1.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "settings_orbital_variation_2.png",
@@ -16803,7 +19601,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_2.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "settings_orbital_variation_2_final.png",
@@ -16815,7 +19615,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_2_final.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "settings_orbital_variation_2_v2.png",
@@ -16827,7 +19629,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_2_v2.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "settings_orbital_variation_3.png",
@@ -16839,7 +19643,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_3.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "symmetrical_tactical_dashboard_mockup_2_1774465597395.png",
@@ -16851,7 +19657,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/symmetrical_tactical_dashboard_mockup_2_1774465597395.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "tactical_command_center_mockup_2_1774465465280.png",
@@ -16863,7 +19671,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/tactical_command_center_mockup_2_1774465465280.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 90
+        "perf": 90,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "audio_script_terminal.png",
@@ -16875,7 +19685,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/terminal/audio_script_terminal.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "current_state_terminal.png",
@@ -16887,7 +19699,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/terminal/current_state_terminal.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "terminal_tabs_mockup.png",
@@ -16899,7 +19713,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/terminal/terminal_tabs_mockup.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "terminal_tabs_mockup_v2.png",
@@ -16911,7 +19727,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/terminal/terminal_tabs_mockup_v2.png",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "background.css",
@@ -16923,7 +19741,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/shared/background.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "background.js",
@@ -16935,7 +19755,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/shared/background.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "navbar.css",
@@ -16947,7 +19769,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/shared/navbar.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "navbar.html",
@@ -16959,7 +19783,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/shared/navbar.html",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "navbar.js",
@@ -16971,7 +19797,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/shared/navbar.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "notifications.css",
@@ -16983,7 +19811,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/shared/notifications.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "notifications.html",
@@ -16995,7 +19825,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/shared/notifications.html",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "notifications.js",
@@ -17007,7 +19839,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/shared/notifications.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "settings.css",
@@ -17019,7 +19853,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/shared/settings.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "settings.html",
@@ -17031,7 +19867,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/shared/settings.html",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "settings.js",
@@ -17043,7 +19881,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/shared/settings.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "visual_sync.js",
@@ -17055,7 +19895,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/shared/visual_sync.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "domain.css",
@@ -17067,7 +19909,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/terminal/domain/domain.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "domain.html",
@@ -17079,7 +19923,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/terminal/domain/domain.html",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "domain.js",
@@ -17091,7 +19937,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/terminal/domain/domain.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "global.css",
@@ -17103,7 +19951,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/terminal/global/global.css",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "global.html",
@@ -17115,7 +19965,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/terminal/global/global.html",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "global.js",
@@ -17127,7 +19979,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/06 Internal Audit/v2.0/terminal/global/global.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "07.01_AI_MODELS_MEMORY.md",
@@ -17139,7 +19993,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/07 AI Training & Models/07.01_AI_MODELS_MEMORY.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "08.01_PROTOCOL_X_MEMORY.md",
@@ -17151,7 +20007,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/08 Protocol X/08.01_PROTOCOL_X_MEMORY.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "Matra_Gyan_Audio_Scripts.md",
@@ -17163,7 +20021,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/09 Audio Script/Matra_Gyan_Audio_Scripts.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "10.01_MVP_AUDIT_REPORT.md",
@@ -17175,7 +20035,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/10 MVP/10.01_MVP_AUDIT_REPORT.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "10.02_MVP_PRIORITY_1_IMPLEMENTATION.md",
@@ -17187,7 +20049,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/10 MVP/10.02_MVP_PRIORITY_1_IMPLEMENTATION.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "10.03_MVP_PRIORITY_2_IMPLEMENTATION.md",
@@ -17199,7 +20063,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/10 MVP/10.03_MVP_PRIORITY_2_IMPLEMENTATION.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "10.04_STATIC_SITE_MONETIZATION.md",
@@ -17211,7 +20077,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/10 MVP/10.04_STATIC_SITE_MONETIZATION.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "11.01_SECURITY_ETHICS_MEMORY.md",
@@ -17223,7 +20091,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../memory/11 Security & Ethics/11.01_SECURITY_ETHICS_MEMORY.md",
         "risk": 5,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Documentation",
+        "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing."
     },
     {
         "name": "analyze_alternative_audio.py",
@@ -17235,7 +20105,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/analyze_alternative_audio.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "analyze_audio_links.py",
@@ -17247,7 +20119,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/analyze_audio_links.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "delete_redundant_audio.py",
@@ -17259,7 +20133,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/delete_redundant_audio.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "find_missing_audio.py",
@@ -17271,7 +20147,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/find_missing_audio.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "find_short_audio.py",
@@ -17283,7 +20161,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/find_short_audio.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "generate_batch_audio.py",
@@ -17295,7 +20175,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/generate_batch_audio.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "generate_matra_audio.py",
@@ -17307,19 +20189,23 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/generate_matra_audio.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "scan_project.py",
         "type": "data",
         "category": "Scripts",
-        "size": "5.2 KB",
-        "sizeBytes": 5319,
+        "size": "7.3 KB",
+        "sizeBytes": 7495,
         "date": "2026-04-06",
         "path": "../../../../../scripts/scan_project.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "analyze_emojis.py",
@@ -17331,7 +20217,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/audio_pipeline/analyze_emojis.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "audit_assets.py",
@@ -17343,7 +20231,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/audio_pipeline/audit_assets.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "generate_all_missing.py",
@@ -17355,7 +20245,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/audio_pipeline/generate_all_missing.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "generate_funny_names.py",
@@ -17367,7 +20259,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/audio_pipeline/generate_funny_names.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "generate_system_assets.py",
@@ -17379,7 +20273,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/audio_pipeline/generate_system_assets.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "move_and_update_names.py",
@@ -17391,7 +20287,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/audio_pipeline/move_and_update_names.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "refined_audit.py",
@@ -17403,7 +20301,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/audio_pipeline/refined_audit.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "update_icons.py",
@@ -17415,7 +20315,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/audio_pipeline/update_icons.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "build_database.js",
@@ -17427,7 +20329,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/data_pipeline/build_database.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Data Architecture",
+        "purpose": "Maintains project state and provides structured schemas for application scaling."
     },
     {
         "name": "cat_excel.js",
@@ -17439,7 +20343,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/data_pipeline/cat_excel.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "extract_colors.js",
@@ -17451,7 +20357,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/data_pipeline/extract_colors.js",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "Style/Logic Component",
+        "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior."
     },
     {
         "name": "extract_india_states.py",
@@ -17463,7 +20371,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/data_pipeline/extract_india_states.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "generate_india_js.py",
@@ -17475,7 +20385,9 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/data_pipeline/generate_india_js.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     },
     {
         "name": "verify_counts.py",
@@ -17487,6 +20399,8 @@ window.PROJECT_ASSETS = [
         "path": "../../../../../scripts/data_pipeline/verify_counts.py",
         "risk": 15,
         "compliance": 1,
-        "perf": 100
+        "perf": 100,
+        "use": "System Resource",
+        "purpose": "Supports core project functionality."
     }
 ];

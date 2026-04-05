@@ -175,39 +175,112 @@
 
         <!-- Information Panel -->
         <aside class="details-panel" id="details-panel">
-            <div class="details-header">
+            <div class="details-header" onclick="toggleAllSections()">
                 <h2>ASSET DETAILS</h2>
-                <i data-lucide="x" class="details-close" onclick="hideDetails()"></i>
+                <i data-lucide="x" class="details-close" onclick="event.stopPropagation(); hideDetails()"></i>
             </div>
             
             <div id="details-view" class="details-content-view">
-                <div class="details-preview-large">
-                    <i data-lucide="image" id="detail-icon"></i>
-                </div>
-
-                <div class="details-info-text">
-                    <h3 id="detail-name">-</h3>
-                    <p id="detail-category">-</p>
-                </div>
-
-                <div class="details-stats-grid">
-                    <div class="stat-box">
-                        <span class="stat-label">TYPE</span>
-                        <span id="detail-type" class="stat-value accent">-</span>
+                <!-- Visual Preview Section -->
+                <div class="details-section" id="section-preview">
+                    <div class="section-header" onclick="toggleDetailSection('section-preview')">
+                        <span class="section-title">Visual Preview</span>
+                        <i data-lucide="chevron-down" class="toggle-icon"></i>
                     </div>
-                    <div class="stat-box">
-                        <span class="stat-label">SIZE</span>
-                        <span id="detail-size" class="stat-value mid">-</span>
+                    <div class="section-content">
+                        <div class="details-preview-large">
+                            <i data-lucide="image" id="detail-icon"></i>
+                        </div>
                     </div>
                 </div>
 
-                <div class="details-footer-actions">
-                    <button class="btn-mockup primary" onclick="downloadAsset()">DOWNLOAD ASSET</button>
-                    <button class="btn-mockup secondary" onclick="copyAssetPath()">COPY PATH</button>
+                <!-- Technical Specs Section (Collapsed by Default) -->
+                <div class="details-section collapsed" id="section-tech">
+                    <div class="section-header" onclick="toggleDetailSection('section-tech')">
+                        <span class="section-title">Technical Specs</span>
+                        <i data-lucide="chevron-down" class="toggle-icon"></i>
+                    </div>
+                    <div class="section-content">
+                        <div class="details-info-text">
+                            <h3 id="detail-name">-</h3>
+                            <p id="detail-category">-</p>
+                        </div>
+                        <div class="details-stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-label">TYPE</span>
+                                <span id="detail-type" class="stat-value accent">-</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">SIZE</span>
+                                <span id="detail-size" class="stat-value mid">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deployment Specs Section (Collapsed by Default) -->
+                <div class="details-section collapsed" id="section-deployment">
+                    <div class="section-header" onclick="toggleDetailSection('section-deployment')">
+                        <span class="section-title">Deployment Specs</span>
+                        <i data-lucide="chevron-down" class="toggle-icon"></i>
+                    </div>
+                    <div class="section-content">
+                        <div class="details-extended-info">
+                            <div class="stat-box-large">
+                                <span class="stat-label">REFERENCE PATH</span>
+                                <span id="detail-location" class="stat-value small">-</span>
+                            </div>
+                            <div class="stat-box-large">
+                                <span class="stat-label">DEPLOYMENT USE</span>
+                                <span id="detail-use" class="stat-value small">-</span>
+                            </div>
+                            <div class="stat-box-large">
+                                <span class="stat-label">STRATEGIC PURPOSE</span>
+                                <span id="detail-purpose" class="stat-value small">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Actions (Pinned at bottom of panel) -->
+            <div class="details-footer-actions">
+                <div class="details-section" id="section-actions">
+                    <div class="section-header" onclick="toggleDetailSection('section-actions')">
+                        <span class="section-title">Action Suite</span>
+                        <i data-lucide="chevron-down" class="toggle-icon"></i>
+                    </div>
+                    <div class="section-content">
+                        <button class="btn-mockup primary" onclick="downloadAsset()" title="Download Asset">
+                            <i data-lucide="download"></i>
+                            <span>DOWNLOAD</span>
+                        </button>
+                        <button class="btn-mockup accent" onclick="openFullPreview()" title="Open Full Preview">
+                            <i data-lucide="maximize-2"></i>
+                            <span>FULL PREVIEW</span>
+                        </button>
+                        <button class="btn-mockup secondary" onclick="copyAssetPath()" title="Copy Path to Clipboard">COPY SYSTEM PATH</button>
+                    </div>
                 </div>
             </div>
         </aside>
     </main>
+
+    <!-- Full Preview Modal -->
+    <div id="preview-modal" class="modal-overlay">
+        <div class="modal-header">
+            <div class="modal-info">
+                <i data-lucide="shield" class="modal-brand-icon"></i>
+                <span id="modal-title">ASSET_PREVIEW_SYSTEM</span>
+            </div>
+            <button class="modal-close" onclick="closeFullPreview()">
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+        <div class="modal-content" id="modal-preview-content">
+            <!-- Large Preview Injected Here -->
+        </div>
+    </div>
 
     <script src="asset_manifest.js"></script>
     <script src="assets.js"></script>

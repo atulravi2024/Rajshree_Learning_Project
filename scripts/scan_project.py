@@ -119,6 +119,39 @@ def scan_project():
             # To get to PROJECT_ROOT, we go up 5 levels: ../../../../../
             mockup_rel_path = "../../../../../" + rel_path.replace('\\', '/')
             
+            # Context Engine: Generate Real Metadata
+            use_case = "System Resource"
+            strategic_purpose = "Supports core project functionality."
+            
+            # Heuristic Analysis
+            low_path = rel_path.lower().replace('\\', '/')
+            
+            if 'audio/varnamala' in low_path:
+                use_case = "Linguistic Education"
+                category_name = "Swar" if 'swar' in low_path else "Vyanjan"
+                strategic_purpose = f"Provides high-fidelity voice-over for the '{category_name}' (Hindi Alphabet) literacy module."
+            elif 'audio/ganit' in low_path:
+                use_case = "Mathematical Literacy"
+                if 'numbers' in low_path:
+                    strategic_purpose = "Facilitates number recognition and counting skills for preschool learners."
+                else:
+                    strategic_purpose = "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio."
+            elif 'frontend/public/assets' in low_path:
+                use_case = "Interface Asset"
+                strategic_purpose = "Ensures a high-fidelity, engaging visual experience for the target 3-5 year age group."
+            elif 'backend' in low_path:
+                use_case = "Infrastructure Logic"
+                strategic_purpose = "Handles critical server-side operations, including TTS generation and data processing."
+            elif 'database' in low_path:
+                use_case = "Data Architecture"
+                strategic_purpose = "Maintains project state and provides structured schemas for application scaling."
+            elif low_path.endswith('.md'):
+                use_case = "System Documentation"
+                strategic_purpose = "Codifies project rules, workflows, and developer guidelines for internal auditing."
+            elif low_path.endswith('.js') or low_path.endswith('.css'):
+                use_case = "Style/Logic Component"
+                strategic_purpose = "Defines the Frontier/Lead Auditor design language and interactive application behavior."
+
             assets.append({
                 "name": file,
                 "type": asset_type,
@@ -129,7 +162,9 @@ def scan_project():
                 "path": mockup_rel_path,
                 "risk": risk,
                 "compliance": 1,
-                "perf": 100 if size_bytes < 100000 else (90 if size_bytes < 1000000 else 80)
+                "perf": 100 if size_bytes < 100000 else (90 if size_bytes < 1000000 else 80),
+                "use": use_case,
+                "purpose": strategic_purpose
             })
             
     return assets
