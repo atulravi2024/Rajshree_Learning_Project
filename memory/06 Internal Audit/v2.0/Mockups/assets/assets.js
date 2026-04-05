@@ -84,7 +84,7 @@ function isDescending(criteria) {
 // Mock Interaction Logic
 let currentAssetFileName = '';
 
-function showDetails(name, type, category, size, realPath) {
+function showDetails(name, type, category, size, realPath, sizeBytes) {
     // Keep the real path for downloading/copying
     currentAssetFileName = realPath || name;
     
@@ -93,7 +93,6 @@ function showDetails(name, type, category, size, realPath) {
     const typeEl = document.getElementById('detail-type');
     const categoryEl = document.getElementById('detail-category');
     const sizeEl = document.getElementById('detail-size');
-    const iconEl = document.getElementById('detail-icon');
 
     nameEl.textContent = name;
     typeEl.textContent = type;
@@ -103,16 +102,13 @@ function showDetails(name, type, category, size, realPath) {
     panel.style.display = 'block';
     updateHeaderMode(true);
 
-    let iconName = 'image';
-    if (type === 'Voice') iconName = 'mic';
-    if (type === 'Audio') iconName = 'volume-2';
-    if (type === 'Visual') iconName = 'image';
-    if (type === 'Icon') iconName = 'box';
-    if (type === 'Document') iconName = 'file-text';
-    if (type === 'Data') iconName = 'code';
-    if (type === 'Log') iconName = 'shield-alert';
-
-    iconEl.setAttribute('data-lucide', iconName);
+    const previewContainer = document.querySelector('.details-preview-large');
+    if (previewContainer) {
+        previewContainer.innerHTML = '';
+        const previewEl = getPreviewElement(realPath || name, type, name, sizeBytes);
+        previewContainer.appendChild(previewEl);
+    }
+    
     lucide.createIcons();
 
     document.querySelectorAll('.asset-card').forEach(card => card.classList.remove('active-pulse'));
@@ -128,11 +124,133 @@ function hideDetails(shouldResetUI = true) {
     const panel = document.getElementById('details-panel');
     if (panel) panel.style.display = 'none';
     
+    // Clear preview to stop audio/video
+    const previewContainer = document.querySelector('.details-preview-large');
+    if (previewContainer) previewContainer.innerHTML = '';
+
     if (shouldResetUI) {
         updateHeaderMode(false);
     }
     
     document.querySelectorAll('.asset-card').forEach(card => card.classList.remove('active-pulse'));
+}
+
+// Performance Constants
+const MAX_PREVIEW_CHARS = 100000; // ~100KB for DOM safety
+const HEAVY_FILE_THRESHOLD = 1500000; // 1.5MB for iframe/warning safety
+
+// Helper to generate preview HTML based on file type
+function getPreviewElement(path, type, name, sizeBytes = 0) {
+    const ext = name.split('.').pop().toLowerCase();
+    const container = document.createElement('div');
+    container.style.width = '100%';
+    container.style.height = '100%';
+    container.style.display = 'flex';
+    container.style.flexDirection = 'column';
+    container.style.alignItems = 'center';
+    container.style.justifyContent = 'center';
+    container.style.position = 'relative';
+
+    // 0. Proactive Heavy Asset Loading
+    if (sizeBytes > HEAVY_FILE_THRESHOLD && ['js', 'json', 'md', 'txt', 'css', 'html'].includes(ext)) {
+        return createAutomatedLoadingState(path, type, ext, name, sizeBytes);
+    }
+
+    // 1. Image Preview
+    if (['png', 'jpg', 'jpeg', 'svg', 'webp', 'gif'].includes(ext)) {
+        const img = document.createElement('img');
+        img.src = path;
+        img.alt = name;
+        img.onerror = () => {
+            img.style.display = 'none';
+            container.appendChild(getFallbackIcon(type, ext));
+        };
+        return img;
+    }
+
+    // 2. Audio Preview
+    if (['mp3', 'wav', 'ogg'].includes(ext)) {
+        const audio = document.createElement('audio');
+        audio.src = path;
+        audio.controls = true;
+        return audio;
+    }
+
+    // 3. Text/Code Preview (Hybrid)
+    if (['js', 'json', 'md', 'txt', 'css', 'html'].includes(ext)) {
+        if (window.location.protocol === 'file:') {
+            // Local fallback: use iframe
+            const iframe = document.createElement('iframe');
+            iframe.src = path;
+            iframe.className = 'code-preview-iframe';
+            return iframe;
+        } else {
+            // Server mode: use fetch for better styling
+            const codeContainer = document.createElement('div');
+            codeContainer.className = 'code-preview-container';
+            codeContainer.innerHTML = '<div class="loading-text">DECRYPTING...</div>';
+            
+            fetch(path)
+                .then(res => res.text())
+                .then(text => {
+                    codeContainer.innerHTML = '';
+                    const isTruncated = text.length > MAX_PREVIEW_CHARS;
+                    const displayContent = isTruncated ? text.substring(0, MAX_PREVIEW_CHARS) : text;
+
+                    const pre = document.createElement('pre');
+                    const code = document.createElement('code');
+                    code.textContent = displayContent;
+                    pre.appendChild(code);
+                    codeContainer.appendChild(pre);
+
+                })
+                .catch(err => {
+                    codeContainer.innerHTML = '<div class="error-text">ACCESS DENIED</div>';
+                    console.error('Fetch error:', err);
+                });
+            return codeContainer;
+        }
+    }
+
+    // Video Preview
+    if (['mp4', 'webm', 'mov'].includes(ext)) {
+        const video = document.createElement('video');
+        video.src = path;
+        video.controls = true;
+        video.autoplay = false;
+        return video;
+    }
+
+    // Fallback for document, data, log, etc.
+    return getFallbackIcon(type, ext);
+}
+
+function getFallbackIcon(type, ext) {
+    const wrapper = document.createElement('div');
+    wrapper.style.display = 'flex';
+    wrapper.style.flexDirection = 'column';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.gap = '15px';
+
+    let iconName = 'file-text';
+    if (type === 'voice') iconName = 'mic';
+    if (type === 'audio') iconName = 'volume-2';
+    if (type === 'visual') iconName = 'image';
+    if (type === 'icon') iconName = 'box';
+    if (type === 'doc') iconName = 'file-text';
+    if (type === 'data') iconName = 'database';
+    if (type === 'log') iconName = 'shield-check';
+
+    const icon = document.createElement('i');
+    icon.setAttribute('data-lucide', iconName);
+    
+    const label = document.createElement('span');
+    label.className = 'preview-extension-label';
+    label.textContent = ext.toUpperCase();
+
+    wrapper.appendChild(icon);
+    wrapper.appendChild(label);
+    return wrapper;
 }
 
 function updateHeaderMode(isCompact) {
@@ -361,7 +479,7 @@ function renderAssets(assets) {
         if (asset.type === 'doc') lucideIcon = 'file-text';
         if (asset.type === 'visual') lucideIcon = 'image';
 
-        card.onclick = () => showDetails(asset.name, asset.type, asset.category, asset.size, asset.path);
+        card.onclick = () => showDetails(asset.name, asset.type, asset.category, asset.size, asset.path, asset.sizeBytes);
 
         card.innerHTML = `
             <div class="asset-preview">
@@ -377,6 +495,81 @@ function renderAssets(assets) {
     });
 
     lucide.createIcons();
+}
+
+function createAutomatedLoadingState(path, type, ext, name, sizeBytes) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'heavy-loading-state';
+    
+    const sizeMB = (sizeBytes / (1024 * 1024)).toFixed(1);
+    
+    wrapper.innerHTML = `
+        <div class="loading-metadata">
+            <span class="meta-tag">HEAVY ASSET</span>
+            <span class="meta-tag size">${sizeMB} MB</span>
+        </div>
+        <div class="progress-container">
+            <div class="progress-label">INITIALIZING NEURAL DATA... <span class="percent">0%</span></div>
+            <div class="progress-track">
+                <div class="progress-bar-fill"></div>
+            </div>
+        </div>
+        <div class="status-feed">AUTHENTICATING SYSTEM ACCESS...</div>
+    `;
+
+    // Start Simulation & Real Handoff
+    let progress = 0;
+    const bar = wrapper.querySelector('.progress-bar-fill');
+    const percent = wrapper.querySelector('.percent');
+    const status = wrapper.querySelector('.status-feed');
+
+    const interval = setInterval(() => {
+        progress += Math.random() * 8;
+        if (progress > 95) progress = 95; // Wait for real load
+        
+        bar.style.width = `${progress}%`;
+        percent.textContent = `${Math.floor(progress)}%`;
+
+        if (progress > 30) status.textContent = 'DECRYPTING BUFFER...';
+        if (progress > 70) status.textContent = 'MAPPING GEOMETRY...';
+    }, 150);
+
+    // Trigger Real Load in Background
+    setTimeout(() => {
+        const previewEl = getPreviewElement(path, type, name, 0); // Bypass threshold
+        
+        let finalized = false;
+        const finalize = () => {
+            if (finalized) return;
+            finalized = true;
+
+            clearInterval(interval);
+            bar.style.width = '100%';
+            percent.textContent = '100%';
+            status.textContent = 'INITIALIZATION COMPLETE';
+            
+            setTimeout(() => {
+                if (wrapper.parentElement) {
+                    const container = wrapper.parentElement;
+                    container.innerHTML = '';
+                    container.appendChild(previewEl);
+                    lucide.createIcons();
+                }
+            }, 300);
+        };
+
+        // Listen for arrival
+        if (previewEl.tagName === 'IFRAME') {
+            previewEl.onload = finalize;
+            // Safety timeout for local files (3.5s)
+            setTimeout(finalize, 3500);
+        } else {
+            // It's the fetch container, it will update itself, but we should swap it
+            finalize();
+        }
+    }, 500); // Slight delay for dramatic effect
+
+    return wrapper;
 }
 
 // Global Initialization
