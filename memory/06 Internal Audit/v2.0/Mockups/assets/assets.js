@@ -240,6 +240,8 @@ function getFallbackIcon(type, ext) {
     if (type === 'doc') iconName = 'file-text';
     if (type === 'data') iconName = 'database';
     if (type === 'log') iconName = 'shield-check';
+    if (type === 'animation') iconName = 'sparkles';
+    if (type === 'video') iconName = 'play-circle';
 
     const icon = document.createElement('i');
     icon.setAttribute('data-lucide', iconName);
@@ -478,6 +480,8 @@ function renderAssets(assets) {
         if (asset.type === 'data') lucideIcon = 'database';
         if (asset.type === 'doc') lucideIcon = 'file-text';
         if (asset.type === 'visual') lucideIcon = 'image';
+        if (asset.type === 'animation') lucideIcon = 'sparkles';
+        if (asset.type === 'video') lucideIcon = 'play-circle';
 
         card.onclick = () => showDetails(asset.name, asset.type, asset.category, asset.size, asset.path, asset.sizeBytes);
 
