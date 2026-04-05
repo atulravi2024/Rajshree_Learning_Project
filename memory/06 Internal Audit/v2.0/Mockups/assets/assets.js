@@ -247,41 +247,59 @@ function toggleSidebar() {
 function downloadAsset() {
     if (!currentAssetFileName) return;
     
-    const cleanFileName = currentAssetFileName.split('/').pop().split('\\').pop();
-    
-    // Attempt to fetch the file to memory. 
-    // This is the most reliable way to force a "Save As" prompt without opening the file.
-    fetch(currentAssetFileName)
-        .then(response => {
-            if (!response.ok) throw new Error('Fetch status not OK');
-            return response.blob();
-        })
-        .then(blob => {
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = cleanFileName; // strictly the basename
-            a.style.display = 'none';
-            document.body.appendChild(a);
-            a.click();
-            setTimeout(() => {
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            }, 100);
-        })
-        .catch(err => {
-            // Fallback: if browser blocks local fetch() due to strict CORS on file://
-            console.warn('Fetch fallback triggered for download:', err);
-            const a = document.createElement('a');
-            a.href = currentAssetFileName;
-            a.download = cleanFileName;
-            a.style.display = 'none';
-            document.body.appendChild(a);
-            a.click();
-            setTimeout(() => {
-                document.body.removeChild(a);
-            }, 100);
-        });
+    // UI Feedback
+    const btn = document.querySelector('.btn-mockup.primary');
+    const originalText = btn.textContent;
+    btn.textContent = 'DOWNLOADING...';
+    btn.disabled = true;
+
+    const fileName = currentAssetFileName.split('/').pop();
+
+    // Priority: Server Fetch (Works on GitHub / Local Server)
+    if (window.location.protocol !== 'file:') {
+        fetch(currentAssetFileName)
+            .then(res => {
+                if (!res.ok) throw new Error('Fetch failed');
+                return res.blob();
+            })
+            .then(blob => {
+                const downloadUrl = URL.createObjectURL(new Blob([blob], { type: 'application/octet-stream' }));
+                const a = document.createElement('a');
+                a.href = downloadUrl;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(downloadUrl);
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                }, 250);
+            })
+            .catch(err => {
+                console.error('Server download failed:', err);
+                fallback();
+            });
+    } else {
+        fallback();
+    }
+
+    // Fallback: Direct Link (Works locally for viewing in new tab)
+    function fallback() {
+        const a = document.createElement('a');
+        a.href = currentAssetFileName;
+        a.download = fileName;
+        a.target = '_blank';
+        document.body.appendChild(a);
+        a.click();
+        
+        setTimeout(() => {
+            document.body.removeChild(a);
+            btn.textContent = originalText;
+            btn.disabled = false;
+        }, 300);
+    }
 }
 
 function copyAssetPath() {
