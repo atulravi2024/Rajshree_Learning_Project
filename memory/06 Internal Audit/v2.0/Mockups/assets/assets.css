@@ -378,6 +378,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    min-height: 180px; /* Reduced from 280px to 180px as requested */
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
@@ -408,7 +409,7 @@ body {
 }
 
 .asset-preview {
-    height: 120px;
+    height: 180px; /* Increased from 120px to restore the taller high-fidelity feel */
     background: rgba(0, 0, 0, 0.4);
     border-radius: 8px;
     display: flex;

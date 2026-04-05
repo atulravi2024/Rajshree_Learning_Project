@@ -9,9 +9,15 @@ let currentCategory = 'all';
 // Sorting & Gallery Update Engine
 function updateGallery() {
     const grid = document.querySelector('.assets-grid');
-    if (!grid) return;
-
     let cards = Array.from(document.querySelectorAll('.asset-card'));
+    
+    // If no cards exist yet, render them from PROJECT_ASSETS
+    if (cards.length === 0 && window.PROJECT_ASSETS) {
+        renderAssets(window.PROJECT_ASSETS);
+        cards = Array.from(document.querySelectorAll('.asset-card'));
+    }
+
+    if (!grid) return;
     
     // 1. Filter Logic (Search & Category)
     cards.forEach(card => {
@@ -331,3 +337,52 @@ function copyAssetPath() {
         console.error('Failed to copy text: ', err);
     });
 }
+
+function renderAssets(assets) {
+    const grid = document.querySelector('.assets-grid');
+    if (!grid) return;
+
+    grid.innerHTML = ''; // Clear existing
+
+    assets.forEach(asset => {
+        const card = document.createElement('div');
+        card.className = 'asset-card';
+        card.setAttribute('data-type', asset.type);
+        card.setAttribute('data-risk', asset.risk);
+        card.setAttribute('data-size-bytes', asset.sizeBytes);
+        card.setAttribute('data-commit-date', asset.date);
+        card.setAttribute('data-compliance', asset.compliance);
+        card.setAttribute('data-perf-score', asset.perf);
+        
+        const extension = asset.name.split('.').pop().toUpperCase();
+        let lucideIcon = 'file-text';
+        if (asset.type === 'audio') lucideIcon = 'volume-2';
+        if (asset.type === 'data') lucideIcon = 'database';
+        if (asset.type === 'doc') lucideIcon = 'file-text';
+        if (asset.type === 'visual') lucideIcon = 'image';
+
+        card.onclick = () => showDetails(asset.name, asset.type, asset.category, asset.size, asset.path);
+
+        card.innerHTML = `
+            <div class="asset-preview">
+                <i data-lucide="${lucideIcon}"></i>
+                <span class="asset-type-badge">${extension}</span>
+            </div>
+            <div class="asset-info">
+                <h3>${asset.name}</h3>
+                <p>${asset.category}</p>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+
+    lucide.createIcons();
+}
+
+// Global Initialization
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.PROJECT_ASSETS) {
+        renderAssets(window.PROJECT_ASSETS);
+    }
+    updateGallery();
+});
