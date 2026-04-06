@@ -317,10 +317,42 @@ document.querySelectorAll('.category-item').forEach(item => {
 
 // Search Logic
 const searchInput = document.querySelector('.search-input');
+const searchClearBtn = document.getElementById('search-clear');
+
 if (searchInput) {
     searchInput.addEventListener('input', (e) => {
         currentSearchTerm = e.target.value;
+        
+        // Toggle Clear Button Visibility
+        if (searchClearBtn) {
+            if (currentSearchTerm.length > 0) {
+                searchClearBtn.classList.add('visible');
+            } else {
+                searchClearBtn.classList.remove('visible');
+            }
+        }
+        
         updateGallery();
+    });
+
+    // Global Shortcut: Ctrl + K to focus search
+    window.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+            e.preventDefault();
+            searchInput.focus();
+        }
+    });
+}
+
+if (searchClearBtn) {
+    searchClearBtn.addEventListener('click', () => {
+        if (searchInput) {
+            searchInput.value = '';
+            currentSearchTerm = '';
+            searchClearBtn.classList.remove('visible');
+            updateGallery();
+            searchInput.focus();
+        }
     });
 }
 

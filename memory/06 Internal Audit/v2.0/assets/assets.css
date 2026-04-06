@@ -323,6 +323,41 @@ body {
     left: 15px;
     color: var(--text-dim);
     width: 16px;
+    pointer-events: none;
+}
+
+.search-clear {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    display: none; /* Managed by JS */
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 6px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.6;
+}
+
+.search-clear:hover {
+    color: var(--theme-accent);
+    background: var(--accent-glow-subtle);
+    opacity: 1;
+    transform: scale(1.1);
+    text-shadow: 0 0 8px var(--accent-glow-soft);
+    box-shadow: 0 0 10px var(--accent-glow-subtle);
+}
+
+.search-clear.visible {
+    display: flex;
+}
+
+.search-clear i {
+    width: 14px;
+    height: 14px;
 }
 
 .search-input {
@@ -330,7 +365,7 @@ body {
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border-subtle);
     border-radius: 8px;
-    padding: 10px 15px 10px 45px;
+    padding: 10px 40px 10px 45px; /* Added right padding for clear button */
     color: var(--text-bright);
     outline: none;
     transition: border-color 0.3s, box-shadow 0.3s;
