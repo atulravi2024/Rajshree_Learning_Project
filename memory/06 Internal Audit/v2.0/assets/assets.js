@@ -1,30 +1,720 @@
-document.addEventListener('DOMContentLoaded', () => {
-    lucide.createIcons();
-    initNotifications();
+// Initialize Lucide Icons
+lucide.createIcons();
 
-    const searchInput = document.getElementById('asset-search');
-    const cards = document.querySelectorAll('.asset-card');
+// State Management
+let currentSearchTerm = '';
+let currentSortCriteria = 'alpha_az';
+let currentCategory = 'all';
+let lastActiveSectionId = 'section-preview'; // Persistent HUD selection memory
 
-    searchInput.addEventListener('input', (e) => {
-        const term = e.target.value.toLowerCase();
-        
-        cards.forEach(card => {
-            const name = card.querySelector('.asset-name').textContent.toLowerCase();
-            const meta = card.querySelector('.asset-meta').textContent.toLowerCase();
-            
-            if (name.includes(term) || meta.includes(term)) {
-                card.style.display = 'flex';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    });
+// Sorting & Gallery Update Engine
+function updateGallery() {
+    const grid = document.querySelector('.assets-grid');
+    let cards = Array.from(document.querySelectorAll('.asset-card'));
+    
+    // If no cards exist yet, render them from PROJECT_ASSETS
+    if (cards.length === 0 && window.PROJECT_ASSETS) {
+        renderAssets(window.PROJECT_ASSETS);
+        cards = Array.from(document.querySelectorAll('.asset-card'));
+    }
 
-    // Mock Asset Click
+    if (!grid) return;
+    
+    // 1. Filter Logic (Search & Category)
     cards.forEach(card => {
-        card.addEventListener('click', () => {
-            const name = card.querySelector('.asset-name').textContent;
-            alert(`Accessing Asset: ${name}`);
-        });
+        const cardName = card.querySelector('h3').textContent.toLowerCase();
+        const cardType = card.getAttribute('data-type');
+        
+        const matchesSearch = cardName.includes(currentSearchTerm.toLowerCase());
+        const matchesCategory = (currentCategory === 'all' || cardType === currentCategory);
+        
+        card.style.display = (matchesSearch && matchesCategory) ? 'flex' : 'none';
     });
+
+    // 2. Sort Logic (Real-time)
+    const visibleCards = cards.filter(c => c.style.display !== 'none');
+    
+    visibleCards.sort((a, b) => {
+        const valA = getSortValue(a, currentSortCriteria);
+        const valB = getSortValue(b, currentSortCriteria);
+
+        // Numeric or String Comparison
+        if (typeof valA === 'number' && typeof valB === 'number') {
+            return isDescending(currentSortCriteria) ? valB - valA : valA - valB;
+        }
+        
+        const strA = String(valA).toLowerCase();
+        const strB = String(valB).toLowerCase();
+        return isDescending(currentSortCriteria) ? strB.localeCompare(strA) : strA.localeCompare(strB);
+    });
+
+    // 3. DOM Re-insertion
+    visibleCards.forEach(card => grid.appendChild(card));
+}
+
+function getSortValue(card, criteria) {
+    if (criteria.includes('alpha') || criteria === 'contributor') {
+        return card.querySelector('h3').textContent;
+    }
+    if (criteria.includes('risk') || criteria === 'criticality' || criteria === 'maintenance') {
+        return parseInt(card.getAttribute('data-risk') || 0);
+    }
+    if (criteria.includes('size')) {
+        return parseInt(card.getAttribute('data-size-bytes') || 0);
+    }
+    if (criteria.includes('commit') || criteria.includes('modified') || criteria.includes('audited') || criteria.includes('access') || criteria === 'version') {
+        return card.getAttribute('data-commit-date') || '';
+    }
+    if (criteria.includes('compliance') || criteria.includes('status') || criteria.includes('build') || criteria.includes('pending')) {
+        return parseInt(card.getAttribute('data-compliance') || 0);
+    }
+    if (criteria === 'vulnerability' || criteria === 'dependency') {
+        return parseInt(card.getAttribute('data-vulnerability') || 0);
+    }
+    if (criteria.includes('perf') || criteria === 'exec_fast' || criteria.includes('usage') || criteria === 'coverage' || criteria === 'score_low') {
+        return parseInt(card.getAttribute('data-perf-score') || 0);
+    }
+    return 0;
+}
+
+function isDescending(criteria) {
+    const descKeywords = ['high', 'recent', 'large', 'most', 'fail', 'za', 'score_low', 'pending', 'vulnerability', 'dependency', 'status_active', 'modified_recent'];
+    return descKeywords.some(key => criteria.includes(key));
+}
+
+// Mock Interaction Logic
+let currentAssetFileName = '';
+
+function showDetails(name, type, category, size, realPath, sizeBytes) {
+    // Keep the real path for downloading/copying
+    currentAssetFileName = realPath || name;
+    
+    const panel = document.getElementById('details-panel');
+    const nameEl = document.getElementById('detail-name');
+    const typeEl = document.getElementById('detail-type');
+    const categoryEl = document.getElementById('detail-category');
+    const sizeEl = document.getElementById('detail-size');
+    const locationEl = document.getElementById('detail-location');
+    const useEl = document.getElementById('detail-use');
+    const purposeEl = document.getElementById('detail-purpose');
+
+    nameEl.textContent = name;
+    
+    // High-fidelity type (extension)
+    const ext = name.split('.').pop().toUpperCase();
+    typeEl.textContent = ext;
+    
+    categoryEl.textContent = category;
+    sizeEl.textContent = size;
+
+    // Clean Path for display
+    const visiblePath = realPath ? realPath.replace(/^(\.\.\/)+/, '') : name;
+    locationEl.textContent = visiblePath;
+
+    // Populating real metadata from manifest (now generated by script)
+    // We need to find the asset in PROJECT_ASSETS to get 'use' and 'purpose'
+    const assetData = window.PROJECT_ASSETS.find(a => a.path === realPath);
+    if (assetData) {
+        useEl.textContent = assetData.use || "System Asset";
+        purposeEl.textContent = assetData.purpose || "Generic operational resource.";
+    } else {
+        useEl.textContent = "External Reference";
+        purposeEl.textContent = "Linked resource from outside the primary repository scan.";
+    }
+
+    panel.style.display = 'block';
+    resetDetailSections();
+    updateHeaderMode(true);
+
+    const previewContainer = document.querySelector('.details-preview-large');
+    if (previewContainer) {
+        previewContainer.innerHTML = '';
+        const previewEl = getPreviewElement(realPath || name, type, name, sizeBytes);
+        previewContainer.appendChild(previewEl);
+    }
+    
+    lucide.createIcons();
+
+    document.querySelectorAll('.asset-card').forEach(card => card.classList.remove('active-pulse'));
+    const cards = document.querySelectorAll('.asset-card');
+    cards.forEach(card => {
+        if (card.querySelector('h3').textContent === name) {
+            card.classList.add('active-pulse');
+        }
+    });
+}
+
+function hideDetails(shouldResetUI = true) {
+    const panel = document.getElementById('details-panel');
+    if (panel) panel.style.display = 'none';
+    
+    // Clear preview to stop audio/video
+    const previewContainer = document.querySelector('.details-preview-large');
+    if (previewContainer) previewContainer.innerHTML = '';
+
+    if (shouldResetUI) {
+        updateHeaderMode(false);
+    }
+    
+    document.querySelectorAll('.asset-card').forEach(card => card.classList.remove('active-pulse'));
+}
+
+// Performance Constants
+const MAX_PREVIEW_CHARS = 100000; // ~100KB for DOM safety
+const HEAVY_FILE_THRESHOLD = 1500000; // 1.5MB for iframe/warning safety
+
+// Helper to generate preview HTML based on file type
+function getPreviewElement(path, type, name, sizeBytes = 0) {
+    const ext = name.split('.').pop().toLowerCase();
+    const container = document.createElement('div');
+    container.style.width = '100%';
+    container.style.height = '100%';
+    container.style.display = 'flex';
+    container.style.flexDirection = 'column';
+    container.style.alignItems = 'center';
+    container.style.justifyContent = 'center';
+    container.style.position = 'relative';
+
+    // 0. Proactive Heavy Asset Loading
+    if (sizeBytes > HEAVY_FILE_THRESHOLD && ['js', 'json', 'md', 'txt', 'css', 'html'].includes(ext)) {
+        return createAutomatedLoadingState(path, type, ext, name, sizeBytes);
+    }
+
+    // 1. Image Preview
+    if (['png', 'jpg', 'jpeg', 'svg', 'webp', 'gif'].includes(ext)) {
+        const img = document.createElement('img');
+        img.src = path;
+        img.alt = name;
+        img.onerror = () => {
+            img.style.display = 'none';
+            container.appendChild(getFallbackIcon(type, ext));
+        };
+        return img;
+    }
+
+    // 2. Audio Preview
+    if (['mp3', 'wav', 'ogg'].includes(ext)) {
+        const audio = document.createElement('audio');
+        audio.src = path;
+        audio.controls = true;
+        return audio;
+    }
+
+    // 3. Text/Code Preview (Hybrid)
+    if (['js', 'json', 'md', 'txt', 'css', 'html'].includes(ext)) {
+        if (window.location.protocol === 'file:') {
+            // Local fallback: use iframe
+            const iframe = document.createElement('iframe');
+            iframe.src = path;
+            iframe.className = 'code-preview-iframe';
+            return iframe;
+        } else {
+            // Server mode: use fetch for better styling
+            const codeContainer = document.createElement('div');
+            codeContainer.className = 'code-preview-container';
+            codeContainer.innerHTML = '<div class="loading-text">DECRYPTING...</div>';
+            
+            fetch(path)
+                .then(res => res.text())
+                .then(text => {
+                    codeContainer.innerHTML = '';
+                    const isTruncated = text.length > MAX_PREVIEW_CHARS;
+                    const displayContent = isTruncated ? text.substring(0, MAX_PREVIEW_CHARS) : text;
+
+                    const pre = document.createElement('pre');
+                    const code = document.createElement('code');
+                    code.textContent = displayContent;
+                    pre.appendChild(code);
+                    codeContainer.appendChild(pre);
+
+                })
+                .catch(err => {
+                    codeContainer.innerHTML = '<div class="error-text">ACCESS DENIED</div>';
+                    console.error('Fetch error:', err);
+                });
+            return codeContainer;
+        }
+    }
+
+    // Video Preview
+    if (['mp4', 'webm', 'mov'].includes(ext)) {
+        const video = document.createElement('video');
+        video.src = path;
+        video.controls = true;
+        video.autoplay = false;
+        return video;
+    }
+
+    // Fallback for document, data, log, etc.
+    return getFallbackIcon(type, ext);
+}
+
+function getFallbackIcon(type, ext) {
+    const wrapper = document.createElement('div');
+    wrapper.style.display = 'flex';
+    wrapper.style.flexDirection = 'column';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.gap = '15px';
+
+    let iconName = 'file-text';
+    if (type === 'voice') iconName = 'mic';
+    if (type === 'audio') iconName = 'volume-2';
+    if (type === 'visual') iconName = 'image';
+    if (type === 'icon') iconName = 'box';
+    if (type === 'doc') iconName = 'file-text';
+    if (type === 'data') iconName = 'database';
+    if (type === 'log') iconName = 'shield-check';
+    if (type === 'animation') iconName = 'sparkles';
+    if (type === 'video') iconName = 'play-circle';
+
+    const icon = document.createElement('i');
+    icon.setAttribute('data-lucide', iconName);
+    
+    const label = document.createElement('span');
+    label.className = 'preview-extension-label';
+    label.textContent = ext.toUpperCase();
+
+    wrapper.appendChild(icon);
+    wrapper.appendChild(label);
+    return wrapper;
+}
+
+function updateHeaderMode(isCompact) {
+    const header = document.querySelector('.repo-header');
+    const sidebar = document.getElementById('sidebar');
+    
+    if (header) {
+        if (isCompact) {
+            header.classList.add('compact-mode');
+        } else {
+            header.classList.remove('compact-mode');
+        }
+    }
+
+    if (sidebar) {
+        if (isCompact) {
+            sidebar.classList.add('collapsed');
+        } else {
+            sidebar.classList.remove('collapsed');
+        }
+    }
+}
+
+// Sidebar Category Switching
+document.querySelectorAll('.category-item').forEach(item => {
+    item.addEventListener('click', () => {
+        document.querySelectorAll('.category-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        
+        // Update State & Gallery
+        currentCategory = item.getAttribute('data-filter');
+        updateGallery();
+
+        // Filter change should NOT force expansion (Persistent Icon View)
+        hideDetails(false);
+    });
+});
+
+// Search Logic
+const searchInput = document.querySelector('.search-input');
+if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+        currentSearchTerm = e.target.value;
+        updateGallery();
+    });
+}
+
+// --- MULTI-DROPDOWN LOGIC ---
+
+// Toggle specific menu and close others
+function toggleMenu(menuId) {
+    const menus = ['audit-menu', 'dev-menu', 'life-menu'];
+    menus.forEach(id => {
+        const menu = document.getElementById(id);
+        if (id === menuId) {
+            const isVisible = menu.style.display === 'block';
+            menu.style.display = isVisible ? 'none' : 'block';
+        } else {
+            menu.style.display = 'none';
+        }
+    });
+}
+
+// Handle Sort Option Selection
+document.querySelectorAll('.sort-option').forEach(option => {
+    option.addEventListener('click', (e) => {
+        const menu = option.closest('.sort-menu');
+        const dropdownWrap = option.closest('.sort-dropdown-wrap');
+        const btnText = dropdownWrap.querySelector('.btn-text');
+        
+        // Update Active State in this menu
+        menu.querySelectorAll('.sort-option').forEach(o => o.classList.remove('active'));
+        option.classList.add('active');
+        
+        // Update State
+        currentSortCriteria = option.getAttribute('data-sort');
+        
+        // Update Button Label
+        btnText.textContent = option.textContent;
+        
+        // Close Menu
+        menu.style.display = 'none';
+        
+        // Professional "Processing" Feedback
+        const grid = document.querySelector('.assets-grid');
+        grid.style.opacity = '0.3';
+        grid.style.filter = 'blur(4px)';
+        
+        setTimeout(() => {
+            grid.style.opacity = '1';
+            grid.style.filter = 'none';
+            updateGallery();
+        }, 300);
+    });
+});
+
+// Global click to close menus
+window.addEventListener('click', (e) => {
+    if (!e.target.closest('.sort-dropdown-wrap')) {
+        document.querySelectorAll('.sort-menu').forEach(menu => {
+            menu.style.display = 'none';
+        });
+    }
+});
+
+// Sidebar Toggle Logic
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) {
+        sidebar.classList.toggle('collapsed');
+        
+        // Professional feedback: briefly hide and show icons if needed, 
+        // or just let CSS handles the smooth transition.
+    }
+}
+
+// Asset Actions Logic
+function downloadAsset() {
+    if (!currentAssetFileName) return;
+    
+    // UI Feedback
+    const btn = document.querySelector('.btn-mockup.primary');
+    const originalText = btn.textContent;
+    btn.textContent = 'DOWNLOADING...';
+    btn.disabled = true;
+
+    const fileName = currentAssetFileName.split('/').pop();
+
+    // Priority: Server Fetch (Works on GitHub / Local Server)
+    if (window.location.protocol !== 'file:') {
+        fetch(currentAssetFileName)
+            .then(res => {
+                if (!res.ok) throw new Error('Fetch failed');
+                return res.blob();
+            })
+            .then(blob => {
+                const downloadUrl = URL.createObjectURL(new Blob([blob], { type: 'application/octet-stream' }));
+                const a = document.createElement('a');
+                a.href = downloadUrl;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(downloadUrl);
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                }, 250);
+            })
+            .catch(err => {
+                console.error('Server download failed:', err);
+                fallback();
+            });
+    } else {
+        fallback();
+    }
+
+    // Fallback: Direct Link (Works locally for viewing in new tab)
+    function fallback() {
+        const a = document.createElement('a');
+        a.href = currentAssetFileName;
+        a.download = fileName;
+        a.target = '_blank';
+        document.body.appendChild(a);
+        a.click();
+        
+        setTimeout(() => {
+            document.body.removeChild(a);
+            btn.textContent = originalText;
+            btn.disabled = false;
+        }, 300);
+    }
+}
+
+function copyAssetPath() {
+    if (!currentAssetFileName) return;
+    
+    // Resolve the full absolute location of the actual file
+    // Since currentAssetFileName might now be a relative path like ../../../../../AGENTS.md
+    // We can just append it to this directory string, but for UI precision let's just make it clearly point to the root.
+    const cleanRelativePath = currentAssetFileName.replace(/(\.\.\/)+/g, ''); 
+    const mockPath = `C:\\Users\\Atul Verma\\.openclaw\\workspace\\RajShree_Project\\Rajshree Learning Project\\${cleanRelativePath}`;
+    
+    navigator.clipboard.writeText(mockPath).then(() => {
+        const btn = document.querySelector('.details-footer-actions .btn-mockup.secondary');
+        if (btn) {
+            const originalText = btn.textContent;
+            btn.textContent = 'PATH COPIED!';
+            // Use the correct CSS variable for the theme accent so it doesn't blank out
+            btn.style.backgroundColor = 'var(--theme-accent)';
+            btn.style.color = '#000';
+            btn.style.transition = 'all 0.2s ease';
+            
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.backgroundColor = '';
+                btn.style.color = '';
+            }, 1000);
+        }
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
+}
+
+// ── FULL PREVIEW MODAL LOGIC ──
+
+function openFullPreview() {
+    const modal = document.getElementById('preview-modal');
+    const modalContent = document.getElementById('modal-preview-content');
+    const modalTitle = document.getElementById('modal-title');
+    
+    if (!modal || !modalContent) return;
+
+    // Clear previous
+    modalContent.innerHTML = '';
+    
+    // Get the current asset data
+    const name = document.getElementById('detail-name').textContent;
+    const type = document.getElementById('detail-type').textContent;
+    const size = document.getElementById('detail-size').textContent;
+    
+    modalTitle.textContent = `PREVIEW // ${name.toUpperCase()}`;
+
+    // Clone the existing preview or re-generate it for higher fidelity
+    const path = currentAssetFileName;
+    const previewEl = getPreviewElement(path, type.toLowerCase(), name, 0); // Bypass heavy threshold for full view
+    
+    modalContent.appendChild(previewEl);
+    modal.style.display = 'flex';
+    
+    // Re-init lucide if we injected an icon
+    lucide.createIcons();
+
+    // Disable body scroll
+    document.body.style.overflow = 'hidden';
+}
+
+function closeFullPreview() {
+    const modal = document.getElementById('preview-modal');
+    const modalContent = document.getElementById('modal-preview-content');
+    
+    if (modal) modal.style.display = 'none';
+    if (modalContent) modalContent.innerHTML = '';
+
+    // Re-enable body scroll
+    document.body.style.overflow = '';
+}
+
+// Close on ESC
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('preview-modal');
+        if (modal && modal.style.display === 'flex') {
+            closeFullPreview();
+        } else {
+            hideDetails();
+        }
+    }
+});
+
+// ── COLLAPSIBLE SECTION LOGIC ──
+
+function toggleDetailSection(sectionId) {
+    const targetSection = document.getElementById(sectionId);
+    if (!targetSection) return;
+
+    const isCollapsed = targetSection.classList.contains('collapsed');
+
+    // Collapse all sections first (Accordion behavior)
+    document.querySelectorAll('.details-section').forEach(section => {
+        section.classList.add('collapsed');
+    });
+
+    // If it was collapsed, expand it and save ID to memory
+    if (isCollapsed) {
+        targetSection.classList.remove('collapsed');
+        lastActiveSectionId = sectionId;
+    }
+
+    lucide.createIcons();
+}
+
+function toggleAllSections() {
+    const sections = document.querySelectorAll('.details-section');
+    const anyOpen = Array.from(sections).some(s => !s.classList.contains('collapsed'));
+
+    if (anyOpen) {
+        // Global Collapse: Save current open section to memory first
+        sections.forEach(s => {
+            if (!s.classList.contains('collapsed')) {
+                lastActiveSectionId = s.id;
+            }
+            s.classList.add('collapsed');
+        });
+    } else {
+        // Global Restore: Expand the last section that was active
+        const target = document.getElementById(lastActiveSectionId);
+        if (target) target.classList.remove('collapsed');
+    }
+    
+    lucide.createIcons();
+}
+
+function resetDetailSections() {
+    lastActiveSectionId = 'section-preview'; // Reset for fresh asset load
+    document.querySelectorAll('.details-section').forEach(section => {
+        if (section.id === 'section-preview') {
+            section.classList.remove('collapsed');
+        } else {
+            section.classList.add('collapsed');
+        }
+    });
+    lucide.createIcons();
+}
+
+function renderAssets(assets) {
+    const grid = document.querySelector('.assets-grid');
+    if (!grid) return;
+
+    grid.innerHTML = ''; // Clear existing
+
+    assets.forEach(asset => {
+        const card = document.createElement('div');
+        card.className = 'asset-card';
+        card.setAttribute('data-type', asset.type);
+        card.setAttribute('data-risk', asset.risk);
+        card.setAttribute('data-size-bytes', asset.sizeBytes);
+        card.setAttribute('data-commit-date', asset.date);
+        card.setAttribute('data-compliance', asset.compliance);
+        card.setAttribute('data-perf-score', asset.perf);
+        
+        const extension = asset.name.split('.').pop().toUpperCase();
+        let lucideIcon = 'file-text';
+        if (asset.type === 'audio') lucideIcon = 'volume-2';
+        if (asset.type === 'data') lucideIcon = 'database';
+        if (asset.type === 'doc') lucideIcon = 'file-text';
+        if (asset.type === 'visual') lucideIcon = 'image';
+        if (asset.type === 'animation') lucideIcon = 'sparkles';
+        if (asset.type === 'video') lucideIcon = 'play-circle';
+
+        card.onclick = () => showDetails(asset.name, asset.type, asset.category, asset.size, asset.path, asset.sizeBytes);
+
+        card.innerHTML = `
+            <div class="asset-preview">
+                <i data-lucide="${lucideIcon}"></i>
+                <span class="asset-type-badge">${extension}</span>
+            </div>
+            <div class="asset-info">
+                <h3>${asset.name}</h3>
+                <p>${asset.category}</p>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+
+    lucide.createIcons();
+}
+
+function createAutomatedLoadingState(path, type, ext, name, sizeBytes) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'heavy-loading-state';
+    
+    const sizeMB = (sizeBytes / (1024 * 1024)).toFixed(1);
+    
+    wrapper.innerHTML = `
+        <div class="loading-metadata">
+            <span class="meta-tag">HEAVY ASSET</span>
+            <span class="meta-tag size">${sizeMB} MB</span>
+        </div>
+        <div class="progress-container">
+            <div class="progress-label">INITIALIZING NEURAL DATA... <span class="percent">0%</span></div>
+            <div class="progress-track">
+                <div class="progress-bar-fill"></div>
+            </div>
+        </div>
+        <div class="status-feed">AUTHENTICATING SYSTEM ACCESS...</div>
+    `;
+
+    // Start Simulation & Real Handoff
+    let progress = 0;
+    const bar = wrapper.querySelector('.progress-bar-fill');
+    const percent = wrapper.querySelector('.percent');
+    const status = wrapper.querySelector('.status-feed');
+
+    const interval = setInterval(() => {
+        progress += Math.random() * 8;
+        if (progress > 95) progress = 95; // Wait for real load
+        
+        bar.style.width = `${progress}%`;
+        percent.textContent = `${Math.floor(progress)}%`;
+
+        if (progress > 30) status.textContent = 'DECRYPTING BUFFER...';
+        if (progress > 70) status.textContent = 'MAPPING GEOMETRY...';
+    }, 150);
+
+    // Trigger Real Load in Background
+    setTimeout(() => {
+        const previewEl = getPreviewElement(path, type, name, 0); // Bypass threshold
+        
+        let finalized = false;
+        const finalize = () => {
+            if (finalized) return;
+            finalized = true;
+
+            clearInterval(interval);
+            bar.style.width = '100%';
+            percent.textContent = '100%';
+            status.textContent = 'INITIALIZATION COMPLETE';
+            
+            setTimeout(() => {
+                if (wrapper.parentElement) {
+                    const container = wrapper.parentElement;
+                    container.innerHTML = '';
+                    container.appendChild(previewEl);
+                    lucide.createIcons();
+                }
+            }, 300);
+        };
+
+        // Listen for arrival
+        if (previewEl.tagName === 'IFRAME') {
+            previewEl.onload = finalize;
+            // Safety timeout for local files (3.5s)
+            setTimeout(finalize, 3500);
+        } else {
+            // It's the fetch container, it will update itself, but we should swap it
+            finalize();
+        }
+    }, 500); // Slight delay for dramatic effect
+
+    return wrapper;
+}
+
+// Global Initialization
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.PROJECT_ASSETS) {
+        renderAssets(window.PROJECT_ASSETS);
+    }
+    updateGallery();
 });
