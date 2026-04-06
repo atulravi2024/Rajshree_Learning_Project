@@ -16,12 +16,16 @@
 
 .mockup-main > .settings-global-overlay {
     width: var(--details-width);
-    height: calc(100vh - 100px); /* match details-panel */
+    background: var(--bg-sidebar);
+    border: 1px solid var(--accent-glow-soft);
     border-radius: 12px;
+    padding: 0;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    height: calc(100vh - 100px); /* match details-panel */
     box-shadow: none;
     transform: none; /* override settings.css translation */
     display: none;
-    padding: 0;
 }
 
 .mockup-main > .settings-global-overlay[data-mode="settings"] {
