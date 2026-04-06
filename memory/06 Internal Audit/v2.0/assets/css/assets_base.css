@@ -22,6 +22,7 @@
     --border-subtle: rgba(255, 255, 255, 0.07);
     --sidebar-width: 280px;
     --details-width: 320px;
+    --side-w: 320px;
 }
 
 * {

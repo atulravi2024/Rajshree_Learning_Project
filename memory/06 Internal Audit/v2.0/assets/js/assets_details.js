@@ -2,6 +2,12 @@
 let currentAssetFileName = '';
 
 function showDetails(name, type, category, size, realPath, sizeBytes) {
+    // Hide settings if open
+    const settingsSidebar = document.querySelector('.settings-global-overlay');
+    if (settingsSidebar && settingsSidebar.getAttribute('data-mode') === 'settings') {
+        if (window.showSettingsMenu) window.showSettingsMenu();
+    }
+
     // Keep the real path for downloading/copying
     currentAssetFileName = realPath || name;
     

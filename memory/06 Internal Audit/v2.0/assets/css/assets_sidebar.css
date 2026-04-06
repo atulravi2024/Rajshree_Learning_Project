@@ -21,6 +21,27 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* ── CATEGORY LIST SCROLLBAR ── */
+.category-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.category-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.category-list::-webkit-scrollbar-thumb {
+    background: var(--accent-glow-soft);
+    border-radius: 10px;
+}
+
+.category-list::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-glow-mid);
 }
 
 .category-item {
@@ -56,9 +77,11 @@
 /* ── SIDEBAR FOOTER ── */
 .sidebar-footer {
     margin-top: auto;
+    margin-right: 20px;
     padding: 15px;
     background: rgba(0,0,0,0.2);
     border-radius: 8px;
+    flex-shrink: 0;
 }
 
 .status-label {

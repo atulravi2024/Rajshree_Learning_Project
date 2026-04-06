@@ -287,6 +287,10 @@ window.showSettingsMenu = function() {
             if (titleEl) titleEl.textContent = 'NEURAL HUB // 00';
             if (iconWrap) iconWrap.innerHTML = ''; // Clear icon
             sidebar.removeAttribute('data-mode');
+        } else {
+            // Re-expand the left sidebar when closing settings
+            const leftSidebar = document.getElementById('sidebar');
+            if (leftSidebar) leftSidebar.classList.remove('collapsed');
         }
     } else {
         sidebar.setAttribute('data-mode', 'settings');
@@ -304,6 +308,17 @@ window.showSettingsMenu = function() {
                         <i data-lucide="settings"></i>
                     </div>`;
             }
+        } else {
+            if (window.hideDetails) {
+                const panel = document.getElementById('details-panel');
+                if (panel && panel.style.display !== 'none' && panel.style.display !== '') {
+                    window.hideDetails(true);
+                }
+            }
+            
+            // Collapse the left sidebar when opening settings
+            const leftSidebar = document.getElementById('sidebar');
+            if (leftSidebar) leftSidebar.classList.add('collapsed');
         }
     }
     

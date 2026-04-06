@@ -1,6 +1,6 @@
 @echo off
 set "SCRIPT_DIR=%~dp0"
-cd /d "%SCRIPT_DIR%..\..\..\..\..\"
+cd /d "%SCRIPT_DIR%..\..\..\..\"
 
 echo.
 echo ======================================================
@@ -12,7 +12,7 @@ echo [2] Opening assets.html in your browser...
 echo.
 
 :: Start the browser with the direct URL
-start http://localhost:3000/memory/06%%20Internal%%20Audit/v2.0/Mockups/assets/assets.html
+start http://localhost:3000/memory/06%%20Internal%%20Audit/v2.0/assets/assets.html
 
 :: Start the server
 npx -y serve -l 3000

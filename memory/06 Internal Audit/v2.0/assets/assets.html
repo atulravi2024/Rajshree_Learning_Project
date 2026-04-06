@@ -57,7 +57,7 @@
         </div>
     </nav>
 
-    <main class="page-split-layout">
+    <main class="assets-main-wrapper">
         <div class="mockup-main">
             <!-- Sidebar Navigation -->
             <aside class="sidebar" id="sidebar">
@@ -301,6 +301,16 @@
                     </div>
                 </div>
             </aside>
+
+            <aside class="settings-global-overlay" id="settings-overlay-panel">
+                <div class="console-header">
+                    <h2>SYSTEM SETTINGS</h2>
+                    <div class="header-controls">
+                        <button class="close-console" onclick="if(window.showSettingsMenu) window.showSettingsMenu()" title="Close Settings">×</button>
+                    </div>
+                </div>
+                <div id="settings-sidebar-container"></div>
+            </aside>
         </div>
 
         <!-- Full Preview Modal -->
@@ -318,16 +328,6 @@
                 <!-- Large Preview Injected Here -->
             </div>
         </div>
-
-        <aside class="settings-global-overlay" id="settings-overlay-panel">
-            <div class="console-header">
-                <h2>SYSTEM SETTINGS</h2>
-                <div class="header-controls">
-                    <button class="close-console" onclick="if(window.showSettingsMenu) window.showSettingsMenu()" title="Close Settings">×</button>
-                </div>
-            </div>
-            <div id="settings-sidebar-container"></div>
-        </aside>
     </main>
 
     <script src="asset_manifest.js"></script>
