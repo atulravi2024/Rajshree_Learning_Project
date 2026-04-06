@@ -6,283 +6,345 @@
     <title>ASSET REPOSITORY // MOCKUP</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Hind:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets.css">
+    <link rel="stylesheet" href="../shared/background.css">
+    <link rel="stylesheet" href="../shared/navbar.css">
+    <link rel="stylesheet" href="../shared/notifications.css">
+    <link rel="stylesheet" href="../shared/settings.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="theme-frontier">
+    <!-- Background injected by shared/background.js -->
+    <!-- We keep hud-grid and hud-scanlines for assets specific backdrop if needed, or we can rely on background.js -->
     <div class="hud-grid"></div>
     <div class="hud-scanlines"></div>
 
-    <nav class="mockup-nav">
-        <div class="nav-brand-mockup">
-            <i data-lucide="shield"></i>
-            <span>RAJSHREE // ASSETS</span>
+    <nav class="frontier-nav">
+        <div class="nav-brand">
+            <div class="nav-brand-icon">
+                <i data-lucide="clipboard-check"></i>
+            </div>
+            <div class="brand-text">
+                <h1>RAJSHREE</h1>
+                <span>INTERNAL AUDIT</span>
+            </div>
         </div>
-        <div class="nav-links-mockup">
-            <span class="nav-link-mockup">DASHBOARD</span>
-            <span class="nav-link-active-mockup">REPO</span>
-            <span class="nav-link-mockup">SETTINGS</span>
+        <div class="nav-center">
+            <a href="../dashboard/dashboard.html" class="nav-link" id="nav-dashboard">DASHBOARD</a>
+            <a href="../terminal/global/global.html" class="nav-link" id="nav-terminal">TERMINAL</a>
+            <a href="../map/map.html" class="nav-link" id="nav-map">MAP</a>
+            <a href="assets.html" class="nav-link active" id="nav-assets">ASSETS</a>
+        </div>
+        <div class="nav-user">
+            <div class="nav-avatar">
+                <img src="https://api.dicebear.com/7.x/micah/svg?seed=Atul" alt="Avatar">
+            </div>
+            <div class="nav-user-info">
+                <span class="rank">LEAD AUDITOR</span>
+                <span class="name">ATUL VERMA</span>
+            </div>
+            <div class="nav-icons">
+                <div class="nav-icon-wrapper" id="notification-bell">
+                    <i data-lucide="bell"></i>
+                    <span class="nav-badge"></span>
+                </div>
+                <div class="nav-icon-wrapper" id="nav-settings-btn">
+                    <i data-lucide="settings"></i>
+                </div>
+                <div class="nav-icon-wrapper logout">
+                    <i data-lucide="log-out"></i>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <main class="mockup-main">
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header" onclick="toggleSidebar()">
-                <i data-lucide="layers"></i>
-                <span>LIBRARY</span>
-            </div>
-            <ul class="category-list">
-                <li class="category-item active" data-filter="all">
-                    <i data-lucide="hexagon"></i>
-                    <span>All Assets</span>
-                </li>
-                <li class="category-item" data-filter="voice">
-                    <i data-lucide="mic"></i>
-                    <span>Voice Library</span>
-                </li>
-                <li class="category-item" data-filter="audio">
-                    <i data-lucide="volume-2"></i>
-                    <span>Audio FX</span>
-                </li>
-                <li class="category-item" data-filter="visual">
-                    <i data-lucide="image"></i>
-                    <span>Visual Assets</span>
-                </li>
-                <li class="category-item" data-filter="icon">
-                    <i data-lucide="box"></i>
-                    <span>Icon Library</span>
-                </li>
-                <li class="category-item" data-filter="doc">
-                    <i data-lucide="file-text"></i>
-                    <span>System Docs</span>
-                </li>
-                <li class="category-item" data-filter="data">
-                    <i data-lucide="database"></i>
-                    <span>Data Schemas</span>
-                </li>
-                <li class="category-item" data-filter="animation">
-                    <i data-lucide="sparkles"></i>
-                    <span>Animations</span>
-                </li>
-                <li class="category-item" data-filter="video">
-                    <i data-lucide="play-circle"></i>
-                    <span>Videos</span>
-                </li>
-                <li class="category-item" data-filter="log">
-                    <i data-lucide="shield-check"></i>
-                    <span>Audit Logs</span>
-                </li>
-            </ul>
-
-            <div class="sidebar-footer">
-                <div class="status-label">STORAGE STATUS</div>
-                <div class="progress-track">
-                    <div class="progress-bar"></div>
+    <main class="page-split-layout">
+        <div class="mockup-main">
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header" onclick="toggleSidebar()">
+                    <i data-lucide="layers"></i>
+                    <span>LIBRARY</span>
                 </div>
-                <div class="status-meta">
-                    <span>6.4 GB Used</span>
-                    <span>10.0 GB Total</span>
-                </div>
-            </div>
-        </aside>
+                <ul class="category-list">
+                    <li class="category-item active" data-filter="all">
+                        <i data-lucide="hexagon"></i>
+                        <span>All Assets</span>
+                    </li>
+                    <li class="category-item" data-filter="voice">
+                        <i data-lucide="mic"></i>
+                        <span>Voice Library</span>
+                    </li>
+                    <li class="category-item" data-filter="audio">
+                        <i data-lucide="volume-2"></i>
+                        <span>Audio FX</span>
+                    </li>
+                    <li class="category-item" data-filter="visual">
+                        <i data-lucide="image"></i>
+                        <span>Visual Assets</span>
+                    </li>
+                    <li class="category-item" data-filter="icon">
+                        <i data-lucide="box"></i>
+                        <span>Icon Library</span>
+                    </li>
+                    <li class="category-item" data-filter="doc">
+                        <i data-lucide="file-text"></i>
+                        <span>System Docs</span>
+                    </li>
+                    <li class="category-item" data-filter="data">
+                        <i data-lucide="database"></i>
+                        <span>Data Schemas</span>
+                    </li>
+                    <li class="category-item" data-filter="animation">
+                        <i data-lucide="sparkles"></i>
+                        <span>Animations</span>
+                    </li>
+                    <li class="category-item" data-filter="video">
+                        <i data-lucide="play-circle"></i>
+                        <span>Videos</span>
+                    </li>
+                    <li class="category-item" data-filter="log">
+                        <i data-lucide="shield-check"></i>
+                        <span>Audit Logs</span>
+                    </li>
+                </ul>
 
-        <!-- Main Repository Area -->
-        <section class="repo-content">
-            <header class="repo-header">
-                <!-- Search (Left) -->
-                <div class="search-wrap">
-                    <i data-lucide="search"></i>
-                    <input type="text" class="search-input" placeholder="Search Global Repository (Ctrl + K)...">
-                </div>
-
-                <!-- Multi-Sort Suite (Right) -->
-                <div class="sort-actions-group">
-                    <!-- Audit Dropdown -->
-                    <div class="sort-dropdown-wrap" id="audit-sort-wrap">
-                        <button class="sort-btn" id="audit-sort-btn" onclick="toggleMenu('audit-menu')">
-                            <i data-lucide="shield"></i>
-                            <span class="btn-text">Audit Scope</span>
-                            <i data-lucide="chevron-down"></i>
-                        </button>
-                        <div class="sort-menu" id="audit-menu">
-                            <div class="sort-group">AUDIT CRITERIA</div>
-                            <div class="sort-option active" data-sort="risk_high">Risk Level (Critical to Low)</div>
-                            <div class="sort-option" data-sort="risk_low">Risk Level (Low to Critical)</div>
-                            <div class="sort-option" data-sort="compliance_fail">Compliance Status (Non-Compliant)</div>
-                            <div class="sort-option" data-sort="compliance_pass">Compliance Status (Compliant)</div>
-                            <div class="sort-option" data-sort="audited_recent">Last Audited (Most Recent)</div>
-                            <div class="sort-option" data-sort="audited_oldest">Last Audited (Oldest)</div>
-                            <div class="sort-option" data-sort="vulnerability">Vulnerability Score (Highest)</div>
-                            <div class="sort-option" data-sort="criticality">Criticality (High First)</div>
-                            <div class="sort-option" data-sort="pending_first">Audit Progress (Pending)</div>
-                            <div class="sort-option" data-sort="score_low">Audit Score (Lowest First)</div>
-                        </div>
+                <div class="sidebar-footer">
+                    <div class="status-label">STORAGE STATUS</div>
+                    <div class="progress-track">
+                        <div class="progress-bar"></div>
                     </div>
-
-                    <!-- Dev Dropdown -->
-                    <div class="sort-dropdown-wrap" id="dev-sort-wrap">
-                        <button class="sort-btn" id="dev-sort-btn" onclick="toggleMenu('dev-menu')">
-                            <i data-lucide="code"></i>
-                            <span class="btn-text">Alphabetical (A-Z)</span>
-                            <i data-lucide="chevron-down"></i>
-                        </button>
-                        <div class="sort-menu" id="dev-menu">
-                            <div class="sort-group">DEV & OPS CRITERIA</div>
-                            <div class="sort-option active" data-sort="alpha_az">Alphabetical (A-Z)</div>
-                            <div class="sort-option" data-sort="alpha_za">Alphabetical (Z-A)</div>
-                            <div class="sort-option" data-sort="commit_recent">Date Committed (Newest)</div>
-                            <div class="sort-option" data-sort="commit_oldest">Date Committed (Oldest)</div>
-                            <div class="sort-option" data-sort="size_large">File Size (Largest)</div>
-                            <div class="sort-option" data-sort="size_small">File Size (Smallest)</div>
-                            <div class="sort-option" data-sort="perf_high">Performance Score (High)</div>
-                            <div class="sort-option" data-sort="perf_low">Performance Score (Low)</div>
-                            <div class="sort-option" data-sort="dependency">Dependency Count (Highest)</div>
-                            <div class="sort-option" data-sort="exec_fast">Execution Time (Fastest)</div>
-                            <div class="sort-option" data-sort="build_fail">Build Status (Failed First)</div>
-                            <div class="sort-option" data-sort="coverage">Code Coverage (Highest)</div>
-                        </div>
-                    </div>
-
-                    <!-- Lifecycle Dropdown -->
-                    <div class="sort-dropdown-wrap" id="life-sort-wrap">
-                        <button class="sort-btn" id="life-sort-btn" onclick="toggleMenu('life-menu')">
-                            <i data-lucide="refresh-cw"></i>
-                            <span class="btn-text">Lifecycle Status</span>
-                            <i data-lucide="chevron-down"></i>
-                        </button>
-                        <div class="sort-menu" id="life-menu">
-                            <div class="sort-group">LIFECYCLE STATUS</div>
-                            <div class="sort-option active" data-sort="status_active">Status: Active First</div>
-                            <div class="sort-option" data-sort="status_archived">Status: Archived First</div>
-                            <div class="sort-option" data-sort="status_draft">Status: Draft First</div>
-                            <div class="sort-option" data-sort="modified_recent">Recently Modified</div>
-                            <div class="sort-option" data-sort="modified_oldest">Oldest Modified</div>
-                            <div class="sort-option" data-sort="contributor">Contributor (A-Z)</div>
-                            <div class="sort-option" data-sort="version">Asset Version (Latest)</div>
-                            <div class="sort-option" data-sort="usage_most">Usage Frequency (H-L)</div>
-                            <div class="sort-option" data-sort="usage_least">Usage Frequency (L-H)</div>
-                            <div class="sort-option" data-sort="last_access">Last Accessed Date</div>
-                            <div class="sort-option" data-sort="maintenance">Maintenance Level (High)</div>
-                        </div>
+                    <div class="status-meta">
+                        <span>6.4 GB Used</span>
+                        <span>10.0 GB Total</span>
                     </div>
                 </div>
-            </header>
+            </aside>
 
-            <div class="assets-grid">
-                <!-- Project Assets Rendered Dynamically -->
-            </div>
-        </section>
+            <!-- Main Repository Area -->
+            <section class="repo-content">
+                <header class="repo-header">
+                    <!-- Search (Left) -->
+                    <div class="search-wrap">
+                        <i data-lucide="search"></i>
+                        <input type="text" class="search-input" placeholder="Search Global Repository (Ctrl + K)...">
+                    </div>
 
-        <!-- Information Panel -->
-        <aside class="details-panel" id="details-panel">
-            <div class="details-header" onclick="toggleAllSections()">
-                <h2>ASSET DETAILS</h2>
-                <i data-lucide="x" class="details-close" onclick="event.stopPropagation(); hideDetails()"></i>
-            </div>
-            
-            <div id="details-view" class="details-content-view">
-                <!-- Visual Preview Section -->
-                <div class="details-section" id="section-preview">
-                    <div class="section-header" onclick="toggleDetailSection('section-preview')">
-                        <span class="section-title">Visual Preview</span>
-                        <i data-lucide="chevron-down" class="toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <div class="details-preview-large">
-                            <i data-lucide="image" id="detail-icon"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Technical Specs Section (Collapsed by Default) -->
-                <div class="details-section collapsed" id="section-tech">
-                    <div class="section-header" onclick="toggleDetailSection('section-tech')">
-                        <span class="section-title">Technical Specs</span>
-                        <i data-lucide="chevron-down" class="toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <div class="details-info-text">
-                            <h3 id="detail-name">-</h3>
-                            <p id="detail-category">-</p>
-                        </div>
-                        <div class="details-stats-grid">
-                            <div class="stat-box">
-                                <span class="stat-label">TYPE</span>
-                                <span id="detail-type" class="stat-value accent">-</span>
+                    <!-- Multi-Sort Suite (Right) -->
+                    <div class="sort-actions-group">
+                        <!-- Audit Dropdown -->
+                        <div class="sort-dropdown-wrap" id="audit-sort-wrap">
+                            <button class="sort-btn" id="audit-sort-btn" onclick="toggleMenu('audit-menu')">
+                                <i data-lucide="shield"></i>
+                                <span class="btn-text">Audit Scope</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                            <div class="sort-menu" id="audit-menu">
+                                <div class="sort-group">AUDIT CRITERIA</div>
+                                <div class="sort-option active" data-sort="risk_high">Risk Level (Critical to Low)</div>
+                                <div class="sort-option" data-sort="risk_low">Risk Level (Low to Critical)</div>
+                                <div class="sort-option" data-sort="compliance_fail">Compliance Status (Non-Compliant)</div>
+                                <div class="sort-option" data-sort="compliance_pass">Compliance Status (Compliant)</div>
+                                <div class="sort-option" data-sort="audited_recent">Last Audited (Most Recent)</div>
+                                <div class="sort-option" data-sort="audited_oldest">Last Audited (Oldest)</div>
+                                <div class="sort-option" data-sort="vulnerability">Vulnerability Score (Highest)</div>
+                                <div class="sort-option" data-sort="criticality">Criticality (High First)</div>
+                                <div class="sort-option" data-sort="pending_first">Audit Progress (Pending)</div>
+                                <div class="sort-option" data-sort="score_low">Audit Score (Lowest First)</div>
                             </div>
-                            <div class="stat-box">
-                                <span class="stat-label">SIZE</span>
-                                <span id="detail-size" class="stat-value mid">-</span>
+                        </div>
+
+                        <!-- Dev Dropdown -->
+                        <div class="sort-dropdown-wrap" id="dev-sort-wrap">
+                            <button class="sort-btn" id="dev-sort-btn" onclick="toggleMenu('dev-menu')">
+                                <i data-lucide="code"></i>
+                                <span class="btn-text">Alphabetical (A-Z)</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                            <div class="sort-menu" id="dev-menu">
+                                <div class="sort-group">DEV & OPS CRITERIA</div>
+                                <div class="sort-option active" data-sort="alpha_az">Alphabetical (A-Z)</div>
+                                <div class="sort-option" data-sort="alpha_za">Alphabetical (Z-A)</div>
+                                <div class="sort-option" data-sort="commit_recent">Date Committed (Newest)</div>
+                                <div class="sort-option" data-sort="commit_oldest">Date Committed (Oldest)</div>
+                                <div class="sort-option" data-sort="size_large">File Size (Largest)</div>
+                                <div class="sort-option" data-sort="size_small">File Size (Smallest)</div>
+                                <div class="sort-option" data-sort="perf_high">Performance Score (High)</div>
+                                <div class="sort-option" data-sort="perf_low">Performance Score (Low)</div>
+                                <div class="sort-option" data-sort="dependency">Dependency Count (Highest)</div>
+                                <div class="sort-option" data-sort="exec_fast">Execution Time (Fastest)</div>
+                                <div class="sort-option" data-sort="build_fail">Build Status (Failed First)</div>
+                                <div class="sort-option" data-sort="coverage">Code Coverage (Highest)</div>
+                            </div>
+                        </div>
+
+                        <!-- Lifecycle Dropdown -->
+                        <div class="sort-dropdown-wrap" id="life-sort-wrap">
+                            <button class="sort-btn" id="life-sort-btn" onclick="toggleMenu('life-menu')">
+                                <i data-lucide="refresh-cw"></i>
+                                <span class="btn-text">Lifecycle Status</span>
+                                <i data-lucide="chevron-down"></i>
+                            </button>
+                            <div class="sort-menu" id="life-menu">
+                                <div class="sort-group">LIFECYCLE STATUS</div>
+                                <div class="sort-option active" data-sort="status_active">Status: Active First</div>
+                                <div class="sort-option" data-sort="status_archived">Status: Archived First</div>
+                                <div class="sort-option" data-sort="status_draft">Status: Draft First</div>
+                                <div class="sort-option" data-sort="modified_recent">Recently Modified</div>
+                                <div class="sort-option" data-sort="modified_oldest">Oldest Modified</div>
+                                <div class="sort-option" data-sort="contributor">Contributor (A-Z)</div>
+                                <div class="sort-option" data-sort="version">Asset Version (Latest)</div>
+                                <div class="sort-option" data-sort="usage_most">Usage Frequency (H-L)</div>
+                                <div class="sort-option" data-sort="usage_least">Usage Frequency (L-H)</div>
+                                <div class="sort-option" data-sort="last_access">Last Accessed Date</div>
+                                <div class="sort-option" data-sort="maintenance">Maintenance Level (High)</div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </header>
 
-                <!-- Deployment Specs Section (Collapsed by Default) -->
-                <div class="details-section collapsed" id="section-deployment">
-                    <div class="section-header" onclick="toggleDetailSection('section-deployment')">
-                        <span class="section-title">Deployment Specs</span>
-                        <i data-lucide="chevron-down" class="toggle-icon"></i>
+                <div class="assets-grid">
+                    <!-- Project Assets Rendered Dynamically -->
+                </div>
+            </section>
+
+            <!-- Information Panel -->
+            <aside class="details-panel" id="details-panel">
+                <div class="details-header" onclick="toggleAllSections()">
+                    <h2>ASSET DETAILS</h2>
+                    <i data-lucide="x" class="details-close" onclick="event.stopPropagation(); hideDetails()"></i>
+                </div>
+                
+                <div id="details-view" class="details-content-view">
+                    <!-- Visual Preview Section -->
+                    <div class="details-section" id="section-preview">
+                        <div class="section-header" onclick="toggleDetailSection('section-preview')">
+                            <span class="section-title">Visual Preview</span>
+                            <i data-lucide="chevron-down" class="toggle-icon"></i>
+                        </div>
+                        <div class="section-content">
+                            <div class="details-preview-large">
+                                <i data-lucide="image" id="detail-icon"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="section-content">
-                        <div class="details-extended-info">
-                            <div class="stat-box-large">
-                                <span class="stat-label">REFERENCE PATH</span>
-                                <span id="detail-location" class="stat-value small">-</span>
+
+                    <!-- Technical Specs Section (Collapsed by Default) -->
+                    <div class="details-section collapsed" id="section-tech">
+                        <div class="section-header" onclick="toggleDetailSection('section-tech')">
+                            <span class="section-title">Technical Specs</span>
+                            <i data-lucide="chevron-down" class="toggle-icon"></i>
+                        </div>
+                        <div class="section-content">
+                            <div class="details-info-text">
+                                <h3 id="detail-name">-</h3>
+                                <p id="detail-category">-</p>
                             </div>
-                            <div class="stat-box-large">
-                                <span class="stat-label">DEPLOYMENT USE</span>
-                                <span id="detail-use" class="stat-value small">-</span>
+                            <div class="details-stats-grid">
+                                <div class="stat-box">
+                                    <span class="stat-label">TYPE</span>
+                                    <span id="detail-type" class="stat-value accent">-</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-label">SIZE</span>
+                                    <span id="detail-size" class="stat-value mid">-</span>
+                                </div>
                             </div>
-                            <div class="stat-box-large">
-                                <span class="stat-label">STRATEGIC PURPOSE</span>
-                                <span id="detail-purpose" class="stat-value small">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Deployment Specs Section (Collapsed by Default) -->
+                    <div class="details-section collapsed" id="section-deployment">
+                        <div class="section-header" onclick="toggleDetailSection('section-deployment')">
+                            <span class="section-title">Deployment Specs</span>
+                            <i data-lucide="chevron-down" class="toggle-icon"></i>
+                        </div>
+                        <div class="section-content">
+                            <div class="details-extended-info">
+                                <div class="stat-box-large">
+                                    <span class="stat-label">REFERENCE PATH</span>
+                                    <span id="detail-location" class="stat-value small">-</span>
+                                </div>
+                                <div class="stat-box-large">
+                                    <span class="stat-label">DEPLOYMENT USE</span>
+                                    <span id="detail-use" class="stat-value small">-</span>
+                                </div>
+                                <div class="stat-box-large">
+                                    <span class="stat-label">STRATEGIC PURPOSE</span>
+                                    <span id="detail-purpose" class="stat-value small">-</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Footer Actions (Pinned at bottom of panel) -->
-            <div class="details-footer-actions">
-                <div class="details-section" id="section-actions">
-                    <div class="section-header" onclick="toggleDetailSection('section-actions')">
-                        <span class="section-title">Action Suite</span>
-                        <i data-lucide="chevron-down" class="toggle-icon"></i>
-                    </div>
-                    <div class="section-content">
-                        <button class="btn-mockup primary" onclick="downloadAsset()" title="Download Asset">
-                            <i data-lucide="download"></i>
-                            <span>DOWNLOAD</span>
-                        </button>
-                        <button class="btn-mockup accent" onclick="openFullPreview()" title="Open Full Preview">
-                            <i data-lucide="maximize-2"></i>
-                            <span>FULL PREVIEW</span>
-                        </button>
-                        <button class="btn-mockup secondary" onclick="copyAssetPath()" title="Copy Path to Clipboard">COPY SYSTEM PATH</button>
+                <!-- Footer Actions (Pinned at bottom of panel) -->
+                <div class="details-footer-actions">
+                    <div class="details-section" id="section-actions">
+                        <div class="section-header" onclick="toggleDetailSection('section-actions')">
+                            <span class="section-title">Action Suite</span>
+                            <i data-lucide="chevron-down" class="toggle-icon"></i>
+                        </div>
+                        <div class="section-content">
+                            <button class="btn-mockup primary" onclick="downloadAsset()" title="Download Asset">
+                                <i data-lucide="download"></i>
+                                <span>DOWNLOAD</span>
+                            </button>
+                            <button class="btn-mockup accent" onclick="openFullPreview()" title="Open Full Preview">
+                                <i data-lucide="maximize-2"></i>
+                                <span>FULL PREVIEW</span>
+                            </button>
+                            <button class="btn-mockup secondary" onclick="copyAssetPath()" title="Copy Path to Clipboard">COPY SYSTEM PATH</button>
+                        </div>
                     </div>
                 </div>
+            </aside>
+        </div>
+
+        <!-- Full Preview Modal -->
+        <div id="preview-modal" class="modal-overlay">
+            <div class="modal-header">
+                <div class="modal-info">
+                    <i data-lucide="shield" class="modal-brand-icon"></i>
+                    <span id="modal-title">ASSET_PREVIEW_SYSTEM</span>
+                </div>
+                <button class="modal-close" onclick="closeFullPreview()" title="Close Preview">
+                    <i data-lucide="x"></i>
+                </button>
             </div>
+            <div class="modal-content" id="modal-preview-content">
+                <!-- Large Preview Injected Here -->
+            </div>
+        </div>
+
+        <aside class="settings-global-overlay" id="settings-overlay-panel">
+            <div class="console-header">
+                <h2>SYSTEM SETTINGS</h2>
+                <div class="header-controls">
+                    <button class="close-console" onclick="if(window.showSettingsMenu) window.showSettingsMenu()" title="Close Settings">×</button>
+                </div>
+            </div>
+            <div id="settings-sidebar-container"></div>
         </aside>
     </main>
 
-    <!-- Full Preview Modal -->
-    <div id="preview-modal" class="modal-overlay">
-        <div class="modal-header">
-            <div class="modal-info">
-                <i data-lucide="shield" class="modal-brand-icon"></i>
-                <span id="modal-title">ASSET_PREVIEW_SYSTEM</span>
-            </div>
-            <button class="modal-close" onclick="closeFullPreview()" title="Close Preview">
-                <i data-lucide="x"></i>
-            </button>
-        </div>
-        <div class="modal-content" id="modal-preview-content">
-            <!-- Large Preview Injected Here -->
-        </div>
-    </div>
-
     <script src="asset_manifest.js"></script>
     <script src="assets.js"></script>
+
+    <!-- Master Data Link -->
+    <script src="../../../00 System & Guardrails/00.00_MEMORY_MAP.js"></script>
+
+    <!-- Shared Scripts -->
+    <script src="../shared/visual_sync.js"></script>
+    <script src="../shared/background.js"></script>
+    <script src="../shared/settings.js"></script>
+    <script src="../shared/notifications.js"></script>
+    <script src="../shared/navbar.js"></script>
+
+    <!-- Initialize Shared Modules Specific to Assets -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.initNotifications) initNotifications();
+        });
+    </script>
 </body>
 </html>
