@@ -58,6 +58,7 @@
 .sidebar.collapsed {
     width: 80px;
     padding: 20px 0;
+    z-index: 100;
 }
 
 .sidebar.collapsed .sidebar-header {

@@ -26,6 +26,10 @@
     overflow-x: hidden;
 }
 
+.sidebar.collapsed .category-list {
+    overflow: visible;
+}
+
 /* ── CATEGORY LIST SCROLLBAR ── */
 .category-list::-webkit-scrollbar {
     width: 4px;
@@ -109,3 +113,48 @@
     font-size: 0.6rem;
     margin-top: 5px;
 }
+
+.sidebar.collapsed .category-list {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* ── GLOBAL SIDEBAR TOOLTIP (JS PORTAL) ── */
+.sidebar-floating-tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: rgba(10, 15, 25, 0.95);
+    color: var(--theme-accent);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    border: 1px solid var(--accent-glow-mid);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    z-index: 10000;
+    visibility: hidden;
+    left: 0;
+    top: 0;
+}
+
+.sidebar-floating-tooltip.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar-floating-tooltip::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent var(--accent-glow-mid) transparent transparent;
+}
+
