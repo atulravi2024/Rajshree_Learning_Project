@@ -1,0 +1,66 @@
+:root {
+    /* ── THEME ACCENT (Frontier Cyan) ── */
+    --accent-rgb: 0, 240, 255;
+    --theme-accent: rgb(var(--accent-rgb));
+    --cyan-glow: rgba(var(--accent-rgb), 0.45);
+    --cyan-glow-strong: rgba(var(--accent-rgb), 0.8);
+    
+    /* System Levels */
+    --accent-glow-subtle: rgba(var(--accent-rgb), 0.08);
+    --accent-glow-soft:   rgba(var(--accent-rgb), 0.2);
+    --accent-glow-mid:    rgba(var(--accent-rgb), 0.4);
+    
+    --bg-void: #010a10;
+    --bg-panel: rgba(4, 16, 24, 0.85);
+    --bg-sidebar: rgba(1, 8, 14, 0.9);
+    --bg-card: rgba(6, 18, 28, 0.8);
+    --bg-card-hover: rgba(0, 30, 40, 0.9);
+    
+    --text-bright: #d8f6ff;
+    --text-mid: #8db4c0;
+    --text-label: #5a8090;
+    --border-subtle: rgba(255, 255, 255, 0.07);
+    --sidebar-width: 280px;
+    --details-width: 320px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-void);
+    color: var(--text-bright);
+    font-family: 'Outfit', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── HUD BACKGROUND ── */
+.hud-grid {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-image: 
+        linear-gradient(var(--accent-glow-subtle) 1px, transparent 1px),
+        linear-gradient(90deg, var(--accent-glow-subtle) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.4;
+}
+
+.hud-scanlines {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: repeating-linear-gradient(0deg,
+            rgba(255, 255, 255, 0.01),
+            rgba(255, 255, 255, 0.01) 1px,
+            transparent 1px,
+            transparent 2px);
+    pointer-events: none;
+    opacity: 0.5;
+}

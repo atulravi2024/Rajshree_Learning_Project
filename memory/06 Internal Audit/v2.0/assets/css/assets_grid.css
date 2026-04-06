@@ -1,0 +1,122 @@
+/* ── ASSET GRID ── */
+.assets-grid {
+    flex: 1;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.asset-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 180px; /* Reduced from 280px to 180px as requested */
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.asset-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--theme-accent);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.asset-card:hover {
+    transform: translateY(-8px);
+    background: var(--bg-card-hover);
+    border-color: var(--accent-glow-soft);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.asset-card:hover::before {
+    transform: scaleX(1);
+}
+
+.asset-preview {
+    height: 180px; /* Increased from 120px to restore the taller high-fidelity feel */
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.asset-preview i {
+    width: 40px;
+    height: 40px;
+    color: var(--theme-accent);
+    opacity: 0.7;
+}
+
+.asset-type-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.6rem;
+    color: var(--theme-accent);
+    font-weight: 700;
+    border: 1px solid var(--accent-glow-soft);
+}
+
+.asset-info h3 {
+    font-size: 0.9rem;
+    color: var(--text-bright);
+    margin-bottom: 4px;
+}
+
+.asset-info p {
+    font-size: 0.7rem;
+    color: var(--text-label);
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent-glow-soft);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-glow-mid);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes neonPulse {
+    0% { box-shadow: 0 0 5px var(--accent-glow-subtle); }
+    50% { box-shadow: 0 0 15px var(--accent-glow-soft); }
+    100% { box-shadow: 0 0 5px var(--accent-glow-subtle); }
+}
+
+.active-pulse {
+    animation: neonPulse 2s infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.asset-card {
+    animation: fadeIn 0.4s ease-out;
+}
