@@ -377,8 +377,16 @@ body {
     padding: 0.4rem 0.2rem;
     max-height: 220px;
     overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0,240,255,0.2) transparent;
+}
+.hud-body::-webkit-scrollbar {
+    width: 4px;
+}
+.hud-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+.hud-body::-webkit-scrollbar-thumb {
+    background: rgba(0, 240, 255, 0.2);
+    border-radius: 10px;
 }
 .hud-body.collapsed { display: none; }
 .hud-cmd {

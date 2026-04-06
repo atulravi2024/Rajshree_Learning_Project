@@ -780,7 +780,7 @@
                     <i data-lucide="settings-2"></i>
                     <span>SYSTEM OPS</span>
                 </div>
-                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))">×</button>
+                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))" title="Close Panel">×</button>
             </div>
             <div class="orbital-panel-body">
                 <div class="orbital-section-label">CONFIGURATION</div>
@@ -811,7 +811,7 @@
                     <i data-lucide="monitor"></i>
                     <span>VISUAL PROTOCOL</span>
                 </div>
-                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))">×</button>
+                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))" title="Close Panel">×</button>
             </div>
             <div class="orbital-panel-body">
                 <div class="orbital-section-label">PROTOCOL ARTIFACTS</div>
@@ -859,7 +859,7 @@
                     <i data-lucide="user-check"></i>
                     <span>USER GATEWAY</span>
                 </div>
-                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))">×</button>
+                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))" title="Close Panel">×</button>
             </div>
             <div class="orbital-panel-body">
                 <div class="orbital-section-label">GATEWAY IDENTITY</div>
@@ -879,7 +879,7 @@
                     <i data-lucide="volume-2"></i>
                     <span>NEURAL AUDIO</span>
                 </div>
-                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))">×</button>
+                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))" title="Close Panel">×</button>
             </div>
             <div class="orbital-panel-body">
                 <div class="orbital-section-label">AUDIO PROTOCOL</div>
@@ -907,7 +907,7 @@
                     <i data-lucide="shield"></i>
                     <span>SECURITY GUARDRAILS</span>
                 </div>
-                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))">×</button>
+                <button class="orbital-panel-close" onclick="document.querySelectorAll('.orbital-panel').forEach(p=>p.classList.remove('active'))" title="Close Panel">×</button>
             </div>
             <div class="orbital-panel-body">
                 <div class="orbital-section-label">ACTIVE SHIELDS</div>
@@ -938,7 +938,7 @@
                         <h2>SYSTEM SETTINGS</h2>
                     </div>
                     <div class="header-controls">
-                        <button class="close-console" onclick="if(window.showSettingsMenu) window.showSettingsMenu()">×</button>
+                        <button class="close-console" onclick="if(window.showSettingsMenu) window.showSettingsMenu()" title="Close Settings">×</button>
                     </div>
                 </div>
                 <div id="settings-sidebar-container"></div>
@@ -951,7 +951,7 @@
             <div class="hud-modal-inner">
                 <div class="hud-modal-header">
                     <div class="hud-modal-title"><i data-lucide="list"></i> AUDIT LOG HISTORY</div>
-                    <button class="hud-modal-close" id="close-logs-modal">×</button>
+                    <button class="hud-modal-close" id="close-logs-modal" title="Close Modal">×</button>
                 </div>
                 <div class="hud-modal-body" id="logs-modal-body">
                     <!-- Populated by JS -->
@@ -964,7 +964,7 @@
             <div class="hud-modal-inner">
                 <div class="hud-modal-header">
                     <div class="hud-modal-title"><i data-lucide="history"></i> SEARCH HISTORY</div>
-                    <button class="hud-modal-close" id="close-history-modal">×</button>
+                    <button class="hud-modal-close" id="close-history-modal" title="Close Modal">×</button>
                 </div>
                 <div class="hud-modal-body" id="history-modal-body">
                     <!-- Populated by JS -->
@@ -977,7 +977,7 @@
             <div class="hud-modal-inner">
                 <div class="hud-modal-header">
                     <div class="hud-modal-title"><i data-lucide="cpu"></i> SYSTEM STATUS — LIVE</div>
-                    <button class="hud-modal-close" id="close-info-modal">×</button>
+                    <button class="hud-modal-close" id="close-info-modal" title="Close Modal">×</button>
                 </div>
                 <div class="hud-modal-body" id="info-modal-body">
                     <!-- Populated by JS -->
