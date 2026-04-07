@@ -2,7 +2,7 @@
 <html lang="hi" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>राजश्री - मोबाइल एडमिन</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -31,7 +31,8 @@
         </div>
         
         <div class="config-panel" id="configPanel">
-            <select id="dbSelector" class="custom-input mb-10">
+            <label for="dbSelector" class="sr-only">स्टोरेज फाइल चुनें</label>
+            <select id="dbSelector" class="custom-input mb-10" title="स्टोरेज फाइल चुनें">
                 <option value="database/base.sqlite3">Base DB (कोर डेटा)</option>
                 <option value="database/meta.sqlite3">Meta DB (डिटेल डेटा)</option>
             </select>
@@ -47,7 +48,8 @@
 
     <main class="main-content hidden" id="dashboardArea">
         <div class="sticky-controls">
-            <select id="mobileTableSelector" class="custom-input">
+            <label for="mobileTableSelector" class="sr-only">टेबल चुनें</label>
+            <select id="mobileTableSelector" class="custom-input" title="टेबल चुनें">
                 <option value="" disabled selected>टेबल चुनें...</option>
             </select>
             <input type="text" id="searchInput" class="custom-input search-box hidden" placeholder="🔍 सर्च करें...">

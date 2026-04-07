@@ -137,9 +137,6 @@
     flex: 1;
     padding: 0 24px 40px 24px;
     overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 20, 147, 0.4) rgba(255, 255, 255, 0.1);
-    -ms-overflow-style: none; /* IE/Edge */
 }
 .settings-content::-webkit-scrollbar {
     width: 6px;
@@ -481,6 +478,15 @@ input:checked + .toggle-slider:before { transform: translateX(22px); }
     color: white;
     border-color: transparent;
     box-shadow: 0 4px 14px rgba(229, 62, 62, 0.3);
+}
+
+/* Anchor variant of pill-btn */
+.pill-btn-a {
+    text-decoration: none;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ---- Version Badge ---- */
