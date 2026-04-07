@@ -205,3 +205,16 @@ select.custom-input { cursor: pointer; }
 
 @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 @keyframes rotateSlow { to { transform: rotate(360deg); } }
+
+/* Sidebar Footer — Backup Button Spacing */
+.sidebar-footer-backup-btn {
+    margin-bottom: 10px;
+}
+
+/* Analytics Dashboard Metrics Grid */
+.dashboard-metrics {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
