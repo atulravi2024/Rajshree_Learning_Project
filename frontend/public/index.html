@@ -7,6 +7,19 @@
     <title>राजश्री हिंदी लर्निंग | Rajshree Hindi Learning 🎒✨</title>
     <link rel="stylesheet" href="../src/css/main.css">
     <link rel="stylesheet" href="../src/css/ui/settings-modal.css">
+    <!-- Device Redirection: Ensure visitors are on the correct version based on screen width -->
+    <script>
+        function checkDevice() {
+            // If screen is mobile size (<= 768px), redirect to the mobile interface
+            if (window.innerWidth <= 768) {
+                window.location.replace("mobile/index.html" + window.location.search + window.location.hash);
+            }
+        }
+        // Run check on immediate load
+        checkDevice();
+        // Maintain responsiveness on window resize
+        window.addEventListener('resize', checkDevice);
+    </script>
 </head>
 
 <body>

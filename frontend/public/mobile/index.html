@@ -10,6 +10,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Hind:wght@400;700&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <!-- Device Redirection: Exit mobile mode if screen width exceeds 768px -->
+    <script>
+        function checkDevice() {
+            // If screen is tablet/desktop size (> 768px), redirect to the full desktop interface
+            if (window.innerWidth > 768) {
+                window.location.replace("../index.html" + window.location.search + window.location.hash);
+            }
+        }
+        // Run check on immediate load
+        checkDevice();
+        // Maintain responsiveness on window resize
+        window.addEventListener('resize', checkDevice);
+    </script>
 </head>
 
 <body>
