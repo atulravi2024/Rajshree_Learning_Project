@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>राजश्री हिंदी - मोबाइल | Rajshree Hindi Mobile 🎒</title>
+    <link rel="stylesheet" href="../../src/css/mobile/main.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Hind:wght@400;700&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main id="master-mobile">
+        <!-- Dynamic card content will go here -->
+        <div class="loading-state">शुरू किया जा रहा है...</div>
+    </main>
+
+    <nav class="mobile-nav">
+        <a class="nav-item" onclick="prev()" title="Previous">
+            <span class="nav-icon">⬅️</span>
+            <span class="nav-label">पीछे (Prev)</span>
+        </a>
+        <a class="nav-item active" onclick="window.location.reload()" title="Home">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">होम (Home)</span>
+        </a>
+        <a class="nav-item" onclick="next()" title="Next">
+            <span class="nav-icon">➡️</span>
+            <span class="nav-label">अगला (Next)</span>
+        </a>
+        <a class="nav-item" onclick="openSettings()" title="Settings">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">सेटिंग्स (Settings)</span>
+        </a>
+    </nav>
+
+    <!-- Essential Global Variables (Simulating browser environment expected by logic) -->
+    <script>
+        window.AUDIO_BASE_PATH = '../../assets/audio/';
+        window.RAJSHREE_DATA = {}; // Will be populated by individual data scripts
+    </script>
+
+    <!-- Data (Reusing atomic scripts) -->
+    <script src="../../src/js/data/varnamala/swar.js"></script>
+    <script src="../../src/js/data/varnamala/vyanjan.js"></script>
+    <script src="../../src/js/data/varnamala/samyukt.js"></script>
+    <script src="../../src/js/data/varnamala/matra.js"></script>
+
+    <!-- Mobile-specific logic -->
+    <script src="../../src/js/mobile/main.js"></script>
+
+    <script>
+        function openSettings() {
+            window.location.href = 'settings.html';
+        }
+    </script>
+</body>
+
+</html>

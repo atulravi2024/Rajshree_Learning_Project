@@ -142,13 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ─── SMods Side Tab ──────────────────────────────────────────────
-    const smodsTab = document.querySelector('.smods-tab');
-    if (smodsTab) {
-        smodsTab.addEventListener('click', () => {
-            console.log('SMods tab clicked');
-        });
-    }
+
 
     // ─── GENERAL: Volume Slider ──────────────────────────────────────
     const volumeControl = document.getElementById('volume-control');

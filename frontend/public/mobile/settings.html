@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सेटिंग्स - मोबाइल | Settings Mobile ⚙️</title>
+    <link rel="stylesheet" href="../../src/css/mobile/settings.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Hind:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="settings-header">
+        <h1 class="settings-title">मोबाइल सेटिंग्स</h1>
+        <button class="close-btn" onclick="window.history.back()" title="Back">✖</button>
+    </header>
+
+    <main>
+        <section class="settings-group">
+            <div class="toggle-row">
+                <div>
+                    <span class="group-label">ऑटोप्ले (Autoplay)</span>
+                    <p class="group-sub">अगला कार्ड ऑटो स्विच करें</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="mobile-autoplay" title="ऑटोप्ले ऑन/ऑफ">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <section class="settings-group">
+            <div class="toggle-row">
+                <div>
+                    <span class="group-label">साउंड इफेक्ट्स (SFX)</span>
+                    <p class="group-sub">कार्टून आवाज़ें</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="mobile-sfx" checked title="साउंड इफेक्ट्स ऑन/ऑफ">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <section class="settings-group">
+            <span class="group-label">थीम का रंग (Theme Color)</span>
+            <p class="group-sub">अपना पसंदीदा रंग चुनें</p>
+            <div class="color-grid">
+               <!-- Theme color options would go here -->
+               🎨 Customization coming soon...
+            </div>
+        </section>
+    </main>
+
+    <script src="../../src/js/mobile/settings.js"></script>
+</body>
+
+</html>
