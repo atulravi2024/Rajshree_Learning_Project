@@ -7,6 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/desktop.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
 </head>
 <body>
@@ -27,12 +28,12 @@
         <!-- Sidebar -->
         <aside class="sidebar glass-panel">
             <div class="branding">
-                <div class="header-icon">💻</div>
+                <div class="header-icon"><i class="ph ph-laptop"></i></div>
                 <h2>डेस्कटॉप एडमिन</h2>
             </div>
             
             <div class="theme-toggle-wrapper">
-                <button id="themeToggleBtn" class="btn-theme pulse-hover">🌙 डार्क मोड</button>
+                <button id="themeToggleBtn" class="btn-theme pulse-hover"><i class="ph ph-moon"></i> डार्क मोड</button>
             </div>
 
             <div class="sidebar-section mt-3">
@@ -45,10 +46,13 @@
 
             <div class="sidebar-section">
                 <label>GitHub PAT:</label>
-                <input type="password" id="githubToken" class="custom-input" placeholder="ghp_XXXXXXXXXXXXXXXX">
+                <div class="input-with-action">
+                    <input type="password" id="githubToken" class="custom-input" placeholder="ghp_XXXXXXXXXXXXXXXX">
+                    <button id="clearTokenBtn" class="btn-icon hidden" title="Clear Token"><i class="ph ph-x-circle"></i></button>
+                </div>
             </div>
 
-            <button id="loadBtn" class="btn btn-primary w-full pulse-hover mt-3">⬇️ कनेक्ट करें</button>
+            <button id="loadBtn" class="btn btn-primary w-full pulse-hover mt-3"><i class="ph ph-download-simple"></i> कनेक्ट करें</button>
 
             <div id="tablesSection" class="hidden">
                 <hr class="separator">
@@ -57,7 +61,8 @@
             </div>
             
             <div id="saveSection" class="sidebar-footer hidden">
-                <button id="pushBtn" class="btn btn-success float-effect w-full">⬆️ GitHub पर पुश करें</button>
+                <button id="backupBtn" class="btn btn-outline float-effect w-full" style="margin-bottom: 10px;"><i class="ph ph-hard-drives"></i> लोकल बैकअप लें</button>
+                <button id="pushBtn" class="btn btn-success float-effect w-full"><i class="ph ph-upload-simple"></i> GitHub पर पुश करें</button>
             </div>
         </aside>
 
@@ -71,23 +76,48 @@
                 
                 <div class="action-area hidden" id="tableActions">
                     <div class="search-wrapper">
-                        <span class="search-icon">🔍</span>
+                        <span class="search-icon"><i class="ph ph-magnifying-glass"></i></span>
                         <input type="text" id="searchInput" class="search-box" placeholder="सर्च करें...">
                     </div>
-                    <button id="addNewBtn" class="btn btn-primary btn-sm">➕ नया रिकॉर्ड</button>
+                    <button id="exportCsvBtn" class="btn btn-outline btn-sm"><i class="ph ph-file-csv"></i> CSV एक्सपोर्ट</button>
+                    <button id="bulkDeleteBtn" class="btn btn-danger btn-sm hidden"><i class="ph ph-trash"></i> चुनी हुई डिलीट करें</button>
+                    <button id="addNewBtn" class="btn btn-primary btn-sm"><i class="ph ph-plus"></i> नया रिकॉर्ड</button>
                 </div>
             </div>
 
             <div class="table-wrapper">
                 <div id="emptyState" class="empty-state">
-                    <div class="empty-state-icon">👈</div>
-                    पहले बाएँ पैनल से कनेक्ट करें।
+                    <div id="welcomeMessage">
+                        <div class="empty-state-icon"><i class="ph ph-hand-pointing-left"></i></div>
+                        पहले बाएँ पैनल से कनेक्ट करें।
+                    </div>
+                    <!-- Analytics Dashboard (Hidden by default) -->
+                    <div id="dashboardMetrics" class="hidden" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                        <!-- JS injects stats here -->
+                    </div>
                 </div>
                 
                 <table class="modern-table hidden" id="dataTable">
                     <thead id="tableHead"></thead>
                     <tbody id="tableBody"></tbody>
                 </table>
+                
+                <!-- Pagination UI -->
+                <div id="paginationControls" class="pagination-controls hidden">
+                    <div>
+                        <button id="prevPageBtn" class="btn btn-outline btn-sm" disabled><i class="ph ph-caret-left"></i> पिछला</button>
+                        <span id="pageInfo" class="page-info">पेज 1 / 1</span>
+                        <button id="nextPageBtn" class="btn btn-outline btn-sm" disabled>अगला <i class="ph ph-caret-right"></i></button>
+                    </div>
+                    <div>
+                        <select id="rowsPerPage" class="custom-input" title="रोज़ प्रति पेज">
+                            <option value="10">10 रोज़</option>
+                            <option value="20">20 रोज़</option>
+                            <option value="50" selected>50 रोज़</option>
+                            <option value="100">100 रोज़</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </main>
     </div>

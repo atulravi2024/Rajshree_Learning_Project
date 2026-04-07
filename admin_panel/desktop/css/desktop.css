@@ -143,19 +143,29 @@ select.custom-input { cursor: pointer; }
 
 /* Buttons */
 .btn { padding: 14px 20px; border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; display: inline-flex; justify-content: center; align-items: center; gap: 8px; transition: all 0.2s; font-family: inherit; }
-.btn-sm { padding: 10px 15px; font-size: 0.9rem; }
+.btn-sm { padding: 8px 12px; font-size: 0.9rem; }
 .btn-primary { background: var(--primary-color); color: white; }
 .btn-success { background: var(--success-color); color: white; }
 .btn-danger { background: var(--danger-color); color: white; padding: 6px 12px; font-size: 0.85rem; border-radius: 6px;}
 .btn-edit { background: var(--sidebar-hover); color: var(--secondary-color); padding: 6px 12px; font-size: 0.85rem; border-radius: 6px; border: none; cursor: pointer;}
 .btn-outline { background: transparent; border: 2px solid var(--border-color); color: var(--text-muted); }
+.btn-outline:hover:not(:disabled) { border-color: var(--primary-color); color: var(--primary-color); }
+.btn-outline:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-icon { background: transparent; border: none; cursor: pointer; font-size: 1.1rem; padding: 0 10px; opacity: 0.7; transition: opacity 0.2s; }
+.btn-icon:hover { opacity: 1; }
 
 .pulse-hover:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255, 20, 147, 0.2); }
 .float-effect:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(16, 185, 129, 0.2); }
 
 /* Table Inputs */
-.data-input { width: 100%; padding: 10px 12px; border: 1px solid transparent; background: var(--input-bg); color: var(--text-main); border-radius: 8px; font-size: 1rem; font-family: inherit; }
+.data-input { width: 100%; padding: 10px 12px; border: 1px solid transparent; background: var(--input-bg); color: var(--text-main); border-radius: 8px; font-size: 1rem; font-family: inherit; transition: all 0.2s; }
 .data-input:focus { border-color: var(--secondary-color); outline: none; }
+
+.custom-input:focus, .search-box:focus {
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.ph { font-size: 1.15em; vertical-align: middle; }
 
 .modal-overlay {
     position: fixed;
@@ -174,5 +184,24 @@ select.custom-input { cursor: pointer; }
 
 #toast-container { position: fixed; top: 20px; right: 20px; z-index: 1000; display: flex; flex-direction: column; gap: 12px; }
 .toast { background: var(--glass-bg); color: var(--text-main); padding: 15px 20px; border-radius: 12px; box-shadow: var(--shadow-soft); display: flex; align-items: center; gap: 12px; font-weight: 500; border-left: 4px solid var(--primary-color); animation: slideIn 0.3s; }
+.toast.success { border-left-color: var(--success-color); }
+.toast.error { border-left-color: var(--danger-color); }
+.toast.info { border-left-color: var(--secondary-color); }
+
+/* Form Elements */
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; color: var(--text-main); }
+.input-with-action { display: flex; gap: 8px; align-items: stretch; }
+.input-with-action .custom-input { flex: 1; }
+
+/* Pagination Controls */
+.pagination-controls { 
+    display: flex; justify-content: space-between; align-items: center; 
+    margin-top: 15px; padding: 12px 20px; 
+    background: var(--glass-bg); border-radius: 12px; border: 1px solid var(--border-color);
+}
+.pagination-controls div { display: flex; align-items: center; gap: 15px; }
+.page-info { font-weight: 500; color: var(--text-main); }
+
 @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 @keyframes rotateSlow { to { transform: rotate(360deg); } }
