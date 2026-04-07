@@ -104,4 +104,92 @@ To remove the need for manual script execution, a GitHub Action can be implement
 
 ---
 
-*Memory Updated: 2026-04-07 | v1.1 — Added Manual and Automated Workflow Consensus*
+## 📊 GITHUB DATABASE SUPPORT & COMPARISON
+
+### 🔵 GitHub Database Support (Reality & Comparison)
+
+| Database Type | GitHub/Git Storage | Live Read/Write on GitHub Pages? | Best Use Case |
+| :--- | :--- | :--- | :--- |
+| **SQLite (.sqlite3 / .db)** | ✅ **Yes** (Single File) | 🟡 **Read-Only** (via WASM/JS)* | Local development & static data pipelines. |
+| **SQL Scripts (.sql)** | ✅ **Yes** (As Text File) | ❌ **No** | Database schema versioning & backups. |
+| **MySQL / Postgres** | ❌ **No** | ❌ **No** | Requires separate hosting (e.g., Supabase). |
+| **MongoDB** | ❌ **No** | ❌ **No** | Requires cloud hosting (e.g., MongoDB Atlas). |
+
+#### SQLite "Read" Technique in Browser:
+To use a SQLite file on a static host like GitHub Pages, **`sql.js` (WebAssembly)** is used. This allows loading the file directly into the browser's memory and running SQL queries. It enables data extraction without requiring a live backend server.
+
+---
+
+## 🛠️ END-TO-END AUTOMATION (GIT-CMS ARCHITECTURE)
+
+To fully automate the project, a **Git-CMS** architecture is established where the Admin Panel acts as the "writer" and GitHub Actions acts as the "builder".
+
+### 🔵 Admin Panel Logic (The "Writer")
+A local or remote Node.js/Express server providing a GUI for data entry.
+1. **Sync Down:** Panel performs `git pull` to ensure local `.sqlite3` files match GitHub.
+2. **Data Entry:** User updates content (Categories, Swar, etc.) via web forms.
+3. **Commit & Sync Up:** 
+   - Panel saves to `base.sqlite3` and `meta.sqlite3`.
+   - Panel executes: `git add .`, `git commit -m "update: db content"`, `git push origin main`.
+
+### 🔵 GitHub Actions Logic (The "Builder")
+Automates the conversion of raw database data into high-performance static JS assets.
+
+**Workflow Blueprint:**
+```yaml
+name: Build Static Data
+on:
+  push:
+    paths:
+      - 'database/**' # Triggers only on database changes
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+      - run: npm install
+      - name: Regenerate Frontend Data
+        run: node scripts/data_pipeline/build_database.js
+      - name: Auto-Commit Generated Files
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "sys: auto-generated frontend data assets"
+```
+
+### 🔵 Benefits of this Architecture
+- **Zero Build Maintenance:** Developers only manage the database; the frontend updates itself.
+- **Auditability:** Every single data change in the Admin Panel is recorded in Git History.
+- **Portability:** The Admin Panel can be run on any machine with `git` and `node` installed.
+
+---
+
+## 📱 SERVERLESS MOBILE-FRIENDLY ADMIN ARCHITECTURE
+
+A more flexible alternative to a local Node.js server is a **Serverless Admin Panel** built with pure HTML, CSS, and JS, utilizing the **GitHub REST API**. This allows for data management from any device, including mobiles and tablets, without needing a local server environment.
+
+### 🔵 Comparison: Node.js Server vs. GitHub API (Mobile-Friendly)
+
+| Feature | Node.js (Earlier Version) | HTML+JS + GitHub API (New Phase) |
+| :--- | :--- | :--- |
+| **Device Support** | PC / Laptop only | **Mobile, Tablet, and PC** |
+| **Environment** | Requires Node.js & Express installation | **Zero installation**; runs in any browser |
+| **Cost** | 100% Free | **100% Free** |
+| **File Access** | Local Hard Drive | Directly from/to **GitHub Repository** |
+| **Setup Complexity** | Medium (Server & Port management) | Easy (Web-based Interface) |
+| **Sync Method** | Manual `git push` or shell script | **Automated** via GitHub REST API |
+
+### 🔵 Serverless Workflow (The "Cloud-Writer")
+1. **GitHub Auth:** User provides a **Personal Access Token (PAT)** to grant the web app write access to the repository.
+2. **Fetch:** The app uses the GitHub API to download the `.sqlite3` files into the browser's memory.
+3. **In-Browser Edit:** Uses `sql.js` (WebAssembly) to perform SQL queries and updates on the binary file within the browser.
+4. **API Commit:** When "Save" is clicked, the app converts the updated SQLite binary to Base64 and pushes it back to GitHub via a `PUT` request to the Contents API.
+5. **Auto-Update:** GitHub Actions detects the change and rebuilds the frontend data assets automatically.
+
+### 🔵 Key Advantage
+This approach removes the "Desktop dependency," allowing the project to be updated by a teacher or parent directly from their phone, while still maintaining the speed and reliability of a static frontend.
+
+---
+
+*Memory Updated: 2026-04-07 | v1.5 — Detailed Serverless Mobile-Friendly Admin Architecture and Comparison*

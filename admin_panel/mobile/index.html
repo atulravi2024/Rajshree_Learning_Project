@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="hi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>राजश्री - मोबाइल एडमिन</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/mobile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+</head>
+<body>
+    <div id="toast-container"></div>
+    
+    <div id="formModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h3 id="modalTitle">रिकॉर्ड फॉर्म</h3>
+            <form id="dynamicForm"></form>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-outline" id="closeModalBtn">रद्द</button>
+                <button type="button" class="btn btn-primary" id="saveRecordBtn">सेव करें</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Loading / Config Section -->
+    <header class="mobile-header" id="configHeader">
+        <div class="header-top">
+            <h2>📱 मोबाइल एडमिन</h2>
+            <button id="themeToggleBtn" class="btn-theme">☀️ लाइट</button>
+        </div>
+        
+        <div class="config-panel" id="configPanel">
+            <select id="dbSelector" class="custom-input mb-10">
+                <option value="database/base.sqlite3">Base DB (कोर डेटा)</option>
+                <option value="database/meta.sqlite3">Meta DB (डिटेल डेटा)</option>
+            </select>
+            <input type="password" id="githubToken" class="custom-input mb-10" placeholder="GitHub PAT (वैकल्पिक)">
+            <button id="loadBtn" class="btn btn-primary w-full">⬇️ कनेक्ट करें</button>
+        </div>
+        
+        <!-- Collapsed view toggler -->
+        <div id="reconnectBanner" class="hidden text-center mt-10">
+            <button id="showConfigBtn" class="btn-outline btn-sm">⚙️ सेटिंग्स बदलें</button>
+        </div>
+    </header>
+
+    <main class="main-content hidden" id="dashboardArea">
+        <div class="sticky-controls">
+            <select id="mobileTableSelector" class="custom-input">
+                <option value="" disabled selected>टेबल चुनें...</option>
+            </select>
+            <input type="text" id="searchInput" class="custom-input search-box hidden" placeholder="🔍 सर्च करें...">
+        </div>
+
+        <div id="emptyState" class="empty-state">
+            👆 ऊपर से कोई टेबल चुनें ताकि डेटा लोड हो सके।
+        </div>
+
+        <div id="cardContainer" class="card-list">
+            <!-- Cards go here -->
+        </div>
+    </main>
+
+    <!-- Bottom Actions -->
+    <div class="bottom-action-bar hidden" id="bottomActions">
+        <span id="recordCount" class="badge">0 <br><small>रिकॉर्ड्स</small></span>
+        <button id="pushBtn" class="btn btn-success float-effect">⬆️ GitHub पर पुश करें</button>
+    </div>
+
+    <!-- Floating Action Button for "Add New" -->
+    <button id="addNewBtn" class="fab hidden">➕</button>
+
+    <script src="js/mobile.js"></script>
+</body>
+</html>
