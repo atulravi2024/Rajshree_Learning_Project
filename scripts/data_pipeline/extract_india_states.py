@@ -1,6 +1,6 @@
 import json
 
-with open(r'c:\Users\Atul Verma\.openclaw\workspace\RajShree_Project\Rajshree Learning Project\global_states.json', 'r', encoding='utf-8') as f:
+with open(r'c:\Users\Atul Verma\.openclaw\workspace\RajShree_Project\Rajshree Learning Project\database\master_records\global_states.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
 india_states = {}

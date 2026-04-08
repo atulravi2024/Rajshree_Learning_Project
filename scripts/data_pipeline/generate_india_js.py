@@ -2,8 +2,8 @@ import json
 import os
 
 # Config Paths
-EXHAUSTIVE_JSON = r'c:\Users\Atul Verma\.openclaw\workspace\RajShree_Project\Rajshree Learning Project\india_exhaustive.json'
-GLOBAL_STATES_JSON = r'c:\Users\Atul Verma\.openclaw\workspace\RajShree_Project\Rajshree Learning Project\global_states.json'
+EXHAUSTIVE_JSON = r'c:\Users\Atul Verma\.openclaw\workspace\RajShree_Project\Rajshree Learning Project\database\master_records\india_exhaustive.json'
+GLOBAL_STATES_JSON = r'c:\Users\Atul Verma\.openclaw\workspace\RajShree_Project\Rajshree Learning Project\database\master_records\global_states.json'
 OUTPUT_FILE = r'c:\Users\Atul Verma\.openclaw\workspace\RajShree_Project\Rajshree Learning Project\memory\06 Internal Audit\v2.0\map\country\india.js'
 
 # State mapping manual check/override for official 36 States/UTs

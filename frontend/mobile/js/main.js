@@ -84,7 +84,7 @@ const playSound = (audioPath) => {
     if (!audioPath) return;
 
     console.log("🔊 Playing audio: " + audioPath);
-    const fullPath = (window.AUDIO_BASE_PATH || '../../assets/audio/') + audioPath;
+    const fullPath = (window.AUDIO_BASE_PATH || '../assets/audio/') + audioPath;
     const audio = new Audio(fullPath);
     
     audio.play().catch(e => {

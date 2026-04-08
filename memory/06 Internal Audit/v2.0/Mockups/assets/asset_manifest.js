@@ -17,7 +17,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../AGENTS.md"
+        "path": "../../../../../AGENTS.md"
     },
     {
         "name": "CONTRIBUTING.md",
@@ -31,7 +31,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../CONTRIBUTING.md"
+        "path": "../../../../../CONTRIBUTING.md"
     },
     {
         "name": "index.html",
@@ -45,7 +45,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../index.html"
+        "path": "../../../../../index.html"
     },
     {
         "name": "package.json",
@@ -59,7 +59,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../package.json"
+        "path": "../../../../../package.json"
     },
     {
         "name": "pyrightconfig.json",
@@ -73,7 +73,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../pyrightconfig.json"
+        "path": "../../../../../pyrightconfig.json"
     },
     {
         "name": "README.md",
@@ -87,7 +87,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../README.md"
+        "path": "../../../../../README.md"
     },
     {
         "name": "requirements.txt",
@@ -101,7 +101,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../requirements.txt"
+        "path": "../../../../../requirements.txt"
     },
     {
         "name": "robots.txt",
@@ -115,7 +115,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../robots.txt"
+        "path": "../../../../../robots.txt"
     },
     {
         "name": "index.html",
@@ -129,7 +129,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../admin_panel/index.html"
+        "path": "../../../../../admin_panel/index.html"
     },
     {
         "name": "index.html",
@@ -143,7 +143,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../admin_panel/desktop/index.html"
+        "path": "../../../../../admin_panel/desktop/index.html"
     },
     {
         "name": "desktop.css",
@@ -157,7 +157,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../admin_panel/desktop/css/desktop.css"
+        "path": "../../../../../admin_panel/desktop/css/desktop.css"
     },
     {
         "name": "desktop.js",
@@ -171,7 +171,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../admin_panel/desktop/js/desktop.js"
+        "path": "../../../../../admin_panel/desktop/js/desktop.js"
     },
     {
         "name": "index.html",
@@ -185,7 +185,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../admin_panel/mobile/index.html"
+        "path": "../../../../../admin_panel/mobile/index.html"
     },
     {
         "name": "mobile.css",
@@ -199,7 +199,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../admin_panel/mobile/css/mobile.css"
+        "path": "../../../../../admin_panel/mobile/css/mobile.css"
     },
     {
         "name": "mobile.js",
@@ -213,7 +213,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../admin_panel/mobile/js/mobile.js"
+        "path": "../../../../../admin_panel/mobile/js/mobile.js"
     },
     {
         "name": "demo.mp3",
@@ -227,7 +227,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Infrastructure Logic",
         "purpose": "Handles critical server-side operations, including TTS generation and data processing.",
-        "path": "../../../../backend/tts_engine/Edge-TTS/demo.mp3"
+        "path": "../../../../../backend/tts_engine/Edge-TTS/demo.mp3"
     },
     {
         "name": "demo_script.py",
@@ -241,7 +241,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Infrastructure Logic",
         "purpose": "Handles critical server-side operations, including TTS generation and data processing.",
-        "path": "../../../../backend/tts_engine/Edge-TTS/demo_script.py"
+        "path": "../../../../../backend/tts_engine/Edge-TTS/demo_script.py"
     },
     {
         "name": "demo.mp3",
@@ -255,7 +255,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Infrastructure Logic",
         "purpose": "Handles critical server-side operations, including TTS generation and data processing.",
-        "path": "../../../../backend/tts_engine/Edge-TTS/en-US-AnaNeural/demo.mp3"
+        "path": "../../../../../backend/tts_engine/Edge-TTS/en-US-AnaNeural/demo.mp3"
     },
     {
         "name": "demo_script.py",
@@ -269,7 +269,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Infrastructure Logic",
         "purpose": "Handles critical server-side operations, including TTS generation and data processing.",
-        "path": "../../../../backend/tts_engine/Edge-TTS/en-US-AnaNeural/demo_script.py"
+        "path": "../../../../../backend/tts_engine/Edge-TTS/en-US-AnaNeural/demo_script.py"
     },
     {
         "name": "demo.mp3",
@@ -283,7 +283,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Infrastructure Logic",
         "purpose": "Handles critical server-side operations, including TTS generation and data processing.",
-        "path": "../../../../backend/tts_engine/Edge-TTS/hi-IN-MadhurNeural-Child/demo.mp3"
+        "path": "../../../../../backend/tts_engine/Edge-TTS/hi-IN-MadhurNeural-Child/demo.mp3"
     },
     {
         "name": "demo_script.py",
@@ -297,7 +297,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Infrastructure Logic",
         "purpose": "Handles critical server-side operations, including TTS generation and data processing.",
-        "path": "../../../../backend/tts_engine/Edge-TTS/hi-IN-MadhurNeural-Child/demo_script.py"
+        "path": "../../../../../backend/tts_engine/Edge-TTS/hi-IN-MadhurNeural-Child/demo_script.py"
     },
     {
         "name": "demo.mp3",
@@ -311,7 +311,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Infrastructure Logic",
         "purpose": "Handles critical server-side operations, including TTS generation and data processing.",
-        "path": "../../../../backend/tts_engine/Edge-TTS/hi-IN-NeerjaExpressive-Child/demo.mp3"
+        "path": "../../../../../backend/tts_engine/Edge-TTS/hi-IN-NeerjaExpressive-Child/demo.mp3"
     },
     {
         "name": "demo_script.py",
@@ -325,7 +325,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Infrastructure Logic",
         "purpose": "Handles critical server-side operations, including TTS generation and data processing.",
-        "path": "../../../../backend/tts_engine/Edge-TTS/hi-IN-NeerjaExpressive-Child/demo_script.py"
+        "path": "../../../../../backend/tts_engine/Edge-TTS/hi-IN-NeerjaExpressive-Child/demo_script.py"
     },
     {
         "name": "demo.mp3",
@@ -339,7 +339,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Infrastructure Logic",
         "purpose": "Handles critical server-side operations, including TTS generation and data processing.",
-        "path": "../../../../backend/tts_engine/Edge-TTS/hi-IN-SwaraNeural-Child/demo.mp3"
+        "path": "../../../../../backend/tts_engine/Edge-TTS/hi-IN-SwaraNeural-Child/demo.mp3"
     },
     {
         "name": "demo_script.py",
@@ -353,7 +353,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Infrastructure Logic",
         "purpose": "Handles critical server-side operations, including TTS generation and data processing.",
-        "path": "../../../../backend/tts_engine/Edge-TTS/hi-IN-SwaraNeural-Child/demo_script.py"
+        "path": "../../../../../backend/tts_engine/Edge-TTS/hi-IN-SwaraNeural-Child/demo_script.py"
     },
     {
         "name": "global_states.json",
@@ -367,7 +367,7 @@ window.PROJECT_ASSETS = [
         "perf": 80,
         "use": "Data Architecture",
         "purpose": "Maintains project state and provides structured schemas for application scaling.",
-        "path": "../../../../database/master_records/global_states.json"
+        "path": "../../../../../database/master_records/global_states.json"
     },
     {
         "name": "india_exhaustive.json",
@@ -381,7 +381,7 @@ window.PROJECT_ASSETS = [
         "perf": 80,
         "use": "Data Architecture",
         "purpose": "Maintains project state and provides structured schemas for application scaling.",
-        "path": "../../../../database/master_records/india_exhaustive.json"
+        "path": "../../../../../database/master_records/india_exhaustive.json"
     },
     {
         "name": "append_250_columns.py",
@@ -395,7 +395,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Data Architecture",
         "purpose": "Maintains project state and provides structured schemas for application scaling.",
-        "path": "../../../../database/schemas/append_250_columns.py"
+        "path": "../../../../../database/schemas/append_250_columns.py"
     },
     {
         "name": "read_excel_cols.py",
@@ -409,7 +409,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Data Architecture",
         "purpose": "Maintains project state and provides structured schemas for application scaling.",
-        "path": "../../../../database/schemas/read_excel_cols.py"
+        "path": "../../../../../database/schemas/read_excel_cols.py"
     },
     {
         "name": "upgrade_excel.js",
@@ -423,7 +423,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Data Architecture",
         "purpose": "Maintains project state and provides structured schemas for application scaling.",
-        "path": "../../../../database/schemas/upgrade_excel.js"
+        "path": "../../../../../database/schemas/upgrade_excel.js"
     },
     {
         "name": "comp_big_small.mp3",
@@ -437,7 +437,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_big_small.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_big_small.mp3"
     },
     {
         "name": "comp_clean_dirty.mp3",
@@ -451,7 +451,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_clean_dirty.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_clean_dirty.mp3"
     },
     {
         "name": "comp_day_night.mp3",
@@ -465,7 +465,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_day_night.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_day_night.mp3"
     },
     {
         "name": "comp_dry_wet.mp3",
@@ -479,7 +479,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_dry_wet.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_dry_wet.mp3"
     },
     {
         "name": "comp_fast_slow.mp3",
@@ -493,7 +493,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_fast_slow.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_fast_slow.mp3"
     },
     {
         "name": "comp_fat_thin.mp3",
@@ -507,7 +507,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_fat_thin.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_fat_thin.mp3"
     },
     {
         "name": "comp_full_empty.mp3",
@@ -521,7 +521,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_full_empty.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_full_empty.mp3"
     },
     {
         "name": "comp_hard_soft.mp3",
@@ -535,7 +535,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_hard_soft.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_hard_soft.mp3"
     },
     {
         "name": "comp_heavy_light.mp3",
@@ -549,7 +549,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_heavy_light.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_heavy_light.mp3"
     },
     {
         "name": "comp_in_out.mp3",
@@ -563,7 +563,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_in_out.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_in_out.mp3"
     },
     {
         "name": "comp_light_dark.mp3",
@@ -577,7 +577,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_light_dark.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_light_dark.mp3"
     },
     {
         "name": "comp_near_far.mp3",
@@ -591,7 +591,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_near_far.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_near_far.mp3"
     },
     {
         "name": "comp_open_closed.mp3",
@@ -605,7 +605,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_open_closed.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_open_closed.mp3"
     },
     {
         "name": "comp_tall_short.mp3",
@@ -619,7 +619,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_tall_short.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_tall_short.mp3"
     },
     {
         "name": "comp_up_down.mp3",
@@ -633,7 +633,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_up_down.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_up_down.mp3"
     },
     {
         "name": "comp_wide_narrow.mp3",
@@ -647,7 +647,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/comparisons/comp_wide_narrow.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/comparisons/comp_wide_narrow.mp3"
     },
     {
         "name": "num_1.mp3",
@@ -661,7 +661,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_1.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_1.mp3"
     },
     {
         "name": "num_10.mp3",
@@ -675,7 +675,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_10.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_10.mp3"
     },
     {
         "name": "num_100.mp3",
@@ -689,7 +689,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_100.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_100.mp3"
     },
     {
         "name": "num_11.mp3",
@@ -703,7 +703,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_11.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_11.mp3"
     },
     {
         "name": "num_12.mp3",
@@ -717,7 +717,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_12.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_12.mp3"
     },
     {
         "name": "num_13.mp3",
@@ -731,7 +731,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_13.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_13.mp3"
     },
     {
         "name": "num_14.mp3",
@@ -745,7 +745,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_14.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_14.mp3"
     },
     {
         "name": "num_15.mp3",
@@ -759,7 +759,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_15.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_15.mp3"
     },
     {
         "name": "num_16.mp3",
@@ -773,7 +773,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_16.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_16.mp3"
     },
     {
         "name": "num_17.mp3",
@@ -787,7 +787,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_17.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_17.mp3"
     },
     {
         "name": "num_18.mp3",
@@ -801,7 +801,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_18.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_18.mp3"
     },
     {
         "name": "num_19.mp3",
@@ -815,7 +815,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_19.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_19.mp3"
     },
     {
         "name": "num_2.mp3",
@@ -829,7 +829,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_2.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_2.mp3"
     },
     {
         "name": "num_20.mp3",
@@ -843,7 +843,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_20.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_20.mp3"
     },
     {
         "name": "num_21.mp3",
@@ -857,7 +857,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_21.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_21.mp3"
     },
     {
         "name": "num_22.mp3",
@@ -871,7 +871,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_22.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_22.mp3"
     },
     {
         "name": "num_23.mp3",
@@ -885,7 +885,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_23.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_23.mp3"
     },
     {
         "name": "num_24.mp3",
@@ -899,7 +899,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_24.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_24.mp3"
     },
     {
         "name": "num_25.mp3",
@@ -913,7 +913,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_25.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_25.mp3"
     },
     {
         "name": "num_26.mp3",
@@ -927,7 +927,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_26.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_26.mp3"
     },
     {
         "name": "num_27.mp3",
@@ -941,7 +941,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_27.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_27.mp3"
     },
     {
         "name": "num_28.mp3",
@@ -955,7 +955,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_28.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_28.mp3"
     },
     {
         "name": "num_29.mp3",
@@ -969,7 +969,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_29.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_29.mp3"
     },
     {
         "name": "num_3.mp3",
@@ -983,7 +983,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_3.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_3.mp3"
     },
     {
         "name": "num_30.mp3",
@@ -997,7 +997,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_30.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_30.mp3"
     },
     {
         "name": "num_31.mp3",
@@ -1011,7 +1011,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_31.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_31.mp3"
     },
     {
         "name": "num_32.mp3",
@@ -1025,7 +1025,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_32.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_32.mp3"
     },
     {
         "name": "num_33.mp3",
@@ -1039,7 +1039,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_33.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_33.mp3"
     },
     {
         "name": "num_34.mp3",
@@ -1053,7 +1053,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_34.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_34.mp3"
     },
     {
         "name": "num_35.mp3",
@@ -1067,7 +1067,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_35.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_35.mp3"
     },
     {
         "name": "num_36.mp3",
@@ -1081,7 +1081,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_36.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_36.mp3"
     },
     {
         "name": "num_37.mp3",
@@ -1095,7 +1095,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_37.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_37.mp3"
     },
     {
         "name": "num_38.mp3",
@@ -1109,7 +1109,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_38.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_38.mp3"
     },
     {
         "name": "num_39.mp3",
@@ -1123,7 +1123,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_39.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_39.mp3"
     },
     {
         "name": "num_4.mp3",
@@ -1137,7 +1137,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_4.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_4.mp3"
     },
     {
         "name": "num_40.mp3",
@@ -1151,7 +1151,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_40.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_40.mp3"
     },
     {
         "name": "num_41.mp3",
@@ -1165,7 +1165,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_41.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_41.mp3"
     },
     {
         "name": "num_42.mp3",
@@ -1179,7 +1179,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_42.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_42.mp3"
     },
     {
         "name": "num_43.mp3",
@@ -1193,7 +1193,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_43.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_43.mp3"
     },
     {
         "name": "num_44.mp3",
@@ -1207,7 +1207,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_44.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_44.mp3"
     },
     {
         "name": "num_45.mp3",
@@ -1221,7 +1221,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_45.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_45.mp3"
     },
     {
         "name": "num_46.mp3",
@@ -1235,7 +1235,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_46.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_46.mp3"
     },
     {
         "name": "num_47.mp3",
@@ -1249,7 +1249,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_47.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_47.mp3"
     },
     {
         "name": "num_48.mp3",
@@ -1263,7 +1263,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_48.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_48.mp3"
     },
     {
         "name": "num_49.mp3",
@@ -1277,7 +1277,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_49.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_49.mp3"
     },
     {
         "name": "num_5.mp3",
@@ -1291,7 +1291,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_5.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_5.mp3"
     },
     {
         "name": "num_50.mp3",
@@ -1305,7 +1305,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_50.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_50.mp3"
     },
     {
         "name": "num_51.mp3",
@@ -1319,7 +1319,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_51.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_51.mp3"
     },
     {
         "name": "num_52.mp3",
@@ -1333,7 +1333,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_52.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_52.mp3"
     },
     {
         "name": "num_53.mp3",
@@ -1347,7 +1347,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_53.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_53.mp3"
     },
     {
         "name": "num_54.mp3",
@@ -1361,7 +1361,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_54.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_54.mp3"
     },
     {
         "name": "num_55.mp3",
@@ -1375,7 +1375,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_55.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_55.mp3"
     },
     {
         "name": "num_56.mp3",
@@ -1389,7 +1389,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_56.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_56.mp3"
     },
     {
         "name": "num_57.mp3",
@@ -1403,7 +1403,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_57.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_57.mp3"
     },
     {
         "name": "num_58.mp3",
@@ -1417,7 +1417,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_58.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_58.mp3"
     },
     {
         "name": "num_59.mp3",
@@ -1431,7 +1431,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_59.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_59.mp3"
     },
     {
         "name": "num_6.mp3",
@@ -1445,7 +1445,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_6.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_6.mp3"
     },
     {
         "name": "num_60.mp3",
@@ -1459,7 +1459,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_60.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_60.mp3"
     },
     {
         "name": "num_61.mp3",
@@ -1473,7 +1473,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_61.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_61.mp3"
     },
     {
         "name": "num_62.mp3",
@@ -1487,7 +1487,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_62.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_62.mp3"
     },
     {
         "name": "num_63.mp3",
@@ -1501,7 +1501,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_63.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_63.mp3"
     },
     {
         "name": "num_64.mp3",
@@ -1515,7 +1515,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_64.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_64.mp3"
     },
     {
         "name": "num_65.mp3",
@@ -1529,7 +1529,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_65.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_65.mp3"
     },
     {
         "name": "num_66.mp3",
@@ -1543,7 +1543,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_66.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_66.mp3"
     },
     {
         "name": "num_67.mp3",
@@ -1557,7 +1557,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_67.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_67.mp3"
     },
     {
         "name": "num_68.mp3",
@@ -1571,7 +1571,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_68.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_68.mp3"
     },
     {
         "name": "num_69.mp3",
@@ -1585,7 +1585,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_69.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_69.mp3"
     },
     {
         "name": "num_7.mp3",
@@ -1599,7 +1599,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_7.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_7.mp3"
     },
     {
         "name": "num_70.mp3",
@@ -1613,7 +1613,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_70.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_70.mp3"
     },
     {
         "name": "num_71.mp3",
@@ -1627,7 +1627,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_71.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_71.mp3"
     },
     {
         "name": "num_72.mp3",
@@ -1641,7 +1641,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_72.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_72.mp3"
     },
     {
         "name": "num_73.mp3",
@@ -1655,7 +1655,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_73.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_73.mp3"
     },
     {
         "name": "num_74.mp3",
@@ -1669,7 +1669,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_74.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_74.mp3"
     },
     {
         "name": "num_75.mp3",
@@ -1683,7 +1683,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_75.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_75.mp3"
     },
     {
         "name": "num_76.mp3",
@@ -1697,7 +1697,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_76.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_76.mp3"
     },
     {
         "name": "num_77.mp3",
@@ -1711,7 +1711,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_77.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_77.mp3"
     },
     {
         "name": "num_78.mp3",
@@ -1725,7 +1725,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_78.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_78.mp3"
     },
     {
         "name": "num_79.mp3",
@@ -1739,7 +1739,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_79.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_79.mp3"
     },
     {
         "name": "num_8.mp3",
@@ -1753,7 +1753,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_8.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_8.mp3"
     },
     {
         "name": "num_80.mp3",
@@ -1767,7 +1767,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_80.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_80.mp3"
     },
     {
         "name": "num_81.mp3",
@@ -1781,7 +1781,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_81.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_81.mp3"
     },
     {
         "name": "num_82.mp3",
@@ -1795,7 +1795,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_82.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_82.mp3"
     },
     {
         "name": "num_83.mp3",
@@ -1809,7 +1809,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_83.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_83.mp3"
     },
     {
         "name": "num_84.mp3",
@@ -1823,7 +1823,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_84.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_84.mp3"
     },
     {
         "name": "num_85.mp3",
@@ -1837,7 +1837,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_85.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_85.mp3"
     },
     {
         "name": "num_86.mp3",
@@ -1851,7 +1851,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_86.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_86.mp3"
     },
     {
         "name": "num_87.mp3",
@@ -1865,7 +1865,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_87.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_87.mp3"
     },
     {
         "name": "num_88.mp3",
@@ -1879,7 +1879,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_88.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_88.mp3"
     },
     {
         "name": "num_89.mp3",
@@ -1893,7 +1893,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_89.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_89.mp3"
     },
     {
         "name": "num_9.mp3",
@@ -1907,7 +1907,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_9.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_9.mp3"
     },
     {
         "name": "num_90.mp3",
@@ -1921,7 +1921,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_90.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_90.mp3"
     },
     {
         "name": "num_91.mp3",
@@ -1935,7 +1935,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_91.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_91.mp3"
     },
     {
         "name": "num_92.mp3",
@@ -1949,7 +1949,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_92.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_92.mp3"
     },
     {
         "name": "num_93.mp3",
@@ -1963,7 +1963,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_93.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_93.mp3"
     },
     {
         "name": "num_94.mp3",
@@ -1977,7 +1977,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_94.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_94.mp3"
     },
     {
         "name": "num_95.mp3",
@@ -1991,7 +1991,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_95.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_95.mp3"
     },
     {
         "name": "num_96.mp3",
@@ -2005,7 +2005,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_96.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_96.mp3"
     },
     {
         "name": "num_97.mp3",
@@ -2019,7 +2019,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_97.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_97.mp3"
     },
     {
         "name": "num_98.mp3",
@@ -2033,7 +2033,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_98.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_98.mp3"
     },
     {
         "name": "num_99.mp3",
@@ -2047,7 +2047,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Facilitates number recognition and counting skills for preschool learners.",
-        "path": "../../../../frontend/assets/audio/ganit/numbers/num_99.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/numbers/num_99.mp3"
     },
     {
         "name": "shape_circle.mp3",
@@ -2061,7 +2061,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_circle.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_circle.mp3"
     },
     {
         "name": "shape_cone.mp3",
@@ -2075,7 +2075,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_cone.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_cone.mp3"
     },
     {
         "name": "shape_crescent.mp3",
@@ -2089,7 +2089,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_crescent.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_crescent.mp3"
     },
     {
         "name": "shape_cube.mp3",
@@ -2103,7 +2103,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_cube.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_cube.mp3"
     },
     {
         "name": "shape_cylinder.mp3",
@@ -2117,7 +2117,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_cylinder.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_cylinder.mp3"
     },
     {
         "name": "shape_diamond.mp3",
@@ -2131,7 +2131,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_diamond.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_diamond.mp3"
     },
     {
         "name": "shape_heart.mp3",
@@ -2145,7 +2145,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_heart.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_heart.mp3"
     },
     {
         "name": "shape_hexagon.mp3",
@@ -2159,7 +2159,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_hexagon.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_hexagon.mp3"
     },
     {
         "name": "shape_oval.mp3",
@@ -2173,7 +2173,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_oval.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_oval.mp3"
     },
     {
         "name": "shape_pentagon.mp3",
@@ -2187,7 +2187,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_pentagon.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_pentagon.mp3"
     },
     {
         "name": "shape_pyramid.mp3",
@@ -2201,7 +2201,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_pyramid.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_pyramid.mp3"
     },
     {
         "name": "shape_rectangle.mp3",
@@ -2215,7 +2215,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_rectangle.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_rectangle.mp3"
     },
     {
         "name": "shape_sphere.mp3",
@@ -2229,7 +2229,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_sphere.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_sphere.mp3"
     },
     {
         "name": "shape_square.mp3",
@@ -2243,7 +2243,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_square.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_square.mp3"
     },
     {
         "name": "shape_star.mp3",
@@ -2257,7 +2257,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_star.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_star.mp3"
     },
     {
         "name": "shape_star_funny.mp3",
@@ -2271,7 +2271,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_star_funny.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_star_funny.mp3"
     },
     {
         "name": "shape_triangle.mp3",
@@ -2285,7 +2285,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/shapes/shape_triangle.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/shapes/shape_triangle.mp3"
     },
     {
         "name": "table_10_m1.mp3",
@@ -2299,7 +2299,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_1/table_10_m1.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_1/table_10_m1.mp3"
     },
     {
         "name": "table_2_m1.mp3",
@@ -2313,7 +2313,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_1/table_2_m1.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_1/table_2_m1.mp3"
     },
     {
         "name": "table_3_m1.mp3",
@@ -2327,7 +2327,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_1/table_3_m1.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_1/table_3_m1.mp3"
     },
     {
         "name": "table_4_m1.mp3",
@@ -2341,7 +2341,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_1/table_4_m1.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_1/table_4_m1.mp3"
     },
     {
         "name": "table_5_m1.mp3",
@@ -2355,7 +2355,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_1/table_5_m1.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_1/table_5_m1.mp3"
     },
     {
         "name": "table_6_m1.mp3",
@@ -2369,7 +2369,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_1/table_6_m1.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_1/table_6_m1.mp3"
     },
     {
         "name": "table_7_m1.mp3",
@@ -2383,7 +2383,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_1/table_7_m1.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_1/table_7_m1.mp3"
     },
     {
         "name": "table_8_m1.mp3",
@@ -2397,7 +2397,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_1/table_8_m1.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_1/table_8_m1.mp3"
     },
     {
         "name": "table_9_m1.mp3",
@@ -2411,7 +2411,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_1/table_9_m1.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_1/table_9_m1.mp3"
     },
     {
         "name": "table_10_m2.mp3",
@@ -2425,7 +2425,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_2/table_10_m2.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_2/table_10_m2.mp3"
     },
     {
         "name": "table_2_m2.mp3",
@@ -2439,7 +2439,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_2/table_2_m2.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_2/table_2_m2.mp3"
     },
     {
         "name": "table_3_m2.mp3",
@@ -2453,7 +2453,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_2/table_3_m2.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_2/table_3_m2.mp3"
     },
     {
         "name": "table_4_m2.mp3",
@@ -2467,7 +2467,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_2/table_4_m2.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_2/table_4_m2.mp3"
     },
     {
         "name": "table_5_m2.mp3",
@@ -2481,7 +2481,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_2/table_5_m2.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_2/table_5_m2.mp3"
     },
     {
         "name": "table_6_m2.mp3",
@@ -2495,7 +2495,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_2/table_6_m2.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_2/table_6_m2.mp3"
     },
     {
         "name": "table_7_m2.mp3",
@@ -2509,7 +2509,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_2/table_7_m2.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_2/table_7_m2.mp3"
     },
     {
         "name": "table_8_m2.mp3",
@@ -2523,7 +2523,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_2/table_8_m2.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_2/table_8_m2.mp3"
     },
     {
         "name": "table_9_m2.mp3",
@@ -2537,7 +2537,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Mathematical Literacy",
         "purpose": "Teaches conceptual comparisons (Big/Small, Near/Far) through interactive audio.",
-        "path": "../../../../frontend/assets/audio/ganit/tables/method_2/table_9_m2.mp3"
+        "path": "../../../../../frontend/assets/audio/ganit/tables/method_2/table_9_m2.mp3"
     },
     {
         "name": "aladdin_lamp.mp3",
@@ -2551,7 +2551,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/magic/realms/aladdin_lamp.mp3"
+        "path": "../../../../../frontend/assets/audio/magic/realms/aladdin_lamp.mp3"
     },
     {
         "name": "cinderella_shoe.mp3",
@@ -2565,7 +2565,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/magic/realms/cinderella_shoe.mp3"
+        "path": "../../../../../frontend/assets/audio/magic/realms/cinderella_shoe.mp3"
     },
     {
         "name": "fairy_queen.mp3",
@@ -2579,7 +2579,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/magic/realms/fairy_queen.mp3"
+        "path": "../../../../../frontend/assets/audio/magic/realms/fairy_queen.mp3"
     },
     {
         "name": "flying_horse.mp3",
@@ -2593,7 +2593,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/magic/realms/flying_horse.mp3"
+        "path": "../../../../../frontend/assets/audio/magic/realms/flying_horse.mp3"
     },
     {
         "name": "golden_goose.mp3",
@@ -2607,7 +2607,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/magic/realms/golden_goose.mp3"
+        "path": "../../../../../frontend/assets/audio/magic/realms/golden_goose.mp3"
     },
     {
         "name": "magic_carpet.mp3",
@@ -2621,7 +2621,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/magic/realms/magic_carpet.mp3"
+        "path": "../../../../../frontend/assets/audio/magic/realms/magic_carpet.mp3"
     },
     {
         "name": "magic_wand.mp3",
@@ -2635,7 +2635,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/magic/realms/magic_wand.mp3"
+        "path": "../../../../../frontend/assets/audio/magic/realms/magic_wand.mp3"
     },
     {
         "name": "talking_trees.mp3",
@@ -2649,7 +2649,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/magic/realms/talking_trees.mp3"
+        "path": "../../../../../frontend/assets/audio/magic/realms/talking_trees.mp3"
     },
     {
         "name": "treasure_map.mp3",
@@ -2663,7 +2663,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/magic/realms/treasure_map.mp3"
+        "path": "../../../../../frontend/assets/audio/magic/realms/treasure_map.mp3"
     },
     {
         "name": "big_heavy.mp3",
@@ -2677,7 +2677,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/math/comparisons/big_heavy.mp3"
+        "path": "../../../../../frontend/assets/audio/math/comparisons/big_heavy.mp3"
     },
     {
         "name": "small_light.mp3",
@@ -2691,7 +2691,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/math/comparisons/small_light.mp3"
+        "path": "../../../../../frontend/assets/audio/math/comparisons/small_light.mp3"
     },
     {
         "name": "connect_dots.mp3",
@@ -2705,7 +2705,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/math/shapes/connect_dots.mp3"
+        "path": "../../../../../frontend/assets/audio/math/shapes/connect_dots.mp3"
     },
     {
         "name": "curve.mp3",
@@ -2719,7 +2719,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/math/shapes/curve.mp3"
+        "path": "../../../../../frontend/assets/audio/math/shapes/curve.mp3"
     },
     {
         "name": "dot.mp3",
@@ -2733,7 +2733,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/math/shapes/dot.mp3"
+        "path": "../../../../../frontend/assets/audio/math/shapes/dot.mp3"
     },
     {
         "name": "line.mp3",
@@ -2747,7 +2747,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/math/shapes/line.mp3"
+        "path": "../../../../../frontend/assets/audio/math/shapes/line.mp3"
     },
     {
         "name": "dancing.mp3",
@@ -2761,7 +2761,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/actions/dancing.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/actions/dancing.mp3"
     },
     {
         "name": "drawing.mp3",
@@ -2775,7 +2775,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/actions/drawing.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/actions/drawing.mp3"
     },
     {
         "name": "eating.mp3",
@@ -2789,7 +2789,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/actions/eating.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/actions/eating.mp3"
     },
     {
         "name": "jumping.mp3",
@@ -2803,7 +2803,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/actions/jumping.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/actions/jumping.mp3"
     },
     {
         "name": "laughing.mp3",
@@ -2817,7 +2817,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/actions/laughing.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/actions/laughing.mp3"
     },
     {
         "name": "playing.mp3",
@@ -2831,7 +2831,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/actions/playing.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/actions/playing.mp3"
     },
     {
         "name": "reading.mp3",
@@ -2845,7 +2845,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/actions/reading.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/actions/reading.mp3"
     },
     {
         "name": "running.mp3",
@@ -2859,7 +2859,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/actions/running.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/actions/running.mp3"
     },
     {
         "name": "singing.mp3",
@@ -2873,7 +2873,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/actions/singing.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/actions/singing.mp3"
     },
     {
         "name": "sleeping.mp3",
@@ -2887,7 +2887,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/actions/sleeping.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/actions/sleeping.mp3"
     },
     {
         "name": "writing.mp3",
@@ -2901,7 +2901,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/actions/writing.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/actions/writing.mp3"
     },
     {
         "name": "cutting_veg.mp3",
@@ -2915,7 +2915,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/activities/cutting_veg.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/activities/cutting_veg.mp3"
     },
     {
         "name": "drying_clothes.mp3",
@@ -2929,7 +2929,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/activities/drying_clothes.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/activities/drying_clothes.mp3"
     },
     {
         "name": "eat_food.mp3",
@@ -2943,7 +2943,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/activities/eat_food.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/activities/eat_food.mp3"
     },
     {
         "name": "get_ready.mp3",
@@ -2957,7 +2957,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/activities/get_ready.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/activities/get_ready.mp3"
     },
     {
         "name": "ironing.mp3",
@@ -2971,7 +2971,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/activities/ironing.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/activities/ironing.mp3"
     },
     {
         "name": "kneading_dough.mp3",
@@ -2985,7 +2985,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/activities/kneading_dough.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/activities/kneading_dough.mp3"
     },
     {
         "name": "lets_play.mp3",
@@ -2999,7 +2999,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/activities/lets_play.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/activities/lets_play.mp3"
     },
     {
         "name": "making_tea.mp3",
@@ -3013,7 +3013,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/activities/making_tea.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/activities/making_tea.mp3"
     },
     {
         "name": "pack_toys.mp3",
@@ -3027,7 +3027,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/activities/pack_toys.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/activities/pack_toys.mp3"
     },
     {
         "name": "sleep_time.mp3",
@@ -3041,7 +3041,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/activities/sleep_time.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/activities/sleep_time.mp3"
     },
     {
         "name": "study_time.mp3",
@@ -3055,7 +3055,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/activities/study_time.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/activities/study_time.mp3"
     },
     {
         "name": "wake_up.mp3",
@@ -3069,7 +3069,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/activities/wake_up.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/activities/wake_up.mp3"
     },
     {
         "name": "washing_clothes.mp3",
@@ -3083,7 +3083,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/activities/washing_clothes.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/activities/washing_clothes.mp3"
     },
     {
         "name": "washing_dishes.mp3",
@@ -3097,7 +3097,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/activities/washing_dishes.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/activities/washing_dishes.mp3"
     },
     {
         "name": "animal_cow.mp3",
@@ -3111,7 +3111,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/domestic/animal_cow.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/domestic/animal_cow.mp3"
     },
     {
         "name": "camel.mp3",
@@ -3125,7 +3125,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/domestic/camel.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/domestic/camel.mp3"
     },
     {
         "name": "cat.mp3",
@@ -3139,7 +3139,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/domestic/cat.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/domestic/cat.mp3"
     },
     {
         "name": "dog.mp3",
@@ -3153,7 +3153,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/domestic/dog.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/domestic/dog.mp3"
     },
     {
         "name": "donkey.mp3",
@@ -3167,7 +3167,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/domestic/donkey.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/domestic/donkey.mp3"
     },
     {
         "name": "duck.mp3",
@@ -3181,7 +3181,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/domestic/duck.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/domestic/duck.mp3"
     },
     {
         "name": "horse.mp3",
@@ -3195,7 +3195,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/domestic/horse.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/domestic/horse.mp3"
     },
     {
         "name": "rabbit.mp3",
@@ -3209,7 +3209,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/domestic/rabbit.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/domestic/rabbit.mp3"
     },
     {
         "name": "sheep.mp3",
@@ -3223,7 +3223,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/domestic/sheep.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/domestic/sheep.mp3"
     },
     {
         "name": "bear.mp3",
@@ -3237,7 +3237,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/wild/bear.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/wild/bear.mp3"
     },
     {
         "name": "deer.mp3",
@@ -3251,7 +3251,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/wild/deer.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/wild/deer.mp3"
     },
     {
         "name": "elephant.mp3",
@@ -3265,7 +3265,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/wild/elephant.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/wild/elephant.mp3"
     },
     {
         "name": "fox.mp3",
@@ -3279,7 +3279,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/wild/fox.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/wild/fox.mp3"
     },
     {
         "name": "hippopotamus.mp3",
@@ -3293,7 +3293,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/wild/hippopotamus.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/wild/hippopotamus.mp3"
     },
     {
         "name": "lion.mp3",
@@ -3307,7 +3307,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/wild/lion.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/wild/lion.mp3"
     },
     {
         "name": "rhinoceros.mp3",
@@ -3321,7 +3321,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/wild/rhinoceros.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/wild/rhinoceros.mp3"
     },
     {
         "name": "snake.mp3",
@@ -3335,7 +3335,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/wild/snake.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/wild/snake.mp3"
     },
     {
         "name": "tiger.mp3",
@@ -3349,7 +3349,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/wild/tiger.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/wild/tiger.mp3"
     },
     {
         "name": "wolf.mp3",
@@ -3363,7 +3363,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/wild/wolf.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/wild/wolf.mp3"
     },
     {
         "name": "zebra.mp3",
@@ -3377,7 +3377,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals/wild/zebra.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals/wild/zebra.mp3"
     },
     {
         "name": "earthworm.mp3",
@@ -3391,7 +3391,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals_smaller/earthworm.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals_smaller/earthworm.mp3"
     },
     {
         "name": "frog.mp3",
@@ -3405,7 +3405,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals_smaller/frog.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals_smaller/frog.mp3"
     },
     {
         "name": "lizard.mp3",
@@ -3419,7 +3419,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals_smaller/lizard.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals_smaller/lizard.mp3"
     },
     {
         "name": "mouse.mp3",
@@ -3433,7 +3433,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals_smaller/mouse.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals_smaller/mouse.mp3"
     },
     {
         "name": "snail.mp3",
@@ -3447,7 +3447,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals_smaller/snail.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals_smaller/snail.mp3"
     },
     {
         "name": "squirrel.mp3",
@@ -3461,7 +3461,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals_smaller/squirrel.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals_smaller/squirrel.mp3"
     },
     {
         "name": "crocodile.mp3",
@@ -3475,7 +3475,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals_wild/crocodile.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals_wild/crocodile.mp3"
     },
     {
         "name": "giraffe.mp3",
@@ -3489,7 +3489,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals_wild/giraffe.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals_wild/giraffe.mp3"
     },
     {
         "name": "hippo.mp3",
@@ -3503,7 +3503,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals_wild/hippo.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals_wild/hippo.mp3"
     },
     {
         "name": "kangaroo.mp3",
@@ -3517,7 +3517,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals_wild/kangaroo.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals_wild/kangaroo.mp3"
     },
     {
         "name": "monkey.mp3",
@@ -3531,7 +3531,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals_wild/monkey.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals_wild/monkey.mp3"
     },
     {
         "name": "rhino.mp3",
@@ -3545,7 +3545,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals_wild/rhino.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals_wild/rhino.mp3"
     },
     {
         "name": "turtle.mp3",
@@ -3559,7 +3559,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/animals_wild/turtle.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/animals_wild/turtle.mp3"
     },
     {
         "name": "crow.mp3",
@@ -3573,7 +3573,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/birds/crow.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/birds/crow.mp3"
     },
     {
         "name": "eagle.mp3",
@@ -3587,7 +3587,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/birds/eagle.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/birds/eagle.mp3"
     },
     {
         "name": "owl.mp3",
@@ -3601,7 +3601,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/birds/owl.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/birds/owl.mp3"
     },
     {
         "name": "parrot.mp3",
@@ -3615,7 +3615,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/birds/parrot.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/birds/parrot.mp3"
     },
     {
         "name": "peacock.mp3",
@@ -3629,7 +3629,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/birds/peacock.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/birds/peacock.mp3"
     },
     {
         "name": "pigeon.mp3",
@@ -3643,7 +3643,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/birds/pigeon.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/birds/pigeon.mp3"
     },
     {
         "name": "sparrow.mp3",
@@ -3657,7 +3657,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/birds/sparrow.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/birds/sparrow.mp3"
     },
     {
         "name": "swan.mp3",
@@ -3671,7 +3671,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/birds/swan.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/birds/swan.mp3"
     },
     {
         "name": "breathing.mp3",
@@ -3685,7 +3685,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/breathing.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/breathing.mp3"
     },
     {
         "name": "burp.mp3",
@@ -3699,7 +3699,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/burp.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/burp.mp3"
     },
     {
         "name": "compassion.mp3",
@@ -3713,7 +3713,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/compassion.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/compassion.mp3"
     },
     {
         "name": "cough.mp3",
@@ -3727,7 +3727,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/cough.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/cough.mp3"
     },
     {
         "name": "goosebumps.mp3",
@@ -3741,7 +3741,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/goosebumps.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/goosebumps.mp3"
     },
     {
         "name": "heartbeat.mp3",
@@ -3755,7 +3755,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/heartbeat.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/heartbeat.mp3"
     },
     {
         "name": "hiccup.mp3",
@@ -3769,7 +3769,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/hiccup.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/hiccup.mp3"
     },
     {
         "name": "hunger.mp3",
@@ -3783,7 +3783,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/hunger.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/hunger.mp3"
     },
     {
         "name": "itch.mp3",
@@ -3797,7 +3797,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/itch.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/itch.mp3"
     },
     {
         "name": "pain.mp3",
@@ -3811,7 +3811,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/pain.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/pain.mp3"
     },
     {
         "name": "shivering.mp3",
@@ -3825,7 +3825,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/shivering.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/shivering.mp3"
     },
     {
         "name": "sleep_dreams.mp3",
@@ -3839,7 +3839,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/sleep_dreams.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/sleep_dreams.mp3"
     },
     {
         "name": "smile.mp3",
@@ -3853,7 +3853,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/smile.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/smile.mp3"
     },
     {
         "name": "sneeze.mp3",
@@ -3867,7 +3867,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/sneeze.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/sneeze.mp3"
     },
     {
         "name": "sweat.mp3",
@@ -3881,7 +3881,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/sweat.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/sweat.mp3"
     },
     {
         "name": "sweat_heat.mp3",
@@ -3895,7 +3895,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/sweat_heat.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/sweat_heat.mp3"
     },
     {
         "name": "tears.mp3",
@@ -3909,7 +3909,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/tears.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/tears.mp3"
     },
     {
         "name": "thirst.mp3",
@@ -3923,7 +3923,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/thirst.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/thirst.mp3"
     },
     {
         "name": "tiredness.mp3",
@@ -3937,7 +3937,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/tiredness.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/tiredness.mp3"
     },
     {
         "name": "yawn.mp3",
@@ -3951,7 +3951,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body/yawn.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body/yawn.mp3"
     },
     {
         "name": "back.mp3",
@@ -3965,7 +3965,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/back.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/back.mp3"
     },
     {
         "name": "cheeks.mp3",
@@ -3979,7 +3979,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/cheeks.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/cheeks.mp3"
     },
     {
         "name": "chest.mp3",
@@ -3993,7 +3993,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/chest.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/chest.mp3"
     },
     {
         "name": "ears.mp3",
@@ -4007,7 +4007,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/ears.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/ears.mp3"
     },
     {
         "name": "eyes.mp3",
@@ -4021,7 +4021,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/eyes.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/eyes.mp3"
     },
     {
         "name": "face.mp3",
@@ -4035,7 +4035,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/face.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/face.mp3"
     },
     {
         "name": "finger.mp3",
@@ -4049,7 +4049,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/finger.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/finger.mp3"
     },
     {
         "name": "forehead.mp3",
@@ -4063,7 +4063,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/forehead.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/forehead.mp3"
     },
     {
         "name": "hair.mp3",
@@ -4077,7 +4077,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/hair.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/hair.mp3"
     },
     {
         "name": "hands.mp3",
@@ -4091,7 +4091,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/hands.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/hands.mp3"
     },
     {
         "name": "heel.mp3",
@@ -4105,7 +4105,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/heel.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/heel.mp3"
     },
     {
         "name": "knees.mp3",
@@ -4119,7 +4119,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/knees.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/knees.mp3"
     },
     {
         "name": "legs.mp3",
@@ -4133,7 +4133,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/legs.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/legs.mp3"
     },
     {
         "name": "lips.mp3",
@@ -4147,7 +4147,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/lips.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/lips.mp3"
     },
     {
         "name": "mouth.mp3",
@@ -4161,7 +4161,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/mouth.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/mouth.mp3"
     },
     {
         "name": "nails.mp3",
@@ -4175,7 +4175,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/nails.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/nails.mp3"
     },
     {
         "name": "neck.mp3",
@@ -4189,7 +4189,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/neck.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/neck.mp3"
     },
     {
         "name": "nose.mp3",
@@ -4203,7 +4203,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/nose.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/nose.mp3"
     },
     {
         "name": "shoulders.mp3",
@@ -4217,7 +4217,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/shoulders.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/shoulders.mp3"
     },
     {
         "name": "stomach.mp3",
@@ -4231,7 +4231,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/stomach.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/stomach.mp3"
     },
     {
         "name": "teeth.mp3",
@@ -4245,7 +4245,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/teeth.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/teeth.mp3"
     },
     {
         "name": "thumb.mp3",
@@ -4259,7 +4259,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/thumb.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/thumb.mp3"
     },
     {
         "name": "tongue.mp3",
@@ -4273,7 +4273,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/body_parts/tongue.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/body_parts/tongue.mp3"
     },
     {
         "name": "dhoti_kurta.mp3",
@@ -4287,7 +4287,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/dhoti_kurta.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/dhoti_kurta.mp3"
     },
     {
         "name": "frock.mp3",
@@ -4301,7 +4301,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/frock.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/frock.mp3"
     },
     {
         "name": "gloves.mp3",
@@ -4315,7 +4315,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/gloves.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/gloves.mp3"
     },
     {
         "name": "handkerchief.mp3",
@@ -4329,7 +4329,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/handkerchief.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/handkerchief.mp3"
     },
     {
         "name": "hat.mp3",
@@ -4343,7 +4343,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/hat.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/hat.mp3"
     },
     {
         "name": "jacket.mp3",
@@ -4357,7 +4357,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/jacket.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/jacket.mp3"
     },
     {
         "name": "muffler.mp3",
@@ -4371,7 +4371,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/muffler.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/muffler.mp3"
     },
     {
         "name": "pants.mp3",
@@ -4385,7 +4385,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/pants.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/pants.mp3"
     },
     {
         "name": "pyjama.mp3",
@@ -4399,7 +4399,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/pyjama.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/pyjama.mp3"
     },
     {
         "name": "saree.mp3",
@@ -4413,7 +4413,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/saree.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/saree.mp3"
     },
     {
         "name": "scarf.mp3",
@@ -4427,7 +4427,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/scarf.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/scarf.mp3"
     },
     {
         "name": "shirt.mp3",
@@ -4441,7 +4441,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/shirt.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/shirt.mp3"
     },
     {
         "name": "shoes.mp3",
@@ -4455,7 +4455,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/shoes.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/shoes.mp3"
     },
     {
         "name": "skirt.mp3",
@@ -4469,7 +4469,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/skirt.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/skirt.mp3"
     },
     {
         "name": "socks.mp3",
@@ -4483,7 +4483,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/socks.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/socks.mp3"
     },
     {
         "name": "suit_salwar.mp3",
@@ -4497,7 +4497,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/suit_salwar.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/suit_salwar.mp3"
     },
     {
         "name": "sweater.mp3",
@@ -4511,7 +4511,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/sweater.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/sweater.mp3"
     },
     {
         "name": "tie.mp3",
@@ -4525,7 +4525,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/tie.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/tie.mp3"
     },
     {
         "name": "towel_gamcha.mp3",
@@ -4539,7 +4539,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/towel_gamcha.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/towel_gamcha.mp3"
     },
     {
         "name": "turban.mp3",
@@ -4553,7 +4553,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/turban.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/turban.mp3"
     },
     {
         "name": "veil.mp3",
@@ -4567,7 +4567,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/clothes/veil.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/clothes/veil.mp3"
     },
     {
         "name": "angry.mp3",
@@ -4581,7 +4581,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/angry.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/angry.mp3"
     },
     {
         "name": "compassion.mp3",
@@ -4595,7 +4595,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/compassion.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/compassion.mp3"
     },
     {
         "name": "contentment.mp3",
@@ -4609,7 +4609,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/contentment.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/contentment.mp3"
     },
     {
         "name": "cooperation.mp3",
@@ -4623,7 +4623,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/cooperation.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/cooperation.mp3"
     },
     {
         "name": "courage.mp3",
@@ -4637,7 +4637,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/courage.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/courage.mp3"
     },
     {
         "name": "discipline.mp3",
@@ -4651,7 +4651,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/discipline.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/discipline.mp3"
     },
     {
         "name": "excited.mp3",
@@ -4665,7 +4665,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/excited.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/excited.mp3"
     },
     {
         "name": "excitement.mp3",
@@ -4679,7 +4679,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/excitement.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/excitement.mp3"
     },
     {
         "name": "forgiveness.mp3",
@@ -4693,7 +4693,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/forgiveness.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/forgiveness.mp3"
     },
     {
         "name": "friendship.mp3",
@@ -4707,7 +4707,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/friendship.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/friendship.mp3"
     },
     {
         "name": "happy.mp3",
@@ -4721,7 +4721,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/happy.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/happy.mp3"
     },
     {
         "name": "honesty.mp3",
@@ -4735,7 +4735,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/honesty.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/honesty.mp3"
     },
     {
         "name": "hungry.mp3",
@@ -4749,7 +4749,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/hungry.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/hungry.mp3"
     },
     {
         "name": "kindness.mp3",
@@ -4763,7 +4763,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/kindness.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/kindness.mp3"
     },
     {
         "name": "love.mp3",
@@ -4777,7 +4777,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/love.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/love.mp3"
     },
     {
         "name": "patience.mp3",
@@ -4791,7 +4791,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/patience.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/patience.mp3"
     },
     {
         "name": "pride.mp3",
@@ -4805,7 +4805,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/pride.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/pride.mp3"
     },
     {
         "name": "respect.mp3",
@@ -4819,7 +4819,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/respect.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/respect.mp3"
     },
     {
         "name": "sad.mp3",
@@ -4833,7 +4833,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/sad.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/sad.mp3"
     },
     {
         "name": "scared.mp3",
@@ -4847,7 +4847,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/scared.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/scared.mp3"
     },
     {
         "name": "shame.mp3",
@@ -4861,7 +4861,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/shame.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/shame.mp3"
     },
     {
         "name": "shy.mp3",
@@ -4875,7 +4875,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/shy.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/shy.mp3"
     },
     {
         "name": "sleepy.mp3",
@@ -4889,7 +4889,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/sleepy.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/sleepy.mp3"
     },
     {
         "name": "surprised.mp3",
@@ -4903,7 +4903,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/surprised.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/surprised.mp3"
     },
     {
         "name": "thirsty.mp3",
@@ -4917,7 +4917,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/thirsty.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/thirsty.mp3"
     },
     {
         "name": "tired.mp3",
@@ -4931,7 +4931,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/emotions/tired.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/emotions/tired.mp3"
     },
     {
         "name": "aunt.mp3",
@@ -4945,7 +4945,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/aunt.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/aunt.mp3"
     },
     {
         "name": "bahu.mp3",
@@ -4959,7 +4959,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/bahu.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/bahu.mp3"
     },
     {
         "name": "bhanja_bhanji.mp3",
@@ -4973,7 +4973,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/bhanja_bhanji.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/bhanja_bhanji.mp3"
     },
     {
         "name": "bhatija_bhatiji.mp3",
@@ -4987,7 +4987,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/bhatija_bhatiji.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/bhatija_bhatiji.mp3"
     },
     {
         "name": "brother.mp3",
@@ -5001,7 +5001,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/brother.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/brother.mp3"
     },
     {
         "name": "chacha_ji.mp3",
@@ -5015,7 +5015,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/chacha_ji.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/chacha_ji.mp3"
     },
     {
         "name": "chachi_ji.mp3",
@@ -5029,7 +5029,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/chachi_ji.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/chachi_ji.mp3"
     },
     {
         "name": "damad.mp3",
@@ -5043,7 +5043,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/damad.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/damad.mp3"
     },
     {
         "name": "devar_jeth.mp3",
@@ -5057,7 +5057,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/devar_jeth.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/devar_jeth.mp3"
     },
     {
         "name": "elders.mp3",
@@ -5071,7 +5071,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/elders.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/elders.mp3"
     },
     {
         "name": "family_dadaji.mp3",
@@ -5085,7 +5085,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/family_dadaji.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/family_dadaji.mp3"
     },
     {
         "name": "family_dadiji.mp3",
@@ -5099,7 +5099,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/family_dadiji.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/family_dadiji.mp3"
     },
     {
         "name": "family_mummy.mp3",
@@ -5113,7 +5113,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/family_mummy.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/family_mummy.mp3"
     },
     {
         "name": "family_papa.mp3",
@@ -5127,7 +5127,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/family_papa.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/family_papa.mp3"
     },
     {
         "name": "father_elder_brother.mp3",
@@ -5141,7 +5141,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/father_elder_brother.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/father_elder_brother.mp3"
     },
     {
         "name": "father_elder_brother_wife.mp3",
@@ -5155,7 +5155,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/father_elder_brother_wife.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/father_elder_brother_wife.mp3"
     },
     {
         "name": "father_sister.mp3",
@@ -5169,7 +5169,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/father_sister.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/father_sister.mp3"
     },
     {
         "name": "father_sister_husband.mp3",
@@ -5183,7 +5183,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/father_sister_husband.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/father_sister_husband.mp3"
     },
     {
         "name": "friend.mp3",
@@ -5197,7 +5197,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/friend.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/friend.mp3"
     },
     {
         "name": "friend_female.mp3",
@@ -5211,7 +5211,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/friend_female.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/friend_female.mp3"
     },
     {
         "name": "grandfather_2.mp3",
@@ -5225,7 +5225,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/grandfather_2.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/grandfather_2.mp3"
     },
     {
         "name": "grandmother_2.mp3",
@@ -5239,7 +5239,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/grandmother_2.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/grandmother_2.mp3"
     },
     {
         "name": "guest.mp3",
@@ -5253,7 +5253,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/guest.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/guest.mp3"
     },
     {
         "name": "infant.mp3",
@@ -5267,7 +5267,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/infant.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/infant.mp3"
     },
     {
         "name": "mama_ji.mp3",
@@ -5281,7 +5281,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/mama_ji.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/mama_ji.mp3"
     },
     {
         "name": "mausi.mp3",
@@ -5295,7 +5295,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/mausi.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/mausi.mp3"
     },
     {
         "name": "nanad_jethani.mp3",
@@ -5309,7 +5309,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/nanad_jethani.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/nanad_jethani.mp3"
     },
     {
         "name": "nana_ji.mp3",
@@ -5323,7 +5323,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/nana_ji.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/nana_ji.mp3"
     },
     {
         "name": "nani_ji.mp3",
@@ -5337,7 +5337,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/nani_ji.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/nani_ji.mp3"
     },
     {
         "name": "neighbor.mp3",
@@ -5351,7 +5351,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/neighbor.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/neighbor.mp3"
     },
     {
         "name": "parents.mp3",
@@ -5365,7 +5365,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/parents.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/parents.mp3"
     },
     {
         "name": "sala_sali.mp3",
@@ -5379,7 +5379,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/sala_sali.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/sala_sali.mp3"
     },
     {
         "name": "sasur_sas.mp3",
@@ -5393,7 +5393,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/sasur_sas.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/sasur_sas.mp3"
     },
     {
         "name": "sister.mp3",
@@ -5407,7 +5407,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/sister.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/sister.mp3"
     },
     {
         "name": "teacher.mp3",
@@ -5421,7 +5421,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/teacher.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/teacher.mp3"
     },
     {
         "name": "uncle.mp3",
@@ -5435,7 +5435,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/family/uncle.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/family/uncle.mp3"
     },
     {
         "name": "diwali.mp3",
@@ -5449,7 +5449,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/festivals/diwali.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/festivals/diwali.mp3"
     },
     {
         "name": "holi.mp3",
@@ -5463,7 +5463,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/festivals/holi.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/festivals/holi.mp3"
     },
     {
         "name": "barfi.mp3",
@@ -5477,7 +5477,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/barfi.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/barfi.mp3"
     },
     {
         "name": "batasha.mp3",
@@ -5491,7 +5491,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/batasha.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/batasha.mp3"
     },
     {
         "name": "bhelpuri.mp3",
@@ -5505,7 +5505,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/bhelpuri.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/bhelpuri.mp3"
     },
     {
         "name": "biscuit.mp3",
@@ -5519,7 +5519,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/biscuit.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/biscuit.mp3"
     },
     {
         "name": "butter.mp3",
@@ -5533,7 +5533,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/butter.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/butter.mp3"
     },
     {
         "name": "buttermilk.mp3",
@@ -5547,7 +5547,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/buttermilk.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/buttermilk.mp3"
     },
     {
         "name": "butter_roti.mp3",
@@ -5561,7 +5561,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/butter_roti.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/butter_roti.mp3"
     },
     {
         "name": "chaat_papdi.mp3",
@@ -5575,7 +5575,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/chaat_papdi.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/chaat_papdi.mp3"
     },
     {
         "name": "churma_laddu.mp3",
@@ -5589,7 +5589,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/churma_laddu.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/churma_laddu.mp3"
     },
     {
         "name": "chutney.mp3",
@@ -5603,7 +5603,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/chutney.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/chutney.mp3"
     },
     {
         "name": "curd.mp3",
@@ -5617,7 +5617,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/curd.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/curd.mp3"
     },
     {
         "name": "dal.mp3",
@@ -5631,7 +5631,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/dal.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/dal.mp3"
     },
     {
         "name": "gajak.mp3",
@@ -5645,7 +5645,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/gajak.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/gajak.mp3"
     },
     {
         "name": "gajar_halwa.mp3",
@@ -5659,7 +5659,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/gajar_halwa.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/gajar_halwa.mp3"
     },
     {
         "name": "ghee.mp3",
@@ -5673,7 +5673,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/ghee.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/ghee.mp3"
     },
     {
         "name": "gulab_jamun.mp3",
@@ -5687,7 +5687,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/gulab_jamun.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/gulab_jamun.mp3"
     },
     {
         "name": "halwa.mp3",
@@ -5701,7 +5701,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/halwa.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/halwa.mp3"
     },
     {
         "name": "jalebi.mp3",
@@ -5715,7 +5715,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/jalebi.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/jalebi.mp3"
     },
     {
         "name": "jalebi_milk.mp3",
@@ -5729,7 +5729,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/jalebi_milk.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/jalebi_milk.mp3"
     },
     {
         "name": "kachori.mp3",
@@ -5743,7 +5743,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/kachori.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/kachori.mp3"
     },
     {
         "name": "kheer.mp3",
@@ -5757,7 +5757,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/kheer.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/kheer.mp3"
     },
     {
         "name": "khichdi.mp3",
@@ -5771,7 +5771,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/khichdi.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/khichdi.mp3"
     },
     {
         "name": "kulfi.mp3",
@@ -5785,7 +5785,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/kulfi.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/kulfi.mp3"
     },
     {
         "name": "laddu.mp3",
@@ -5799,7 +5799,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/laddu.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/laddu.mp3"
     },
     {
         "name": "lassi.mp3",
@@ -5813,7 +5813,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/lassi.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/lassi.mp3"
     },
     {
         "name": "lassi_thick.mp3",
@@ -5827,7 +5827,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/lassi_thick.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/lassi_thick.mp3"
     },
     {
         "name": "milk.mp3",
@@ -5841,7 +5841,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/milk.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/milk.mp3"
     },
     {
         "name": "namkeen.mp3",
@@ -5855,7 +5855,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/namkeen.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/namkeen.mp3"
     },
     {
         "name": "pakora.mp3",
@@ -5869,7 +5869,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/pakora.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/pakora.mp3"
     },
     {
         "name": "paneer.mp3",
@@ -5883,7 +5883,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/paneer.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/paneer.mp3"
     },
     {
         "name": "panipuri.mp3",
@@ -5897,7 +5897,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/panipuri.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/panipuri.mp3"
     },
     {
         "name": "papad.mp3",
@@ -5911,7 +5911,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/papad.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/papad.mp3"
     },
     {
         "name": "paratha.mp3",
@@ -5925,7 +5925,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/paratha.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/paratha.mp3"
     },
     {
         "name": "peda.mp3",
@@ -5939,7 +5939,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/peda.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/peda.mp3"
     },
     {
         "name": "pickle.mp3",
@@ -5953,7 +5953,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/pickle.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/pickle.mp3"
     },
     {
         "name": "poha.mp3",
@@ -5967,7 +5967,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/poha.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/poha.mp3"
     },
     {
         "name": "pulao.mp3",
@@ -5981,7 +5981,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/pulao.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/pulao.mp3"
     },
     {
         "name": "puri.mp3",
@@ -5995,7 +5995,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/puri.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/puri.mp3"
     },
     {
         "name": "rabri.mp3",
@@ -6009,7 +6009,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/rabri.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/rabri.mp3"
     },
     {
         "name": "raita.mp3",
@@ -6023,7 +6023,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/raita.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/raita.mp3"
     },
     {
         "name": "rasgulla.mp3",
@@ -6037,7 +6037,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/rasgulla.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/rasgulla.mp3"
     },
     {
         "name": "rewri.mp3",
@@ -6051,7 +6051,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/rewri.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/rewri.mp3"
     },
     {
         "name": "rice.mp3",
@@ -6065,7 +6065,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/rice.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/rice.mp3"
     },
     {
         "name": "roti.mp3",
@@ -6079,7 +6079,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/roti.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/roti.mp3"
     },
     {
         "name": "samosa.mp3",
@@ -6093,7 +6093,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/samosa.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/samosa.mp3"
     },
     {
         "name": "sharbat.mp3",
@@ -6107,7 +6107,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/sharbat.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/sharbat.mp3"
     },
     {
         "name": "sheera.mp3",
@@ -6121,7 +6121,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/sheera.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/sheera.mp3"
     },
     {
         "name": "sugarcane.mp3",
@@ -6135,7 +6135,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/sugarcane.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/sugarcane.mp3"
     },
     {
         "name": "sweets.mp3",
@@ -6149,7 +6149,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/sweets.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/sweets.mp3"
     },
     {
         "name": "tea.mp3",
@@ -6163,7 +6163,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/food/tea.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/food/tea.mp3"
     },
     {
         "name": "banana.mp3",
@@ -6177,7 +6177,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits/banana.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits/banana.mp3"
     },
     {
         "name": "cherry.mp3",
@@ -6191,7 +6191,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits/cherry.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits/cherry.mp3"
     },
     {
         "name": "grapes.mp3",
@@ -6205,7 +6205,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits/grapes.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits/grapes.mp3"
     },
     {
         "name": "guava.mp3",
@@ -6219,7 +6219,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits/guava.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits/guava.mp3"
     },
     {
         "name": "kiwi.mp3",
@@ -6233,7 +6233,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits/kiwi.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits/kiwi.mp3"
     },
     {
         "name": "mango.mp3",
@@ -6247,7 +6247,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits/mango.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits/mango.mp3"
     },
     {
         "name": "orange.mp3",
@@ -6261,7 +6261,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits/orange.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits/orange.mp3"
     },
     {
         "name": "papaya.mp3",
@@ -6275,7 +6275,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits/papaya.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits/papaya.mp3"
     },
     {
         "name": "pineapple.mp3",
@@ -6289,7 +6289,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits/pineapple.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits/pineapple.mp3"
     },
     {
         "name": "pomegranate.mp3",
@@ -6303,7 +6303,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits/pomegranate.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits/pomegranate.mp3"
     },
     {
         "name": "strawberry.mp3",
@@ -6317,7 +6317,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits/strawberry.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits/strawberry.mp3"
     },
     {
         "name": "watermelon.mp3",
@@ -6331,7 +6331,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits/watermelon.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits/watermelon.mp3"
     },
     {
         "name": "apple.mp3",
@@ -6345,7 +6345,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits_vegetables/fruits/apple.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits_vegetables/fruits/apple.mp3"
     },
     {
         "name": "potato.mp3",
@@ -6359,7 +6359,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits_vegetables/vegetables/potato.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits_vegetables/vegetables/potato.mp3"
     },
     {
         "name": "tomato.mp3",
@@ -6373,7 +6373,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/fruits_vegetables/vegetables/tomato.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/fruits_vegetables/vegetables/tomato.mp3"
     },
     {
         "name": "ball_tadi.mp3",
@@ -6387,7 +6387,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/ball_tadi.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/ball_tadi.mp3"
     },
     {
         "name": "blindfold.mp3",
@@ -6401,7 +6401,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/blindfold.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/blindfold.mp3"
     },
     {
         "name": "carrom.mp3",
@@ -6415,7 +6415,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/carrom.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/carrom.mp3"
     },
     {
         "name": "chess.mp3",
@@ -6429,7 +6429,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/chess.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/chess.mp3"
     },
     {
         "name": "cricket.mp3",
@@ -6443,7 +6443,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/cricket.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/cricket.mp3"
     },
     {
         "name": "football.mp3",
@@ -6457,7 +6457,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/football.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/football.mp3"
     },
     {
         "name": "gilli_danda.mp3",
@@ -6471,7 +6471,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/gilli_danda.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/gilli_danda.mp3"
     },
     {
         "name": "hide_seek.mp3",
@@ -6485,7 +6485,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/hide_seek.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/hide_seek.mp3"
     },
     {
         "name": "hopscotch.mp3",
@@ -6499,7 +6499,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/hopscotch.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/hopscotch.mp3"
     },
     {
         "name": "ice_water_game.mp3",
@@ -6513,7 +6513,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/ice_water_game.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/ice_water_game.mp3"
     },
     {
         "name": "kho_kho.mp3",
@@ -6527,7 +6527,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/kho_kho.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/kho_kho.mp3"
     },
     {
         "name": "kite_flying.mp3",
@@ -6541,7 +6541,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/kite_flying.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/kite_flying.mp3"
     },
     {
         "name": "ludo.mp3",
@@ -6555,7 +6555,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/ludo.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/ludo.mp3"
     },
     {
         "name": "marbles.mp3",
@@ -6569,7 +6569,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/marbles.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/marbles.mp3"
     },
     {
         "name": "pebbles.mp3",
@@ -6583,7 +6583,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/pebbles.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/pebbles.mp3"
     },
     {
         "name": "pitthu.mp3",
@@ -6597,7 +6597,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/pitthu.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/pitthu.mp3"
     },
     {
         "name": "poshampa.mp3",
@@ -6611,7 +6611,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/poshampa.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/poshampa.mp3"
     },
     {
         "name": "rope_skipping.mp3",
@@ -6625,7 +6625,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/rope_skipping.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/rope_skipping.mp3"
     },
     {
         "name": "rumal_jhapatta.mp3",
@@ -6639,7 +6639,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/rumal_jhapatta.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/rumal_jhapatta.mp3"
     },
     {
         "name": "snakes_ladders.mp3",
@@ -6653,7 +6653,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/snakes_ladders.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/snakes_ladders.mp3"
     },
     {
         "name": "spinning.mp3",
@@ -6667,7 +6667,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/spinning.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/spinning.mp3"
     },
     {
         "name": "tag.mp3",
@@ -6681,7 +6681,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/tag.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/tag.mp3"
     },
     {
         "name": "top_spinning.mp3",
@@ -6695,7 +6695,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/top_spinning.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/top_spinning.mp3"
     },
     {
         "name": "tug_of_war.mp3",
@@ -6709,7 +6709,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/tug_of_war.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/tug_of_war.mp3"
     },
     {
         "name": "up_down_game.mp3",
@@ -6723,7 +6723,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/games/up_down_game.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/games/up_down_game.mp3"
     },
     {
         "name": "bathing.mp3",
@@ -6737,7 +6737,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/bathing.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/bathing.mp3"
     },
     {
         "name": "best_wishes.mp3",
@@ -6751,7 +6751,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/best_wishes.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/best_wishes.mp3"
     },
     {
         "name": "birthday_joy.mp3",
@@ -6765,7 +6765,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/birthday_joy.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/birthday_joy.mp3"
     },
     {
         "name": "brushing.mp3",
@@ -6779,7 +6779,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/brushing.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/brushing.mp3"
     },
     {
         "name": "clean_clothes.mp3",
@@ -6793,7 +6793,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/clean_clothes.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/clean_clothes.mp3"
     },
     {
         "name": "eating_healthy.mp3",
@@ -6807,7 +6807,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/eating_healthy.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/eating_healthy.mp3"
     },
     {
         "name": "exam_day.mp3",
@@ -6821,7 +6821,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/exam_day.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/exam_day.mp3"
     },
     {
         "name": "god_bless.mp3",
@@ -6835,7 +6835,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/god_bless.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/god_bless.mp3"
     },
     {
         "name": "good_morning_alt.mp3",
@@ -6849,7 +6849,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/good_morning_alt.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/good_morning_alt.mp3"
     },
     {
         "name": "greeting_ram_ram.mp3",
@@ -6863,7 +6863,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/greeting_ram_ram.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/greeting_ram_ram.mp3"
     },
     {
         "name": "help_elders.mp3",
@@ -6877,7 +6877,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/help_elders.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/help_elders.mp3"
     },
     {
         "name": "help_weak_child.mp3",
@@ -6891,7 +6891,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/help_weak_child.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/help_weak_child.mp3"
     },
     {
         "name": "hospitality.mp3",
@@ -6905,7 +6905,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/hospitality.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/hospitality.mp3"
     },
     {
         "name": "its_okay.mp3",
@@ -6919,7 +6919,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/its_okay.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/its_okay.mp3"
     },
     {
         "name": "loving_animals.mp3",
@@ -6933,7 +6933,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/loving_animals.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/loving_animals.mp3"
     },
     {
         "name": "namaste.mp3",
@@ -6947,7 +6947,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/namaste.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/namaste.mp3"
     },
     {
         "name": "read_daily.mp3",
@@ -6961,7 +6961,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/read_daily.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/read_daily.mp3"
     },
     {
         "name": "respectful_word.mp3",
@@ -6975,7 +6975,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/respectful_word.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/respectful_word.mp3"
     },
     {
         "name": "respect_elders.mp3",
@@ -6989,7 +6989,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/respect_elders.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/respect_elders.mp3"
     },
     {
         "name": "saying_please.mp3",
@@ -7003,7 +7003,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/saying_please.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/saying_please.mp3"
     },
     {
         "name": "saying_sorry.mp3",
@@ -7017,7 +7017,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/saying_sorry.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/saying_sorry.mp3"
     },
     {
         "name": "saying_thanks.mp3",
@@ -7031,7 +7031,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/saying_thanks.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/saying_thanks.mp3"
     },
     {
         "name": "sharing_food.mp3",
@@ -7045,7 +7045,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/sharing_food.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/sharing_food.mp3"
     },
     {
         "name": "shubh_ratri.mp3",
@@ -7059,7 +7059,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/shubh_ratri.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/shubh_ratri.mp3"
     },
     {
         "name": "sleeping_on_time.mp3",
@@ -7073,7 +7073,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/sleeping_on_time.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/sleeping_on_time.mp3"
     },
     {
         "name": "stranger_safety.mp3",
@@ -7087,7 +7087,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/stranger_safety.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/stranger_safety.mp3"
     },
     {
         "name": "suprabhat.mp3",
@@ -7101,7 +7101,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/suprabhat.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/suprabhat.mp3"
     },
     {
         "name": "very_good.mp3",
@@ -7115,7 +7115,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/very_good.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/very_good.mp3"
     },
     {
         "name": "waking_early.mp3",
@@ -7129,7 +7129,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/waking_early.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/waking_early.mp3"
     },
     {
         "name": "washing_hands.mp3",
@@ -7143,7 +7143,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/washing_hands.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/washing_hands.mp3"
     },
     {
         "name": "welcome.mp3",
@@ -7157,7 +7157,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/welcome.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/welcome.mp3"
     },
     {
         "name": "welcome_new_friend.mp3",
@@ -7171,7 +7171,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/welcome_new_friend.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/welcome_new_friend.mp3"
     },
     {
         "name": "well_done.mp3",
@@ -7185,7 +7185,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/habits/well_done.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/habits/well_done.mp3"
     },
     {
         "name": "barber.mp3",
@@ -7199,7 +7199,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/barber.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/barber.mp3"
     },
     {
         "name": "cleaner.mp3",
@@ -7213,7 +7213,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/cleaner.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/cleaner.mp3"
     },
     {
         "name": "cobbler.mp3",
@@ -7227,7 +7227,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/cobbler.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/cobbler.mp3"
     },
     {
         "name": "doctor.mp3",
@@ -7241,7 +7241,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/doctor.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/doctor.mp3"
     },
     {
         "name": "driver.mp3",
@@ -7255,7 +7255,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/driver.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/driver.mp3"
     },
     {
         "name": "farmer.mp3",
@@ -7269,7 +7269,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/farmer.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/farmer.mp3"
     },
     {
         "name": "firefighter.mp3",
@@ -7283,7 +7283,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/firefighter.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/firefighter.mp3"
     },
     {
         "name": "nurse.mp3",
@@ -7297,7 +7297,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/nurse.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/nurse.mp3"
     },
     {
         "name": "pilot.mp3",
@@ -7311,7 +7311,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/pilot.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/pilot.mp3"
     },
     {
         "name": "police.mp3",
@@ -7325,7 +7325,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/police.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/police.mp3"
     },
     {
         "name": "postman.mp3",
@@ -7339,7 +7339,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/postman.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/postman.mp3"
     },
     {
         "name": "potter.mp3",
@@ -7353,7 +7353,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/potter.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/potter.mp3"
     },
     {
         "name": "shopkeeper.mp3",
@@ -7367,7 +7367,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/shopkeeper.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/shopkeeper.mp3"
     },
     {
         "name": "soldier.mp3",
@@ -7381,7 +7381,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/soldier.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/soldier.mp3"
     },
     {
         "name": "tailor.mp3",
@@ -7395,7 +7395,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/helpers/tailor.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/helpers/tailor.mp3"
     },
     {
         "name": "if_i_were_bird.mp3",
@@ -7409,7 +7409,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/imagination/if_i_were_bird.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/imagination/if_i_were_bird.mp3"
     },
     {
         "name": "if_i_were_cloud.mp3",
@@ -7423,7 +7423,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/imagination/if_i_were_cloud.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/imagination/if_i_were_cloud.mp3"
     },
     {
         "name": "if_i_were_fish.mp3",
@@ -7437,7 +7437,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/imagination/if_i_were_fish.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/imagination/if_i_were_fish.mp3"
     },
     {
         "name": "if_i_were_king.mp3",
@@ -7451,7 +7451,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/imagination/if_i_were_king.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/imagination/if_i_were_king.mp3"
     },
     {
         "name": "if_i_were_tree.mp3",
@@ -7465,7 +7465,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/imagination/if_i_were_tree.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/imagination/if_i_were_tree.mp3"
     },
     {
         "name": "bedbug.mp3",
@@ -7479,7 +7479,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/insects/bedbug.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/insects/bedbug.mp3"
     },
     {
         "name": "bee.mp3",
@@ -7493,7 +7493,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/insects/bee.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/insects/bee.mp3"
     },
     {
         "name": "butterfly.mp3",
@@ -7507,7 +7507,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/insects/butterfly.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/insects/butterfly.mp3"
     },
     {
         "name": "firefly.mp3",
@@ -7521,7 +7521,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/insects/firefly.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/insects/firefly.mp3"
     },
     {
         "name": "fly.mp3",
@@ -7535,7 +7535,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/insects/fly.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/insects/fly.mp3"
     },
     {
         "name": "grasshopper.mp3",
@@ -7549,7 +7549,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/insects/grasshopper.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/insects/grasshopper.mp3"
     },
     {
         "name": "leech.mp3",
@@ -7563,7 +7563,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/insects/leech.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/insects/leech.mp3"
     },
     {
         "name": "mosquito.mp3",
@@ -7577,7 +7577,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/insects/mosquito.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/insects/mosquito.mp3"
     },
     {
         "name": "spider.mp3",
@@ -7591,7 +7591,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/insects/spider.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/insects/spider.mp3"
     },
     {
         "name": "termite.mp3",
@@ -7605,7 +7605,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/insects/termite.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/insects/termite.mp3"
     },
     {
         "name": "bell.mp3",
@@ -7619,7 +7619,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/instruments/bell.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/instruments/bell.mp3"
     },
     {
         "name": "damru.mp3",
@@ -7633,7 +7633,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/instruments/damru.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/instruments/damru.mp3"
     },
     {
         "name": "dholak.mp3",
@@ -7647,7 +7647,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/instruments/dholak.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/instruments/dholak.mp3"
     },
     {
         "name": "flute.mp3",
@@ -7661,7 +7661,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/instruments/flute.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/instruments/flute.mp3"
     },
     {
         "name": "harmonium.mp3",
@@ -7675,7 +7675,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/instruments/harmonium.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/instruments/harmonium.mp3"
     },
     {
         "name": "manjira.mp3",
@@ -7689,7 +7689,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/instruments/manjira.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/instruments/manjira.mp3"
     },
     {
         "name": "shankh.mp3",
@@ -7703,7 +7703,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/instruments/shankh.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/instruments/shankh.mp3"
     },
     {
         "name": "tabla.mp3",
@@ -7717,7 +7717,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/instruments/tabla.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/instruments/tabla.mp3"
     },
     {
         "name": "nature_rainy.mp3",
@@ -7731,7 +7731,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/nature_habits/nature_rainy.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/nature_habits/nature_rainy.mp3"
     },
     {
         "name": "almirah.mp3",
@@ -7745,7 +7745,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/almirah.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/almirah.mp3"
     },
     {
         "name": "axe.mp3",
@@ -7759,7 +7759,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/axe.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/axe.mp3"
     },
     {
         "name": "bed.mp3",
@@ -7773,7 +7773,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/bed.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/bed.mp3"
     },
     {
         "name": "bedsheet.mp3",
@@ -7787,7 +7787,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/bedsheet.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/bedsheet.mp3"
     },
     {
         "name": "book.mp3",
@@ -7801,7 +7801,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/book.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/book.mp3"
     },
     {
         "name": "bowl_large.mp3",
@@ -7815,7 +7815,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/bowl_large.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/bowl_large.mp3"
     },
     {
         "name": "bowl_small.mp3",
@@ -7829,7 +7829,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/bowl_small.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/bowl_small.mp3"
     },
     {
         "name": "broom.mp3",
@@ -7843,7 +7843,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/broom.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/broom.mp3"
     },
     {
         "name": "bucket.mp3",
@@ -7857,7 +7857,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/bucket.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/bucket.mp3"
     },
     {
         "name": "chair.mp3",
@@ -7871,7 +7871,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/chair.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/chair.mp3"
     },
     {
         "name": "churner.mp3",
@@ -7885,7 +7885,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/churner.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/churner.mp3"
     },
     {
         "name": "cinema.mp3",
@@ -7899,7 +7899,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/cinema.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/cinema.mp3"
     },
     {
         "name": "clock.mp3",
@@ -7913,7 +7913,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/clock.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/clock.mp3"
     },
     {
         "name": "comb.mp3",
@@ -7927,7 +7927,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/comb.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/comb.mp3"
     },
     {
         "name": "cooking_pot.mp3",
@@ -7941,7 +7941,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/cooking_pot.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/cooking_pot.mp3"
     },
     {
         "name": "curtain.mp3",
@@ -7955,7 +7955,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/curtain.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/curtain.mp3"
     },
     {
         "name": "door.mp3",
@@ -7969,7 +7969,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/door.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/door.mp3"
     },
     {
         "name": "dustbin.mp3",
@@ -7983,7 +7983,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/dustbin.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/dustbin.mp3"
     },
     {
         "name": "eraser.mp3",
@@ -7997,7 +7997,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/eraser.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/eraser.mp3"
     },
     {
         "name": "fan.mp3",
@@ -8011,7 +8011,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/fan.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/fan.mp3"
     },
     {
         "name": "floor.mp3",
@@ -8025,7 +8025,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/floor.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/floor.mp3"
     },
     {
         "name": "glass.mp3",
@@ -8039,7 +8039,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/glass.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/glass.mp3"
     },
     {
         "name": "griddle_tawa.mp3",
@@ -8053,7 +8053,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/griddle_tawa.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/griddle_tawa.mp3"
     },
     {
         "name": "grinding_stone.mp3",
@@ -8067,7 +8067,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/grinding_stone.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/grinding_stone.mp3"
     },
     {
         "name": "hammer.mp3",
@@ -8081,7 +8081,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/hammer.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/hammer.mp3"
     },
     {
         "name": "hand_hoe.mp3",
@@ -8095,7 +8095,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/hand_hoe.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/hand_hoe.mp3"
     },
     {
         "name": "key.mp3",
@@ -8109,7 +8109,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/key.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/key.mp3"
     },
     {
         "name": "ladle.mp3",
@@ -8123,7 +8123,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/ladle.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/ladle.mp3"
     },
     {
         "name": "lamp.mp3",
@@ -8137,7 +8137,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/lamp.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/lamp.mp3"
     },
     {
         "name": "large_plate.mp3",
@@ -8151,7 +8151,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/large_plate.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/large_plate.mp3"
     },
     {
         "name": "lid.mp3",
@@ -8165,7 +8165,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/lid.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/lid.mp3"
     },
     {
         "name": "lock.mp3",
@@ -8179,7 +8179,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/lock.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/lock.mp3"
     },
     {
         "name": "lota.mp3",
@@ -8193,7 +8193,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/lota.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/lota.mp3"
     },
     {
         "name": "matka_pot.mp3",
@@ -8207,7 +8207,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/matka_pot.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/matka_pot.mp3"
     },
     {
         "name": "mirror.mp3",
@@ -8221,7 +8221,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/mirror.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/mirror.mp3"
     },
     {
         "name": "mortar_pestle.mp3",
@@ -8235,7 +8235,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/mortar_pestle.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/mortar_pestle.mp3"
     },
     {
         "name": "mug.mp3",
@@ -8249,7 +8249,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/mug.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/mug.mp3"
     },
     {
         "name": "nail.mp3",
@@ -8263,7 +8263,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/nail.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/nail.mp3"
     },
     {
         "name": "needle_thread.mp3",
@@ -8277,7 +8277,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/needle_thread.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/needle_thread.mp3"
     },
     {
         "name": "peeler.mp3",
@@ -8291,7 +8291,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/peeler.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/peeler.mp3"
     },
     {
         "name": "pen.mp3",
@@ -8305,7 +8305,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/pen.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/pen.mp3"
     },
     {
         "name": "pencil.mp3",
@@ -8319,7 +8319,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/pencil.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/pencil.mp3"
     },
     {
         "name": "pillow.mp3",
@@ -8333,7 +8333,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/pillow.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/pillow.mp3"
     },
     {
         "name": "pincers.mp3",
@@ -8347,7 +8347,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/pincers.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/pincers.mp3"
     },
     {
         "name": "plate.mp3",
@@ -8361,7 +8361,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/plate.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/plate.mp3"
     },
     {
         "name": "plate_thali.mp3",
@@ -8375,7 +8375,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/plate_thali.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/plate_thali.mp3"
     },
     {
         "name": "plough.mp3",
@@ -8389,7 +8389,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/plough.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/plough.mp3"
     },
     {
         "name": "pressure_cooker.mp3",
@@ -8403,7 +8403,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/pressure_cooker.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/pressure_cooker.mp3"
     },
     {
         "name": "radio.mp3",
@@ -8417,7 +8417,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/radio.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/radio.mp3"
     },
     {
         "name": "rolling_board.mp3",
@@ -8431,7 +8431,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/rolling_board.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/rolling_board.mp3"
     },
     {
         "name": "rolling_pin.mp3",
@@ -8445,7 +8445,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/rolling_pin.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/rolling_pin.mp3"
     },
     {
         "name": "roof.mp3",
@@ -8459,7 +8459,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/roof.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/roof.mp3"
     },
     {
         "name": "saw.mp3",
@@ -8473,7 +8473,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/saw.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/saw.mp3"
     },
     {
         "name": "school_bag.mp3",
@@ -8487,7 +8487,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/school_bag.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/school_bag.mp3"
     },
     {
         "name": "scissors.mp3",
@@ -8501,7 +8501,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/scissors.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/scissors.mp3"
     },
     {
         "name": "screwdriver.mp3",
@@ -8515,7 +8515,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/screwdriver.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/screwdriver.mp3"
     },
     {
         "name": "shovel.mp3",
@@ -8529,7 +8529,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/shovel.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/shovel.mp3"
     },
     {
         "name": "sickle.mp3",
@@ -8543,7 +8543,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/sickle.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/sickle.mp3"
     },
     {
         "name": "sieve.mp3",
@@ -8557,7 +8557,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/sieve.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/sieve.mp3"
     },
     {
         "name": "soap.mp3",
@@ -8571,7 +8571,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/soap.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/soap.mp3"
     },
     {
         "name": "stove.mp3",
@@ -8585,7 +8585,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/stove.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/stove.mp3"
     },
     {
         "name": "surahi.mp3",
@@ -8599,7 +8599,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/surahi.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/surahi.mp3"
     },
     {
         "name": "table.mp3",
@@ -8613,7 +8613,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/table.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/table.mp3"
     },
     {
         "name": "television.mp3",
@@ -8627,7 +8627,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/television.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/television.mp3"
     },
     {
         "name": "tongs.mp3",
@@ -8641,7 +8641,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/tongs.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/tongs.mp3"
     },
     {
         "name": "towel.mp3",
@@ -8655,7 +8655,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/towel.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/towel.mp3"
     },
     {
         "name": "umbrella.mp3",
@@ -8669,7 +8669,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/umbrella.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/umbrella.mp3"
     },
     {
         "name": "wall.mp3",
@@ -8683,7 +8683,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/wall.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/wall.mp3"
     },
     {
         "name": "wheel.mp3",
@@ -8697,7 +8697,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/wheel.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/wheel.mp3"
     },
     {
         "name": "window.mp3",
@@ -8711,7 +8711,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/window.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/window.mp3"
     },
     {
         "name": "wok_kadai.mp3",
@@ -8725,7 +8725,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/objects/wok_kadai.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/objects/wok_kadai.mp3"
     },
     {
         "name": "airport.mp3",
@@ -8739,7 +8739,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/places/airport.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/places/airport.mp3"
     },
     {
         "name": "circus.mp3",
@@ -8753,7 +8753,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/places/circus.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/places/circus.mp3"
     },
     {
         "name": "fair.mp3",
@@ -8767,7 +8767,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/places/fair.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/places/fair.mp3"
     },
     {
         "name": "hospital.mp3",
@@ -8781,7 +8781,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/places/hospital.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/places/hospital.mp3"
     },
     {
         "name": "library.mp3",
@@ -8795,7 +8795,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/places/library.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/places/library.mp3"
     },
     {
         "name": "market.mp3",
@@ -8809,7 +8809,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/places/market.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/places/market.mp3"
     },
     {
         "name": "police_station.mp3",
@@ -8823,7 +8823,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/places/police_station.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/places/police_station.mp3"
     },
     {
         "name": "post_office.mp3",
@@ -8837,7 +8837,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/places/post_office.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/places/post_office.mp3"
     },
     {
         "name": "railway_station.mp3",
@@ -8851,7 +8851,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/places/railway_station.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/places/railway_station.mp3"
     },
     {
         "name": "school.mp3",
@@ -8865,7 +8865,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/places/school.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/places/school.mp3"
     },
     {
         "name": "zoo.mp3",
@@ -8879,7 +8879,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/places/zoo.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/places/zoo.mp3"
     },
     {
         "name": "courtyard.mp3",
@@ -8893,7 +8893,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/rooms/courtyard.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/rooms/courtyard.mp3"
     },
     {
         "name": "guest_room.mp3",
@@ -8907,7 +8907,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/rooms/guest_room.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/rooms/guest_room.mp3"
     },
     {
         "name": "ledge.mp3",
@@ -8921,7 +8921,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/rooms/ledge.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/rooms/ledge.mp3"
     },
     {
         "name": "store_room.mp3",
@@ -8935,7 +8935,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/rooms/store_room.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/rooms/store_room.mp3"
     },
     {
         "name": "ventilator.mp3",
@@ -8949,7 +8949,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/rooms/ventilator.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/rooms/ventilator.mp3"
     },
     {
         "name": "clapping.mp3",
@@ -8963,7 +8963,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/clapping.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/clapping.mp3"
     },
     {
         "name": "clock_ticking.mp3",
@@ -8977,7 +8977,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/clock_ticking.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/clock_ticking.mp3"
     },
     {
         "name": "coughing.mp3",
@@ -8991,7 +8991,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/coughing.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/coughing.mp3"
     },
     {
         "name": "crow_caw.mp3",
@@ -9005,7 +9005,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/crow_caw.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/crow_caw.mp3"
     },
     {
         "name": "crying.mp3",
@@ -9019,7 +9019,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/crying.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/crying.mp3"
     },
     {
         "name": "door_creaking.mp3",
@@ -9033,7 +9033,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/door_creaking.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/door_creaking.mp3"
     },
     {
         "name": "drum.mp3",
@@ -9047,7 +9047,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/drum.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/drum.mp3"
     },
     {
         "name": "fire_burning.mp3",
@@ -9061,7 +9061,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/fire_burning.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/fire_burning.mp3"
     },
     {
         "name": "footsteps.mp3",
@@ -9075,7 +9075,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/footsteps.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/footsteps.mp3"
     },
     {
         "name": "page_turning.mp3",
@@ -9089,7 +9089,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/page_turning.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/page_turning.mp3"
     },
     {
         "name": "paper_tearing.mp3",
@@ -9103,7 +9103,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/paper_tearing.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/paper_tearing.mp3"
     },
     {
         "name": "sneezing.mp3",
@@ -9117,7 +9117,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/sneezing.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/sneezing.mp3"
     },
     {
         "name": "snoring.mp3",
@@ -9131,7 +9131,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/snoring.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/snoring.mp3"
     },
     {
         "name": "water_dripping.mp3",
@@ -9145,7 +9145,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/water_dripping.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/water_dripping.mp3"
     },
     {
         "name": "whistle.mp3",
@@ -9159,7 +9159,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/whistle.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/whistle.mp3"
     },
     {
         "name": "wind_storm.mp3",
@@ -9173,7 +9173,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/sounds/wind_storm.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/sounds/wind_storm.mp3"
     },
     {
         "name": "ball.mp3",
@@ -9187,7 +9187,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/ball.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/ball.mp3"
     },
     {
         "name": "balloons.mp3",
@@ -9201,7 +9201,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/balloons.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/balloons.mp3"
     },
     {
         "name": "blocks.mp3",
@@ -9215,7 +9215,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/blocks.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/blocks.mp3"
     },
     {
         "name": "bubbles.mp3",
@@ -9229,7 +9229,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/bubbles.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/bubbles.mp3"
     },
     {
         "name": "doll.mp3",
@@ -9243,7 +9243,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/doll.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/doll.mp3"
     },
     {
         "name": "kitchen_set.mp3",
@@ -9257,7 +9257,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/kitchen_set.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/kitchen_set.mp3"
     },
     {
         "name": "musical_toy.mp3",
@@ -9271,7 +9271,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/musical_toy.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/musical_toy.mp3"
     },
     {
         "name": "paper_plane.mp3",
@@ -9285,7 +9285,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/paper_plane.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/paper_plane.mp3"
     },
     {
         "name": "seesaw.mp3",
@@ -9299,7 +9299,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/seesaw.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/seesaw.mp3"
     },
     {
         "name": "slide.mp3",
@@ -9313,7 +9313,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/slide.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/slide.mp3"
     },
     {
         "name": "swing.mp3",
@@ -9327,7 +9327,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/swing.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/swing.mp3"
     },
     {
         "name": "teddy_bear.mp3",
@@ -9341,7 +9341,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/teddy_bear.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/teddy_bear.mp3"
     },
     {
         "name": "toy_car.mp3",
@@ -9355,7 +9355,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/toy_car.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/toy_car.mp3"
     },
     {
         "name": "toy_train.mp3",
@@ -9369,7 +9369,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/toy_train.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/toy_train.mp3"
     },
     {
         "name": "whirligig.mp3",
@@ -9383,7 +9383,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/whirligig.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/whirligig.mp3"
     },
     {
         "name": "wooden_horse.mp3",
@@ -9397,7 +9397,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/toys/wooden_horse.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/toys/wooden_horse.mp3"
     },
     {
         "name": "airplane.mp3",
@@ -9411,7 +9411,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/transport/airplane.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/transport/airplane.mp3"
     },
     {
         "name": "autorickshaw.mp3",
@@ -9425,7 +9425,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/transport/autorickshaw.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/transport/autorickshaw.mp3"
     },
     {
         "name": "car.mp3",
@@ -9439,7 +9439,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/transport/car.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/transport/car.mp3"
     },
     {
         "name": "train.mp3",
@@ -9453,7 +9453,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/transport/train.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/transport/train.mp3"
     },
     {
         "name": "cabbage.mp3",
@@ -9467,7 +9467,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vegetables/cabbage.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vegetables/cabbage.mp3"
     },
     {
         "name": "capsicum.mp3",
@@ -9481,7 +9481,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vegetables/capsicum.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vegetables/capsicum.mp3"
     },
     {
         "name": "carrot.mp3",
@@ -9495,7 +9495,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vegetables/carrot.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vegetables/carrot.mp3"
     },
     {
         "name": "cauliflower.mp3",
@@ -9509,7 +9509,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vegetables/cauliflower.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vegetables/cauliflower.mp3"
     },
     {
         "name": "garlic.mp3",
@@ -9523,7 +9523,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vegetables/garlic.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vegetables/garlic.mp3"
     },
     {
         "name": "onion.mp3",
@@ -9537,7 +9537,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vegetables/onion.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vegetables/onion.mp3"
     },
     {
         "name": "peas.mp3",
@@ -9551,7 +9551,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vegetables/peas.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vegetables/peas.mp3"
     },
     {
         "name": "pumpkin.mp3",
@@ -9565,7 +9565,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vegetables/pumpkin.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vegetables/pumpkin.mp3"
     },
     {
         "name": "radish.mp3",
@@ -9579,7 +9579,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vegetables/radish.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vegetables/radish.mp3"
     },
     {
         "name": "spinach.mp3",
@@ -9593,7 +9593,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vegetables/spinach.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vegetables/spinach.mp3"
     },
     {
         "name": "auto_rickshaw.mp3",
@@ -9607,7 +9607,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vehicles/auto_rickshaw.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vehicles/auto_rickshaw.mp3"
     },
     {
         "name": "bicycle.mp3",
@@ -9621,7 +9621,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vehicles/bicycle.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vehicles/bicycle.mp3"
     },
     {
         "name": "boat.mp3",
@@ -9635,7 +9635,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vehicles/boat.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vehicles/boat.mp3"
     },
     {
         "name": "bullock_cart.mp3",
@@ -9649,7 +9649,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vehicles/bullock_cart.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vehicles/bullock_cart.mp3"
     },
     {
         "name": "bus.mp3",
@@ -9663,7 +9663,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vehicles/bus.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vehicles/bus.mp3"
     },
     {
         "name": "hand_cart.mp3",
@@ -9677,7 +9677,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vehicles/hand_cart.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vehicles/hand_cart.mp3"
     },
     {
         "name": "helicopter.mp3",
@@ -9691,7 +9691,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vehicles/helicopter.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vehicles/helicopter.mp3"
     },
     {
         "name": "horse_carriage.mp3",
@@ -9705,7 +9705,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vehicles/horse_carriage.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vehicles/horse_carriage.mp3"
     },
     {
         "name": "motorcycle.mp3",
@@ -9719,7 +9719,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vehicles/motorcycle.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vehicles/motorcycle.mp3"
     },
     {
         "name": "palanquin.mp3",
@@ -9733,7 +9733,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vehicles/palanquin.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vehicles/palanquin.mp3"
     },
     {
         "name": "scooter.mp3",
@@ -9747,7 +9747,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vehicles/scooter.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vehicles/scooter.mp3"
     },
     {
         "name": "ship.mp3",
@@ -9761,7 +9761,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vehicles/ship.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vehicles/ship.mp3"
     },
     {
         "name": "tractor.mp3",
@@ -9775,7 +9775,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vehicles/tractor.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vehicles/tractor.mp3"
     },
     {
         "name": "truck.mp3",
@@ -9789,7 +9789,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/mera_sansar/vehicles/truck.mp3"
+        "path": "../../../../../frontend/assets/audio/mera_sansar/vehicles/truck.mp3"
     },
     {
         "name": "goat.mp3",
@@ -9803,7 +9803,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/names/animals_domestic/goat.mp3"
+        "path": "../../../../../frontend/assets/audio/names/animals_domestic/goat.mp3"
     },
     {
         "name": "col_darkgreen.mp3",
@@ -9817,7 +9817,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_darkgreen.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_darkgreen.mp3"
     },
     {
         "name": "col_lightblue.mp3",
@@ -9831,7 +9831,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_lightblue.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_lightblue.mp3"
     },
     {
         "name": "col_lightgreen.mp3",
@@ -9845,7 +9845,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_lightgreen.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_lightgreen.mp3"
     },
     {
         "name": "col_mossgreen_bluegreen.mp3",
@@ -9859,7 +9859,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_mossgreen_bluegreen.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_mossgreen_bluegreen.mp3"
     },
     {
         "name": "col_munggreen_bluegreen.mp3",
@@ -9873,7 +9873,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_munggreen_bluegreen.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_munggreen_bluegreen.mp3"
     },
     {
         "name": "col_navyblue.mp3",
@@ -9887,7 +9887,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_navyblue.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_navyblue.mp3"
     },
     {
         "name": "col_parrotgreen_bluegreen.mp3",
@@ -9901,7 +9901,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_parrotgreen_bluegreen.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_parrotgreen_bluegreen.mp3"
     },
     {
         "name": "col_turquoise_bluegreen.mp3",
@@ -9915,7 +9915,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_turquoise_bluegreen.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/blue_green/col_turquoise_bluegreen.mp3"
     },
     {
         "name": "col_beige_brown.mp3",
@@ -9929,7 +9929,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/brown_beige/col_beige_brown.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/brown_beige/col_beige_brown.mp3"
     },
     {
         "name": "col_clay.mp3",
@@ -9943,7 +9943,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/brown_beige/col_clay.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/brown_beige/col_clay.mp3"
     },
     {
         "name": "col_darkbrown.mp3",
@@ -9957,7 +9957,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/brown_beige/col_darkbrown.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/brown_beige/col_darkbrown.mp3"
     },
     {
         "name": "col_khaki_brown.mp3",
@@ -9971,7 +9971,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/brown_beige/col_khaki_brown.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/brown_beige/col_khaki_brown.mp3"
     },
     {
         "name": "col_lightbrown.mp3",
@@ -9985,7 +9985,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/brown_beige/col_lightbrown.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/brown_beige/col_lightbrown.mp3"
     },
     {
         "name": "col_sandalwood.mp3",
@@ -9999,7 +9999,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/brown_beige/col_sandalwood.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/brown_beige/col_sandalwood.mp3"
     },
     {
         "name": "col_stay_brown.mp3",
@@ -10013,7 +10013,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/brown_beige/col_stay_brown.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/brown_beige/col_stay_brown.mp3"
     },
     {
         "name": "dusty.mp3",
@@ -10027,7 +10027,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/colors_special/dusty.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/colors_special/dusty.mp3"
     },
     {
         "name": "golden.mp3",
@@ -10041,7 +10041,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/colors_special/golden.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/colors_special/golden.mp3"
     },
     {
         "name": "navy_blue.mp3",
@@ -10055,7 +10055,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/colors_special/navy_blue.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/colors_special/navy_blue.mp3"
     },
     {
         "name": "silver.mp3",
@@ -10069,7 +10069,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/colors_special/silver.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/colors_special/silver.mp3"
     },
     {
         "name": "turquoise.mp3",
@@ -10083,7 +10083,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/colors_special/turquoise.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/colors_special/turquoise.mp3"
     },
     {
         "name": "col_bronze.mp3",
@@ -10097,7 +10097,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/metallic/col_bronze.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/metallic/col_bronze.mp3"
     },
     {
         "name": "col_copper.mp3",
@@ -10111,7 +10111,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/metallic/col_copper.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/metallic/col_copper.mp3"
     },
     {
         "name": "col_matte.mp3",
@@ -10125,7 +10125,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/metallic/col_matte.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/metallic/col_matte.mp3"
     },
     {
         "name": "col_shiny.mp3",
@@ -10139,7 +10139,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/metallic/col_shiny.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/metallic/col_shiny.mp3"
     },
     {
         "name": "col_silvery.mp3",
@@ -10153,7 +10153,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/metallic/col_silvery.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/metallic/col_silvery.mp3"
     },
     {
         "name": "col_brinjalpurple.mp3",
@@ -10167,7 +10167,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_brinjalpurple.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_brinjalpurple.mp3"
     },
     {
         "name": "col_dustcolor.mp3",
@@ -10181,7 +10181,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_dustcolor.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_dustcolor.mp3"
     },
     {
         "name": "col_goldenyellow.mp3",
@@ -10195,7 +10195,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_goldenyellow.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_goldenyellow.mp3"
     },
     {
         "name": "col_hennagreen.mp3",
@@ -10209,7 +10209,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_hennagreen.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_hennagreen.mp3"
     },
     {
         "name": "col_jamunpurple.mp3",
@@ -10223,7 +10223,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_jamunpurple.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_jamunpurple.mp3"
     },
     {
         "name": "col_khaki.mp3",
@@ -10237,7 +10237,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_khaki.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_khaki.mp3"
     },
     {
         "name": "col_mossgreen.mp3",
@@ -10251,7 +10251,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_mossgreen.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_mossgreen.mp3"
     },
     {
         "name": "col_munggreen.mp3",
@@ -10265,7 +10265,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_munggreen.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_munggreen.mp3"
     },
     {
         "name": "col_natural_orange.mp3",
@@ -10279,7 +10279,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_natural_orange.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_natural_orange.mp3"
     },
     {
         "name": "col_ochre.mp3",
@@ -10293,7 +10293,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_ochre.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_ochre.mp3"
     },
     {
         "name": "col_parrotgreen.mp3",
@@ -10307,7 +10307,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_parrotgreen.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_parrotgreen.mp3"
     },
     {
         "name": "col_pomegranatered.mp3",
@@ -10321,7 +10321,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_pomegranatered.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_pomegranatered.mp3"
     },
     {
         "name": "col_rubyred.mp3",
@@ -10335,7 +10335,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_rubyred.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_rubyred.mp3"
     },
     {
         "name": "col_slategrey.mp3",
@@ -10349,7 +10349,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_slategrey.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_slategrey.mp3"
     },
     {
         "name": "col_springyellow.mp3",
@@ -10363,7 +10363,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_springyellow.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_springyellow.mp3"
     },
     {
         "name": "col_turmericyellow.mp3",
@@ -10377,7 +10377,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_turmericyellow.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/natural/col_turmericyellow.mp3"
     },
     {
         "name": "col_brickred.mp3",
@@ -10391,7 +10391,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/pink_red/col_brickred.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/pink_red/col_brickred.mp3"
     },
     {
         "name": "col_brightpink.mp3",
@@ -10405,7 +10405,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/pink_red/col_brightpink.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/pink_red/col_brightpink.mp3"
     },
     {
         "name": "col_crimson.mp3",
@@ -10419,7 +10419,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/pink_red/col_crimson.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/pink_red/col_crimson.mp3"
     },
     {
         "name": "col_darkpink.mp3",
@@ -10433,7 +10433,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/pink_red/col_darkpink.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/pink_red/col_darkpink.mp3"
     },
     {
         "name": "col_lightpink.mp3",
@@ -10447,7 +10447,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/pink_red/col_lightpink.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/pink_red/col_lightpink.mp3"
     },
     {
         "name": "col_magenta_special.mp3",
@@ -10461,7 +10461,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/pink_red/col_magenta_special.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/pink_red/col_magenta_special.mp3"
     },
     {
         "name": "col_onionpink.mp3",
@@ -10475,7 +10475,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/pink_red/col_onionpink.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/pink_red/col_onionpink.mp3"
     },
     {
         "name": "col_black.mp3",
@@ -10489,7 +10489,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_black.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_black.mp3"
     },
     {
         "name": "col_blue.mp3",
@@ -10503,7 +10503,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_blue.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_blue.mp3"
     },
     {
         "name": "col_brown.mp3",
@@ -10517,7 +10517,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_brown.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_brown.mp3"
     },
     {
         "name": "col_green.mp3",
@@ -10531,7 +10531,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_green.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_green.mp3"
     },
     {
         "name": "col_indigo.mp3",
@@ -10545,7 +10545,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_indigo.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_indigo.mp3"
     },
     {
         "name": "col_pink.mp3",
@@ -10559,7 +10559,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_pink.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_pink.mp3"
     },
     {
         "name": "col_purple.mp3",
@@ -10573,7 +10573,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_purple.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_purple.mp3"
     },
     {
         "name": "col_red.mp3",
@@ -10587,7 +10587,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_red.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_red.mp3"
     },
     {
         "name": "col_white.mp3",
@@ -10601,7 +10601,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_white.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_white.mp3"
     },
     {
         "name": "col_yellow.mp3",
@@ -10615,7 +10615,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_yellow.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/primary/col_yellow.mp3"
     },
     {
         "name": "col_beige.mp3",
@@ -10629,7 +10629,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_beige.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_beige.mp3"
     },
     {
         "name": "col_black.mp3",
@@ -10643,7 +10643,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_black.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_black.mp3"
     },
     {
         "name": "col_brown.mp3",
@@ -10657,7 +10657,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_brown.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_brown.mp3"
     },
     {
         "name": "col_gold.mp3",
@@ -10671,7 +10671,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_gold.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_gold.mp3"
     },
     {
         "name": "col_grey.mp3",
@@ -10685,7 +10685,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_grey.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_grey.mp3"
     },
     {
         "name": "col_khaki.mp3",
@@ -10699,7 +10699,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_khaki.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_khaki.mp3"
     },
     {
         "name": "col_magenta.mp3",
@@ -10713,7 +10713,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_magenta.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_magenta.mp3"
     },
     {
         "name": "col_maroon.mp3",
@@ -10727,7 +10727,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_maroon.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_maroon.mp3"
     },
     {
         "name": "col_offwhite.mp3",
@@ -10741,7 +10741,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_offwhite.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_offwhite.mp3"
     },
     {
         "name": "col_pink.mp3",
@@ -10755,7 +10755,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_pink.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_pink.mp3"
     },
     {
         "name": "col_silver.mp3",
@@ -10769,7 +10769,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_silver.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_silver.mp3"
     },
     {
         "name": "col_turquoise.mp3",
@@ -10783,7 +10783,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_turquoise.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_turquoise.mp3"
     },
     {
         "name": "col_white.mp3",
@@ -10797,7 +10797,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_white.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/secondary/col_white.mp3"
     },
     {
         "name": "col_antimony.mp3",
@@ -10811,7 +10811,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/special/col_antimony.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/special/col_antimony.mp3"
     },
     {
         "name": "col_camphorwhite.mp3",
@@ -10825,7 +10825,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/special/col_camphorwhite.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/special/col_camphorwhite.mp3"
     },
     {
         "name": "col_plum.mp3",
@@ -10839,7 +10839,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/special/col_plum.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/special/col_plum.mp3"
     },
     {
         "name": "col_slate.mp3",
@@ -10853,7 +10853,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/special/col_slate.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/special/col_slate.mp3"
     },
     {
         "name": "col_violet_special.mp3",
@@ -10867,7 +10867,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/rangon_ka_sansar/special/col_violet_special.mp3"
+        "path": "../../../../../frontend/assets/audio/rangon_ka_sansar/special/col_violet_special.mp3"
     },
     {
         "name": "day_1.mp3",
@@ -10881,7 +10881,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/din/day_1.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/din/day_1.mp3"
     },
     {
         "name": "day_2.mp3",
@@ -10895,7 +10895,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/din/day_2.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/din/day_2.mp3"
     },
     {
         "name": "day_3.mp3",
@@ -10909,7 +10909,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/din/day_3.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/din/day_3.mp3"
     },
     {
         "name": "day_4.mp3",
@@ -10923,7 +10923,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/din/day_4.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/din/day_4.mp3"
     },
     {
         "name": "day_5.mp3",
@@ -10937,7 +10937,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/din/day_5.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/din/day_5.mp3"
     },
     {
         "name": "day_6.mp3",
@@ -10951,7 +10951,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/din/day_6.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/din/day_6.mp3"
     },
     {
         "name": "day_7.mp3",
@@ -10965,7 +10965,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/din/day_7.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/din/day_7.mp3"
     },
     {
         "name": "month_1.mp3",
@@ -10979,7 +10979,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_1.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_1.mp3"
     },
     {
         "name": "month_10.mp3",
@@ -10993,7 +10993,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_10.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_10.mp3"
     },
     {
         "name": "month_11.mp3",
@@ -11007,7 +11007,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_11.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_11.mp3"
     },
     {
         "name": "month_12.mp3",
@@ -11021,7 +11021,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_12.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_12.mp3"
     },
     {
         "name": "month_2.mp3",
@@ -11035,7 +11035,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_2.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_2.mp3"
     },
     {
         "name": "month_3.mp3",
@@ -11049,7 +11049,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_3.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_3.mp3"
     },
     {
         "name": "month_4.mp3",
@@ -11063,7 +11063,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_4.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_4.mp3"
     },
     {
         "name": "month_5.mp3",
@@ -11077,7 +11077,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_5.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_5.mp3"
     },
     {
         "name": "month_6.mp3",
@@ -11091,7 +11091,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_6.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_6.mp3"
     },
     {
         "name": "month_7.mp3",
@@ -11105,7 +11105,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_7.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_7.mp3"
     },
     {
         "name": "month_8.mp3",
@@ -11119,7 +11119,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_8.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_8.mp3"
     },
     {
         "name": "month_9.mp3",
@@ -11133,7 +11133,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_9.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/din_maheene/maheene/month_9.mp3"
     },
     {
         "name": "dir_inside.mp3",
@@ -11147,7 +11147,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/dishayen/dir_inside.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/dishayen/dir_inside.mp3"
     },
     {
         "name": "dir_left.mp3",
@@ -11161,7 +11161,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/dishayen/dir_left.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/dishayen/dir_left.mp3"
     },
     {
         "name": "dir_outside.mp3",
@@ -11175,7 +11175,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/dishayen/dir_outside.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/dishayen/dir_outside.mp3"
     },
     {
         "name": "east.mp3",
@@ -11189,7 +11189,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/dishayen/east.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/dishayen/east.mp3"
     },
     {
         "name": "north.mp3",
@@ -11203,7 +11203,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/dishayen/north.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/dishayen/north.mp3"
     },
     {
         "name": "south.mp3",
@@ -11217,7 +11217,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/dishayen/south.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/dishayen/south.mp3"
     },
     {
         "name": "west.mp3",
@@ -11231,7 +11231,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/dishayen/west.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/dishayen/west.mp3"
     },
     {
         "name": "astronaut.mp3",
@@ -11245,7 +11245,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/astronaut.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/astronaut.mp3"
     },
     {
         "name": "barren_land.mp3",
@@ -11259,7 +11259,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/barren_land.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/barren_land.mp3"
     },
     {
         "name": "beach.mp3",
@@ -11273,7 +11273,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/beach.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/beach.mp3"
     },
     {
         "name": "cave.mp3",
@@ -11287,7 +11287,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/cave.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/cave.mp3"
     },
     {
         "name": "cloud.mp3",
@@ -11301,7 +11301,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/cloud.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/cloud.mp3"
     },
     {
         "name": "desert.mp3",
@@ -11315,7 +11315,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/desert.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/desert.mp3"
     },
     {
         "name": "dew_drop.mp3",
@@ -11329,7 +11329,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/dew_drop.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/dew_drop.mp3"
     },
     {
         "name": "earth.mp3",
@@ -11343,7 +11343,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/earth.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/earth.mp3"
     },
     {
         "name": "earthquake.mp3",
@@ -11357,7 +11357,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/earthquake.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/earthquake.mp3"
     },
     {
         "name": "eclipse.mp3",
@@ -11371,7 +11371,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/eclipse.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/eclipse.mp3"
     },
     {
         "name": "flower.mp3",
@@ -11385,7 +11385,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/flower.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/flower.mp3"
     },
     {
         "name": "fog.mp3",
@@ -11399,7 +11399,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/fog.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/fog.mp3"
     },
     {
         "name": "forest.mp3",
@@ -11413,7 +11413,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/forest.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/forest.mp3"
     },
     {
         "name": "hailstones.mp3",
@@ -11427,7 +11427,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/hailstones.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/hailstones.mp3"
     },
     {
         "name": "island.mp3",
@@ -11441,7 +11441,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/island.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/island.mp3"
     },
     {
         "name": "leaf.mp3",
@@ -11455,7 +11455,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/leaf.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/leaf.mp3"
     },
     {
         "name": "moon.mp3",
@@ -11469,7 +11469,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/moon.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/moon.mp3"
     },
     {
         "name": "mound.mp3",
@@ -11483,7 +11483,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/mound.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/mound.mp3"
     },
     {
         "name": "mountain.mp3",
@@ -11497,7 +11497,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/mountain.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/mountain.mp3"
     },
     {
         "name": "rainbow.mp3",
@@ -11511,7 +11511,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/rainbow.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/rainbow.mp3"
     },
     {
         "name": "river.mp3",
@@ -11525,7 +11525,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/river.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/river.mp3"
     },
     {
         "name": "rocket.mp3",
@@ -11539,7 +11539,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/rocket.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/rocket.mp3"
     },
     {
         "name": "season_autumn.mp3",
@@ -11553,7 +11553,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/season_autumn.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/season_autumn.mp3"
     },
     {
         "name": "season_monsoon.mp3",
@@ -11567,7 +11567,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/season_monsoon.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/season_monsoon.mp3"
     },
     {
         "name": "season_spring.mp3",
@@ -11581,7 +11581,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/season_spring.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/season_spring.mp3"
     },
     {
         "name": "season_summer.mp3",
@@ -11595,7 +11595,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/season_summer.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/season_summer.mp3"
     },
     {
         "name": "season_winter.mp3",
@@ -11609,7 +11609,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/season_winter.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/season_winter.mp3"
     },
     {
         "name": "sky.mp3",
@@ -11623,7 +11623,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/sky.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/sky.mp3"
     },
     {
         "name": "snowfall.mp3",
@@ -11637,7 +11637,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/snowfall.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/snowfall.mp3"
     },
     {
         "name": "soil.mp3",
@@ -11651,7 +11651,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/soil.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/soil.mp3"
     },
     {
         "name": "star.mp3",
@@ -11665,7 +11665,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/star.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/star.mp3"
     },
     {
         "name": "stone.mp3",
@@ -11679,7 +11679,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/stone.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/stone.mp3"
     },
     {
         "name": "storm.mp3",
@@ -11693,7 +11693,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/storm.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/storm.mp3"
     },
     {
         "name": "sun.mp3",
@@ -11707,7 +11707,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/sun.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/sun.mp3"
     },
     {
         "name": "swamp.mp3",
@@ -11721,7 +11721,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/swamp.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/swamp.mp3"
     },
     {
         "name": "time_afternoon.mp3",
@@ -11735,7 +11735,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/time_afternoon.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/time_afternoon.mp3"
     },
     {
         "name": "time_evening.mp3",
@@ -11749,7 +11749,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/time_evening.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/time_evening.mp3"
     },
     {
         "name": "time_morning.mp3",
@@ -11763,7 +11763,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/time_morning.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/time_morning.mp3"
     },
     {
         "name": "time_night.mp3",
@@ -11777,7 +11777,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/time_night.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/time_night.mp3"
     },
     {
         "name": "tree.mp3",
@@ -11791,7 +11791,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/tree.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/tree.mp3"
     },
     {
         "name": "tsunami.mp3",
@@ -11805,7 +11805,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/tsunami.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/tsunami.mp3"
     },
     {
         "name": "valley.mp3",
@@ -11819,7 +11819,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/valley.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/valley.mp3"
     },
     {
         "name": "volcano.mp3",
@@ -11833,7 +11833,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/volcano.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/volcano.mp3"
     },
     {
         "name": "waterfall.mp3",
@@ -11847,7 +11847,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/waterfall.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/waterfall.mp3"
     },
     {
         "name": "wind.mp3",
@@ -11861,7 +11861,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/samay_prakriti/nature/wind.mp3"
+        "path": "../../../../../frontend/assets/audio/samay_prakriti/nature/wind.mp3"
     },
     {
         "name": "welcome_short.mp3",
@@ -11875,7 +11875,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/welcome_short.mp3"
+        "path": "../../../../../frontend/assets/audio/system/welcome_short.mp3"
     },
     {
         "name": "reward_excellent.mp3",
@@ -11889,7 +11889,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/effects/reward_excellent.mp3"
+        "path": "../../../../../frontend/assets/audio/system/effects/reward_excellent.mp3"
     },
     {
         "name": "reward_keep_going.mp3",
@@ -11903,7 +11903,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/effects/reward_keep_going.mp3"
+        "path": "../../../../../frontend/assets/audio/system/effects/reward_keep_going.mp3"
     },
     {
         "name": "final_animals_domestic.mp3",
@@ -11917,7 +11917,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_animals_domestic.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_animals_domestic.mp3"
     },
     {
         "name": "final_animals_wild.mp3",
@@ -11931,7 +11931,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_animals_wild.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_animals_wild.mp3"
     },
     {
         "name": "final_body_parts.mp3",
@@ -11945,7 +11945,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_body_parts.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_body_parts.mp3"
     },
     {
         "name": "final_colors_natural.mp3",
@@ -11959,7 +11959,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_colors_natural.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_colors_natural.mp3"
     },
     {
         "name": "final_colors_primary.mp3",
@@ -11973,7 +11973,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_colors_primary.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_colors_primary.mp3"
     },
     {
         "name": "final_colors_secondary.mp3",
@@ -11987,7 +11987,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_colors_secondary.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_colors_secondary.mp3"
     },
     {
         "name": "final_comparisons.mp3",
@@ -12001,7 +12001,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_comparisons.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_comparisons.mp3"
     },
     {
         "name": "final_days_week.mp3",
@@ -12015,7 +12015,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_days_week.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_days_week.mp3"
     },
     {
         "name": "final_directions.mp3",
@@ -12029,7 +12029,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_directions.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_directions.mp3"
     },
     {
         "name": "final_family.mp3",
@@ -12043,7 +12043,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_family.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_family.mp3"
     },
     {
         "name": "final_fruits.mp3",
@@ -12057,7 +12057,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_fruits.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_fruits.mp3"
     },
     {
         "name": "final_habits.mp3",
@@ -12071,7 +12071,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_habits.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_habits.mp3"
     },
     {
         "name": "final_matra.mp3",
@@ -12085,7 +12085,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_matra.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_matra.mp3"
     },
     {
         "name": "final_months_year.mp3",
@@ -12099,7 +12099,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_months_year.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_months_year.mp3"
     },
     {
         "name": "final_nature.mp3",
@@ -12113,7 +12113,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_nature.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_nature.mp3"
     },
     {
         "name": "final_numbers_10.mp3",
@@ -12127,7 +12127,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_numbers_10.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_numbers_10.mp3"
     },
     {
         "name": "final_numbers_100.mp3",
@@ -12141,7 +12141,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_numbers_100.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_numbers_100.mp3"
     },
     {
         "name": "final_samyukt.mp3",
@@ -12155,7 +12155,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_samyukt.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_samyukt.mp3"
     },
     {
         "name": "final_shapes.mp3",
@@ -12169,7 +12169,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_shapes.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_shapes.mp3"
     },
     {
         "name": "final_swar.mp3",
@@ -12183,7 +12183,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_swar.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_swar.mp3"
     },
     {
         "name": "final_tables_m1.mp3",
@@ -12197,7 +12197,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_tables_m1.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_tables_m1.mp3"
     },
     {
         "name": "final_tables_m2.mp3",
@@ -12211,7 +12211,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_tables_m2.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_tables_m2.mp3"
     },
     {
         "name": "final_vegetables.mp3",
@@ -12225,7 +12225,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_vegetables.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_vegetables.mp3"
     },
     {
         "name": "final_vyanjan.mp3",
@@ -12239,7 +12239,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/final_vyanjan.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/final_vyanjan.mp3"
     },
     {
         "name": "intro_ganit.mp3",
@@ -12253,7 +12253,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/intro_ganit.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/intro_ganit.mp3"
     },
     {
         "name": "intro_names.mp3",
@@ -12267,7 +12267,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/intro_names.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/intro_names.mp3"
     },
     {
         "name": "intro_samay.mp3",
@@ -12281,7 +12281,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/intro_samay.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/intro_samay.mp3"
     },
     {
         "name": "intro_varnamala.mp3",
@@ -12295,7 +12295,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/intro_varnamala.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/intro_varnamala.mp3"
     },
     {
         "name": "sub_animals.mp3",
@@ -12309,7 +12309,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_animals.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_animals.mp3"
     },
     {
         "name": "sub_blue_green.mp3",
@@ -12323,7 +12323,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_blue_green.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_blue_green.mp3"
     },
     {
         "name": "sub_brown_beige.mp3",
@@ -12337,7 +12337,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_brown_beige.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_brown_beige.mp3"
     },
     {
         "name": "sub_colors.mp3",
@@ -12351,7 +12351,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_colors.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_colors.mp3"
     },
     {
         "name": "sub_directions.mp3",
@@ -12365,7 +12365,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_directions.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_directions.mp3"
     },
     {
         "name": "sub_family.mp3",
@@ -12379,7 +12379,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_family.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_family.mp3"
     },
     {
         "name": "sub_fruits.mp3",
@@ -12393,7 +12393,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_fruits.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_fruits.mp3"
     },
     {
         "name": "sub_habits.mp3",
@@ -12407,7 +12407,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_habits.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_habits.mp3"
     },
     {
         "name": "sub_matra.mp3",
@@ -12421,7 +12421,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_matra.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_matra.mp3"
     },
     {
         "name": "sub_metallic.mp3",
@@ -12435,7 +12435,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_metallic.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_metallic.mp3"
     },
     {
         "name": "sub_nature.mp3",
@@ -12449,7 +12449,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_nature.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_nature.mp3"
     },
     {
         "name": "sub_numbers.mp3",
@@ -12463,7 +12463,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_numbers.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_numbers.mp3"
     },
     {
         "name": "sub_pink_red.mp3",
@@ -12477,7 +12477,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_pink_red.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_pink_red.mp3"
     },
     {
         "name": "sub_samyukt.mp3",
@@ -12491,7 +12491,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_samyukt.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_samyukt.mp3"
     },
     {
         "name": "sub_shapes.mp3",
@@ -12505,7 +12505,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_shapes.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_shapes.mp3"
     },
     {
         "name": "sub_special.mp3",
@@ -12519,7 +12519,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_special.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_special.mp3"
     },
     {
         "name": "sub_swar.mp3",
@@ -12533,7 +12533,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_swar.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_swar.mp3"
     },
     {
         "name": "sub_tables.mp3",
@@ -12547,7 +12547,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_tables.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_tables.mp3"
     },
     {
         "name": "sub_time.mp3",
@@ -12561,7 +12561,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_time.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_time.mp3"
     },
     {
         "name": "sub_vyanjan.mp3",
@@ -12575,7 +12575,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/intros/sub_vyanjan.mp3"
+        "path": "../../../../../frontend/assets/audio/system/intros/sub_vyanjan.mp3"
     },
     {
         "name": "quiz_correct.mp3",
@@ -12589,7 +12589,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/quiz/quiz_correct.mp3"
+        "path": "../../../../../frontend/assets/audio/system/quiz/quiz_correct.mp3"
     },
     {
         "name": "quiz_start.mp3",
@@ -12603,7 +12603,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/quiz/quiz_start.mp3"
+        "path": "../../../../../frontend/assets/audio/system/quiz/quiz_start.mp3"
     },
     {
         "name": "quiz_wrong.mp3",
@@ -12617,7 +12617,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/audio/system/quiz/quiz_wrong.mp3"
+        "path": "../../../../../frontend/assets/audio/system/quiz/quiz_wrong.mp3"
     },
     {
         "name": "matra_a.mp3",
@@ -12631,7 +12631,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/matra/matra_a.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/matra/matra_a.mp3"
     },
     {
         "name": "matra_aa.mp3",
@@ -12645,7 +12645,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/matra/matra_aa.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/matra/matra_aa.mp3"
     },
     {
         "name": "matra_ah.mp3",
@@ -12659,7 +12659,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/matra/matra_ah.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/matra/matra_ah.mp3"
     },
     {
         "name": "matra_aha.mp3",
@@ -12673,7 +12673,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/matra/matra_aha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/matra/matra_aha.mp3"
     },
     {
         "name": "matra_ai.mp3",
@@ -12687,7 +12687,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/matra/matra_ai.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/matra/matra_ai.mp3"
     },
     {
         "name": "matra_am.mp3",
@@ -12701,7 +12701,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/matra/matra_am.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/matra/matra_am.mp3"
     },
     {
         "name": "matra_au.mp3",
@@ -12715,7 +12715,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/matra/matra_au.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/matra/matra_au.mp3"
     },
     {
         "name": "matra_e.mp3",
@@ -12729,7 +12729,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/matra/matra_e.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/matra/matra_e.mp3"
     },
     {
         "name": "matra_ee.mp3",
@@ -12743,7 +12743,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/matra/matra_ee.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/matra/matra_ee.mp3"
     },
     {
         "name": "matra_i.mp3",
@@ -12757,7 +12757,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/matra/matra_i.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/matra/matra_i.mp3"
     },
     {
         "name": "matra_o.mp3",
@@ -12771,7 +12771,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/matra/matra_o.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/matra/matra_o.mp3"
     },
     {
         "name": "matra_oo.mp3",
@@ -12785,7 +12785,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/matra/matra_oo.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/matra/matra_oo.mp3"
     },
     {
         "name": "matra_ri.mp3",
@@ -12799,7 +12799,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/matra/matra_ri.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/matra/matra_ri.mp3"
     },
     {
         "name": "matra_u.mp3",
@@ -12813,7 +12813,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/matra/matra_u.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/matra/matra_u.mp3"
     },
     {
         "name": "gya.mp3",
@@ -12827,7 +12827,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/samyukt/gya.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/samyukt/gya.mp3"
     },
     {
         "name": "ksha.mp3",
@@ -12841,7 +12841,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/samyukt/ksha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/samyukt/ksha.mp3"
     },
     {
         "name": "tra.mp3",
@@ -12855,7 +12855,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/samyukt/tra.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/samyukt/tra.mp3"
     },
     {
         "name": "v_shra.mp3",
@@ -12869,7 +12869,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/samyukt/v_shra.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/samyukt/v_shra.mp3"
     },
     {
         "name": "v_aa_aam.mp3",
@@ -12883,7 +12883,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/swar/v_aa_aam.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/swar/v_aa_aam.mp3"
     },
     {
         "name": "v_ai.mp3",
@@ -12897,7 +12897,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/swar/v_ai.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/swar/v_ai.mp3"
     },
     {
         "name": "v_ang_angur.mp3",
@@ -12911,7 +12911,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/swar/v_ang_angur.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/swar/v_ang_angur.mp3"
     },
     {
         "name": "v_au.mp3",
@@ -12925,7 +12925,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/swar/v_au.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/swar/v_au.mp3"
     },
     {
         "name": "v_a_anar.mp3",
@@ -12939,7 +12939,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/swar/v_a_anar.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/swar/v_a_anar.mp3"
     },
     {
         "name": "v_ee.mp3",
@@ -12953,7 +12953,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/swar/v_ee.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/swar/v_ee.mp3"
     },
     {
         "name": "v_i.mp3",
@@ -12967,7 +12967,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/swar/v_i.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/swar/v_i.mp3"
     },
     {
         "name": "v_oo.mp3",
@@ -12981,7 +12981,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/swar/v_oo.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/swar/v_oo.mp3"
     },
     {
         "name": "v_o_okhli.mp3",
@@ -12995,7 +12995,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/swar/v_o_okhli.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/swar/v_o_okhli.mp3"
     },
     {
         "name": "v_ri.mp3",
@@ -13009,7 +13009,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/swar/v_ri.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/swar/v_ri.mp3"
     },
     {
         "name": "v_u.mp3",
@@ -13023,7 +13023,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Swar' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/swar/v_u.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/swar/v_u.mp3"
     },
     {
         "name": "ba.mp3",
@@ -13037,7 +13037,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/ba.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/ba.mp3"
     },
     {
         "name": "bha.mp3",
@@ -13051,7 +13051,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/bha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/bha.mp3"
     },
     {
         "name": "cha.mp3",
@@ -13065,7 +13065,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/cha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/cha.mp3"
     },
     {
         "name": "chha.mp3",
@@ -13079,7 +13079,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/chha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/chha.mp3"
     },
     {
         "name": "da.mp3",
@@ -13093,7 +13093,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/da.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/da.mp3"
     },
     {
         "name": "daa.mp3",
@@ -13107,7 +13107,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/daa.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/daa.mp3"
     },
     {
         "name": "ddha_new.mp3",
@@ -13121,7 +13121,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/ddha_new.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/ddha_new.mp3"
     },
     {
         "name": "dha.mp3",
@@ -13135,7 +13135,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/dha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/dha.mp3"
     },
     {
         "name": "ga_new.mp3",
@@ -13149,7 +13149,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/ga_new.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/ga_new.mp3"
     },
     {
         "name": "gha.mp3",
@@ -13163,7 +13163,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/gha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/gha.mp3"
     },
     {
         "name": "ha.mp3",
@@ -13177,7 +13177,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/ha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/ha.mp3"
     },
     {
         "name": "ja.mp3",
@@ -13191,7 +13191,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/ja.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/ja.mp3"
     },
     {
         "name": "jha.mp3",
@@ -13205,7 +13205,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/jha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/jha.mp3"
     },
     {
         "name": "ka.mp3",
@@ -13219,7 +13219,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/ka.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/ka.mp3"
     },
     {
         "name": "kha.mp3",
@@ -13233,7 +13233,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/kha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/kha.mp3"
     },
     {
         "name": "la.mp3",
@@ -13247,7 +13247,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/la.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/la.mp3"
     },
     {
         "name": "ma.mp3",
@@ -13261,7 +13261,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/ma.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/ma.mp3"
     },
     {
         "name": "na.mp3",
@@ -13275,7 +13275,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/na.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/na.mp3"
     },
     {
         "name": "nga.mp3",
@@ -13289,7 +13289,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/nga.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/nga.mp3"
     },
     {
         "name": "nna.mp3",
@@ -13303,7 +13303,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/nna.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/nna.mp3"
     },
     {
         "name": "nya.mp3",
@@ -13317,7 +13317,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/nya.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/nya.mp3"
     },
     {
         "name": "pa.mp3",
@@ -13331,7 +13331,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/pa.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/pa.mp3"
     },
     {
         "name": "pha.mp3",
@@ -13345,7 +13345,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/pha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/pha.mp3"
     },
     {
         "name": "sa.mp3",
@@ -13359,7 +13359,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/sa.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/sa.mp3"
     },
     {
         "name": "sha.mp3",
@@ -13373,7 +13373,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/sha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/sha.mp3"
     },
     {
         "name": "shha.mp3",
@@ -13387,7 +13387,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/shha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/shha.mp3"
     },
     {
         "name": "ta.mp3",
@@ -13401,7 +13401,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/ta.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/ta.mp3"
     },
     {
         "name": "taa.mp3",
@@ -13415,7 +13415,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/taa.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/taa.mp3"
     },
     {
         "name": "tha.mp3",
@@ -13429,7 +13429,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/tha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/tha.mp3"
     },
     {
         "name": "ttha.mp3",
@@ -13443,7 +13443,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/ttha.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/ttha.mp3"
     },
     {
         "name": "va.mp3",
@@ -13457,7 +13457,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/va.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/va.mp3"
     },
     {
         "name": "v_r_rajshree.mp3",
@@ -13471,7 +13471,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/v_r_rajshree.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/v_r_rajshree.mp3"
     },
     {
         "name": "ya.mp3",
@@ -13485,7 +13485,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Linguistic Education",
         "purpose": "Provides high-fidelity voice-over for the 'Vyanjan' (Hindi Alphabet) literacy module.",
-        "path": "../../../../frontend/assets/audio/varnamala/vyanjan/ya.mp3"
+        "path": "../../../../../frontend/assets/audio/varnamala/vyanjan/ya.mp3"
     },
     {
         "name": "khali_icon.png",
@@ -13499,7 +13499,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/assets/images/icons/khali_icon.png"
+        "path": "../../../../../frontend/assets/images/icons/khali_icon.png"
     },
     {
         "name": "index.html",
@@ -13513,7 +13513,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/desktop/index.html"
+        "path": "../../../../../frontend/desktop/index.html"
     },
     {
         "name": "main.css",
@@ -13527,7 +13527,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/css/main.css"
+        "path": "../../../../../frontend/desktop/css/main.css"
     },
     {
         "name": "animations.css",
@@ -13541,7 +13541,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/css/base/animations.css"
+        "path": "../../../../../frontend/desktop/css/base/animations.css"
     },
     {
         "name": "base.css",
@@ -13555,7 +13555,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/css/base/base.css"
+        "path": "../../../../../frontend/desktop/css/base/base.css"
     },
     {
         "name": "counting.css",
@@ -13569,7 +13569,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/css/features/counting.css"
+        "path": "../../../../../frontend/desktop/css/features/counting.css"
     },
     {
         "name": "navigation.css",
@@ -13583,7 +13583,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/css/features/navigation.css"
+        "path": "../../../../../frontend/desktop/css/features/navigation.css"
     },
     {
         "name": "cards.css",
@@ -13597,7 +13597,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/css/layout/cards.css"
+        "path": "../../../../../frontend/desktop/css/layout/cards.css"
     },
     {
         "name": "navbar.css",
@@ -13611,7 +13611,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/css/layout/navbar.css"
+        "path": "../../../../../frontend/desktop/css/layout/navbar.css"
     },
     {
         "name": "overlay.css",
@@ -13625,7 +13625,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/css/layout/overlay.css"
+        "path": "../../../../../frontend/desktop/css/layout/overlay.css"
     },
     {
         "name": "kids.css",
@@ -13639,7 +13639,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/css/themes/kids.css"
+        "path": "../../../../../frontend/desktop/css/themes/kids.css"
     },
     {
         "name": "interactive.css",
@@ -13653,7 +13653,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/css/ui/interactive.css"
+        "path": "../../../../../frontend/desktop/css/ui/interactive.css"
     },
     {
         "name": "settings-modal.css",
@@ -13667,7 +13667,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/css/ui/settings-modal.css"
+        "path": "../../../../../frontend/desktop/css/ui/settings-modal.css"
     },
     {
         "name": "init.js",
@@ -13681,7 +13681,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/js/core/init.js"
+        "path": "../../../../../frontend/desktop/js/core/init.js"
     },
     {
         "name": "main.js",
@@ -13695,7 +13695,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/js/core/main.js"
+        "path": "../../../../../frontend/desktop/js/core/main.js"
     },
     {
         "name": "router.js",
@@ -13709,7 +13709,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/js/navigation/router.js"
+        "path": "../../../../../frontend/desktop/js/navigation/router.js"
     },
     {
         "name": "controller.js",
@@ -13723,7 +13723,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/js/slideshow/controller.js"
+        "path": "../../../../../frontend/desktop/js/slideshow/controller.js"
     },
     {
         "name": "animations.js",
@@ -13737,7 +13737,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/js/ui/animations.js"
+        "path": "../../../../../frontend/desktop/js/ui/animations.js"
     },
     {
         "name": "display.js",
@@ -13751,7 +13751,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/js/ui/display.js"
+        "path": "../../../../../frontend/desktop/js/ui/display.js"
     },
     {
         "name": "settings-modal.js",
@@ -13765,7 +13765,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/js/ui/settings-modal.js"
+        "path": "../../../../../frontend/desktop/js/ui/settings-modal.js"
     },
     {
         "name": "child-safety.js",
@@ -13779,7 +13779,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/js/utils/child-safety.js"
+        "path": "../../../../../frontend/desktop/js/utils/child-safety.js"
     },
     {
         "name": "helpers.js",
@@ -13793,7 +13793,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/js/utils/helpers.js"
+        "path": "../../../../../frontend/desktop/js/utils/helpers.js"
     },
     {
         "name": "settings.css",
@@ -13807,7 +13807,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/settings/settings.css"
+        "path": "../../../../../frontend/desktop/settings/settings.css"
     },
     {
         "name": "settings.html",
@@ -13821,7 +13821,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/desktop/settings/settings.html"
+        "path": "../../../../../frontend/desktop/settings/settings.html"
     },
     {
         "name": "settings.js",
@@ -13835,7 +13835,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/desktop/settings/settings.js"
+        "path": "../../../../../frontend/desktop/settings/settings.js"
     },
     {
         "name": "index.html",
@@ -13849,7 +13849,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/mobile/index.html"
+        "path": "../../../../../frontend/mobile/index.html"
     },
     {
         "name": "settings.html",
@@ -13863,7 +13863,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../frontend/mobile/settings.html"
+        "path": "../../../../../frontend/mobile/settings.html"
     },
     {
         "name": "main.css",
@@ -13877,7 +13877,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/mobile/css/main.css"
+        "path": "../../../../../frontend/mobile/css/main.css"
     },
     {
         "name": "settings.css",
@@ -13891,7 +13891,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/mobile/css/settings.css"
+        "path": "../../../../../frontend/mobile/css/settings.css"
     },
     {
         "name": "main.js",
@@ -13905,7 +13905,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/mobile/js/main.js"
+        "path": "../../../../../frontend/mobile/js/main.js"
     },
     {
         "name": "settings.js",
@@ -13919,7 +13919,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/mobile/js/settings.js"
+        "path": "../../../../../frontend/mobile/js/settings.js"
     },
     {
         "name": "comparisons.js",
@@ -13933,7 +13933,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/ganit/comparisons.js"
+        "path": "../../../../../frontend/shared/data/ganit/comparisons.js"
     },
     {
         "name": "numbers_10.js",
@@ -13947,7 +13947,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/ganit/numbers_10.js"
+        "path": "../../../../../frontend/shared/data/ganit/numbers_10.js"
     },
     {
         "name": "numbers_100.js",
@@ -13961,7 +13961,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/ganit/numbers_100.js"
+        "path": "../../../../../frontend/shared/data/ganit/numbers_100.js"
     },
     {
         "name": "shapes.js",
@@ -13975,7 +13975,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/ganit/shapes.js"
+        "path": "../../../../../frontend/shared/data/ganit/shapes.js"
     },
     {
         "name": "tables_10_m1.js",
@@ -13989,7 +13989,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/ganit/tables_10_m1.js"
+        "path": "../../../../../frontend/shared/data/ganit/tables_10_m1.js"
     },
     {
         "name": "tables_10_m2.js",
@@ -14003,7 +14003,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/ganit/tables_10_m2.js"
+        "path": "../../../../../frontend/shared/data/ganit/tables_10_m2.js"
     },
     {
         "name": "tables_m1.js",
@@ -14017,7 +14017,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/ganit/tables_m1.js"
+        "path": "../../../../../frontend/shared/data/ganit/tables_m1.js"
     },
     {
         "name": "tables_m2.js",
@@ -14031,7 +14031,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/ganit/tables_m2.js"
+        "path": "../../../../../frontend/shared/data/ganit/tables_m2.js"
     },
     {
         "name": "actions.js",
@@ -14045,7 +14045,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/actions.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/actions.js"
     },
     {
         "name": "activities.js",
@@ -14059,7 +14059,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/activities.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/activities.js"
     },
     {
         "name": "animals_domestic.js",
@@ -14073,7 +14073,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/animals_domestic.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/animals_domestic.js"
     },
     {
         "name": "animals_smaller.js",
@@ -14087,7 +14087,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/animals_smaller.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/animals_smaller.js"
     },
     {
         "name": "animals_wild.js",
@@ -14101,7 +14101,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/animals_wild.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/animals_wild.js"
     },
     {
         "name": "birds.js",
@@ -14115,7 +14115,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/birds.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/birds.js"
     },
     {
         "name": "body_parts.js",
@@ -14129,7 +14129,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/body_parts.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/body_parts.js"
     },
     {
         "name": "clothes.js",
@@ -14143,7 +14143,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/clothes.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/clothes.js"
     },
     {
         "name": "emotions.js",
@@ -14157,7 +14157,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/emotions.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/emotions.js"
     },
     {
         "name": "family.js",
@@ -14171,7 +14171,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/family.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/family.js"
     },
     {
         "name": "festivals.js",
@@ -14185,7 +14185,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/festivals.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/festivals.js"
     },
     {
         "name": "food.js",
@@ -14199,7 +14199,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/food.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/food.js"
     },
     {
         "name": "fruits.js",
@@ -14213,7 +14213,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/fruits.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/fruits.js"
     },
     {
         "name": "games.js",
@@ -14227,7 +14227,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/games.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/games.js"
     },
     {
         "name": "habits.js",
@@ -14241,7 +14241,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/habits.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/habits.js"
     },
     {
         "name": "helpers.js",
@@ -14255,7 +14255,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/helpers.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/helpers.js"
     },
     {
         "name": "imagination.js",
@@ -14269,7 +14269,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/imagination.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/imagination.js"
     },
     {
         "name": "insects.js",
@@ -14283,7 +14283,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/insects.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/insects.js"
     },
     {
         "name": "instruments.js",
@@ -14297,7 +14297,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/instruments.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/instruments.js"
     },
     {
         "name": "magic.js",
@@ -14311,7 +14311,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/magic.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/magic.js"
     },
     {
         "name": "objects.js",
@@ -14325,7 +14325,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/objects.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/objects.js"
     },
     {
         "name": "places.js",
@@ -14339,7 +14339,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/places.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/places.js"
     },
     {
         "name": "sounds.js",
@@ -14353,7 +14353,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/sounds.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/sounds.js"
     },
     {
         "name": "space.js",
@@ -14367,7 +14367,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/space.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/space.js"
     },
     {
         "name": "toys.js",
@@ -14381,7 +14381,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/toys.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/toys.js"
     },
     {
         "name": "vegetables.js",
@@ -14395,7 +14395,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/vegetables.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/vegetables.js"
     },
     {
         "name": "vehicles.js",
@@ -14409,7 +14409,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/mera_sansar/vehicles.js"
+        "path": "../../../../../frontend/shared/data/mera_sansar/vehicles.js"
     },
     {
         "name": "colors_blue_green.js",
@@ -14423,7 +14423,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/rangon_ka_sansar/colors_blue_green.js"
+        "path": "../../../../../frontend/shared/data/rangon_ka_sansar/colors_blue_green.js"
     },
     {
         "name": "colors_brown_beige.js",
@@ -14437,7 +14437,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/rangon_ka_sansar/colors_brown_beige.js"
+        "path": "../../../../../frontend/shared/data/rangon_ka_sansar/colors_brown_beige.js"
     },
     {
         "name": "colors_metallic.js",
@@ -14451,7 +14451,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/rangon_ka_sansar/colors_metallic.js"
+        "path": "../../../../../frontend/shared/data/rangon_ka_sansar/colors_metallic.js"
     },
     {
         "name": "colors_natural.js",
@@ -14465,7 +14465,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/rangon_ka_sansar/colors_natural.js"
+        "path": "../../../../../frontend/shared/data/rangon_ka_sansar/colors_natural.js"
     },
     {
         "name": "colors_pink_red.js",
@@ -14479,7 +14479,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/rangon_ka_sansar/colors_pink_red.js"
+        "path": "../../../../../frontend/shared/data/rangon_ka_sansar/colors_pink_red.js"
     },
     {
         "name": "colors_primary.js",
@@ -14493,7 +14493,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/rangon_ka_sansar/colors_primary.js"
+        "path": "../../../../../frontend/shared/data/rangon_ka_sansar/colors_primary.js"
     },
     {
         "name": "colors_secondary.js",
@@ -14507,7 +14507,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/rangon_ka_sansar/colors_secondary.js"
+        "path": "../../../../../frontend/shared/data/rangon_ka_sansar/colors_secondary.js"
     },
     {
         "name": "colors_special.js",
@@ -14521,7 +14521,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/rangon_ka_sansar/colors_special.js"
+        "path": "../../../../../frontend/shared/data/rangon_ka_sansar/colors_special.js"
     },
     {
         "name": "colors_world_main.js",
@@ -14535,7 +14535,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/rangon_ka_sansar/colors_world_main.js"
+        "path": "../../../../../frontend/shared/data/rangon_ka_sansar/colors_world_main.js"
     },
     {
         "name": "days_week.js",
@@ -14549,7 +14549,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/samay_prakriti/days_week.js"
+        "path": "../../../../../frontend/shared/data/samay_prakriti/days_week.js"
     },
     {
         "name": "directions.js",
@@ -14563,7 +14563,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/samay_prakriti/directions.js"
+        "path": "../../../../../frontend/shared/data/samay_prakriti/directions.js"
     },
     {
         "name": "months_year.js",
@@ -14577,7 +14577,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/samay_prakriti/months_year.js"
+        "path": "../../../../../frontend/shared/data/samay_prakriti/months_year.js"
     },
     {
         "name": "nature.js",
@@ -14591,7 +14591,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/samay_prakriti/nature.js"
+        "path": "../../../../../frontend/shared/data/samay_prakriti/nature.js"
     },
     {
         "name": "matra.js",
@@ -14605,7 +14605,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/varnamala/matra.js"
+        "path": "../../../../../frontend/shared/data/varnamala/matra.js"
     },
     {
         "name": "samyukt.js",
@@ -14619,7 +14619,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/varnamala/samyukt.js"
+        "path": "../../../../../frontend/shared/data/varnamala/samyukt.js"
     },
     {
         "name": "swar.js",
@@ -14633,7 +14633,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/varnamala/swar.js"
+        "path": "../../../../../frontend/shared/data/varnamala/swar.js"
     },
     {
         "name": "vyanjan.js",
@@ -14647,7 +14647,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../frontend/shared/data/varnamala/vyanjan.js"
+        "path": "../../../../../frontend/shared/data/varnamala/vyanjan.js"
     },
     {
         "name": "00.00_MEMORY_MAP.js",
@@ -14661,7 +14661,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/00 System & Guardrails/00.00_MEMORY_MAP.js"
+        "path": "../../../../../memory/00 System & Guardrails/00.00_MEMORY_MAP.js"
     },
     {
         "name": "00.01_STRICT_BOUNDARIES.md",
@@ -14675,7 +14675,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/00 System & Guardrails/00.01_STRICT_BOUNDARIES.md"
+        "path": "../../../../../memory/00 System & Guardrails/00.01_STRICT_BOUNDARIES.md"
     },
     {
         "name": "00.02_MEMORY_ARCHITECTURE.md",
@@ -14689,7 +14689,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/00 System & Guardrails/00.02_MEMORY_ARCHITECTURE.md"
+        "path": "../../../../../memory/00 System & Guardrails/00.02_MEMORY_ARCHITECTURE.md"
     },
     {
         "name": "00.03_OLD_MEMORY_ARCHITECTURE.md",
@@ -14703,7 +14703,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/00 System & Guardrails/00.03_OLD_MEMORY_ARCHITECTURE.md"
+        "path": "../../../../../memory/00 System & Guardrails/00.03_OLD_MEMORY_ARCHITECTURE.md"
     },
     {
         "name": "00.04_EXCEL_CSV_GUARDRAIL.md",
@@ -14717,7 +14717,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/00 System & Guardrails/00.04_EXCEL_CSV_GUARDRAIL.md"
+        "path": "../../../../../memory/00 System & Guardrails/00.04_EXCEL_CSV_GUARDRAIL.md"
     },
     {
         "name": "local_run_guardrails.md",
@@ -14731,7 +14731,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/00 System & Guardrails/local_run_guardrails.md"
+        "path": "../../../../../memory/00 System & Guardrails/local_run_guardrails.md"
     },
     {
         "name": "01.00_PROJECT_INDEX.md",
@@ -14745,7 +14745,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.00_PROJECT_INDEX.md"
+        "path": "../../../../../memory/01 Current State/01.00_PROJECT_INDEX.md"
     },
     {
         "name": "01.01_PROJECT_HTML.md",
@@ -14759,7 +14759,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.01_PROJECT_HTML.md"
+        "path": "../../../../../memory/01 Current State/01.01_PROJECT_HTML.md"
     },
     {
         "name": "01.02_PROJECT_CSS.md",
@@ -14773,7 +14773,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.02_PROJECT_CSS.md"
+        "path": "../../../../../memory/01 Current State/01.02_PROJECT_CSS.md"
     },
     {
         "name": "01.03_PROJECT_JS.md",
@@ -14787,7 +14787,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.03_PROJECT_JS.md"
+        "path": "../../../../../memory/01 Current State/01.03_PROJECT_JS.md"
     },
     {
         "name": "01.04_PROJECT_ASSETS.md",
@@ -14801,7 +14801,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.04_PROJECT_ASSETS.md"
+        "path": "../../../../../memory/01 Current State/01.04_PROJECT_ASSETS.md"
     },
     {
         "name": "01.05_PROJECT_MEMORY.md",
@@ -14815,7 +14815,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.05_PROJECT_MEMORY.md"
+        "path": "../../../../../memory/01 Current State/01.05_PROJECT_MEMORY.md"
     },
     {
         "name": "01.06_PROJECT_CHANGELOG.md",
@@ -14829,7 +14829,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.06_PROJECT_CHANGELOG.md"
+        "path": "../../../../../memory/01 Current State/01.06_PROJECT_CHANGELOG.md"
     },
     {
         "name": "01.07_AUDIO_PLAYBACK_STANDARDS.md",
@@ -14843,7 +14843,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.07_AUDIO_PLAYBACK_STANDARDS.md"
+        "path": "../../../../../memory/01 Current State/01.07_AUDIO_PLAYBACK_STANDARDS.md"
     },
     {
         "name": "01.08_PROJECT_ICONS.md",
@@ -14857,7 +14857,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.08_PROJECT_ICONS.md"
+        "path": "../../../../../memory/01 Current State/01.08_PROJECT_ICONS.md"
     },
     {
         "name": "01.09_PROJECT_AUDIO_MAPPING.md",
@@ -14871,7 +14871,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.09_PROJECT_AUDIO_MAPPING.md"
+        "path": "../../../../../memory/01 Current State/01.09_PROJECT_AUDIO_MAPPING.md"
     },
     {
         "name": "01.10_MENU_NAVBAR_STRUCTURE.md",
@@ -14885,7 +14885,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.10_MENU_NAVBAR_STRUCTURE.md"
+        "path": "../../../../../memory/01 Current State/01.10_MENU_NAVBAR_STRUCTURE.md"
     },
     {
         "name": "01.11_PROJECT_SETTINGS.md",
@@ -14899,7 +14899,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.11_PROJECT_SETTINGS.md"
+        "path": "../../../../../memory/01 Current State/01.11_PROJECT_SETTINGS.md"
     },
     {
         "name": "01.12_CHILD_SAFETY_FEATURES.md",
@@ -14913,7 +14913,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.12_CHILD_SAFETY_FEATURES.md"
+        "path": "../../../../../memory/01 Current State/01.12_CHILD_SAFETY_FEATURES.md"
     },
     {
         "name": "01.13_DEVELOPMENT_WORKFLOW.md",
@@ -14927,7 +14927,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.13_DEVELOPMENT_WORKFLOW.md"
+        "path": "../../../../../memory/01 Current State/01.13_DEVELOPMENT_WORKFLOW.md"
     },
     {
         "name": "01.14_GLOBAL_REGISTRY.md",
@@ -14941,7 +14941,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.14_GLOBAL_REGISTRY.md"
+        "path": "../../../../../memory/01 Current State/01.14_GLOBAL_REGISTRY.md"
     },
     {
         "name": "01.15_PROJECT_GLOSSARY.md",
@@ -14955,7 +14955,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.15_PROJECT_GLOSSARY.md"
+        "path": "../../../../../memory/01 Current State/01.15_PROJECT_GLOSSARY.md"
     },
     {
         "name": "01.16_UI_UX_PRINCIPLES.md",
@@ -14969,7 +14969,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.16_UI_UX_PRINCIPLES.md"
+        "path": "../../../../../memory/01 Current State/01.16_UI_UX_PRINCIPLES.md"
     },
     {
         "name": "01.17_DATA_SCHEMAS.md",
@@ -14983,7 +14983,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.17_DATA_SCHEMAS.md"
+        "path": "../../../../../memory/01 Current State/01.17_DATA_SCHEMAS.md"
     },
     {
         "name": "01.18_RESOURCE_VAULT.md",
@@ -14997,7 +14997,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.18_RESOURCE_VAULT.md"
+        "path": "../../../../../memory/01 Current State/01.18_RESOURCE_VAULT.md"
     },
     {
         "name": "01.19_UI_STYLE_GUIDE.md",
@@ -15011,7 +15011,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.19_UI_STYLE_GUIDE.md"
+        "path": "../../../../../memory/01 Current State/01.19_UI_STYLE_GUIDE.md"
     },
     {
         "name": "01.20_NAMING_STANDARDS.md",
@@ -15025,7 +15025,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.20_NAMING_STANDARDS.md"
+        "path": "../../../../../memory/01 Current State/01.20_NAMING_STANDARDS.md"
     },
     {
         "name": "01.21_EXPANSION_STRATEGY.md",
@@ -15039,7 +15039,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.21_EXPANSION_STRATEGY.md"
+        "path": "../../../../../memory/01 Current State/01.21_EXPANSION_STRATEGY.md"
     },
     {
         "name": "01.22_CONTRIBUTOR_GUIDE.md",
@@ -15053,7 +15053,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.22_CONTRIBUTOR_GUIDE.md"
+        "path": "../../../../../memory/01 Current State/01.22_CONTRIBUTOR_GUIDE.md"
     },
     {
         "name": "01.23_SECURITY_ARCHITECTURE.md",
@@ -15067,7 +15067,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.23_SECURITY_ARCHITECTURE.md"
+        "path": "../../../../../memory/01 Current State/01.23_SECURITY_ARCHITECTURE.md"
     },
     {
         "name": "01.24_KHEL_KOOD_GAMES.md",
@@ -15081,7 +15081,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/01 Current State/01.24_KHEL_KOOD_GAMES.md"
+        "path": "../../../../../memory/01 Current State/01.24_KHEL_KOOD_GAMES.md"
     },
     {
         "name": "DATABASE_CHANGELOG.md",
@@ -15095,7 +15095,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Data Architecture",
         "purpose": "Maintains project state and provides structured schemas for application scaling.",
-        "path": "../../../../memory/02 Research & Knowledge/02.01_Database_Schemas/DATABASE_CHANGELOG.md"
+        "path": "../../../../../memory/02 Research & Knowledge/02.01_Database_Schemas/DATABASE_CHANGELOG.md"
     },
     {
         "name": "DATABASE_MEMORY.md",
@@ -15109,7 +15109,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Data Architecture",
         "purpose": "Maintains project state and provides structured schemas for application scaling.",
-        "path": "../../../../memory/02 Research & Knowledge/02.01_Database_Schemas/DATABASE_MEMORY.md"
+        "path": "../../../../../memory/02 Research & Knowledge/02.01_Database_Schemas/DATABASE_MEMORY.md"
     },
     {
         "name": "DATABASE_PARTITIONING_MEMORY.md",
@@ -15123,7 +15123,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Data Architecture",
         "purpose": "Maintains project state and provides structured schemas for application scaling.",
-        "path": "../../../../memory/02 Research & Knowledge/02.01_Database_Schemas/DATABASE_PARTITIONING_MEMORY.md"
+        "path": "../../../../../memory/02 Research & Knowledge/02.01_Database_Schemas/DATABASE_PARTITIONING_MEMORY.md"
     },
     {
         "name": "BANK_FEES_SUMMARY.md",
@@ -15137,7 +15137,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/BANK_FEES_SUMMARY.md"
+        "path": "../../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/BANK_FEES_SUMMARY.md"
     },
     {
         "name": "child_voices_methodology.md",
@@ -15151,7 +15151,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/child_voices_methodology.md"
+        "path": "../../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/child_voices_methodology.md"
     },
     {
         "name": "FREE_OFFLINE_COMPARISON.md",
@@ -15165,7 +15165,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/FREE_OFFLINE_COMPARISON.md"
+        "path": "../../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/FREE_OFFLINE_COMPARISON.md"
     },
     {
         "name": "FREE_OFFLINE_OPTIONS.md",
@@ -15179,7 +15179,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/FREE_OFFLINE_OPTIONS.md"
+        "path": "../../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/FREE_OFFLINE_OPTIONS.md"
     },
     {
         "name": "SESSION_DETAILS.md",
@@ -15193,7 +15193,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/SESSION_DETAILS.md"
+        "path": "../../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/SESSION_DETAILS.md"
     },
     {
         "name": "TTS_PAYMENT_STRATEGY.md",
@@ -15207,7 +15207,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/TTS_PAYMENT_STRATEGY.md"
+        "path": "../../../../../memory/02 Research & Knowledge/02.02_TTS_Engines/TTS_PAYMENT_STRATEGY.md"
     },
     {
         "name": "AGE_THEMES.md",
@@ -15221,7 +15221,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/02 Research & Knowledge/02.03_Roadmap/AGE_THEMES.md"
+        "path": "../../../../../memory/02 Research & Knowledge/02.03_Roadmap/AGE_THEMES.md"
     },
     {
         "name": "DATABASE_STRUCTURE_250_COLS.md",
@@ -15235,7 +15235,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Data Architecture",
         "purpose": "Maintains project state and provides structured schemas for application scaling.",
-        "path": "../../../../memory/02 Research & Knowledge/02.04_Expansion/DATABASE_STRUCTURE_250_COLS.md"
+        "path": "../../../../../memory/02 Research & Knowledge/02.04_Expansion/DATABASE_STRUCTURE_250_COLS.md"
     },
     {
         "name": "SAFETY_AND_ENGAGEMENT_SUGGESTIONS.md",
@@ -15249,7 +15249,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/02 Research & Knowledge/02.05_Safety_and_Engagement_Ideas/SAFETY_AND_ENGAGEMENT_SUGGESTIONS.md"
+        "path": "../../../../../memory/02 Research & Knowledge/02.05_Safety_and_Engagement_Ideas/SAFETY_AND_ENGAGEMENT_SUGGESTIONS.md"
     },
     {
         "name": "03.01_Current_Architecture_Map.md",
@@ -15263,7 +15263,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/03 Architecture & Planning/03.01_Current_Architecture_Map.md"
+        "path": "../../../../../memory/03 Architecture & Planning/03.01_Current_Architecture_Map.md"
     },
     {
         "name": "03.02_PROJECT_ROADMAP.md",
@@ -15277,7 +15277,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/03 Architecture & Planning/03.02_PROJECT_ROADMAP.md"
+        "path": "../../../../../memory/03 Architecture & Planning/03.02_PROJECT_ROADMAP.md"
     },
     {
         "name": "03.03_Ultra_Refined_Modular_Architecture.md",
@@ -15291,7 +15291,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/03 Architecture & Planning/03.03_Ultra_Refined_Modular_Architecture.md"
+        "path": "../../../../../memory/03 Architecture & Planning/03.03_Ultra_Refined_Modular_Architecture.md"
     },
     {
         "name": "03.04_Domain_Driven_Architecture.md",
@@ -15305,7 +15305,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/03 Architecture & Planning/03.04_Domain_Driven_Architecture.md"
+        "path": "../../../../../memory/03 Architecture & Planning/03.04_Domain_Driven_Architecture.md"
     },
     {
         "name": "03.05_Johnny_Decimal_Memory_Architecture.md",
@@ -15319,7 +15319,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/03 Architecture & Planning/03.05_Johnny_Decimal_Memory_Architecture.md"
+        "path": "../../../../../memory/03 Architecture & Planning/03.05_Johnny_Decimal_Memory_Architecture.md"
     },
     {
         "name": "03.06_Peak_Domain_Driven_Memory.md",
@@ -15333,7 +15333,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/03 Architecture & Planning/03.06_Peak_Domain_Driven_Memory.md"
+        "path": "../../../../../memory/03 Architecture & Planning/03.06_Peak_Domain_Driven_Memory.md"
     },
     {
         "name": "04.01_DEMO_ASSETS.md",
@@ -15347,7 +15347,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/04 Sandbox & Demos/04.01_DEMO_ASSETS.md"
+        "path": "../../../../../memory/04 Sandbox & Demos/04.01_DEMO_ASSETS.md"
     },
     {
         "name": "04.01_SANDBOX_MEMORY.md",
@@ -15361,7 +15361,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/04 Sandbox & Demos/04.01_SANDBOX_MEMORY.md"
+        "path": "../../../../../memory/04 Sandbox & Demos/04.01_SANDBOX_MEMORY.md"
     },
     {
         "name": "04.02_README.md",
@@ -15375,7 +15375,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/04 Sandbox & Demos/04.02_README.md"
+        "path": "../../../../../memory/04 Sandbox & Demos/04.02_README.md"
     },
     {
         "name": "05.01_GITHUB_CHANGELOG.md",
@@ -15389,7 +15389,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/05 Infrastructure & Workflows/05.01_GITHUB_CHANGELOG.md"
+        "path": "../../../../../memory/05 Infrastructure & Workflows/05.01_GITHUB_CHANGELOG.md"
     },
     {
         "name": "05.02_GITHUB_MEMORY.md",
@@ -15403,7 +15403,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/05 Infrastructure & Workflows/05.02_GITHUB_MEMORY.md"
+        "path": "../../../../../memory/05 Infrastructure & Workflows/05.02_GITHUB_MEMORY.md"
     },
     {
         "name": "audit_styles.css",
@@ -15417,7 +15417,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v1.0/audit_styles.css"
+        "path": "../../../../../memory/06 Internal Audit/v1.0/audit_styles.css"
     },
     {
         "name": "internal_audit.html",
@@ -15431,7 +15431,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v1.0/internal_audit.html"
+        "path": "../../../../../memory/06 Internal Audit/v1.0/internal_audit.html"
     },
     {
         "name": "index.html",
@@ -15445,7 +15445,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/index.html"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/index.html"
     },
     {
         "name": "assets.css",
@@ -15459,7 +15459,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/assets.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/assets.css"
     },
     {
         "name": "assets.html",
@@ -15473,7 +15473,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/assets.html"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/assets.html"
     },
     {
         "name": "asset_manifest.js",
@@ -15487,7 +15487,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/asset_manifest.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/asset_manifest.js"
     },
     {
         "name": "assets_base.css",
@@ -15501,7 +15501,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/css/assets_base.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/css/assets_base.css"
     },
     {
         "name": "assets_details.css",
@@ -15515,7 +15515,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/css/assets_details.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/css/assets_details.css"
     },
     {
         "name": "assets_grid.css",
@@ -15529,7 +15529,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/css/assets_grid.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/css/assets_grid.css"
     },
     {
         "name": "assets_header.css",
@@ -15543,7 +15543,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/css/assets_header.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/css/assets_header.css"
     },
     {
         "name": "assets_layout.css",
@@ -15557,7 +15557,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/css/assets_layout.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/css/assets_layout.css"
     },
     {
         "name": "assets_mockup_nav.css",
@@ -15571,7 +15571,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/css/assets_mockup_nav.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/css/assets_mockup_nav.css"
     },
     {
         "name": "assets_modal.css",
@@ -15585,7 +15585,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/css/assets_modal.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/css/assets_modal.css"
     },
     {
         "name": "assets_sidebar.css",
@@ -15599,7 +15599,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/css/assets_sidebar.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/css/assets_sidebar.css"
     },
     {
         "name": "assets_actions.js",
@@ -15613,7 +15613,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/js/assets_actions.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/js/assets_actions.js"
     },
     {
         "name": "assets_core.js",
@@ -15627,7 +15627,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/js/assets_core.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/js/assets_core.js"
     },
     {
         "name": "assets_details.js",
@@ -15641,7 +15641,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/js/assets_details.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/js/assets_details.js"
     },
     {
         "name": "assets_gallery.js",
@@ -15655,7 +15655,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/js/assets_gallery.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/js/assets_gallery.js"
     },
     {
         "name": "assets_header.js",
@@ -15669,7 +15669,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/js/assets_header.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/js/assets_header.js"
     },
     {
         "name": "assets_preview.js",
@@ -15683,7 +15683,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/js/assets_preview.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/js/assets_preview.js"
     },
     {
         "name": "assets_sidebar.js",
@@ -15697,7 +15697,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/js/assets_sidebar.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/js/assets_sidebar.js"
     },
     {
         "name": "assets_state.js",
@@ -15711,7 +15711,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/assets/js/assets_state.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/assets/js/assets_state.js"
     },
     {
         "name": "06.00_AUDIT_INDEX.md",
@@ -15725,7 +15725,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.00_AUDIT_INDEX.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.00_AUDIT_INDEX.md"
     },
     {
         "name": "06.01_AUDIT_HTML_LAYOUT.md",
@@ -15739,7 +15739,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.01_AUDIT_HTML_LAYOUT.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.01_AUDIT_HTML_LAYOUT.md"
     },
     {
         "name": "06.02_AUDIT_CSS_DYNAMICS.md",
@@ -15753,7 +15753,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.02_AUDIT_CSS_DYNAMICS.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.02_AUDIT_CSS_DYNAMICS.md"
     },
     {
         "name": "06.03_AUDIT_JS_LOGIC_FLOW.md",
@@ -15767,7 +15767,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.03_AUDIT_JS_LOGIC_FLOW.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.03_AUDIT_JS_LOGIC_FLOW.md"
     },
     {
         "name": "06.04_AUDIT_WORKFLOW.md",
@@ -15781,7 +15781,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.04_AUDIT_WORKFLOW.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.04_AUDIT_WORKFLOW.md"
     },
     {
         "name": "06.05_AUDIT_SIDEBAR_FLIP.md",
@@ -15795,7 +15795,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.05_AUDIT_SIDEBAR_FLIP.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.05_AUDIT_SIDEBAR_FLIP.md"
     },
     {
         "name": "06.06_AUDIT_ALERTS_MODAL.md",
@@ -15809,7 +15809,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.06_AUDIT_ALERTS_MODAL.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.06_AUDIT_ALERTS_MODAL.md"
     },
     {
         "name": "06.07_AUDIT_VISUAL_SYSTEM.md",
@@ -15823,7 +15823,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.07_AUDIT_VISUAL_SYSTEM.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.07_AUDIT_VISUAL_SYSTEM.md"
     },
     {
         "name": "06.08_AUDIT_FIDELITY_ANOMALIES.md",
@@ -15837,7 +15837,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.08_AUDIT_FIDELITY_ANOMALIES.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.08_AUDIT_FIDELITY_ANOMALIES.md"
     },
     {
         "name": "06.09_LINE_BY_LINE_AUDIT.md",
@@ -15851,7 +15851,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.09_LINE_BY_LINE_AUDIT.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.09_LINE_BY_LINE_AUDIT.md"
     },
     {
         "name": "06.10_AUDIT_EVOLUTION_REPORT.md",
@@ -15865,7 +15865,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.10_AUDIT_EVOLUTION_REPORT.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.10_AUDIT_EVOLUTION_REPORT.md"
     },
     {
         "name": "06.11_AUDIT_SETTINGS_ENGINE.md",
@@ -15879,7 +15879,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.11_AUDIT_SETTINGS_ENGINE.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.11_AUDIT_SETTINGS_ENGINE.md"
     },
     {
         "name": "06.12_AUDIT_MEMORY.md",
@@ -15893,7 +15893,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.12_AUDIT_MEMORY.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.12_AUDIT_MEMORY.md"
     },
     {
         "name": "06.13_AUDIT_DASHBOARD_DOMAINS.md",
@@ -15907,7 +15907,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.13_AUDIT_DASHBOARD_DOMAINS.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.13_AUDIT_DASHBOARD_DOMAINS.md"
     },
     {
         "name": "06.14_AUDIT_HOLOGRAPHIC_MAP.md",
@@ -15921,7 +15921,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.14_AUDIT_HOLOGRAPHIC_MAP.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.14_AUDIT_HOLOGRAPHIC_MAP.md"
     },
     {
         "name": "06.15_AUDIT_ORBITAL_SETTINGS.md",
@@ -15935,7 +15935,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.15_AUDIT_ORBITAL_SETTINGS.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.15_AUDIT_ORBITAL_SETTINGS.md"
     },
     {
         "name": "06.16_AUDIT_SHARED_CORE.md",
@@ -15949,7 +15949,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.16_AUDIT_SHARED_CORE.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.16_AUDIT_SHARED_CORE.md"
     },
     {
         "name": "06.17_AUDIT_LOCKDOWN_PROTOCOL.md",
@@ -15963,7 +15963,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.17_AUDIT_LOCKDOWN_PROTOCOL.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.17_AUDIT_LOCKDOWN_PROTOCOL.md"
     },
     {
         "name": "06.18_AUDIT_GEOSPATIAL_DATA.md",
@@ -15977,7 +15977,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.18_AUDIT_GEOSPATIAL_DATA.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.18_AUDIT_GEOSPATIAL_DATA.md"
     },
     {
         "name": "06.19_AUDIT_SCENE_SHADERS.md",
@@ -15991,7 +15991,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.19_AUDIT_SCENE_SHADERS.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.19_AUDIT_SCENE_SHADERS.md"
     },
     {
         "name": "06.20_AUDIT_DATA_EXPORT_PROTOCOLS.md",
@@ -16005,7 +16005,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.20_AUDIT_DATA_EXPORT_PROTOCOLS.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.20_AUDIT_DATA_EXPORT_PROTOCOLS.md"
     },
     {
         "name": "06.21_AUDIT_INTERACTIVE_CONTROLLERS.md",
@@ -16019,7 +16019,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.21_AUDIT_INTERACTIVE_CONTROLLERS.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.21_AUDIT_INTERACTIVE_CONTROLLERS.md"
     },
     {
         "name": "06.22_AUDIT_SEARCH_ENGINE_LOGIC.md",
@@ -16033,7 +16033,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.22_AUDIT_SEARCH_ENGINE_LOGIC.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.22_AUDIT_SEARCH_ENGINE_LOGIC.md"
     },
     {
         "name": "06.23_AUDIT_NAVIGATION_PROTOCOLS.md",
@@ -16047,7 +16047,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.23_AUDIT_NAVIGATION_PROTOCOLS.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.23_AUDIT_NAVIGATION_PROTOCOLS.md"
     },
     {
         "name": "06.24_AUDIT_POINTER_TEXTURE_GEN.md",
@@ -16061,7 +16061,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.24_AUDIT_POINTER_TEXTURE_GEN.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.24_AUDIT_POINTER_TEXTURE_GEN.md"
     },
     {
         "name": "06.25_AUDIT_HOLOGRAPHIC_WIDGET_SYSTEM.md",
@@ -16075,7 +16075,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.25_AUDIT_HOLOGRAPHIC_WIDGET_SYSTEM.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.25_AUDIT_HOLOGRAPHIC_WIDGET_SYSTEM.md"
     },
     {
         "name": "06.26_AUDIT_ROUTE_INTELLIGENCE_MATH.md",
@@ -16089,7 +16089,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.26_AUDIT_ROUTE_INTELLIGENCE_MATH.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.26_AUDIT_ROUTE_INTELLIGENCE_MATH.md"
     },
     {
         "name": "06.27_AUDIT_VISUAL_STYLIZERS_PIPELINES.md",
@@ -16103,7 +16103,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.27_AUDIT_VISUAL_STYLIZERS_PIPELINES.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.27_AUDIT_VISUAL_STYLIZERS_PIPELINES.md"
     },
     {
         "name": "06.28_AUDIT_MEDIA_INTERFACE_EXTENSIONS.md",
@@ -16117,7 +16117,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.28_AUDIT_MEDIA_INTERFACE_EXTENSIONS.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.28_AUDIT_MEDIA_INTERFACE_EXTENSIONS.md"
     },
     {
         "name": "06.29_AUDIT_DASHBOARD_VISUAL_ENGINE.md",
@@ -16131,7 +16131,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.29_AUDIT_DASHBOARD_VISUAL_ENGINE.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.29_AUDIT_DASHBOARD_VISUAL_ENGINE.md"
     },
     {
         "name": "06.30_AUDIT_DASHBOARD_SENTINEL_TOOLTIPS.md",
@@ -16145,7 +16145,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.30_AUDIT_DASHBOARD_SENTINEL_TOOLTIPS.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.30_AUDIT_DASHBOARD_SENTINEL_TOOLTIPS.md"
     },
     {
         "name": "06.31_AUDIT_DASHBOARD_CONSOLE_ORCHESTRATION.md",
@@ -16159,7 +16159,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.31_AUDIT_DASHBOARD_CONSOLE_ORCHESTRATION.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.31_AUDIT_DASHBOARD_CONSOLE_ORCHESTRATION.md"
     },
     {
         "name": "06.32_AUDIT_MAP_TRAVEL_STATE_LOGIC.md",
@@ -16173,7 +16173,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.32_AUDIT_MAP_TRAVEL_STATE_LOGIC.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.32_AUDIT_MAP_TRAVEL_STATE_LOGIC.md"
     },
     {
         "name": "06.33_AUDIT_MAP_UI_FRAMEWORK.md",
@@ -16187,7 +16187,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.33_AUDIT_MAP_UI_FRAMEWORK.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.33_AUDIT_MAP_UI_FRAMEWORK.md"
     },
     {
         "name": "06.34_AUDIT_GLOBAL_NAV_ENGINE.md",
@@ -16201,7 +16201,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.34_AUDIT_GLOBAL_NAV_ENGINE.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.34_AUDIT_GLOBAL_NAV_ENGINE.md"
     },
     {
         "name": "06.35_AUDIT_ASSETS_REPOSITORY.md",
@@ -16215,7 +16215,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.35_AUDIT_ASSETS_REPOSITORY.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.35_AUDIT_ASSETS_REPOSITORY.md"
     },
     {
         "name": "06.36_AUDIT_NOTIFICATIONS_SYSTEM.md",
@@ -16229,7 +16229,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.36_AUDIT_NOTIFICATIONS_SYSTEM.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.36_AUDIT_NOTIFICATIONS_SYSTEM.md"
     },
     {
         "name": "06.37_AUDIT_TERMINAL_INTERFACE.md",
@@ -16243,7 +16243,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.37_AUDIT_TERMINAL_INTERFACE.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.37_AUDIT_TERMINAL_INTERFACE.md"
     },
     {
         "name": "06.38_AUDIT_DATA_MANIFEST_ENGINE.md",
@@ -16257,7 +16257,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.38_AUDIT_DATA_MANIFEST_ENGINE.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Audit Memory/06.38_AUDIT_DATA_MANIFEST_ENGINE.md"
     },
     {
         "name": "dashboard.css",
@@ -16271,7 +16271,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/dashboard/dashboard.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/dashboard/dashboard.css"
     },
     {
         "name": "dashboard.html",
@@ -16285,7 +16285,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/dashboard/dashboard.html"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/dashboard/dashboard.html"
     },
     {
         "name": "dashboard.js",
@@ -16299,7 +16299,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/dashboard/dashboard.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/dashboard/dashboard.js"
     },
     {
         "name": "map.css",
@@ -16313,7 +16313,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/map.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/map.css"
     },
     {
         "name": "map.html",
@@ -16327,7 +16327,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/map.html"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/map.html"
     },
     {
         "name": "map_main.js",
@@ -16341,7 +16341,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/map_main.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/map_main.js"
     },
     {
         "name": "afghanistan.js",
@@ -16355,7 +16355,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/afghanistan.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/afghanistan.js"
     },
     {
         "name": "albania.js",
@@ -16369,7 +16369,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/albania.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/albania.js"
     },
     {
         "name": "algeria.js",
@@ -16383,7 +16383,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/algeria.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/algeria.js"
     },
     {
         "name": "andorra.js",
@@ -16397,7 +16397,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/andorra.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/andorra.js"
     },
     {
         "name": "angola.js",
@@ -16411,7 +16411,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/angola.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/angola.js"
     },
     {
         "name": "antigua_and_barbuda.js",
@@ -16425,7 +16425,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/antigua_and_barbuda.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/antigua_and_barbuda.js"
     },
     {
         "name": "argentina.js",
@@ -16439,7 +16439,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/argentina.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/argentina.js"
     },
     {
         "name": "armenia.js",
@@ -16453,7 +16453,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/armenia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/armenia.js"
     },
     {
         "name": "australia.js",
@@ -16467,7 +16467,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/australia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/australia.js"
     },
     {
         "name": "austria.js",
@@ -16481,7 +16481,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/austria.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/austria.js"
     },
     {
         "name": "azerbaijan.js",
@@ -16495,7 +16495,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/azerbaijan.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/azerbaijan.js"
     },
     {
         "name": "bahamas.js",
@@ -16509,7 +16509,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/bahamas.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/bahamas.js"
     },
     {
         "name": "bahrain.js",
@@ -16523,7 +16523,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/bahrain.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/bahrain.js"
     },
     {
         "name": "bangladesh.js",
@@ -16537,7 +16537,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/bangladesh.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/bangladesh.js"
     },
     {
         "name": "barbados.js",
@@ -16551,7 +16551,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/barbados.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/barbados.js"
     },
     {
         "name": "belarus.js",
@@ -16565,7 +16565,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/belarus.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/belarus.js"
     },
     {
         "name": "belgium.js",
@@ -16579,7 +16579,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/belgium.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/belgium.js"
     },
     {
         "name": "belize.js",
@@ -16593,7 +16593,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/belize.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/belize.js"
     },
     {
         "name": "benin.js",
@@ -16607,7 +16607,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/benin.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/benin.js"
     },
     {
         "name": "bhutan.js",
@@ -16621,7 +16621,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/bhutan.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/bhutan.js"
     },
     {
         "name": "bolivia.js",
@@ -16635,7 +16635,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/bolivia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/bolivia.js"
     },
     {
         "name": "bosnia_and_herzegovina.js",
@@ -16649,7 +16649,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/bosnia_and_herzegovina.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/bosnia_and_herzegovina.js"
     },
     {
         "name": "botswana.js",
@@ -16663,7 +16663,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/botswana.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/botswana.js"
     },
     {
         "name": "brazil.js",
@@ -16677,7 +16677,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/brazil.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/brazil.js"
     },
     {
         "name": "brunei.js",
@@ -16691,7 +16691,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/brunei.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/brunei.js"
     },
     {
         "name": "bulgaria.js",
@@ -16705,7 +16705,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/bulgaria.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/bulgaria.js"
     },
     {
         "name": "burkina_faso.js",
@@ -16719,7 +16719,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/burkina_faso.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/burkina_faso.js"
     },
     {
         "name": "burundi.js",
@@ -16733,7 +16733,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/burundi.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/burundi.js"
     },
     {
         "name": "cambodia.js",
@@ -16747,7 +16747,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/cambodia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/cambodia.js"
     },
     {
         "name": "cameroon.js",
@@ -16761,7 +16761,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/cameroon.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/cameroon.js"
     },
     {
         "name": "canada.js",
@@ -16775,7 +16775,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/canada.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/canada.js"
     },
     {
         "name": "cape_verde.js",
@@ -16789,7 +16789,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/cape_verde.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/cape_verde.js"
     },
     {
         "name": "central_african_republic.js",
@@ -16803,7 +16803,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/central_african_republic.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/central_african_republic.js"
     },
     {
         "name": "chad.js",
@@ -16817,7 +16817,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/chad.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/chad.js"
     },
     {
         "name": "chile.js",
@@ -16831,7 +16831,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/chile.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/chile.js"
     },
     {
         "name": "china.js",
@@ -16845,7 +16845,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/china.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/china.js"
     },
     {
         "name": "colombia.js",
@@ -16859,7 +16859,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/colombia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/colombia.js"
     },
     {
         "name": "comoros.js",
@@ -16873,7 +16873,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/comoros.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/comoros.js"
     },
     {
         "name": "costa_rica.js",
@@ -16887,7 +16887,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/costa_rica.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/costa_rica.js"
     },
     {
         "name": "cote_divoire.js",
@@ -16901,7 +16901,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/cote_divoire.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/cote_divoire.js"
     },
     {
         "name": "croatia.js",
@@ -16915,7 +16915,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/croatia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/croatia.js"
     },
     {
         "name": "cuba.js",
@@ -16929,7 +16929,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/cuba.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/cuba.js"
     },
     {
         "name": "cyprus.js",
@@ -16943,7 +16943,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/cyprus.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/cyprus.js"
     },
     {
         "name": "czech_republic.js",
@@ -16957,7 +16957,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/czech_republic.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/czech_republic.js"
     },
     {
         "name": "denmark.js",
@@ -16971,7 +16971,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/denmark.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/denmark.js"
     },
     {
         "name": "djibouti.js",
@@ -16985,7 +16985,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/djibouti.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/djibouti.js"
     },
     {
         "name": "dominica.js",
@@ -16999,7 +16999,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/dominica.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/dominica.js"
     },
     {
         "name": "dominican_republic.js",
@@ -17013,7 +17013,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/dominican_republic.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/dominican_republic.js"
     },
     {
         "name": "drc.js",
@@ -17027,7 +17027,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/drc.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/drc.js"
     },
     {
         "name": "east_timor.js",
@@ -17041,7 +17041,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/east_timor.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/east_timor.js"
     },
     {
         "name": "ecuador.js",
@@ -17055,7 +17055,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/ecuador.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/ecuador.js"
     },
     {
         "name": "egypt.js",
@@ -17069,7 +17069,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/egypt.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/egypt.js"
     },
     {
         "name": "el_salvador.js",
@@ -17083,7 +17083,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/el_salvador.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/el_salvador.js"
     },
     {
         "name": "equatorial_guinea.js",
@@ -17097,7 +17097,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/equatorial_guinea.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/equatorial_guinea.js"
     },
     {
         "name": "eritrea.js",
@@ -17111,7 +17111,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/eritrea.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/eritrea.js"
     },
     {
         "name": "estonia.js",
@@ -17125,7 +17125,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/estonia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/estonia.js"
     },
     {
         "name": "eswatini.js",
@@ -17139,7 +17139,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/eswatini.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/eswatini.js"
     },
     {
         "name": "ethiopia.js",
@@ -17153,7 +17153,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/ethiopia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/ethiopia.js"
     },
     {
         "name": "fiji.js",
@@ -17167,7 +17167,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/fiji.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/fiji.js"
     },
     {
         "name": "finland.js",
@@ -17181,7 +17181,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/finland.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/finland.js"
     },
     {
         "name": "france.js",
@@ -17195,7 +17195,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/france.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/france.js"
     },
     {
         "name": "gabon.js",
@@ -17209,7 +17209,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/gabon.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/gabon.js"
     },
     {
         "name": "gambia.js",
@@ -17223,7 +17223,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/gambia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/gambia.js"
     },
     {
         "name": "georgia.js",
@@ -17237,7 +17237,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/georgia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/georgia.js"
     },
     {
         "name": "germany.js",
@@ -17251,7 +17251,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/germany.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/germany.js"
     },
     {
         "name": "ghana.js",
@@ -17265,7 +17265,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/ghana.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/ghana.js"
     },
     {
         "name": "greece.js",
@@ -17279,7 +17279,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/greece.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/greece.js"
     },
     {
         "name": "grenada.js",
@@ -17293,7 +17293,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/grenada.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/grenada.js"
     },
     {
         "name": "guatemala.js",
@@ -17307,7 +17307,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/guatemala.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/guatemala.js"
     },
     {
         "name": "guinea.js",
@@ -17321,7 +17321,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/guinea.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/guinea.js"
     },
     {
         "name": "guinea_bissau.js",
@@ -17335,7 +17335,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/guinea_bissau.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/guinea_bissau.js"
     },
     {
         "name": "guyana.js",
@@ -17349,7 +17349,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/guyana.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/guyana.js"
     },
     {
         "name": "haiti.js",
@@ -17363,7 +17363,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/haiti.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/haiti.js"
     },
     {
         "name": "honduras.js",
@@ -17377,7 +17377,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/honduras.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/honduras.js"
     },
     {
         "name": "hungary.js",
@@ -17391,7 +17391,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/hungary.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/hungary.js"
     },
     {
         "name": "iceland.js",
@@ -17405,7 +17405,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/iceland.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/iceland.js"
     },
     {
         "name": "india.js",
@@ -17419,7 +17419,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/india.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/india.js"
     },
     {
         "name": "indonesia.js",
@@ -17433,7 +17433,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/indonesia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/indonesia.js"
     },
     {
         "name": "iran.js",
@@ -17447,7 +17447,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/iran.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/iran.js"
     },
     {
         "name": "iraq.js",
@@ -17461,7 +17461,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/iraq.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/iraq.js"
     },
     {
         "name": "ireland.js",
@@ -17475,7 +17475,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/ireland.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/ireland.js"
     },
     {
         "name": "israel.js",
@@ -17489,7 +17489,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/israel.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/israel.js"
     },
     {
         "name": "italy.js",
@@ -17503,7 +17503,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/italy.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/italy.js"
     },
     {
         "name": "jamaica.js",
@@ -17517,7 +17517,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/jamaica.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/jamaica.js"
     },
     {
         "name": "japan.js",
@@ -17531,7 +17531,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/japan.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/japan.js"
     },
     {
         "name": "jordan.js",
@@ -17545,7 +17545,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/jordan.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/jordan.js"
     },
     {
         "name": "kazakhstan.js",
@@ -17559,7 +17559,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/kazakhstan.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/kazakhstan.js"
     },
     {
         "name": "kenya.js",
@@ -17573,7 +17573,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/kenya.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/kenya.js"
     },
     {
         "name": "kiribati.js",
@@ -17587,7 +17587,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/kiribati.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/kiribati.js"
     },
     {
         "name": "kosovo.js",
@@ -17601,7 +17601,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/kosovo.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/kosovo.js"
     },
     {
         "name": "kuwait.js",
@@ -17615,7 +17615,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/kuwait.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/kuwait.js"
     },
     {
         "name": "kyrgyzstan.js",
@@ -17629,7 +17629,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/kyrgyzstan.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/kyrgyzstan.js"
     },
     {
         "name": "laos.js",
@@ -17643,7 +17643,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/laos.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/laos.js"
     },
     {
         "name": "latvia.js",
@@ -17657,7 +17657,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/latvia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/latvia.js"
     },
     {
         "name": "lebanon.js",
@@ -17671,7 +17671,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/lebanon.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/lebanon.js"
     },
     {
         "name": "lesotho.js",
@@ -17685,7 +17685,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/lesotho.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/lesotho.js"
     },
     {
         "name": "liberia.js",
@@ -17699,7 +17699,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/liberia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/liberia.js"
     },
     {
         "name": "libya.js",
@@ -17713,7 +17713,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/libya.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/libya.js"
     },
     {
         "name": "liechtenstein.js",
@@ -17727,7 +17727,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/liechtenstein.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/liechtenstein.js"
     },
     {
         "name": "lithuania.js",
@@ -17741,7 +17741,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/lithuania.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/lithuania.js"
     },
     {
         "name": "luxembourg.js",
@@ -17755,7 +17755,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/luxembourg.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/luxembourg.js"
     },
     {
         "name": "madagascar.js",
@@ -17769,7 +17769,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/madagascar.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/madagascar.js"
     },
     {
         "name": "malawi.js",
@@ -17783,7 +17783,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/malawi.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/malawi.js"
     },
     {
         "name": "malaysia.js",
@@ -17797,7 +17797,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/malaysia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/malaysia.js"
     },
     {
         "name": "maldives.js",
@@ -17811,7 +17811,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/maldives.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/maldives.js"
     },
     {
         "name": "mali.js",
@@ -17825,7 +17825,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/mali.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/mali.js"
     },
     {
         "name": "malta.js",
@@ -17839,7 +17839,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/malta.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/malta.js"
     },
     {
         "name": "marshall_islands.js",
@@ -17853,7 +17853,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/marshall_islands.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/marshall_islands.js"
     },
     {
         "name": "mauritania.js",
@@ -17867,7 +17867,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/mauritania.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/mauritania.js"
     },
     {
         "name": "mauritius.js",
@@ -17881,7 +17881,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/mauritius.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/mauritius.js"
     },
     {
         "name": "mexico.js",
@@ -17895,7 +17895,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/mexico.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/mexico.js"
     },
     {
         "name": "micronesia.js",
@@ -17909,7 +17909,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/micronesia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/micronesia.js"
     },
     {
         "name": "moldova.js",
@@ -17923,7 +17923,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/moldova.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/moldova.js"
     },
     {
         "name": "monaco.js",
@@ -17937,7 +17937,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/monaco.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/monaco.js"
     },
     {
         "name": "mongolia.js",
@@ -17951,7 +17951,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/mongolia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/mongolia.js"
     },
     {
         "name": "montenegro.js",
@@ -17965,7 +17965,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/montenegro.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/montenegro.js"
     },
     {
         "name": "morocco.js",
@@ -17979,7 +17979,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/morocco.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/morocco.js"
     },
     {
         "name": "mozambique.js",
@@ -17993,7 +17993,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/mozambique.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/mozambique.js"
     },
     {
         "name": "myanmar.js",
@@ -18007,7 +18007,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/myanmar.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/myanmar.js"
     },
     {
         "name": "namibia.js",
@@ -18021,7 +18021,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/namibia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/namibia.js"
     },
     {
         "name": "nauru.js",
@@ -18035,7 +18035,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/nauru.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/nauru.js"
     },
     {
         "name": "nepal.js",
@@ -18049,7 +18049,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/nepal.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/nepal.js"
     },
     {
         "name": "netherlands.js",
@@ -18063,7 +18063,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/netherlands.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/netherlands.js"
     },
     {
         "name": "new_zealand.js",
@@ -18077,7 +18077,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/new_zealand.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/new_zealand.js"
     },
     {
         "name": "nicaragua.js",
@@ -18091,7 +18091,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/nicaragua.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/nicaragua.js"
     },
     {
         "name": "niger.js",
@@ -18105,7 +18105,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/niger.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/niger.js"
     },
     {
         "name": "nigeria.js",
@@ -18119,7 +18119,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/nigeria.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/nigeria.js"
     },
     {
         "name": "north_korea.js",
@@ -18133,7 +18133,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/north_korea.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/north_korea.js"
     },
     {
         "name": "north_macedonia.js",
@@ -18147,7 +18147,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/north_macedonia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/north_macedonia.js"
     },
     {
         "name": "norway.js",
@@ -18161,7 +18161,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/norway.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/norway.js"
     },
     {
         "name": "oman.js",
@@ -18175,7 +18175,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/oman.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/oman.js"
     },
     {
         "name": "pakistan.js",
@@ -18189,7 +18189,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/pakistan.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/pakistan.js"
     },
     {
         "name": "palau.js",
@@ -18203,7 +18203,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/palau.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/palau.js"
     },
     {
         "name": "palestine.js",
@@ -18217,7 +18217,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/palestine.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/palestine.js"
     },
     {
         "name": "panama.js",
@@ -18231,7 +18231,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/panama.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/panama.js"
     },
     {
         "name": "papua_new_guinea.js",
@@ -18245,7 +18245,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/papua_new_guinea.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/papua_new_guinea.js"
     },
     {
         "name": "paraguay.js",
@@ -18259,7 +18259,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/paraguay.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/paraguay.js"
     },
     {
         "name": "peru.js",
@@ -18273,7 +18273,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/peru.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/peru.js"
     },
     {
         "name": "philippines.js",
@@ -18287,7 +18287,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/philippines.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/philippines.js"
     },
     {
         "name": "poland.js",
@@ -18301,7 +18301,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/poland.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/poland.js"
     },
     {
         "name": "portugal.js",
@@ -18315,7 +18315,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/portugal.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/portugal.js"
     },
     {
         "name": "qatar.js",
@@ -18329,7 +18329,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/qatar.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/qatar.js"
     },
     {
         "name": "republic_of_congo.js",
@@ -18343,7 +18343,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/republic_of_congo.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/republic_of_congo.js"
     },
     {
         "name": "romania.js",
@@ -18357,7 +18357,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/romania.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/romania.js"
     },
     {
         "name": "russia.js",
@@ -18371,7 +18371,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/russia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/russia.js"
     },
     {
         "name": "rwanda.js",
@@ -18385,7 +18385,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/rwanda.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/rwanda.js"
     },
     {
         "name": "samoa.js",
@@ -18399,7 +18399,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/samoa.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/samoa.js"
     },
     {
         "name": "san_marino.js",
@@ -18413,7 +18413,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/san_marino.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/san_marino.js"
     },
     {
         "name": "sao_tome_and_principe.js",
@@ -18427,7 +18427,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/sao_tome_and_principe.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/sao_tome_and_principe.js"
     },
     {
         "name": "saudi_arabia.js",
@@ -18441,7 +18441,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/saudi_arabia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/saudi_arabia.js"
     },
     {
         "name": "senegal.js",
@@ -18455,7 +18455,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/senegal.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/senegal.js"
     },
     {
         "name": "serbia.js",
@@ -18469,7 +18469,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/serbia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/serbia.js"
     },
     {
         "name": "seychelles.js",
@@ -18483,7 +18483,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/seychelles.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/seychelles.js"
     },
     {
         "name": "sierra_leone.js",
@@ -18497,7 +18497,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/sierra_leone.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/sierra_leone.js"
     },
     {
         "name": "singapore.js",
@@ -18511,7 +18511,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/singapore.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/singapore.js"
     },
     {
         "name": "slovakia.js",
@@ -18525,7 +18525,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/slovakia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/slovakia.js"
     },
     {
         "name": "slovenia.js",
@@ -18539,7 +18539,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/slovenia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/slovenia.js"
     },
     {
         "name": "solomon_islands.js",
@@ -18553,7 +18553,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/solomon_islands.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/solomon_islands.js"
     },
     {
         "name": "somalia.js",
@@ -18567,7 +18567,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/somalia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/somalia.js"
     },
     {
         "name": "south_africa.js",
@@ -18581,7 +18581,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/south_africa.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/south_africa.js"
     },
     {
         "name": "south_korea.js",
@@ -18595,7 +18595,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/south_korea.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/south_korea.js"
     },
     {
         "name": "south_sudan.js",
@@ -18609,7 +18609,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/south_sudan.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/south_sudan.js"
     },
     {
         "name": "spain.js",
@@ -18623,7 +18623,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/spain.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/spain.js"
     },
     {
         "name": "sri_lanka.js",
@@ -18637,7 +18637,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/sri_lanka.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/sri_lanka.js"
     },
     {
         "name": "st_kitts_and_nevis.js",
@@ -18651,7 +18651,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/st_kitts_and_nevis.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/st_kitts_and_nevis.js"
     },
     {
         "name": "st_lucia.js",
@@ -18665,7 +18665,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/st_lucia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/st_lucia.js"
     },
     {
         "name": "st_vincent.js",
@@ -18679,7 +18679,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/st_vincent.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/st_vincent.js"
     },
     {
         "name": "sudan.js",
@@ -18693,7 +18693,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/sudan.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/sudan.js"
     },
     {
         "name": "suriname.js",
@@ -18707,7 +18707,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/suriname.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/suriname.js"
     },
     {
         "name": "sweden.js",
@@ -18721,7 +18721,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/sweden.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/sweden.js"
     },
     {
         "name": "switzerland.js",
@@ -18735,7 +18735,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/switzerland.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/switzerland.js"
     },
     {
         "name": "syria.js",
@@ -18749,7 +18749,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/syria.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/syria.js"
     },
     {
         "name": "taiwan.js",
@@ -18763,7 +18763,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/taiwan.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/taiwan.js"
     },
     {
         "name": "tajikistan.js",
@@ -18777,7 +18777,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/tajikistan.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/tajikistan.js"
     },
     {
         "name": "tanzania.js",
@@ -18791,7 +18791,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/tanzania.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/tanzania.js"
     },
     {
         "name": "thailand.js",
@@ -18805,7 +18805,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/thailand.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/thailand.js"
     },
     {
         "name": "togo.js",
@@ -18819,7 +18819,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/togo.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/togo.js"
     },
     {
         "name": "tonga.js",
@@ -18833,7 +18833,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/tonga.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/tonga.js"
     },
     {
         "name": "trinidad_and_tobago.js",
@@ -18847,7 +18847,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/trinidad_and_tobago.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/trinidad_and_tobago.js"
     },
     {
         "name": "tunisia.js",
@@ -18861,7 +18861,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/tunisia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/tunisia.js"
     },
     {
         "name": "turkey.js",
@@ -18875,7 +18875,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/turkey.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/turkey.js"
     },
     {
         "name": "turkmenistan.js",
@@ -18889,7 +18889,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/turkmenistan.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/turkmenistan.js"
     },
     {
         "name": "tuvalu.js",
@@ -18903,7 +18903,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/tuvalu.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/tuvalu.js"
     },
     {
         "name": "uae.js",
@@ -18917,7 +18917,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/uae.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/uae.js"
     },
     {
         "name": "uganda.js",
@@ -18931,7 +18931,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/uganda.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/uganda.js"
     },
     {
         "name": "uk.js",
@@ -18945,7 +18945,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/uk.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/uk.js"
     },
     {
         "name": "ukraine.js",
@@ -18959,7 +18959,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/ukraine.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/ukraine.js"
     },
     {
         "name": "uruguay.js",
@@ -18973,7 +18973,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/uruguay.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/uruguay.js"
     },
     {
         "name": "usa.js",
@@ -18987,7 +18987,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/usa.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/usa.js"
     },
     {
         "name": "uzbekistan.js",
@@ -19001,7 +19001,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/uzbekistan.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/uzbekistan.js"
     },
     {
         "name": "vanuatu.js",
@@ -19015,7 +19015,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/vanuatu.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/vanuatu.js"
     },
     {
         "name": "vatican_city.js",
@@ -19029,7 +19029,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/vatican_city.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/vatican_city.js"
     },
     {
         "name": "venezuela.js",
@@ -19043,7 +19043,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/venezuela.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/venezuela.js"
     },
     {
         "name": "vietnam.js",
@@ -19057,7 +19057,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/vietnam.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/vietnam.js"
     },
     {
         "name": "yemen.js",
@@ -19071,7 +19071,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/yemen.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/yemen.js"
     },
     {
         "name": "zambia.js",
@@ -19085,7 +19085,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/zambia.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/zambia.js"
     },
     {
         "name": "zimbabwe.js",
@@ -19099,7 +19099,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/country/zimbabwe.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/country/zimbabwe.js"
     },
     {
         "name": "future.css",
@@ -19113,7 +19113,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/future.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/future.css"
     },
     {
         "name": "map_base.css",
@@ -19127,7 +19127,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/map_base.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/map_base.css"
     },
     {
         "name": "map_effects.css",
@@ -19141,7 +19141,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/map_effects.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/map_effects.css"
     },
     {
         "name": "map_layout.css",
@@ -19155,7 +19155,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/map_layout.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/map_layout.css"
     },
     {
         "name": "map_modals.css",
@@ -19169,7 +19169,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/map_modals.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/map_modals.css"
     },
     {
         "name": "map_responsive.css",
@@ -19183,7 +19183,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/map_responsive.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/map_responsive.css"
     },
     {
         "name": "map_utils.css",
@@ -19197,7 +19197,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/map_utils.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/map_utils.css"
     },
     {
         "name": "map_widgets.css",
@@ -19211,7 +19211,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/map_widgets.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/map_widgets.css"
     },
     {
         "name": "nav_back.css",
@@ -19225,7 +19225,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/nav_back.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_back.css"
     },
     {
         "name": "nav_control_menus.css",
@@ -19239,7 +19239,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/nav_control_menus.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_control_menus.css"
     },
     {
         "name": "nav_front.css",
@@ -19253,7 +19253,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/nav_front.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_front.css"
     },
     {
         "name": "nav_layout_core.css",
@@ -19267,7 +19267,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/nav_layout_core.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_layout_core.css"
     },
     {
         "name": "nav_master.css",
@@ -19281,7 +19281,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/nav_master.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_master.css"
     },
     {
         "name": "nav_neural_audio.css",
@@ -19295,7 +19295,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/nav_neural_audio.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_neural_audio.css"
     },
     {
         "name": "nav_orbital_core.css",
@@ -19309,7 +19309,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/nav_orbital_core.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_orbital_core.css"
     },
     {
         "name": "nav_search_interface.css",
@@ -19323,7 +19323,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/nav_search_interface.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_search_interface.css"
     },
     {
         "name": "nav_security.css",
@@ -19337,7 +19337,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/nav_security.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_security.css"
     },
     {
         "name": "nav_status_widgets.css",
@@ -19351,7 +19351,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/nav_status_widgets.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_status_widgets.css"
     },
     {
         "name": "nav_sys_ops.css",
@@ -19365,7 +19365,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/nav_sys_ops.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_sys_ops.css"
     },
     {
         "name": "nav_theme_effects.css",
@@ -19379,7 +19379,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/nav_theme_effects.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_theme_effects.css"
     },
     {
         "name": "nav_user_gateway.css",
@@ -19393,7 +19393,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/nav_user_gateway.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_user_gateway.css"
     },
     {
         "name": "nav_visual_proto.css",
@@ -19407,7 +19407,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/css/nav_visual_proto.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/css/nav_visual_proto.css"
     },
     {
         "name": "map_controls.js",
@@ -19421,7 +19421,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_controls.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_controls.js"
     },
     {
         "name": "map_core.js",
@@ -19435,7 +19435,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_core.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_core.js"
     },
     {
         "name": "map_data.js",
@@ -19449,7 +19449,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_data.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_data.js"
     },
     {
         "name": "map_distance.js",
@@ -19463,7 +19463,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_distance.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_distance.js"
     },
     {
         "name": "map_elements.js",
@@ -19477,7 +19477,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_elements.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_elements.js"
     },
     {
         "name": "map_locations.js",
@@ -19491,7 +19491,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_locations.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_locations.js"
     },
     {
         "name": "map_modals.js",
@@ -19505,7 +19505,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_modals.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_modals.js"
     },
     {
         "name": "map_modes.js",
@@ -19519,7 +19519,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_modes.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_modes.js"
     },
     {
         "name": "map_nav_core.js",
@@ -19533,7 +19533,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_nav_core.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_nav_core.js"
     },
     {
         "name": "map_ops.js",
@@ -19547,7 +19547,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_ops.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_ops.js"
     },
     {
         "name": "map_orbital.js",
@@ -19561,7 +19561,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_orbital.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_orbital.js"
     },
     {
         "name": "map_point_toggle.js",
@@ -19575,7 +19575,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_point_toggle.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_point_toggle.js"
     },
     {
         "name": "map_record.js",
@@ -19589,7 +19589,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_record.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_record.js"
     },
     {
         "name": "map_search_engine.js",
@@ -19603,7 +19603,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_search_engine.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_search_engine.js"
     },
     {
         "name": "map_state.js",
@@ -19617,7 +19617,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_state.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_state.js"
     },
     {
         "name": "map_travel_settings.js",
@@ -19631,7 +19631,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_travel_settings.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_travel_settings.js"
     },
     {
         "name": "map_ui.js",
@@ -19645,7 +19645,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_ui.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_ui.js"
     },
     {
         "name": "map_ui_utilities.js",
@@ -19659,7 +19659,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_ui_utilities.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_ui_utilities.js"
     },
     {
         "name": "map_utils.js",
@@ -19673,7 +19673,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_utils.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_utils.js"
     },
     {
         "name": "map_visual_styles.js",
@@ -19687,7 +19687,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_visual_styles.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_visual_styles.js"
     },
     {
         "name": "map_visual_sync.js",
@@ -19701,7 +19701,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_visual_sync.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_visual_sync.js"
     },
     {
         "name": "map_widgets.js",
@@ -19715,7 +19715,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/map_widgets.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/map_widgets.js"
     },
     {
         "name": "nav_back.js",
@@ -19729,7 +19729,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/nav_back.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/nav_back.js"
     },
     {
         "name": "nav_front.js",
@@ -19743,7 +19743,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/nav_front.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/nav_front.js"
     },
     {
         "name": "nav_master.js",
@@ -19757,7 +19757,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/map/js/nav_master.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/map/js/nav_master.js"
     },
     {
         "name": "implementation_plan.md",
@@ -19771,7 +19771,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/implementation_plan.md"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/implementation_plan.md"
     },
     {
         "name": "asset_manifest.js",
@@ -19785,7 +19785,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/assets/asset_manifest.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/assets/asset_manifest.js"
     },
     {
         "name": "hybrid_hub_mockup.png",
@@ -19799,7 +19799,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/dashboard/hybrid_hub_mockup.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/dashboard/hybrid_hub_mockup.png"
     },
     {
         "name": "nav_entry_mockup.png",
@@ -19813,7 +19813,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/dashboard/nav_entry_mockup.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/dashboard/nav_entry_mockup.png"
     },
     {
         "name": "centered_neon_command_hub_mockup_3_1774465614944.png",
@@ -19827,7 +19827,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/centered_neon_command_hub_mockup_3_1774465614944.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/centered_neon_command_hub_mockup_3_1774465614944.png"
     },
     {
         "name": "frontal_high_tech_wireframe_mockup_4_1774465632074.png",
@@ -19841,7 +19841,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/frontal_high_tech_wireframe_mockup_4_1774465632074.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/frontal_high_tech_wireframe_mockup_4_1774465632074.png"
     },
     {
         "name": "front_facing_holographic_globe_mockup_1_1774465579059.png",
@@ -19855,7 +19855,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/front_facing_holographic_globe_mockup_1_1774465579059.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/front_facing_holographic_globe_mockup_1_1774465579059.png"
     },
     {
         "name": "holographic_glass_slide_out_mockup.png",
@@ -19869,7 +19869,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/holographic_glass_slide_out_mockup.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/holographic_glass_slide_out_mockup.png"
     },
     {
         "name": "holographic_map_mockup_1774464303274.png",
@@ -19883,7 +19883,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/holographic_map_mockup_1774464303274.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/holographic_map_mockup_1774464303274.png"
     },
     {
         "name": "holographic_map_modern_ui_mockup_1774465279368.png",
@@ -19897,7 +19897,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/holographic_map_modern_ui_mockup_1774465279368.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/holographic_map_modern_ui_mockup_1774465279368.png"
     },
     {
         "name": "holographic_space_map_mockup_1_1774465441662.png",
@@ -19911,7 +19911,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/holographic_space_map_mockup_1_1774465441662.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/holographic_space_map_mockup_1_1774465441662.png"
     },
     {
         "name": "minimalist_high_tech_ui_mockup_4_1774465506087.png",
@@ -19925,7 +19925,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/minimalist_high_tech_ui_mockup_4_1774465506087.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/minimalist_high_tech_ui_mockup_4_1774465506087.png"
     },
     {
         "name": "neon_frontier_dashboard_mockup_3_1774465485474.png",
@@ -19939,7 +19939,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/neon_frontier_dashboard_mockup_3_1774465485474.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/neon_frontier_dashboard_mockup_3_1774465485474.png"
     },
     {
         "name": "neural_projection_sidebar_mockup.png",
@@ -19953,7 +19953,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/neural_projection_sidebar_mockup.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/neural_projection_sidebar_mockup.png"
     },
     {
         "name": "orbital_command_ring_mockup.png",
@@ -19967,7 +19967,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/orbital_command_ring_mockup.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/orbital_command_ring_mockup.png"
     },
     {
         "name": "orbital_command_variation_1.png",
@@ -19981,7 +19981,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/orbital_command_variation_1.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/orbital_command_variation_1.png"
     },
     {
         "name": "orbital_command_variation_2.png",
@@ -19995,7 +19995,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/orbital_command_variation_2.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/orbital_command_variation_2.png"
     },
     {
         "name": "orbital_command_variation_3.png",
@@ -20009,7 +20009,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/orbital_command_variation_3.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/orbital_command_variation_3.png"
     },
     {
         "name": "settings_orbital_variation_1.png",
@@ -20023,7 +20023,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_1.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_1.png"
     },
     {
         "name": "settings_orbital_variation_2.png",
@@ -20037,7 +20037,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_2.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_2.png"
     },
     {
         "name": "settings_orbital_variation_2_final.png",
@@ -20051,7 +20051,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_2_final.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_2_final.png"
     },
     {
         "name": "settings_orbital_variation_2_v2.png",
@@ -20065,7 +20065,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_2_v2.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_2_v2.png"
     },
     {
         "name": "settings_orbital_variation_3.png",
@@ -20079,7 +20079,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_3.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/settings_orbital_variation_3.png"
     },
     {
         "name": "symmetrical_tactical_dashboard_mockup_2_1774465597395.png",
@@ -20093,7 +20093,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/symmetrical_tactical_dashboard_mockup_2_1774465597395.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/symmetrical_tactical_dashboard_mockup_2_1774465597395.png"
     },
     {
         "name": "tactical_command_center_mockup_2_1774465465280.png",
@@ -20107,7 +20107,7 @@ window.PROJECT_ASSETS = [
         "perf": 90,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/map/tactical_command_center_mockup_2_1774465465280.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/map/tactical_command_center_mockup_2_1774465465280.png"
     },
     {
         "name": "audio_script_terminal.png",
@@ -20121,7 +20121,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/terminal/audio_script_terminal.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/terminal/audio_script_terminal.png"
     },
     {
         "name": "current_state_terminal.png",
@@ -20135,7 +20135,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/terminal/current_state_terminal.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/terminal/current_state_terminal.png"
     },
     {
         "name": "terminal_tabs_mockup.png",
@@ -20149,7 +20149,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/terminal/terminal_tabs_mockup.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/terminal/terminal_tabs_mockup.png"
     },
     {
         "name": "terminal_tabs_mockup_v2.png",
@@ -20163,7 +20163,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/Mockups/terminal/terminal_tabs_mockup_v2.png"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/Mockups/terminal/terminal_tabs_mockup_v2.png"
     },
     {
         "name": "background.css",
@@ -20177,7 +20177,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/shared/background.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/shared/background.css"
     },
     {
         "name": "background.js",
@@ -20191,7 +20191,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/shared/background.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/shared/background.js"
     },
     {
         "name": "navbar.css",
@@ -20205,7 +20205,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/shared/navbar.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/shared/navbar.css"
     },
     {
         "name": "navbar.html",
@@ -20219,7 +20219,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/shared/navbar.html"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/shared/navbar.html"
     },
     {
         "name": "navbar.js",
@@ -20233,7 +20233,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/shared/navbar.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/shared/navbar.js"
     },
     {
         "name": "notifications.css",
@@ -20247,7 +20247,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/shared/notifications.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/shared/notifications.css"
     },
     {
         "name": "notifications.html",
@@ -20261,7 +20261,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/shared/notifications.html"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/shared/notifications.html"
     },
     {
         "name": "notifications.js",
@@ -20275,7 +20275,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/shared/notifications.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/shared/notifications.js"
     },
     {
         "name": "settings.css",
@@ -20289,7 +20289,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/shared/settings.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/shared/settings.css"
     },
     {
         "name": "settings.html",
@@ -20303,7 +20303,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/shared/settings.html"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/shared/settings.html"
     },
     {
         "name": "settings.js",
@@ -20317,7 +20317,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/shared/settings.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/shared/settings.js"
     },
     {
         "name": "visual_sync.js",
@@ -20331,7 +20331,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/shared/visual_sync.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/shared/visual_sync.js"
     },
     {
         "name": "domain.css",
@@ -20345,7 +20345,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/terminal/domain/domain.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/terminal/domain/domain.css"
     },
     {
         "name": "domain.html",
@@ -20359,7 +20359,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/terminal/domain/domain.html"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/terminal/domain/domain.html"
     },
     {
         "name": "domain.js",
@@ -20373,7 +20373,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/terminal/domain/domain.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/terminal/domain/domain.js"
     },
     {
         "name": "global.css",
@@ -20387,7 +20387,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/terminal/global/global.css"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/terminal/global/global.css"
     },
     {
         "name": "global.html",
@@ -20401,7 +20401,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/terminal/global/global.html"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/terminal/global/global.html"
     },
     {
         "name": "global.js",
@@ -20415,7 +20415,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../memory/06 Internal Audit/v2.0/terminal/global/global.js"
+        "path": "../../../../../memory/06 Internal Audit/v2.0/terminal/global/global.js"
     },
     {
         "name": "07.01_AI_MODELS_MEMORY.md",
@@ -20429,7 +20429,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/07 AI Training & Models/07.01_AI_MODELS_MEMORY.md"
+        "path": "../../../../../memory/07 AI Training & Models/07.01_AI_MODELS_MEMORY.md"
     },
     {
         "name": "08.01_PROTOCOL_X_MEMORY.md",
@@ -20443,7 +20443,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/08 Protocol X/08.01_PROTOCOL_X_MEMORY.md"
+        "path": "../../../../../memory/08 Protocol X/08.01_PROTOCOL_X_MEMORY.md"
     },
     {
         "name": "Matra_Gyan_Audio_Scripts.md",
@@ -20457,7 +20457,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/09 Audio Script/Matra_Gyan_Audio_Scripts.md"
+        "path": "../../../../../memory/09 Audio Script/Matra_Gyan_Audio_Scripts.md"
     },
     {
         "name": "10.01_MVP_AUDIT_REPORT.md",
@@ -20471,7 +20471,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/10 MVP/10.01_MVP_AUDIT_REPORT.md"
+        "path": "../../../../../memory/10 MVP/10.01_MVP_AUDIT_REPORT.md"
     },
     {
         "name": "10.02_MVP_PRIORITY_1_IMPLEMENTATION.md",
@@ -20485,7 +20485,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/10 MVP/10.02_MVP_PRIORITY_1_IMPLEMENTATION.md"
+        "path": "../../../../../memory/10 MVP/10.02_MVP_PRIORITY_1_IMPLEMENTATION.md"
     },
     {
         "name": "10.03_MVP_PRIORITY_2_IMPLEMENTATION.md",
@@ -20499,7 +20499,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/10 MVP/10.03_MVP_PRIORITY_2_IMPLEMENTATION.md"
+        "path": "../../../../../memory/10 MVP/10.03_MVP_PRIORITY_2_IMPLEMENTATION.md"
     },
     {
         "name": "10.04_STATIC_SITE_MONETIZATION.md",
@@ -20513,7 +20513,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/10 MVP/10.04_STATIC_SITE_MONETIZATION.md"
+        "path": "../../../../../memory/10 MVP/10.04_STATIC_SITE_MONETIZATION.md"
     },
     {
         "name": "11.01_SECURITY_ETHICS_MEMORY.md",
@@ -20527,7 +20527,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Documentation",
         "purpose": "Codifies project rules, workflows, and developer guidelines for internal auditing.",
-        "path": "../../../../memory/11 Security & Ethics/11.01_SECURITY_ETHICS_MEMORY.md"
+        "path": "../../../../../memory/11 Security & Ethics/11.01_SECURITY_ETHICS_MEMORY.md"
     },
     {
         "name": "analyze_alternative_audio.py",
@@ -20541,7 +20541,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/analyze_alternative_audio.py"
+        "path": "../../../../../scripts/analyze_alternative_audio.py"
     },
     {
         "name": "analyze_audio_links.py",
@@ -20555,7 +20555,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/analyze_audio_links.py"
+        "path": "../../../../../scripts/analyze_audio_links.py"
     },
     {
         "name": "delete_redundant_audio.py",
@@ -20569,7 +20569,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/delete_redundant_audio.py"
+        "path": "../../../../../scripts/delete_redundant_audio.py"
     },
     {
         "name": "find_missing_audio.py",
@@ -20583,7 +20583,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/find_missing_audio.py"
+        "path": "../../../../../scripts/find_missing_audio.py"
     },
     {
         "name": "find_short_audio.py",
@@ -20597,7 +20597,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/find_short_audio.py"
+        "path": "../../../../../scripts/find_short_audio.py"
     },
     {
         "name": "generate_batch_audio.py",
@@ -20611,7 +20611,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/generate_batch_audio.py"
+        "path": "../../../../../scripts/generate_batch_audio.py"
     },
     {
         "name": "generate_matra_audio.py",
@@ -20625,7 +20625,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/generate_matra_audio.py"
+        "path": "../../../../../scripts/generate_matra_audio.py"
     },
     {
         "name": "scan_project.py",
@@ -20639,7 +20639,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/scan_project.py"
+        "path": "../../../../../scripts/scan_project.py"
     },
     {
         "name": "analyze_emojis.py",
@@ -20653,7 +20653,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/audio_pipeline/analyze_emojis.py"
+        "path": "../../../../../scripts/audio_pipeline/analyze_emojis.py"
     },
     {
         "name": "audit_assets.py",
@@ -20667,7 +20667,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/audio_pipeline/audit_assets.py"
+        "path": "../../../../../scripts/audio_pipeline/audit_assets.py"
     },
     {
         "name": "generate_all_missing.py",
@@ -20681,7 +20681,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/audio_pipeline/generate_all_missing.py"
+        "path": "../../../../../scripts/audio_pipeline/generate_all_missing.py"
     },
     {
         "name": "generate_funny_names.py",
@@ -20695,7 +20695,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/audio_pipeline/generate_funny_names.py"
+        "path": "../../../../../scripts/audio_pipeline/generate_funny_names.py"
     },
     {
         "name": "generate_system_assets.py",
@@ -20709,7 +20709,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/audio_pipeline/generate_system_assets.py"
+        "path": "../../../../../scripts/audio_pipeline/generate_system_assets.py"
     },
     {
         "name": "move_and_update_names.py",
@@ -20723,7 +20723,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/audio_pipeline/move_and_update_names.py"
+        "path": "../../../../../scripts/audio_pipeline/move_and_update_names.py"
     },
     {
         "name": "refined_audit.py",
@@ -20737,7 +20737,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/audio_pipeline/refined_audit.py"
+        "path": "../../../../../scripts/audio_pipeline/refined_audit.py"
     },
     {
         "name": "update_icons.py",
@@ -20751,7 +20751,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/audio_pipeline/update_icons.py"
+        "path": "../../../../../scripts/audio_pipeline/update_icons.py"
     },
     {
         "name": "build_database.js",
@@ -20765,7 +20765,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Data Architecture",
         "purpose": "Maintains project state and provides structured schemas for application scaling.",
-        "path": "../../../../scripts/data_pipeline/build_database.js"
+        "path": "../../../../../scripts/data_pipeline/build_database.js"
     },
     {
         "name": "cat_excel.js",
@@ -20779,7 +20779,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../scripts/data_pipeline/cat_excel.js"
+        "path": "../../../../../scripts/data_pipeline/cat_excel.js"
     },
     {
         "name": "extract_colors.js",
@@ -20793,7 +20793,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "Style/Logic Component",
         "purpose": "Defines the Frontier/Lead Auditor design language and interactive application behavior.",
-        "path": "../../../../scripts/data_pipeline/extract_colors.js"
+        "path": "../../../../../scripts/data_pipeline/extract_colors.js"
     },
     {
         "name": "extract_india_states.py",
@@ -20807,7 +20807,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/data_pipeline/extract_india_states.py"
+        "path": "../../../../../scripts/data_pipeline/extract_india_states.py"
     },
     {
         "name": "generate_india_js.py",
@@ -20821,7 +20821,7 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/data_pipeline/generate_india_js.py"
+        "path": "../../../../../scripts/data_pipeline/generate_india_js.py"
     },
     {
         "name": "verify_counts.py",
@@ -20835,6 +20835,6 @@ window.PROJECT_ASSETS = [
         "perf": 100,
         "use": "System Resource",
         "purpose": "Supports core project functionality.",
-        "path": "../../../../scripts/data_pipeline/verify_counts.py"
+        "path": "../../../../../scripts/data_pipeline/verify_counts.py"
     }
 ];

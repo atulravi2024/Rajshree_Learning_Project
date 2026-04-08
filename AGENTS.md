@@ -1,6 +1,32 @@
 # AGENTS.md - Rajshree Learning Project
 
-A pure HTML/CSS/JS Hindi flashcard app for preschool children (3-5 years). Runs from `file://` or GitHub Pages. **No build tools required** for frontend.
+A high-fidelity HTML/CSS/JS Hindi flashcard ecosystem for children (ages 3–5). Runs directly from `file://` or GitHub Pages. Zero frontend build requirement.
+
+## 📁 System Architecture (Folder Structure)
+
+```
+Rajshree_Learning_Project/
+├── frontend/               ← Learning UI Core
+│   ├── assets/             ← Universal Multimedia (Audio/Images)
+│   ├── desktop/            ← Desktop-specific application
+│   ├── mobile/             ← Mobile-specific application
+│   └── shared/             ← Common assets, data logic, and UI tokens
+├── database/               ← Backend Data Repository
+│   ├── excel/              ← Master .xlsx dataset & backups (DEMO ONLY)
+│   ├── master_records/     ← Global/India city & state JSON datasets
+│   └── schemas/            ← Python/JS database utility tools
+├── backend/                ← Backend Core Logic
+│   └── tts_engine/         ← Edge-TTS generation engine (Madhur, Swara voices)
+├── scripts/                ← Advanced Operational Pipelines
+│   ├── audio_pipeline/     ← Batch audio generation and audit tools
+│   └── data_pipeline/      ← Data extraction and JS building tools
+├── memory/                 ← Project Intelligence (12 Memory Domains)
+│   ├── 00-11               ← System, State, Audit, AI, and Ethics
+├── admin_panel/            ← Management Interface (Desktop/Mobile)
+├── index.html              ← Main Entry Point
+├── sitemap.xml             ← SEO Sitemap
+└── robots.txt              ← Search Engine Instructions
+```
 
 ---
 
@@ -11,147 +37,99 @@ A pure HTML/CSS/JS Hindi flashcard app for preschool children (3-5 years). Runs 
 - Run `npm run dev` or similar (unless for backend/scripts)
 - Use `fetch()` for local JSON/HTML files
 - Commit absolute paths (`C:\...`, `/Users/...`)
+- **NEVER** use Excel for backup, restore, or reading unless user manually says so.
 
-### ✅ ALWAYS DO
-- Open via file path: `file:///path/to/index.html`
-- Use relative paths for assets
-- Use JavaScript template strings for inline components
-
----
-
-## Build Commands
-
-**Frontend (static):** No build needed. Open `index.html` directly.
-
-**Backend Scripts:**
-```bash
-npm install
-node scripts/data_pipeline/build_database.js     # Build data from Excel
-node scripts/data_pipeline/cat_excel.js         # Extract categories
-node database/schemas/upgrade_excel.js          # DB upgrade
-```
-
-**GitHub Actions:** Push to `main` auto-deploys to GitHub Pages.
+### 🚨 FORBIDDEN ACTIONS
+- **NEVER** use `http://localhost:[PORT]` for testing or viewing (Use `file:///` paths).
+- **NEVER** use `fetch()` for local files; it fails in local filesystem environments.
+- **NEVER** commit absolute computer paths (`C:\Users\...`). Use relative paths.
 
 ---
 
-## Code Style
+## 🧠 Memory Domains (00-11)
+
+| Domain | Description |
+|--------|-------------|
+| **00 System & Guardrails** | Immutable laws, memory architecture (v17.2), and safety protocols. |
+| **01 Current State** | Exhaustive technical documentation of current UI, registry, and playback standards. |
+| **02 Research & Knowledge** | Deep analysis of schemas, TTS engines, and regional expansion roadmaps. |
+| **03 Architecture & Planning** | Blueprints for project scaling, navigation logic, and infrastructure modularity. |
+| **04 Sandbox & Demos** | Experimental UI prototypes and proof-of-concept features. |
+| **05 Infrastructure & Workflows** | CI/CD pipelines, GitHub Actions, and deployment guides. |
+| **06 Internal Audit** | Neural Hub for quality assurance, asset integrity, and link verification (v2.0). |
+| **07 AI Training & Models** | Specific context and instruction sets for AI agents working in this repo. |
+| **08 Protocol X** | Real-time state monitoring and heuristic logic for detecting project structural drift. |
+| **09 Audio Script** | Master scripts for phoneme-perfect Hindi pronunciations and category intro scripts. |
+| **10 MVP** | Minimum Viable Product scope, release criteria, and feature priorities. |
+| **11 Security & Ethics** | Centralizes standards for child safety (COPPA), data privacy, and ethical AI development guidelines. |
+
+---
+
+## 🛠️ Build & Core Scripts
+
+**Note: Frontend is static and requires no build.**
+
+**Backend Pipelines (MANUAL/DEMO ONLY):**
+- `node scripts/data_pipeline/build_database.js`: Syncs manual Excel changes to JS data objects (DEMO ONLY).
+- `node scripts/data_pipeline/cat_excel.js`: Quickly checks columns and row samples from the master spreadsheet (DEMO ONLY).
+- `node database/schemas/upgrade_excel.js`: Upgrades Excel files with new future-proof columns (DEMO ONLY).
+
+**Operational Pipelines (FOR AI AGENTS):**
+
+*Data & Manifests:*
+- `python scripts/scan_project.py`: Generates the critical `asset_manifest.js` across multiple directories.
+- `python scripts/data_pipeline/generate_india_js.py`: Extracts exhaustive Indian location data into the map layer.
+
+*Audio Engineering:*
+- `python scripts/generate_batch_audio.py`: Runs the massive TTS pipeline for category audio generation.
+- `python scripts/generate_matra_audio.py`: Runs the specialized matra-completion TTS pipeline.
+
+*Integrity & Audit:*
+- `python scripts/audio_pipeline/refined_audit.py`: Performs high-resolution integrity checks on audio assets.
+- `python scripts/analyze_audio_links.py`: Audits audio link integrity across the project database.
+- `python scripts/find_missing_audio.py`: Identifies and reports missing audio assets for registry entries.
+
+---
+
+## 🧼 Code Style & Standards
 
 ### JavaScript
+- **Global State**: Managed via `window.RAJSHREE_DATA` and `window.selectedCategory`.
+- **Audio Paths**: Always use `window.AUDIO_BASE_PATH` for relative asset calculation.
+- **Function Naming**: camelCase (e.g., `updateUI()`) with PascalCase for classes (e.g., `Segmenter`).
 
-**Global State (window object):**
-```javascript
-window.selectedCategory = '';
-window.currentLayout = '1';
-window.AUDIO_BASE_PATH = 'assets/audio/';
-```
-
-**Data Files:**
-```javascript
-if (!window.RAJSHREE_DATA) window.RAJSHREE_DATA = {};
-window.RAJSHREE_DATA.swar = [
-    { letter: 'अ', word: 'अनार', emoji: '🍎', audio: 'varnamala/swar/v_a_anar.mp3' },
-];
-```
-
-**DOM Guards:**
-```javascript
-const master = document.getElementById('master-container');
-if (!master) return;
-prevBtn?.classList.remove('hidden');
-```
-
-**Function Naming:**
-- camelCase: `renderCards()`, `updateDisplay()`
-- PascalCase: `Segmenter`, `ChildSafetyLock`
-- Verb prefix: `playSound()`, `stopCurrentAudio()`
-
-**Event Handling:**
-```javascript
-document.addEventListener('DOMContentLoaded', () => { /* init */ });
-card.onclick = () => flipCard(card, data.audio);
-```
-
-### CSS
-
-**Variables (base.css):**
-```css
-:root {
-    --primary-pink: #FF1493;
-    --light-pink: #FFDEE9;
-    --border-radius-lg: 50px;
-    --nav-height: 95px;
-}
-```
-
-**Font Import:**
-```css
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Hind:wght@400;700&family=Bubblegum+Sans&display=swap');
-```
-
-**Class Naming:** kebab-case (`master-container`, `card-front`, `hidden`, `is-flipped`)
+### CSS (Vanilla)
+- **Glassmorphism**: Use variables like `--primary-pink` and `--border-radius-lg` defined in `base.css`.
+- **Banners**: Consistent `is-hidden` and `active-link` classes for layout navigation.
 
 ---
 
-## Error Handling
+## 🧠 Category Registry
 
-**Audio:**
-```javascript
-currentAudio.addEventListener('error', () => {
-    if (window.ChildSafetyLock) window.ChildSafetyLock.unlock();
-    card.classList.remove('playing');
-});
-```
-
-**DOM:**
-```javascript
-const master = document.getElementById('master-container');
-if (!master) return;
-```
-
-**Scripts (try-catch):**
-```javascript
-try { xlsx.readFile(EXCEL_FILE); }
-catch (e) { console.error('Build failed:', e.message); }
-```
+| Domain | Modules |
+|--------|---------|
+| **Varnamala** | `swar.js`, `vyanjan.js`, `matra.js`, `samyukt.js` |
+| **Ganit** | `numbers_10.js`, `numbers_100.js`, `shapes.js`, `comparisons.js`, `tables.js` |
+| **Mera Sansar** | `parivar.js`, `sharir_ke_ang.js`, `kapde.js`, `ghar.js` |
+| **Rangon Ka Sansar** | `primary_colors.js`, `secondary_colors.js` |
+| **Samay & Prakriti** | `mosam.js`, `mausam.js`, `din_rat.js` |
 
 ---
 
-## Audio Naming
+## 🎙️ Audio & TTS Pipeline
 
-| Pattern | Example | Purpose |
-|---------|---------|---------|
-| `v_<letter>_<word>.mp3` | `v_a_anar.mp3` | Varnamala |
-| `num_<number>.mp3` | `num_42.mp3` | Numbers |
-| `final_<category>.mp3` | `final_swar.mp3` | Intro |
-| `sub_<subcategory>.mp3` | `sub_animals.mp3` | Sub-category |
-
----
-
-## Git Workflow
-
-**Branches:** `main`, `dev`, `feature/*`, `fix/*`
-
-**Commits:**
-```
-<type>(<scope>): <description>
-Types: feat, fix, style, refactor, docs, audio, chore
-```
+- **Engine**: Microsoft Edge-TTS (Neural)
+- **Primary Voices**:
+  - `hi-IN-MadhurNeural`: Warm, child-friendly male voice.
+  - `hi-IN-SwaraNeural`: Clear, expressive female voice.
+  - `hi-IN-NeerjaExpressive`: High-fidelity expressive child voice.
+- **Processing**: Matra-completion logic ensures phoneme-perfect pronunciation for compound Hindi characters.
 
 ---
 
-## Adding Categories
+## 🤝 Adding Categories
 
-1. Create `frontend/src/js/data/<category>/<name>.js`
-2. Add script tag to `index.html` (before core scripts)
-3. Register in navigation router
-4. Add audio files to `assets/audio/<category>/`
-
----
-
-## Child Safety
-
-`ChildSafetyLock` handles:
-- Parental gate (3s hold for settings)
-- Interaction locking during audio
-- Navigation safety in slideshow mode
+1. Create a new data JS file in `frontend/shared/data/<category>/`.
+2. Reference the script in both `frontend/desktop/index.html` and `frontend/mobile/index.html` BEFORE logic scripts.
+3. Register the new route in `frontend/desktop/js/navigation/router.js`.
+4. Run `python scripts/scan_project.py` to update manifests.

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajshree Hindi Learning - Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=frontend/desktop/index.html">
+    <script>
+        // Redirect to the correct versioned entry point based on device
+        if (window.innerWidth <= 768) {
+            window.location.replace('frontend/mobile/index.html');
+        } else {
+            window.location.replace('frontend/desktop/index.html');
+        }
+    </script>
+    <style>
+        body { font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #FFDEE9; }
+        p { font-size: 1.5rem; color: #FF1493; }
+    </style>
+</head>
+<body>
+    <p>🚀 Redirecting to Rajshree Hindi Learning...</p>
+    <noscript>
+        <p>Please <a href="frontend/desktop/index.html">click here</a> to open the app.</p>
+    </noscript>
+</body>
+</html>

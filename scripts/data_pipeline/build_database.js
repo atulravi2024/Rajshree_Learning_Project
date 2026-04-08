@@ -2,7 +2,7 @@ const xlsx = require('xlsx');
 const fs = require('fs');
 const path = require('path');
 
-const EXCEL_FILE = path.join(__dirname, '..', '..', 'database', 'master_records', 'Rajshree_Learning_Data_Master.xlsx');
+const EXCEL_FILE = path.join(__dirname, '..', '..', 'database', 'excel', 'Rajshree_Learning_Data_Master.xlsx');
 const DATA_DIR = path.join(__dirname, '..', '..', 'frontend', 'src', 'js', 'data');
 
 try {

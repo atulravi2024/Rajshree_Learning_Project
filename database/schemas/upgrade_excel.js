@@ -1,6 +1,6 @@
 const xlsx = require('xlsx');
-
-const filePath = 'C:\\\\Users\\\\Atul Verma\\\\.openclaw\\\\workspace\\\\RajShree_Project\\\\Rajshree Learning Project\\\\Rajshree_Learning_Data_Master.xlsx';
+const path = require('path');
+const filePath = path.join(__dirname, '..', 'excel', 'Rajshree_Learning_Data_Master.xlsx');
 
 try {
     const wb = xlsx.readFile(filePath);

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="राजश्री हिंदी - मोबाइल ऐप। Rajshree Hindi Learning Mobile App for preschool children.">
+    <title>राजश्री हिंदी - मोबाइल | Rajshree Hindi Mobile 🎒</title>
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Hind:wght@400;700&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main id="master-mobile">
+        <!-- Dynamic card content will go here -->
+        <div class="loading-state">शुरू किया जा रहा है...</div>
+    </main>
+
+    <nav class="mobile-nav">
+        <a class="nav-item" onclick="prev()" title="Previous">
+            <span class="nav-icon">⬅️</span>
+            <span class="nav-label">पीछे (Prev)</span>
+        </a>
+        <a class="nav-item active" onclick="window.location.reload()" title="Home">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">होम (Home)</span>
+        </a>
+        <a class="nav-item" onclick="next()" title="Next">
+            <span class="nav-icon">➡️</span>
+            <span class="nav-label">अगला (Next)</span>
+        </a>
+        <a class="nav-item" onclick="openSettings()" title="Settings">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-label">सेटिंग्स (Settings)</span>
+        </a>
+    </nav>
+
+    <!-- Essential Global Variables -->
+    <script>
+        window.AUDIO_BASE_PATH = '../assets/audio/';
+        window.RAJSHREE_DATA = {}; // Will be populated by individual data scripts
+    </script>
+
+    <!-- ═══════════════════════════════════════════════
+         SHARED DATA MODULES
+         Path: ../shared/data/[category]/[file].js
+         ═══════════════════════════════════════════════ -->
+
+    <!-- Varnamala Data -->
+    <script src="../shared/data/varnamala/swar.js"></script>
+    <script src="../shared/data/varnamala/vyanjan.js"></script>
+    <script src="../shared/data/varnamala/samyukt.js"></script>
+    <script src="../shared/data/varnamala/matra.js"></script>
+
+    <!-- Ganit (Math) Data -->
+    <script src="../shared/data/ganit/numbers_10.js"></script>
+    <script src="../shared/data/ganit/numbers_100.js"></script>
+    <script src="../shared/data/ganit/tables_10_m1.js"></script>
+    <script src="../shared/data/ganit/tables_10_m2.js"></script>
+    <script src="../shared/data/ganit/shapes.js"></script>
+    <script src="../shared/data/ganit/comparisons.js"></script>
+
+    <!-- Mera Sansar Data -->
+    <script src="../shared/data/mera_sansar/family.js"></script>
+    <script src="../shared/data/mera_sansar/body_parts.js"></script>
+    <script src="../shared/data/mera_sansar/animals_wild.js"></script>
+    <script src="../shared/data/mera_sansar/animals_domestic.js"></script>
+    <script src="../shared/data/mera_sansar/birds.js"></script>
+    <script src="../shared/data/mera_sansar/insects.js"></script>
+    <script src="../shared/data/mera_sansar/fruits.js"></script>
+    <script src="../shared/data/mera_sansar/vegetables.js"></script>
+    <script src="../shared/data/mera_sansar/habits.js"></script>
+    <script src="../shared/data/mera_sansar/vehicles.js"></script>
+    <script src="../shared/data/mera_sansar/emotions.js"></script>
+    <script src="../shared/data/mera_sansar/clothes.js"></script>
+    <script src="../shared/data/mera_sansar/actions.js"></script>
+    <script src="../shared/data/mera_sansar/helpers.js"></script>
+    <script src="../shared/data/mera_sansar/toys.js"></script>
+    <script src="../shared/data/mera_sansar/space.js"></script>
+    <script src="../shared/data/mera_sansar/festivals.js"></script>
+    <script src="../shared/data/mera_sansar/objects.js"></script>
+    <script src="../shared/data/mera_sansar/sounds.js"></script>
+    <script src="../shared/data/mera_sansar/places.js"></script>
+    <script src="../shared/data/mera_sansar/games.js"></script>
+    <script src="../shared/data/mera_sansar/food.js"></script>
+    <script src="../shared/data/mera_sansar/imagination.js"></script>
+    <script src="../shared/data/mera_sansar/activities.js"></script>
+    <script src="../shared/data/mera_sansar/animals_smaller.js"></script>
+    <script src="../shared/data/mera_sansar/instruments.js"></script>
+    <script src="../shared/data/mera_sansar/magic.js"></script>
+
+    <!-- Rangon Ka Sansar Data -->
+    <script src="../shared/data/rangon_ka_sansar/colors_primary.js"></script>
+    <script src="../shared/data/rangon_ka_sansar/colors_secondary.js"></script>
+    <script src="../shared/data/rangon_ka_sansar/colors_natural.js"></script>
+    <script src="../shared/data/rangon_ka_sansar/colors_pink_red.js"></script>
+    <script src="../shared/data/rangon_ka_sansar/colors_blue_green.js"></script>
+    <script src="../shared/data/rangon_ka_sansar/colors_brown_beige.js"></script>
+    <script src="../shared/data/rangon_ka_sansar/colors_metallic.js"></script>
+    <script src="../shared/data/rangon_ka_sansar/colors_special.js"></script>
+
+    <!-- Samay aur Prakriti Data -->
+    <script src="../shared/data/samay_prakriti/days_week.js"></script>
+    <script src="../shared/data/samay_prakriti/months_year.js"></script>
+    <script src="../shared/data/samay_prakriti/directions.js"></script>
+    <script src="../shared/data/samay_prakriti/nature.js"></script>
+
+    <!-- ═══════════════════════════════════════════════
+         MOBILE LOGIC MODULES
+         Path: js/[file].js
+         ═══════════════════════════════════════════════ -->
+    <script src="js/main.js"></script>
+
+    <script>
+        function openSettings() {
+            window.location.href = 'settings.html';
+        }
+    </script>
+</body>
+
+</html>

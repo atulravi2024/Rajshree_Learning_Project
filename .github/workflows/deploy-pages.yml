@@ -35,14 +35,22 @@ jobs:
       
       - name: Prepare Deployment Payload
         run: |
-          mkdir deploy_payload
-          # Move 'public' contents (index.html, assets) directly to the root of our payload
-          cp -r frontend/public/* deploy_payload/
-          # Move 'src' (css, js) directly into the root so they sit next to index.html
-          cp -r frontend/src deploy_payload/
-          # Now index.html and src/ are siblings, but index.html's code currently says '../src/'.
-          # We will use 'sed' to automatically rewrite the paths inside index.html before deployment!
-          sed -i 's|../src/|src/|g' deploy_payload/index.html
+          mkdir -p deploy_payload
+          # Copy redirector and configuration files from root
+          cp index.html deploy_payload/
+          cp robots.txt deploy_payload/ 2>/dev/null || true
+          cp sitemap.xml deploy_payload/ 2>/dev/null || true
+          
+          # Copy actual application folders
+          cp -r frontend/desktop deploy_payload/
+          cp -r frontend/mobile deploy_payload/
+          cp -r frontend/shared deploy_payload/
+          cp -r frontend/assets deploy_payload/
+          
+          # Fix redirects in index.html for deployment root
+          # (Remove 'frontend/' prefix as it's the root of the deployment)
+          sed -i 's|frontend/desktop/|desktop/|g' deploy_payload/index.html
+          sed -i 's|frontend/mobile/|mobile/|g' deploy_payload/index.html
           
           # The result: A perfectly clean deployment folder where index.html is at the root, 
           # CSS/JS are in src/, and everything links perfectly!

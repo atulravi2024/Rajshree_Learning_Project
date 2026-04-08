@@ -9,7 +9,7 @@ window.currentIndex = 0;
 window.activeCardsData = [];
 window.globalVolume = 1;
 window.currentAudio = null;
-window.AUDIO_BASE_PATH = 'assets/audio/';
+window.AUDIO_BASE_PATH = '../assets/audio/';
 
 window.selectedTitle = '';
 window.selectedMain = '';

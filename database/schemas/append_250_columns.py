@@ -1,9 +1,11 @@
+import os
 import pandas as pd
 import sys
 
-# Original File Path
-file_path = r'c:\Users\Atul Verma\.openclaw\workspace\RajShree_Project\Rajshree Learning Project\Rajshree_Learning_Data_Master.xlsx'
-backup_path = r'c:\Users\Atul Verma\.openclaw\workspace\RajShree_Project\Rajshree Learning Project\Rajshree_Learning_Data_Master_backup.xlsx'
+# Original File Path (now in database/excel/)
+base_dir = os.path.dirname(__file__)
+file_path = os.path.join(base_dir, "..", "excel", "Rajshree_Learning_Data_Master.xlsx")
+backup_path = os.path.join(base_dir, "..", "excel", "backups", "Rajshree_Learning_Data_Master_backup.xlsx")
 
 print("Starting 250-Column Database Expansion...")
 
