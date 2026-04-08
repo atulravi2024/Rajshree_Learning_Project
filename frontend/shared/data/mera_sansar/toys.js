@@ -7,7 +7,7 @@ window.RAJSHREE_DATA.toys = [
     { letter: 'झू', word: 'झूला', emoji: '🎠', value: 'झू', audio: 'mera_sansar/toys/swing.mp3', textOnly: false },
     { letter: 'फि', word: 'फिसलपट्टी', emoji: '🛝', value: 'फि', audio: 'mera_sansar/toys/slide.mp3', textOnly: false },
     { letter: 'सी', word: 'सी-सॉ', emoji: '⚖️', value: 'सी', audio: 'mera_sansar/toys/seesaw.mp3', textOnly: false },
-    { letter: 'मिट्', word: 'मिट्टी के खिलौने', emoji: '🏺', value: 'मिट्', audio: 'rangon_ka_sansar/brown_beige/col_clay.mp3', textOnly: false },
+    { letter: 'मिट्', word: 'मिट्टी के खिलौने', emoji: '🏺', value: 'मिट्', audio: 'rangon_ka_sansar/col_clay.mp3', textOnly: false },
     { letter: 'जहा', word: 'जहाज़', emoji: '✈️', value: 'जहा', audio: 'mera_sansar/toys/paper_plane.mp3', textOnly: false },
     { letter: 'ब्लॉ', word: 'ब्लॉक', emoji: '🧱', value: 'ब्लॉ', audio: 'mera_sansar/toys/blocks.mp3', textOnly: false },
     { letter: 'बा', word: 'बाजा', emoji: '🎺', value: 'बा', audio: 'mera_sansar/toys/musical_toy.mp3', textOnly: false },
