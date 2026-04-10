@@ -19,319 +19,379 @@
     </header>
 
     <main>
-        <!-- Category 1: Profile Management (New Main Section) -->
-        <div class="category-block">
-            <header class="section-header">
-                <span class="section-icon">👥</span>
-                <span class="section-title">प्रोफाइल प्रबंधन</span>
-                <span class="chevron">▼</span>
-            </header>
-            <div class="category-content">
-                <div class="category-inner">
-                    <section class="settings-group">
-                        <span class="group-label">एक्टिव प्रोफाइल</span>
-                        <div class="voice-grid">
-                            <div class="voice-card active">
-                                <span class="voice-emoji">🧒</span>
-                                <span class="voice-name">राजश्री</span>
+        <!-- Category Navigation Tabs -->
+        <nav class="category-tabs" id="categoryTabs">
+            <button class="tab-btn active" data-target="cat-kids">
+                <span class="tab-icon">🧒</span>
+                <span class="tab-text">Kids</span>
+            </button>
+            <button class="tab-btn" data-target="cat-parent">
+                <span class="tab-icon">👨‍👩‍👧</span>
+                <span class="tab-text">Parent</span>
+            </button>
+            <button class="tab-btn" data-target="cat-admin">
+                <span class="tab-icon">🛠️</span>
+                <span class="tab-text">Admin</span>
+            </button>
+            <button class="tab-btn" data-target="cat-developer">
+                <span class="tab-icon">💻</span>
+                <span class="tab-text">Dev</span>
+            </button>
+        </nav>
+
+        <!-- Kids Category Section -->
+        <div id="cat-kids" class="category-view active">
+            <!-- Category 1: Profile Management -->
+            <div class="category-block">
+                <header class="section-header">
+                    <span class="section-icon">👥</span>
+                    <span class="section-title">प्रोफाइल प्रबंधन</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <span class="group-label">एक्टिव प्रोफाइल</span>
+                            <div class="voice-grid">
+                                <div class="voice-card active">
+                                    <span class="voice-emoji">🧒</span>
+                                    <span class="voice-name">राजश्री</span>
+                                </div>
+                                <div class="voice-card" onclick="alert('Demo: Add Profile...')">
+                                    <span class="voice-emoji">➕</span>
+                                    <span class="voice-name">नया जोड़ें</span>
+                                </div>
                             </div>
-                            <div class="voice-card" onclick="alert('Demo: Add Profile...')">
-                                <span class="voice-emoji">➕</span>
-                                <span class="voice-name">नया जोड़ें</span>
-                            </div>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Category 2: Audio & Speech (Updated) -->
-        <div class="category-block">
-            <header class="section-header">
-                <span class="section-icon">🔊</span>
-                <span class="section-title">आवाज़ और बोलना</span>
-                <span class="chevron">▼</span>
-            </header>
-
-            <div class="category-content">
-                <div class="category-inner">
-                    <section class="settings-group">
-                        <span class="group-label">आवाज़ चुनें (Voice)</span>
-                        <div class="voice-grid">
-                            <div class="voice-card active" data-voice="neerja" id="voice-neerja">
-                                <span class="voice-emoji">👧</span>
-                                <span class="voice-name">निर्जा</span>
+            <!-- Category 2: Audio & Speech -->
+            <div class="category-block">
+                <header class="section-header">
+                    <span class="section-icon">🔊</span>
+                    <span class="section-title">आवाज़ और बोलना</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <span class="group-label">आवाज़ चुनें (Voice)</span>
+                            <div class="voice-grid">
+                                <div class="voice-card active" data-voice="neerja" id="voice-neerja">
+                                    <span class="voice-emoji">👧</span>
+                                    <span class="voice-name">निर्जा</span>
+                                </div>
+                                <div class="voice-card" data-voice="swara" id="voice-swara">
+                                    <span class="voice-emoji">👩‍🏫</span>
+                                    <span class="voice-name">स्वरा</span>
+                                </div>
+                                <div class="voice-card" data-voice="madhur" id="voice-madhur">
+                                    <span class="voice-emoji">👨‍🏫</span>
+                                    <span class="voice-name">मधुर</span>
+                                </div>
                             </div>
-                            <div class="voice-card" data-voice="swara" id="voice-swara">
-                                <span class="voice-emoji">👩‍🏫</span>
-                                <span class="voice-name">स्वरा</span>
+                        </section>
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <span class="group-label">पार्श्व संगीत (Music)</span>
+                                    <p class="group-sub">हल्का बैकग्राउंड म्यूज़िक</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="mobile-bg-music" checked title="म्यूजिक ऑन/ऑफ">
+                                    <span class="slider"></span>
+                                </label>
                             </div>
-                            <div class="voice-card" data-voice="madhur" id="voice-madhur">
-                                <span class="voice-emoji">👨‍🏫</span>
-                                <span class="voice-name">मधुर</span>
+                        </section>
+                        <section class="settings-group">
+                            <span class="group-label">बोलने की गति (Speech Speed)</span>
+                            <div class="range-container">
+                                <input type="range" id="mobile-speed" min="0.5" max="1.5" step="0.1" value="1.0" title="बोलने की गति (Speech Speed)" aria-label="बोलने की गति">
+                                <div class="range-labels">
+                                    <span>धीमी</span>
+                                    <span>सामान्य</span>
+                                    <span>तेज़</span>
+                                </div>
                             </div>
-                        </div>
-                    </section>
-                    <section class="settings-group">
-                        <div class="toggle-row">
-                            <div>
-                                <span class="group-label">पार्श्व संगीत (Music)</span>
-                                <p class="group-sub">हल्का बैकग्राउंड म्यूज़िक</p>
+                        </section>
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <span class="group-label">साउंड इफेक्ट्स (SFX)</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="mobile-sfx" checked title="साउंड इफेक्ट्स ऑन/ऑफ">
+                                    <span class="slider"></span>
+                                </label>
                             </div>
-                            <label class="switch">
-                                <input type="checkbox" id="mobile-bg-music" checked title="म्यूजिक ऑन/ऑफ">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </section>
-                    <section class="settings-group">
-                        <span class="group-label">बोलने की गति (Speech Speed)</span>
-                        <div class="range-container">
-                            <input type="range" id="mobile-speed" min="0.5" max="1.5" step="0.1" value="1.0" title="बोलने की गति (Speech Speed)" aria-label="बोलने की गति">
-                            <div class="range-labels">
-                                <span>धीमी</span>
-                                <span>सामान्य</span>
-                                <span>तेज़</span>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="settings-group">
-                        <div class="toggle-row">
-                            <div>
-                                <span class="group-label">साउंड इफेक्ट्स (SFX)</span>
-                            </div>
-                            <label class="switch">
-                                <input type="checkbox" id="mobile-sfx" checked title="साउंड इफेक्ट्स ऑन/ऑफ">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Category 3: Visuals & Theme (Updated) -->
-        <div class="category-block">
-            <header class="section-header">
-                <span class="section-icon">🎨</span>
-                <span class="section-title">विज़ुअल्स और थीम</span>
-                <span class="chevron">▼</span>
-            </header>
-
-            <div class="category-content">
-                <div class="category-inner">
-                    <section class="settings-group">
-                        <span class="group-label">थीम का रंग (Theme Color)</span>
-                        <div class="color-grid">
-                            <div class="color-circle active circle-pink" data-theme="pink"></div>
-                            <div class="color-circle circle-blue" data-theme="blue"></div>
-                            <div class="color-circle circle-purple" data-theme="purple"></div>
-                            <div class="color-circle circle-orange" data-theme="orange"></div>
-                        </div>
-                    </section>
-                    <section class="settings-group">
-                        <span class="group-label">एनिमेशन क्वालिटी</span>
-                        <p class="group-sub">ऐप की गति के लिए चुनें</p>
-                        <select id="mobile-anim-quality" class="select-field" title="एनिमेशन क्वालिटी (Animation Quality)" aria-label="एनिमेशन क्वालिटी">
-                            <option value="high">बेहतरीन (High)</option>
-                            <option value="low">साधारण (Optimize)</option>
-                        </select>
-                    </section>
-                    <section class="settings-group">
-                        <span class="group-label">अगले कार्ड का समय (Next Card Delay)</span>
-                        <div class="range-container">
-                            <input type="range" id="mobile-delay" min="2" max="10" step="1" value="3" title="अगले कार्ड का समय (Next Card Delay)" aria-label="अगले कार्ड का समय">
-                            <div class="range-labels">
-                                <span>2s</span>
-                                <span>5s</span>
-                                <span>10s</span>
+            <!-- Category 3: Visuals & Theme -->
+            <div class="category-block">
+                <header class="section-header">
+                    <span class="section-icon">🎨</span>
+                    <span class="section-title">विज़ुअल्स और थीम</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <span class="group-label">थीम का रंग (Theme Color)</span>
+                            <div class="color-grid">
+                                <div class="color-circle active circle-pink" data-theme="pink"></div>
+                                <div class="color-circle circle-blue" data-theme="blue"></div>
+                                <div class="color-circle circle-purple" data-theme="purple"></div>
+                                <div class="color-circle circle-orange" data-theme="orange"></div>
                             </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-
-        <!-- Category 4: Learning Options (Updated) -->
-        <div class="category-block">
-            <header class="section-header">
-                <span class="section-icon">🎓</span>
-                <span class="section-title">सीखने के विकल्प</span>
-                <span class="chevron">▼</span>
-            </header>
-
-            <div class="category-content">
-                <div class="category-inner">
-                    <section class="settings-group">
-                        <span class="group-label">पढ़ाई का स्तर (Difficulty)</span>
-                        <select id="mobile-difficulty" class="select-field" title="पढ़ाई का स्तर (Difficulty Level)" aria-label="पढ़ाई का स्तर">
-                            <option value="beginner">शुरुआती (3-4 साल)</option>
-                            <option value="intermediate" selected>मध्यम (4-5 साल)</option>
-                            <option value="advanced">तेज़ (5+ साल)</option>
-                        </select>
-                    </section>
-                    <section class="settings-group">
-                        <span class="group-label">दैनिक लक्ष्य (Daily Goals)</span>
-                        <p class="group-sub">कितने कार्ड्स रोज़ाना सीखने हैं</p>
-                        <select id="mobile-daily-goal" class="select-field" title="दैनिक लक्ष्य (Daily Goal)" aria-label="दैनिक लक्ष्य">
-                            <option value="10">10 कार्ड्स</option>
-                            <option value="20">20 कार्ड्स</option>
-                            <option value="50">50 कार्ड्स</option>
-                        </select>
-                    </section>
-                </div>
-            </div>
-        </div>
-
-        <!-- Category 5: Time Management -->
-        <div class="category-block">
-            <header class="section-header">
-                <span class="section-icon">⏳</span>
-                <span class="section-title">समय प्रबंधन</span>
-                <span class="chevron">▼</span>
-            </header>
-            <div class="category-content">
-                <div class="category-inner">
-                    <section class="settings-group">
-                        <span class="group-label">स्क्रीन समय सीमा</span>
-                        <select id="mobile-timer" class="select-field" title="स्क्रीन समय सीमा (Screen Timer)" aria-label="स्क्रीन समय सीमा">
-                            <option value="15">15 मिनट</option>
-                            <option value="30">30 मिनट</option>
-                            <option value="0">अनलिमिटेड</option>
-                        </select>
-                    </section>
-                    <section class="settings-group">
-                        <div class="toggle-row">
-                            <div>
-                                <span class="group-label">ब्रेक रिमाइंडर</span>
+                        </section>
+                        <section class="settings-group">
+                            <span class="group-label">एनिमेशन क्वालिटी</span>
+                            <p class="group-sub">ऐप की गति के लिए चुनें</p>
+                            <select id="mobile-anim-quality" class="select-field" title="एनिमेशन क्वालिटी (Animation Quality)" aria-label="एनिमेशन क्वालिटी">
+                                <option value="high">बेहतरीन (High)</option>
+                                <option value="low">साधारण (Optimize)</option>
+                            </select>
+                        </section>
+                        <section class="settings-group">
+                            <span class="group-label">अगले कार्ड का समय (Next Card Delay)</span>
+                            <div class="range-container">
+                                <input type="range" id="mobile-delay" min="2" max="10" step="1" value="3" title="अगले कार्ड का समय (Next Card Delay)" aria-label="अगले कार्ड का समय">
+                                <div class="range-labels">
+                                    <span>2s</span>
+                                    <span>5s</span>
+                                    <span>10s</span>
+                                </div>
                             </div>
-                            <label class="switch">
-                                <input type="checkbox" id="mobile-break" checked title="ब्रेक रिमाइंडर ऑन/ऑफ" aria-label="ब्रेक रिमाइंडर">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Category 6: Accessibility -->
-        <div class="category-block">
-            <header class="section-header">
-                <span class="section-icon">♿</span>
-                <span class="section-title">पहुंच और उपयोग</span>
-                <span class="chevron">▼</span>
-            </header>
-            <div class="category-content">
-                <div class="category-inner">
-                    <section class="settings-group">
-                        <div class="toggle-row">
-                            <div>
-                                <span class="group-label">बड़ा टेक्स्ट (Large Text)</span>
+            <!-- Category 4: Learning Options -->
+            <div class="category-block">
+                <header class="section-header">
+                    <span class="section-icon">🎓</span>
+                    <span class="section-title">सीखने के विकल्प</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <span class="group-label">पढ़ाई का स्तर (Difficulty)</span>
+                            <select id="mobile-difficulty" class="select-field" title="पढ़ाई का स्तर (Difficulty Level)" aria-label="पढ़ाई का स्तर">
+                                <option value="beginner">शुरुआती (3-4 साल)</option>
+                                <option value="intermediate" selected>मध्यम (4-5 साल)</option>
+                                <option value="advanced">तेज़ (5+ साल)</option>
+                            </select>
+                        </section>
+                        <section class="settings-group">
+                            <span class="group-label">दैनिक लक्ष्य (Daily Goals)</span>
+                            <p class="group-sub">कितने कार्ड्स रोज़ाना सीखने हैं</p>
+                            <select id="mobile-daily-goal" class="select-field" title="दैनिक लक्ष्य (Daily Goal)" aria-label="दैनिक लक्ष्य">
+                                <option value="10">10 कार्ड्स</option>
+                                <option value="20">20 कार्ड्स</option>
+                                <option value="50">50 कार्ड्स</option>
+                            </select>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 6: Accessibility (Moved to Kids) -->
+            <div class="category-block">
+                <header class="section-header">
+                    <span class="section-icon">♿</span>
+                    <span class="section-title">पहुंच और उपयोग</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <span class="group-label">बड़ा टेक्स्ट (Large Text)</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="mobile-large-text" title="बड़ा टेक्स्ट ऑन/ऑफ" aria-label="बड़ा टेक्स्ट">
+                                    <span class="slider"></span>
+                                </label>
                             </div>
-                            <label class="switch">
-                                <input type="checkbox" id="mobile-large-text" title="बड़ा टेक्स्ट ऑन/ऑफ" aria-label="बड़ा टेक्स्ट">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </section>
-                    <section class="settings-group">
-                        <div class="toggle-row">
-                            <div>
-                                <span class="group-label">हाई कंट्रास्ट (Contrast)</span>
+                        </section>
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <span class="group-label">हाई कंट्रास्ट (Contrast)</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="mobile-contrast" title="हाई कंट्रास्ट ऑन/ऑफ" aria-label="हाई कंट्रास्ट">
+                                    <span class="slider"></span>
+                                </label>
                             </div>
-                            <label class="switch">
-                                <input type="checkbox" id="mobile-contrast" title="हाई कंट्रास्ट ऑन/ऑफ" aria-label="हाई कंट्रास्ट">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div><!-- End #cat-kids -->
 
-        <!-- Category 7: Safety & Kids Mode (Locked Security) -->
-        <div class="category-block">
-            <header class="section-header">
-                <span class="section-icon">🔒</span>
-                <span class="section-title">सुरक्षा और पिन</span>
-                <span class="chevron">▼</span>
-            </header>
-            <div class="category-content">
-                <div class="category-inner">
-                    <section class="settings-group">
-                        <button class="btn-inline" onclick="alert('Demo: Setting Parent PIN...')" title="पैरेंट पिन सेट करें">पैरेंट पिन (Set PIN)</button>
-                    </section>
-                    <section class="settings-group">
-                        <div class="toggle-row">
-                            <div>
-                                <span class="group-label">चाइल्ड लॉक (Child Lock)</span>
+        <!-- Parent Category Section -->
+        <div id="cat-parent" class="category-view">
+            <!-- Category 5: Time Management -->
+            <div class="category-block">
+                <header class="section-header">
+                    <span class="section-icon">⏳</span>
+                    <span class="section-title">समय प्रबंधन</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <span class="group-label">स्क्रीन समय सीमा</span>
+                            <select id="mobile-timer" class="select-field" title="स्क्रीन समय सीमा (Screen Timer)" aria-label="स्क्रीन समय सीमा">
+                                <option value="15">15 मिनट</option>
+                                <option value="30">30 मिनट</option>
+                                <option value="0">अनलिमिटेड</option>
+                            </select>
+                        </section>
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <span class="group-label">ब्रेक रिमाइंडर</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="mobile-break" checked title="ब्रेक रिमाइंडर ऑन/ऑफ" aria-label="ब्रेक रिमाइंडर">
+                                    <span class="slider"></span>
+                                </label>
                             </div>
-                            <label class="switch">
-                                <input type="checkbox" id="mobile-lock" title="चाइल्ड लॉक ऑन/ऑफ" aria-label="चाइल्ड लॉक">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Category 8: Storage & Sync (New Main Section) -->
-        <div class="category-block">
-            <header class="section-header">
-                <span class="section-icon">📂</span>
-                <span class="section-title">स्टोरेज और बैकअप</span>
-                <span class="chevron">▼</span>
-            </header>
-            <div class="category-content">
-                <div class="category-inner">
-                    <section class="settings-group">
-                        <button class="btn-inline" onclick="alert('Demo: Syncing with Cloud...')" title="क्लाउड बैकअप">क्लाउड बैकअप (Cloud Sync)</button>
-                    </section>
-                    <section class="settings-group">
-                        <button class="btn-inline btn-cache-clear" onclick="localStorage.clear(); alert('Cache Cleared!'); location.reload();" title="कैश साफ़ करें">कैश साफ़ करें (Clear Cache)</button>
-                    </section>
+            <!-- Category 7: Safety & Kids Mode -->
+            <div class="category-block">
+                <header class="section-header">
+                    <span class="section-icon">🔒</span>
+                    <span class="section-title">सुरक्षा और पिन</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <button class="btn-inline" onclick="alert('Demo: Setting Parent PIN...')" title="पैरेंट पिन सेट करें">पैरेंट पिन (Set PIN)</button>
+                        </section>
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <span class="group-label">चाइल्ड लॉक (Child Lock)</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="mobile-lock" title="चाइल्ड लॉक ऑन/ऑफ" aria-label="चाइल्ड लॉक">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Category 9: App Updates (New Main Section) -->
-        <div class="category-block">
-            <header class="section-header">
-                <span class="section-icon">📋</span>
-                <span class="section-title">ऐप अपडेट्स और फीडबैक</span>
-                <span class="chevron">▼</span>
-            </header>
-            <div class="category-content">
-                <div class="category-inner">
-                    <section class="settings-group">
-                        <span class="group-label">वर्शन माहिती</span>
-                        <p class="group-sub">v1.2.0-ultimate</p>
-                        <button class="btn-inline" onclick="alert('Checking for updates...')" title="अपडेट चेक करें">अपडेट चेक करें</button>
-                    </section>
-                    <section class="settings-group">
-                        <button class="btn-inline btn-feedback" onclick="confirm('Send crash report to developers?')" title="फीडबैक भेजें">फीडबैक भेजें</button>
-                    </section>
+            <!-- Category 8: Storage & Sync -->
+            <div class="category-block">
+                <header class="section-header">
+                    <span class="section-icon">📂</span>
+                    <span class="section-title">स्टोरेज और बैकअप</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <button class="btn-inline" onclick="alert('Demo: Syncing with Cloud...')" title="क्लाउड बैकअप">क्लाउड बैकअप (Cloud Sync)</button>
+                        </section>
+                        <section class="settings-group">
+                            <button class="btn-inline btn-cache-clear" onclick="localStorage.clear(); alert('Cache Cleared!'); location.reload();" title="कैश साफ़ करें">कैश साफ़ करें (Clear Cache)</button>
+                        </section>
+                    </div>
                 </div>
             </div>
-        </div>
+        </div><!-- End #cat-parent -->
 
-        <!-- Category 10: Device & Data -->
-        <div class="category-block">
-            <header class="section-header">
-                <span class="section-icon">⚙️</span>
-                <span class="section-title">डिवाइस और डेटा</span>
-                <span class="chevron">▼</span>
-            </header>
-            <div class="category-content">
-                <div class="category-inner">
-                    <section class="settings-group">
-                        <button class="btn-secondary" id="reset-app" title="पूरा डेटा रीसेट करें">पूरा डेटा रीसेट करें (Reset All)</button>
-                    </section>
+        <!-- Admin Category Section -->
+        <div id="cat-admin" class="category-view">
+            <!-- Category 9: App Updates & Feedback -->
+            <div class="category-block">
+                <header class="section-header">
+                    <span class="section-icon">📋</span>
+                    <span class="section-title">ऐप अपडेट्स और फीडबैक</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <span class="group-label">वर्शन माहिती</span>
+                            <p class="group-sub">v1.2.0-ultimate</p>
+                            <button class="btn-inline" onclick="alert('Checking for updates...')" title="अपडेट चेक करें">अपडेट चेक करें</button>
+                        </section>
+                        <section class="settings-group">
+                            <button class="btn-inline btn-feedback" onclick="confirm('Send crash report to developers?')" title="फीडबैक भेजें">फीडबैक भेजें</button>
+                        </section>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            <!-- Category 10: Device & Data -->
+            <div class="category-block">
+                <header class="section-header">
+                    <span class="section-icon">⚙️</span>
+                    <span class="section-title">डिवाइस और डेटा</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <button class="btn-secondary" id="reset-app" title="पूरा डेटा रीसेट करें">पूरा डेटा रीसेट करें (Reset All)</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End #cat-admin -->
+
+        <!-- Developer Category Section -->
+        <div id="cat-developer" class="category-view">
+            <div class="category-block">
+                <header class="section-header">
+                    <span class="section-icon">💻</span>
+                    <span class="section-title">डेवलपर टूल्स</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <span class="group-label">प्रोजेक्ट इंटेलिजेंस</span>
+                            <button class="btn-inline" onclick="window.open('../../memory/00_System_Guardrails.md', '_blank')">View Guardrails (00)</button>
+                            <button class="btn-inline" onclick="window.open('../../AGENTS.md', '_blank')">View AGENTS.md</button>
+                        </section>
+                        <section class="settings-group">
+                            <span class="group-label">सिस्टम ऑडिट</span>
+                            <button class="btn-inline" onclick="alert('Running Asset Scan...')">Run Scan Project</button>
+                        </section>
+                        <section class="settings-group">
+                            <span class="group-label">डीबग मोड</span>
+                            <div class="toggle-row">
+                                <span>एनेबल लॉग्स</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="dev-logs" title="डीबग लॉग्स">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End #cat-developer -->
 
         <!-- App Branding -->
         <footer class="app-info">

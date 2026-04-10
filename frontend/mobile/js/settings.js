@@ -9,8 +9,168 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("🚀 Ultimate Settings Loaded!");
     loadSettings();
     initAccordion();
+    initCategoryTabs(); // New horizontal navigation logic
+    initDraggableTabs(); // Touch and hold scroll logic
+    initVerticalDraggable(); // Vertical touch and hold logic
     attachEvents();
 });
+
+// Vertical Drag to Scroll Logic
+const initVerticalDraggable = () => {
+    const el = document.documentElement;
+    let isDown = false;
+    let startY;
+    let scrollTop;
+    let rafId = null;
+    let isDragging = false; 
+    const THRESHOLD = 7; // Pixels to move before starting drag
+
+    const startAction = (e) => {
+        const interactiveTags = ['BUTTON', 'INPUT', 'SELECT', 'TEXTAREA', 'A'];
+        if (interactiveTags.includes(e.target.tagName)) return;
+        if (e.target.closest('.range-container') || e.target.closest('.slider')) return;
+        
+        isDown = true;
+        isDragging = false;
+        startY = (e.clientY || e.touches[0].clientY);
+        scrollTop = window.pageYOffset || el.scrollTop;
+        
+        // Disable global smooth scroll immediately
+        el.classList.add('v-dragging'); // Added to html tag
+        el.style.scrollBehavior = 'auto';
+        document.body.style.scrollBehavior = 'auto';
+    };
+
+    const endAction = () => {
+        isDown = false;
+        isDragging = false;
+        document.body.classList.remove('v-dragging');
+        el.classList.remove('v-dragging'); // Removed from html tag
+        document.body.style.touchAction = '';
+        el.style.scrollBehavior = '';
+        document.body.style.scrollBehavior = '';
+        if (rafId) cancelAnimationFrame(rafId);
+    };
+
+    const moveAction = (e) => {
+        if (!isDown) return;
+        
+        const y = (e.clientY || e.touches[0].clientY);
+        const dist = Math.abs(y - startY);
+
+        if (!isDragging && dist > THRESHOLD) {
+            isDragging = true;
+            document.body.classList.add('v-dragging');
+            document.body.style.touchAction = 'none';
+        }
+
+        if (isDragging) {
+            if (e.cancelable) e.preventDefault();
+            const walk = (y - startY) * 1.5;
+
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+                window.scrollTo(0, scrollTop - walk);
+            });
+        }
+    };
+
+    window.addEventListener('mousedown', startAction);
+    window.addEventListener('mouseleave', endAction);
+    window.addEventListener('mouseup', endAction);
+    window.addEventListener('mousemove', moveAction);
+
+    window.addEventListener('touchstart', startAction, { passive: false });
+    window.addEventListener('touchend', endAction);
+    window.addEventListener('touchmove', moveAction, { passive: false });
+};
+
+// Drag to Scroll Logic (Slider Effect)
+const initDraggableTabs = () => {
+    const slider = document.querySelector('.category-tabs');
+    if (!slider) return;
+
+    let isDown = false;
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+    let rafId = null;
+    const THRESHOLD = 7;
+
+    const startAction = (e) => {
+        isDown = true;
+        isDragging = false;
+        slider.style.scrollBehavior = 'auto';
+        startX = (e.clientX || e.touches[0].clientX);
+        scrollLeft = slider.scrollLeft;
+    };
+
+    const endAction = () => {
+        isDown = false;
+        isDragging = false;
+        slider.classList.remove('dragging');
+        slider.style.scrollBehavior = '';
+        if (rafId) cancelAnimationFrame(rafId);
+    };
+
+    const moveAction = (e) => {
+        if (!isDown) return;
+        
+        const x = (e.clientX || e.touches[0].clientX);
+        const dist = Math.abs(x - startX);
+
+        if (!isDragging && dist > THRESHOLD) {
+            isDragging = true;
+            slider.classList.add('dragging');
+        }
+
+        if (isDragging) {
+            if (e.cancelable) e.preventDefault();
+            const walk = (x - startX) * 2;
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        }
+    };
+
+    slider.addEventListener('mousedown', startAction);
+    slider.addEventListener('mouseleave', endAction);
+    slider.addEventListener('mouseup', endAction);
+    slider.addEventListener('mousemove', moveAction);
+
+    slider.addEventListener('touchstart', startAction, { passive: false });
+    slider.addEventListener('touchend', endAction);
+    slider.addEventListener('touchmove', moveAction, { passive: false });
+};
+
+// Category Tab Switching Logic
+const initCategoryTabs = () => {
+    const tabs = document.querySelectorAll('.tab-btn');
+    const views = document.querySelectorAll('.category-view');
+    
+    // Recovery of last active tab (optional persistence)
+    const lastTab = sessionStorage.getItem('activeSettingsTab') || 'cat-kids';
+    
+    const switchTab = (targetId) => {
+        tabs.forEach(t => t.classList.toggle('active', t.dataset.target === targetId));
+        views.forEach(v => v.classList.toggle('active', v.id === targetId));
+        sessionStorage.setItem('activeSettingsTab', targetId);
+    };
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            switchTab(tab.dataset.target);
+            // Ensure the clicked tab is visible in the scrollable bar
+            tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            // Close any open accordions when switching categories for a clean view
+            document.querySelectorAll('.category-block').forEach(b => b.classList.remove('expanded'));
+        });
+    });
+
+    // Initial activation
+    switchTab(lastTab);
+};
 
 // Accordion Logic (Exclusive Expansion)
 const initAccordion = () => {
@@ -26,6 +186,15 @@ const initAccordion = () => {
             
             if (!isExpanded) {
                 block.classList.add('expanded');
+                
+                // Trigger Highlight Focus effect
+                block.classList.add('focused');
+                setTimeout(() => block.classList.remove('focused'), 1200);
+
+                // Auto-Focus & Auto-Scroll
+                setTimeout(() => {
+                    block.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100); 
             }
         });
     });

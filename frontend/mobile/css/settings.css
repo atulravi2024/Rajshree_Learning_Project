@@ -19,13 +19,44 @@ body {
     background-image: radial-gradient(#ffe4ef 0.5px, #fdfdfd 0.5px);
     background-size: 10px 10px;
     color: var(--deep-purple);
+    
+    /* Vertical Scrollbar Styling (Global) */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-pink) transparent;
+}
+
+body.v-dragging,
+body.v-dragging * {
+    cursor: grabbing !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    transition: none !important; /* Prevent transition conflicts during drag */
+}
+
+/* Ensure no smooth scroll fights with JS drag */
+html.v-dragging {
+    scroll-behavior: auto !important;
+}
+
+/* Custom Vertical Scrollbar (Chrome/Safari) */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-pink);
+    border-radius: 10px;
 }
 
 .settings-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     padding: 10px 5px;
 }
 
@@ -47,6 +78,120 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     box-shadow: var(--shadow-soft);
+}
+
+/* Category Navigation Tabs */
+.category-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 10px 5px 15px 5px;
+    margin-bottom: 5px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    /* Show subtle scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-pink) transparent;
+}
+
+/* Custom Scrollbar for Chrome/Safari */
+.category-tabs::-webkit-scrollbar {
+    height: 4px;
+    display: block;
+}
+
+.category-tabs::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.category-tabs::-webkit-scrollbar-thumb {
+    background-color: var(--primary-pink);
+    border-radius: 10px;
+    opacity: 0.5;
+}
+
+/* Indicators for scrollable area (Fade edges) */
+.category-tabs {
+    mask-image: linear-gradient(to right, 
+        transparent, 
+        black 5%, 
+        black 95%, 
+        transparent
+    );
+    -webkit-mask-image: linear-gradient(to right, 
+        transparent, 
+        black 5%, 
+        black 95%, 
+        transparent
+    );
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.category-tabs.dragging {
+    cursor: grabbing;
+    scroll-behavior: auto; /* Disable smooth scroll while dragging for responsiveness */
+}
+
+.tab-btn {
+    flex: 0 0 auto;
+    background: white;
+    border: 1.5px solid #e2e8f0;
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-soft);
+}
+
+.tab-btn .tab-icon {
+    font-size: 1.2rem;
+}
+
+.tab-btn .tab-text {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.tab-btn.active {
+    background: var(--primary-pink);
+    border-color: var(--primary-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 20, 147, 0.25);
+}
+
+.tab-btn.active .tab-text {
+    color: white;
+}
+
+.tab-btn:active {
+    transform: scale(0.95);
+}
+
+/* Category Views Visibility */
+.category-view {
+    display: none;
+    animation: fadeInSlide 0.4s ease-out forwards;
+}
+
+.category-view.active {
+    display: block;
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Section Headers (Accordion Trigger) */
@@ -113,6 +258,17 @@ body {
     box-shadow: var(--shadow-soft);
     border: 1.5px solid var(--primary-pink);
     border-top: none;
+}
+
+/* Auto-Focus Highlight Animation */
+.category-block.focused {
+    animation: sectionFocus 1.2s ease-out;
+}
+
+@keyframes sectionFocus {
+    0% { box-shadow: 0 0 0 0 rgba(255, 20, 147, 0); }
+    30% { box-shadow: 0 0 20px 5px rgba(255, 20, 147, 0.3); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 20, 147, 0); }
 }
 
 .category-inner {
