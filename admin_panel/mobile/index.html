@@ -32,12 +32,13 @@
         
         <div class="config-panel" id="configPanel">
             <label for="dbSelector" class="sr-only">स्टोरेज फाइल चुनें</label>
-            <select id="dbSelector" class="custom-input mb-10" title="स्टोरेज फाइल चुनें">
+            <select id="dbSelector" class="custom-input mb-10" title="स्टोरेज फाइल चुनें" aria-label="स्टोरेज फाइल चुनें">
                 <option value="database/base.sqlite3">Base DB (कोर डेटा)</option>
                 <option value="database/meta.sqlite3">Meta DB (डिटेल डेटा)</option>
             </select>
-            <input type="password" id="githubToken" class="custom-input mb-10" placeholder="GitHub PAT (वैकल्पिक)">
-            <button id="loadBtn" class="btn btn-primary w-full">⬇️ कनेक्ट करें</button>
+            <label for="githubToken" class="sr-only">GitHub Access Token</label>
+            <input type="password" id="githubToken" class="custom-input mb-10" placeholder="GitHub PAT (वैकल्पिक)" title="GitHub Personal Access Token" aria-label="GitHub एक्सेस टोकन">
+            <button id="loadBtn" class="btn btn-primary w-full" title="कनेक्ट करें">⬇️ कनेक्ट करें</button>
         </div>
         
         <!-- Collapsed view toggler -->
@@ -49,10 +50,11 @@
     <main class="main-content hidden" id="dashboardArea">
         <div class="sticky-controls">
             <label for="mobileTableSelector" class="sr-only">टेबल चुनें</label>
-            <select id="mobileTableSelector" class="custom-input" title="टेबल चुनें">
+            <select id="mobileTableSelector" class="custom-input" title="टेबल चुनें" aria-label="टेबल चुनें">
                 <option value="" disabled selected>टेबल चुनें...</option>
             </select>
-            <input type="text" id="searchInput" class="custom-input search-box hidden" placeholder="🔍 सर्च करें...">
+            <label for="searchInput" class="sr-only">खोजें</label>
+            <input type="text" id="searchInput" class="custom-input search-box hidden" placeholder="🔍 सर्च करें..." title="सर्च करें" aria-label="सर्च बॉक्स">
         </div>
 
         <div id="emptyState" class="empty-state">
