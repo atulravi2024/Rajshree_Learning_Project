@@ -6,12 +6,15 @@
     <title>Rajshree Hindi Learning - Redirecting...</title>
     <meta http-equiv="refresh" content="0; url=frontend/desktop/index.html">
     <script>
-        // Redirect to the correct versioned entry point based on device
-        if (window.innerWidth <= 768) {
-            window.location.replace('frontend/mobile/index.html');
-        } else {
-            window.location.replace('frontend/desktop/index.html');
+        function checkDevice() {
+            if (window.innerWidth <= 768) {
+                window.location.replace('frontend/mobile/index.html');
+            } else {
+                window.location.replace('frontend/desktop/index.html');
+            }
         }
+        window.addEventListener('resize', checkDevice);
+        checkDevice();
     </script>
     <style>
         body { font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #FFDEE9; }

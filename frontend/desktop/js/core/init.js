@@ -145,7 +145,41 @@ function goToStep2() {
 
 function goHome() {
     if (window.isSlideshowActive) return;
-    location.reload();
+    
+    // Stop any playing audio
+    stopCurrentAudio();
+    
+    // Clear hash for clean state
+    if (window.location.hash) {
+        history.replaceState(null, null, ' ');
+    }
+    
+    // Reset global state variables
+    window.selectedCategory = '';
+    window.selectedTitle = '';
+    window.selectedMain = '';
+    
+    // UI Reset
+    const nav = document.getElementById('main-nav');
+    const overlay = document.getElementById('overlay');
+    const lZone = document.getElementById('learning-zone');
+    
+    if (nav) nav.classList.add('hidden');
+    if (lZone) lZone.classList.add('hidden');
+    
+    if (overlay) {
+        overlay.style.display = 'flex';
+        overlay.style.opacity = '1';
+        
+        // Reset all steps visibility - Show Step 1 (Welcome)
+        ['step-1', 'step-2', 'step-3', 'step-4', 'step-5'].forEach(s => {
+            const el = document.getElementById(s);
+            if (el) el.classList.add('hidden');
+        });
+        
+        const step1 = document.getElementById('step-1');
+        if (step1) step1.classList.remove('hidden');
+    }
 }
 
 function goBackTo(step) {
