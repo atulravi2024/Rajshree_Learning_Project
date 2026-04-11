@@ -2,6 +2,10 @@
    Mobile-First Premium Styling
    ===================================================== */
 
+* {
+    box-sizing: border-box;
+}
+
 :root {
     /* Theme Variables (Controlled by ThemeEngine) */
     --primary-color: #FF1493;
@@ -90,6 +94,19 @@ body {
     font-size: 1.8rem;
     margin-bottom: 4px;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.nav-svg {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 4px;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.nav-item:active .nav-icon,
+.nav-item:active .nav-svg {
+    transform: scale(0.8);
 }
 
 .nav-label {
@@ -408,7 +425,50 @@ body {
     animation-iteration-count: 0 !important; /* Stop heavy loops if any */
 }
 
-/* Card Background Adjustment for Dark Mode */
+
+/* =====================================================
+   Dark Mode Implementation (Phase 1 & 2)
+   ===================================================== */
+
+/* Phase 1: Start Screen */
+.dark-mode .mobile-overlay {
+    background: #121212 !important;
+}
+
+.dark-mode .welcome-card {
+    background: #181818 !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark-mode .welcome-title {
+    color: var(--primary-color) !important;
+}
+
+.dark-mode .welcome-desc {
+    color: #e2e8f0 !important;
+}
+
+/* Phase 2: Main Background & Navigation */
+.dark-mode #master-mobile {
+    background: #121212 !important;
+}
+
+.dark-mode .mobile-nav {
+    background: #181818 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark-mode .nav-item {
+    color: #e2e8f0 !important;
+}
+
+.dark-mode .nav-label {
+    color: #e2e8f0 !important;
+}
+
+/* Base Card adjustments for dark mode */
 .dark-mode .card-front, .dark-mode .card-back {
     background: #1e1e1e !important;
     border-color: #2a2a2a !important;
@@ -417,22 +477,4 @@ body {
 
 .dark-mode .card-back {
     background: #181818 !important;
-}
-
-.dark-mode .nav-item {
-    color: #e2e8f0;
-}
-
-.dark-mode .tab-btn {
-    background: #1e1e2f;
-    border-color: #2d2d44;
-}
-
-.dark-mode .tab-btn .tab-text {
-    color: #94a3b8;
-}
-
-.dark-mode .mobile-nav {
-    background: rgba(18, 18, 18, 0.9);
-    border-top-color: rgba(255, 255, 255, 0.05);
 }

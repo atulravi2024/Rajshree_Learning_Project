@@ -563,11 +563,14 @@ input[type="range"]::-webkit-slider-thumb {
     letter-spacing: 0.5px;
 }
 
-/* Dark Mode Overrides for UI components */
+/* Phase 3: Full Settings Page Dark Mode (Solid Colors) */
+.dark-mode .settings-title {
+    color: #f8fafc !important;
+}
+
 .dark-mode .close-btn,
-.dark-mode .tab-btn,
-.dark-mode .section-header {
-    background: #1e1e2f !important;
+.dark-mode .tab-btn {
+    background: #181818 !important;
     border-color: #2d2d44 !important;
     color: #f8fafc !important;
 }
@@ -576,30 +579,70 @@ input[type="range"]::-webkit-slider-thumb {
     color: #94a3b8 !important;
 }
 
+.dark-mode .tab-btn.active {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
 .dark-mode .tab-btn.active .tab-text {
     color: white !important;
 }
 
+.dark-mode .section-header {
+    background: #181818 !important;
+    border-color: transparent !important;
+    color: #f8fafc !important;
+}
+
+.dark-mode .section-title {
+    color: #f8fafc !important; 
+    opacity: 0.9;
+}
+
+.dark-mode .category-block.expanded .section-header {
+    border-color: var(--primary-color) !important;
+}
+
+.dark-mode .category-content {
+    background: #121212 !important;
+}
+
+.dark-mode .category-block.expanded .category-content {
+    border-color: var(--primary-color) !important;
+}
+
 .dark-mode .settings-group {
-    background: #181824 !important;
-    border-color: #242436 !important;
+    background: #181818 !important;
+    border: 1px solid #2d2d44 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
 .dark-mode .group-label {
-    color: #f8fafc;
+    color: #f8fafc !important;
 }
 
 .dark-mode .group-sub {
-    color: #94a3b8;
+    color: #94a3b8 !important;
 }
 
 .dark-mode .input-field,
 .dark-mode .select-field {
-    background: #1e1e2f;
-    border-color: #2d2d44;
-    color: #f8fafc;
+    background: #121212 !important;
+    border-color: #2d2d44 !important;
+    color: #f8fafc !important;
 }
 
 .dark-mode .slider {
-    background-color: #334155;
+    background-color: #334155 !important;
+}
+
+.dark-mode .voice-card {
+    background: #121212 !important;
+    border-color: #2d2d44 !important;
+    color: #f8fafc !important;
+}
+
+.dark-mode .voice-card.active {
+    background: #1e1e1e !important;
+    border-color: var(--primary-color) !important;
 }

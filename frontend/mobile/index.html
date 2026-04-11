@@ -43,7 +43,9 @@
 
     <nav class="mobile-nav">
         <a class="nav-item" id="mobile-prev" onclick="prev()" title="Previous">
-            <span class="nav-icon">⬅️</span>
+            <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
             <span class="nav-label" data-i18n="nav_prev">पीछे</span>
         </a>
         <a class="nav-item active" id="mobile-home" onclick="goHome()" title="Home">
@@ -51,7 +53,9 @@
             <span class="nav-label" data-i18n="nav_home">होम</span>
         </a>
         <a class="nav-item" id="mobile-next" onclick="next()" title="Next">
-            <span class="nav-icon">➡️</span>
+            <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
             <span class="nav-label" data-i18n="nav_next">अगला</span>
         </a>
         <a class="nav-item" onclick="openSettings()" title="Settings">
