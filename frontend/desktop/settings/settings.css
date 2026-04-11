@@ -275,6 +275,7 @@
     font-family: 'Outfit', sans-serif;
     font-size: 0.95rem;
     color: #1A202C;
+    -webkit-appearance: none;
     appearance: none;
     cursor: pointer;
     outline: none;

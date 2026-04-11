@@ -19,17 +19,13 @@ body {
     background-image: radial-gradient(#ffe4ef 0.5px, #fdfdfd 0.5px);
     background-size: 10px 10px;
     color: var(--deep-purple);
-    
-    /* Vertical Scrollbar Styling (Global) */
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-pink) transparent;
 }
 
 body.v-dragging,
 body.v-dragging * {
     cursor: grabbing !important;
-    user-select: none !important;
     -webkit-user-select: none !important;
+    user-select: none !important;
     transition: none !important; /* Prevent transition conflicts during drag */
 }
 
@@ -87,11 +83,7 @@ html.v-dragging {
     overflow-x: auto;
     padding: 10px 5px 15px 5px;
     margin-bottom: 5px;
-    -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
-    /* Show subtle scrollbar */
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary-pink) transparent;
 }
 
 /* Custom Scrollbar for Chrome/Safari */
@@ -112,21 +104,21 @@ html.v-dragging {
 
 /* Indicators for scrollable area (Fade edges) */
 .category-tabs {
-    mask-image: linear-gradient(to right, 
-        transparent, 
-        black 5%, 
-        black 95%, 
-        transparent
-    );
     -webkit-mask-image: linear-gradient(to right, 
         transparent, 
         black 5%, 
         black 95%, 
         transparent
     );
+    mask-image: linear-gradient(to right, 
+        transparent, 
+        black 5%, 
+        black 95%, 
+        transparent
+    );
     cursor: grab;
-    user-select: none;
     -webkit-user-select: none;
+    user-select: none;
 }
 
 .category-tabs.dragging {
@@ -301,6 +293,7 @@ html.v-dragging {
 }
 
 .select-field {
+    -webkit-appearance: none;
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%2364748b' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
@@ -449,6 +442,7 @@ input:checked + .slider:before {
 
 input[type="range"] {
     -webkit-appearance: none;
+    appearance: none;
     width: 100%;
     height: 6px;
     background: #e2e8f0;
@@ -458,6 +452,7 @@ input[type="range"] {
 
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
+    appearance: none;
     width: 20px;
     height: 20px;
     background: var(--primary-pink);
@@ -469,9 +464,23 @@ input[type="range"]::-webkit-slider-thumb {
 .range-labels {
     display: flex;
     justify-content: space-between;
-    font-size: 0.75rem;
+    font-size: 0.65rem; /* Slightly smaller to fit 8 items on mobile */
     color: #94a3b8;
     margin-top: 6px;
+    font-weight: 600;
+}
+
+.value-badge {
+    background: var(--primary-pink);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    margin-left: 10px;
+    box-shadow: 0 2px 4px rgba(255, 105, 180, 0.3);
+    vertical-align: middle;
+    display: inline-block;
 }
 
 /* Theme Color Picker */

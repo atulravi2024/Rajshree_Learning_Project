@@ -7,6 +7,16 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("🚀 Ultimate Settings Loaded!");
+    // Special handling for Speech Speed Badge
+    const speedInput = document.getElementById('mobile-speed');
+    const speedBadge = document.getElementById('mobile-speed-badge');
+    if (speedInput && speedBadge) {
+        speedInput.addEventListener('input', (e) => {
+            speedBadge.textContent = e.target.value + 'x';
+        });
+    }
+
+    // Initialize all accordions
     loadSettings();
     initAccordion();
     initCategoryTabs(); // New horizontal navigation logic
@@ -203,7 +213,10 @@ const initAccordion = () => {
 // Load all settings from localStorage
 const loadSettings = () => {
     const s = (key, def) => localStorage.getItem(key) || def;
-    const b = (key, def) => localStorage.getItem(key) !== (def ? 'false' : 'true');
+    const b = (key, def) => {
+        const val = localStorage.getItem(key);
+        return val === null ? def : val === 'true';
+    };
 
     // 1. Audio
     const voice = s('mobile_voice_profile', 'neerja');
@@ -215,6 +228,7 @@ const loadSettings = () => {
     const theme = s('mobile_theme_primary', 'pink');
     const animQuality = s('mobile_anim_quality', 'high');
     const delay = s('mobile_autoplay_delay', '3');
+    const autoplay = b('mobile_autoplay', false);
     
     // 3. Learning
     const difficulty = s('mobile_difficulty', 'intermediate');
@@ -231,6 +245,9 @@ const loadSettings = () => {
 
     // Sync UI
     setVal('mobile-speed', speed);
+    const speedBadge = document.getElementById('mobile-speed-badge');
+    if (speedBadge) speedBadge.textContent = speed + 'x';
+    
     setVal('mobile-anim-quality', animQuality);
     setVal('mobile-delay', delay);
     setVal('mobile-timer', timer);
@@ -243,6 +260,7 @@ const loadSettings = () => {
     setCheck('mobile-large-text', largeText);
     setCheck('mobile-contrast', contrast);
     setCheck('mobile-lock', childLock);
+    setCheck('mobile-autoplay', autoplay);
 
     // Grids
     updateGridSelection('.voice-card', 'voice', voice);
@@ -258,7 +276,8 @@ const attachEvents = () => {
         { id: 'mobile-break', key: 'mobile_break', label: 'ब्रेक रिमाइंडर' },
         { id: 'mobile-large-text', key: 'mobile_large_text', label: 'बड़ा टेक्स्ट' },
         { id: 'mobile-contrast', key: 'mobile_contrast', label: 'हाई कंट्रास्ट' },
-        { id: 'mobile-lock', key: 'mobile_child_lock', label: 'चिल्ड लॉक' }
+        { id: 'mobile-lock', key: 'mobile_child_lock', label: 'चिल्ड लॉक' },
+        { id: 'mobile-autoplay', key: 'mobile_autoplay', label: 'ऑटो-प्ले' }
     ];
 
     toggles.forEach(t => {

@@ -10,7 +10,10 @@ const state = {
     data: [],
     isAutoplay: localStorage.getItem('mobile_autoplay') === 'true',
     isSFX: localStorage.getItem('mobile_sfx') !== 'false',
-    autoplayTimeout: null
+    autoplayDelay: parseInt(localStorage.getItem('mobile_autoplay_delay')) || 3,
+    playbackSpeed: parseFloat(localStorage.getItem('mobile_playback_speed')) || 1.0,
+    autoplayTimeout: null,
+    isPlayingAutoplay: false
 };
 
 // Initialize app when DOM loaded
@@ -39,6 +42,8 @@ const startApp = (silent = false) => {
     if (master) master.classList.remove('hidden');
     if (nav) nav.classList.remove('hidden');
 
+    state.isPlayingAutoplay = state.isAutoplay;
+    updatePlaybackUI();
     renderCard();
     setupSwipeGestures();
     
@@ -139,7 +144,7 @@ const renderCard = (direction = 'next') => {
         </div>
     `;
 
-    if (state.isAutoplay) {
+    if (state.isPlayingAutoplay) {
         state.autoplayTimeout = setTimeout(() => { 
             const card = document.getElementById('current-card');
             if (card) flipCard(card, item.audio);
@@ -216,6 +221,7 @@ const stopCurrentAudio = () => {
         }
         currentAudio = null;
     }
+    updatePlaybackUI();
 };
 
 const playSound = (audioPath, card) => {
@@ -225,7 +231,9 @@ const playSound = (audioPath, card) => {
     console.log("🔊 Playing audio: " + audioPath);
     const fullPath = (window.AUDIO_BASE_PATH || '../assets/audio/') + audioPath;
     const audio = new Audio(fullPath);
+    audio.playbackRate = state.playbackSpeed || 1.0;
     currentAudio = audio;
+    updatePlaybackUI();
     
     if (card) {
         card.classList.add('playing');
@@ -243,13 +251,14 @@ const playSound = (audioPath, card) => {
                 card.classList.remove('playing');
                 if (bar) bar.style.width = '0%';
                 currentAudio = null;
+                updatePlaybackUI();
 
                 // Autoplay: Move to next card after delay OR Trigger Celebration if end reached
-                if (state.isAutoplay) {
+                if (state.isPlayingAutoplay) {
                     if (state.currentIndex < state.data.length - 1) {
                         state.autoplayTimeout = setTimeout(() => {
                             next(false); // Trigger auto transition without manual SFX
-                        }, 1000);
+                        }, state.autoplayDelay * 1000);
                     } else {
                         // Reached the end during autoplay!
                         state.autoplayTimeout = setTimeout(() => {
@@ -319,12 +328,33 @@ const setupSwipeGestures = () => {
     }
 };
 
-// UI: Navigation State Helper
+// UI: Playback State Helper for Navigation Locking
+const updatePlaybackUI = () => {
+    const prevBtn = document.getElementById('mobile-prev');
+    const nextBtn = document.getElementById('mobile-next');
+    const homeBtn = document.getElementById('mobile-home');
+    
+    if (!prevBtn || !nextBtn || !homeBtn) return;
+
+    // Lock navigation if autoplay is running OR audio is currently playing
+    if (state.isPlayingAutoplay || currentAudio) {
+        prevBtn.classList.add('disabled-nav');
+        nextBtn.classList.add('disabled-nav');
+        homeBtn.classList.add('disabled-nav');
+    } else {
+        prevBtn.classList.remove('disabled-nav');
+        nextBtn.classList.remove('disabled-nav');
+        homeBtn.classList.remove('disabled-nav');
+        updateNavigationUI(); // Re-evaluate actual boundaries (start/end of deck)
+    }
+};
+
+// UI: Navigation State Helper (Boundaries)
 const updateNavigationUI = () => {
     const prevBtn = document.getElementById('mobile-prev');
     const nextBtn = document.getElementById('mobile-next');
 
-    if (!prevBtn || !nextBtn || !state.data) return;
+    if (!prevBtn || !nextBtn || !state.data || state.isPlayingAutoplay) return;
 
     // Boundary check for Previous button
     if (state.currentIndex === 0) {
@@ -347,10 +377,11 @@ let confettiInterval = null;
 const triggerCelebration = () => {
     stopCurrentAudio();
     
-    // Disable autoplay state and sync settings button for next load
-    state.isAutoplay = false;
-    localStorage.setItem('mobile_autoplay', 'false');
-    console.log("✅ Autoplay disabled on completion");
+    // Stop autoplay session logic and sync to settings
+    state.isPlayingAutoplay = false;
+    localStorage.setItem('mobile_autoplay', 'false'); // FULL SYNC: Reset setting on completion
+    updatePlaybackUI();
+    console.log("✅ Autoplay session completed and synced");
 
     // Play reward sound
     const rewardPath = (window.AUDIO_BASE_PATH || '../assets/audio/') + 'system/effects/reward_excellent.mp3';
@@ -393,7 +424,7 @@ const triggerConfetti = () => {
 
     const createPiece = () => {
         const piece = document.createElement('div');
-        const size = Math.random() * 10 + 5;
+        const size = Math.random() * 12 + 6;
         const color = colors[Math.floor(Math.random() * colors.length)];
         const shape = shapes[Math.floor(Math.random() * shapes.length)];
         
@@ -417,14 +448,21 @@ const triggerConfetti = () => {
             piece.style.borderBottom = size + 'px solid ' + color;
         } else if (shape === 'star') {
             piece.style.clipPath = 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)';
+        } else {
+            piece.style.borderRadius = '2px';
         }
 
-        const duration = Math.random() * 2 + 2;
-        const drift = (Math.random() - 0.5) * 200;
+        const duration = Math.random() * 2.5 + 2.5;
+        const drift = (Math.random() - 0.5) * 300;
+        const scale = Math.random() * 0.5 + 0.75;
+        const rotationStart = Math.random() * 360;
+        const rotationEnd = rotationStart + (Math.random() * 1080);
         
         piece.animate([
-            { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
-            { transform: `translate(${drift}px, 110vh) rotate(${360 + Math.random() * 720}deg)`, opacity: 0 }
+            { transform: `translate(0, 0) rotate(${rotationStart}deg) scale(${scale})`, opacity: 0.8 },
+            { opacity: 1, offset: 0.3 },
+            { opacity: 0.6, offset: 0.6 },
+            { transform: `translate(${drift}px, 110vh) rotate(${rotationEnd}deg) scale(${scale * 0.5})`, opacity: 0.3 }
         ], {
             duration: duration * 1000,
             easing: 'cubic-bezier(0.1, 0, 0.3, 1)',
@@ -435,8 +473,9 @@ const triggerConfetti = () => {
         setTimeout(() => piece.remove(), duration * 1000);
     };
 
-    for(let i=0; i<80; i++) setTimeout(createPiece, Math.random() * 500);
-    confettiInterval = setInterval(createPiece, 100);
+    // Desktop Parity High-Density Initialization
+    for(let i=0; i<120; i++) setTimeout(createPiece, Math.random() * 400);
+    confettiInterval = setInterval(createPiece, 25);
 };
 
 const stopConfetti = () => {
@@ -447,7 +486,7 @@ const stopConfetti = () => {
     const container = document.getElementById('confetti-container');
     if (container) {
         container.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 800, fill: 'forwards' })
-                 .onfinish = () => container.remove();
+                 .onfinish = () => { if (container.parentNode) container.remove(); };
     }
 };
 
@@ -463,4 +502,6 @@ window.triggerCelebration = triggerCelebration;
 window.addEventListener('focus', () => {
     state.isAutoplay = localStorage.getItem('mobile_autoplay') === 'true';
     state.isSFX = localStorage.getItem('mobile_sfx') !== 'false';
+    state.autoplayDelay = parseInt(localStorage.getItem('mobile_autoplay_delay')) || 3;
+    state.playbackSpeed = parseFloat(localStorage.getItem('mobile_playback_speed')) || 1.0;
 });

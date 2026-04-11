@@ -106,13 +106,18 @@
                             </div>
                         </section>
                         <section class="settings-group">
-                            <span class="group-label">बोलने की गति (Speech Speed)</span>
+                            <span class="group-label">बोलने की गति (Speech Speed) <span id="mobile-speed-badge" class="value-badge">1.0x</span></span>
                             <div class="range-container">
-                                <input type="range" id="mobile-speed" min="0.5" max="1.5" step="0.1" value="1.0" title="बोलने की गति (Speech Speed)" aria-label="बोलने की गति">
+                                <input type="range" id="mobile-speed" min="0.25" max="2.0" step="0.25" value="1.0" title="बोलने की गति (Speech Speed)" aria-label="बोलने की गति">
                                 <div class="range-labels">
-                                    <span>धीमी</span>
-                                    <span>सामान्य</span>
-                                    <span>तेज़</span>
+                                    <span>0.25x</span>
+                                    <span>0.5x</span>
+                                    <span>0.75x</span>
+                                    <span>1.0x</span>
+                                    <span>1.25x</span>
+                                    <span>1.5x</span>
+                                    <span>1.75x</span>
+                                    <span>2.0x</span>
                                 </div>
                             </div>
                         </section>
@@ -125,6 +130,29 @@
                                     <input type="checkbox" id="mobile-sfx" checked title="साउंड इफेक्ट्स ऑन/ऑफ">
                                     <span class="slider"></span>
                                 </label>
+                            </div>
+                        </section>
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <span class="group-label">ऑटो-प्ले (Autoplay)</span>
+                                    <p class="group-sub">बिना छुए अगला कार्ड पढ़ें</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="mobile-autoplay" title="ऑटो-प्ले ऑन/ऑफ">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </section>
+                        <section class="settings-group">
+                            <span class="group-label">अगले कार्ड का समय (Next Card Delay)</span>
+                            <div class="range-container">
+                                <input type="range" id="mobile-delay" min="2" max="10" step="1" value="3" title="अगले कार्ड का समय (Next Card Delay)" aria-label="अगले कार्ड का समय">
+                                <div class="range-labels">
+                                    <span>2s</span>
+                                    <span>5s</span>
+                                    <span>10s</span>
+                                </div>
                             </div>
                         </section>
                     </div>
@@ -156,17 +184,6 @@
                                 <option value="high">बेहतरीन (High)</option>
                                 <option value="low">साधारण (Optimize)</option>
                             </select>
-                        </section>
-                        <section class="settings-group">
-                            <span class="group-label">अगले कार्ड का समय (Next Card Delay)</span>
-                            <div class="range-container">
-                                <input type="range" id="mobile-delay" min="2" max="10" step="1" value="3" title="अगले कार्ड का समय (Next Card Delay)" aria-label="अगले कार्ड का समय">
-                                <div class="range-labels">
-                                    <span>2s</span>
-                                    <span>5s</span>
-                                    <span>10s</span>
-                                </div>
-                            </div>
                         </section>
                     </div>
                 </div>

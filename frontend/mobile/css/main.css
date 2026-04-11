@@ -370,3 +370,11 @@ body {
     font-weight: 700;
     font-size: 1.2rem;
 }
+/* Navigation Locking Utility */
+.disabled-nav {
+    opacity: 0.4 !important;
+    pointer-events: none !important;
+    transform: scale(0.95);
+    filter: grayscale(1);
+    transition: all 0.3s ease;
+}
