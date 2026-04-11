@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCategoryTabs(); // New horizontal navigation logic
     initDraggableTabs(); // Touch and hold scroll logic
     initVerticalDraggable(); // Vertical touch and hold logic
+    initSwipeToClose(); // Gesture to close settings
     attachEvents();
 });
 
@@ -46,7 +47,8 @@ const initVerticalDraggable = () => {
         scrollTop = window.pageYOffset || el.scrollTop;
         
         // Disable global smooth scroll immediately
-        el.classList.add('v-dragging'); // Added to html tag
+        document.body.classList.add('v-dragging');
+        el.classList.add('v-dragging');
         el.style.scrollBehavior = 'auto';
         document.body.style.scrollBehavior = 'auto';
     };
@@ -55,7 +57,7 @@ const initVerticalDraggable = () => {
         isDown = false;
         isDragging = false;
         document.body.classList.remove('v-dragging');
-        el.classList.remove('v-dragging'); // Removed from html tag
+        el.classList.remove('v-dragging');
         document.body.style.touchAction = '';
         el.style.scrollBehavior = '';
         document.body.style.scrollBehavior = '';
@@ -201,12 +203,21 @@ const initAccordion = () => {
                 block.classList.add('focused');
                 setTimeout(() => block.classList.remove('focused'), 1200);
 
-                // Auto-Focus & Auto-Scroll
+                // Auto-Focus & Auto-Scroll (Synchronized)
                 setTimeout(() => {
-                    block.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    syncScrollFocus(block);
                 }, 100); 
             }
         });
+    });
+};
+
+/** Synchronized Scroll Focus Helper */
+const syncScrollFocus = (el) => {
+    if (!el) return;
+    el.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
     });
 };
 
@@ -467,4 +478,44 @@ const showToast = (message) => {
         t.style.opacity = '0'; 
         setTimeout(() => t.remove(), 400); 
     }, 1500);
+};
+
+/** Swipe from Right to Left to Close */
+const initSwipeToClose = () => {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    const SWIPE_THRESHOLD = 80; // Lowered from 120 for responsiveness
+    const VERTICAL_THRESHOLD = 100; // Increased from 80 for forgiveness
+
+    window.addEventListener('touchstart', (e) => {
+        // Ignore if interacting with horizontal sliders or tabs
+        if (e.target.closest('.range-container') || e.target.closest('.category-tabs') || e.target.closest('.color-grid')) return;
+        
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    window.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const touchEndY = e.changedTouches[0].clientY;
+        
+        const deltaX = touchStartX - touchEndX; // Right to Left
+        const deltaY = Math.abs(touchStartY - touchEndY);
+
+        console.log(`[Gesture] deltaX: ${Math.round(deltaX)}, deltaY: ${Math.round(deltaY)}`);
+
+        // Check for significant Right-to-Left swipe
+        if (deltaX > SWIPE_THRESHOLD && deltaY < VERTICAL_THRESHOLD) {
+            console.log("✅ Swipe to Close triggered!");
+            showToast("👋 नमस्ते! (Closing)");
+            
+            setTimeout(() => {
+                if (window.history.length > 1) {
+                    window.history.back();
+                } else {
+                    window.location.href = 'index.html';
+                }
+            }, 400);
+        }
+    }, { passive: true });
 };

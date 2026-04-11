@@ -80,12 +80,12 @@ html.v-dragging {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5px;
-    padding: 10px 5px;
+    margin-bottom: 0px;
+    padding: 2px 5px;
 }
 
 .settings-title {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 700;
     margin: 0;
 }
@@ -93,13 +93,13 @@ html.v-dragging {
 .close-btn {
     background: white;
     border: 1px solid #e2e8f0;
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
     box-shadow: var(--shadow-soft);
     color: var(--deep-purple);
@@ -110,8 +110,8 @@ html.v-dragging {
     display: flex;
     gap: 8px;
     overflow-x: auto;
-    padding: 10px 5px 15px 5px;
-    margin-bottom: 5px;
+    padding: 5px 5px 10px 5px;
+    margin-bottom: 0px;
     scroll-behavior: smooth;
 }
 
@@ -167,7 +167,7 @@ html.v-dragging {
 .tab-btn {
     flex: 0 0 auto;
     background: white;
-    border: 1.5px solid #e2e8f0;
+    border: 1.5px solid var(--glow-color);
     padding: 10px 20px;
     border-radius: 30px;
     display: flex;
@@ -232,7 +232,7 @@ html.v-dragging {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-soft);
-    border: 1.5px solid transparent;
+    border: 1.5px solid var(--glow-color);
 }
 
 .section-header:active {
@@ -366,7 +366,7 @@ html.v-dragging {
     padding: 12px;
     border-radius: 12px;
     margin-bottom: 10px;
-    border: 1px solid #f1f5f9;
+    border: 1.5px solid var(--glow-color);
 }
 
 .group-label {
@@ -444,7 +444,7 @@ input:checked + .slider:before {
 }
 
 .voice-card {
-    border: 2px solid #f1f5f9;
+    border: 2px solid var(--glow-color);
     border-radius: 12px;
     padding: 6px;
     text-align: center;
@@ -541,6 +541,15 @@ input[type="range"]::-webkit-slider-thumb {
     display: flex;
     gap: 12px;
     margin-top: 8px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 5px 2px 10px 2px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+}
+
+.color-grid::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari/Samsung */
 }
 
 .color-circle {
@@ -562,6 +571,12 @@ input[type="range"]::-webkit-slider-thumb {
 .circle-blue { background: linear-gradient(135deg, #1E90FF, #00BFFF, #E0F2FE); }
 .circle-purple { background: linear-gradient(135deg, #8B5CF6, #A78BFA, #EDE9FE); }
 .circle-orange { background: linear-gradient(135deg, #F97316, #FB923C, #FFEDD5); }
+.circle-emerald { background: linear-gradient(135deg, #10B981, #34D399, #D1FAE5); }
+.circle-cyan { background: linear-gradient(135deg, #06B6D4, #22D3EE, #CFFAFE); }
+.circle-rose { background: linear-gradient(135deg, #F43F5E, #FB7185, #FFE4E6); }
+.circle-amber { background: linear-gradient(135deg, #F59E0B, #FBBF24, #FEF3C7); }
+.circle-indigo { background: linear-gradient(135deg, #6366F1, #818CF8, #E0E7FF); }
+.circle-lime { background: linear-gradient(135deg, #84CC16, #A3E635, #ECFCCB); }
 
 .btn-cache-clear { background: #64748b !important; }
 .btn-feedback { background: #8b5cf6 !important; }
@@ -629,7 +644,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .dark-mode .section-header {
     background: #181818 !important;
-    border-color: transparent !important;
+    border-color: var(--glow-color) !important;
     color: #f8fafc !important;
 }
 
@@ -652,7 +667,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .dark-mode .settings-group {
     background: #181818 !important;
-    border: 1px solid #2d2d44 !important;
+    border: 1.5px solid var(--glow-color) !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
@@ -677,7 +692,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .dark-mode .voice-card {
     background: #121212 !important;
-    border-color: #2d2d44 !important;
+    border-color: var(--glow-color) !important;
     color: #f8fafc !important;
 }
 
