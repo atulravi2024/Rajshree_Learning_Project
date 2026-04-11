@@ -66,20 +66,104 @@ const ThemeEngine = (() => {
         const root = document.documentElement;
         if (quality === 'low') {
             root.classList.add('reduced-motion');
+            console.log("⚡ Animation Quality: Optimized (Low Motion)");
         } else {
             root.classList.remove('reduced-motion');
+            console.log("🎬 Animation Quality: High (Full Motion)");
         }
         localStorage.setItem('mobile_anim_quality', quality);
+    };
+
+    const applyLargeText = (isActive) => {
+        const root = document.documentElement;
+        if (isActive) {
+            root.classList.add('large-text');
+        } else {
+            root.classList.remove('large-text');
+        }
+        localStorage.setItem('mobile_large_text', isActive);
+        console.log(`♿ Large Text: ${isActive ? 'ON' : 'OFF'}`);
+    };
+
+    const applyContrast = (isActive) => {
+        const root = document.documentElement;
+        if (isActive) {
+            root.classList.add('high-contrast');
+        } else {
+            root.classList.remove('high-contrast');
+        }
+        localStorage.setItem('mobile_contrast', isActive);
+        console.log(`👁️ High Contrast: ${isActive ? 'ON' : 'OFF'}`);
+    };
+
+    const applyGlowEffect = (isActive) => {
+        const root = document.documentElement;
+        if (isActive) {
+            root.classList.remove('no-glow');
+        } else {
+            root.classList.add('no-glow');
+        }
+        localStorage.setItem('mobile_glow_effect', isActive);
+    };
+
+    const applyBackgroundPattern = (isActive) => {
+        const root = document.documentElement;
+        if (isActive) {
+            root.classList.remove('no-pattern');
+        } else {
+            root.classList.add('no-pattern');
+        }
+        localStorage.setItem('mobile_bg_pattern', isActive);
+    };
+
+    const applyAutoDarkMode = (isActive) => {
+        localStorage.setItem('mobile_auto_dark', isActive);
+        if (isActive) {
+            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            const handleChange = e => {
+                if (localStorage.getItem('mobile_auto_dark') === 'true') {
+                    applyDarkMode(e.matches);
+                }
+            };
+            
+            // Apply immediately
+            applyDarkMode(mediaQuery.matches);
+            
+            // Listen for system changes
+            mediaQuery.removeEventListener('change', handleChange); // Prevent duplicates
+            mediaQuery.addEventListener('change', handleChange);
+        } else {
+            // Revert to manual setting
+            const manualDark = localStorage.getItem('mobile_dark_mode') === 'true';
+            applyDarkMode(manualDark);
+        }
     };
 
     const init = () => {
         const savedTheme = localStorage.getItem('mobile_theme_primary') || 'pink';
         const savedDarkMode = localStorage.getItem('mobile_dark_mode') === 'true';
-        const savedAnim = localStorage.getItem('mobile_anim_quality') || 'high';
+        const savedLargeText = localStorage.getItem('mobile_large_text') === 'true';
+        const savedContrast = localStorage.getItem('mobile_contrast') === 'true';
+        const savedGlow = localStorage.getItem('mobile_glow_effect') !== 'false'; // Default TRUE
+        const savedPattern = localStorage.getItem('mobile_bg_pattern') !== 'false'; // Default TRUE
+        const savedAutoDark = localStorage.getItem('mobile_auto_dark') === 'true';
+        
+        // Smart Default: Respect OS preference if no user setting exists
+        let savedAnim = localStorage.getItem('mobile_anim_quality');
+        if (!savedAnim) {
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            savedAnim = prefersReduced ? 'low' : 'high';
+        }
 
         applyTheme(savedTheme);
         applyDarkMode(savedDarkMode);
         applyAnimQuality(savedAnim);
+        applyLargeText(savedLargeText);
+        applyContrast(savedContrast);
+        applyGlowEffect(savedGlow);
+        applyBackgroundPattern(savedPattern);
+        
+        if (savedAutoDark) applyAutoDarkMode(true);
     };
 
     // Run immediately to prevent FOUC
@@ -89,6 +173,11 @@ const ThemeEngine = (() => {
         applyTheme,
         applyDarkMode,
         applyAnimQuality,
+        applyLargeText,
+        applyContrast,
+        applyGlowEffect,
+        applyBackgroundPattern,
+        applyAutoDarkMode,
         init
     };
 })();

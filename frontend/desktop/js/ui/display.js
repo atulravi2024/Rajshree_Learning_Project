@@ -15,18 +15,20 @@ function renderCards() {
         card.onclick = () => flipCard(card, data.audio);
 
         let backContent = '';
-        let backStyle = '';
+        let backVars = '';
+        let backClass = '';
         if (data.image) backContent = `<img class="flash-image" src="${data.image}" alt="${data.word}">`;
         else if (data.content) backContent = `<div class="display-content-medium">${data.content}</div>`;
         else if (data.color) {
-            backContent = ''; // Solid color, no text usually requested
-            backStyle = `style="background:${data.color} !important; border-color:${data.color} !important; outline:none !important;"`;
+            backContent = ''; 
+            backVars = `--dynamic-bg:${data.color}; --dynamic-border:${data.color};`;
+            backClass = 'card-back-solid';
         }
         else if (data.value) backContent = `<div class="display-content-large">${data.value}</div>`;
-        else if (data.type === 'circle') backContent = `<div class="shape-container shape-circle" style="background:${data.color}"></div>`;
-        else if (data.type === 'square') backContent = `<div class="shape-container" style="background:${data.color}"></div>`;
-        else if (data.type === 'triangle') backContent = `<div class="shape-triangle" style="border-bottom-color:${data.color}"></div>`;
-        else if (data.type === 'star') backContent = `<span class="emoji-star" style="color:${data.color}">⭐</span>`;
+        else if (data.type === 'circle') backContent = `<div class="shape-container shape-circle" style="--dynamic-color:${data.color}"></div>`;
+        else if (data.type === 'square') backContent = `<div class="shape-container" style="--dynamic-color:${data.color}"></div>`;
+        else if (data.type === 'triangle') backContent = `<div class="shape-triangle" style="--dynamic-color:${data.color}"></div>`;
+        else if (data.type === 'star') backContent = `<span class="emoji-star" style="--dynamic-color:${data.color}">⭐</span>`;
         else if (data.type === 'big-small') backContent = `<div class="comparison-container"><div class="big-small-large"></div><div class="big-small-small"></div></div>`;
         else if (data.type === 'tall-short') backContent = `<div class="comparison-container"><div class="tall-short-tall"></div><div class="tall-short-short"></div></div>`;
         else backContent = `<div class="letter-display-container">${data.letter}</div>`;
@@ -71,7 +73,7 @@ function renderCards() {
                 <span class="letter">${data.letter}</span>
                 <span class="word">${data.word}</span>
             </div>`;
-        card.innerHTML = `<div class="card-inner"><div class="card-front">${frontContent}</div><div class="card-back" ${backStyle}>${backContent}</div></div><div class="progress-container"><div class="progress-bar"></div></div>`;
+        card.innerHTML = `<div class="card-inner"><div class="card-front">${frontContent}</div><div class="card-back ${backClass}" style="${backVars}">${backContent}</div></div><div class="progress-container"><div class="progress-bar"></div></div>`;
         master.appendChild(card);
     });
 }

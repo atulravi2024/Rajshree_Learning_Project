@@ -16,7 +16,8 @@ Rajshree_Learning_Project/
 │   ├── master_records/     ← Global/India city & state JSON datasets
 │   └── schemas/            ← Python/JS database utility tools
 ├── backend/                ← Backend Core Logic
-│   └── tts_engine/         ← Edge-TTS generation engine (Madhur, Swara voices)
+│   ├── tts_engine/         ← Edge-TTS generation engine (Madhur, Swara voices)
+│   └── bg_music/           ← Background Music Assets (Loops & Themes)
 ├── scripts/                ← Advanced Operational Pipelines
 │   ├── audio_pipeline/     ← Batch audio generation and audit tools
 │   └── data_pipeline/      ← Data extraction and JS building tools

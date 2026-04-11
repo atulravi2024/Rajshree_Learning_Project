@@ -223,12 +223,19 @@ const loadSettings = () => {
     const speed = s('mobile_playback_speed', '1.0');
     const bgMusic = b('mobile_bg_music', true);
     const sfx = b('mobile_sfx', true);
+    const volMaster = s('mobile_vol_master', '80');
+    const volMusic = s('mobile_vol_music', '5');
+    const volSFX = s('mobile_vol_sfx', '50');
+    const volContent = s('mobile_vol_content', '100');
     
     // 2. Visuals
     const theme = s('mobile_theme_primary', 'pink');
     const darkMode = b('mobile_dark_mode', false);
     const animQuality = s('mobile_anim_quality', 'high');
     const delay = s('mobile_autoplay_delay', '3');
+    const bgPattern = b('mobile_bg_pattern', true);
+    const glowEffect = b('mobile_glow_effect', true);
+    const autoDark = b('mobile_auto_dark', false);
     const autoplay = b('mobile_autoplay', false);
     
     // 3. Learning
@@ -250,8 +257,20 @@ const loadSettings = () => {
     // Sync UI
     setVal('mobile-ui-lang', uiLang);
     setVal('mobile-speed', speed);
+    setCheck('mobile-bg-music', bgMusic);
+    setCheck('mobile-sfx', sfx);
+    setCheck('mobile-large-text', largeText);
+    setCheck('mobile-contrast', contrast);
+    setCheck('mobile-lock', childLock);
+    setCheck('mobile-break', breakToggle);
+    setCheck('mobile-autoplay', autoplay);
+    setCheck('mobile-bg-pattern', bgPattern);
+    setCheck('mobile-glow-effect', glowEffect);
+    setCheck('mobile-auto-dark', autoDark);
     const speedBadge = document.getElementById('mobile-speed-badge');
     if (speedBadge) speedBadge.textContent = speed + 'x';
+    
+    syncDarkModeUI();
     
     setVal('mobile-anim-quality', animQuality);
     setVal('mobile-delay', delay);
@@ -261,6 +280,20 @@ const loadSettings = () => {
 
     setCheck('mobile-bg-music', bgMusic);
     setCheck('mobile-sfx', sfx);
+
+    setVal('mobile-vol-master', volMaster);
+    setVal('mobile-vol-music', volMusic);
+    setVal('mobile-vol-sfx', volSFX);
+    setVal('mobile-vol-content', volContent);
+
+    const updateBadge = (id, val, unit) => {
+        const el = document.getElementById(id + '-badge');
+        if (el) el.textContent = val + unit;
+    };
+    updateBadge('mobile-vol-master', volMaster, '%');
+    updateBadge('mobile-vol-music', volMusic, '%');
+    updateBadge('mobile-vol-sfx', volSFX, '%');
+    updateBadge('mobile-vol-content', volContent, '%');
     setCheck('mobile-break', breakToggle);
     setCheck('mobile-large-text', largeText);
     setCheck('mobile-contrast', contrast);
@@ -289,7 +322,10 @@ const attachEvents = () => {
         { id: 'mobile-contrast', key: 'mobile_contrast', label: 'हाई कंट्रास्ट' },
         { id: 'mobile-lock', key: 'mobile_child_lock', label: 'चिल्ड लॉक' },
         { id: 'mobile-autoplay', key: 'mobile_autoplay', label: 'ऑटो-प्ले' },
-        { id: 'mobile-dark-mode', key: 'mobile_dark_mode', label: 'डार्क मोड' }
+        { id: 'mobile-dark-mode', key: 'mobile_dark_mode', label: 'डार्क मोड' },
+        { id: 'mobile-bg-pattern', key: 'mobile_bg_pattern', label: 'बैकग्राउंड पैटर्न' },
+        { id: 'mobile-auto-dark', key: 'mobile_auto_dark', label: 'ऑटो डार्क मोड' },
+        { id: 'mobile-glow-effect', key: 'mobile_glow_effect', label: 'चमक इफेक्ट्स' }
     ];
 
     toggles.forEach(t => {
@@ -299,6 +335,22 @@ const attachEvents = () => {
             localStorage.setItem(t.key, val);
             if (t.key === 'mobile_dark_mode' && window.ThemeEngine) {
                 window.ThemeEngine.applyDarkMode(val);
+            }
+            if (t.key === 'mobile_large_text' && window.ThemeEngine) {
+                window.ThemeEngine.applyLargeText(val);
+            }
+            if (t.key === 'mobile_contrast' && window.ThemeEngine) {
+                window.ThemeEngine.applyContrast(val);
+            }
+            if (t.key === 'mobile_bg_pattern' && window.ThemeEngine) {
+                window.ThemeEngine.applyBackgroundPattern(val);
+            }
+            if (t.key === 'mobile_auto_dark' && window.ThemeEngine) {
+                window.ThemeEngine.applyAutoDarkMode(val);
+                syncDarkModeUI();
+            }
+            if (t.key === 'mobile_glow_effect' && window.ThemeEngine) {
+                window.ThemeEngine.applyGlowEffect(val);
             }
             showToast(`${t.label} ${val ? 'शुरू' : 'बंद'}`);
         });
@@ -312,7 +364,11 @@ const attachEvents = () => {
         { id: 'mobile-timer', key: 'mobile_timer', label: 'समय सीमा' },
         { id: 'mobile-difficulty', key: 'mobile_difficulty', label: 'कठिनाई' },
         { id: 'mobile-daily-goal', key: 'mobile_daily_goal', label: 'डेली लक्ष्य' },
-        { id: 'mobile-ui-lang', key: 'mobile_ui_language', label: 'भाषा' }
+        { id: 'mobile-ui-lang', key: 'mobile_ui_language', label: 'भाषा' },
+        { id: 'mobile-vol-master', key: 'mobile_vol_master', label: 'मास्टर आवाज़', unit: '%' },
+        { id: 'mobile-vol-music', key: 'mobile_vol_music', label: 'संगीत', unit: '%' },
+        { id: 'mobile-vol-sfx', key: 'mobile_vol_sfx', label: 'साउंड इफेक्ट्स', unit: '%' },
+        { id: 'mobile-vol-content', key: 'mobile_vol_content', label: 'सामग्री', unit: '%' }
     ];
 
     inputs.forEach(i => {
@@ -320,6 +376,10 @@ const attachEvents = () => {
         if (el) el.addEventListener('input', (e) => {
             const val = e.target.value;
             localStorage.setItem(i.key, val);
+            
+            // Update Volume Badge if exists
+            const badge = document.getElementById(`${i.id}-badge`);
+            if (badge) badge.textContent = val + (i.unit || '');
             
             // Handle UI Language Change
             if (i.key === 'mobile_ui_language') {
@@ -372,6 +432,22 @@ const attachEvents = () => {
     }
 };
 
+const syncDarkModeUI = () => {
+    const autoDark = localStorage.getItem('mobile_auto_dark') === 'true';
+    const manualGroup = document.getElementById('manual-dark-group');
+    const manualInput = document.getElementById('mobile-dark-mode');
+    
+    if (manualGroup && manualInput) {
+        if (autoDark) {
+            manualGroup.classList.add('is-disabled');
+            manualInput.disabled = true;
+        } else {
+            manualGroup.classList.remove('is-disabled');
+            manualInput.disabled = false;
+        }
+    }
+};
+
 /** HELPERS */
 const setVal = (id, val) => { const el = document.getElementById(id); if (el) el.value = val; };
 const setCheck = (id, val) => { const el = document.getElementById(id); if (el) el.checked = val; };
@@ -383,16 +459,12 @@ const updateGridSelection = (selector, dataAttr, currentVal) => {
 };
 
 const showToast = (message) => {
-    const existing = document.querySelector('.toast-msg');
-    if (existing) existing.remove();
     const t = document.createElement('div');
     t.className = 'toast-msg';
-    Object.assign(t.style, {
-        position: 'fixed', bottom: '40px', left: '50%', transform: 'translateX(-50%)',
-        background: 'rgba(26,26,46,0.95)', color: 'white', padding: '12px 30px',
-        borderRadius: '40px', zIndex: '999', fontSize: '14px', fontWeight: 'bold'
-    });
     t.textContent = message;
     document.body.appendChild(t);
-    setTimeout(() => { t.style.opacity = '0'; setTimeout(() => t.remove(), 400); }, 1500);
+    setTimeout(() => { 
+        t.style.opacity = '0'; 
+        setTimeout(() => t.remove(), 400); 
+    }, 1500);
 };

@@ -67,3 +67,8 @@ tmp/
 # Specific Logs
 # ---------------------------
 audio_analysis.txt
+
+# ---------------------------
+# Agent Internal Memory
+# ---------------------------
+brain/

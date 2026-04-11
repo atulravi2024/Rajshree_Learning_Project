@@ -21,6 +21,8 @@
     --border-radius-lg: 30px;
     
     --bg-gradient: linear-gradient(135deg, var(--light-bg), #e0f2fe);
+    --pattern-color: rgba(0, 0, 0, 0.07);
+    --glow-color: rgba(255, 20, 147, 0.4); /* DEFAULT: Pink Glow */
 }
 
 :root.dark-mode {
@@ -30,19 +32,38 @@
     --text-main: #f8fafc;
     --light-bg: #1e1e2f;
     --bg-gradient: linear-gradient(135deg, #121212, #1a1a2e);
+    --pattern-color: rgba(255, 255, 255, 0.05);
+    --glow-color: rgba(255, 20, 147, 0.2);
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Outfit', 'Hind', 'Bubblegum Sans', sans-serif;
-    background: var(--bg-gradient);
+    background-image: radial-gradient(var(--pattern-color) 1px, transparent 1px), var(--bg-gradient);
+    background-size: 20px 20px, 100% 100%;
+    background-attachment: fixed;
     color: var(--text-main);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
     transition: background 0.5s ease, color 0.3s ease;
+}
+
+.no-pattern body {
+    background-image: none !important;
+}
+
+.no-glow * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+.no-glow, .no-glow body {
+    --glow-color: transparent !important;
+    --shadow-soft: none !important;
 }
 
 .hidden {
@@ -63,8 +84,8 @@ body {
     box-sizing: border-box;
     z-index: 1000;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.08);
-    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -5px 25px var(--glow-color); /* Subtle themed glow for the bar */
+    border-radius: 25px 25px 0 0;
 }
 
 .nav-item {
@@ -87,7 +108,10 @@ body {
 
 .nav-item.active {
     opacity: 1;
-    transform: translateY(-5px);
+    /* Removed translateY to make it less 'highlighted' as per user request */
+    box-shadow: 0 4px 12px var(--glow-color);
+    background: rgba(255, 255, 255, 0.1); /* Subtle indicator */
+    border-radius: 15px;
 }
 
 .nav-icon {
@@ -175,7 +199,7 @@ body {
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    background: white;
+    background: var(--dynamic-bg, white);
     border-radius: 40px;
     
     /* Desktop-Match Border System */
@@ -183,7 +207,7 @@ body {
     outline: 3px solid var(--light-bg);
     outline-offset: -8px;
     
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px var(--glow-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -196,7 +220,39 @@ body {
 
 .card-back {
     transform: rotateY(-180deg);
-    background: #fafafa;
+    background: var(--dynamic-bg, #fafafa);
+}
+
+.card-back-solid {
+    border-color: var(--dynamic-bg) !important;
+}
+
+.emoji-star {
+    color: var(--dynamic-color);
+}
+
+.shape-triangle {
+    border-bottom-color: var(--dynamic-color) !important;
+}
+
+.shape-container {
+    background: var(--dynamic-color) !important;
+}
+
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.confetti-piece {
+    position: absolute;
+    top: -20px;
 }
 
 .slide-in-right {
@@ -221,7 +277,7 @@ body {
     font-size: 8rem;
     margin: 0;
     color: var(--primary-color);
-    text-shadow: 1px 1px 0 rgba(0,0,0,0.05);
+    text-shadow: 3px 3px 15px var(--glow-color);
 }
 
 .card-word {
@@ -413,16 +469,17 @@ body {
 }
 
 :root.reduced-motion .mobile-card {
-    transition: transform 0.2s ease-in-out !important;
+    transition: transform 0.1s ease-in-out !important;
 }
 
 :root.reduced-motion .mobile-card-container {
-    animation-duration: 0.1s !important;
+    animation-duration: 0.01s !important;
 }
 
 :root.reduced-motion * {
-    transition-duration: 0.1s !important;
-    animation-iteration-count: 0 !important; /* Stop heavy loops if any */
+    transition-duration: 0.01s !important;
+    animation-duration: 0.01s !important;
+    animation-delay: 0s !important;
 }
 
 
@@ -477,4 +534,55 @@ body {
 
 .dark-mode .card-back {
     background: #181818 !important;
+}
+
+/* =====================================================
+   Accessibility & Use (Large Text & High Contrast)
+   ===================================================== */
+
+/* Large Text Mode */
+.large-text {
+    font-size: 1.15rem; /* Scales everything using rem */
+}
+
+.large-text .nav-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+    --primary-color: #000000 !important;
+    --primary-gradient: none !important;
+    --accent-color: #FFFF00 !important;
+    --light-bg: #FFFFFF !important;
+    --surface-color: #FFFFFF !important;
+    --text-main: #000000 !important;
+    --bg-gradient: none !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+}
+
+.high-contrast .mobile-nav {
+    background: #000000 !important;
+    border-top: 2px solid #FFFF00 !important;
+}
+
+.high-contrast .nav-item {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+}
+
+.high-contrast .nav-item.active {
+    background: #FFFF00 !important;
+    color: #000000 !important;
+    border-radius: 10px;
+}
+
+.high-contrast .card-front, 
+.high-contrast .card-back {
+    background: #FFFFFF !important;
+    border: 3px solid #000000 !important;
+    color: #000000 !important;
+    box-shadow: none !important;
 }

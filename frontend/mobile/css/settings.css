@@ -38,6 +38,14 @@ body {
     transition: background 0.5s ease, color 0.3s ease;
 }
 
+/* Firefox Scrollbar Compatibility */
+@supports (scrollbar-width: thin) {
+    body {
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary-color) #f1f5f9;
+    }
+}
+
 body.v-dragging,
 body.v-dragging * {
     cursor: grabbing !important;
@@ -51,18 +59,21 @@ html.v-dragging {
     scroll-behavior: auto !important;
 }
 
-/* Custom Vertical Scrollbar (Chrome/Safari) */
+/* Custom Vertical Scrollbar (Chrome/Safari/Samsung) */
 ::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: #f1f5f9;
+    border-radius: 10px;
 }
 
-::webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
     border-radius: 10px;
+    border: 1px solid white;
 }
 
 .settings-header {
@@ -104,39 +115,48 @@ html.v-dragging {
     scroll-behavior: smooth;
 }
 
-/* Custom Scrollbar for Chrome/Safari */
+/* Custom Scrollbar for Chrome/Safari/Samsung */
 .category-tabs::-webkit-scrollbar {
-    height: 4px;
+    height: 6px; /* Slightly taller for visibility */
     display: block;
 }
 
 .category-tabs::-webkit-scrollbar-track {
-    background: transparent;
+    background: #f1f5f9; /* Themed/Light background for track */
+    border-radius: 10px;
 }
 
 .category-tabs::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     border-radius: 10px;
-    opacity: 0.5;
+    border: 1px solid white; /* Adds definition */
 }
 
 /* Indicators for scrollable area (Fade edges) */
 .category-tabs {
     -webkit-mask-image: linear-gradient(to right, 
-        transparent, 
-        black 5%, 
-        black 95%, 
-        transparent
+        rgba(0,0,0,0) 0%, 
+        black 8%, 
+        black 92%, 
+        rgba(0,0,0,0) 100%
     );
     mask-image: linear-gradient(to right, 
-        transparent, 
-        black 5%, 
-        black 95%, 
-        transparent
+        rgba(0,0,0,0) 0%, 
+        black 8%, 
+        black 92%, 
+        rgba(0,0,0,0) 100%
     );
     cursor: grab;
     -webkit-user-select: none;
     user-select: none;
+}
+
+/* Firefox Scrollbar Compatibility for Tabs */
+@supports (scrollbar-width: thin) {
+    .category-tabs {
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary-color) #f1f5f9;
+    }
 }
 
 .category-tabs.dragging {
@@ -452,7 +472,26 @@ input:checked + .slider:before {
 /* Range Inputs */
 .range-container {
     padding: 2px 0;
+    position: relative;
+    margin: 10px 0;
 }
+
+.range-mark {
+    position: absolute;
+    top: 5px; /* Aligned with track */
+    width: 2px;
+    height: 10px;
+    background: var(--primary-color);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 1px;
+}
+
+#mark-master { left: 80%; }
+#mark-music { left: 5%; }
+#mark-sfx { left: 50%; }
+#mark-content { left: 100%; }
 
 input[type="range"] {
     -webkit-appearance: none;
@@ -645,4 +684,106 @@ input[type="range"]::-webkit-slider-thumb {
 .dark-mode .voice-card.active {
     background: #1e1e1e !important;
     border-color: var(--primary-color) !important;
+}
+
+/* Dark Mode Scrollbar Tracks */
+.dark-mode .category-tabs::-webkit-scrollbar-track,
+.dark-mode::-webkit-scrollbar-track {
+    background: #1e1e2f !important;
+}
+
+/* =====================================================
+   Accessibility & Use (Settings Specific)
+   ===================================================== */
+
+/* Large Text Mode */
+.large-text {
+    font-size: 1.15rem;
+}
+
+.large-text .tab-text { font-size: 1rem !important; font-weight: 800; }
+.large-text .section-title { font-size: 1.3rem !important; }
+.large-text .group-label { font-size: 1.1rem !important; }
+
+/* High Contrast Mode */
+.high-contrast {
+    --primary-color: #000000 !important;
+    --accent-color: #FFFF00 !important;
+    --light-bg: #FFFFFF !important;
+    --surface-color: #FFFFFF !important;
+    --text-main: #000000 !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+}
+
+.high-contrast .section-header,
+.high-contrast .settings-group,
+.high-contrast .tab-btn {
+    background: #FFFFFF !important;
+    border: 3px solid #000000 !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+}
+
+.high-contrast .tab-btn.active {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+.high-contrast .tab-btn.active .tab-text {
+    color: #FFFFFF !important;
+}
+
+/* =====================================================
+   Accessibility & Visual Overrides
+   ===================================================== */
+
+.no-pattern body {
+    background-image: none !important;
+}
+
+.no-glow * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+.no-glow {
+    --glow-color: transparent !important;
+    --shadow-soft: none !important;
+}
+
+/* Accessible Modes (Sync with main.app) */
+.large-text { font-size: 1.15rem; }
+.large-text .tab-text { font-size: 1rem !important; font-weight: 800; }
+
+.high-contrast {
+    --primary-color: #000000 !important;
+    --accent-color: #FFFF00 !important;
+    --light-bg: #FFFFFF !important;
+    --surface-color: #FFFFFF !important;
+    --text-main: #000000 !important;
+}
+
+/* Utility: Toast Messages (Moved from JS) */
+.toast-msg {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(26, 26, 46, 0.95);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 40px;
+    z-index: 999;
+    font-size: 14px;
+    font-weight: bold;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* Utility: Visual State */
+.is-disabled {
+    opacity: 0.5 !important;
+    pointer-events: none !important;
 }

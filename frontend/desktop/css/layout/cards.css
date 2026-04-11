@@ -26,9 +26,26 @@
 .card { perspective: 2500px; width: 100%; height: 100%; max-width: 600px; max-height: 550px; position: relative; cursor: pointer; transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 .card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1); transform-style: preserve-3d; }
 .card.is-flipped .card-inner { transform: rotateY(-180deg); }
-.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 50px; background: white; border: 12px solid #fff; outline: 4px solid #FFDEE9; outline-offset: -12px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; overflow: hidden; transition: all 0.4s ease; }
+.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 50px; background: var(--dynamic-bg, white); border: 12px solid var(--dynamic-border, #fff); outline: 4px solid #FFDEE9; outline-offset: -12px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box; overflow: hidden; transition: all 0.4s ease; }
 .card:hover .card-front, .card:hover .card-back { border-color: var(--primary-pink); box-shadow: 0 40px 80px rgba(255, 20, 147, 0.3); }
-.card-back { transform: rotateY(-180deg); background: #fafafa; padding: 0 !important; justify-content: center; }
+.card-back { transform: rotateY(-180deg); background: var(--dynamic-bg, #fafafa); padding: 0 !important; justify-content: center; }
+
+.card-back-solid {
+    border-color: var(--dynamic-border) !important;
+    outline: none !important;
+}
+
+.emoji-star {
+    color: var(--dynamic-color);
+}
+
+.shape-triangle {
+    border-bottom-color: var(--dynamic-color) !important;
+}
+
+.shape-container {
+    background: var(--dynamic-color) !important;
+}
 
 .letter { font-size: var(--letter-size, 18vh); font-weight: 700; color: var(--deep-purple); font-family: 'Bubblegum Sans', cursive; line-height: 1; margin-bottom: 0px; }
 .emoji { 

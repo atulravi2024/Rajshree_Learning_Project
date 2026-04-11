@@ -10,8 +10,13 @@ const state = {
     data: [],
     isAutoplay: localStorage.getItem('mobile_autoplay') === 'true',
     isSFX: localStorage.getItem('mobile_sfx') !== 'false',
+    isBGMusic: localStorage.getItem('mobile_bg_music') !== 'false',
     autoplayDelay: parseInt(localStorage.getItem('mobile_autoplay_delay')) || 3,
     playbackSpeed: parseFloat(localStorage.getItem('mobile_playback_speed')) || 1.0,
+    vMaster: (parseFloat(localStorage.getItem('mobile_vol_master')) || 80) / 100,
+    vMusic: (parseFloat(localStorage.getItem('mobile_vol_music')) || 5) / 100,
+    vSFX: (parseFloat(localStorage.getItem('mobile_vol_sfx')) || 50) / 100,
+    vContent: (parseFloat(localStorage.getItem('mobile_vol_content')) || 100) / 100,
     autoplayTimeout: null,
     isPlayingAutoplay: false
 };
@@ -55,6 +60,7 @@ const startApp = (silent = false) => {
     if (!silent) {
         playSound('system/welcome_short.mp3');
     }
+    updateBGM();
 };
 
 // Home Navigation logic
@@ -114,20 +120,22 @@ const renderCard = (direction = 'next') => {
     // Slide animation class (applied to container)
     const animClass = direction === 'next' ? 'slide-in-right' : 'slide-in-left';
 
-    // Build Back Content (similar to desktop display.js)
+    // Build Back Content
     let backContent = '';
-    let backStyle = '';
-    if (item.image) backContent = `<img class="flash-image" src="${item.image}" alt="${item.word || item.name_hi}">`;
+    let backVars = '';
+    let backClass = '';
+    if (item.image) backContent = `<img class="flash-image" src="${item.image}" alt="${item.word || item.name_hi || ''}">`;
     else if (item.content) backContent = `<div class="display-content-medium">${item.content}</div>`;
     else if (item.color) {
         backContent = '';
-        backStyle = `style="background:${item.color} !important;"`;
+        backVars = `--dynamic-bg:${item.color};`;
+        backClass = 'card-back-solid';
     }
     else if (item.value) backContent = `<div class="display-content-large">${item.value}</div>`;
-    else if (item.type === 'circle') backContent = `<div class="shape-container shape-circle" style="background:${item.color}"></div>`;
-    else if (item.type === 'square') backContent = `<div class="shape-container" style="background:${item.color}"></div>`;
-    else if (item.type === 'triangle') backContent = `<div class="shape-triangle" style="border-bottom-color:${item.color}"></div>`;
-    else if (item.type === 'star') backContent = `<span class="emoji-star" style="color:${item.color}">⭐</span>`;
+    else if (item.type === 'circle') backContent = `<div class="shape-container shape-circle" style="--dynamic-color:${item.color}"></div>`;
+    else if (item.type === 'square') backContent = `<div class="shape-container" style="--dynamic-color:${item.color}"></div>`;
+    else if (item.type === 'triangle') backContent = `<div class="shape-triangle" style="--dynamic-color:${item.color}"></div>`;
+    else if (item.type === 'star') backContent = `<span class="emoji-star" style="--dynamic-color:${item.color}">⭐</span>`;
     else backContent = `<div class="display-content-large">${item.letter || ''}</div>`;
 
     container.innerHTML = `
@@ -138,7 +146,7 @@ const renderCard = (direction = 'next') => {
                     <p class="card-word">${item.word || item.name_hi || ''}</p>
                     <div class="card-emoji">${item.emoji || '✨'}</div>
                 </div>
-                <div class="card-back" ${backStyle}>
+                <div class="card-back ${backClass}" style="${backVars}">
                     ${backContent}
                 </div>
                 <div class="progress-container">
@@ -199,6 +207,38 @@ const flipCard = (card, audioPath) => {
 // Audio logic 
 let currentAudio = null;
 let currentSFX = null;
+let bgmAudio = null;
+
+const getEffectiveVolume = (type) => {
+    const v = state.vMaster || 0.8;
+    if (type === 'music') return v * (state.vMusic || 0.6);
+    if (type === 'sfx') return v * (state.vSFX || 0.9);
+    if (type === 'content') return v * (state.vContent || 1.0);
+    return v;
+};
+
+const updateBGM = () => {
+    if (!state.isBGMusic) {
+        if (bgmAudio) {
+            bgmAudio.pause();
+            bgmAudio = null;
+        }
+        return;
+    }
+
+    if (!bgmAudio) {
+        const bgmPath = (window.AUDIO_BASE_PATH || '../assets/audio/') + 'system/bg_music/welcome_loop.mp3';
+        bgmAudio = new Audio(bgmPath);
+        bgmAudio.loop = true;
+    }
+
+    bgmAudio.volume = getEffectiveVolume('music');
+    
+    // Only play if session is active (to avoid background noise on welcome screen unless desired)
+    if (bgmAudio.paused && localStorage.getItem('mobile_session_active') === 'true') {
+        bgmAudio.play().catch(() => console.warn("BGM autoplay blocked"));
+    }
+};
 
 const stopCurrentAudio = () => {
     if (state.autoplayTimeout) {
@@ -236,6 +276,7 @@ const playSound = (audioPath, card) => {
     const fullPath = (window.AUDIO_BASE_PATH || '../assets/audio/') + audioPath;
     const audio = new Audio(fullPath);
     audio.playbackRate = state.playbackSpeed || 1.0;
+    audio.volume = getEffectiveVolume('content');
     currentAudio = audio;
     updatePlaybackUI();
     
@@ -249,30 +290,33 @@ const playSound = (audioPath, card) => {
                 bar.style.width = percent + '%';
             }
         });
+    }
 
-        audio.addEventListener('ended', () => {
-            if (currentAudio === audio) {
+    audio.addEventListener('ended', () => {
+        if (currentAudio === audio) {
+            if (card) {
                 card.classList.remove('playing');
+                const bar = card.querySelector('.progress-bar');
                 if (bar) bar.style.width = '0%';
-                currentAudio = null;
-                updatePlaybackUI();
+            }
+            
+            currentAudio = null;
+            updatePlaybackUI();
 
-                // Autoplay: Move to next card after delay OR Trigger Celebration if end reached
-                if (state.isPlayingAutoplay) {
-                    if (state.currentIndex < state.data.length - 1) {
-                        state.autoplayTimeout = setTimeout(() => {
-                            next(false); // Trigger auto transition without manual SFX
-                        }, state.autoplayDelay * 1000);
-                    } else {
-                        // Reached the end during autoplay!
-                        state.autoplayTimeout = setTimeout(() => {
-                            triggerCelebration();
-                        }, 1000);
-                    }
+            // Autoplay/Celebration logic (only applicable if a card was active)
+            if (card && state.isPlayingAutoplay) {
+                if (state.currentIndex < state.data.length - 1) {
+                    state.autoplayTimeout = setTimeout(() => {
+                        next(false); 
+                    }, state.autoplayDelay * 1000);
+                } else {
+                    state.autoplayTimeout = setTimeout(() => {
+                        triggerCelebration();
+                    }, 1000);
                 }
             }
-        });
-    }
+        }
+    });
 
     audio.play().catch(e => {
         console.warn("Failed to play audio:", e.message);
@@ -291,7 +335,7 @@ const playInteractionSFX = (element) => {
     const sfxPath = (window.AUDIO_BASE_PATH || '../assets/audio/') + 'system/effects/storm-wind.mp3';
     const sfx = new Audio(sfxPath);
     currentSFX = sfx;
-    sfx.volume = 0.5; // Natural volume
+    sfx.volume = getEffectiveVolume('sfx'); // Dynamic volume
     sfx.play().catch(() => {});
 
     // Visual Feedback (Pop Animation)
@@ -390,6 +434,7 @@ const triggerCelebration = () => {
     // Play reward sound
     const rewardPath = (window.AUDIO_BASE_PATH || '../assets/audio/') + 'system/effects/reward_excellent.mp3';
     const rewardAudio = new Audio(rewardPath);
+    rewardAudio.volume = getEffectiveVolume('content');
     currentAudio = rewardAudio;
 
     rewardAudio.onplay = () => triggerConfetti();
@@ -414,16 +459,6 @@ const triggerConfetti = () => {
     
     const container = document.createElement('div');
     container.id = 'confetti-container';
-    Object.assign(container.style, {
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        width: '100vw',
-        height: '100vh',
-        pointerEvents: 'none',
-        zIndex: '9999',
-        overflow: 'hidden'
-    });
     document.body.appendChild(container);
 
     const createPiece = () => {
@@ -432,9 +467,8 @@ const triggerConfetti = () => {
         const color = colors[Math.floor(Math.random() * colors.length)];
         const shape = shapes[Math.floor(Math.random() * shapes.length)];
         
+        piece.className = 'confetti-piece';
         Object.assign(piece.style, {
-            position: 'absolute',
-            top: '-20px',
             left: Math.random() * 100 + 'vw',
             width: size + 'px',
             height: size + 'px',
@@ -506,6 +540,15 @@ window.triggerCelebration = triggerCelebration;
 window.addEventListener('focus', () => {
     state.isAutoplay = localStorage.getItem('mobile_autoplay') === 'true';
     state.isSFX = localStorage.getItem('mobile_sfx') !== 'false';
+    state.isBGMusic = localStorage.getItem('mobile_bg_music') !== 'false';
     state.autoplayDelay = parseInt(localStorage.getItem('mobile_autoplay_delay')) || 3;
     state.playbackSpeed = parseFloat(localStorage.getItem('mobile_playback_speed')) || 1.0;
+    
+    // Refresh Volumes
+    state.vMaster = (parseFloat(localStorage.getItem('mobile_vol_master')) || 80) / 100;
+    state.vMusic = (parseFloat(localStorage.getItem('mobile_vol_music')) || 5) / 100;
+    state.vSFX = (parseFloat(localStorage.getItem('mobile_vol_sfx')) || 50) / 100;
+    state.vContent = (parseFloat(localStorage.getItem('mobile_vol_content')) || 100) / 100;
+
+    updateBGM();
 });

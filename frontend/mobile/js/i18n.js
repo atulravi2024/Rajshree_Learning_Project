@@ -26,8 +26,11 @@ window.RAJSHREE_I18N = {
 
             // Section Titles
             'sec_profile': 'प्रोफाइल प्रबंधन',
-            'sec_audio': 'आवाज़ और बोलना',
-            'sec_visuals': 'विज़ुअल्स और थीम',
+            'sec_audio': 'आवाज़ और संगीत',
+            'sec_speech': 'बोलने की शैली',
+            'sec_interaction': 'संवाद और अनुभव',
+            'sec_visuals': 'विज़ुअल्स (दृश्य)',
+            'sec_theme': 'थीम और डार्क मोड',
             'sec_learning': 'सीखने के विकल्प',
             'sec_accessibility': 'पहुंच और उपयोग',
             'sec_time': 'समय प्रबंधन',
@@ -37,6 +40,7 @@ window.RAJSHREE_I18N = {
             'sec_device': 'डिवाइस और डेटा',
             'sec_dev_tools': 'डेवलपर टूल्स',
             'sec_app_settings': 'ऐप सेटिंग्स',
+            'sec_volume': 'आवाज़ का स्तर',
 
             // Labels
             'lbl_active_profile': 'एक्टिव प्रोफाइल',
@@ -56,11 +60,20 @@ window.RAJSHREE_I18N = {
             'lbl_child_lock': 'चाइल्ड लॉक',
             'lbl_cloud_sync': 'क्लाउड बैकअप',
             'lbl_clear_cache': 'कैश साफ़ करें',
-            'lbl_version': 'वर्शन माहिती',
+            'lbl_version': 'वर्शन जानकारी',
             'lbl_reset_all': 'पूरा डेटा रीसेट करें',
             'lbl_debug_mode': 'डीबग मोड',
             'lbl_enable_logs': 'एनेबल लॉग्स',
             'lbl_ui_lang': 'मेन्यू की भाषा',
+            'lbl_vol_master': 'मास्टर आवाज़',
+            'lbl_vol_music': 'संगीत आवाज़',
+            'lbl_vol_sfx': 'साउंड इफेक्ट्स आवाज़',
+            'lbl_vol_content': 'सामग्री आवाज़',
+            'lbl_large_text': 'बड़ा टेक्स्ट',
+            'lbl_contrast': 'हाई कंट्रास्ट',
+            'lbl_glow_effect': 'चमक (Glow Effects)',
+            'lbl_bg_pattern': 'बैकग्राउंड पैटर्न',
+            'lbl_auto_dark': 'ऑटो डार्क मोड',
 
             // Sub-texts
             'sub_music': 'हल्का बैकग्राउंड म्यूज़िक',
@@ -97,8 +110,11 @@ window.RAJSHREE_I18N = {
 
             // Section Titles
             'sec_profile': 'Profile Management',
-            'sec_audio': 'Audio & Speech',
-            'sec_visuals': 'Visuals & Theme',
+            'sec_audio': 'Audio & Music',
+            'sec_speech': 'Speech Settings',
+            'sec_interaction': 'App Interaction',
+            'sec_visuals': 'Visuals & Performance',
+            'sec_theme': 'Theme & Appearance',
             'sec_learning': 'Learning Options',
             'sec_accessibility': 'Accessibility & Use',
             'sec_time': 'Time Management',
@@ -108,6 +124,7 @@ window.RAJSHREE_I18N = {
             'sec_device': 'Device & Data',
             'sec_dev_tools': 'Developer Tools',
             'sec_app_settings': 'App Settings',
+            'sec_volume': 'Volume Levels',
 
             // Labels
             'lbl_active_profile': 'Active Profile',
@@ -132,6 +149,15 @@ window.RAJSHREE_I18N = {
             'lbl_debug_mode': 'Debug Mode',
             'lbl_enable_logs': 'Enable Logs',
             'lbl_ui_lang': 'Interface Language',
+            'lbl_vol_master': 'Master Volume',
+            'lbl_vol_music': 'Music Volume',
+            'lbl_vol_sfx': 'SFX Volume',
+            'lbl_vol_content': 'Content Volume',
+            'lbl_large_text': 'Large Text',
+            'lbl_contrast': 'High Contrast',
+            'lbl_glow_effect': 'Glow Effects',
+            'lbl_bg_pattern': 'Background Pattern',
+            'lbl_auto_dark': 'Auto Dark Mode',
 
             // Sub-texts
             'sub_music': 'Soft background music',
@@ -168,8 +194,11 @@ window.RAJSHREE_I18N = {
 
             // Section Titles
             'sec_profile': 'Profile Prabandhan',
-            'sec_audio': 'Awaaz aur Bolna',
-            'sec_visuals': 'Visuals aur Theme',
+            'sec_audio': 'Awaaz aur Sangeet',
+            'sec_speech': 'Bolne ki Shaili',
+            'sec_interaction': 'Samvad aur Anubhav',
+            'sec_visuals': 'Visuals (Drishya)',
+            'sec_theme': 'Theme aur Mode',
             'sec_learning': 'Seekhne ke Vikalp',
             'sec_accessibility': 'Pahunch aur Upayog',
             'sec_time': 'Samay Prabandhan',
@@ -179,6 +208,7 @@ window.RAJSHREE_I18N = {
             'sec_device': 'Device aur Data',
             'sec_dev_tools': 'Developer Tools',
             'sec_app_settings': 'App Settings',
+            'sec_volume': 'Awaaz ka Star',
 
             // Labels
             'lbl_active_profile': 'Active Profile',
@@ -203,6 +233,15 @@ window.RAJSHREE_I18N = {
             'lbl_debug_mode': 'Debug Mode',
             'lbl_enable_logs': 'Enable Logs',
             'lbl_ui_lang': 'Menu ki Bhasha',
+            'lbl_vol_master': 'Master Awaaz',
+            'lbl_vol_music': 'Sangeet Awaaz',
+            'lbl_vol_sfx': 'SFX Awaaz',
+            'lbl_vol_content': 'Content Awaaz',
+            'lbl_large_text': 'Bada Text',
+            'lbl_contrast': 'High Contrast',
+            'lbl_glow_effect': 'Glow Effects',
+            'lbl_bg_pattern': 'Background Pattern',
+            'lbl_auto_dark': 'Auto Dark Mode',
 
             // Sub-texts
             'sub_music': 'Halka background music',
