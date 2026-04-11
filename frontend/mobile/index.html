@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Hind:wght@400;700&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <script src="js/theme-engine.js"></script>
+    <script src="js/i18n.js"></script>
     <script>
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
@@ -25,36 +27,36 @@
     <!-- Welcome Screen -->
     <div id="welcome-screen" class="mobile-overlay">
         <div class="welcome-card">
-            <h1 class="welcome-title">नमस्ते राजश्री!</h1>
-            <p class="welcome-desc">सीखने की दुनिया में आपका स्वागत है ✨</p>
+            <h1 class="welcome-title" data-i18n="welcome_title">नमस्ते राजश्री!</h1>
+            <p class="welcome-desc" data-i18n="welcome_desc">सीखने की दुनिया में आपका स्वागत है ✨</p>
             <div class="start-orb" onclick="startApp()">
                 <div class="rocket-icon">🚀</div>
-                <span>शुरू करें</span>
+                <span data-i18n="btn_start">शुरू करें</span>
             </div>
         </div>
     </div>
 
     <main id="master-mobile" class="hidden">
         <!-- Dynamic card content will go here -->
-        <div class="loading-state">शुरू किया जा रहा है...</div>
+        <div class="loading-state" data-i18n="loading_text">शुरू किया जा रहा है...</div>
     </main>
 
     <nav class="mobile-nav">
         <a class="nav-item" id="mobile-prev" onclick="prev()" title="Previous">
             <span class="nav-icon">⬅️</span>
-            <span class="nav-label">पीछे (Prev)</span>
+            <span class="nav-label" data-i18n="nav_prev">पीछे</span>
         </a>
         <a class="nav-item active" id="mobile-home" onclick="goHome()" title="Home">
             <span class="nav-icon">🏠</span>
-            <span class="nav-label">होम (Home)</span>
+            <span class="nav-label" data-i18n="nav_home">होम</span>
         </a>
         <a class="nav-item" id="mobile-next" onclick="next()" title="Next">
             <span class="nav-icon">➡️</span>
-            <span class="nav-label">अगला (Next)</span>
+            <span class="nav-label" data-i18n="nav_next">अगला</span>
         </a>
         <a class="nav-item" onclick="openSettings()" title="Settings">
             <span class="nav-icon">⚙️</span>
-            <span class="nav-label">सेटिंग्स (Settings)</span>
+            <span class="nav-label" data-i18n="nav_settings">सेटिंग्स</span>
         </a>
     </nav>
 

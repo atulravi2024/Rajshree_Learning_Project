@@ -20,6 +20,10 @@ const state = {
 document.addEventListener('DOMContentLoaded', () => {
     console.log("📱 Rajshree Learning Mobile Initialized!");
     loadData();
+
+    // Initialize UI language
+    const uiLang = localStorage.getItem('mobile_ui_language') || 'hi';
+    if (window.RAJSHREE_I18N) window.RAJSHREE_I18N.applyUI(uiLang);
     
     const isStarted = localStorage.getItem('mobile_session_active') === 'true';
     if (isStarted) {

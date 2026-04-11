@@ -226,6 +226,7 @@ const loadSettings = () => {
     
     // 2. Visuals
     const theme = s('mobile_theme_primary', 'pink');
+    const darkMode = b('mobile_dark_mode', false);
     const animQuality = s('mobile_anim_quality', 'high');
     const delay = s('mobile_autoplay_delay', '3');
     const autoplay = b('mobile_autoplay', false);
@@ -243,7 +244,11 @@ const loadSettings = () => {
     const largeText = b('mobile_large_text', false);
     const contrast = b('mobile_contrast', false);
 
+    // 6. UI Language
+    const uiLang = s('mobile_ui_language', 'hi');
+
     // Sync UI
+    setVal('mobile-ui-lang', uiLang);
     setVal('mobile-speed', speed);
     const speedBadge = document.getElementById('mobile-speed-badge');
     if (speedBadge) speedBadge.textContent = speed + 'x';
@@ -261,11 +266,17 @@ const loadSettings = () => {
     setCheck('mobile-contrast', contrast);
     setCheck('mobile-lock', childLock);
     setCheck('mobile-autoplay', autoplay);
+    setCheck('mobile-dark-mode', darkMode);
 
     // Grids
     updateGridSelection('.voice-card', 'voice', voice);
     updateGridSelection('.color-circle', 'theme', theme);
+
+    // Apply translations on load via external module
+    if (window.RAJSHREE_I18N) window.RAJSHREE_I18N.applyUI(uiLang);
 };
+
+// --- MULTILINGUAL LOGIC DELEGATED TO i18n.js ---
 
 // Unified Event Handlers
 const attachEvents = () => {
@@ -277,14 +288,19 @@ const attachEvents = () => {
         { id: 'mobile-large-text', key: 'mobile_large_text', label: 'बड़ा टेक्स्ट' },
         { id: 'mobile-contrast', key: 'mobile_contrast', label: 'हाई कंट्रास्ट' },
         { id: 'mobile-lock', key: 'mobile_child_lock', label: 'चिल्ड लॉक' },
-        { id: 'mobile-autoplay', key: 'mobile_autoplay', label: 'ऑटो-प्ले' }
+        { id: 'mobile-autoplay', key: 'mobile_autoplay', label: 'ऑटो-प्ले' },
+        { id: 'mobile-dark-mode', key: 'mobile_dark_mode', label: 'डार्क मोड' }
     ];
 
     toggles.forEach(t => {
         const el = document.getElementById(t.id);
         if (el) el.addEventListener('change', (e) => {
-            localStorage.setItem(t.key, e.target.checked);
-            showToast(`${t.label} ${e.target.checked ? 'शुरू' : 'बंद'}`);
+            const val = e.target.checked;
+            localStorage.setItem(t.key, val);
+            if (t.key === 'mobile_dark_mode' && window.ThemeEngine) {
+                window.ThemeEngine.applyDarkMode(val);
+            }
+            showToast(`${t.label} ${val ? 'शुरू' : 'बंद'}`);
         });
     });
 
@@ -295,14 +311,30 @@ const attachEvents = () => {
         { id: 'mobile-delay', key: 'mobile_autoplay_delay' },
         { id: 'mobile-timer', key: 'mobile_timer', label: 'समय सीमा' },
         { id: 'mobile-difficulty', key: 'mobile_difficulty', label: 'कठिनाई' },
-        { id: 'mobile-daily-goal', key: 'mobile_daily_goal', label: 'डेली लक्ष्य' }
+        { id: 'mobile-daily-goal', key: 'mobile_daily_goal', label: 'डेली लक्ष्य' },
+        { id: 'mobile-ui-lang', key: 'mobile_ui_language', label: 'भाषा' }
     ];
 
     inputs.forEach(i => {
         const el = document.getElementById(i.id);
         if (el) el.addEventListener('input', (e) => {
-            localStorage.setItem(i.key, e.target.value);
-            if (i.label) showToast(`${i.label}: ${e.target.value}`);
+            const val = e.target.value;
+            localStorage.setItem(i.key, val);
+            
+            // Handle UI Language Change
+            if (i.key === 'mobile_ui_language') {
+                if (window.RAJSHREE_I18N) {
+                    window.RAJSHREE_I18N.applyUI(val);
+                    const toastMsg = window.RAJSHREE_I18N.translations[val].toast_lang_update;
+                    showToast(toastMsg);
+                }
+                return;
+            }
+
+            if (i.key === 'mobile_anim_quality' && window.ThemeEngine) {
+                window.ThemeEngine.applyAnimQuality(val);
+            }
+            if (i.label) showToast(`${i.label}: ${val}`);
         });
     });
 
@@ -319,12 +351,13 @@ const attachEvents = () => {
     });
 
     document.querySelectorAll('.color-circle').forEach(circle => {
-        circle.addEventListener('click', () => {
-            const theme = circle.dataset.theme;
-            localStorage.setItem('mobile_theme_primary', theme);
-            updateGridSelection('.color-circle', 'theme', theme);
-            showToast(`थीम अपडेट!`);
-        });
+            circle.addEventListener('click', () => {
+                const theme = circle.dataset.theme;
+                localStorage.setItem('mobile_theme_primary', theme);
+                if (window.ThemeEngine) window.ThemeEngine.applyTheme(theme);
+                updateGridSelection('.color-circle', 'theme', theme);
+                showToast(`थीम अपडेट!`);
+            });
     });
 
     // 4. Reset

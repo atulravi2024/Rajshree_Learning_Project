@@ -3,22 +3,42 @@
    ===================================================== */
 
 :root {
-    --primary-pink: #FF1493;
-    --light-pink: #FFDEE9;
+    /* Theme Variables (Controlled by ThemeEngine) */
+    --primary-color: #FF1493;
+    --primary-gradient: linear-gradient(135deg, #FF1493, #FF69B4, #FFDEE9);
+    --accent-color: #FF69B4;
+    --light-bg: #FFDEE9;
+    
+    /* Semantic variables */
     --deep-purple: #1A1A2E;
     --glass-bg: rgba(255, 255, 255, 0.7);
+    --surface-color: #ffffff;
+    --text-main: var(--deep-purple);
     --border-radius-lg: 30px;
+    
+    --bg-gradient: linear-gradient(135deg, var(--light-bg), #e0f2fe);
+}
+
+:root.dark-mode {
+    --deep-purple: #f8fafc;
+    --glass-bg: rgba(26, 26, 46, 0.9);
+    --surface-color: #121212;
+    --text-main: #f8fafc;
+    --light-bg: #1e1e2f;
+    --bg-gradient: linear-gradient(135deg, #121212, #1a1a2e);
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Outfit', 'Hind', 'Bubblegum Sans', sans-serif;
-    background: linear-gradient(135deg, var(--light-pink), #e0f2fe);
+    background: var(--bg-gradient);
+    color: var(--text-main);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    transition: background 0.5s ease, color 0.3s ease;
 }
 
 .hidden {
@@ -50,7 +70,7 @@ body {
     justify-content: center;
     cursor: pointer;
     transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    color: var(--deep-purple);
+    color: var(--text-main);
     opacity: 0.7;
     
     /* Native App Behavior */
@@ -142,8 +162,8 @@ body {
     border-radius: 40px;
     
     /* Desktop-Match Border System */
-    border: 8px solid #fff;
-    outline: 3px solid #FFDEE9;
+    border: 8px solid var(--surface-color);
+    outline: 3px solid var(--light-bg);
     outline-offset: -8px;
     
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
@@ -183,14 +203,14 @@ body {
 .card-letter {
     font-size: 8rem;
     margin: 0;
-    color: var(--primary-pink);
+    color: var(--primary-color);
     text-shadow: 1px 1px 0 rgba(0,0,0,0.05);
 }
 
 .card-word {
     font-size: 2.2rem;
     margin-top: 15px;
-    color: var(--deep-purple);
+    color: var(--text-main);
     font-weight: 700;
 }
 
@@ -216,7 +236,7 @@ body {
 .progress-bar {
     height: 100%;
     width: 0%;
-    background: linear-gradient(to right, #FF69B4, var(--primary-pink));
+    background: linear-gradient(to right, var(--accent-color), var(--primary-color));
     border-radius: 10px;
     transition: width 0.1s linear;
 }
@@ -298,7 +318,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);
+    background: var(--bg-gradient);
     z-index: 2000;
     display: flex;
     align-items: center;
@@ -327,14 +347,14 @@ body {
 
 .welcome-title {
     font-size: 2.5rem;
-    color: var(--primary-pink);
+    color: var(--primary-color);
     margin: 0 0 10px 0;
     font-family: 'Hind', sans-serif;
 }
 
 .welcome-desc {
     font-size: 1.1rem;
-    color: var(--deep-purple);
+    color: var(--text-main);
     margin-bottom: 30px;
     opacity: 0.8;
 }
@@ -343,7 +363,7 @@ body {
 .start-orb {
     width: 150px;
     height: 150px;
-    background: linear-gradient(135deg, #FF1493, #FF69B4);
+    background: var(--primary-gradient);
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -351,7 +371,7 @@ body {
     justify-content: center;
     margin: 0 auto;
     color: white;
-    box-shadow: 0 10px 25px rgba(255, 20, 147, 0.4);
+    box-shadow: 0 10px 25px var(--glow-color);
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 4px solid white;
@@ -370,11 +390,49 @@ body {
     font-weight: 700;
     font-size: 1.2rem;
 }
-/* Navigation Locking Utility */
-.disabled-nav {
-    opacity: 0.4 !important;
-    pointer-events: none !important;
-    transform: scale(0.95);
-    filter: grayscale(1);
-    transition: all 0.3s ease;
+/* Reduced Motion for Animation Quality: Optimize */
+:root.reduced-motion {
+    --transition-speed: 0s;
+}
+
+:root.reduced-motion .mobile-card {
+    transition: transform 0.2s ease-in-out !important;
+}
+
+:root.reduced-motion .mobile-card-container {
+    animation-duration: 0.1s !important;
+}
+
+:root.reduced-motion * {
+    transition-duration: 0.1s !important;
+    animation-iteration-count: 0 !important; /* Stop heavy loops if any */
+}
+
+/* Card Background Adjustment for Dark Mode */
+.dark-mode .card-front, .dark-mode .card-back {
+    background: #1e1e1e !important;
+    border-color: #2a2a2a !important;
+    outline-color: #333 !important;
+}
+
+.dark-mode .card-back {
+    background: #181818 !important;
+}
+
+.dark-mode .nav-item {
+    color: #e2e8f0;
+}
+
+.dark-mode .tab-btn {
+    background: #1e1e2f;
+    border-color: #2d2d44;
+}
+
+.dark-mode .tab-btn .tab-text {
+    color: #94a3b8;
+}
+
+.dark-mode .mobile-nav {
+    background: rgba(18, 18, 18, 0.9);
+    border-top-color: rgba(255, 255, 255, 0.05);
 }

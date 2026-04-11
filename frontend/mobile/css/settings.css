@@ -3,22 +3,39 @@
    ===================================================== */
 
 :root {
-    --primary-pink: #FF1493;
-    --light-pink: #FFDEE9;
+    /* Theme Variables (Controlled by ThemeEngine) */
+    --primary-color: #FF1493;
+    --primary-gradient: linear-gradient(135deg, #FF1493, #FF69B4, #FFDEE9);
+    --accent-color: #FF69B4;
+    --light-bg: #FFDEE9;
+    
+    /* Semantic variables */
     --deep-purple: #1A1A2E;
     --glass-bg: rgba(255, 255, 255, 0.9);
+    --surface-color: #fdfdfd;
+    --text-main: var(--deep-purple);
     --border-radius-lg: 20px;
     --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+:root.dark-mode {
+    --deep-purple: #f8fafc;
+    --glass-bg: rgba(26, 26, 46, 0.95);
+    --surface-color: #121212;
+    --text-main: #f8fafc;
+    --light-bg: #1e1e2f;
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 body {
     margin: 0;
     padding: 20px;
     font-family: 'Outfit', sans-serif;
-    background: #fdfdfd;
-    background-image: radial-gradient(#ffe4ef 0.5px, #fdfdfd 0.5px);
+    background: var(--surface-color);
+    background-image: radial-gradient(var(--light-bg) 0.5px, var(--surface-color) 0.5px);
     background-size: 10px 10px;
-    color: var(--deep-purple);
+    color: var(--text-main);
+    transition: background 0.5s ease, color 0.3s ease;
 }
 
 body.v-dragging,
@@ -43,8 +60,8 @@ html.v-dragging {
     background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: var(--primary-pink);
+::webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
     border-radius: 10px;
 }
 
@@ -74,6 +91,7 @@ html.v-dragging {
     font-size: 1.2rem;
     cursor: pointer;
     box-shadow: var(--shadow-soft);
+    color: var(--deep-purple);
 }
 
 /* Category Navigation Tabs */
@@ -97,7 +115,7 @@ html.v-dragging {
 }
 
 .category-tabs::-webkit-scrollbar-thumb {
-    background-color: var(--primary-pink);
+    background-color: var(--primary-color);
     border-radius: 10px;
     opacity: 0.5;
 }
@@ -140,10 +158,6 @@ html.v-dragging {
     box-shadow: var(--shadow-soft);
 }
 
-.tab-btn .tab-icon {
-    font-size: 1.2rem;
-}
-
 .tab-btn .tab-text {
     font-weight: 700;
     font-size: 0.9rem;
@@ -151,10 +165,10 @@ html.v-dragging {
 }
 
 .tab-btn.active {
-    background: var(--primary-pink);
-    border-color: var(--primary-pink);
+    background: var(--primary-color);
+    border-color: var(--primary-color);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 20, 147, 0.25);
+    box-shadow: 0 8px 20px var(--glow-color);
 }
 
 .tab-btn.active .tab-text {
@@ -206,7 +220,7 @@ html.v-dragging {
 }
 
 .category-block.expanded .section-header {
-    border-color: var(--primary-pink);
+    border-color: var(--primary-color);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -248,7 +262,7 @@ html.v-dragging {
     grid-template-rows: 1fr;
     padding: 5px 12px 15px 12px;
     box-shadow: var(--shadow-soft);
-    border: 1.5px solid var(--primary-pink);
+    border: 1.5px solid var(--primary-color);
     border-top: none;
 }
 
@@ -288,8 +302,8 @@ html.v-dragging {
 
 .input-field:focus, .select-field:focus {
     outline: none;
-    border-color: var(--primary-pink);
-    box-shadow: 0 0 0 3px rgba(255, 20, 147, 0.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .select-field {
@@ -303,7 +317,7 @@ html.v-dragging {
 
 /* Inline Action Buttons */
 .btn-inline {
-    background: var(--primary-pink);
+    background: var(--primary-color);
     color: white;
     border: none;
     padding: 8px 15px;
@@ -394,7 +408,7 @@ html.v-dragging {
 }
 
 input:checked + .slider {
-    background-color: var(--primary-pink);
+    background-color: var(--primary-color);
 }
 
 input:checked + .slider:before {
@@ -419,8 +433,8 @@ input:checked + .slider:before {
 }
 
 .voice-card.active {
-    border-color: var(--primary-pink);
-    background: #fff0f6;
+    border-color: var(--primary-color);
+    background: var(--light-bg);
     transform: translateY(-2px);
 }
 
@@ -455,10 +469,10 @@ input[type="range"]::-webkit-slider-thumb {
     appearance: none;
     width: 20px;
     height: 20px;
-    background: var(--primary-pink);
+    background: var(--primary-color);
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 0 5px rgba(255, 20, 147, 0.4);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .range-labels {
@@ -471,14 +485,14 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .value-badge {
-    background: var(--primary-pink);
+    background: var(--primary-color);
     color: white;
     padding: 2px 8px;
     border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 800;
     margin-left: 10px;
-    box-shadow: 0 2px 4px rgba(255, 105, 180, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     vertical-align: middle;
     display: inline-block;
 }
@@ -501,14 +515,14 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .color-circle.active {
-    box-shadow: 0 0 0 2px var(--primary-pink);
+    box-shadow: 0 0 0 2px var(--primary-color);
     transform: scale(1.1);
 }
 
-.circle-pink { background: #FF1493; }
-.circle-blue { background: #3b82f6; }
-.circle-purple { background: #8b5cf6; }
-.circle-orange { background: #f97316; }
+.circle-pink { background: linear-gradient(135deg, #FF1493, #FF69B4, #FFDEE9); }
+.circle-blue { background: linear-gradient(135deg, #1E90FF, #00BFFF, #E0F2FE); }
+.circle-purple { background: linear-gradient(135deg, #8B5CF6, #A78BFA, #EDE9FE); }
+.circle-orange { background: linear-gradient(135deg, #F97316, #FB923C, #FFEDD5); }
 
 .btn-cache-clear { background: #64748b !important; }
 .btn-feedback { background: #8b5cf6 !important; }
@@ -547,4 +561,45 @@ input[type="range"]::-webkit-slider-thumb {
     font-size: 0.8rem;
     color: #94a3b8;
     letter-spacing: 0.5px;
+}
+
+/* Dark Mode Overrides for UI components */
+.dark-mode .close-btn,
+.dark-mode .tab-btn,
+.dark-mode .section-header {
+    background: #1e1e2f !important;
+    border-color: #2d2d44 !important;
+    color: #f8fafc !important;
+}
+
+.dark-mode .tab-btn .tab-text {
+    color: #94a3b8 !important;
+}
+
+.dark-mode .tab-btn.active .tab-text {
+    color: white !important;
+}
+
+.dark-mode .settings-group {
+    background: #181824 !important;
+    border-color: #242436 !important;
+}
+
+.dark-mode .group-label {
+    color: #f8fafc;
+}
+
+.dark-mode .group-sub {
+    color: #94a3b8;
+}
+
+.dark-mode .input-field,
+.dark-mode .select-field {
+    background: #1e1e2f;
+    border-color: #2d2d44;
+    color: #f8fafc;
+}
+
+.dark-mode .slider {
+    background-color: #334155;
 }
