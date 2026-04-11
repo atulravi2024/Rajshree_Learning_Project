@@ -544,8 +544,13 @@ input[type="range"]::-webkit-slider-thumb {
     overflow-x: auto;
     flex-wrap: nowrap;
     padding: 5px 2px 10px 2px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Firefox */
+@supports (scrollbar-width: none) {
+    .color-grid {
+        scrollbar-width: none;
+    }
 }
 
 .color-grid::-webkit-scrollbar {
@@ -572,11 +577,7 @@ input[type="range"]::-webkit-slider-thumb {
 .circle-purple { background: linear-gradient(135deg, #8B5CF6, #A78BFA, #EDE9FE); }
 .circle-orange { background: linear-gradient(135deg, #F97316, #FB923C, #FFEDD5); }
 .circle-emerald { background: linear-gradient(135deg, #10B981, #34D399, #D1FAE5); }
-.circle-cyan { background: linear-gradient(135deg, #06B6D4, #22D3EE, #CFFAFE); }
-.circle-rose { background: linear-gradient(135deg, #F43F5E, #FB7185, #FFE4E6); }
-.circle-amber { background: linear-gradient(135deg, #F59E0B, #FBBF24, #FEF3C7); }
 .circle-indigo { background: linear-gradient(135deg, #6366F1, #818CF8, #E0E7FF); }
-.circle-lime { background: linear-gradient(135deg, #84CC16, #A3E635, #ECFCCB); }
 
 .btn-cache-clear { background: #64748b !important; }
 .btn-feedback { background: #8b5cf6 !important; }

@@ -47,30 +47,6 @@ const ThemeEngine = (() => {
             '--bg-gradient': 'linear-gradient(135deg, #D1FAE5 0%, #FFFFFF 50%, #F0FDF4 100%)',
             '--glow-color': 'rgba(16, 185, 129, 0.4)'
         },
-        cyan: {
-            '--primary-color': '#06B6D4',
-            '--primary-gradient': 'linear-gradient(135deg, #06B6D4, #22D3EE, #CFFAFE)',
-            '--accent-color': '#22D3EE',
-            '--light-bg': '#CFFAFE',
-            '--bg-gradient': 'linear-gradient(135deg, #CFFAFE 0%, #FFFFFF 50%, #ECFEFF 100%)',
-            '--glow-color': 'rgba(6, 182, 212, 0.4)'
-        },
-        rose: {
-            '--primary-color': '#F43F5E',
-            '--primary-gradient': 'linear-gradient(135deg, #F43F5E, #FB7185, #FFE4E6)',
-            '--accent-color': '#FB7185',
-            '--light-bg': '#FFE4E6',
-            '--bg-gradient': 'linear-gradient(135deg, #FFE4E6 0%, #FFFFFF 50%, #FFF1F2 100%)',
-            '--glow-color': 'rgba(244, 63, 94, 0.4)'
-        },
-        amber: {
-            '--primary-color': '#F59E0B',
-            '--primary-gradient': 'linear-gradient(135deg, #F59E0B, #FBBF24, #FEF3C7)',
-            '--accent-color': '#FBBF24',
-            '--light-bg': '#FEF3C7',
-            '--bg-gradient': 'linear-gradient(135deg, #FEF3C7 0%, #FFFFFF 50%, #FFFBEB 100%)',
-            '--glow-color': 'rgba(245, 158, 11, 0.4)'
-        },
         indigo: {
             '--primary-color': '#6366F1',
             '--primary-gradient': 'linear-gradient(135deg, #6366F1, #818CF8, #E0E7FF)',
@@ -78,14 +54,6 @@ const ThemeEngine = (() => {
             '--light-bg': '#E0E7FF',
             '--bg-gradient': 'linear-gradient(135deg, #E0E7FF 0%, #FFFFFF 50%, #EEF2FF 100%)',
             '--glow-color': 'rgba(99, 102, 241, 0.4)'
-        },
-        lime: {
-            '--primary-color': '#84CC16',
-            '--primary-gradient': 'linear-gradient(135deg, #84CC16, #A3E635, #ECFCCB)',
-            '--accent-color': '#A3E635',
-            '--light-bg': '#ECFCCB',
-            '--bg-gradient': 'linear-gradient(135deg, #ECFCCB 0%, #FFFFFF 50%, #F7FEE7 100%)',
-            '--glow-color': 'rgba(132, 204, 22, 0.4)'
         }
     };
 
