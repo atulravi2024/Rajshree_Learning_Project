@@ -16,7 +16,13 @@
     --text-main: var(--deep-purple);
     --border-radius-lg: 20px;
     --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --nav-offset: 115px;
 }
+
+body.tabs-hidden {
+    --nav-offset: 75px;
+}
+
 
 :root.dark-mode {
     --deep-purple: #f8fafc;
@@ -78,9 +84,23 @@ html.v-dragging {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0px;
-    padding: 2px 5px;
+    padding: 10px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--surface-color);
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
 }
+
+.settings-header.scrolled {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-bottom-color: var(--glow-color);
+}
+
 
 .settings-title {
     font-size: 1.3rem;
@@ -108,15 +128,41 @@ html.v-dragging {
     display: flex;
     gap: 8px;
     overflow-x: auto;
-    padding: 5px 5px 10px 5px;
-    margin-bottom: 0px;
+    padding: 10px 15px;
+    position: sticky;
+    top: 50px; /* Header height offset */
+    z-index: 999;
+    background: var(--surface-color);
     scroll-behavior: smooth;
     -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, black 8%, black 92%, rgba(0,0,0,0) 100%);
     mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, black 8%, black 92%, rgba(0,0,0,0) 100%);
     cursor: grab;
     -webkit-user-select: none;
     user-select: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 100px;
+    opacity: 1;
 }
+
+body.tabs-hidden .category-tabs {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+
+.category-tabs.scrolled {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
 
 .category-tabs::-webkit-scrollbar {
     height: 6px;
@@ -178,6 +224,13 @@ html.v-dragging {
 .category-view.active {
     display: block;
 }
+
+.category-block {
+    scroll-margin-top: var(--nav-offset);
+    transition: all 0.3s ease;
+}
+
+
 
 /* Accordion Trigger Styles */
 .section-header {

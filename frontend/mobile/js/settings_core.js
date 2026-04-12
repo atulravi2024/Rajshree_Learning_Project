@@ -9,10 +9,21 @@ window.SettingsCore = {
         this.loadSettings();
         this.initAccordion();
         this.initCategoryTabs();
+        this.initStickyEffects();
         this.initDraggableTabs();
         this.initVerticalDraggable();
         this.initSwipeToClose();
         this.initPinPad();
+    },
+
+    initStickyEffects: function() {
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.settings-header');
+            const tabs = document.querySelector('.category-tabs');
+            const isScrolled = window.scrollY > 10;
+            if (header) header.classList.toggle('scrolled', isScrolled);
+            if (tabs) tabs.classList.toggle('scrolled', isScrolled);
+        });
     },
 
     // --- PERSISTENCE ---
@@ -42,6 +53,9 @@ window.SettingsCore = {
         const glowEffect = b('mobile_glow_effect', true);
         const autoDark = b('mobile_auto_dark', false);
         const autoplay = b('mobile_autoplay', false);
+        const reduceMotion = b('mobile_reduce_motion', false);
+        const fastLoad = b('mobile_fast_load', true);
+        const fontStyle = s('mobile_font_style', 'clean');
         
         // 3. Learning
         const difficulty = s('mobile_difficulty', 'intermediate');
@@ -88,6 +102,10 @@ window.SettingsCore = {
         this.setCheck('mobile-contrast', contrast);
         this.setCheck('mobile-lock', childLock);
         this.setCheck('mobile-break', breakToggle);
+        this.setCheck('mobile-auto-dark', autoDark);
+        this.setCheck('mobile-reduce-motion', reduceMotion);
+        this.setCheck('mobile-fast-load', fastLoad);
+        this.setVal('mobile-font-style', fontStyle);
         this.setCheck('mobile-autoplay', autoplay);
         this.setCheck('mobile-bg-pattern', bgPattern);
         this.setCheck('mobile-glow-effect', glowEffect);
@@ -138,6 +156,12 @@ window.SettingsCore = {
         
         this.setCheck('mobile-autoplay', autoplay);
         this.setCheck('mobile-dark-mode', darkMode);
+
+        // Apply visual classes immediately via ThemeEngine
+        if (window.ThemeEngine) {
+            if (window.ThemeEngine.applyReduceMotion) window.ThemeEngine.applyReduceMotion(reduceMotion);
+            if (window.ThemeEngine.applyFontStyle) window.ThemeEngine.applyFontStyle(fontStyle);
+        }
 
         // Grids
         this.updateGridSelection('.voice-card', 'voice', voice);
@@ -285,6 +309,8 @@ window.SettingsCore = {
             tabs.forEach(t => t.classList.toggle('active', t.dataset.target === targetId));
             views.forEach(v => v.classList.toggle('active', v.id === targetId));
             sessionStorage.setItem('activeSettingsTab', targetId);
+            document.body.classList.remove('tabs-hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
 
         const switchTab = (targetId) => {
@@ -327,11 +353,14 @@ window.SettingsCore = {
                 if (!isExpanded) {
                     block.classList.add('expanded');
                     block.classList.add('focused');
+                    document.body.classList.add('tabs-hidden');
                     setTimeout(() => block.classList.remove('focused'), 1200);
 
                     setTimeout(() => {
-                        block.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }, 100); 
+                        block.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 250); 
+                } else {
+                    document.body.classList.remove('tabs-hidden');
                 }
             });
         });

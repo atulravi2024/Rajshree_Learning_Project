@@ -463,24 +463,30 @@ body {
     font-weight: 700;
     font-size: 1.2rem;
 }
-/* Reduced Motion for Animation Quality: Optimize */
-:root.reduced-motion {
-    --transition-speed: 0s;
-}
-
-:root.reduced-motion .mobile-card {
-    transition: transform 0.1s ease-in-out !important;
-}
-
-:root.reduced-motion .mobile-card-container {
-    animation-duration: 0.01s !important;
-}
-
-:root.reduced-motion * {
+/* Animation & Motion Management */
+:root.reduced-motion *,
+.reduce-motion-master *,
+.reduce-motion-master *:after,
+.reduce-motion-master *:before {
     transition-duration: 0.01s !important;
     animation-duration: 0.01s !important;
     animation-delay: 0s !important;
 }
+
+.reduce-motion-master *,
+.reduce-motion-master *:after,
+.reduce-motion-master *:before {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+}
+
+/* Font Styles */
+.font-style-playful body { font-family: 'Bubblegum Sans', cursive, 'Hind', sans-serif !important; }
+.font-style-clean body { font-family: 'Outfit', sans-serif, 'Hind', sans-serif !important; }
+.font-style-classic body { font-family: 'Hind', sans-serif !important; }
+
 
 
 /* =====================================================

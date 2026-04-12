@@ -49,12 +49,12 @@ window.SettingsKids = {
         // 2. Sliders & Selects (Kids Category)
         const kidsInputs = [
             { id: 'mobile-speed', key: 'mobile_playback_speed' },
-            { id: 'mobile-anim-quality', key: 'mobile_anim_quality', label: 'एनिमेशन' },
             { id: 'mobile-delay', key: 'mobile_autoplay_delay' },
             { id: 'mobile-vol-master', key: 'mobile_vol_master', label: 'मास्टर आवाज़', unit: '%' },
             { id: 'mobile-vol-music', key: 'mobile_vol_music', label: 'संगीत', unit: '%' },
             { id: 'mobile-vol-sfx', key: 'mobile_vol_sfx', label: 'साउंड इफेक्ट्स', unit: '%' },
-            { id: 'mobile-vol-content', key: 'mobile_vol_content', label: 'सामग्री', unit: '%' }
+            { id: 'mobile-vol-content', key: 'mobile_vol_content', label: 'सामग्री', unit: '%' },
+            { id: 'mobile-font-style', key: 'mobile_font_style', label: 'लिखावट स्टाइल' }
         ];
 
         kidsInputs.forEach(i => {
@@ -73,8 +73,9 @@ window.SettingsKids = {
                     if (speedBadge) speedBadge.textContent = val + 'x';
                 }
 
-                if (i.key === 'mobile_anim_quality' && window.ThemeEngine) {
-                    window.ThemeEngine.applyAnimQuality(val);
+
+                if (i.key === 'mobile_font_style' && window.ThemeEngine) {
+                    window.ThemeEngine.applyFontStyle(val);
                 }
                 if (i.label) window.SettingsCore.showToast(`${i.label}: ${val}`);
             });

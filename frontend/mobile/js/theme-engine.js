@@ -132,6 +132,26 @@ const ThemeEngine = (() => {
         localStorage.setItem('mobile_bg_pattern', isActive);
     };
 
+    const applyReduceMotion = (isActive) => {
+        const root = document.documentElement;
+        if (isActive) {
+            root.classList.add('reduce-motion-master');
+        } else {
+            root.classList.remove('reduce-motion-master');
+        }
+        localStorage.setItem('mobile_reduce_motion', isActive);
+        console.log(`⚡ Reduce Motion Master: ${isActive ? 'ON' : 'OFF'}`);
+    };
+
+    const applyFontStyle = (style) => {
+        const root = document.documentElement;
+        // Remove existing font classes
+        root.classList.remove('font-style-playful', 'font-style-clean', 'font-style-classic');
+        root.classList.add(`font-style-${style}`);
+        localStorage.setItem('mobile_font_style', style);
+        console.log(`✍️ Font Style: ${style}`);
+    };
+
     const applyAutoDarkMode = (isActive) => {
         localStorage.setItem('mobile_auto_dark', isActive);
         if (isActive) {
@@ -163,6 +183,8 @@ const ThemeEngine = (() => {
         const savedGlow = localStorage.getItem('mobile_glow_effect') !== 'false'; // Default TRUE
         const savedPattern = localStorage.getItem('mobile_bg_pattern') !== 'false'; // Default TRUE
         const savedAutoDark = localStorage.getItem('mobile_auto_dark') === 'true';
+        const savedReduceMotion = localStorage.getItem('mobile_reduce_motion') === 'true';
+        const savedFontStyle = localStorage.getItem('mobile_font_style') || 'clean';
         
         // Smart Default: Respect OS preference if no user setting exists
         let savedAnim = localStorage.getItem('mobile_anim_quality');
@@ -178,6 +200,8 @@ const ThemeEngine = (() => {
         applyContrast(savedContrast);
         applyGlowEffect(savedGlow);
         applyBackgroundPattern(savedPattern);
+        applyReduceMotion(savedReduceMotion);
+        applyFontStyle(savedFontStyle);
         
         if (savedAutoDark) applyAutoDarkMode(true);
     };
@@ -194,6 +218,8 @@ const ThemeEngine = (() => {
         applyGlowEffect,
         applyBackgroundPattern,
         applyAutoDarkMode,
+        applyReduceMotion,
+        applyFontStyle,
         init
     };
 })();
