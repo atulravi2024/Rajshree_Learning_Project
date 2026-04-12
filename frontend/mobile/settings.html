@@ -470,7 +470,7 @@
                 <div class="category-content">
                     <div class="category-inner">
                         <section class="settings-group">
-                            <button class="btn-inline" onclick="alert('Demo: Setting Parent PIN...')" title="पैरेंट पिन सेट करें" data-i18n="lbl_parent_pin">पैरेंट पिन</button>
+                            <button class="btn-inline" onclick="setupParentPin()" title="पैरेंट पिन सेट करें" data-i18n="lbl_parent_pin">पैरेंट पिन</button>
                         </section>
                         <section class="settings-group">
                             <div class="toggle-row">
@@ -486,6 +486,151 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Category 7.5: Kids Safety (Always On) -->
+            <div class="category-block">
+                <header class="section-header">
+                    <span class="section-icon">🔐</span>
+                    <span class="section-title" data-i18n="sec_kids_global">बच्चों की सुरक्षा (स्थायी लॉक)</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner" style="padding:10px 0;">
+                        <!-- Master Control Global -->
+                        <div class="master-lock-group" style="background:#f1f5f9; border:1px solid #e2e8f0; margin-bottom:15px !important;">
+                            <div class="toggle-row">
+                                <span class="group-label" data-i18n="lbl_master_lock">मास्टर लॉक कंट्रोल</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="mobile-master-global" title="मास्टर लॉक स्थायी">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="standalone-lock-row">
+                            <div class="compact-locks-grid" style="grid-template-columns: 1fr 1fr; background:transparent; border:none; margin:0; padding:0;">
+                                <div class="lock-card-compact">
+                                    <span class="lock-label-mini" data-i18n="lbl_lock_vol">वॉल्यूम कंट्रोल लॉक</span>
+                                    <label class="switch is-small">
+                                        <input type="checkbox" class="global-lock" id="mobile-lock-vol" title="वॉल्यूम लॉक">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="lock-card-compact">
+                                    <span class="lock-label-mini" data-i18n="lbl_lock_text">टेक्स्ट सिलेक्शन लॉक</span>
+                                    <label class="switch is-small">
+                                        <input type="checkbox" class="global-lock" id="mobile-lock-text" title="टेक्स्ट लॉक">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="lock-card-compact">
+                                    <span class="lock-label-mini" data-i18n="lbl_lock_hold">क्लिक एंड होल्ड लॉक</span>
+                                    <label class="switch is-small">
+                                        <input type="checkbox" class="global-lock" id="mobile-lock-hold" title="क्लिक लॉक">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="lock-card-compact">
+                                    <span class="lock-label-mini" data-i18n="lbl_lock_context">राइट क्लिक लॉक</span>
+                                    <label class="switch is-small">
+                                        <input type="checkbox" class="global-lock" id="mobile-lock-context" title="राइट क्लिक लॉक">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="lock-card-compact">
+                                    <span class="lock-label-mini" data-i18n="lbl_lock_fullscreen">फुल स्क्रीन लॉक</span>
+                                    <label class="switch is-small">
+                                        <input type="checkbox" class="global-lock" id="mobile-lock-fullscreen" title="फुल स्क्रीन लॉक">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="lock-card-compact">
+                                    <span class="lock-label-mini" data-i18n="lbl_lock_back">बैक बटन लॉक</span>
+                                    <label class="switch is-small">
+                                        <input type="checkbox" class="global-lock" id="mobile-lock-back" title="बैक बटन लॉक">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 7.6: Kids Safety (Audio Contextual) -->
+            <div class="category-block">
+                <header class="section-header">
+                    <span class="section-icon">🛡️</span>
+                    <span class="section-title" data-i18n="sec_kids_audio">बच्चों की सुरक्षा (ऑडियो)</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <!-- Group 2: Audio Contextual Locks -->
+                        <div class="safety-audio-context-group">
+                            <!-- Master Control Audio -->
+                            <div class="master-lock-group is-audio">
+                                <div class="toggle-row">
+                                    <span class="group-label" data-i18n="lbl_master_lock">मास्टर लॉक कंट्रोल</span>
+                                    <label class="switch">
+                                        <input type="checkbox" id="mobile-master-audio" title="मास्टर लॉक ऑडियो">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                        <div class="audio-lock-group" style="margin-top:0;">
+                            <p class="group-header-compact" data-i18n="sub_audio_playing">जब ऑडियो बज रहा हो (While audio is playing)</p>
+                            
+                            <div class="compact-locks-grid" style="background:transparent; border:none; margin-top:0; padding:0;">
+                                <div class="lock-card-compact">
+                                    <span class="lock-label-mini" data-i18n="lbl_lock_nav">अगला/पिछला लॉक</span>
+                                    <label class="switch is-small">
+                                        <input type="checkbox" class="audio-lock" id="mobile-lock-nav" title="अगला/पिछला लॉक">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="lock-card-compact">
+                                    <span class="lock-label-mini" data-i18n="lbl_lock_home">होम बटन लॉक</span>
+                                    <label class="switch is-small">
+                                        <input type="checkbox" class="audio-lock" id="mobile-lock-home" title="होम बटन लॉक">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="lock-card-compact">
+                                    <span class="lock-label-mini" data-i18n="lbl_lock_settings">सेटिंग्स बटन लॉक</span>
+                                    <label class="switch is-small">
+                                        <input type="checkbox" class="audio-lock" id="mobile-lock-settings" title="सेटिंग्स लॉक">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="lock-card-compact">
+                                    <span class="lock-label-mini" data-i18n="lbl_lock_menu">मेन्यू बटन लॉक</span>
+                                    <label class="switch is-small">
+                                        <input type="checkbox" class="audio-lock" id="mobile-lock-menu" title="मेन्यू लॉक">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="lock-card-compact">
+                                    <span class="lock-label-mini" data-i18n="lbl_lock_autoplay">ऑटो-प्ले लॉक</span>
+                                    <label class="switch is-small">
+                                        <input type="checkbox" class="audio-lock" id="mobile-lock-autoplay" title="ऑटो-प्ले लॉक">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="lock-card-compact">
+                                    <span class="lock-label-mini" data-i18n="lbl_lock_card">फ्लैशकार्ड लॉक</span>
+                                    <label class="switch is-small">
+                                        <input type="checkbox" class="audio-lock" id="mobile-lock-card" title="कार्ड लॉक">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <!-- Category 8: Storage & Sync -->
             <div class="category-block">
@@ -577,6 +722,34 @@
             <p class="version-text">Made with ❤️ for Rajshree</p>
         </footer>
     </main>
+
+    <!-- Parent PIN Modal -->
+    <div id="pin-modal" class="pin-modal-overlay">
+        <div class="pin-modal-content">
+            <h2 id="pin-modal-title" data-i18n="pin_title_verify">पिन दर्ज करें</h2>
+            <div class="pin-display">
+                <div class="pin-dot"></div>
+                <div class="pin-dot"></div>
+                <div class="pin-dot"></div>
+                <div class="pin-dot"></div>
+            </div>
+            <p id="pin-modal-msg" class="pin-msg"></p>
+            <div class="pin-keypad">
+                <button class="key">1</button>
+                <button class="key">2</button>
+                <button class="key">3</button>
+                <button class="key">4</button>
+                <button class="key">5</button>
+                <button class="key">6</button>
+                <button class="key">7</button>
+                <button class="key">8</button>
+                <button class="key">9</button>
+                <button class="key btn-ghost" id="pin-cancel" data-i18n="btn_cancel">रद्द</button>
+                <button class="key">0</button>
+                <button class="key btn-ghost" id="pin-backspace">⌫</button>
+            </div>
+        </div>
+    </div>
 
     <script src="js/i18n.js"></script>
     <script src="js/settings.js"></script>

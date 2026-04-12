@@ -164,24 +164,36 @@ const initCategoryTabs = () => {
     // Recovery of last active tab (optional persistence)
     const lastTab = sessionStorage.getItem('activeSettingsTab') || 'cat-kids';
     
-    const switchTab = (targetId) => {
+    const performSwitch = (targetId) => {
         tabs.forEach(t => t.classList.toggle('active', t.dataset.target === targetId));
         views.forEach(v => v.classList.toggle('active', v.id === targetId));
         sessionStorage.setItem('activeSettingsTab', targetId);
     };
 
+    const switchTab = (targetId) => {
+        const isLocked = localStorage.getItem('mobile_child_lock') === 'true';
+        if (isLocked && targetId !== 'cat-kids') {
+            showPinModal('verify', (success) => {
+                if (success) {
+                    performSwitch(targetId);
+                }
+            });
+            return;
+        }
+        performSwitch(targetId);
+    };
+
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             switchTab(tab.dataset.target);
-            // Ensure the clicked tab is visible in the scrollable bar
             tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-            // Close any open accordions when switching categories for a clean view
             document.querySelectorAll('.category-block').forEach(b => b.classList.remove('expanded'));
         });
     });
 
-    // Initial activation
-    switchTab(lastTab);
+    const isLocked = localStorage.getItem('mobile_child_lock') === 'true';
+    const initialTab = (isLocked && lastTab !== 'cat-kids') ? 'cat-kids' : lastTab;
+    performSwitch(initialTab);
 };
 
 // Accordion Logic (Exclusive Expansion)
@@ -257,6 +269,26 @@ const loadSettings = () => {
     const timer = s('mobile_timer', '30');
     const breakToggle = b('mobile_break', true);
     const childLock = b('mobile_child_lock', false);
+    
+    // Safety Locks
+    const masterLock = b('mobile_master_lock', false);
+    const lockNav = b('mobile_lock_nav', false);
+    const lockHome = b('mobile_lock_home', false);
+    const lockSettings = b('mobile_lock_settings', false);
+    const lockMenu = b('mobile_lock_menu', false);
+    const lockVol = b('mobile_lock_vol', false);
+    const lockText = b('mobile_lock_text', false);
+    const lockHold = b('mobile_lock_hold', false);
+    const lockContext = b('mobile_lock_context', false);
+    const lockFullscreen = b('mobile_lock_fullscreen', false);
+    const lockBack = b('mobile_lock_back', false);
+    
+    // Master Toggles
+    const masterAudio = b('mobile_master_audio', false);
+    const masterGlobal = b('mobile_master_global', false);
+    
+    const lockAutoplay = b('mobile_lock_autoplay', false);
+    const lockCard = b('mobile_lock_card', false);
 
     // 5. Accessibility
     const largeText = b('mobile_large_text', false);
@@ -309,6 +341,26 @@ const loadSettings = () => {
     setCheck('mobile-large-text', largeText);
     setCheck('mobile-contrast', contrast);
     setCheck('mobile-lock', childLock);
+    
+    // Safety Locks UI Sync
+    setCheck('mobile-master-lock', masterLock);
+    setCheck('mobile-lock-nav', lockNav);
+    setCheck('mobile-lock-home', lockHome);
+    setCheck('mobile-lock-settings', lockSettings);
+    setCheck('mobile-lock-menu', lockMenu);
+    setCheck('mobile-lock-vol', lockVol);
+    setCheck('mobile-lock-text', lockText);
+    setCheck('mobile-lock-hold', lockHold);
+    setCheck('mobile-lock-context', lockContext);
+    setCheck('mobile-lock-fullscreen', lockFullscreen);
+    setCheck('mobile-lock-back', lockBack);
+    
+    setCheck('mobile-master-audio', masterAudio);
+    setCheck('mobile-master-global', masterGlobal);
+    
+    setCheck('mobile-lock-autoplay', lockAutoplay);
+    setCheck('mobile-lock-card', lockCard);
+    
     setCheck('mobile-autoplay', autoplay);
     setCheck('mobile-dark-mode', darkMode);
 
@@ -336,13 +388,42 @@ const attachEvents = () => {
         { id: 'mobile-dark-mode', key: 'mobile_dark_mode', label: 'डार्क मोड' },
         { id: 'mobile-bg-pattern', key: 'mobile_bg_pattern', label: 'बैकग्राउंड पैटर्न' },
         { id: 'mobile-auto-dark', key: 'mobile_auto_dark', label: 'ऑटो डार्क मोड' },
-        { id: 'mobile-glow-effect', key: 'mobile_glow_effect', label: 'चमक इफेक्ट्स' }
+        { id: 'mobile-glow-effect', key: 'mobile_glow_effect', label: 'चमक इफेक्ट्स' },
+        { id: 'mobile-master-lock', key: 'mobile_master_lock', label: 'मास्टर लॉक' },
+        { id: 'mobile-lock-nav', key: 'mobile_lock_nav', label: 'अगला/पिछला लॉक' },
+        { id: 'mobile-lock-home', key: 'mobile_lock_home', label: 'होम बटन लॉक' },
+        { id: 'mobile-lock-settings', key: 'mobile_lock_settings', label: 'सेटिंग्स लॉक' },
+        { id: 'mobile-lock-menu', key: 'mobile_lock_menu', label: 'मेन्यू लॉक' },
+        { id: 'mobile-lock-vol', key: 'mobile_lock_vol', label: 'वॉल्यूम लॉक' },
+        { id: 'mobile-lock-text', key: 'mobile_lock_text', label: 'टेक्स्ट लॉक' },
+        { id: 'mobile-lock-hold', key: 'mobile_lock_hold', label: 'क्लिक लॉक' },
+        { id: 'mobile-lock-context', key: 'mobile_lock_context', label: 'राइट क्लिक लॉक' },
+        { id: 'mobile-lock-fullscreen', key: 'mobile_lock_fullscreen', label: 'फुल स्क्रीन लॉक' },
+        { id: 'mobile-lock-back', key: 'mobile_lock_back', label: 'बैक बटन लॉक' },
+        { id: 'mobile-master-audio', key: 'mobile_master_audio', label: 'मास्टर लॉक ऑडियो' },
+        { id: 'mobile-master-global', key: 'mobile_master_global', label: 'मास्टर लॉक स्थायी' },
+        { id: 'mobile-lock-autoplay', key: 'mobile_lock_autoplay', label: 'ऑटो-प्ले लॉक' },
+        { id: 'mobile-lock-card', key: 'mobile_lock_card', label: 'कार्ड लॉक' }
     ];
 
     toggles.forEach(t => {
         const el = document.getElementById(t.id);
         if (el) el.addEventListener('change', (e) => {
             const val = e.target.checked;
+
+            // --- CHILD LOCK TOGGLE INTERCEPTION ---
+            if (t.key === 'mobile_child_lock' && !val) {
+                e.target.checked = true; // Revert UI
+                showPinModal('verify', (success) => {
+                    if (success) {
+                        e.target.checked = false;
+                        localStorage.setItem(t.key, false);
+                        showToast(getTranslation('child_lock_off'));
+                    }
+                });
+                return;
+            }
+
             localStorage.setItem(t.key, val);
             if (t.key === 'mobile_dark_mode' && window.ThemeEngine) {
                 window.ThemeEngine.applyDarkMode(val);
@@ -363,7 +444,12 @@ const attachEvents = () => {
             if (t.key === 'mobile_glow_effect' && window.ThemeEngine) {
                 window.ThemeEngine.applyGlowEffect(val);
             }
-            showToast(`${t.label} ${val ? 'शुरू' : 'बंद'}`);
+            
+            if (t.key === 'mobile_child_lock' && val) {
+                showToast(getTranslation('child_lock_on'));
+            } else {
+                showToast(`${t.label} ${val ? 'शुरू' : 'बंद'}`);
+            }
         });
     });
 
@@ -441,6 +527,28 @@ const attachEvents = () => {
             }
         });
     }
+
+    // 5. Master Lock Logic
+    initMasterLock('mobile-master-audio', '.audio-lock');
+    initMasterLock('mobile-master-global', '.global-lock');
+};
+
+const initMasterLock = (masterId, slaveClass) => {
+    const master = document.getElementById(masterId);
+    const slaves = document.querySelectorAll(slaveClass);
+    
+    if (!master) return;
+    
+    master.addEventListener('change', (e) => {
+        const val = e.target.checked;
+        slaves.forEach(s => {
+            if (s.checked !== val) {
+                s.checked = val;
+                // Trigger change to save to localStorage
+                s.dispatchEvent(new Event('change'));
+            }
+        });
+    });
 };
 
 const syncDarkModeUI = () => {
@@ -480,16 +588,145 @@ const showToast = (message) => {
     }, 1500);
 };
 
+// --- SECURITY & CHILD LOCK LOGIC ---
+
+let currentPinBuffer = '';
+let pinModalCallback = null;
+let pinModalPurpose = 'verify'; // 'verify', 'setup', 'setup-confirm'
+let tempNewPin = '';
+
+const getTranslation = (key) => {
+    const lang = localStorage.getItem('mobile_ui_language') || 'hi';
+    return window.RAJSHREE_I18N.translations[lang][key] || key;
+};
+
+window.setupParentPin = () => {
+    showPinModal('setup', (success) => {
+        if (success) {
+            showToast(getTranslation('pin_success'));
+        }
+    });
+};
+
+const showPinModal = (purpose, callback) => {
+    const modal = document.getElementById('pin-modal');
+    if (!modal) return;
+    
+    pinModalPurpose = purpose;
+    pinModalCallback = callback;
+    currentPinBuffer = '';
+    updatePinDots();
+    
+    const title = document.getElementById('pin-modal-title');
+    const msg = document.getElementById('pin-modal-msg');
+    if (msg) msg.textContent = '';
+    
+    if (title) {
+        title.textContent = getTranslation(purpose === 'setup' ? 'pin_title_setup' : 'pin_title_verify');
+    }
+    
+    modal.classList.add('active');
+};
+
+const hidePinModal = (success = false) => {
+    const modal = document.getElementById('pin-modal');
+    if (modal) modal.classList.remove('active');
+    if (pinModalCallback) pinModalCallback(success);
+    pinModalCallback = null;
+};
+
+const updatePinDots = () => {
+    const dots = document.querySelectorAll('.pin-dot');
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('filled', index < currentPinBuffer.length);
+    });
+};
+
+const handleKeyClick = (key) => {
+    if (currentPinBuffer.length < 4) {
+        currentPinBuffer += key;
+        updatePinDots();
+        
+        if (currentPinBuffer.length === 4) {
+            setTimeout(validatePin, 250);
+        }
+    }
+};
+
+const validatePin = () => {
+    const storedPin = localStorage.getItem('mobile_parent_pin') || '1234';
+    const modalContent = document.querySelector('.pin-modal-content');
+    
+    if (pinModalPurpose === 'verify') {
+        if (currentPinBuffer === storedPin) {
+            hidePinModal(true);
+        } else {
+            handlePinError();
+        }
+    } else if (pinModalPurpose === 'setup') {
+        tempNewPin = currentPinBuffer;
+        pinModalPurpose = 'setup-confirm';
+        currentPinBuffer = '';
+        updatePinDots();
+        const title = document.getElementById('pin-modal-title');
+        if (title) title.textContent = getTranslation('btn_confirm');
+    } else if (pinModalPurpose === 'setup-confirm') {
+        if (currentPinBuffer === tempNewPin) {
+            localStorage.setItem('mobile_parent_pin', currentPinBuffer);
+            hidePinModal(true);
+        } else {
+            handlePinError();
+            // Reset to setup phase
+            setTimeout(() => {
+                pinModalPurpose = 'setup';
+                currentPinBuffer = '';
+                updatePinDots();
+                const title = document.getElementById('pin-modal-title');
+                if (title) title.textContent = getTranslation('pin_title_setup');
+            }, 500);
+        }
+    }
+};
+
+const handlePinError = () => {
+    const modalContent = document.querySelector('.pin-modal-content');
+    const msg = document.getElementById('pin-modal-msg');
+    
+    if (modalContent) {
+        modalContent.classList.add('shake');
+        setTimeout(() => modalContent.classList.remove('shake'), 400);
+    }
+    
+    if (msg) msg.textContent = getTranslation('pin_wrong');
+    
+    currentPinBuffer = '';
+    updatePinDots();
+};
+
+const initPinPad = () => {
+    document.querySelectorAll('.pin-keypad .key').forEach(btn => {
+        if (btn.id === 'pin-cancel') {
+            btn.addEventListener('click', () => hidePinModal(false));
+        } else if (btn.id === 'pin-backspace') {
+            btn.addEventListener('click', () => {
+                currentPinBuffer = currentPinBuffer.slice(0, -1);
+                updatePinDots();
+            });
+        } else {
+            btn.addEventListener('click', () => handleKeyClick(btn.textContent));
+        }
+    });
+};
+
 /** Swipe from Right to Left to Close */
 const initSwipeToClose = () => {
     let touchStartX = 0;
     let touchStartY = 0;
-    const SWIPE_THRESHOLD = 80; // Lowered from 120 for responsiveness
-    const VERTICAL_THRESHOLD = 100; // Increased from 80 for forgiveness
+    const SWIPE_THRESHOLD = 80; 
+    const VERTICAL_THRESHOLD = 100; 
 
     window.addEventListener('touchstart', (e) => {
-        // Ignore if interacting with horizontal sliders or tabs
-        if (e.target.closest('.range-container') || e.target.closest('.category-tabs') || e.target.closest('.color-grid')) return;
+        if (e.target.closest('.range-container') || e.target.closest('.category-tabs') || e.target.closest('.color-grid') || e.target.closest('.pin-modal-content')) return;
         
         touchStartX = e.touches[0].clientX;
         touchStartY = e.touches[0].clientY;
@@ -499,18 +736,17 @@ const initSwipeToClose = () => {
         const touchEndX = e.changedTouches[0].clientX;
         const touchEndY = e.changedTouches[0].clientY;
         
-        const deltaX = touchStartX - touchEndX; // Right to Left
+        const deltaX = touchStartX - touchEndX; 
         const deltaY = Math.abs(touchStartY - touchEndY);
 
-        console.log(`[Gesture] deltaX: ${Math.round(deltaX)}, deltaY: ${Math.round(deltaY)}`);
-
-        // Check for significant Right-to-Left swipe
         if (deltaX > SWIPE_THRESHOLD && deltaY < VERTICAL_THRESHOLD) {
-            console.log("✅ Swipe to Close triggered!");
-            showToast("👋 नमस्ते! (Closing)");
+            showToast("👋 नमस्ते!");
             
             setTimeout(() => {
-                if (window.history.length > 1) {
+                const isLocked = localStorage.getItem('mobile_child_lock') === 'true';
+                if (isLocked) {
+                    window.location.href = 'index.html';
+                } else if (window.history.length > 1) {
                     window.history.back();
                 } else {
                     window.location.href = 'index.html';
@@ -519,3 +755,18 @@ const initSwipeToClose = () => {
         }
     }, { passive: true });
 };
+
+// Override DOMContentLoaded to init the new logic
+const originalInit = () => {
+    initPinPad();
+};
+
+// Hijack the load and initialization
+const wrapInit = () => {
+    const oldOnLoad = window.onload;
+    window.onload = () => {
+        if (oldOnLoad) oldOnLoad();
+        initPinPad();
+    };
+};
+wrapInit();

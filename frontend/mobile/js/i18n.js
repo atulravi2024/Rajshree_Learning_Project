@@ -41,6 +41,9 @@ window.RAJSHREE_I18N = {
             'sec_dev_tools': 'डेवलपर टूल्स',
             'sec_app_settings': 'ऐप सेटिंग्स',
             'sec_volume': 'आवाज़ का स्तर',
+            'sec_kids_safety': 'बच्चों की सुरक्षा (Kids Safety)',
+            'sec_kids_audio': 'बच्चों की सुरक्षा (ऑडियो)',
+            'sec_kids_global': 'बच्चों की सुरक्षा (स्थायी लॉक)',
 
             // Labels
             'lbl_active_profile': 'एक्टिव प्रोफाइल',
@@ -74,6 +77,19 @@ window.RAJSHREE_I18N = {
             'lbl_glow_effect': 'चमक (Glow Effects)',
             'lbl_bg_pattern': 'बैकग्राउंड पैटर्न',
             'lbl_auto_dark': 'ऑटो डार्क मोड',
+            'lbl_master_lock': 'मास्टर लॉक कंट्रोल',
+            'lbl_lock_nav': 'अगला/पिछला लॉक',
+            'lbl_lock_home': 'होम बटन लॉक',
+            'lbl_lock_settings': 'सेटिंग्स बटन लॉक',
+            'lbl_lock_menu': 'मेन्यू बटन लॉक',
+            'lbl_lock_vol': 'वॉल्यूम कंट्रोल लॉक',
+            'lbl_lock_autoplay': 'ऑटो-प्ले लॉक',
+            'lbl_lock_text': 'टेक्स्ट सिलेक्शन लॉक',
+            'lbl_lock_hold': 'क्लिक एंड होल्ड लॉक',
+            'lbl_lock_context': 'राइट क्लिक लॉक',
+            'lbl_lock_fullscreen': 'फुल स्क्रीन लॉक',
+            'lbl_lock_back': 'बैक बटन लॉक',
+            'lbl_lock_card': 'फ्लैशकार्ड लॉक',
 
             // Sub-texts
             'sub_music': 'हल्का बैकग्राउंड म्यूज़िक',
@@ -81,14 +97,23 @@ window.RAJSHREE_I18N = {
             'sub_anim': 'ऐप की गति के लिए चुनें',
             'sub_goal': 'कितने कार्ड्स रोज़ाना सीखने हैं',
             'sub_lang': 'सेटिंग्स और बटनों की प्रमुख भाषा',
+            'sub_audio_playing': 'जब ऑडियो बज रहा हो',
 
             // Buttons
             'btn_add_new': 'नया जोड़ें',
             'btn_check_update': 'अपडेट चेक करें',
             'btn_feedback': 'फीडबैक भेजें',
+            'btn_cancel': 'रद्द करें',
+            'btn_confirm': 'पुष्टि करें',
 
-            // Toasts
-            'toast_lang_update': 'भाषा बदली गई: हिंदी'
+            // Toasts & PIN
+            'toast_lang_update': 'भाषा बदली गई: हिंदी',
+            'pin_title_verify': 'पिन दर्ज करें',
+            'pin_title_setup': 'नया पिन सेट करें',
+            'pin_wrong': 'गलत पिन! फिर से कोशिश करें',
+            'pin_success': 'सफलता!',
+            'child_lock_on': 'चाइल्ड लॉक शुरू',
+            'child_lock_off': 'चाइल्ड लॉक बंद'
         },
         'en': {
             // Header & Tabs
@@ -125,6 +150,7 @@ window.RAJSHREE_I18N = {
             'sec_dev_tools': 'Developer Tools',
             'sec_app_settings': 'App Settings',
             'sec_volume': 'Volume Levels',
+            'sec_kids_safety': 'Kids Safety',
 
             // Labels
             'lbl_active_profile': 'Active Profile',
@@ -158,6 +184,19 @@ window.RAJSHREE_I18N = {
             'lbl_glow_effect': 'Glow Effects',
             'lbl_bg_pattern': 'Background Pattern',
             'lbl_auto_dark': 'Auto Dark Mode',
+            'lbl_master_lock': 'Master Lock Control',
+            'lbl_lock_nav': 'Lock Next/Prev',
+            'lbl_lock_home': 'Lock Home Button',
+            'lbl_lock_settings': 'Lock Settings',
+            'lbl_lock_menu': 'Lock Menu Button',
+            'lbl_lock_vol': 'Lock Volume Control',
+            'lbl_lock_autoplay': 'Lock Auto-Play',
+            'lbl_lock_text': 'Lock Text Selection',
+            'lbl_lock_hold': 'Lock Click & Hold',
+            'lbl_lock_context': 'Lock Right Click',
+            'lbl_lock_fullscreen': 'Lock Full Screen',
+            'lbl_lock_back': 'Lock Go Back',
+            'lbl_lock_card': 'Lock Flashcard',
 
             // Sub-texts
             'sub_music': 'Soft background music',
@@ -165,14 +204,23 @@ window.RAJSHREE_I18N = {
             'sub_anim': 'Choose for app performance',
             'sub_goal': 'How many cards to learn daily',
             'sub_lang': 'Primary language for settings and menus',
+            'sub_audio_playing': 'While audio is playing',
 
             // Buttons
             'btn_add_new': 'Add New',
             'btn_check_update': 'Check for Updates',
             'btn_feedback': 'Send Feedback',
+            'btn_cancel': 'Cancel',
+            'btn_confirm': 'Confirm',
 
-            // Toasts
-            'toast_lang_update': 'Language Updated: English'
+            // Toasts & PIN
+            'toast_lang_update': 'Language Updated: English',
+            'pin_title_verify': 'Enter PIN',
+            'pin_title_setup': 'Set New PIN',
+            'pin_wrong': 'Incorrect PIN! Try Again',
+            'pin_success': 'Success!',
+            'child_lock_on': 'Child Lock ON',
+            'child_lock_off': 'Child Lock OFF'
         },
         'hinglish': {
             // Header & Tabs
@@ -209,6 +257,9 @@ window.RAJSHREE_I18N = {
             'sec_dev_tools': 'Developer Tools',
             'sec_app_settings': 'App Settings',
             'sec_volume': 'Awaaz ka Star',
+            'sec_kids_safety': 'Kids Safety',
+            'sec_kids_audio': 'Kids Safety (Audio)',
+            'sec_kids_global': 'Kids Safety (Always On)',
 
             // Labels
             'lbl_active_profile': 'Active Profile',
@@ -242,6 +293,19 @@ window.RAJSHREE_I18N = {
             'lbl_glow_effect': 'Glow Effects',
             'lbl_bg_pattern': 'Background Pattern',
             'lbl_auto_dark': 'Auto Dark Mode',
+            'lbl_master_lock': 'Master Lock Control',
+            'lbl_lock_nav': 'Lock Next/Prev',
+            'lbl_lock_home': 'Lock Home Button',
+            'lbl_lock_settings': 'Lock Settings',
+            'lbl_lock_menu': 'Lock Menu Button',
+            'lbl_lock_vol': 'Lock Volume Control',
+            'lbl_lock_autoplay': 'Lock Auto-Play',
+            'lbl_lock_text': 'Lock Text Selection',
+            'lbl_lock_hold': 'Lock Click & Hold',
+            'lbl_lock_context': 'Lock Right Click',
+            'lbl_lock_fullscreen': 'Lock Full Screen',
+            'lbl_lock_back': 'Lock Go Back',
+            'lbl_lock_card': 'Lock Flashcard',
 
             // Sub-texts
             'sub_music': 'Halka background music',
@@ -249,14 +313,23 @@ window.RAJSHREE_I18N = {
             'sub_anim': 'App ki gati ke liye chunein',
             'sub_goal': 'Kitne cards rozana seekhne hain',
             'sub_lang': 'Settings aur button ki bhasha',
+            'sub_audio_playing': 'Jab audio baj raha ho',
 
             // Buttons
             'btn_add_new': 'Naya Jodein',
             'btn_check_update': 'Update Check Karein',
             'btn_feedback': 'Feedback Bhejein',
+            'btn_cancel': 'Radd Karein',
+            'btn_confirm': 'Confirm Karein',
 
-            // Toasts
-            'toast_lang_update': 'Bhasha badli gayi: Hinglish'
+            // Toasts & PIN
+            'toast_lang_update': 'Bhasha badli gayi: Hinglish',
+            'pin_title_verify': 'PIN Darj Karein',
+            'pin_title_setup': 'Naya PIN Set Karein',
+            'pin_wrong': 'Galat PIN! Phir se koshish karein',
+            'pin_success': 'Safalta!',
+            'child_lock_on': 'Child Lock Shuru',
+            'child_lock_off': 'Child Lock Band'
         }
     },
 

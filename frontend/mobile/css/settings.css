@@ -178,6 +178,99 @@ html.v-dragging {
     box-shadow: var(--shadow-soft);
 }
 
+/* --- COMPACT SAFETY LOCKS --- */
+.compact-locks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--glow-color);
+    margin-top: 10px;
+}
+
+.lock-card-compact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 12px 10px;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.lock-card-compact:active {
+    transform: scale(0.95);
+}
+
+.lock-label-mini {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #475569;
+    line-height: 1.2;
+}
+
+.safety-note {
+    font-size: 0.7rem;
+    color: var(--primary-color);
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Master Lock Groups with targeted background styling */
+.master-lock-group {
+    padding: 15px;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 12px !important;
+    border: 1px solid #e2e8f0;
+}
+
+.master-lock-group.is-global {
+    background: #f1f5f9;
+}
+
+.master-lock-group.is-audio {
+    background: var(--glow-color);
+    border-color: var(--glow-color);
+}
+
+/* Audio Only Highlight Group */
+.audio-lock-group {
+    border: 2px dashed var(--primary-color);
+    background: rgba(255, 105, 180, 0.05); /* Very subtle pink tint */
+    border-radius: var(--border-radius-md);
+    padding: 12px;
+    margin-top: 15px;
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.02);
+}
+
+.standalone-lock-row {
+    margin: 15px 0;
+    padding: 0 5px;
+}
+
+.group-header-compact {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+/* Animations matching existing theme */
+.pin-modal.active, .pin-modal-content {
+    animation: zoomIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
 .tab-btn .tab-text {
     font-weight: 700;
     font-size: 0.9rem;
@@ -270,12 +363,15 @@ html.v-dragging {
 .category-content {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows 0.3s ease-out, padding 0.3s ease;
+    transition: grid-template-rows 0.3s ease-out, padding 0.3s ease, opacity 0.3s ease;
     overflow: hidden;
     background: white;
     border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
-    margin-top: -5px; /* Blend with header */
+    margin-top: -5px;
     padding: 0 12px;
+    opacity: 0;
+    visibility: hidden;
+    border: none;
 }
 
 .category-block.expanded .category-content {
@@ -284,6 +380,8 @@ html.v-dragging {
     box-shadow: var(--shadow-soft);
     border: 1.5px solid var(--primary-color);
     border-top: none;
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Auto-Focus Highlight Animation */
@@ -393,7 +491,11 @@ html.v-dragging {
     position: relative;
     display: inline-block;
     width: 46px;
-    height: 24px;
+    height: 26px;
+}
+
+.switch.is-small {
+    transform: scale(0.8);
 }
 
 .switch input {
@@ -802,4 +904,134 @@ input[type="range"]::-webkit-slider-thumb {
 .is-disabled {
     opacity: 0.5 !important;
     pointer-events: none !important;
+}
+
+/* =====================================================
+   Parent PIN Modal Styling
+   ===================================================== */
+
+.pin-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    display: none; /* Controlled by JS */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.pin-modal-overlay.active {
+    display: flex;
+}
+
+.pin-modal-content {
+    background: var(--glass-bg);
+    width: 85%;
+    max-width: 320px;
+    padding: 30px 20px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pin-modal-content h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: var(--text-main);
+    margin-bottom: 20px;
+}
+
+.pin-display {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.pin-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    transition: all 0.2s ease;
+}
+
+.pin-dot.filled {
+    background: var(--primary-color);
+    transform: scale(1.2);
+    box-shadow: 0 0 10px var(--glow-color);
+}
+
+.pin-msg {
+    font-size: 0.85rem;
+    height: 20px;
+    margin-bottom: 20px;
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.pin-keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.key {
+    background: white;
+    border: none;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--deep-purple);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.key:active {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(0.9);
+}
+
+.btn-ghost {
+    background: transparent;
+    box-shadow: none;
+    font-size: 1rem;
+    color: #64748b;
+}
+
+.btn-ghost:active {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--deep-purple);
+}
+
+.dark-mode .key {
+    background: #2d2d44;
+    color: #f8fafc;
+}
+
+.dark-mode .btn-ghost {
+    background: transparent;
+}
+
+/* Shake Animation for Wrong PIN */
+.shake {
+    animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
 }
