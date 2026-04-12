@@ -65,6 +65,8 @@ window.SettingsCore = {
         const timer = s('mobile_timer', '30');
         const breakToggle = b('mobile_break', true);
         const childLock = b('mobile_child_lock', false);
+        const lockAlerts = b('mobile_lock_alerts', true);
+        const pinVisible = b('mobile_pin_visible', false);
         
         // Safety Locks
         const masterLock = b('mobile_master_lock', false);
@@ -101,6 +103,8 @@ window.SettingsCore = {
         this.setCheck('mobile-large-text', largeText);
         this.setCheck('mobile-contrast', contrast);
         this.setCheck('mobile-lock', childLock);
+        this.setCheck('mobile-lock-alerts', lockAlerts);
+        this.setCheck('mobile-pin-visible', pinVisible);
         this.setCheck('mobile-break', breakToggle);
         this.setCheck('mobile-auto-dark', autoDark);
         this.setCheck('mobile-reduce-motion', reduceMotion);
@@ -452,8 +456,21 @@ window.SettingsCore = {
 
     updatePinDots: function() {
         const dots = document.querySelectorAll('.pin-dot');
+        const showDigits = localStorage.getItem('mobile_pin_visible') === 'true';
         dots.forEach((dot, index) => {
-            dot.classList.toggle('filled', index < this.pinData.buffer.length);
+            const isFilled = index < this.pinData.buffer.length;
+            dot.classList.toggle('filled', isFilled);
+            if (showDigits && isFilled) {
+                dot.textContent = this.pinData.buffer[index];
+                dot.style.display = 'flex';
+                dot.style.alignItems = 'center';
+                dot.style.justifyContent = 'center';
+                dot.style.fontSize = '1.2rem';
+                dot.style.fontWeight = 'bold';
+                dot.style.color = 'var(--text-primary)';
+            } else {
+                dot.textContent = '';
+            }
         });
     },
 

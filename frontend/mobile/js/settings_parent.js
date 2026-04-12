@@ -15,8 +15,6 @@ window.SettingsParent = {
         // 1. Toggles (Parent Category)
         const parentToggles = [
             { id: 'mobile-break', key: 'mobile_break', i18n: 'lbl_break_reminder' },
-            { id: 'mobile-lock', key: 'mobile_child_lock', i18n: 'lbl_child_lock' },
-            { id: 'mobile-master-lock', key: 'mobile_master_lock', i18n: 'lbl_master_lock' },
             { id: 'mobile-lock-nav', key: 'mobile_lock_nav', i18n: 'lbl_lock_nav' },
             { id: 'mobile-lock-home', key: 'mobile_lock_home', i18n: 'lbl_lock_home' },
             { id: 'mobile-lock-settings', key: 'mobile_lock_settings', i18n: 'lbl_lock_settings' },
@@ -37,29 +35,10 @@ window.SettingsParent = {
             const el = document.getElementById(t.id);
             if (el) el.addEventListener('change', (e) => {
                 const val = e.target.checked;
-
-                // --- CHILD LOCK TOGGLE INTERCEPTION ---
-                if (t.key === 'mobile_child_lock' && !val) {
-                    e.target.checked = true; // Revert UI
-                    window.SettingsCore.showPinModal('verify', (success) => {
-                        if (success) {
-                            e.target.checked = false;
-                            localStorage.setItem(t.key, false);
-                            window.SettingsCore.showToast(window.SettingsCore.getTranslation('child_lock_off'));
-                        }
-                    });
-                    return;
-                }
-
                 localStorage.setItem(t.key, val);
-                
-                if (t.key === 'mobile_child_lock' && val) {
-                    window.SettingsCore.showToast(window.SettingsCore.getTranslation('child_lock_on'));
-                } else {
-                    const label = window.SettingsCore.getTranslation(t.i18n);
-                    const status = window.SettingsCore.getTranslation(val ? 'status_on' : 'status_off');
-                    window.SettingsCore.showToast(`${label}: ${status}`);
-                }
+                const label = window.SettingsCore.getTranslation(t.i18n);
+                const status = window.SettingsCore.getTranslation(val ? 'status_on' : 'status_off');
+                window.SettingsCore.showToast(`${label}: ${status}`);
             });
         });
 
@@ -90,15 +69,6 @@ window.SettingsParent = {
                 if (i.label) window.SettingsCore.showToast(`${i.label}: ${val}`);
             });
         });
-
-        // Expose setupParentPin globally as it's called via onclick in HTML
-        window.setupParentPin = () => {
-            window.SettingsCore.showPinModal('setup', (success) => {
-                if (success) {
-                    window.SettingsCore.showToast(window.SettingsCore.getTranslation('pin_success'));
-                }
-            });
-        };
     },
 
     initSafetyLocks: function() {
@@ -109,9 +79,7 @@ window.SettingsParent = {
     initMasterLockLogic: function(masterId, slaveClass) {
         const master = document.getElementById(masterId);
         const slaves = document.querySelectorAll(slaveClass);
-        
         if (!master) return;
-        
         master.addEventListener('change', (e) => {
             const val = e.target.checked;
             slaves.forEach(s => {
@@ -124,20 +92,15 @@ window.SettingsParent = {
     },
 
     initCompactLocks: function() {
-        // Handle clicks on the compact lock cards or master groups to toggle the checkbox inside
         const targets = '.lock-card-compact, .master-lock-group, .standalone-lock-row';
         document.querySelectorAll(targets).forEach(card => {
             card.style.cursor = 'pointer';
             card.addEventListener('click', (e) => {
-                // Ignore if clicking the actual input or a label (they handle themselves)
                 if (e.target.tagName === 'INPUT' || e.target.tagName === 'LABEL') return;
-                
                 const checkbox = card.querySelector('input[type="checkbox"]');
                 if (checkbox) {
                     checkbox.checked = !checkbox.checked;
                     checkbox.dispatchEvent(new Event('change'));
-                    
-                    // Simple haptic-like scale effect for demo feel
                     card.style.transform = 'scale(0.98)';
                     setTimeout(() => card.style.transform = '', 100);
                 }
