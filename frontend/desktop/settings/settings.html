@@ -65,13 +65,13 @@
                         
                         <div class="settings-group row-group no-bg mt-20">
                                 <div class="group-text">
-                                    <span class="group-label">Magic Background</span>
+                                    <label class="group-label" for="bg-magic-check">Magic Background</label>
                                     <span class="group-sub">Floating clouds & bubbles</span>
                                 </div>
-                            <label class="toggle-switch">
-                                <input type="checkbox" id="bg-magic-check" checked title="Enable Magic Background">
+                            <span class="toggle-switch">
+                                <input type="checkbox" id="bg-magic-check" checked title="Enable Magic Background" aria-label="Magic Background">
                                 <span class="toggle-slider"></span>
-                            </label>
+                            </span>
                             </div>
                         </div>
                     </div>
@@ -98,21 +98,21 @@
 
                         <div class="settings-group row-group no-bg mt-20">
                                 <div class="group-text">
-                                    <span class="group-label">Sound Effects</span>
+                                    <label class="group-label" for="sfx-check">Sound Effects</label>
                                     <span class="group-sub">Fun Pop & Click sounds</span>
                                 </div>
-                                <label class="toggle-switch">
-                                    <input type="checkbox" id="sfx-check" checked title="Enable Sound Effects">
+                                <span class="toggle-switch">
+                                    <input type="checkbox" id="sfx-check" checked title="Enable Sound Effects" aria-label="Sound Effects">
                                     <span class="toggle-slider"></span>
-                                </label>
+                                </span>
                             </div>
 
                             <!-- Simplified Volume -->
                             <div class="settings-group no-bg">
-                                <span class="group-label">Volume</span>
+                                <label class="group-label" for="volume-control">Volume</label>
                                 <div class="slider-wrapper">
                                     <span class="volume-icon" id="volume-icon">🔊</span>
-                                    <input type="range" id="volume-control" class="styled-slider" min="0" max="1" step="0.05" value="1" title="Adjust Volume">
+                                    <input type="range" id="volume-control" class="styled-slider" min="0" max="1" step="0.05" value="1" title="Adjust Volume" aria-label="Volume">
                                     <span class="slider-value" id="volume-value">100%</span>
                                 </div>
                             </div>
@@ -125,23 +125,23 @@
                         <div class="accordion-content">
                             <div class="settings-group row-group no-bg">
                                 <div class="group-text">
-                                    <span class="group-label">Celebration Magic</span>
+                                    <label class="group-label" for="confetti-check">Celebration Magic</label>
                                     <span class="group-sub">Balloons & Confetti</span>
                                 </div>
-                                <label class="toggle-switch">
-                                    <input type="checkbox" id="confetti-check" checked title="Enable Confetti Magic">
+                                <span class="toggle-switch">
+                                    <input type="checkbox" id="confetti-check" checked title="Enable Confetti Magic" aria-label="Celebration Magic">
                                     <span class="toggle-slider"></span>
-                                </label>
+                                </span>
                             </div>
                             <div class="settings-group row-group no-bg">
                                 <div class="group-text">
-                                    <span class="group-label">Boing Effect</span>
+                                    <label class="group-label" for="bounce-check">Boing Effect</label>
                                     <span class="group-sub">Cards bounce when clicked</span>
                                 </div>
-                                <label class="toggle-switch">
-                                    <input type="checkbox" id="bounce-check" checked title="Enable Boing Effect">
+                                <span class="toggle-switch">
+                                    <input type="checkbox" id="bounce-check" checked title="Enable Boing Effect" aria-label="Boing Effect">
                                     <span class="toggle-slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -152,13 +152,13 @@
                         <div class="accordion-content">
                             <div class="settings-group row-group no-bg">
                                 <div class="group-text">
-                                    <span class="group-label">Star Tracker</span>
+                                    <label class="group-label" for="stars-check">Star Tracker</label>
                                     <span class="group-sub">Show earned stars on screen</span>
                                 </div>
-                                <label class="toggle-switch">
-                                    <input type="checkbox" id="stars-check" checked title="Show Star Tracker">
+                                <span class="toggle-switch">
+                                    <input type="checkbox" id="stars-check" checked title="Show Star Tracker" aria-label="Star Tracker">
                                     <span class="toggle-slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -181,25 +181,25 @@
                 <!-- Interaction Lock -->
                 <div class="settings-group row-group">
                     <div class="group-text">
-                        <span class="group-label">Interaction Lock</span>
+                        <label class="group-label" for="lock-check">Interaction Lock</label>
                         <span class="group-sub">Lock UI during audio playback</span>
                     </div>
-                    <label class="toggle-switch" aria-label="Lock Toggle">
-                        <input type="checkbox" id="lock-check" checked title="Toggle Interaction Lock">
+                    <span class="toggle-switch" aria-label="Lock Toggle">
+                        <input type="checkbox" id="lock-check" checked title="Toggle Interaction Lock" aria-label="Interaction Lock">
                         <span class="toggle-slider"></span>
-                    </label>
+                    </span>
                 </div>
 
                 <!-- Navigation Lock -->
                 <div class="settings-group row-group">
                     <div class="group-text">
-                        <span class="group-label">Navigation Lock</span>
+                        <label class="group-label" for="nav-lock-check">Navigation Lock</label>
                         <span class="group-sub">Prevent exiting current game</span>
                     </div>
-                    <label class="toggle-switch" aria-label="Nav Lock Toggle">
-                        <input type="checkbox" id="nav-lock-check" title="Toggle Navigation Lock">
+                    <span class="toggle-switch" aria-label="Nav Lock Toggle">
+                        <input type="checkbox" id="nav-lock-check" title="Toggle Navigation Lock" aria-label="Navigation Lock">
                         <span class="toggle-slider"></span>
-                    </label>
+                    </span>
                 </div>
             </section>
 
@@ -218,7 +218,7 @@
 
                 <!-- Language -->
                 <div class="settings-group">
-                    <span class="group-label">Language</span>
+                    <label class="group-label" for="lang-select">Language</label>
                     <div class="select-wrapper">
                         <select id="lang-select" class="styled-select" title="Switch Language" aria-label="Language Selection">
                             <option value="hi">🇮🇳 हिन्दी (Hindi)</option>
@@ -231,18 +231,18 @@
                 <!-- Autoplay Toggle -->
                 <div class="settings-group row-group">
                     <div class="group-text">
-                        <span class="group-label">Auto-play Audio</span>
+                        <label class="group-label" for="autoplay-check">Auto-play Audio</label>
                         <span class="group-sub">Play audio on card flip</span>
                     </div>
-                    <label class="toggle-switch" aria-label="Auto-play Toggle">
-                        <input type="checkbox" id="autoplay-check" checked title="Toggle Auto-play Audio">
+                    <span class="toggle-switch" aria-label="Auto-play Toggle">
+                        <input type="checkbox" id="autoplay-check" checked title="Toggle Auto-play Audio" aria-label="Auto-play Audio">
                         <span class="toggle-slider"></span>
-                    </label>
+                    </span>
                 </div>
 
                 <!-- Time Limit -->
                 <div class="settings-group">
-                    <span class="group-label">Daily Time Limit (minutes)</span>
+                    <label class="group-label" for="time-limit">Daily Time Limit (minutes)</label>
                     <div class="number-input-wrapper">
                         <button class="num-btn" id="time-dec" aria-label="Decrease time limit">−</button>
                         <input type="number" id="time-limit" class="styled-number-input" value="30" min="5" max="120" title="Set Time Limit in Minutes" aria-label="Time Limit">
@@ -262,13 +262,13 @@
                 <!-- Safe Search -->
                 <div class="settings-group row-group">
                     <div class="group-text">
-                        <span class="group-label">Safe Content Only</span>
+                        <label class="group-label" for="safe-check">Safe Content Only</label>
                         <span class="group-sub">Restrict to curated content</span>
                     </div>
-                    <label class="toggle-switch" aria-label="Safe Search Toggle">
-                        <input type="checkbox" id="safe-check" checked title="Toggle Safe Content">
+                    <span class="toggle-switch" aria-label="Safe Search Toggle">
+                        <input type="checkbox" id="safe-check" checked title="Toggle Safe Content" aria-label="Safe Content Only">
                         <span class="toggle-slider"></span>
-                    </label>
+                    </span>
                 </div>
             </section>
 
@@ -287,7 +287,7 @@
 
                 <!-- Auditor Name -->
                 <div class="settings-group">
-                    <span class="group-label">Auditor Name</span>
+                    <label class="group-label" for="auditor-name">Auditor Name</label>
                     <div class="input-wrapper">
                         <input type="text" id="auditor-name" class="styled-text-input" placeholder="Enter auditor name..." title="Auditor Name" aria-label="Auditor Name">
                         <button class="inline-save-btn" id="save-auditor-btn" title="Save">✓</button>
@@ -338,13 +338,13 @@
                 <!-- Debug Mode -->
                 <div class="settings-group row-group">
                     <div class="group-text">
-                        <span class="group-label">Debug Mode</span>
+                        <label class="group-label" for="debug-check">Debug Mode</label>
                         <span class="group-sub">Show console overlays &amp; logs</span>
                     </div>
-                    <label class="toggle-switch" aria-label="Debug Mode Toggle">
-                        <input type="checkbox" id="debug-check" title="Toggle Debug Mode">
+                    <span class="toggle-switch" aria-label="Debug Mode Toggle">
+                        <input type="checkbox" id="debug-check" title="Toggle Debug Mode" aria-label="Debug Mode">
                         <span class="toggle-slider"></span>
-                    </label>
+                    </span>
                 </div>
 
                 <!-- Sync Excel -->

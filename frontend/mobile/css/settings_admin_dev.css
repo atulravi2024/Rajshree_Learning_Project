@@ -1,0 +1,11 @@
+/* =====================================================
+   Mobile Settings - Admin & Developer Specific Styles
+   ===================================================== */
+
+.btn-cache-clear { background: #64748b !important; }
+.btn-feedback { background: #8b5cf6 !important; }
+
+/* Dev Tools specific overrides can be added here */
+#cat-developer .settings-group {
+    border-style: dashed;
+}

@@ -1,0 +1,97 @@
+/* =====================================================
+   Mobile Settings - Kids Category Specific Styles
+   ===================================================== */
+
+/* Voice Profile Selection */
+.voice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.voice-card {
+    border: 2px solid var(--glow-color);
+    border-radius: 12px;
+    padding: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.voice-card.active {
+    border-color: var(--primary-color);
+    background: var(--light-bg);
+    transform: translateY(-2px);
+}
+
+.voice-emoji { font-size: 1.25rem; display: block; margin-bottom: 3px; }
+.voice-name { font-size: 0.8rem; font-weight: 600; }
+
+.dark-mode .voice-card { background: #121212 !important; border-color: #2d2d44 !important; color: #f8fafc !important; }
+.dark-mode .voice-card.active { background: #1e1e1e !important; border-color: var(--primary-color) !important; }
+
+/* Range Mark Offsets (Aligned with track labels for Volume) */
+.range-mark {
+    position: absolute;
+    top: 5px;
+    width: 2px;
+    height: 10px;
+    background: var(--primary-color);
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 1px;
+}
+#mark-master { left: 80%; }
+#mark-music { left: 5%; }
+#mark-sfx { left: 50%; }
+#mark-content { left: 100%; }
+
+/* Theme Color Picker */
+.color-grid {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 5px 2px 10px 2px;
+}
+
+.color-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.color-circle.active {
+    box-shadow: 0 0 0 2px var(--primary-color);
+    transform: scale(1.1);
+}
+
+.circle-pink { background: linear-gradient(135deg, #FF1493, #FF69B4, #FFDEE9); }
+.circle-blue { background: linear-gradient(135deg, #1E90FF, #00BFFF, #E0F2FE); }
+.circle-purple { background: linear-gradient(135deg, #8B5CF6, #A78BFA, #EDE9FE); }
+.circle-orange { background: linear-gradient(135deg, #F97316, #FB923C, #FFEDD5); }
+.circle-emerald { background: linear-gradient(135deg, #10B981, #34D399, #D1FAE5); }
+.circle-indigo { background: linear-gradient(135deg, #6366F1, #818CF8, #E0E7FF); }
+
+/* Accessibility Modes (Settings Specific) */
+.large-text .tab-text { font-size: 1rem !important; font-weight: 800; }
+.large-text .section-title { font-size: 1.3rem !important; }
+.large-text .group-label { font-size: 1.1rem !important; }
+
+.high-contrast {
+    --primary-color: #000000 !important;
+    --accent-color: #FFFF00 !important;
+    --light-bg: #FFFFFF !important;
+    --surface-color: #FFFFFF !important;
+    --text-main: #000000 !important;
+}
+
+.high-contrast .no-pattern body { background-image: none !important; }

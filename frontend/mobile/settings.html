@@ -54,25 +54,25 @@
                         <section class="settings-group">
                             <div class="toggle-row">
                                 <div>
-                                    <span class="group-label" data-i18n="lbl_bg_music">पार्श्व संगीत (Music)</span>
+                                    <label class="group-label" for="mobile-bg-music" id="lbl-bg-music" data-i18n="lbl_bg_music">पार्श्व संगीत (Music)</label>
                                     <p class="group-sub" data-i18n="sub_music">हल्का बैकग्राउंड म्यूज़िक</p>
                                 </div>
-                                <label class="switch">
-                                    <input type="checkbox" id="mobile-bg-music" checked title="म्यूजिक ऑन/ऑफ">
+                                <span class="switch" aria-label="पार्श्व संगीत (Music)">
+                                    <input type="checkbox" id="mobile-bg-music" checked title="म्यूजिक ऑन/ऑफ" aria-label="पार्श्व संगीत (Music)" aria-describedby="lbl-bg-music">
                                     <span class="slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </section>
                         <section class="settings-group">
                             <div class="toggle-row">
                                 <div>
-                                    <span class="group-label" data-i18n="lbl_sfx">साउंड इफेक्ट्स (SFX)</span>
+                                    <label class="group-label" for="mobile-sfx" id="lbl-sfx" data-i18n="lbl_sfx">साउंड इफेक्ट्स (SFX)</label>
                                     <p class="group-sub">क्रियाओं के लिए ध्वनि</p>
                                 </div>
-                                <label class="switch">
-                                    <input type="checkbox" id="mobile-sfx" checked title="साउंड इफेक्ट्स ऑन/ऑफ">
+                                <span class="switch" aria-label="साउंड इफेक्ट्स (SFX)">
+                                    <input type="checkbox" id="mobile-sfx" checked title="साउंड इफेक्ट्स ऑन/ऑफ" aria-label="साउंड इफेक्ट्स (SFX)" aria-describedby="lbl-sfx">
                                     <span class="slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </section>
                     </div>
@@ -89,7 +89,7 @@
                 <div class="category-content">
                     <div class="category-inner">
                         <section class="settings-group">
-                            <span class="group-label"><span data-i18n="lbl_vol_master">मास्टर आवाज़ (Master)</span> <span id="mobile-vol-master-badge" class="value-badge">80%</span></span>
+                            <label class="group-label" for="mobile-vol-master"><span data-i18n="lbl_vol_master">मास्टर आवाज़ (Master)</span> <span id="mobile-vol-master-badge" class="value-badge">80%</span></label>
                             <div class="range-container">
                                 <div class="range-mark" id="mark-master"></div>
                                 <input type="range" id="mobile-vol-master" min="0" max="100" step="1" value="80" title="मास्टर आवाज़" aria-label="मास्टर आवाज़">
@@ -101,7 +101,7 @@
                             </div>
                         </section>
                         <section class="settings-group">
-                            <span class="group-label"><span data-i18n="lbl_vol_music">संगीत (Music)</span> <span id="mobile-vol-music-badge" class="value-badge">5%</span></span>
+                            <label class="group-label" for="mobile-vol-music"><span data-i18n="lbl_vol_music">संगीत (Music)</span> <span id="mobile-vol-music-badge" class="value-badge">5%</span></label>
                             <div class="range-container">
                                 <div class="range-mark" id="mark-music"></div>
                                 <input type="range" id="mobile-vol-music" min="0" max="100" step="1" value="5" title="संगीत आवाज़" aria-label="संगीत आवाज़">
@@ -113,7 +113,7 @@
                             </div>
                         </section>
                         <section class="settings-group">
-                            <span class="group-label"><span data-i18n="lbl_vol_sfx">साउंड इफेक्ट्स (SFX)</span> <span id="mobile-vol-sfx-badge" class="value-badge">50%</span></span>
+                            <label class="group-label" for="mobile-vol-sfx"><span data-i18n="lbl_vol_sfx">साउंड इफेक्ट्स (SFX)</span> <span id="mobile-vol-sfx-badge" class="value-badge">50%</span></label>
                             <div class="range-container">
                                 <div class="range-mark" id="mark-sfx"></div>
                                 <input type="range" id="mobile-vol-sfx" min="0" max="100" step="1" value="50" title="साउंड इफेक्ट्स आवाज़" aria-label="साउंड इफेक्ट्स आवाज़">
@@ -125,7 +125,7 @@
                             </div>
                         </section>
                         <section class="settings-group">
-                            <span class="group-label"><span data-i18n="lbl_vol_content">सामग्री आवाज़</span> <span id="mobile-vol-content-badge" class="value-badge">100%</span></span>
+                            <label class="group-label" for="mobile-vol-content"><span data-i18n="lbl_vol_content">सामग्री आवाज़</span> <span id="mobile-vol-content-badge" class="value-badge">100%</span></label>
                             <div class="range-container">
                                 <div class="range-mark" id="mark-content"></div>
                                 <input type="range" id="mobile-vol-content" min="0" max="100" step="1" value="100" title="फ्लैशकार्ड आवाज़" aria-label="फ्लैशकार्ड आवाज़">
@@ -167,7 +167,7 @@
                             </div>
                         </section>
                         <section class="settings-group">
-                            <span class="group-label"><span data-i18n="lbl_speech_speed">बोलने की गति</span> <span id="mobile-speed-badge" class="value-badge">1.0x</span></span>
+                            <label class="group-label" for="mobile-speed"><span data-i18n="lbl_speech_speed">बोलने की गति</span> <span id="mobile-speed-badge" class="value-badge">1.0x</span></label>
                             <div class="range-container">
                                 <input type="range" id="mobile-speed" min="0.25" max="2.0" step="0.25" value="1.0" title="बोलने की गति" aria-label="बोलने की गति">
                                 <div class="range-labels">
@@ -195,17 +195,17 @@
                         <section class="settings-group">
                             <div class="toggle-row">
                                 <div>
-                                    <span class="group-label" data-i18n="lbl_autoplay">ऑटो-प्ले (Autoplay)</span>
+                                    <label class="group-label" for="mobile-autoplay" id="lbl-autoplay" data-i18n="lbl_autoplay">ऑटो-प्ले (Autoplay)</label>
                                     <p class="group-sub" data-i18n="sub_autoplay">बिना छुए अगला कार्ड पढ़ें</p>
                                 </div>
-                                <label class="switch">
-                                    <input type="checkbox" id="mobile-autoplay" title="ऑटो-प्ले ऑन/ऑफ">
+                                <span class="switch" aria-label="ऑटो-प्ले (Autoplay)">
+                                    <input type="checkbox" id="mobile-autoplay" title="ऑटो-प्ले ऑन/ऑफ" aria-label="ऑटो-प्ले (Autoplay)" aria-describedby="lbl-autoplay">
                                     <span class="slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </section>
                         <section class="settings-group">
-                            <span class="group-label" data-i18n="lbl_next_delay">अगले कार्ड का समय</span>
+                            <label class="group-label" for="mobile-delay" data-i18n="lbl_next_delay">अगले कार्ड का समय</label>
                             <div class="range-container">
                                 <input type="range" id="mobile-delay" min="2" max="10" step="1" value="3" title="अगले कार्ड का समय" aria-label="अगले कार्ड का समय">
                                 <div class="range-labels">
@@ -229,7 +229,7 @@
                 <div class="category-content">
                     <div class="category-inner">
                         <section class="settings-group">
-                            <span class="group-label" data-i18n="lbl_anim_quality">एनिमेशन क्वालिटी</span>
+                            <label class="group-label" for="mobile-anim-quality" data-i18n="lbl_anim_quality">एनिमेशन क्वालिटी</label>
                             <p class="group-sub" data-i18n="sub_anim">ऐप की गति के लिए चुनें</p>
                             <select id="mobile-anim-quality" class="select-field" title="एनिमेशन क्वालिटी (Animation Quality)" aria-label="एनिमेशन क्वालिटी">
                                 <option value="high">बेहतरीन (High)</option>
@@ -239,13 +239,13 @@
                         <section class="settings-group">
                             <div class="toggle-row">
                                 <div>
-                                    <span class="group-label" data-i18n="lbl_bg_pattern">बैकग्राउंड पैटर्न</span>
+                                    <label class="group-label" for="mobile-bg-pattern" id="lbl-bg-pattern" data-i18n="lbl_bg_pattern">बैकग्राउंड पैटर्न</label>
                                     <p class="group-sub">डॉट ग्रिड इफ़ेक्ट ऑन/ऑफ़</p>
                                 </div>
-                                <label class="switch">
-                                    <input type="checkbox" id="mobile-bg-pattern" checked title="बैकग्राउंड पैटर्न">
+                                <span class="switch" aria-label="बैकग्राउंड पैटर्न">
+                                    <input type="checkbox" id="mobile-bg-pattern" checked title="बैकग्राउंड पैटर्न" aria-label="बैकग्राउंड पैटर्न" aria-describedby="lbl-bg-pattern">
                                     <span class="slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </section>
                     </div>
@@ -275,37 +275,37 @@
                         <section class="settings-group">
                             <div class="toggle-row">
                                 <div>
-                                    <span class="group-label" data-i18n="lbl_auto_dark">ऑटो डार्क मोड</span>
+                                    <label class="group-label" for="mobile-auto-dark" id="lbl-auto-dark" data-i18n="lbl_auto_dark">ऑटो डार्क मोड</label>
                                     <p class="group-sub">सिस्टम के अनुसार बदलें</p>
                                 </div>
-                                <label class="switch">
-                                    <input type="checkbox" id="mobile-auto-dark" title="ऑटो डार्क मोड">
+                                <span class="switch" aria-label="ऑटो डार्क मोड">
+                                    <input type="checkbox" id="mobile-auto-dark" title="ऑटो डार्क मोड" aria-label="ऑटो डार्क मोड" aria-describedby="lbl-auto-dark">
                                     <span class="slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </section>
                         <section class="settings-group" id="manual-dark-group">
                             <div class="toggle-row">
                                 <div>
-                                    <span class="group-label">डार्क मोड (Dark Mode)</span>
+                                    <label class="group-label" for="mobile-dark-mode" id="lbl-dark-mode">डार्क मोड (Dark Mode)</label>
                                     <p class="group-sub">रात के लिए गहरा रंग</p>
                                 </div>
-                                <label class="switch">
-                                    <input type="checkbox" id="mobile-dark-mode" title="डार्क मोड ऑन/ऑफ">
+                                <span class="switch" aria-label="डार्क मोड (Dark Mode)">
+                                    <input type="checkbox" id="mobile-dark-mode" title="डार्क मोड ऑन/ऑफ" aria-label="डार्क मोड (Dark Mode)" aria-describedby="lbl-dark-mode">
                                     <span class="slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </section>
                         <section class="settings-group">
                             <div class="toggle-row">
                                 <div>
-                                    <span class="group-label" data-i18n="lbl_glow_effect">चमक इफेक्ट्स</span>
+                                    <label class="group-label" for="mobile-glow-effect" id="lbl-glow-effect" data-i18n="lbl_glow_effect">चमक इफेक्ट्स</label>
                                     <p class="group-sub">बटन्स और कार्ड्स ग्लो</p>
                                 </div>
-                                <label class="switch">
-                                    <input type="checkbox" id="mobile-glow-effect" checked title="चमक इफेक्ट्स">
+                                <span class="switch" aria-label="चमक इफेक्ट्स">
+                                    <input type="checkbox" id="mobile-glow-effect" checked title="चमक इफेक्ट्स" aria-label="चमक इफेक्ट्स" aria-describedby="lbl-glow-effect">
                                     <span class="slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </section>
                     </div>
@@ -324,23 +324,23 @@
                         <section class="settings-group">
                             <div class="toggle-row">
                                 <div>
-                                    <span class="group-label" data-i18n="lbl_large_text">बड़ा टेक्स्ट (Large Text)</span>
+                                    <label class="group-label" for="mobile-large-text" data-i18n="lbl_large_text">बड़ा टेक्स्ट (Large Text)</label>
                                 </div>
-                                <label class="switch">
+                                <span class="switch">
                                     <input type="checkbox" id="mobile-large-text" title="बड़ा टेक्स्ट ऑन/ऑफ" aria-label="बड़ा टेक्स्ट">
                                     <span class="slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </section>
                         <section class="settings-group">
                             <div class="toggle-row">
                                 <div>
-                                    <span class="group-label" data-i18n="lbl_contrast">हाई कंट्रास्ट (Contrast)</span>
+                                    <label class="group-label" for="mobile-contrast" data-i18n="lbl_contrast">हाई कंट्रास्ट (Contrast)</label>
                                 </div>
-                                <label class="switch">
+                                <span class="switch">
                                     <input type="checkbox" id="mobile-contrast" title="हाई कंट्रास्ट ऑन/ऑफ" aria-label="हाई कंट्रास्ट">
                                     <span class="slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </section>
                     </div>
@@ -386,7 +386,7 @@
                 <div class="category-content">
                     <div class="category-inner">
                         <section class="settings-group">
-                            <span class="group-label" data-i18n="lbl_difficulty">पढ़ाई का स्तर</span>
+                            <label class="group-label" for="mobile-difficulty" data-i18n="lbl_difficulty">पढ़ाई का स्तर</label>
                             <select id="mobile-difficulty" class="select-field" title="पढ़ाई का स्तर" aria-label="पढ़ाई का स्तर">
                                 <option value="beginner">शुरुआती (3-4 साल)</option>
                                 <option value="intermediate" selected>मध्यम (4-5 साल)</option>
@@ -394,7 +394,7 @@
                             </select>
                         </section>
                         <section class="settings-group">
-                            <span class="group-label" data-i18n="lbl_daily_goal">दैनिक लक्ष्य</span>
+                            <label class="group-label" for="mobile-daily-goal" data-i18n="lbl_daily_goal">दैनिक लक्ष्य</label>
                             <p class="group-sub" data-i18n="sub_goal">कितने कार्ड्स रोज़ाना सीखने हैं</p>
                             <select id="mobile-daily-goal" class="select-field" title="दैनिक लक्ष्य" aria-label="दैनिक लक्ष्य">
                                 <option value="10">10 कार्ड्स</option>
@@ -416,9 +416,9 @@
                 <div class="category-content">
                     <div class="category-inner">
                         <section class="settings-group">
-                            <span class="group-label" data-i18n="lbl_ui_lang">मेन्यू की भाषा (Interface Language)</span>
+                            <label class="group-label" for="mobile-ui-lang" data-i18n="lbl_ui_lang">मेन्यू की भाषा (Interface Language)</label>
                             <p class="group-sub" data-i18n="sub_lang">सेटिंग्स और बटनों की प्रमुख भाषा</p>
-                            <select id="mobile-ui-lang" class="select-field" title="ऐप की भाषा चुनिए">
+                            <select id="mobile-ui-lang" class="select-field" title="ऐप की भाषा चुनिए" aria-label="ऐप की भाषा (Interface Language)">
                                 <option value="hi" selected>हिंदी (Hindi)</option>
                                 <option value="en">English (अंग्रेजी)</option>
                                 <option value="hinglish">Hinglish</option>
@@ -438,7 +438,7 @@
                 <div class="category-content">
                     <div class="category-inner">
                         <section class="settings-group">
-                            <span class="group-label" data-i18n="lbl_screen_time">स्क्रीन समय सीमा</span>
+                            <label class="group-label" for="mobile-timer" data-i18n="lbl_screen_time">स्क्रीन समय सीमा</label>
                             <select id="mobile-timer" class="select-field" title="स्क्रीन समय सीमा" aria-label="स्क्रीन समय सीमा">
                                 <option value="15">15 मिनट</option>
                                 <option value="30">30 मिनट</option>
@@ -448,12 +448,12 @@
                         <section class="settings-group">
                             <div class="toggle-row">
                                 <div>
-                                    <span class="group-label" data-i18n="lbl_break_reminder">ब्रेक रिमाइंडर</span>
+                                    <label class="group-label" for="mobile-break" data-i18n="lbl_break_reminder">ब्रेक रिमाइंडर</label>
                                 </div>
-                                <label class="switch">
+                                <span class="switch">
                                     <input type="checkbox" id="mobile-break" checked title="ब्रेक रिमाइंडर ऑन/ऑफ" aria-label="ब्रेक रिमाइंडर">
                                     <span class="slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </section>
                     </div>
@@ -475,12 +475,12 @@
                         <section class="settings-group">
                             <div class="toggle-row">
                                 <div>
-                                    <span class="group-label" data-i18n="lbl_child_lock">चाइल्ड लॉक</span>
+                                    <label class="group-label" for="mobile-lock" data-i18n="lbl_child_lock">चाइल्ड लॉक</label>
                                 </div>
-                                <label class="switch">
+                                <span class="switch">
                                     <input type="checkbox" id="mobile-lock" title="चाइल्ड लॉक ऑन/ऑफ" aria-label="चाइल्ड लॉक">
                                     <span class="slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </section>
                     </div>
@@ -495,61 +495,61 @@
                     <span class="chevron">▼</span>
                 </header>
                 <div class="category-content">
-                    <div class="category-inner" style="padding:10px 0;">
+                    <div class="category-inner">
                         <!-- Master Control Global -->
-                        <div class="master-lock-group" style="background:#f1f5f9; border:1px solid #e2e8f0; margin-bottom:15px !important;">
+                        <div class="master-lock-group master-lock-group-custom">
                             <div class="toggle-row">
-                                <span class="group-label" data-i18n="lbl_master_lock">मास्टर लॉक कंट्रोल</span>
-                                <label class="switch">
-                                    <input type="checkbox" id="mobile-master-global" title="मास्टर लॉक स्थायी">
+                                <label class="group-label" for="mobile-master-global" data-i18n="lbl_master_lock">मास्टर लॉक कंट्रोल</label>
+                                <span class="switch">
+                                    <input type="checkbox" id="mobile-master-global" title="मास्टर लॉक स्थायी" aria-label="मास्टर लॉक कंट्रोल">
                                     <span class="slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </div>
 
                         <div class="standalone-lock-row">
-                            <div class="compact-locks-grid" style="grid-template-columns: 1fr 1fr; background:transparent; border:none; margin:0; padding:0;">
+                            <div class="compact-locks-grid compact-locks-grid-custom">
                                 <div class="lock-card-compact">
-                                    <span class="lock-label-mini" data-i18n="lbl_lock_vol">वॉल्यूम कंट्रोल लॉक</span>
-                                    <label class="switch is-small">
-                                        <input type="checkbox" class="global-lock" id="mobile-lock-vol" title="वॉल्यूम लॉक">
+                                    <label class="lock-label-mini" for="mobile-lock-vol" data-i18n="lbl_lock_vol">वॉल्यूम कंट्रोल लॉक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" class="global-lock" id="mobile-lock-vol" title="वॉल्यूम लॉक" aria-label="वॉल्यूम कंट्रोल लॉक">
                                         <span class="slider"></span>
-                                    </label>
+                                    </span>
                                 </div>
                                 <div class="lock-card-compact">
-                                    <span class="lock-label-mini" data-i18n="lbl_lock_text">टेक्स्ट सिलेक्शन लॉक</span>
-                                    <label class="switch is-small">
-                                        <input type="checkbox" class="global-lock" id="mobile-lock-text" title="टेक्स्ट लॉक">
+                                    <label class="lock-label-mini" for="mobile-lock-text" data-i18n="lbl_lock_text">टेक्स्ट सिलेक्शन लॉक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" class="global-lock" id="mobile-lock-text" title="टेक्स्ट लॉक" aria-label="टेक्स्ट सिलेक्शन लॉक">
                                         <span class="slider"></span>
-                                    </label>
+                                    </span>
                                 </div>
                                 <div class="lock-card-compact">
-                                    <span class="lock-label-mini" data-i18n="lbl_lock_hold">क्लिक एंड होल्ड लॉक</span>
-                                    <label class="switch is-small">
-                                        <input type="checkbox" class="global-lock" id="mobile-lock-hold" title="क्लिक लॉक">
+                                    <label class="lock-label-mini" for="mobile-lock-hold" data-i18n="lbl_lock_hold">क्लिक एंड होल्ड लॉक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" class="global-lock" id="mobile-lock-hold" title="क्लिक लॉक" aria-label="क्लिक एंड होल्ड लॉक">
                                         <span class="slider"></span>
-                                    </label>
+                                    </span>
                                 </div>
                                 <div class="lock-card-compact">
-                                    <span class="lock-label-mini" data-i18n="lbl_lock_context">राइट क्लिक लॉक</span>
-                                    <label class="switch is-small">
-                                        <input type="checkbox" class="global-lock" id="mobile-lock-context" title="राइट क्लिक लॉक">
+                                    <label class="lock-label-mini" for="mobile-lock-context" data-i18n="lbl_lock_context">राइट क्लिक लॉक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" class="global-lock" id="mobile-lock-context" title="राइट क्लिक लॉक" aria-label="राइट क्लिक लॉक">
                                         <span class="slider"></span>
-                                    </label>
+                                    </span>
                                 </div>
                                 <div class="lock-card-compact">
-                                    <span class="lock-label-mini" data-i18n="lbl_lock_fullscreen">फुल स्क्रीन लॉक</span>
-                                    <label class="switch is-small">
-                                        <input type="checkbox" class="global-lock" id="mobile-lock-fullscreen" title="फुल स्क्रीन लॉक">
+                                    <label class="lock-label-mini" for="mobile-lock-fullscreen" data-i18n="lbl_lock_fullscreen">फुल स्क्रीन लॉक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" class="global-lock" id="mobile-lock-fullscreen" title="फुल स्क्रीन लॉक" aria-label="फुल स्क्रीन लॉक">
                                         <span class="slider"></span>
-                                    </label>
+                                    </span>
                                 </div>
                                 <div class="lock-card-compact">
-                                    <span class="lock-label-mini" data-i18n="lbl_lock_back">बैक बटन लॉक</span>
-                                    <label class="switch is-small">
-                                        <input type="checkbox" class="global-lock" id="mobile-lock-back" title="बैक बटन लॉक">
+                                    <label class="lock-label-mini" for="mobile-lock-back" data-i18n="lbl_lock_back">बैक बटन लॉक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" class="global-lock" id="mobile-lock-back" title="बैक बटन लॉक" aria-label="बैक बटन लॉक">
                                         <span class="slider"></span>
-                                    </label>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -571,65 +571,66 @@
                             <!-- Master Control Audio -->
                             <div class="master-lock-group is-audio">
                                 <div class="toggle-row">
-                                    <span class="group-label" data-i18n="lbl_master_lock">मास्टर लॉक कंट्रोल</span>
-                                    <label class="switch">
-                                        <input type="checkbox" id="mobile-master-audio" title="मास्टर लॉक ऑडियो">
+                                    <label class="group-label" for="mobile-master-audio" data-i18n="lbl_master_lock">मास्टर लॉक कंट्रोल</label>
+                                    <span class="switch">
+                                        <input type="checkbox" id="mobile-master-audio" title="मास्टर लॉक ऑडियो" aria-label="मास्टर लॉक कंट्रोल">
                                         <span class="slider"></span>
-                                    </label>
+                                    </span>
                                 </div>
                             </div>
 
-                        <div class="audio-lock-group" style="margin-top:0;">
+                        <div class="audio-lock-group audio-lock-group-custom">
                             <p class="group-header-compact" data-i18n="sub_audio_playing">जब ऑडियो बज रहा हो (While audio is playing)</p>
                             
-                            <div class="compact-locks-grid" style="background:transparent; border:none; margin-top:0; padding:0;">
+                            <div class="compact-locks-grid compact-locks-grid-audio-custom">
                                 <div class="lock-card-compact">
-                                    <span class="lock-label-mini" data-i18n="lbl_lock_nav">अगला/पिछला लॉक</span>
-                                    <label class="switch is-small">
-                                        <input type="checkbox" class="audio-lock" id="mobile-lock-nav" title="अगला/पिछला लॉक">
+                                    <label class="lock-label-mini" for="mobile-lock-nav" data-i18n="lbl_lock_nav">अगला/पिछला लॉक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" class="audio-lock" id="mobile-lock-nav" title="अगला/पिछला लॉक" aria-label="अगला/पिछला लॉक">
                                         <span class="slider"></span>
-                                    </label>
+                                    </span>
                                 </div>
                                 <div class="lock-card-compact">
-                                    <span class="lock-label-mini" data-i18n="lbl_lock_home">होम बटन लॉक</span>
-                                    <label class="switch is-small">
-                                        <input type="checkbox" class="audio-lock" id="mobile-lock-home" title="होम बटन लॉक">
+                                    <label class="lock-label-mini" for="mobile-lock-home" data-i18n="lbl_lock_home">होम बटन लॉक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" class="audio-lock" id="mobile-lock-home" title="होम बटन लॉक" aria-label="होम बटन लॉक">
                                         <span class="slider"></span>
-                                    </label>
+                                    </span>
                                 </div>
                                 <div class="lock-card-compact">
-                                    <span class="lock-label-mini" data-i18n="lbl_lock_settings">सेटिंग्स बटन लॉक</span>
-                                    <label class="switch is-small">
-                                        <input type="checkbox" class="audio-lock" id="mobile-lock-settings" title="सेटिंग्स लॉक">
+                                    <label class="lock-label-mini" for="mobile-lock-settings" data-i18n="lbl_lock_settings">सेटिंग्स बटन लॉक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" class="audio-lock" id="mobile-lock-settings" title="सेटिंग्स लॉक" aria-label="सेटिंग्स बटन लॉक">
                                         <span class="slider"></span>
-                                    </label>
+                                    </span>
                                 </div>
                                 <div class="lock-card-compact">
-                                    <span class="lock-label-mini" data-i18n="lbl_lock_menu">मेन्यू बटन लॉक</span>
-                                    <label class="switch is-small">
-                                        <input type="checkbox" class="audio-lock" id="mobile-lock-menu" title="मेन्यू लॉक">
+                                    <label class="lock-label-mini" for="mobile-lock-menu" data-i18n="lbl_lock_menu">मेन्यू बटन लॉक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" class="audio-lock" id="mobile-lock-menu" title="मेन्यू लॉक" aria-label="मेन्यू बटन लॉक">
                                         <span class="slider"></span>
-                                    </label>
+                                    </span>
                                 </div>
                                 <div class="lock-card-compact">
-                                    <span class="lock-label-mini" data-i18n="lbl_lock_autoplay">ऑटो-प्ले लॉक</span>
-                                    <label class="switch is-small">
-                                        <input type="checkbox" class="audio-lock" id="mobile-lock-autoplay" title="ऑटो-प्ले लॉक">
+                                    <label class="lock-label-mini" for="mobile-lock-autoplay" data-i18n="lbl_lock_autoplay">ऑटो-प्ले लॉक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" class="audio-lock" id="mobile-lock-autoplay" title="ऑटो-प्ले लॉक" aria-label="ऑटो-प्ले लॉक">
                                         <span class="slider"></span>
-                                    </label>
+                                    </span>
                                 </div>
                                 <div class="lock-card-compact">
-                                    <span class="lock-label-mini" data-i18n="lbl_lock_card">फ्लैशकार्ड लॉक</span>
-                                    <label class="switch is-small">
-                                        <input type="checkbox" class="audio-lock" id="mobile-lock-card" title="कार्ड लॉक">
+                                    <label class="lock-label-mini" for="mobile-lock-card" data-i18n="lbl_lock_card">फ्लैशकार्ड लॉक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" class="audio-lock" id="mobile-lock-card" title="कार्ड लॉक" aria-label="फ्लैशकार्ड लॉक">
                                         <span class="slider"></span>
-                                    </label>
+                                    </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
 
             <!-- Category 8: Storage & Sync -->
@@ -703,13 +704,13 @@
                 <div class="category-content">
                     <div class="category-inner">
                         <section class="settings-group">
-                            <span class="group-label" data-i18n="lbl_debug_mode">डीबग मोड</span>
+                            <label class="group-label" for="dev-logs" data-i18n="lbl_debug_mode">डीबग मोड</label>
                             <div class="toggle-row">
-                                <span data-i18n="lbl_enable_logs">एनेबल लॉग्स</span>
-                                <label class="switch">
-                                    <input type="checkbox" id="dev-logs" title="डीबग लॉग्स">
+                                <label for="dev-logs" data-i18n="lbl_enable_logs">एनेबल लॉग्स</label>
+                                <span class="switch">
+                                    <input type="checkbox" id="dev-logs" title="डीबग लॉग्स" aria-label="डीबग लॉग्स">
                                     <span class="slider"></span>
-                                </label>
+                                </span>
                             </div>
                         </section>
                     </div>
@@ -752,6 +753,11 @@
     </div>
 
     <script src="js/i18n.js"></script>
+    <script src="js/settings_core.js"></script>
+    <script src="js/settings_kids.js"></script>
+    <script src="js/settings_parent.js"></script>
+    <script src="js/settings_admin.js"></script>
+    <script src="js/settings_dev.js"></script>
     <script src="js/settings.js"></script>
 </body>
 

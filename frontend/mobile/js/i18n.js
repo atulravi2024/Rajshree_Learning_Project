@@ -113,7 +113,9 @@ window.RAJSHREE_I18N = {
             'pin_wrong': 'गलत पिन! फिर से कोशिश करें',
             'pin_success': 'सफलता!',
             'child_lock_on': 'चाइल्ड लॉक शुरू',
-            'child_lock_off': 'चाइल्ड लॉक बंद'
+            'child_lock_off': 'चाइल्ड लॉक बंद',
+            'status_on': 'शुरू',
+            'status_off': 'बंद'
         },
         'en': {
             // Header & Tabs
@@ -151,6 +153,8 @@ window.RAJSHREE_I18N = {
             'sec_app_settings': 'App Settings',
             'sec_volume': 'Volume Levels',
             'sec_kids_safety': 'Kids Safety',
+            'sec_kids_audio': 'Kids Safety (Audio)',
+            'sec_kids_global': 'Kids Safety (Always On)',
 
             // Labels
             'lbl_active_profile': 'Active Profile',
@@ -220,7 +224,9 @@ window.RAJSHREE_I18N = {
             'pin_wrong': 'Incorrect PIN! Try Again',
             'pin_success': 'Success!',
             'child_lock_on': 'Child Lock ON',
-            'child_lock_off': 'Child Lock OFF'
+            'child_lock_off': 'Child Lock OFF',
+            'status_on': 'ON',
+            'status_off': 'OFF'
         },
         'hinglish': {
             // Header & Tabs
@@ -329,7 +335,9 @@ window.RAJSHREE_I18N = {
             'pin_wrong': 'Galat PIN! Phir se koshish karein',
             'pin_success': 'Safalta!',
             'child_lock_on': 'Child Lock Shuru',
-            'child_lock_off': 'Child Lock Band'
+            'child_lock_off': 'Child Lock Band',
+            'status_on': 'Shuru',
+            'status_off': 'Band'
         }
     },
 
