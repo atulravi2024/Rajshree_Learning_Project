@@ -5,15 +5,20 @@
 
 window.SettingsCore = {
     init: function() {
-        console.log("⚙️ Settings Core Initializing...");
-        this.loadSettings();
-        this.initAccordion();
-        this.initCategoryTabs();
-        this.initStickyEffects();
-        this.initDraggableTabs();
-        this.initVerticalDraggable();
-        this.initSwipeToClose();
-        this.initPinPad();
+        console.log("⚙️ Settings Core: Start Boot...");
+        try {
+            this.loadSettings();
+            this.initAccordion();
+            this.initCategoryTabs();
+            this.initStickyEffects();
+            this.initDraggableTabs();
+            this.initVerticalDraggable();
+            this.initPinPad();
+            this.initSwitches();
+            console.log("⚙️ Settings Core: Boot Complete.");
+        } catch (e) {
+            console.error("❌ Settings Core Boot Failed:", e);
+        }
     },
 
     initStickyEffects: function() {
@@ -56,6 +61,8 @@ window.SettingsCore = {
         const reduceMotion = b('mobile_reduce_motion', false);
         const fastLoad = b('mobile_fast_load', true);
         const fontStyle = s('mobile_font_style', 'clean');
+        const hdImages = b('mobile_hd_images', true);
+        const fullscreen = b('mobile_fullscreen', false);
         const activeProfile = s('rajshree_active_profile', 'rajshree');
         
         // 3. Learning
@@ -114,7 +121,8 @@ window.SettingsCore = {
         this.setCheck('mobile-autoplay', autoplay);
         this.setCheck('mobile-bg-pattern', bgPattern);
         this.setCheck('mobile-glow-effect', glowEffect);
-        this.setCheck('mobile-auto-dark', autoDark);
+        this.setCheck('mobile-hd-images', hdImages);
+        this.setCheck('mobile-fullscreen', fullscreen);
         const speedBadge = document.getElementById('mobile-speed-badge');
         if (speedBadge) speedBadge.textContent = speed + 'x';
         
@@ -156,11 +164,9 @@ window.SettingsCore = {
         this.setCheck('mobile-master-audio', masterAudio);
         this.setCheck('mobile-master-global', masterGlobal);
         
-        this.setCheck('mobile-lock-autoplay', lockAutoplay);
-        this.setCheck('mobile-lock-card', lockCard);
-        
-        this.setCheck('mobile-autoplay', autoplay);
-        this.setCheck('mobile-dark-mode', darkMode);
+        // Manual Dark Mode checkbox should reflect current state
+        const effectiveDarkMode = autoDark ? window.matchMedia('(prefers-color-scheme: dark)').matches : darkMode;
+        this.setCheck('mobile-dark-mode', effectiveDarkMode);
 
         // Apply visual classes immediately via ThemeEngine
         if (window.ThemeEngine) {
@@ -174,78 +180,15 @@ window.SettingsCore = {
         this.updateGridSelection('#cat-parent .voice-card', 'profile', activeProfile);
 
         // Apply translations on load via external module
-        if (window.RAJSHREE_I18N) window.RAJSHREE_I18N.applyUI(uiLang);
+        if (window.RAJSHREE_I18N) {
+            console.log("🌐 Applying UI Localization...");
+            window.RAJSHREE_I18N.applyUI(uiLang);
+        }
+        
+        console.log("✅ Load Settings Synchronized.");
     },
 
-    // --- UI NAVIGATION LOGIC ---
-    initVerticalDraggable: function() {
-        const el = document.documentElement;
-        let isDown = false;
-        let startY;
-        let scrollTop;
-        let rafId = null;
-        let isDragging = false; 
-        const THRESHOLD = 7;
 
-        const startAction = (e) => {
-            const interactiveTags = ['BUTTON', 'INPUT', 'SELECT', 'TEXTAREA', 'A'];
-            if (interactiveTags.includes(e.target.tagName)) return;
-            if (e.target.closest('.range-container') || e.target.closest('.slider')) return;
-            
-            isDown = true;
-            isDragging = false;
-            startY = (e.clientY || (e.touches && e.touches[0].clientY));
-            scrollTop = window.pageYOffset || el.scrollTop;
-            
-            document.body.classList.add('v-dragging');
-            el.classList.add('v-dragging');
-            el.style.scrollBehavior = 'auto';
-            document.body.style.scrollBehavior = 'auto';
-        };
-
-        const endAction = () => {
-            isDown = false;
-            isDragging = false;
-            document.body.classList.remove('v-dragging');
-            el.classList.remove('v-dragging');
-            document.body.style.touchAction = '';
-            el.style.scrollBehavior = '';
-            document.body.style.scrollBehavior = '';
-            if (rafId) cancelAnimationFrame(rafId);
-        };
-
-        const moveAction = (e) => {
-            if (!isDown) return;
-            
-            const y = (e.clientY || (e.touches && e.touches[0].clientY));
-            const dist = Math.abs(y - startY);
-
-            if (!isDragging && dist > THRESHOLD) {
-                isDragging = true;
-                document.body.classList.add('v-dragging');
-                document.body.style.touchAction = 'none';
-            }
-
-            if (isDragging) {
-                if (e.cancelable) e.preventDefault();
-                const walk = (y - startY) * 1.5;
-
-                if (rafId) cancelAnimationFrame(rafId);
-                rafId = requestAnimationFrame(() => {
-                    window.scrollTo(0, scrollTop - walk);
-                });
-            }
-        };
-
-        window.addEventListener('mousedown', startAction);
-        window.addEventListener('mouseleave', endAction);
-        window.addEventListener('mouseup', endAction);
-        window.addEventListener('mousemove', moveAction);
-
-        window.addEventListener('touchstart', startAction, { passive: false });
-        window.addEventListener('touchend', endAction);
-        window.addEventListener('touchmove', moveAction, { passive: false });
-    },
 
     initDraggableTabs: function() {
         const slider = document.querySelector('.category-tabs');
@@ -348,14 +291,16 @@ window.SettingsCore = {
     initAccordion: function() {
         const headers = document.querySelectorAll('.section-header');
         headers.forEach(header => {
-            header.addEventListener('click', () => {
+            const toggle = () => {
                 const block = header.parentElement;
                 const isExpanded = block.classList.contains('expanded');
                 
+                // Collapse others
                 document.querySelectorAll('.category-block').forEach(b => {
-                    b.classList.remove('expanded');
+                    if (b !== block) b.classList.remove('expanded');
                 });
                 
+                // Toggle current
                 if (!isExpanded) {
                     block.classList.add('expanded');
                     block.classList.add('focused');
@@ -364,48 +309,42 @@ window.SettingsCore = {
 
                     setTimeout(() => {
                         block.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }, 250); 
+                    }, 300); 
                 } else {
+                    block.classList.remove('expanded');
                     document.body.classList.remove('tabs-hidden');
+                }
+            };
+
+            header.addEventListener('pointerdown', (e) => {
+                // 1. Isolate the event: prevent window-level drag logic from seeing this touch
+                e.stopPropagation();
+                e.stopImmediatePropagation();
+
+                // 2. Ignore right clicks
+                if (e.button !== 0 && e.pointerType !== 'touch') return;
+                
+                // 3. Instant Toggle: Don't wait for pointerup to feel faster
+                toggle();
+            }, { capture: true }); // Use capture to win against other listeners
+            
+            // Prevent default click/tap behaviors to avoid double-processing
+            header.addEventListener('click', e => {
+                e.preventDefault();
+                e.stopPropagation();
+            });
+
+            // Accessibility Support
+            header.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggle();
                 }
             });
         });
     },
 
-    initSwipeToClose: function() {
-        let touchStartX = 0;
-        let touchStartY = 0;
-        const SWIPE_THRESHOLD = 80; 
-        const VERTICAL_THRESHOLD = 100; 
 
-        window.addEventListener('touchstart', (e) => {
-            if (e.target.closest('.range-container') || e.target.closest('.category-tabs') || e.target.closest('.color-grid') || e.target.closest('.pin-modal-content')) return;
-            touchStartX = e.touches[0].clientX;
-            touchStartY = e.touches[0].clientY;
-        }, { passive: true });
-
-        window.addEventListener('touchend', (e) => {
-            const touchEndX = e.changedTouches[0].clientX;
-            const touchEndY = e.changedTouches[0].clientY;
-            
-            const deltaX = touchStartX - touchEndX; 
-            const deltaY = Math.abs(touchStartY - touchEndY);
-
-            if (deltaX > SWIPE_THRESHOLD && deltaY < VERTICAL_THRESHOLD) {
-                this.showToast("👋 नमस्ते!");
-                setTimeout(() => {
-                    const isLocked = localStorage.getItem('mobile_child_lock') === 'true';
-                    if (isLocked) {
-                        window.location.href = 'index.html';
-                    } else if (window.history.length > 1) {
-                        window.history.back();
-                    } else {
-                        window.location.href = 'index.html';
-                    }
-                }, 400);
-            }
-        }, { passive: true });
-    },
 
     // --- SECURITY & PIN MODAL ---
     pinData: {
@@ -531,6 +470,63 @@ window.SettingsCore = {
         this.updatePinDots();
     },
 
+    initVerticalDraggable: function() {
+        const slider = document.querySelector('.settings-container') || document.body;
+        let isDown = false;
+        let isDragging = false;
+        let startY;
+        let scrollTop;
+        let rafId = null;
+        const THRESHOLD = 7; // Minimal movement before hijacking scroll
+
+        const start = (e) => {
+            if (e.target.closest('button, input, select, .voice-card, .color-circle, .key, .switch, .slider, .toggle-row, .lock-card-compact, .master-lock-group, .standalone-lock-row')) return;
+            isDown = true;
+            isDragging = false;
+            startY = (e.clientY || (e.touches && e.touches[0].clientY));
+            scrollTop = window.scrollY;
+            document.documentElement.style.scrollBehavior = 'auto';
+        };
+
+        const end = () => {
+            isDown = false;
+            isDragging = false;
+            document.body.classList.remove('v-dragging');
+            document.documentElement.style.scrollBehavior = '';
+            if (rafId) cancelAnimationFrame(rafId);
+        };
+
+        const move = (e) => {
+            if (!isDown) return;
+            
+            const y = (e.clientY || (e.touches && e.touches[0].clientY));
+            const dist = Math.abs(y - startY);
+
+            if (!isDragging && dist > THRESHOLD) {
+                isDragging = true;
+                document.body.classList.add('v-dragging');
+            }
+
+            if (isDragging) {
+                if (e.cancelable) e.preventDefault();
+                const walk = (y - startY) * 1.5;
+                if (rafId) cancelAnimationFrame(rafId);
+                rafId = requestAnimationFrame(() => {
+                    window.scrollTo(0, scrollTop - walk);
+                });
+            }
+        };
+
+        window.addEventListener('mousedown', start);
+        window.addEventListener('mouseleave', end);
+        window.addEventListener('mouseup', end);
+        window.addEventListener('mousemove', move);
+
+        window.addEventListener('touchstart', start, { passive: false });
+        window.addEventListener('touchend', end);
+        window.addEventListener('touchmove', move, { passive: false });
+    },
+
     getTranslation: function(key) {
         const lang = localStorage.getItem('mobile_ui_language') || 'hi';
         return (window.RAJSHREE_I18N && window.RAJSHREE_I18N.translations[lang][key]) || key;
@@ -571,5 +567,26 @@ window.SettingsCore = {
                 manualInput.disabled = false;
             }
         }
+    },
+
+    initSwitches: function() {
+        document.querySelectorAll('.switch').forEach(sw => {
+            if (sw.tagName === 'SPAN') {
+                sw.style.cursor = 'pointer';
+                sw.addEventListener('click', (e) => {
+                    // Prevent double toggle if the switch is managed by a parent container script
+                    if (sw.closest('.lock-card-compact, .master-lock-group, .standalone-lock-row')) return;
+
+                    // Prevent double triggering if clicked directly on input or handled by a parent container
+                    if (e.target.tagName === 'INPUT' || document.activeElement === sw.querySelector('input')) return;
+                    
+                    const checkbox = sw.querySelector('input[type="checkbox"]');
+                    if (checkbox && !checkbox.disabled) {
+                        checkbox.checked = !checkbox.checked;
+                        checkbox.dispatchEvent(new Event('change'));
+                    }
+                });
+            }
+        });
     }
 };

@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Hind:wght@400;700&display=swap" rel="stylesheet">
-    <script src="js/theme-engine.js"></script>
 </head>
 
 <body>
@@ -44,7 +43,7 @@
         <div id="cat-kids" class="category-view active">
             <!-- Category 2: Audio & Music -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">🔊</span>
                     <span class="section-title" data-i18n="sec_audio">आवाज़ और संगीत</span>
                     <span class="chevron">▼</span>
@@ -81,7 +80,7 @@
 
             <!-- Category 2.1: Volume Controls -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">📊</span>
                     <span class="section-title" data-i18n="sec_volume">आवाज़ का स्तर</span>
                     <span class="chevron">▼</span>
@@ -142,7 +141,7 @@
 
             <!-- Category 2.5: Speech Settings -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">🎙️</span>
                     <span class="section-title" data-i18n="sec_speech">बोलने की शैली</span>
                     <span class="chevron">▼</span>
@@ -185,7 +184,7 @@
 
             <!-- Category 2.6: App Interaction -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">🔄</span>
                     <span class="section-title" data-i18n="sec_interaction">संवाद और अनुभव</span>
                     <span class="chevron">▼</span>
@@ -221,9 +220,9 @@
 
             <!-- Category 3: Themes -->
             <div class="category-block">
-                <header class="section-header">
-                    <span class="section-icon">🎭</span>
-                    <span class="section-title" data-i18n="sec_theme">थीम और डार्क मोड</span>
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🎨</span>
+                    <span class="section-title" data-i18n="sec_themes_only">थीम</span>
                     <span class="chevron">▼</span>
                 </header>
                 <div class="category-content">
@@ -237,13 +236,47 @@
                                 <div class="color-circle circle-orange" data-theme="orange"></div>
                                 <div class="color-circle circle-emerald" data-theme="emerald"></div>
                                 <div class="color-circle circle-indigo" data-theme="indigo"></div>
+                                <div class="color-circle circle-sunflower" data-theme="sunflower"></div>
+                                <div class="color-circle circle-rose" data-theme="rose"></div>
+                                <div class="color-circle circle-turquoise" data-theme="turquoise"></div>
+                                <div class="color-circle circle-lavender" data-theme="lavender"></div>
+                                <div class="color-circle circle-midnight" data-theme="midnight"></div>
+                                <div class="color-circle circle-golden" data-theme="golden"></div>
                             </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 3.1: Appearance -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🎭</span>
+                    <span class="section-title" data-i18n="sec_appearance">दिखावट</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <label class="group-label" for="mobile-glass-quality" data-i18n="lbl_glass_quality">कांच का प्रभाव (Glassmorphism)</label>
+                            <select id="mobile-glass-quality" class="select-field">
+                                <option value="low" data-i18n="opt_glass_low">सामान्य (Low Blur)</option>
+                                <option value="high" selected data-i18n="opt_glass_high">प्रीमियम (High Blur)</option>
+                            </select>
+                        </section>
+                        <section class="settings-group">
+                            <label class="group-label" for="mobile-vibrancy" data-i18n="lbl_vibrancy">रंगों की गहराई (Vibrancy)</label>
+                            <select id="mobile-vibrancy" class="select-field">
+                                <option value="natural" selected data-i18n="opt_vibrancy_natural">प्राकृतिक (Natural)</option>
+                                <option value="vivid" data-i18n="opt_vibrancy_vivid">चमकदार (Vivid)</option>
+                                <option value="ultra" data-i18n="opt_vibrancy_ultra">अति-चमकदार (Ultra)</option>
+                            </select>
                         </section>
                         <section class="settings-group">
                             <div class="toggle-row">
                                 <div>
                                     <label class="group-label" for="mobile-auto-dark" id="lbl-auto-dark" data-i18n="lbl_auto_dark">ऑटो डार्क मोड</label>
-                                    <p class="group-sub">सिस्टम के अनुसार बदलें</p>
+                                    <p class="group-sub" data-i18n="sub_auto_dark">सिस्टम के अनुसार बदलें</p>
                                 </div>
                                 <span class="switch" aria-label="ऑटो डार्क मोड">
                                     <input type="checkbox" id="mobile-auto-dark" title="ऑटो डार्क मोड" aria-label="ऑटो डार्क मोड" aria-describedby="lbl-auto-dark">
@@ -254,8 +287,8 @@
                         <section class="settings-group" id="manual-dark-group">
                             <div class="toggle-row">
                                 <div>
-                                    <label class="group-label" for="mobile-dark-mode" id="lbl-dark-mode">डार्क मोड</label>
-                                    <p class="group-sub">रात के लिए गहरा रंग</p>
+                                    <label class="group-label" for="mobile-dark-mode" id="lbl-dark-mode" data-i18n="lbl_dark_mode">डार्क मोड</label>
+                                    <p class="group-sub" data-i18n="sub_dark_mode">रात के लिए गहरा रंग</p>
                                 </div>
                                 <span class="switch" aria-label="डार्क मोड">
                                     <input type="checkbox" id="mobile-dark-mode" title="डार्क मोड ऑन/ऑफ" aria-label="डार्क मोड" aria-describedby="lbl-dark-mode">
@@ -263,51 +296,90 @@
                                 </span>
                             </div>
                         </section>
+                        <button class="btn-reset-section" id="reset-appearance-settings" data-i18n="btn_reset_appearance">
+                            <span>🔄</span> दिखावट सेटिंग्स रीसेट करें
+                        </button>
                     </div>
                 </div>
             </div>
 
             <!-- Category 3.1: Visuals -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">✨</span>
                     <span class="section-title" data-i18n="sec_visuals">विज़ुअल्स</span>
                     <span class="chevron">▼</span>
                 </header>
                 <div class="category-content">
-                    <div class="category-inner">
-                        <section class="settings-group">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="mobile-bg-pattern" id="lbl-bg-pattern" data-i18n="lbl_bg_pattern">बैकग्राउंड पैटर्न</label>
-                                    <p class="group-sub">डॉट ग्रिड इफ़ेक्ट ऑन/ऑफ़</p>
-                                </div>
-                                <span class="switch" aria-label="बैकग्राउंड पैटर्न">
-                                    <input type="checkbox" id="mobile-bg-pattern" checked title="बैकग्राउंड पैटर्न" aria-label="बैकग्राउंड पैटर्न" aria-describedby="lbl-bg-pattern">
+                    <div class="category-inner category-inner-padded">
+                        <div class="compact-locks-grid compact-locks-grid-custom">
+                            <div class="lock-card-compact">
+                                <label class="lock-label-mini" for="mobile-bg-pattern" data-i18n="lbl_bg_pattern">बैकग्राउंड पैटर्न</label>
+                                <span class="switch is-small">
+                                    <input type="checkbox" id="mobile-bg-pattern" checked title="बैकग्राउंड पैटर्न" aria-label="बैकग्राउंड पैटर्न">
                                     <span class="slider"></span>
                                 </span>
                             </div>
-                        </section>
-                        <section class="settings-group">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="mobile-glow-effect" id="lbl-glow-effect" data-i18n="lbl_glow_effect">चमक इफेक्ट्स</label>
-                                    <p class="group-sub">बटन्स और कार्ड्स ग्लो</p>
-                                </div>
-                                <span class="switch" aria-label="चमक इफेक्ट्स">
-                                    <input type="checkbox" id="mobile-glow-effect" checked title="चमक इफेक्ट्स" aria-label="चमक इफेक्ट्स" aria-describedby="lbl-glow-effect">
+                            <div class="lock-card-compact">
+                                <label class="lock-label-mini" for="mobile-glow-effect" data-i18n="lbl_glow_effect">चमक इफेक्ट्स</label>
+                                <span class="switch is-small">
+                                    <input type="checkbox" id="mobile-glow-effect" checked title="चमक इफेक्ट्स" aria-label="चमक इफेक्ट्स">
                                     <span class="slider"></span>
                                 </span>
                             </div>
-                        </section>
-                        <section class="settings-group">
-                            <label class="group-label" for="mobile-font-style" data-i18n="lbl_font_style">लिखावट का स्टाइल</label>
-                            <select id="mobile-font-style" class="select-field" title="लिखावट का स्टाइल" aria-label="लिखावट का स्टाइल">
-                                <option value="clean" data-i18n="opt_font_clean">साफ</option>
-                                <option value="playful" data-i18n="opt_font_playful">नटखट</option>
-                                <option value="classic" data-i18n="opt_font_classic">पुरानी</option>
-                            </select>
-                        </section>
+                            <div class="lock-card-compact">
+                                <label class="lock-label-mini" for="mobile-interactive-shadows" data-i18n="lbl_interactive_shadows">3D गहराई</label>
+                                <span class="switch is-small">
+                                    <input type="checkbox" id="mobile-interactive-shadows" checked title="3D गहराई" aria-label="3D गहराई">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                            <div class="lock-card-compact">
+                                <label class="lock-label-mini" for="mobile-particles" data-i18n="lbl_particles">पार्टिकल इफेक्ट्स</label>
+                                <span class="switch is-small">
+                                    <input type="checkbox" id="mobile-particles" title="पार्टिकल इफेक्ट्स" aria-label="पार्टिकल इफेक्ट्स">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                            <!-- New Visual Options -->
+                            <div class="lock-card-compact">
+                                <label class="lock-label-mini" for="mobile-hd-images" data-i18n="lbl_hd_images">HD इमेजेज़</label>
+                                <span class="switch is-small">
+                                    <input type="checkbox" id="mobile-hd-images" checked title="HD इमेजेज़" aria-label="HD इमेजेज़">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                            <div class="lock-card-compact">
+                                <label class="lock-label-mini" for="mobile-fullscreen" data-i18n="lbl_fullscreen">फुल स्क्रीन</label>
+                                <span class="switch is-small">
+                                    <input type="checkbox" id="mobile-fullscreen" title="फुल स्क्रीन" aria-label="फुल स्क्रीन">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                            <section class="settings-group" style="margin-bottom: 0; padding: 10px;">
+                                <label class="group-label" style="font-size: 0.8rem; margin-bottom: 5px;" for="mobile-font-style" data-i18n="lbl_font_style">लिखावट स्टाइल</label>
+                                <select id="mobile-font-style" class="select-field" style="padding: 6px 8px; font-size: 0.8rem;" title="लिखावट का स्टाइल" aria-label="लिखावट का स्टाइल">
+                                    <option value="clean" data-i18n="opt_font_clean">साफ</option>
+                                    <option value="playful" data-i18n="opt_font_playful">नटखट</option>
+                                    <option value="classic" data-i18n="opt_font_classic">पुरानी</option>
+                                </select>
+                            </section>
+                            <section class="settings-group" style="margin-bottom: 0; padding: 10px;">
+                                <label class="group-label" style="font-size: 0.8rem; margin-bottom: 5px;" for="mobile-anim-speed" data-i18n="lbl_anim_speed">एनिमेशन गति</label>
+                                <select id="mobile-anim-speed" class="select-field" style="padding: 6px 8px; font-size: 0.8rem;">
+                                    <option value="1.5" data-i18n="opt_anim_relaxed">आराम से</option>
+                                    <option value="1" selected data-i18n="opt_anim_normal">सामान्य</option>
+                                    <option value="0.5" data-i18n="opt_anim_energetic">तेज़</option>
+                                </select>
+                            </section>
+                        </div>
+                        
+                        <button class="btn-reset-section" id="reset-visual-settings" data-i18n="btn_reset_visuals" style="margin-top: 10px;">
+                            <span>🔄</span> विज़ुअल सेटिंग्स रीसेट करें
+                        </button>
                     </div>
                 </div>
             </div>
@@ -319,7 +391,7 @@
         <div id="cat-parent" class="category-view">
             <!-- Category 1: Profile Management (Moved from Kids) -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">👥</span>
                     <span class="section-title" data-i18n="sec_profile">प्रोफाइल प्रबंधन</span>
                     <span class="chevron">▼</span>
@@ -349,7 +421,7 @@
 
             <!-- Category 4: Learning Options (Moved from Kids) -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">🎓</span>
                     <span class="section-title" data-i18n="sec_learning">सीखने के विकल्प</span>
                     <span class="chevron">▼</span>
@@ -379,7 +451,7 @@
 
             <!-- Category 0: App Settings -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">🌐</span>
                     <span class="section-title" data-i18n="sec_app_language">ऐप की भाषा</span>
                     <span class="chevron">▼</span>
@@ -401,7 +473,7 @@
 
             <!-- Category 5: Time Management -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">⏳</span>
                     <span class="section-title" data-i18n="sec_time">समय प्रबंधन</span>
                     <span class="chevron">▼</span>
@@ -435,7 +507,7 @@
 
             <!-- Category 7.5: Kids Safety (Always On) -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">🔐</span>
                     <span class="section-title" data-i18n="sec_kids_global">बच्चों की सुरक्षा</span>
                     <span class="chevron">▼</span>
@@ -505,7 +577,7 @@
 
             <!-- Category 7.6: Kids Safety (Audio Contextual) -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">🛡️</span>
                     <span class="section-title" data-i18n="sec_kids_audio">बच्चों की सुरक्षा (ऑडियो)</span>
                     <span class="chevron">▼</span>
@@ -580,7 +652,7 @@
 
             <!-- Category 6: Accessibility (Moved to Parent) -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">♿</span>
                     <span class="section-title" data-i18n="sec_accessibility">पहुंच और उपयोग</span>
                     <span class="chevron">▼</span>
@@ -618,7 +690,7 @@
         <div id="cat-admin" class="category-view">
             <!-- Category 7: Safety (Split - Safety) -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">🛡️</span>
                     <span class="section-title" data-i18n="sec_safety_only">सुरक्षा</span>
                     <span class="chevron">▼</span>
@@ -654,7 +726,7 @@
 
             <!-- Category 7.1: PIN (Split - PIN) -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">🔑</span>
                     <span class="section-title" data-i18n="sec_pin_only">पिन प्रबंधन</span>
                     <span class="chevron">▼</span>
@@ -685,7 +757,7 @@
 
             <!-- Category 8: Storage & Sync (Moved to Admin) -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">📂</span>
                     <span class="section-title" data-i18n="sec_storage">स्टोरेज और बैकअप</span>
                     <span class="chevron">▼</span>
@@ -700,7 +772,7 @@
             </div>
             <!-- Category 9: App Update & Feedback (Enhanced) -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">🚀</span>
                     <span class="section-title" data-i18n="sec_updates">ऐप अपडेट और फीडबैक</span>
                     <span class="chevron">▼</span>
@@ -756,7 +828,7 @@
 
             <!-- Category 10: Device & Diagnostics (Enhanced) -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">⚙️</span>
                     <span class="section-title" data-i18n="sec_device">डिवाइस और डायग्नोस्टिक्स</span>
                     <span class="chevron">▼</span>
@@ -803,7 +875,7 @@
             </div>
             <!-- Category 3.1: Performance (Moved to Admin) -->
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">⚡</span>
                     <span class="section-title" data-i18n="sec_performance">परफॉरमेंस</span>
                     <span class="chevron">▼</span>
@@ -853,7 +925,7 @@
         <!-- Developer Category Section -->
         <div id="cat-developer" class="category-view">
             <div class="category-block">
-                <header class="section-header">
+                <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">💻</span>
                     <span class="section-title" data-i18n="sec_dev_tools">डेवलपर टूल्स</span>
                     <span class="chevron">▼</span>
@@ -878,6 +950,9 @@
         <!-- App Branding -->
         <footer class="app-info">
             <p class="version-text">Made with ❤️ for Rajshree</p>
+            <button class="btn-ghost btn-emergency-reset" onclick="localStorage.clear(); sessionStorage.clear(); location.reload();">
+                Emergency Hard Reset (Clear All)
+            </button>
         </footer>
     </main>
 
@@ -910,6 +985,7 @@
     </div>
 
     <script src="js/i18n.js"></script>
+    <script src="js/theme-engine.js"></script>
     <script src="js/settings_core.js"></script>
     <script src="js/settings_kids.js"></script>
     <script src="js/settings_parent.js"></script>

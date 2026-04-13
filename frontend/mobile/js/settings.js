@@ -10,28 +10,33 @@
  * - settings_dev.js: Developer tools and debug logging.
  */
 
+window.addEventListener('error', (e) => {
+    console.error("🚫 Global Error:", e.message, "at", e.filename, ":", e.lineno);
+    if (window.SettingsCore && window.SettingsCore.showToast) {
+        window.SettingsCore.showToast(`Error: ${e.message}`);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log("🚀 Custom Settings Ecosystem Initializing...");
 
-    // 1. Initialize Core Infrastructure (Persistence, Navigation, Security)
-    if (window.SettingsCore) {
-        window.SettingsCore.init();
-    }
+    try {
+        // 1. Initialize Core Infrastructure (Persistence, Navigation, Security)
+        if (window.SettingsCore) {
+            window.SettingsCore.init();
+        }
 
-    // 2. Initialize Category Modules
-    if (window.SettingsKids) {
-        window.SettingsKids.init();
-    }
-
-    if (window.SettingsParent) {
-        window.SettingsParent.init();
-    }
-
-    if (window.SettingsAdmin) {
-        window.SettingsAdmin.init();
-    }
-
-    if (window.SettingsDev) {
-        window.SettingsDev.init();
+        // 2. Initialize Category Modules
+        if (window.SettingsKids) window.SettingsKids.init();
+        if (window.SettingsParent) window.SettingsParent.init();
+        if (window.SettingsAdmin) window.SettingsAdmin.init();
+        if (window.SettingsDev) window.SettingsDev.init();
+        
+        console.log("💎 All Modules Loaded.");
+    } catch (e) {
+        console.error("💥 Critical Init Failure:", e);
+        if (window.SettingsCore && window.SettingsCore.showToast) {
+            window.SettingsCore.showToast("Init Failed! Check Console.");
+        }
     }
 });

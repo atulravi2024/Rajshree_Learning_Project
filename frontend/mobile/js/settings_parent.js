@@ -5,10 +5,15 @@
 
 window.SettingsParent = {
     init: function() {
-        console.log("👨‍👩‍👧 Settings Parent Initializing...");
-        this.attachEvents();
-        this.initSafetyLocks();
-        this.initCompactLocks();
+        console.log("👨‍👩‍👧 Settings Parent: Start Boot...");
+        try {
+            this.attachEvents();
+            this.initSafetyLocks();
+            this.initCompactLocks();
+            console.log("👨‍👩‍👧 Settings Parent: Boot Complete.");
+        } catch (e) {
+            console.error("❌ Settings Parent Boot Failed:", e);
+        }
     },
 
     attachEvents: function() {

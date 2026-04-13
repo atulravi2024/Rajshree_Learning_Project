@@ -54,6 +54,54 @@ const ThemeEngine = (() => {
             '--light-bg': '#E0E7FF',
             '--bg-gradient': 'linear-gradient(135deg, #E0E7FF 0%, #FFFFFF 50%, #EEF2FF 100%)',
             '--glow-color': 'rgba(99, 102, 241, 0.4)'
+        },
+        sunflower: {
+            '--primary-color': '#FFB300',
+            '--primary-gradient': 'linear-gradient(135deg, #FFB300, #FFD54F, #FFF176)',
+            '--accent-color': '#FFD54F',
+            '--light-bg': '#FFF9C4',
+            '--bg-gradient': 'linear-gradient(135deg, #FFF9C4 0%, #FFFFFF 50%, #FFFDE7 100%)',
+            '--glow-color': 'rgba(255, 179, 0, 0.4)'
+        },
+        rose: {
+            '--primary-color': '#E91E63',
+            '--primary-gradient': 'linear-gradient(135deg, #E91E63, #F06292, #F8BBD0)',
+            '--accent-color': '#F06292',
+            '--light-bg': '#FCE4EC',
+            '--bg-gradient': 'linear-gradient(135deg, #FCE4EC 0%, #FFFFFF 50%, #F8BBD0 100%)',
+            '--glow-color': 'rgba(233, 30, 99, 0.4)'
+        },
+        turquoise: {
+            '--primary-color': '#00ACC1',
+            '--primary-gradient': 'linear-gradient(135deg, #00ACC1, #4DD0E1, #B2EBF2)',
+            '--accent-color': '#4DD0E1',
+            '--light-bg': '#E0F7FA',
+            '--bg-gradient': 'linear-gradient(135deg, #E0F7FA 0%, #FFFFFF 50%, #B2EBF2 100%)',
+            '--glow-color': 'rgba(0, 172, 193, 0.4)'
+        },
+        lavender: {
+            '--primary-color': '#673AB7',
+            '--primary-gradient': 'linear-gradient(135deg, #673AB7, #9575CD, #D1C4E9)',
+            '--accent-color': '#9575CD',
+            '--light-bg': '#EDE7F6',
+            '--bg-gradient': 'linear-gradient(135deg, #EDE7F6 0%, #FFFFFF 50%, #D1C4E9 100%)',
+            '--glow-color': 'rgba(103, 58, 183, 0.4)'
+        },
+        midnight: {
+            '--primary-color': '#212121',
+            '--primary-gradient': 'linear-gradient(135deg, #212121, #424242, #757575)',
+            '--accent-color': '#424242',
+            '--light-bg': '#F5F5F5',
+            '--bg-gradient': 'linear-gradient(135deg, #EEEEEE 0%, #FFFFFF 50%, #BDBDBD 100%)',
+            '--glow-color': 'rgba(33, 33, 33, 0.4)'
+        },
+        golden: {
+            '--primary-color': '#D4AF37',
+            '--primary-gradient': 'linear-gradient(135deg, #D4AF37, #C5A028, #F9E272)',
+            '--accent-color': '#C5A028',
+            '--light-bg': '#FFF8E1',
+            '--bg-gradient': 'linear-gradient(135deg, #FFF8E1 0%, #FFFFFF 50%, #FFECB3 100%)',
+            '--glow-color': 'rgba(212, 175, 55, 0.4)'
         }
     };
 
@@ -152,61 +200,145 @@ const ThemeEngine = (() => {
         console.log(`✍️ Font Style: ${style}`);
     };
 
+    const applyGlassmorphism = (quality) => {
+        const root = document.documentElement;
+        root.classList.remove('glass-low', 'glass-high');
+        root.classList.add(`glass-${quality}`);
+        localStorage.setItem('mobile_glass_quality', quality);
+    };
+
+    const applyAnimationSpeed = (speed) => {
+        const root = document.documentElement;
+        root.style.setProperty('--anim-speed-factor', speed);
+        localStorage.setItem('mobile_anim_speed_factor', speed);
+    };
+
+    const applyGradientVibrancy = (vibrancy) => {
+        const root = document.documentElement;
+        root.classList.remove('vibrancy-natural', 'vibrancy-vivid', 'vibrancy-ultra');
+        root.classList.add(`vibrancy-${vibrancy}`);
+        localStorage.setItem('mobile_gradient_vibrancy', vibrancy);
+    };
+
+    const applyInteractiveShadows = (isActive) => {
+        const root = document.documentElement;
+        if (isActive) {
+            root.classList.add('interactive-shadows');
+        } else {
+            root.classList.remove('interactive-shadows');
+        }
+        localStorage.setItem('mobile_interactive_shadows', isActive);
+    };
+
+    const applyParticleEffects = (isActive) => {
+        const root = document.documentElement;
+        if (isActive) {
+            root.classList.add('particle-effects-enabled');
+        } else {
+            root.classList.remove('particle-effects-enabled');
+        }
+        localStorage.setItem('mobile_particle_effects', isActive);
+    };
+
+    const applyHDImages = (isActive) => {
+        const root = document.documentElement;
+        if (isActive) {
+            root.classList.add('hd-images-enabled');
+        } else {
+            root.classList.remove('hd-images-enabled');
+        }
+        localStorage.setItem('mobile_hd_images', isActive);
+        console.log(`🖼️ HD Images: ${isActive ? 'ON' : 'OFF'}`);
+    };
+
+    // Persistent reference for system dark mode listener
+    let autoDarkListener = null;
+
     const applyAutoDarkMode = (isActive) => {
         localStorage.setItem('mobile_auto_dark', isActive);
-        if (isActive) {
-            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-            const handleChange = e => {
-                if (localStorage.getItem('mobile_auto_dark') === 'true') {
-                    applyDarkMode(e.matches);
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        
+        const handleChange = (e) => {
+            if (localStorage.getItem('mobile_auto_dark') === 'true') {
+                console.log(`🌓 Auto Dark Mode: System change detected (${e.matches ? 'Dark' : 'Light'})`);
+                applyDarkMode(e.matches);
+                // Update checkbox UI if Core is ready
+                if (window.SettingsCore && window.SettingsCore.syncDarkModeUI) {
+                    window.SettingsCore.syncDarkModeUI();
                 }
-            };
-            
-            // Apply immediately
+            }
+        };
+
+        if (isActive) {
+            console.log("🌓 Auto Dark Mode Enabled: Syncing with system...");
             applyDarkMode(mediaQuery.matches);
             
-            // Listen for system changes
-            mediaQuery.removeEventListener('change', handleChange); // Prevent duplicates
-            mediaQuery.addEventListener('change', handleChange);
+            if (autoDarkListener) mediaQuery.removeEventListener('change', autoDarkListener);
+            autoDarkListener = handleChange;
+            mediaQuery.addEventListener('change', autoDarkListener);
         } else {
-            // Revert to manual setting
+            console.log("🌓 Auto Dark Mode Disabled.");
+            if (autoDarkListener) {
+                mediaQuery.removeEventListener('change', autoDarkListener);
+                autoDarkListener = null;
+            }
             const manualDark = localStorage.getItem('mobile_dark_mode') === 'true';
             applyDarkMode(manualDark);
         }
     };
 
     const init = () => {
-        const savedTheme = localStorage.getItem('mobile_theme_primary') || 'pink';
-        const savedDarkMode = localStorage.getItem('mobile_dark_mode') === 'true';
-        const savedLargeText = localStorage.getItem('mobile_large_text') === 'true';
-        const savedContrast = localStorage.getItem('mobile_contrast') === 'true';
-        const savedGlow = localStorage.getItem('mobile_glow_effect') !== 'false'; // Default TRUE
-        const savedPattern = localStorage.getItem('mobile_bg_pattern') !== 'false'; // Default TRUE
-        const savedAutoDark = localStorage.getItem('mobile_auto_dark') === 'true';
-        const savedReduceMotion = localStorage.getItem('mobile_reduce_motion') === 'true';
-        const savedFontStyle = localStorage.getItem('mobile_font_style') || 'clean';
-        
-        // Smart Default: Respect OS preference if no user setting exists
-        let savedAnim = localStorage.getItem('mobile_anim_quality');
-        if (!savedAnim) {
-            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            savedAnim = prefersReduced ? 'low' : 'high';
-        }
+        console.log("🎨 Theme Engine: Start Boot...");
+        try {
+            const savedTheme = localStorage.getItem('mobile_theme_primary') || 'pink';
+            const savedDarkMode = localStorage.getItem('mobile_dark_mode') === 'true';
+            const savedLargeText = localStorage.getItem('mobile_large_text') === 'true';
+            const savedContrast = localStorage.getItem('mobile_contrast') === 'true';
+            const savedGlow = localStorage.getItem('mobile_glow_effect') !== 'false';
+            const savedPattern = localStorage.getItem('mobile_bg_pattern') !== 'false';
+            const savedAutoDark = localStorage.getItem('mobile_auto_dark') === 'true';
+            const savedReduceMotion = localStorage.getItem('mobile_reduce_motion') === 'true';
+            const savedFontStyle = localStorage.getItem('mobile_font_style') || 'clean';
+            
+            // New settings
+            const savedGlass = localStorage.getItem('mobile_glass_quality') || 'high';
+            const savedAnimSpeed = localStorage.getItem('mobile_anim_speed_factor') || '1';
+            const savedVibrancy = localStorage.getItem('mobile_gradient_vibrancy') || 'natural';
+            const savedShadows = localStorage.getItem('mobile_interactive_shadows') !== 'false'; // Default true
+            const savedParticles = localStorage.getItem('mobile_particle_effects') === 'true'; // Default false for performance (User's feedback)
+            const savedHDImages = localStorage.getItem('mobile_hd_images') !== 'false'; // Default true
 
-        applyTheme(savedTheme);
-        applyDarkMode(savedDarkMode);
-        applyAnimQuality(savedAnim);
-        applyLargeText(savedLargeText);
-        applyContrast(savedContrast);
-        applyGlowEffect(savedGlow);
-        applyBackgroundPattern(savedPattern);
-        applyReduceMotion(savedReduceMotion);
-        applyFontStyle(savedFontStyle);
-        
-        if (savedAutoDark) applyAutoDarkMode(true);
+            // Smart Default for Anim Quality
+            let savedAnim = localStorage.getItem('mobile_anim_quality');
+            if (!savedAnim) {
+                const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                savedAnim = prefersReduced ? 'low' : 'high';
+            }
+
+            applyTheme(savedTheme);
+            applyDarkMode(savedDarkMode);
+            applyAnimQuality(savedAnim);
+            applyLargeText(savedLargeText);
+            applyContrast(savedContrast);
+            applyGlowEffect(savedGlow);
+            applyBackgroundPattern(savedPattern);
+            applyReduceMotion(savedReduceMotion);
+            applyFontStyle(savedFontStyle);
+            
+            applyGlassmorphism(savedGlass);
+            applyAnimationSpeed(savedAnimSpeed);
+            applyGradientVibrancy(savedVibrancy);
+            applyInteractiveShadows(savedShadows);
+            applyParticleEffects(savedParticles);
+            applyHDImages(savedHDImages);
+
+            if (savedAutoDark) applyAutoDarkMode(true);
+            console.log("🎨 Theme Engine: Boot Complete.");
+        } catch (e) {
+            console.error("❌ Theme Engine Boot Failed:", e);
+        }
     };
 
-    // Run immediately to prevent FOUC
     init();
 
     return {
@@ -220,9 +352,14 @@ const ThemeEngine = (() => {
         applyAutoDarkMode,
         applyReduceMotion,
         applyFontStyle,
+        applyGlassmorphism,
+        applyAnimationSpeed,
+        applyGradientVibrancy,
+        applyInteractiveShadows,
+        applyParticleEffects,
+        applyHDImages,
         init
     };
 })();
 
-// Export to window for global access
 window.ThemeEngine = ThemeEngine;

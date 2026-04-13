@@ -5,9 +5,14 @@
 
 window.SettingsAdmin = {
     init: function() {
-        console.log("🛠️ Settings Admin Initializing...");
-        this.attachEvents();
-        this.renderDiagnostics();
+        console.log("🛠️ Settings Admin: Start Boot...");
+        try {
+            this.attachEvents();
+            this.renderDiagnostics();
+            console.log("🛠️ Settings Admin: Boot Complete.");
+        } catch (e) {
+            console.error("❌ Settings Admin Boot Failed:", e);
+        }
     },
 
     attachEvents: function() {

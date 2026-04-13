@@ -27,10 +27,11 @@ body.tabs-hidden {
 :root.dark-mode {
     --deep-purple: #f8fafc;
     --glass-bg: rgba(26, 26, 46, 0.95);
-    --surface-color: #121212;
+    --surface-color: #0f172a; /* Deeper slate for premium feel */
     --text-main: #f8fafc;
-    --light-bg: #1e1e2f;
+    --light-bg: #1e293b;
     --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.4);
+    --glow-color: rgba(255, 20, 147, 0.15);
 }
 
 body {
@@ -51,17 +52,13 @@ body {
         scrollbar-color: var(--primary-color) #f1f5f9;
     }
 }
-
+/* Dragging State for JS - Improved for interaction */
 body.v-dragging,
 body.v-dragging * {
     cursor: grabbing !important;
     -webkit-user-select: none !important;
     user-select: none !important;
     transition: none !important;
-}
-
-html.v-dragging {
-    scroll-behavior: auto !important;
 }
 
 ::-webkit-scrollbar {
@@ -218,7 +215,6 @@ body.tabs-hidden .category-tabs {
 /* Category Views Visibility */
 .category-view {
     display: none;
-    animation: fadeInSlide 0.4s ease-out forwards;
 }
 
 .category-view.active {
@@ -245,10 +241,31 @@ body.tabs-hidden .category-tabs {
     transition: all 0.3s ease;
     box-shadow: var(--shadow-soft);
     border: 1.5px solid var(--glow-color);
+    position: relative;
+    z-index: 1100 !important;
+    pointer-events: auto !important;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: pan-y;
+}
+
+.section-header:active {
+    transform: scale(0.98);
+    background: var(--glow-color);
+    transition: transform 0.1s ease;
 }
 
 
-.section-icon { font-size: 1.3rem; }
+.section-header:active {
+    transform: scale(0.98);
+    background: #f1f5f9 !important;
+}
+
+.section-icon, .section-title, .chevron {
+    pointer-events: none;
+}
+
 .section-title { font-size: 1.1rem; font-weight: 800; color: #475569; flex-grow: 1; }
 .chevron { font-size: 0.8rem; color: #94a3b8; transition: transform 0.3s ease; }
 
@@ -366,11 +383,20 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* Common Dark Mode Overrides */
 .dark-mode .settings-title { color: #f8fafc !important; }
-.dark-mode .close-btn, .dark-mode .tab-btn { background: #181818 !important; border-color: #2d2d44 !important; color: #f8fafc !important; }
-.dark-mode .section-header { background: #181818 !important; border-color: var(--glow-color) !important; color: #f8fafc !important; }
-.dark-mode .category-content { background: #121212 !important; }
-.dark-mode .settings-group { background: #181818 !important; border: 1.5px solid var(--glow-color) !important; }
-.dark-mode .input-field, .dark-mode .select-field { background: #121212 !important; border-color: #2d2d44 !important; color: #f8fafc !important; }
+.dark-mode .close-btn, .dark-mode .tab-btn { background: #1e293b !important; border-color: #334155 !important; color: #f8fafc !important; }
+.dark-mode .tab-btn .tab-icon { filter: drop-shadow(0 0 5px rgba(255,20,147,0.3)); }
+.dark-mode .tab-btn .tab-text { color: #94a3b8 !important; }
+.dark-mode .tab-btn.active .tab-text { color: white !important; }
+.dark-mode .section-header { background: #1e293b !important; border-color: #334155 !important; color: #f8fafc !important; }
+.dark-mode .section-title, .dark-mode .group-label { color: #f8fafc !important; }
+.dark-mode .chevron { color: #64748b !important; }
+.dark-mode .category-content { background: #0f172a !important; border-color: var(--primary-color) !important; }
+.dark-mode .settings-group { background: #1e293b !important; border: 1.5px solid #334155 !important; }
+.dark-mode .group-sub { color: #94a3b8 !important; }
+.dark-mode .input-field, .dark-mode .select-field { background: #0f172a !important; border-color: #334155 !important; color: #f8fafc !important; }
+.dark-mode .diag-key { color: #94a3b8 !important; }
+.dark-mode .diag-val { color: #f8fafc !important; }
+.dark-mode .btn-reset-section { background: rgba(255, 255, 255, 0.05) !important; color: #f8fafc !important; border-color: rgba(255, 255, 255, 0.1) !important; }
 
 /* Security Modal */
 .pin-modal-overlay {
@@ -407,3 +433,8 @@ input[type="range"]::-webkit-slider-thumb {
 /* App Info */
 .app-info { text-align: center; margin-top: 40px; padding-bottom: 20px; }
 .version-text { font-size: 0.8rem; color: #94a3b8; letter-spacing: 0.5px; }
+.btn-emergency-reset {
+    margin-top: 10px;
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
