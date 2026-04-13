@@ -111,10 +111,18 @@ window.SettingsParent = {
     initCompactLocks: function() {
         const targets = '.lock-card-compact, .master-lock-group, .standalone-lock-row';
         document.querySelectorAll(targets).forEach(card => {
+            // Prevent wrapper elements with multiple toggles from hijacking clicks
+            const checkboxes = card.querySelectorAll('input[type="checkbox"]');
+            if (checkboxes.length !== 1) return;
+
             card.style.cursor = 'pointer';
             card.addEventListener('click', (e) => {
                 if (e.target.tagName === 'INPUT' || e.target.tagName === 'LABEL') return;
-                const checkbox = card.querySelector('input[type="checkbox"]');
+                
+                // Prevent bubbling up to any potential parent targets
+                e.stopPropagation();
+
+                const checkbox = checkboxes[0];
                 if (checkbox) {
                     checkbox.checked = !checkbox.checked;
                     checkbox.dispatchEvent(new Event('change'));

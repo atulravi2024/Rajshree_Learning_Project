@@ -98,14 +98,17 @@ window.SettingsCore = {
         const lockAutoplay = b('mobile_lock_autoplay', false);
         const lockCard = b('mobile_lock_card', false);
 
-        let showHome = b('mobile_show_home', true);
+        // Layout & View
+        const viewMode = s('mobile_view_mode', 'flashcard');
+        const flashcardNavDir = s('mobile_flashcard_nav_dir', 'horizontal');
+        const gridNavDir = s('mobile_grid_nav_dir', 'horizontal');
+        const showBottomNav = b('mobile_show_bottom_nav', true);
+        const autoHideNav = b('mobile_autohide_nav', false);
+        const showHome = b('mobile_show_home', true);
         const showNav = b('mobile_show_nav', true);
         const showSettings = b('mobile_show_settings', true);
-        let showMenu = b('mobile_show_menu', false);
+        const showAutoplayNav = b('mobile_show_autoplay_nav', true);
         const masterNav = b('mobile_master_nav', true);
-
-        // Exclusive Robustness: Home and Menu cannot both be ON in Demo
-        if (showHome && showMenu) showMenu = false;
 
         // 5. Accessibility
         const largeText = b('mobile_large_text', false);
@@ -142,8 +145,14 @@ window.SettingsCore = {
         this.setCheck('mobile-show-home', showHome);
         this.setCheck('mobile-show-nav', showNav);
         this.setCheck('mobile-show-settings', showSettings);
-        this.setCheck('mobile-show-menu', showMenu);
+        this.setCheck('mobile-show-autoplay-nav', showAutoplayNav);
         this.setCheck('mobile-master-nav', masterNav);
+
+        this.setVal('mobile-view-mode', viewMode);
+        this.setSegmentedValue('mobile-flashcard-nav-dir', flashcardNavDir);
+        this.setSegmentedValue('mobile-grid-nav-dir', gridNavDir);
+        this.setCheck('mobile-show-bottom-nav', showBottomNav);
+        this.setCheck('mobile-autohide-nav', autoHideNav);
 
         const speedBadge = document.getElementById('mobile-speed-badge');
         if (speedBadge) speedBadge.textContent = speed + 'x';
@@ -555,7 +564,20 @@ window.SettingsCore = {
     },
 
     // --- HELPERS ---
-    setVal: (id, val) => { const el = document.getElementById(id); if (el) el.value = val; },
+    setVal: function(id, val) {
+        const el = document.getElementById(id);
+        if (el) el.value = val;
+    },
+
+    setSegmentedValue: function(containerId, activeValue) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        const buttons = container.querySelectorAll('.seg-btn');
+        buttons.forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-value') === activeValue);
+        });
+    },
+
     setCheck: (id, val) => { const el = document.getElementById(id); if (el) el.checked = val; },
 
     updateGridSelection: function(selector, dataAttr, currentVal) {

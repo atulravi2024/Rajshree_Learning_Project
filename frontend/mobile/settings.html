@@ -873,9 +873,9 @@
                                 </div>
 
                                 <div class="lock-card-compact">
-                                    <label class="lock-label-mini" for="mobile-show-menu" data-i18n="lbl_show_menu">मेनू बटन दिखाएं</label>
+                                    <label class="lock-label-mini" for="mobile-show-autoplay-nav" data-i18n="lbl_show_autoplay_nav">ऑटो-प्ले बटन दिखाएं</label>
                                     <span class="switch is-small">
-                                        <input type="checkbox" id="mobile-show-menu" checked title="मेनू बटन" aria-label="मेनू बटन">
+                                        <input type="checkbox" id="mobile-show-autoplay-nav" checked title="ऑटो-प्ले बटन" aria-label="ऑटो-प्ले बटन">
                                         <span class="slider"></span>
                                     </span>
                                 </div>
@@ -885,8 +885,70 @@
                 </div>
             </div>
 
+            <!-- Category 7.3: Interface & Layout (Advanced) -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🖼️</span>
+                    <span class="section-title" data-i18n="sec_layout_control">इंटरफेस और लेआउट</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <div class="select-row">
+                                <label class="group-label" for="mobile-view-mode" data-i18n="lbl_view_mode">व्यू मोड</label>
+                                <select id="mobile-view-mode" class="select-field" title="व्यू मोड" aria-label="व्यू मोड">
+                                    <option value="flashcard" data-i18n="opt_mode_flashcard" selected>फ्लैशकार्ड</option>
+                                    <option value="grid" data-i18n="opt_mode_grid">ग्रिड / मेनू</option>
+                                </select>
+                            </div>
+                        </section>
 
+                        <!-- Flashcard Nav Direction -->
+                        <section class="settings-group">
+                            <label class="group-label" data-i18n="lbl_flashcard_nav">फ्लैशकार्ड नेविगेशन</label>
+                            <div class="segmented-control" id="mobile-flashcard-nav-dir">
+                                <button class="seg-btn active" data-value="horizontal" data-i18n="opt_dir_horizontal">क्षैतिज</button>
+                                <button class="seg-btn" data-value="vertical" data-i18n="opt_dir_vertical">लंबवत</button>
+                            </div>
+                        </section>
 
+                        <!-- Grid Nav Direction -->
+                        <section class="settings-group">
+                            <label class="group-label" data-i18n="lbl_grid_nav">ग्रिड नेविगेशन</label>
+                            <div class="segmented-control" id="mobile-grid-nav-dir">
+                                <button class="seg-btn active" data-value="horizontal" data-i18n="opt_dir_horizontal">क्षैतिज</button>
+                                <button class="seg-btn" data-value="vertical" data-i18n="opt_dir_vertical">लंबवत</button>
+                            </div>
+                        </section>
+
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <label class="group-label" for="mobile-show-bottom-nav" data-i18n="lbl_show_bottom_nav">बॉटम नेविगेशन दिखाएं</label>
+                                </div>
+                                <span class="switch">
+                                    <input type="checkbox" id="mobile-show-bottom-nav" checked title="बॉटम नेविगेशन" aria-label="बॉटम नेविगेशन">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </section>
+
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <label class="group-label" for="mobile-autohide-nav" data-i18n="lbl_autohide_nav">ऑटो-हाईड नेविगेशन</label>
+                                    <p class="group-sub" data-i18n="sub_autohide_nav">स्क्रीन के नीचे टच करने पर ही दिखेगा</p>
+                                </div>
+                                <span class="switch">
+                                    <input type="checkbox" id="mobile-autohide-nav" title="ऑटो-हाईड" aria-label="ऑटो-हाईड">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
 
             <!-- Category 8: Storage & Sync (Moved to Admin) -->
             <div class="category-block">

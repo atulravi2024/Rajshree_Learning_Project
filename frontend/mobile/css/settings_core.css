@@ -476,3 +476,46 @@ input[type="range"]::-webkit-slider-thumb {
 .dark-mode .instruction-box {
     background: rgba(255, 255, 255, 0.03);
 }
+
+/* Segmented Control (Button Style Toggles) */
+.segmented-control {
+    display: flex;
+    background: #f1f5f9;
+    padding: 4px;
+    border-radius: 12px;
+    margin-top: 8px;
+    border: 1px solid var(--glow-color);
+}
+
+.seg-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 8px;
+    border-radius: 9px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.seg-btn.active {
+    background: white;
+    color: var(--primary-color);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .segmented-control {
+    background: #0f172a;
+    border-color: #334155;
+}
+
+.dark-mode .seg-btn {
+    color: #94a3b8;
+}
+
+.dark-mode .seg-btn.active {
+    background: #1e293b;
+    color: white;
+}

@@ -32,12 +32,13 @@ window.SettingsAdmin = {
 
         const isMasterEnabled = masterEl.checked;
 
-        // 1. Handle Master Switch Impact (Targets specific set: Home, Nav, Settings)
+        // 1. Handle Master Switch Impact (Targets all buttons uniformly)
         if (triggerId === 'mobile-master-nav' && !isInit) {
             const targets = [
                 { el: homeEl, val: value, key: 'mobile_show_home' },
                 { el: navEl, val: value, key: 'mobile_show_nav' },
-                { el: settingsEl, val: value, key: 'mobile_show_settings' }
+                { el: settingsEl, val: value, key: 'mobile_show_settings' },
+                { el: document.getElementById('mobile-show-autoplay-nav'), val: value, key: 'mobile_show_autoplay_nav' }
             ];
 
             targets.forEach(item => {
@@ -46,34 +47,11 @@ window.SettingsAdmin = {
                     localStorage.setItem(item.key, item.val);
                 }
             });
-
-            // Enforce Exclusive Pair upon Master ON (Home wins)
-            if (value === true && menuEl && menuEl.checked) {
-                menuEl.checked = false;
-                localStorage.setItem('mobile_show_menu', false);
-            }
         }
 
-        // 2. Handle Exclusive Pair Logic (Home vs Menu Only)
-        if (!isInit) {
-            if (triggerId === 'mobile-show-home' && value === true) {
-                if (menuEl && menuEl.checked) {
-                    menuEl.checked = false;
-                    localStorage.setItem('mobile_show_menu', false);
-                }
-            } else if (triggerId === 'mobile-show-menu' && value === true) {
-                if (homeEl && homeEl.checked) {
-                    homeEl.checked = false;
-                    localStorage.setItem('mobile_show_home', false);
-                }
-            }
-        }
-
-        // 3. Independent feedback for other toggles (Nav & Settings) 
-        // No hard-linking exists for mobile-show-nav or mobile-show-settings.
-        // Toggling them manually only triggers the storage save in the main listener.
-
-        // 3. UI Feedback Layer
+        // All other buttons work individually without mutually exclusive locks.
+        
+        // 2. UI Feedback Layer
         if (container) {
             container.style.opacity = isMasterEnabled ? '1' : '0.5';
             container.style.pointerEvents = isMasterEnabled ? 'auto' : 'none';
@@ -109,7 +87,7 @@ window.SettingsAdmin = {
             { id: 'mobile-show-home', key: 'mobile_show_home', i18n: 'lbl_show_home' },
             { id: 'mobile-show-nav', key: 'mobile_show_nav', i18n: 'lbl_show_nav' },
             { id: 'mobile-show-settings', key: 'mobile_show_settings', i18n: 'lbl_show_settings' },
-            { id: 'mobile-show-menu', key: 'mobile_show_menu', i18n: 'lbl_show_menu' },
+            { id: 'mobile-show-autoplay-nav', key: 'mobile_show_autoplay_nav', i18n: 'lbl_show_autoplay_nav' },
             { id: 'mobile-master-nav', key: 'mobile_master_nav', i18n: 'lbl_master_nav' }
         ];
 
@@ -148,8 +126,6 @@ window.SettingsAdmin = {
                 }
             });
         });
-            });
-        });
 
         // Admin Selects
         const adminInputs = [
@@ -165,6 +141,52 @@ window.SettingsAdmin = {
                     window.ThemeEngine.applyAnimQuality(val);
                 }
                 if (i.label) window.SettingsCore.showToast(`${i.label}: ${val}`);
+            });
+        });
+
+        // 3. Layout & View Selects
+        const viewModeEl = document.getElementById('mobile-view-mode');
+        if (viewModeEl) viewModeEl.addEventListener('change', (e) => {
+            localStorage.setItem('mobile_view_mode', e.target.value);
+            window.SettingsCore.showToast(`Updated view_mode: ${e.target.value}`);
+        });
+
+        // 3.1 Segmented Controls (Navigation Direction)
+        const segmentedControls = [
+            { id: 'mobile-flashcard-nav-dir', key: 'mobile_flashcard_nav_dir' },
+            { id: 'mobile-grid-nav-dir', key: 'mobile_grid_nav_dir' }
+        ];
+
+        segmentedControls.forEach(ctrl => {
+            const container = document.getElementById(ctrl.id);
+            if (container) {
+                container.addEventListener('click', (e) => {
+                    const btn = e.target.closest('.seg-btn');
+                    if (!btn) return;
+
+                    const val = btn.getAttribute('data-value');
+                    localStorage.setItem(ctrl.key, val);
+
+                    // Update UI via SettingsCore helper
+                    window.SettingsCore.setSegmentedValue(ctrl.id, val);
+                    
+                    const label = window.SettingsCore.getTranslation(ctrl.id.includes('flashcard') ? 'lbl_flashcard_nav' : 'lbl_grid_nav');
+                    window.SettingsCore.showToast(`${label}: ${val}`);
+                });
+            }
+        });
+
+        // Layout & View Toggles
+        const layoutToggles = [
+            { id: 'mobile-show-bottom-nav', key: 'mobile_show_bottom_nav' },
+            { id: 'mobile-autohide-nav', key: 'mobile_autohide_nav' }
+        ];
+
+        layoutToggles.forEach(t => {
+            const el = document.getElementById(t.id);
+            if (el) el.addEventListener('change', (e) => {
+                localStorage.setItem(t.key, e.target.checked);
+                window.SettingsCore.showToast(`${e.target.checked ? 'Enabled' : 'Disabled'}: ${t.key}`);
             });
         });
 

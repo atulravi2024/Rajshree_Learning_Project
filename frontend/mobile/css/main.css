@@ -592,3 +592,105 @@ body {
     color: #000000 !important;
     box-shadow: none !important;
 }
+
+/* =====================================================
+   Advanced Layout: Grid View & Navigation Controls
+   ===================================================== */
+
+/* Layout Toggles */
+.layout-hidden {
+    display: none !important;
+}
+
+.autohide-hidden {
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mobile-nav {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s ease;
+}
+
+/* Grid View Styles */
+.grid-view-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 15px;
+    width: 100%;
+    padding: 10px;
+    max-height: 70vh;
+    overflow-y: auto;
+    border-radius: 20px;
+}
+
+.grid-vertical {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-horizontal {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+}
+
+.grid-item {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    min-width: 100px;
+    scroll-snap-align: center;
+}
+
+.grid-item:active {
+    transform: scale(0.95);
+    background: white;
+}
+
+.grid-icon {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.grid-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* Vertical Animation Support */
+.slide-in-bottom {
+    animation: slideInBottom 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.slide-in-top {
+    animation: slideInTop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes slideInBottom {
+    from { opacity: 0; transform: translateY(50px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes slideInTop {
+    from { opacity: 0; transform: translateY(-50px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Active Glow for Nav Item */
+.active-glow {
+    box-shadow: 0 0 20px var(--primary-color) !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-radius: 50% !important;
+}

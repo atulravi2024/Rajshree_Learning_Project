@@ -18,7 +18,11 @@ const state = {
     vSFX: (parseFloat(localStorage.getItem('mobile_vol_sfx')) || 50) / 100,
     vContent: (parseFloat(localStorage.getItem('mobile_vol_content')) || 100) / 100,
     autoplayTimeout: null,
-    isPlayingAutoplay: false
+    isPlayingAutoplay: false,
+    viewMode: localStorage.getItem('mobile_view_mode') || 'flashcard',
+    flashcardNavDir: localStorage.getItem('mobile_flashcard_nav_dir') || 'horizontal',
+    gridNavDir: localStorage.getItem('mobile_grid_nav_dir') || 'horizontal',
+    lastInteraction: Date.now()
 };
 
 // Initialize app when DOM loaded
@@ -31,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.RAJSHREE_I18N) window.RAJSHREE_I18N.applyUI(uiLang);
     
     applyNavSettings();
+    applyLayoutSettings();
+    setupAutoHideNav();
 
     const isStarted = localStorage.getItem('mobile_session_active') === 'true';
     if (isStarted) {
@@ -54,10 +60,11 @@ const startApp = (silent = false) => {
     if (nav) nav.classList.remove('hidden');
 
     applyNavSettings();
+    applyLayoutSettings();
 
     state.isPlayingAutoplay = state.isAutoplay;
     updatePlaybackUI();
-    renderCard();
+    renderContent();
     setupSwipeGestures();
     
     // Play welcome sound and track it (only if not a silent restore)
@@ -116,6 +123,19 @@ const loadData = () => {
     }
 };
 
+const getEffectiveNavDirection = () => {
+    return state.viewMode === 'grid' ? state.gridNavDir : state.flashcardNavDir;
+};
+
+// Render Content wrapper (Flashcard or Grid)
+const renderContent = (direction = 'next') => {
+    if (state.viewMode === 'grid') {
+        renderGridView();
+    } else {
+        renderCard(direction);
+    }
+};
+
 // Render the current card
 const renderCard = (direction = 'next') => {
     if (state.autoplayTimeout) {
@@ -132,7 +152,13 @@ const renderCard = (direction = 'next') => {
     const item = state.data[state.currentIndex];
     
     // Slide animation class (applied to container)
-    const animClass = direction === 'next' ? 'slide-in-right' : 'slide-in-left';
+    let animClass = '';
+    const dir = getEffectiveNavDirection();
+    if (dir === 'vertical') {
+        animClass = direction === 'next' ? 'slide-in-bottom' : 'slide-in-top';
+    } else {
+        animClass = direction === 'next' ? 'slide-in-right' : 'slide-in-left';
+    }
 
     // Build Back Content
     let backContent = '';
@@ -180,6 +206,38 @@ const renderCard = (direction = 'next') => {
     updateNavigationUI();
 };
 
+// Render Grid/Menu View
+const renderGridView = () => {
+    const container = document.getElementById('master-mobile');
+    if (!container || !state.data) return;
+
+    // Reset scroll and content
+    const dir = getEffectiveNavDirection();
+    container.innerHTML = `<div class="grid-view-container ${dir === 'vertical' ? 'grid-vertical' : 'grid-horizontal'}"></div>`;
+    const grid = container.querySelector('.grid-view-container');
+
+    state.data.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'grid-item';
+        div.innerHTML = `
+            <div class="grid-icon">${item.emoji || '✨'}</div>
+            <div class="grid-label">${item.letter || item.word || ''}</div>
+        `;
+        div.onclick = () => {
+            state.viewMode = 'flashcard';
+            localStorage.setItem('mobile_view_mode', 'flashcard');
+            state.currentIndex = index;
+            localStorage.setItem('mobile_currentIndex', index);
+            applyLayoutSettings();
+            renderContent();
+        };
+        grid.appendChild(div);
+    });
+
+    // Handle horizontal vs vertical scrolling/swiping for grid if needed
+    updateNavigationUI();
+};
+
 // Next card logic
 const next = (isManual = true) => {
     if (isManual) playInteractionSFX();
@@ -189,7 +247,7 @@ const next = (isManual = true) => {
         state.currentIndex++;
         localStorage.setItem('mobile_currentIndex', state.currentIndex);
         localStorage.setItem('mobile_currentCategory', state.currentCategoryName);
-        renderCard('next');
+        renderContent('next');
     } else {
         console.log("🏁 Reached end of category");
     }
@@ -203,7 +261,7 @@ const prev = () => {
         state.currentIndex--;
         localStorage.setItem('mobile_currentIndex', state.currentIndex);
         localStorage.setItem('mobile_currentCategory', state.currentCategoryName);
-        renderCard('prev');
+        renderContent('prev');
     }
 };
 
@@ -371,22 +429,27 @@ const setupSwipeGestures = () => {
 
     master.addEventListener('touchstart', e => {
         touchstartX = e.changedTouches[0].screenX;
+        touchstartY = e.changedTouches[0].screenY;
     }, {passive: true});
 
     master.addEventListener('touchend', e => {
         touchendX = e.changedTouches[0].screenX;
+        touchendY = e.changedTouches[0].screenY;
         handleSwipe();
     }, {passive: true});
 
     function handleSwipe() {
-        const diff = touchendX - touchstartX;
-        const threshold = 50; // Minimum screen drag distance 
+        const diffX = touchendX - touchstartX;
+        const diffY = touchendY - touchstartY;
+        const threshold = 50; 
+        const dir = getEffectiveNavDirection();
 
-        if (diff < -threshold) { // Drag left
-            next();
-        }
-        if (diff > threshold) { // Drag right
-            prev();
+        if (dir === 'vertical') {
+            if (diffY < -threshold) next(); // Swipe up -> Next
+            if (diffY > threshold) prev();  // Swipe down -> Prev
+        } else {
+            if (diffX < -threshold) next(); // Swipe left -> Next
+            if (diffX > threshold) prev();  // Swipe right -> Prev
         }
     }
 };
@@ -396,6 +459,7 @@ const updatePlaybackUI = () => {
     const prevBtn = document.getElementById('mobile-prev');
     const nextBtn = document.getElementById('mobile-next');
     const homeBtn = document.getElementById('mobile-home');
+    const autoplayNavBtn = document.getElementById('mobile-autoplay-nav');
     
     if (!prevBtn || !nextBtn || !homeBtn) return;
 
@@ -404,10 +468,12 @@ const updatePlaybackUI = () => {
         prevBtn.classList.add('disabled-nav');
         nextBtn.classList.add('disabled-nav');
         homeBtn.classList.add('disabled-nav');
+        if (autoplayNavBtn) autoplayNavBtn.classList.add('active-glow');
     } else {
         prevBtn.classList.remove('disabled-nav');
         nextBtn.classList.remove('disabled-nav');
         homeBtn.classList.remove('disabled-nav');
+        if (autoplayNavBtn) autoplayNavBtn.classList.remove('active-glow');
         updateNavigationUI(); // Re-evaluate actual boundaries (start/end of deck)
     }
 };
@@ -421,19 +487,79 @@ const applyNavSettings = () => {
     const showHome = isMasterOn && localStorage.getItem('mobile_show_home') !== 'false';
     const showNav = isMasterOn && localStorage.getItem('mobile_show_nav') !== 'false';
     const showSettings = isMasterOn && localStorage.getItem('mobile_show_settings') !== 'false';
-    const showMenu = isMasterOn && localStorage.getItem('mobile_show_menu') !== 'false';
+    const showAutoplayNav = isMasterOn && localStorage.getItem('mobile_show_autoplay_nav') !== 'false';
 
     const homeBtn = document.getElementById('mobile-home');
     const prevBtn = document.getElementById('mobile-prev');
     const nextBtn = document.getElementById('mobile-next');
     const settingsBtn = document.getElementById('mobile-settings');
-    const menuBtn = document.getElementById('mobile-menu');
+    const autoplayNavBtn = document.getElementById('mobile-autoplay-nav');
 
     if (homeBtn) homeBtn.classList.toggle('hidden', !showHome);
     if (prevBtn) prevBtn.classList.toggle('hidden', !showNav);
     if (nextBtn) nextBtn.classList.toggle('hidden', !showNav);
     if (settingsBtn) settingsBtn.classList.toggle('hidden', !showSettings);
-    if (menuBtn) menuBtn.classList.toggle('hidden', !showMenu);
+    if (autoplayNavBtn) autoplayNavBtn.classList.toggle('hidden', !showAutoplayNav);
+};
+
+/**
+ * UI: Advanced Layout Settings
+ */
+const applyLayoutSettings = () => {
+    state.viewMode = localStorage.getItem('mobile_view_mode') || 'flashcard';
+    state.flashcardNavDir = localStorage.getItem('mobile_flashcard_nav_dir') || 'horizontal';
+    state.gridNavDir = localStorage.getItem('mobile_grid_nav_dir') || 'horizontal';
+    const showBottomNav = localStorage.getItem('mobile_show_bottom_nav') !== 'false';
+    const activeDir = getEffectiveNavDirection();
+    
+    // Bottom Nav Visibility
+    const nav = document.querySelector('.mobile-nav');
+    if (nav) {
+        nav.classList.toggle('layout-hidden', !showBottomNav);
+    }
+
+    // Direction Classes
+    const container = document.getElementById('master-mobile');
+    if (container) {
+        container.classList.toggle('layout-vertical', activeDir === 'vertical');
+    }
+};
+
+/**
+ * UI: Auto-hide Navigation logic
+ */
+const setupAutoHideNav = () => {
+    const nav = document.querySelector('.mobile-nav');
+    if (!nav) return;
+
+    // Detect interaction near bottom
+    document.addEventListener('touchstart', (e) => {
+        const autoHide = localStorage.getItem('mobile_autohide_nav') === 'true';
+        if (!autoHide) return;
+
+        const y = e.touches[0].clientY;
+        const vh = window.innerHeight;
+        
+        if (y > vh * 0.85) {
+            nav.classList.remove('autohide-hidden');
+            state.lastInteraction = Date.now();
+        } else {
+            // Hide if clicked away after a delay
+            setTimeout(() => {
+                if (Date.now() - state.lastInteraction > 3000) {
+                    nav.classList.add('autohide-hidden');
+                }
+            }, 3000);
+        }
+    });
+
+    // Periodic check
+    setInterval(() => {
+        const autoHide = localStorage.getItem('mobile_autohide_nav') === 'true';
+        if (autoHide && Date.now() - state.lastInteraction > 5000) {
+            nav.classList.add('autohide-hidden');
+        }
+    }, 1000);
 };
 
 // UI: Navigation State Helper (Boundaries)
@@ -567,6 +693,25 @@ const stopConfetti = () => {
     }
 };
 
+const toggleAutoplay = () => {
+    playInteractionSFX();
+    state.isPlayingAutoplay = !state.isPlayingAutoplay;
+    state.isAutoplay = state.isPlayingAutoplay;
+    localStorage.setItem('mobile_autoplay', state.isPlayingAutoplay);
+    
+    if (state.isPlayingAutoplay) {
+        // If flipped, stay, if not, wait for card logic
+        const card = document.getElementById('current-card');
+        if (card && !card.classList.contains('playing')) {
+            const item = state.data[state.currentIndex];
+            if (item) flipCard(card, item.audio);
+        }
+    } else {
+        stopCurrentAudio();
+    }
+    updatePlaybackUI();
+};
+
 // Global expose
 window.next = next;
 window.prev = prev;
@@ -574,6 +719,7 @@ window.playSound = playSound;
 window.startApp = startApp;
 window.goHome = goHome;
 window.triggerCelebration = triggerCelebration;
+window.toggleAutoplay = toggleAutoplay;
 
 // Re-evaluate settings on visibility or focus return
 window.addEventListener('focus', () => {
@@ -583,12 +729,7 @@ window.addEventListener('focus', () => {
     state.autoplayDelay = parseInt(localStorage.getItem('mobile_autoplay_delay')) || 3;
     state.playbackSpeed = parseFloat(localStorage.getItem('mobile_playback_speed')) || 1.0;
     
-    // Refresh Volumes
-    state.vMaster = (parseFloat(localStorage.getItem('mobile_vol_master')) || 80) / 100;
-    state.vMusic = (parseFloat(localStorage.getItem('mobile_vol_music')) || 5) / 100;
-    state.vSFX = (parseFloat(localStorage.getItem('mobile_vol_sfx')) || 50) / 100;
-    state.vContent = (parseFloat(localStorage.getItem('mobile_vol_content')) || 100) / 100;
-
     applyNavSettings();
+    applyLayoutSettings();
     updateBGM();
 });
