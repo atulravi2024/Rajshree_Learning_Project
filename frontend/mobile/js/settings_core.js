@@ -148,7 +148,10 @@ window.SettingsCore = {
         this.setCheck('mobile-show-autoplay-nav', showAutoplayNav);
         this.setCheck('mobile-master-nav', masterNav);
 
-        this.setVal('mobile-view-mode', viewMode);
+        const threeNavDir = localStorage.getItem('mobile_three_nav_dir') || 'horizontal';
+
+        this.setSegmentedValue('mobile-view-mode', viewMode);
+        this.setSegmentedValue('mobile-three-nav-dir', threeNavDir);
         this.setSegmentedValue('mobile-flashcard-nav-dir', flashcardNavDir);
         this.setSegmentedValue('mobile-grid-nav-dir', gridNavDir);
         this.setCheck('mobile-show-bottom-nav', showBottomNav);

@@ -127,39 +127,19 @@ const getEffectiveNavDirection = () => {
     return state.viewMode === 'grid' ? state.gridNavDir : state.flashcardNavDir;
 };
 
-// Render Content wrapper (Flashcard or Grid)
+// Render Content wrapper (Flashcard, Grid, or 3-in-1)
 const renderContent = (direction = 'next') => {
     if (state.viewMode === 'grid') {
         renderGridView();
+    } else if (state.viewMode === 'three') {
+        renderThreeInOneView(direction);
     } else {
         renderCard(direction);
     }
 };
 
-// Render the current card
-const renderCard = (direction = 'next') => {
-    if (state.autoplayTimeout) {
-        clearTimeout(state.autoplayTimeout);
-        state.autoplayTimeout = null;
-    }
-
-    const container = document.getElementById('master-mobile');
-    if (!container || !state.data || state.data.length === 0) {
-        if(container) container.innerHTML = '<div class="loading-state">डेटा नहीं मिला! (Data not found)</div>';
-        return;
-    }
-
-    const item = state.data[state.currentIndex];
-    
-    // Slide animation class (applied to container)
-    let animClass = '';
-    const dir = getEffectiveNavDirection();
-    if (dir === 'vertical') {
-        animClass = direction === 'next' ? 'slide-in-bottom' : 'slide-in-top';
-    } else {
-        animClass = direction === 'next' ? 'slide-in-right' : 'slide-in-left';
-    }
-
+// Helper: Build HTML for a single card
+const buildCardHTML = (item, index, isThreeView = false) => {
     // Build Back Content
     let backContent = '';
     let backVars = '';
@@ -178,9 +158,12 @@ const renderCard = (direction = 'next') => {
     else if (item.type === 'star') backContent = `<span class="emoji-star" style="--dynamic-color:${item.color}">⭐</span>`;
     else backContent = `<div class="display-content-large">${item.letter || ''}</div>`;
 
-    container.innerHTML = `
-        <div class="mobile-card-container ${animClass}">
-            <div class="mobile-card" id="current-card" onclick="flipCard(this, '${item.audio}')">
+    const cardId = isThreeView ? `card-${index}` : `current-card`;
+    const containerClass = isThreeView ? 'three-in-one-card' : 'mobile-card-container';
+
+    return `
+        <div class="${containerClass}">
+            <div class="mobile-card" id="${cardId}" onclick="flipCard(this, '${item.audio}')">
                 <div class="card-front">
                     <h1 class="card-letter">${item.letter || ''}</h1>
                     <p class="card-word">${item.word || item.name_hi || ''}</p>
@@ -195,6 +178,34 @@ const renderCard = (direction = 'next') => {
             </div>
         </div>
     `;
+};
+
+// Render the current card
+const renderCard = (direction = 'next') => {
+    if (state.autoplayTimeout) {
+        clearTimeout(state.autoplayTimeout);
+        state.autoplayTimeout = null;
+    }
+
+    const container = document.getElementById('master-mobile');
+    if (!container || !state.data || state.data.length === 0) {
+        if(container) container.innerHTML = '<div class="loading-state">डेटा नहीं मिला! (Data not found)</div>';
+        return;
+    }
+
+    const item = state.data[state.currentIndex];
+    
+    // Slide animation class
+    const dir = getEffectiveNavDirection();
+    const animClass = (dir === 'vertical') 
+        ? (direction === 'next' ? 'slide-in-bottom' : 'slide-in-top')
+        : (direction === 'next' ? 'slide-in-right' : 'slide-in-left');
+
+    container.innerHTML = buildCardHTML(item, state.currentIndex);
+    
+    // Add animation to the created container
+    const cardContainer = container.querySelector('.mobile-card-container');
+    if (cardContainer) cardContainer.classList.add(animClass);
 
     if (state.isPlayingAutoplay) {
         state.autoplayTimeout = setTimeout(() => { 
@@ -202,6 +213,43 @@ const renderCard = (direction = 'next') => {
             if (card) flipCard(card, item.audio);
         }, 500);
     }
+
+    updateNavigationUI();
+};
+
+// Render 3-in-1 View
+const renderThreeInOneView = (direction = 'next') => {
+    if (state.autoplayTimeout) {
+        clearTimeout(state.autoplayTimeout);
+        state.autoplayTimeout = null;
+    }
+
+    const container = document.getElementById('master-mobile');
+    if (!container || !state.data || state.data.length === 0) return;
+
+    // Determine the group of 3 (0-2, 3-5, 6-8, etc.)
+    const groupStart = Math.floor(state.currentIndex / 3) * 3;
+    const indices = [];
+    for (let i = 0; i < 3; i++) {
+        if (groupStart + i < state.data.length) {
+            indices.push(groupStart + i);
+        }
+    }
+
+    // Animation & Layout logic
+    const threeDir = localStorage.getItem('mobile_three_nav_dir') || 'horizontal';
+    const dir = getEffectiveNavDirection();
+    const animClass = (dir === 'vertical') 
+        ? (direction === 'next' ? 'slide-in-bottom' : 'slide-in-top')
+        : (direction === 'next' ? 'slide-in-right' : 'slide-in-left');
+
+    let html = `<div class="three-in-one-container ${threeDir === 'vertical' ? 'three-vertical' : ''} ${animClass}">`;
+    indices.forEach(idx => {
+        html += buildCardHTML(state.data[idx], idx, true);
+    });
+    html += `</div>`;
+
+    container.innerHTML = html;
 
     updateNavigationUI();
 };
@@ -243,8 +291,13 @@ const next = (isManual = true) => {
     if (isManual) playInteractionSFX();
     if (state.autoplayTimeout) clearTimeout(state.autoplayTimeout);
     
-    if (state.currentIndex < state.data.length - 1) {
-        state.currentIndex++;
+    const jump = state.viewMode === 'three' ? 3 : 1;
+    if (state.currentIndex < state.data.length - jump) {
+        state.currentIndex += jump;
+        // Group logic adjustment for 'three' mode to ensure we don't skip items if jump is 3
+        if (state.viewMode === 'three') {
+            state.currentIndex = Math.floor(state.currentIndex / 3) * 3;
+        }
         localStorage.setItem('mobile_currentIndex', state.currentIndex);
         localStorage.setItem('mobile_currentCategory', state.currentCategoryName);
         renderContent('next');
@@ -255,10 +308,14 @@ const next = (isManual = true) => {
 
 // Previous card logic
 const prev = () => {
-    if (state.currentIndex > 0) {
+    const jump = state.viewMode === 'three' ? 3 : 1;
+    if (state.currentIndex >= jump) {
         playInteractionSFX();
         if (state.autoplayTimeout) clearTimeout(state.autoplayTimeout);
-        state.currentIndex--;
+        state.currentIndex -= jump;
+        if (state.viewMode === 'three') {
+            state.currentIndex = Math.floor(state.currentIndex / 3) * 3;
+        }
         localStorage.setItem('mobile_currentIndex', state.currentIndex);
         localStorage.setItem('mobile_currentCategory', state.currentCategoryName);
         renderContent('prev');
@@ -569,15 +626,17 @@ const updateNavigationUI = () => {
 
     if (!prevBtn || !nextBtn || !state.data || state.isPlayingAutoplay) return;
 
+    const jump = state.viewMode === 'three' ? 3 : 1;
+
     // Boundary check for Previous button
-    if (state.currentIndex === 0) {
+    if (state.currentIndex < jump) {
         prevBtn.classList.add('disabled-nav');
     } else {
         prevBtn.classList.remove('disabled-nav');
     }
 
     // Boundary check for Next button
-    if (state.currentIndex === state.data.length - 1) {
+    if (state.currentIndex >= state.data.length - jump) {
         nextBtn.classList.add('disabled-nav');
     } else {
         nextBtn.classList.remove('disabled-nav');

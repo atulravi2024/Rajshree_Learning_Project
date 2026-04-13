@@ -145,17 +145,25 @@ window.SettingsAdmin = {
         });
 
         // 3. Layout & View Selects
-        const viewModeEl = document.getElementById('mobile-view-mode');
-        if (viewModeEl) viewModeEl.addEventListener('change', (e) => {
-            localStorage.setItem('mobile_view_mode', e.target.value);
-            window.SettingsCore.showToast(`Updated view_mode: ${e.target.value}`);
-        });
 
         // 3.1 Segmented Controls (Navigation Direction)
         const segmentedControls = [
             { id: 'mobile-flashcard-nav-dir', key: 'mobile_flashcard_nav_dir' },
-            { id: 'mobile-grid-nav-dir', key: 'mobile_grid_nav_dir' }
+            { id: 'mobile-grid-nav-dir', key: 'mobile_grid_nav_dir' },
+            { id: 'mobile-view-mode', key: 'mobile_view_mode' },
+            { id: 'mobile-three-nav-dir', key: 'mobile_three_nav_dir' }
         ];
+
+        const updateAlignmentVisibility = () => {
+            const viewMode = localStorage.getItem('mobile_view_mode');
+            const group = document.getElementById('three-alignment-group');
+            if (group) {
+                group.style.display = (viewMode === 'three') ? 'block' : 'none';
+            }
+        };
+
+        // Initialize visibility
+        updateAlignmentVisibility();
 
         segmentedControls.forEach(ctrl => {
             const container = document.getElementById(ctrl.id);
@@ -170,7 +178,17 @@ window.SettingsAdmin = {
                     // Update UI via SettingsCore helper
                     window.SettingsCore.setSegmentedValue(ctrl.id, val);
                     
-                    const label = window.SettingsCore.getTranslation(ctrl.id.includes('flashcard') ? 'lbl_flashcard_nav' : 'lbl_grid_nav');
+                    let labelKey = 'lbl_view_mode';
+                    if (ctrl.id.includes('flashcard')) labelKey = 'lbl_flashcard_nav';
+                    if (ctrl.id.includes('grid')) labelKey = 'lbl_grid_nav';
+                    if (ctrl.id.includes('three-nav')) labelKey = 'lbl_three_nav';
+
+                    // Dynamic visibility toggle if View Mode changed
+                    if (ctrl.id === 'mobile-view-mode') {
+                        updateAlignmentVisibility();
+                    }
+
+                    const label = window.SettingsCore.getTranslation(labelKey);
                     window.SettingsCore.showToast(`${label}: ${val}`);
                 });
             }

@@ -895,12 +895,20 @@
                 <div class="category-content">
                     <div class="category-inner">
                         <section class="settings-group">
-                            <div class="select-row">
-                                <label class="group-label" for="mobile-view-mode" data-i18n="lbl_view_mode">व्यू मोड</label>
-                                <select id="mobile-view-mode" class="select-field" title="व्यू मोड" aria-label="व्यू मोड">
-                                    <option value="flashcard" data-i18n="opt_mode_flashcard" selected>फ्लैशकार्ड</option>
-                                    <option value="grid" data-i18n="opt_mode_grid">ग्रिड / मेनू</option>
-                                </select>
+                            <label class="group-label" data-i18n="lbl_view_mode">ठीक करें: व्यू मोड</label>
+                            <div class="segmented-control" id="mobile-view-mode">
+                                <button class="seg-btn active" data-value="flashcard" data-i18n="opt_mode_single">सिंगल व्यू</button>
+                                <button class="seg-btn" data-value="three" data-i18n="opt_mode_three">3-में-1 व्यू</button>
+                                <button class="seg-btn" data-value="grid" data-i18n="opt_mode_all">सभी एक साथ</button>
+                            </div>
+                        </section>
+
+                        <!-- 3-in-1 Alignment (Dynamically Shown) -->
+                        <section class="settings-group" id="three-alignment-group" style="display: none;">
+                            <label class="group-label" data-i18n="lbl_three_nav">3-में-1 एलाइनमेंट</label>
+                            <div class="segmented-control" id="mobile-three-nav-dir">
+                                <button class="seg-btn active" data-value="horizontal" data-i18n="opt_dir_horizontal">क्षैतिज</button>
+                                <button class="seg-btn" data-value="vertical" data-i18n="opt_dir_vertical">लंबवत</button>
                             </div>
                         </section>
 
