@@ -9,9 +9,75 @@ window.SettingsAdmin = {
         try {
             this.attachEvents();
             this.renderDiagnostics();
+            this.syncNavigationControl(null, null, true); // Initial sync on load
             console.log("🛠️ Settings Admin: Boot Complete.");
         } catch (e) {
             console.error("❌ Settings Admin Boot Failed:", e);
+        }
+    },
+
+    /**
+     * Managed Navigation Control Logic
+     * Handles Master Switch, Exclusive Home/Menu pair, and UI feedback.
+     */
+    syncNavigationControl: function(triggerId, value, isInit = false) {
+        const masterEl = document.getElementById('mobile-master-nav');
+        if (!masterEl) return;
+
+        const container = document.getElementById('nav-sub-controls');
+        const homeEl = document.getElementById('mobile-show-home');
+        const menuEl = document.getElementById('mobile-show-menu');
+        const navEl = document.getElementById('mobile-show-nav');
+        const settingsEl = document.getElementById('mobile-show-settings');
+
+        const isMasterEnabled = masterEl.checked;
+
+        // 1. Handle Master Switch Impact (Targets specific set: Home, Nav, Settings)
+        if (triggerId === 'mobile-master-nav' && !isInit) {
+            const targets = [
+                { el: homeEl, val: value, key: 'mobile_show_home' },
+                { el: navEl, val: value, key: 'mobile_show_nav' },
+                { el: settingsEl, val: value, key: 'mobile_show_settings' }
+            ];
+
+            targets.forEach(item => {
+                if (item.el) {
+                    item.el.checked = item.val;
+                    localStorage.setItem(item.key, item.val);
+                }
+            });
+
+            // Enforce Exclusive Pair upon Master ON (Home wins)
+            if (value === true && menuEl && menuEl.checked) {
+                menuEl.checked = false;
+                localStorage.setItem('mobile_show_menu', false);
+            }
+        }
+
+        // 2. Handle Exclusive Pair Logic (Home vs Menu Only)
+        if (!isInit) {
+            if (triggerId === 'mobile-show-home' && value === true) {
+                if (menuEl && menuEl.checked) {
+                    menuEl.checked = false;
+                    localStorage.setItem('mobile_show_menu', false);
+                }
+            } else if (triggerId === 'mobile-show-menu' && value === true) {
+                if (homeEl && homeEl.checked) {
+                    homeEl.checked = false;
+                    localStorage.setItem('mobile_show_home', false);
+                }
+            }
+        }
+
+        // 3. Independent feedback for other toggles (Nav & Settings) 
+        // No hard-linking exists for mobile-show-nav or mobile-show-settings.
+        // Toggling them manually only triggers the storage save in the main listener.
+
+        // 3. UI Feedback Layer
+        if (container) {
+            container.style.opacity = isMasterEnabled ? '1' : '0.5';
+            container.style.pointerEvents = isMasterEnabled ? 'auto' : 'none';
+            container.classList.toggle('nav-locked', !isMasterEnabled);
         }
     },
 
@@ -33,9 +99,18 @@ window.SettingsAdmin = {
             { id: 'mobile-fast-load', key: 'mobile_fast_load', i18n: 'lbl_fast_load' },
             { id: 'mobile-lock', key: 'mobile_child_lock', i18n: 'lbl_child_lock' },
             { id: 'mobile-lock-alerts', key: 'mobile_lock_alerts', i18n: 'lbl_lock_alerts' },
+            { id: 'mobile-intrusion-shield', key: 'mobile_intrusion_shield', i18n: 'lbl_intrusion_shield' },
+            { id: 'mobile-edge-protection', key: 'mobile_edge_protection', i18n: 'lbl_edge_protection' },
             { id: 'mobile-pin-visible', key: 'mobile_pin_visible', i18n: 'lbl_pin_visible' },
+            { id: 'parent-pin-visible', key: 'mobile_pin_visible', i18n: 'lbl_pin_visible' },
+            { id: 'dev-pin-visible', key: 'mobile_pin_visible', i18n: 'lbl_pin_visible' },
             { id: 'mobile-auto-update', key: 'mobile_auto_update', i18n: 'lbl_auto_update' },
-            { id: 'mobile-beta-program', key: 'mobile_beta_program', i18n: 'lbl_beta_prog' }
+            { id: 'mobile-beta-program', key: 'mobile_beta_program', i18n: 'lbl_beta_prog' },
+            { id: 'mobile-show-home', key: 'mobile_show_home', i18n: 'lbl_show_home' },
+            { id: 'mobile-show-nav', key: 'mobile_show_nav', i18n: 'lbl_show_nav' },
+            { id: 'mobile-show-settings', key: 'mobile_show_settings', i18n: 'lbl_show_settings' },
+            { id: 'mobile-show-menu', key: 'mobile_show_menu', i18n: 'lbl_show_menu' },
+            { id: 'mobile-master-nav', key: 'mobile_master_nav', i18n: 'lbl_master_nav' }
         ];
 
         adminToggles.forEach(t => {
@@ -65,6 +140,14 @@ window.SettingsAdmin = {
                     const status = window.SettingsCore.getTranslation(val ? 'status_on' : 'status_off');
                     window.SettingsCore.showToast(`${label}: ${status}`);
                 }
+
+                // Handle Navigation Control logic (Master/Sub/Exclusive)
+                const isNavControl = t.id.startsWith('mobile-show-') || t.id === 'mobile-master-nav';
+                if (isNavControl) {
+                    window.SettingsAdmin.syncNavigationControl(t.id, val);
+                }
+            });
+        });
             });
         });
 
@@ -226,5 +309,14 @@ window.SettingsAdmin = {
         if (confirm(msg)) {
             window.SettingsCore.showToast(window.SettingsCore.getTranslation('msg_feedback_success'));
         }
+    },
+    /**
+     * Shows a demo alert for unimplemented features.
+     */
+    showDemoAlert: function(featureKey) {
+        const title = window.SettingsCore.getTranslation('msg_demo_title') || 'Demo Mode';
+        const feature = window.SettingsCore.getTranslation(featureKey) || featureKey;
+        const desc = window.SettingsCore.getTranslation('msg_demo_desc') || 'This feature is currently available in Demo mode only.';
+        alert(`${title}: ${feature}\n\n${desc}`);
     }
 };

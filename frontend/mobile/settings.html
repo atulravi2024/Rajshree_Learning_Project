@@ -654,6 +654,39 @@
             </div>
         </div>
 
+            <!-- Category 7.1: PIN (Pin Parent Demo) -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🔑</span>
+                    <span class="section-title" data-i18n="sec_pin_parent">पिन पैरेंट (Demo)</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <div class="data-actions-grid">
+                                <button class="btn-inline" onclick="setupParentPin()" title="पैरेंट पिन सेट करें" data-i18n="lbl_parent_pin">पैरेंट पिन</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_change_pin_demo')" title="पिन बदलें" data-i18n="lbl_change_pin_demo">पिन बदलें (Demo)</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_reset_pin_demo')" title="पिन रीसेट करें" data-i18n="lbl_reset_pin_demo">पिन रीसेट करें (Demo)</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_forgot_pin_demo')" title="पिन भूल गए?" data-i18n="lbl_forgot_pin_demo">पिन भूल गए? (Demo)</button>
+                            </div>
+                        </section>
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <label class="group-label" for="parent-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
+                                    <p class="group-sub" data-i18n="sub_pin_visible">टाइप करते समय पिन के अंक दिखाएं</p>
+                                </div>
+                                <span class="switch">
+                                    <input type="checkbox" id="parent-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
             <!-- Category 6: Accessibility (Moved to Parent) -->
             <div class="category-block">
                 <header class="section-header" role="button" tabindex="0">
@@ -725,21 +758,53 @@
                                 </span>
                             </div>
                         </section>
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <label class="group-label" for="mobile-intrusion-shield" data-i18n="lbl_intrusion_shield">इंट्रूजन शील्ड (Demo)</label>
+                                    <p class="group-sub" data-i18n="sub_intrusion_shield">पिन क्रैकिंग के खिलाफ सुरक्षा</p>
+                                </div>
+                                <span class="switch">
+                                    <input type="checkbox" id="mobile-intrusion-shield" title="इंट्रूजन शील्ड" aria-label="इंट्रूजन शील्ड">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </section>
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <label class="group-label" for="mobile-edge-protection" data-i18n="lbl_edge_protection">एज प्रोटेक्शन (Demo)</label>
+                                    <p class="group-sub" data-i18n="sub_edge_protection">ऐप के बाहर जाने से रोकें</p>
+                                </div>
+                                <span class="switch">
+                                    <input type="checkbox" id="mobile-edge-protection" title="एज प्रोटेक्शन" aria-label="एज प्रोटेक्शन">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </section>
+                        <section class="settings-group">
+                            <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('btn_view_safety_log')" data-i18n="btn_view_safety_log">सुरक्षा लॉग देखें (Demo)</button>
+                        </section>
                     </div>
                 </div>
             </div>
 
-            <!-- Category 7.1: PIN (Split - PIN) -->
+            <!-- Category 7.1: PIN (Pin Admin Demo) -->
             <div class="category-block">
                 <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">🔑</span>
-                    <span class="section-title" data-i18n="sec_pin_only">पिन प्रबंधन</span>
+                    <span class="section-title" data-i18n="sec_pin_admin">पिन एडमिन (Demo)</span>
                     <span class="chevron">▼</span>
                 </header>
                 <div class="category-content">
                     <div class="category-inner">
                         <section class="settings-group">
-                            <button class="btn-inline" onclick="setupParentPin()" title="पैरेंट पिन सेट करें" data-i18n="lbl_parent_pin">पैरेंट पिन</button>
+                            <div class="data-actions-grid">
+                                <button class="btn-inline" onclick="setupParentPin()" title="पैरेंट पिन सेट करें" data-i18n="lbl_parent_pin">पैरेंट पिन</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_change_pin_demo')" title="पिन बदलें" data-i18n="lbl_change_pin_demo">पिन बदलें (Demo)</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_reset_pin_demo')" title="पिन रीसेट करें" data-i18n="lbl_reset_pin_demo">पिन रीसेट करें (Demo)</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_forgot_pin_demo')" title="पिन भूल गए?" data-i18n="lbl_forgot_pin_demo">पिन भूल गए? (Demo)</button>
+                            </div>
                         </section>
                         <section class="settings-group">
                             <div class="toggle-row">
@@ -753,6 +818,69 @@
                                 </span>
                             </div>
                         </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 7.2: Navigation Control (Demo) -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🕹️</span>
+                    <span class="section-title" data-i18n="sec_nav_control">नेविगेशन कंट्रोल (Demo)</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <!-- Master Control Row (Kids Safety Style) -->
+                        <div class="master-lock-group master-lock-group-custom">
+                            <div class="toggle-row">
+                                <div>
+                                    <label class="group-label" for="mobile-master-nav" data-i18n="lbl_master_nav">मास्टर नेविगेशन कंट्रोल</label>
+                                    <p class="group-sub" data-i18n="sub_nav_control">सभी बटन को एक साथ कंट्रोल करें</p>
+                                </div>
+                                <span class="switch">
+                                    <input type="checkbox" id="mobile-master-nav" checked title="मास्टर कंट्रोल" aria-label="मास्टर कंट्रोल">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Grid Layout (Kids Safety Style) -->
+                        <div class="standalone-lock-row">
+                            <div id="nav-sub-controls" class="compact-locks-grid compact-locks-grid-custom">
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="mobile-show-home" data-i18n="lbl_show_home">होम बटन दिखाएं</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="mobile-show-home" checked title="होम बटन" aria-label="होम बटन">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="mobile-show-nav" data-i18n="lbl_show_nav">पीछे/अगला बटन दिखाएं</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="mobile-show-nav" checked title="पीछे/अगला बटन" aria-label="पीछे/अगला बटन">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="mobile-show-settings" data-i18n="lbl_show_settings">सेटिंग्स बटन दिखाएं</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="mobile-show-settings" checked title="सेटिंग्स बटन" aria-label="सेटिंग्स बटन">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="mobile-show-menu" data-i18n="lbl_show_menu">मेनू बटन दिखाएं</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="mobile-show-menu" checked title="मेनू बटन" aria-label="मेनू बटन">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -944,6 +1072,39 @@
                                 <label for="dev-logs" data-i18n="lbl_enable_logs">एनेबल लॉग्स</label>
                                 <span class="switch">
                                     <input type="checkbox" id="dev-logs" title="डीबग लॉग्स" aria-label="डीबग लॉग्स">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 11: PIN (Pin Developer Demo) -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🔑</span>
+                    <span class="section-title" data-i18n="sec_pin_developer">पिन डेवलपर (Demo)</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <div class="data-actions-grid">
+                                <button class="btn-inline" onclick="setupParentPin()" title="पैरेंट पिन सेट करें" data-i18n="lbl_parent_pin">पैरेंट पिन</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_change_pin_demo')" title="पिन बदलें" data-i18n="lbl_change_pin_demo">पिन बदलें (Demo)</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_reset_pin_demo')" title="पिन रीसेट करें" data-i18n="lbl_reset_pin_demo">पिन रीसेट करें (Demo)</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_forgot_pin_demo')" title="पिन भूल गए?" data-i18n="lbl_forgot_pin_demo">पिन भूल गए? (Demo)</button>
+                            </div>
+                        </section>
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <label class="group-label" for="dev-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
+                                    <p class="group-sub" data-i18n="sub_pin_visible">टाइप करते समय पिन के अंक दिखाएं</p>
+                                </div>
+                                <span class="switch">
+                                    <input type="checkbox" id="dev-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
                                     <span class="slider"></span>
                                 </span>
                             </div>

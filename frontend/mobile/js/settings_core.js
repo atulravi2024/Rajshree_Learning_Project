@@ -74,6 +74,8 @@ window.SettingsCore = {
         const breakToggle = b('mobile_break', true);
         const childLock = b('mobile_child_lock', false);
         const lockAlerts = b('mobile_lock_alerts', true);
+        const intrusionShield = b('mobile_intrusion_shield', false);
+        const edgeProtection = b('mobile_edge_protection', false);
         const pinVisible = b('mobile_pin_visible', false);
         
         // Safety Locks
@@ -96,6 +98,15 @@ window.SettingsCore = {
         const lockAutoplay = b('mobile_lock_autoplay', false);
         const lockCard = b('mobile_lock_card', false);
 
+        let showHome = b('mobile_show_home', true);
+        const showNav = b('mobile_show_nav', true);
+        const showSettings = b('mobile_show_settings', true);
+        let showMenu = b('mobile_show_menu', false);
+        const masterNav = b('mobile_master_nav', true);
+
+        // Exclusive Robustness: Home and Menu cannot both be ON in Demo
+        if (showHome && showMenu) showMenu = false;
+
         // 5. Accessibility
         const largeText = b('mobile_large_text', false);
         const contrast = b('mobile_contrast', false);
@@ -112,7 +123,11 @@ window.SettingsCore = {
         this.setCheck('mobile-contrast', contrast);
         this.setCheck('mobile-lock', childLock);
         this.setCheck('mobile-lock-alerts', lockAlerts);
+        this.setCheck('mobile-intrusion-shield', intrusionShield);
+        this.setCheck('mobile-edge-protection', edgeProtection);
         this.setCheck('mobile-pin-visible', pinVisible);
+        this.setCheck('parent-pin-visible', pinVisible);
+        this.setCheck('dev-pin-visible', pinVisible);
         this.setCheck('mobile-break', breakToggle);
         this.setCheck('mobile-auto-dark', autoDark);
         this.setCheck('mobile-reduce-motion', reduceMotion);
@@ -123,6 +138,13 @@ window.SettingsCore = {
         this.setCheck('mobile-glow-effect', glowEffect);
         this.setCheck('mobile-hd-images', hdImages);
         this.setCheck('mobile-fullscreen', fullscreen);
+
+        this.setCheck('mobile-show-home', showHome);
+        this.setCheck('mobile-show-nav', showNav);
+        this.setCheck('mobile-show-settings', showSettings);
+        this.setCheck('mobile-show-menu', showMenu);
+        this.setCheck('mobile-master-nav', masterNav);
+
         const speedBadge = document.getElementById('mobile-speed-badge');
         if (speedBadge) speedBadge.textContent = speed + 'x';
         

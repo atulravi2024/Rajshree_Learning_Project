@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const uiLang = localStorage.getItem('mobile_ui_language') || 'hi';
     if (window.RAJSHREE_I18N) window.RAJSHREE_I18N.applyUI(uiLang);
     
+    applyNavSettings();
+
     const isStarted = localStorage.getItem('mobile_session_active') === 'true';
     if (isStarted) {
         startApp(true); // Silent start (restore)
@@ -50,6 +52,8 @@ const startApp = (silent = false) => {
     if (welcome) welcome.classList.add('hidden');
     if (master) master.classList.remove('hidden');
     if (nav) nav.classList.remove('hidden');
+
+    applyNavSettings();
 
     state.isPlayingAutoplay = state.isAutoplay;
     updatePlaybackUI();
@@ -408,6 +412,30 @@ const updatePlaybackUI = () => {
     }
 };
 
+/**
+ * UI: Navigation Control (Demo)
+ * Applies visibility of specific nav buttons based on Admin settings.
+ */
+const applyNavSettings = () => {
+    const isMasterOn = localStorage.getItem('mobile_master_nav') !== 'false';
+    const showHome = isMasterOn && localStorage.getItem('mobile_show_home') !== 'false';
+    const showNav = isMasterOn && localStorage.getItem('mobile_show_nav') !== 'false';
+    const showSettings = isMasterOn && localStorage.getItem('mobile_show_settings') !== 'false';
+    const showMenu = isMasterOn && localStorage.getItem('mobile_show_menu') !== 'false';
+
+    const homeBtn = document.getElementById('mobile-home');
+    const prevBtn = document.getElementById('mobile-prev');
+    const nextBtn = document.getElementById('mobile-next');
+    const settingsBtn = document.getElementById('mobile-settings');
+    const menuBtn = document.getElementById('mobile-menu');
+
+    if (homeBtn) homeBtn.classList.toggle('hidden', !showHome);
+    if (prevBtn) prevBtn.classList.toggle('hidden', !showNav);
+    if (nextBtn) nextBtn.classList.toggle('hidden', !showNav);
+    if (settingsBtn) settingsBtn.classList.toggle('hidden', !showSettings);
+    if (menuBtn) menuBtn.classList.toggle('hidden', !showMenu);
+};
+
 // UI: Navigation State Helper (Boundaries)
 const updateNavigationUI = () => {
     const prevBtn = document.getElementById('mobile-prev');
@@ -561,5 +589,6 @@ window.addEventListener('focus', () => {
     state.vSFX = (parseFloat(localStorage.getItem('mobile_vol_sfx')) || 50) / 100;
     state.vContent = (parseFloat(localStorage.getItem('mobile_vol_content')) || 100) / 100;
 
+    applyNavSettings();
     updateBGM();
 });
