@@ -118,6 +118,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ─── PARENT: Profile Selection ───────────────────────────────
+    const profileCards = document.querySelectorAll('.voice-card');
+    profileCards.forEach(card => {
+        card.addEventListener('click', () => {
+            profileCards.forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            const profile = card.getAttribute('data-profile');
+            localStorage.setItem('rajshree_active_profile', profile);
+            if (window.parent) {
+                window.parent.postMessage({ action: 'profile-change', value: profile }, '*');
+            }
+        });
+    });
+
+    // Restore saved profile
+    const savedProfile = localStorage.getItem('rajshree_active_profile') || 'rajshree';
+    profileCards.forEach(c => {
+        if (c.getAttribute('data-profile') === savedProfile) c.classList.add('active');
+        else c.classList.remove('active');
+    });
+
     // ─── Toggles Handler (General & Kids Safety) ─────────────────────
     const toggles = [
         'bg-magic-check', 'sfx-check', 'confetti-check', 

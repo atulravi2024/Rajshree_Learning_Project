@@ -131,7 +131,27 @@ function goToStep2() {
     const step1 = document.getElementById('step-1'); if (step1) step1.classList.add('hidden');
     const step2 = document.getElementById('step-2'); if (step2) step2.classList.remove('hidden');
     stopCurrentAudio();
-    currentAudio = new Audio(window.AUDIO_BASE_PATH + 'system/welcome_short.mp3');
+    
+    // Profile-based welcome audio
+    const profile = localStorage.getItem('rajshree_active_profile') || 'rajshree';
+    const welcomePath = window.AUDIO_BASE_PATH + `system/welcome/welcome_${profile}.mp3`;
+    const defaultPath = window.AUDIO_BASE_PATH + 'system/welcome_short.mp3';
+    
+    // Attempt to play profile audio, fallback to generic, then default
+    currentAudio = new Audio(welcomePath);
+    currentAudio.onerror = () => {
+        console.warn(`Profile audio missing: ${welcomePath}, trying generic.`);
+        currentAudio = new Audio(window.AUDIO_BASE_PATH + 'system/welcome/welcome_generic.mp3');
+        currentAudio.onerror = () => {
+            console.warn(`Generic audio missing, falling back to default.`);
+            currentAudio = new Audio(defaultPath);
+            currentAudio.volume = window.ChildSafetyLock && window.ChildSafetyLock.isSafetyEnabled ? 0.75 : globalVolume;
+            currentAudio.play();
+        };
+        currentAudio.volume = window.ChildSafetyLock && window.ChildSafetyLock.isSafetyEnabled ? 0.75 : globalVolume;
+        currentAudio.play();
+    };
+    
     // First audio (Welcome) is 75% as per user request
     currentAudio.volume = window.ChildSafetyLock && window.ChildSafetyLock.isSafetyEnabled ? 0.75 : globalVolume;
     currentAudio.play();

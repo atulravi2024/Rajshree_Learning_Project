@@ -56,6 +56,7 @@ window.SettingsCore = {
         const reduceMotion = b('mobile_reduce_motion', false);
         const fastLoad = b('mobile_fast_load', true);
         const fontStyle = s('mobile_font_style', 'clean');
+        const activeProfile = s('rajshree_active_profile', 'rajshree');
         
         // 3. Learning
         const difficulty = s('mobile_difficulty', 'intermediate');
@@ -170,6 +171,7 @@ window.SettingsCore = {
         // Grids
         this.updateGridSelection('.voice-card', 'voice', voice);
         this.updateGridSelection('.color-circle', 'theme', theme);
+        this.updateGridSelection('#cat-parent .voice-card', 'profile', activeProfile);
 
         // Apply translations on load via external module
         if (window.RAJSHREE_I18N) window.RAJSHREE_I18N.applyUI(uiLang);

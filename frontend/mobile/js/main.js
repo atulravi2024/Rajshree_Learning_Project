@@ -58,7 +58,17 @@ const startApp = (silent = false) => {
     
     // Play welcome sound and track it (only if not a silent restore)
     if (!silent) {
-        playSound('system/welcome_short.mp3');
+        const profile = localStorage.getItem('rajshree_active_profile') || 'rajshree';
+        const welcomePath = `system/welcome/welcome_${profile}.mp3`;
+        
+        // Multi-level fallback: Profile -> Generic -> Default
+        playSound(welcomePath).catch(() => {
+            console.warn(`Profile audio missing: ${welcomePath}, trying generic.`);
+            playSound('system/welcome/welcome_generic.mp3').catch(() => {
+                console.warn(`Generic audio missing, falling back to default.`);
+                playSound('system/welcome_short.mp3');
+            });
+        });
     }
     updateBGM();
 };
@@ -318,9 +328,10 @@ const playSound = (audioPath, card) => {
         }
     });
 
-    audio.play().catch(e => {
+    return audio.play().catch(e => {
         console.warn("Failed to play audio:", e.message);
         if (card) card.classList.remove('playing');
+        throw e; // Rethrow to allow fallback handling
     });
 };
 

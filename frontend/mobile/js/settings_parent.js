@@ -69,6 +69,18 @@ window.SettingsParent = {
                 if (i.label) window.SettingsCore.showToast(`${i.label}: ${val}`);
             });
         });
+
+        // 3. Profile Selection
+        document.querySelectorAll('#cat-parent .voice-card').forEach(card => {
+            if (card.dataset.profile) {
+                card.addEventListener('click', () => {
+                    const profile = card.dataset.profile;
+                    localStorage.setItem('rajshree_active_profile', profile);
+                    window.SettingsCore.updateGridSelection('#cat-parent .voice-card', 'profile', profile);
+                    window.SettingsCore.showToast(`Active Profile: ${profile}`);
+                });
+            }
+        });
     },
 
     initSafetyLocks: function() {
