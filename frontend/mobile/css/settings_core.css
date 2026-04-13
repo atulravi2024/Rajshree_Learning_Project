@@ -438,3 +438,41 @@ input[type="range"]::-webkit-slider-thumb {
     font-size: 0.7rem;
     opacity: 0.5;
 }
+
+/* New Layout & Utility Classes (Replacing inline styles) */
+.visuals-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.compact-group {
+    margin-bottom: 0 !important;
+    padding: 10px !important;
+}
+
+.compact-label {
+    font-size: 0.8rem !important;
+    margin-bottom: 5px !important;
+}
+
+.compact-select {
+    padding: 6px 8px !important;
+    font-size: 0.8rem !important;
+}
+
+.mt-10 {
+    margin-top: 10px !important;
+}
+
+.instruction-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.dark-mode .instruction-box {
+    background: rgba(255, 255, 255, 0.03);
+}

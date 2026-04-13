@@ -13,6 +13,7 @@ window.RAJSHREE_I18N = {
             'tab_parent': 'पैरेंट',
             'tab_admin': 'एडमिन',
             'tab_dev': 'डेवलपर',
+            'tab_help': 'सहायता',
 
             // Navigation & Welcome (Main Page)
             'welcome_title': 'नमस्ते राजश्री!',
@@ -65,6 +66,14 @@ window.RAJSHREE_I18N = {
             'sec_kids_safety': 'बच्चों की सुरक्षा',
             'sec_kids_audio': 'बच्चों की सुरक्षा',
             'sec_kids_global': 'बच्चों की सुरक्षा',
+            'sec_instructions': 'उपयोग के निर्देश',
+            'sec_help_kids': 'बच्चों के लिए सहायता',
+            'sec_help_parent': 'पैरेंट्स के लिए सहायता',
+            'sec_help_admin': 'एडमिन सहायता',
+            'sec_help_dev': 'डेवलपर सहायता',
+            'sec_help_general': 'सामान्य सहायता',
+            'lbl_usage_guide': 'एडमिन गाइड',
+            'sub_usage_guide': 'ऐप को सुरक्षित रखने के तरीके',
 
             // Labels
             'lbl_active_profile': 'एक्टिव प्रोफाइल',
@@ -160,6 +169,8 @@ window.RAJSHREE_I18N = {
             'btn_feedback': 'फीडबैक भेजें',
             'btn_cancel': 'रद्द करें',
             'btn_confirm': 'पुष्टि करें',
+            'lbl_do': 'करें:',
+            'lbl_dont': 'न करें:',
 
             // Toasts & PIN
             'toast_lang_update': 'भाषा बदली गई: हिंदी',
@@ -180,7 +191,75 @@ window.RAJSHREE_I18N = {
             'msg_release_title': 'रिलीज़ नोट्स',
             'msg_feedback_confirm': 'क्या आप रिपोर्ट भेजना चाहते हैं?',
             'msg_feedback_success': 'फीडबैक भेज दिया गया! धन्यवाद।',
-            'lbl_kb_used': 'KB उपयोग किया गया'
+            'lbl_kb_used': 'KB उपयोग किया गया',
+
+            // --- HELP GUIDE CONTENT (KIDS) ---
+            'h_kids_audio_title': '🔊 आवाज़ और संगीत',
+            'h_kids_audio_desc': 'ऐप में पृष्ठभूमि संगीत और बटनों की आवाज़ को नियंत्रित करें।',
+            'h_kids_audio_do': '✅ फोकस बढ़ाने के लिए वॉल्यूम को 50-70% के बीच रखें।',
+            'h_kids_audio_dont': '❌ विचलित होने से बचने के लिए इसे बहुत तेज़ न करें।',
+
+            'h_kids_voice_title': '🎙️ बोलने की शैली',
+            'h_kids_voice_desc': 'पाठ को पढ़ने के लिए आवाज़ और उसकी गति बदलें।',
+            'h_kids_voice_do': '✅ साफ उच्चारण के लिए 1.0x गति सबसे अच्छी है।',
+            'h_kids_voice_dont': '❌ गति को बहुत तेज़ (2.0x) न करें, इससे बच्चे को समझने में कठिनाई हो सकती है।',
+
+            'h_kids_autoplay_title': '🔄 ऑटो-प्ले',
+            'h_kids_autoplay_desc': 'बिना छुए कार्ड को अपने आप बदलने की सुविधा।',
+            'h_kids_autoplay_do': '✅ छोटे बच्चों के लिए इसे ऑन रखें ताकि वे बिना रुके सीख सकें।',
+            'h_kids_autoplay_dont': '❌ अगर आप चाहते हैं कि बच्चा खुद बटन दबाए, तो इसे बंद रखें।',
+
+            'h_kids_visuals_title': '🎨 थीम और विज़ुअल्स',
+            'h_kids_visuals_desc': 'ऐप का रंग, डार्क मोड और एनिमेशन क्वालिटी बदलें।',
+            'h_kids_visuals_do': '✅ रात में पढ़ाई के लिए डार्क मोड का इस्तेमाल करें।',
+            'h_kids_visuals_dont': '❌ कम पावर वाले फोन पर "हाई" क्वालिटी एनिमेशन न रखें।',
+
+            // --- HELP GUIDE CONTENT (PARENT) ---
+            'h_parent_profile_title': '👥 प्रोफाइल प्रबंधन',
+            'h_parent_profile_desc': 'अलग-अलग बच्चों के लिए अलग प्रोफाइल बनाएं।',
+            'h_parent_profile_do': '✅ प्रोग्रेस ट्रैक करने के लिए हर बच्चे की अपनी प्रोफाइल रखें।',
+            'h_parent_profile_dont': '❌ एक ही प्रोफाइल से कई बच्चे न पढ़ें, डेटा मिक्स हो सकता है।',
+
+            'h_parent_goals_title': '🎓 सीखने के लक्ष्य',
+            'h_parent_goals_desc': 'दैनिक लक्ष्य और पढ़ाई का स्तर सेट करें।',
+            'h_parent_goals_do': '✅ शुरुआत 10 कार्ड्स से करें और धीरे-धीरे बढ़ाएं।',
+            'h_parent_goals_dont': '❌ बच्चे पर एक दिन में बहुत ज्यादा कार्ड्स का बोझ न डालें।',
+
+            'h_parent_safety_title': '🛡️ किड्स सेफ्टी (टैप सुरक्षा)',
+            'h_parent_safety_desc': 'पढ़ाई के दौरान बच्चों को सेटिंग्स या होम स्क्रीन पर जाने से रोकें।',
+            'h_parent_safety_do': '✅ "मास्टर लॉक" ऑन रखें ताकि बच्चा ऐप से बाहर न जा सके।',
+            'h_parent_safety_dont': '❌ महत्वपूर्ण सेटिंग्स लॉक करना न भूलें।',
+
+            // --- HELP GUIDE CONTENT (ADMIN) ---
+            'h_admin_security_title': '🔐 सुरक्षा और पिन',
+            'h_admin_security_desc': 'सेटिंग्स पेज को पासवर्ड से सुरक्षित करें।',
+            'h_admin_security_do': '✅ पिन (PIN) को याद रखें और इसे नियमित रूप से बदलें।',
+            'h_admin_security_dont': '❌ अपना पिन बच्चे के सामने न टाइप करें।',
+
+            'h_admin_data_title': '📂 डेटा और बैकअप',
+            'h_admin_data_desc': 'अपनी सेटिंग्स और प्रोग्रेस का बैकअप लें।',
+            'h_admin_data_do': '✅ हफ्ते में एक बार "एक्सपोर्ट" करके बैकअप फाइल सुरक्षित रखें।',
+            'h_admin_data_dont': '❌ बिना बैकअप लिए ऐप अनइंस्टॉल न करें।',
+
+            'h_warn_reset_title': '🚨 महत्वपूर्ण चेतावनी: डेटा रीसेट',
+            'h_warn_reset_desc': 'यह विकल्प ऐप का पूरा डेटा (प्रोफाइल, प्रोग्रेस, सेटिंग्स) हमेशा के लिए मिटा देगा। इसे वापस नहीं लाया जा सकता।',
+
+            // --- HELP GUIDE CONTENT (DEVELOPER) ---
+            'h_dev_perf_title': '🏃 परफॉरमेंस और गति',
+            'h_dev_perf_desc': 'ऐप की लोडिंग और एनिमेशन की गति ठीक करें।',
+            'h_dev_perf_do': '✅ कम मेमोरी वाले फोन पर "फास्ट लोडिंग" बंद रखें।',
+            'h_dev_perf_dont': '❌ बिना जरूरत के बार-बार कैश साफ़ न करें।',
+
+            'h_dev_debug_title': '📝 डीबग और लॉग्स',
+            'h_dev_debug_desc': 'ऐप में आने वाली तकनीकी समस्याओं की पहचान करें।',
+            'h_dev_debug_do': '✅ समस्या होने पर लॉग्स ऑन करके हमें बताएं।',
+            'h_dev_debug_dont': '❌ सामान्य उपयोग के दौरान "डीबग मोड" ऑन न रखें, इससे ऐप धीमी हो सकती है।',
+
+            // --- HELP GUIDE CONTENT (GENERAL) ---
+            'h_gen_init_title': '❓ अक्सर पूछे जाने वाले सवाल',
+            'h_gen_init_desc': 'ऐप के बारे में सामान्य जानकारी।',
+            'h_gen_init_do': '✅ ऐप को नियमित रूप से अपडेट करते रहें।',
+            'h_gen_init_dont': '❌ अनजान बैकअप फाइल्स को इम्पोर्ट न करें।'
         },
         'en': {
             // Header & Tabs
@@ -189,6 +268,7 @@ window.RAJSHREE_I18N = {
             'tab_parent': 'Parent',
             'tab_admin': 'Admin',
             'tab_dev': 'Developer',
+            'tab_help': 'Help',
 
             // Navigation & Welcome (Main Page)
             'welcome_title': 'Namaste Rajshree!',
@@ -243,6 +323,14 @@ window.RAJSHREE_I18N = {
             'sec_kids_safety': 'Kids Safety',
             'sec_kids_audio': 'Kids Safety (Audio)',
             'sec_kids_global': 'Kids Safety',
+            'sec_instructions': 'Usage Instructions',
+            'sec_help_kids': 'Kids Help',
+            'sec_help_parent': 'Parent Help',
+            'sec_help_admin': 'Admin Help',
+            'sec_help_dev': 'Developer Help',
+            'sec_help_general': 'General help',
+            'lbl_usage_guide': 'Admin Guide',
+            'sub_usage_guide': 'How to keep the app secure',
 
             // Labels
             'lbl_active_profile': 'Active Profile',
@@ -338,6 +426,8 @@ window.RAJSHREE_I18N = {
             'btn_feedback': 'Send Feedback',
             'btn_cancel': 'Cancel',
             'btn_confirm': 'Confirm',
+            'lbl_do': 'Do:',
+            'lbl_dont': 'Don\'t:',
 
             // Toasts & PIN
             'toast_lang_update': 'Language Updated: English',
@@ -358,7 +448,75 @@ window.RAJSHREE_I18N = {
             'msg_release_title': 'Release Notes',
             'msg_feedback_confirm': 'Send report to developers?',
             'msg_feedback_success': 'Feedback sent! Thank you.',
-            'lbl_kb_used': 'KB Used'
+            'lbl_kb_used': 'KB Used',
+
+            // --- HELP GUIDE CONTENT (KIDS) ---
+            'h_kids_audio_title': '🔊 Audio & Music',
+            'h_kids_audio_desc': 'Control background music and interaction sounds.',
+            'h_kids_audio_do': '✅ Keep volume between 50-70% for best focus.',
+            'h_kids_audio_dont': '❌ Don\'t set it too loud to avoid distraction.',
+
+            'h_kids_voice_title': '🎙️ Speech Style',
+            'h_kids_voice_desc': 'Change the narrator voice and playback speed.',
+            'h_kids_voice_do': '✅ 1.0x speed is recommended for clear pronunciation.',
+            'h_kids_voice_dont': '❌ Avoid 2.0x for young learners as it might be too fast.',
+
+            'h_kids_autoplay_title': '🔄 Autoplay',
+            'h_kids_autoplay_desc': 'Automatically advances cards without user input.',
+            'h_kids_autoplay_do': '✅ Use for toddlers so they can watch and learn.',
+            'h_kids_autoplay_dont': '❌ Disable if you want to encourage manual motor skills.',
+
+            'h_kids_visuals_title': '🎨 Themes & Visuals',
+            'h_kids_visuals_desc': 'Adjust colors, dark mode, and animation effects.',
+            'h_kids_visuals_do': '✅ Use Dark Mode at night to reduce eye strain.',
+            'h_kids_visuals_dont': '❌ Don\'t use high-quality animations on entry-level devices.',
+
+            // --- HELP GUIDE CONTENT (PARENT) ---
+            'h_parent_profile_title': '👥 Profile Management',
+            'h_parent_profile_desc': 'Manage individual learning tracks for different kids.',
+            'h_parent_profile_do': '✅ Create unique profiles to track individual progress.',
+            'h_parent_profile_dont': '❌ Don\'t share one profile between multiple children.',
+
+            'h_parent_goals_title': '🎓 Learning Goals',
+            'h_parent_goals_desc': 'Set daily card targets and difficulty levels.',
+            'h_parent_goals_do': '✅ Start with 10 cards and increase gradually.',
+            'h_parent_goals_dont': '❌ Don\'t set advanced levels for beginners.',
+
+            'h_parent_safety_title': '🛡️ Kids Safety (Locking)',
+            'h_parent_safety_desc': 'Prevent kids from accidentally exiting the lesson.',
+            'h_parent_safety_do': '✅ Enable "Master Lock" during learning sessions.',
+            'h_parent_safety_dont': '❌ Don\'t forget to lock the Home button.',
+
+            // --- HELP GUIDE CONTENT (ADMIN) ---
+            'h_admin_security_title': '🔐 Security & PIN',
+            'h_admin_security_desc': 'Protect settings with a 4-digit PIN.',
+            'h_admin_security_do': '✅ Keep your PIN private and update it periodically.',
+            'h_admin_security_dont': '❌ Don\'t share your PIN with children.',
+
+            'h_admin_data_title': '📂 Data & Backup',
+            'h_admin_data_desc': 'Manage your local data and backups.',
+            'h_admin_data_do': '✅ Regularly use "Export" to save your progress.',
+            'h_admin_data_dont': '❌ Don\'t uninstall without taking a manual backup.',
+
+            'h_warn_reset_title': '🚨 Critical Warning: Data Reset',
+            'h_warn_reset_desc': 'This will permanently delete ALL settings, profiles, and progress. This action cannot be undone!',
+
+            // --- HELP GUIDE CONTENT (DEVELOPER) ---
+            'h_dev_perf_title': '🏃 Performance & Speed',
+            'h_dev_perf_desc': 'Optimize app loading and animation smoothness.',
+            'h_dev_perf_do': '✅ Use "Fast Loading" for high-end devices.',
+            'h_dev_perf_dont': '❌ Don\'t clear cache unless the app is behaving unexpectedly.',
+
+            'h_dev_debug_title': '📝 Debug & Logs',
+            'h_dev_debug_desc': 'Tools for identifying technical issues.',
+            'h_dev_debug_do': '✅ Enable logs only when troubleshooting bugs.',
+            'h_dev_debug_dont': '❌ Don\'t keep Debug Mode on during normal use as it may slow down the app.',
+
+            // --- HELP GUIDE CONTENT (GENERAL) ---
+            'h_gen_init_title': '❓ General FAQs',
+            'h_gen_init_desc': 'General information about the project.',
+            'h_gen_init_do': '✅ Keep the app updated for the latest features.',
+            'h_gen_init_dont': '❌ Never import suspicious backup files from untrusted sources.'
         },
         'hinglish': {
             // Header & Tabs
@@ -367,6 +525,7 @@ window.RAJSHREE_I18N = {
             'tab_parent': 'Parent',
             'tab_admin': 'Admin',
             'tab_dev': 'Developer',
+            'tab_help': 'Madad',
 
             // Navigation & Welcome (Main Page)
             'welcome_title': 'Namaste Rajshree!',
@@ -419,6 +578,14 @@ window.RAJSHREE_I18N = {
             'sec_kids_safety': 'Bacho ki Suraksha',
             'sec_kids_audio': 'Bacho ki Suraksha',
             'sec_kids_global': 'Bacho ki Suraksha',
+            'sec_instructions': 'Usage Instructions',
+            'sec_help_kids': 'Kids Help',
+            'sec_help_parent': 'Parent Help',
+            'sec_help_admin': 'Admin Help',
+            'sec_help_dev': 'Developer Help',
+            'sec_help_general': 'General help',
+            'lbl_usage_guide': 'Admin Guide',
+            'sub_usage_guide': 'App ko surakshit rakhne ke tips',
 
             // Labels
             'lbl_active_profile': 'Active Profile',
@@ -515,6 +682,8 @@ window.RAJSHREE_I18N = {
             'btn_feedback': 'Feedback Bhejein',
             'btn_cancel': 'Radd Karein',
             'btn_confirm': 'Confirm Karein',
+            'lbl_do': 'Karein:',
+            'lbl_dont': 'Na Karein:',
 
             // Toasts & PIN
             'toast_lang_update': 'Bhasha badli gayi: Hinglish',
@@ -535,7 +704,75 @@ window.RAJSHREE_I18N = {
             'msg_release_title': 'Release Notes',
             'msg_feedback_confirm': 'Kya aap report bhejna chahte hain?',
             'msg_feedback_success': 'Feedback bhej diya gaya! Shukriya.',
-            'lbl_kb_used': 'KB Used'
+            'lbl_kb_used': 'KB Used',
+
+            // --- HELP GUIDE CONTENT (KIDS) ---
+            'h_kids_audio_title': '🔊 Awaaz aur Sangeet',
+            'h_kids_audio_desc': 'Background music aur buttons ki awaaz control karein.',
+            'h_kids_audio_do': '✅ Focus ke liye volume check karein.',
+            'h_kids_audio_dont': '❌ Bahut zyada tez naa karein.',
+
+            'h_kids_voice_title': '🎙️ Bolne ki Shaili',
+            'h_kids_voice_desc': 'Narrator ki awaaz aur speed badlein.',
+            'h_kids_voice_do': '✅ 1.0x speed best learning ke liye hai.',
+            'h_kids_voice_dont': '❌ 2.0x speed chote bacho ke liye tez ho sakti hai.',
+
+            'h_kids_autoplay_title': '🔄 Autoplay',
+            'h_kids_autoplay_desc': 'Cards ko apne aap badalne ki suvidha.',
+            'h_kids_autoplay_do': '✅ Chote bacho ke liye best hai.',
+            'h_kids_autoplay_dont': '❌ Agar bacha khud chuna chahe toh band rakhein.',
+
+            'h_kids_visuals_title': '🎨 Themes aur Visuals',
+            'h_kids_visuals_desc': 'App ka look, dark mode aur animations badlein.',
+            'h_kids_visuals_do': '✅ Raat mein dark mode use karein.',
+            'h_kids_visuals_dont': '❌ Purane phones par effects kam rakhein.',
+
+            // --- HELP GUIDE CONTENT (PARENT) ---
+            'h_parent_profile_title': '👥 Profile Prabandhan',
+            'h_parent_profile_desc': 'Alag-alag bacho ki alag profile manage karein.',
+            'h_parent_profile_do': '✅ Har bache ki progress track karein.',
+            'h_parent_profile_dont': '❌ Ek hi profile do bacho ko na dein.',
+
+            'h_parent_goals_title': '🎓 Seekhne ke Lakshya',
+            'h_parent_goals_desc': 'Daily card goal aur padhai ka level set karein.',
+            'h_parent_goals_do': '✅ 10 cards se shuru karein.',
+            'h_parent_goals_dont': '❌ Bahut zyada cards ek din mein na dein.',
+
+            'h_parent_safety_title': '🛡️ Kids Safety (Locking)',
+            'h_parent_safety_desc': 'Bacho ko app se bahar jaane se rokein.',
+            'h_parent_safety_do': '✅ "Master Lock" ka upyog karein.',
+            'h_parent_safety_dont': '❌ Home button lock karna na bhoolein.',
+
+            // --- HELP GUIDE CONTENT (ADMIN) ---
+            'h_admin_security_title': '🔐 Security aur PIN',
+            'h_admin_security_desc': 'Settings ko PIN se surakshit karein.',
+            'h_admin_security_do': '✅ PIN ko yaad rakhein aur badalte rahein.',
+            'h_admin_security_dont': '❌ PIN bacho ko na batayein.',
+
+            'h_admin_data_title': '📂 Data aur Backup',
+            'h_admin_data_desc': 'Apne data ka backup lijiye.',
+            'h_admin_data_do': '✅ Regular "Export" karein.',
+            'h_admin_data_dont': '❌ Bina backup liye settings na hatayein.',
+
+            'h_warn_reset_title': '🚨 Warning: Data Reset',
+            'h_warn_reset_desc': 'Isse saara data (profiles/settings) hamesha ke liye mit jayega!',
+
+            // --- HELP GUIDE CONTENT (DEVELOPER) ---
+            'h_dev_perf_title': '🏃 Performance aur Speed',
+            'h_dev_perf_desc': 'App loading aur animation ko behtar banayein.',
+            'h_dev_perf_do': '✅ High-end phones pe "Fast Loading" use karein.',
+            'h_dev_perf_dont': '❌ Baar-baar cache saaf na karein.',
+
+            'h_dev_debug_title': '📝 Debug aur Logs',
+            'h_dev_debug_desc': 'Technical problems ki pehchan karne ke liye.',
+            'h_dev_debug_do': '✅ Problem hone pe logs on karein.',
+            'h_dev_debug_dont': '❌ Rozana use mein "Debug Mode" band rakhein.',
+
+            // --- HELP GUIDE CONTENT (GENERAL) ---
+            'h_gen_init_title': '❓ General FAQs',
+            'h_gen_init_desc': 'Project ke baare mein jankari.',
+            'h_gen_init_do': '✅ App ko hamesha update rakhein.',
+            'h_gen_init_dont': '❌ Kisi aur ka backup file use na karein.'
         }
     },
 
