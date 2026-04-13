@@ -879,17 +879,33 @@
                                         <span class="slider"></span>
                                     </span>
                                 </div>
+
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="mobile-show-bottom-nav" data-i18n="lbl_show_bottom_nav">बॉटम नेविगेशन दिखाएं</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="mobile-show-bottom-nav" checked title="बॉटम नेविगेशन" aria-label="बॉटम नेविगेशन">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="mobile-autohide-nav" data-i18n="lbl_autohide_nav">ऑटो-हाईड नेविगेशन</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="mobile-autohide-nav" title="ऑटो-हाईड" aria-label="ऑटो-हाईड">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Category 7.3: Interface & Layout (Advanced) -->
+            <!-- Category 7.3: Flashcard Layout (Advanced) -->
             <div class="category-block">
                 <header class="section-header" role="button" tabindex="0">
-                    <span class="section-icon">🖼️</span>
-                    <span class="section-title" data-i18n="sec_layout_control">इंटरफेस और लेआउट</span>
+                    <span class="section-icon">🎴</span>
+                    <span class="section-title" data-i18n="sec_layout_control">फ्लैशकार्ड लेआउट</span>
                     <span class="chevron">▼</span>
                 </header>
                 <div class="category-content">
@@ -929,29 +945,25 @@
                                 <button class="seg-btn" data-value="vertical" data-i18n="opt_dir_vertical">लंबवत</button>
                             </div>
                         </section>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Category 7.4: Menu Layout (Demo Phase) -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">📋</span>
+                    <span class="section-title" data-i18n="sec_menu_layout">मेन्यू लेआउट</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
                         <section class="settings-group">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="mobile-show-bottom-nav" data-i18n="lbl_show_bottom_nav">बॉटम नेविगेशन दिखाएं</label>
-                                </div>
-                                <span class="switch">
-                                    <input type="checkbox" id="mobile-show-bottom-nav" checked title="बॉटम नेविगेशन" aria-label="बॉटम नेविगेशन">
-                                    <span class="slider"></span>
-                                </span>
-                            </div>
-                        </section>
-
-                        <section class="settings-group">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="mobile-autohide-nav" data-i18n="lbl_autohide_nav">ऑटो-हाईड नेविगेशन</label>
-                                    <p class="group-sub" data-i18n="sub_autohide_nav">स्क्रीन के नीचे टच करने पर ही दिखेगा</p>
-                                </div>
-                                <span class="switch">
-                                    <input type="checkbox" id="mobile-autohide-nav" title="ऑटो-हाईड" aria-label="ऑटो-हाईड">
-                                    <span class="slider"></span>
-                                </span>
+                            <label class="group-label" data-i18n="lbl_menu_demo">मेन्यू स्टाइल (Demo)</label>
+                            <div class="segmented-control" id="mobile-menu-style">
+                                <button class="seg-btn active" data-value="classic" data-i18n="opt_style_classic">क्लासिक</button>
+                                <button class="seg-btn" data-value="modern" data-i18n="opt_style_modern">आधुनिक</button>
+                                <button class="seg-btn" data-value="playful" data-i18n="opt_style_playful">नटखट</button>
                             </div>
                         </section>
                     </div>

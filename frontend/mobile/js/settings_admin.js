@@ -38,7 +38,9 @@ window.SettingsAdmin = {
                 { el: homeEl, val: value, key: 'mobile_show_home' },
                 { el: navEl, val: value, key: 'mobile_show_nav' },
                 { el: settingsEl, val: value, key: 'mobile_show_settings' },
-                { el: document.getElementById('mobile-show-autoplay-nav'), val: value, key: 'mobile_show_autoplay_nav' }
+                { el: document.getElementById('mobile-show-autoplay-nav'), val: value, key: 'mobile_show_autoplay_nav' },
+                { el: document.getElementById('mobile-show-bottom-nav'), val: value, key: 'mobile_show_bottom_nav' },
+                { el: document.getElementById('mobile-autohide-nav'), val: value, key: 'mobile_autohide_nav' }
             ];
 
             targets.forEach(item => {
@@ -88,6 +90,8 @@ window.SettingsAdmin = {
             { id: 'mobile-show-nav', key: 'mobile_show_nav', i18n: 'lbl_show_nav' },
             { id: 'mobile-show-settings', key: 'mobile_show_settings', i18n: 'lbl_show_settings' },
             { id: 'mobile-show-autoplay-nav', key: 'mobile_show_autoplay_nav', i18n: 'lbl_show_autoplay_nav' },
+            { id: 'mobile-show-bottom-nav', key: 'mobile_show_bottom_nav', i18n: 'lbl_show_bottom_nav' },
+            { id: 'mobile-autohide-nav', key: 'mobile_autohide_nav', i18n: 'lbl_autohide_nav' },
             { id: 'mobile-master-nav', key: 'mobile_master_nav', i18n: 'lbl_master_nav' }
         ];
 
@@ -120,7 +124,7 @@ window.SettingsAdmin = {
                 }
 
                 // Handle Navigation Control logic (Master/Sub/Exclusive)
-                const isNavControl = t.id.startsWith('mobile-show-') || t.id === 'mobile-master-nav';
+                const isNavControl = t.id.startsWith('mobile-show-') || t.id === 'mobile-autohide-nav' || t.id === 'mobile-master-nav';
                 if (isNavControl) {
                     window.SettingsAdmin.syncNavigationControl(t.id, val);
                 }
@@ -151,7 +155,8 @@ window.SettingsAdmin = {
             { id: 'mobile-flashcard-nav-dir', key: 'mobile_flashcard_nav_dir' },
             { id: 'mobile-grid-nav-dir', key: 'mobile_grid_nav_dir' },
             { id: 'mobile-view-mode', key: 'mobile_view_mode' },
-            { id: 'mobile-three-nav-dir', key: 'mobile_three_nav_dir' }
+            { id: 'mobile-three-nav-dir', key: 'mobile_three_nav_dir' },
+            { id: 'mobile-menu-style', key: 'mobile_menu_style' }
         ];
 
         const updateAlignmentVisibility = () => {
@@ -182,6 +187,7 @@ window.SettingsAdmin = {
                     if (ctrl.id.includes('flashcard')) labelKey = 'lbl_flashcard_nav';
                     if (ctrl.id.includes('grid')) labelKey = 'lbl_grid_nav';
                     if (ctrl.id.includes('three-nav')) labelKey = 'lbl_three_nav';
+                    if (ctrl.id.includes('menu-style')) labelKey = 'lbl_menu_demo';
 
                     // Dynamic visibility toggle if View Mode changed
                     if (ctrl.id === 'mobile-view-mode') {
@@ -195,10 +201,7 @@ window.SettingsAdmin = {
         });
 
         // Layout & View Toggles
-        const layoutToggles = [
-            { id: 'mobile-show-bottom-nav', key: 'mobile_show_bottom_nav' },
-            { id: 'mobile-autohide-nav', key: 'mobile_autohide_nav' }
-        ];
+        const layoutToggles = [];
 
         layoutToggles.forEach(t => {
             const el = document.getElementById(t.id);

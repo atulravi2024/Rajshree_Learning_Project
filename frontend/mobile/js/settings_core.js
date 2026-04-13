@@ -154,6 +154,7 @@ window.SettingsCore = {
         this.setSegmentedValue('mobile-three-nav-dir', threeNavDir);
         this.setSegmentedValue('mobile-flashcard-nav-dir', flashcardNavDir);
         this.setSegmentedValue('mobile-grid-nav-dir', gridNavDir);
+        this.setSegmentedValue('mobile-menu-style', localStorage.getItem('mobile_menu_style') || 'classic');
         this.setCheck('mobile-show-bottom-nav', showBottomNav);
         this.setCheck('mobile-autohide-nav', autoHideNav);
 
