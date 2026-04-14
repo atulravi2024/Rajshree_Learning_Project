@@ -24,12 +24,55 @@
 
 <body>
 
+    <!-- Menu Overlay (Multi-step) -->
+    <div id="menu-overlay" class="mobile-overlay hidden">
+        <div class="menu-header">
+            <button class="menu-back-btn hidden" id="menu-back" onclick="backMenu()">⬅️ <span data-i18n="btn_back">वापस</span></button>
+            <h2 class="menu-title" id="menu-title" data-i18n="menu_title">विषय चुनें</h2>
+            <button class="menu-close-btn" onclick="closeMenu()">✕</button>
+        </div>
+        
+        <div class="menu-content">
+            <!-- Step 1: Main Categories -->
+            <div id="menu-step-1" class="menu-step">
+                <div class="menu-grid">
+                    <div class="menu-card vyanjan" onclick="showMobileCategory('varnamala')">
+                        <div class="menu-card-icon">📖</div>
+                        <div class="menu-card-label">वर्णमाला</div>
+                    </div>
+                    <div class="menu-card swar" onclick="showMobileCategory('sankhya')">
+                        <div class="menu-card-icon">🧮</div>
+                        <div class="menu-card-label">गणित</div>
+                    </div>
+                    <div class="menu-card samyukt" onclick="showMobileCategory('names')">
+                        <div class="menu-card-icon">🌎</div>
+                        <div class="menu-card-label">मेरा संसार</div>
+                    </div>
+                    <div class="menu-card magic" onclick="showMobileCategory('games')">
+                        <div class="menu-card-icon">🎮</div>
+                        <div class="menu-card-label">खेल-कूद</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Sub Categories -->
+            <div id="menu-step-2" class="menu-step hidden">
+                <div class="menu-grid" id="menu-step2-container"></div>
+            </div>
+
+            <!-- Step 3: Deep Categories (Final) -->
+            <div id="menu-step-3" class="menu-step hidden">
+                <div class="menu-grid" id="menu-step3-container"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Welcome Screen -->
     <div id="welcome-screen" class="mobile-overlay">
         <div class="welcome-card">
             <h1 class="welcome-title" data-i18n="welcome_title">नमस्ते राजश्री!</h1>
             <p class="welcome-desc" data-i18n="welcome_desc">सीखने की दुनिया में आपका स्वागत है ✨</p>
-            <div class="start-orb" onclick="startApp()">
+            <div class="start-orb" onclick="openMenu()">
                 <div class="rocket-icon">🚀</div>
                 <span data-i18n="btn_start">शुरू करें</span>
             </div>

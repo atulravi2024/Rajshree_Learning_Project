@@ -47,3 +47,7 @@ html, body {
     touch-action: pan-x pan-y;
     overflow: clip; /* Prevent accidental scroll during zoom attempts */
 }
+/* Utility Classes */
+.no-scroll {
+    overflow: hidden !important;
+}

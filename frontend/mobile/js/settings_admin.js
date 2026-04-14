@@ -55,8 +55,6 @@ window.SettingsAdmin = {
         
         // 2. UI Feedback Layer
         if (container) {
-            container.style.opacity = isMasterEnabled ? '1' : '0.5';
-            container.style.pointerEvents = isMasterEnabled ? 'auto' : 'none';
             container.classList.toggle('nav-locked', !isMasterEnabled);
         }
     },
@@ -163,7 +161,7 @@ window.SettingsAdmin = {
             const viewMode = localStorage.getItem('mobile_view_mode');
             const group = document.getElementById('three-alignment-group');
             if (group) {
-                group.style.display = (viewMode === 'three') ? 'block' : 'none';
+                group.classList.toggle('hidden', viewMode !== 'three');
             }
         };
 
@@ -273,7 +271,7 @@ window.SettingsAdmin = {
         const fill = document.getElementById('storage-fill');
         const used = document.getElementById('storage-used');
         const kbUsed = window.SettingsCore.getTranslation('lbl_kb_used') || 'KB Used';
-        if (fill) fill.style.width = `${percent}%`;
+        if (fill) fill.style.setProperty('--progress', `${percent}%`);
         if (used) used.textContent = `${kb} ${kbUsed}`;
     },
 

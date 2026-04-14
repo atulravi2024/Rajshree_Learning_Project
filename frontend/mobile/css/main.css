@@ -70,6 +70,10 @@ body {
     display: none !important;
 }
 
+.no-scroll {
+    overflow: hidden !important;
+}
+
 /* Navbar */
 .mobile-nav {
     background: var(--glass-bg);
@@ -228,7 +232,7 @@ body {
 }
 
 .emoji-star {
-    color: var(--dynamic-color);
+    color: var(--dynamic-color, #ffd700);
 }
 
 .shape-triangle {
@@ -236,7 +240,7 @@ body {
 }
 
 .shape-container {
-    background: var(--dynamic-color) !important;
+    background: var(--dynamic-color, #ff1493) !important;
 }
 
 #confetti-container {
@@ -253,7 +257,26 @@ body {
 .confetti-piece {
     position: absolute;
     top: -20px;
+    left: var(--left, 50vw);
+    width: var(--size, 10px);
+    height: var(--size, 10px);
+    background-color: var(--color, white);
+    opacity: var(--opacity, 1);
 }
+
+.confetti-piece.is-circle { border-radius: 50%; }
+.confetti-piece.is-triangle {
+    background-color: transparent !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-left: calc(var(--size) / 2) solid transparent;
+    border-right: calc(var(--size) / 2) solid transparent;
+    border-bottom: var(--size) solid var(--color);
+}
+.confetti-piece.is-star {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.confetti-piece.is-square { border-radius: 2px; }
 
 .slide-in-right {
     animation: slideInRight 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
@@ -308,7 +331,7 @@ body {
 
 .progress-bar {
     height: 100%;
-    width: 0%;
+    width: var(--progress, 0%);
     background: linear-gradient(to right, var(--accent-color), var(--primary-color));
     border-radius: 10px;
     transition: width 0.1s linear;
@@ -789,4 +812,141 @@ body {
 .three-vertical .three-in-one-card {
     width: 31%; /* Maintain horizontal size strictly */
     max-height: 28%;
+}
+/* =====================================================
+   Premium Menu Overlay Styling
+   ===================================================== */
+
+#menu-overlay {
+    background: var(--bg-gradient);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 30px;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.menu-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.menu-back-btn, .menu-close-btn {
+    background: var(--glass-bg);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    z-index: 10;
+}
+
+.menu-back-btn {
+    width: auto;
+    border-radius: 20px;
+    padding: 0 15px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.menu-back-btn:active, .menu-close-btn:active {
+    transform: scale(0.9);
+}
+
+.menu-content {
+    width: 100%;
+    padding: 10px 20px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    animation: fadeInScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.menu-card {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+.menu-card:active {
+    transform: scale(0.95);
+    background: white;
+}
+
+.menu-card-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.menu-card-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* Category Specific Colors */
+.menu-card.swar { border-color: #FFDEE9; }
+.menu-card.vyanjan { border-color: #E0F2FE; }
+.menu-card.samyukt { border-color: #F0FFF4; }
+.menu-card.magic { border-color: #FFF9C4; }
+
+/* Menu step transitions */
+.menu-step.hidden {
+    display: none;
+}
+
+/* Ensure mobile nav is below overlay */
+.mobile-nav {
+    z-index: 1000;
+}
+
+#menu-overlay {
+    z-index: 2001; /* Above mobile-nav and welcome-screen */
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .menu-card {
+    background: #1e1e1e;
+    border-color: #333;
+}
+
+.dark-mode .menu-card-label {
+    color: #e2e8f0;
 }

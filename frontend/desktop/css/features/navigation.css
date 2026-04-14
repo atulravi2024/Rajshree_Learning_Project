@@ -18,7 +18,7 @@
 .nav-btn-side:hover svg { filter: drop-shadow(0 0 10px var(--primary-pink)); transform: scale(1.1); }
 
 .progress-container { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); width: 70%; height: 10px; background: rgba(0,0,0,0.05); border-radius: 10px; display: none; overflow: hidden; }
-.progress-bar { height: 100%; width: 0%; background: linear-gradient(to right, #FF69B4, var(--primary-pink)); border-radius: 10px; }
+.progress-bar { height: 100%; width: var(--progress, 0%); background: linear-gradient(to right, #FF69B4, var(--primary-pink)); border-radius: 10px; transition: width 0.1s linear; }
 .card.playing .progress-container { display: block; }
 
 .hidden { display: none !important; }

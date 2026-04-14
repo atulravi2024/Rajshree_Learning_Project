@@ -92,15 +92,15 @@ function updateDisplay() {
     master.classList.remove('grid-1', 'grid-3', 'vertical-scroll', 'fit-screen');
     prevBtn?.classList.remove('large-arrows');
     nextBtn?.classList.remove('large-arrows');
-    master.style.gridTemplateColumns = '';
-    master.style.gridTemplateRows = '';
-    master.style.gridAutoRows = '';
-    document.body.style.overflow = 'hidden';
+    master.style.setProperty('--cols', '');
+    master.style.setProperty('--rows', '');
+    master.style.setProperty('--auto-rows', '');
+    document.body.classList.add('no-scroll');
 
     if (window.currentLayout === 'all') {
         master.classList.add('vertical-scroll'); prevBtn?.classList.add('hidden'); nextBtn?.classList.add('hidden');
         cards.forEach(card => card.classList.remove('hidden', 'is-flipped'));
-        document.body.style.overflow = 'auto';
+        document.body.classList.remove('no-scroll');
     } else if (window.currentLayout === 'fit') {
         master.classList.add('fit-screen'); prevBtn?.classList.add('hidden'); nextBtn?.classList.add('hidden');
         const count = cards.length;
@@ -114,8 +114,8 @@ function updateDisplay() {
         else if (count > 4) cols = 4;
         else cols = count;
         const rows = Math.ceil(count / cols);
-        master.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
-        master.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+        master.style.setProperty('--cols', `repeat(${cols}, 1fr)`);
+        master.style.setProperty('--rows', `repeat(${rows}, 1fr)`);
         cards.forEach(card => {
             card.classList.remove('hidden', 'is-flipped');
             if (isCounting100) card.classList.add('icon-only-layout');

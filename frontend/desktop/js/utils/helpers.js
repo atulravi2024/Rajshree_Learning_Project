@@ -46,13 +46,13 @@ function playSound(file, card) {
     if (bar) {
         window.currentAudio.addEventListener('timeupdate', () => {
             const percent = (window.currentAudio.currentTime / window.currentAudio.duration) * 100;
-            bar.style.width = percent + '%';
+            bar.style.setProperty('--progress', percent + '%');
         });
         window.currentAudio.addEventListener('ended', () => {
             if (window.ChildSafetyLock) window.ChildSafetyLock.unlock();
             card.classList.remove('playing');
             document.body.classList.remove('audio-active');
-            bar.style.width = '0%';
+            bar.style.setProperty('--progress', '0%');
             if (window.isSlideshowActive) handleSlideshowTransition();
         });
         window.currentAudio.addEventListener('error', () => {

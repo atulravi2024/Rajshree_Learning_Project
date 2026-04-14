@@ -95,7 +95,7 @@
 .container.vertical-scroll { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; width: 100% !important; gap: 15px !important; overflow-y: auto !important; overflow-x: hidden !important; height: 100% !important; align-content: start !important; padding: 10px !important; box-sizing: border-box !important; }
 .vertical-scroll .card { height: 250px !important; display: flex; flex-direction: column; }
 
-.container.fit-screen { display: grid !important; width: 100vw; height: 100%; gap: 5px; overflow: hidden !important; margin: 0; padding: 0; align-content: stretch; }
+.container.fit-screen { display: grid !important; width: 100vw; height: 100%; gap: 5px; overflow: hidden !important; margin: 0; padding: 0; align-content: stretch; grid-template-columns: var(--cols, repeat(4, 1fr)) !important; grid-template-rows: var(--rows, repeat(auto-fill, 1fr)) !important; }
 .fit-screen .card { height: 100% !important; max-width: none; max-height: none; margin: 0; }
 
 /* --- AUDIO ACTIVE STATE (Focused Learning) --- */

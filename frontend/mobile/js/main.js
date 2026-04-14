@@ -390,7 +390,7 @@ const stopCurrentAudio = () => {
         if (card) {
             card.classList.remove('playing');
             const bar = card.querySelector('.progress-bar');
-            if (bar) bar.style.width = '0%';
+            if (bar) bar.style.setProperty('--progress', '0%');
         }
         currentAudio = null;
     }
@@ -416,7 +416,7 @@ const playSound = (audioPath, card) => {
         audio.addEventListener('timeupdate', () => {
             if (bar && currentAudio === audio) {
                 const percent = (audio.currentTime / audio.duration) * 100;
-                bar.style.width = percent + '%';
+                bar.style.setProperty('--progress', percent + '%');
             }
         });
     }
@@ -426,7 +426,7 @@ const playSound = (audioPath, card) => {
             if (card) {
                 card.classList.remove('playing');
                 const bar = card.querySelector('.progress-bar');
-                if (bar) bar.style.width = '0%';
+                if (bar) bar.style.setProperty('--progress', '0%');
             }
             
             currentAudio = null;
@@ -692,27 +692,15 @@ const triggerConfetti = () => {
         const shape = shapes[Math.floor(Math.random() * shapes.length)];
         
         piece.className = 'confetti-piece';
-        Object.assign(piece.style, {
-            left: Math.random() * 100 + 'vw',
-            width: size + 'px',
-            height: size + 'px',
-            backgroundColor: color,
-            opacity: Math.random() * 0.5 + 0.5
-        });
+        piece.style.setProperty('--left', Math.random() * 100 + 'vw');
+        piece.style.setProperty('--size', size + 'px');
+        piece.style.setProperty('--color', color);
+        piece.style.setProperty('--opacity', Math.random() * 0.5 + 0.5);
         
-        if (shape === 'circle') piece.style.borderRadius = '50%';
-        else if (shape === 'triangle') {
-            piece.style.backgroundColor = 'transparent';
-            piece.style.width = '0';
-            piece.style.height = '0';
-            piece.style.borderLeft = (size/2) + 'px solid transparent';
-            piece.style.borderRight = (size/2) + 'px solid transparent';
-            piece.style.borderBottom = size + 'px solid ' + color;
-        } else if (shape === 'star') {
-            piece.style.clipPath = 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)';
-        } else {
-            piece.style.borderRadius = '2px';
-        }
+        if (shape === 'circle') piece.classList.add('is-circle');
+        else if (shape === 'triangle') piece.classList.add('is-triangle');
+        else if (shape === 'star') piece.classList.add('is-star');
+        else if (shape === 'square') piece.classList.add('is-square');
 
         const duration = Math.random() * 2.5 + 2.5;
         const drift = (Math.random() - 0.5) * 300;
@@ -779,6 +767,274 @@ window.startApp = startApp;
 window.goHome = goHome;
 window.triggerCelebration = triggerCelebration;
 window.toggleAutoplay = toggleAutoplay;
+
+/* =====================================================
+   Mobile Menu System Logic
+   ===================================================== */
+
+const menuState = {
+    currentStep: 1,
+    history: []
+};
+
+window.openMenu = () => {
+    playInteractionSFX();
+    const menu = document.getElementById('menu-overlay');
+    const welcome = document.getElementById('welcome-screen');
+    
+    if (menu) menu.classList.remove('hidden');
+    if (welcome) welcome.classList.add('hidden');
+    
+    // Reset to step 1
+    menuState.currentStep = 1;
+    menuState.history = [];
+    updateMenuUI();
+
+    // Play profile-specific welcome sound matching the user's request
+    const profile = localStorage.getItem('rajshree_active_profile') || 'rajshree';
+    const welcomePath = `system/welcome/welcome_${profile}.mp3`;
+    
+    playSound(welcomePath).catch(() => {
+        console.warn(`Profile audio missing: ${welcomePath}, trying generic.`);
+        playSound('system/welcome/welcome_generic.mp3').catch(() => {
+            playSound('system/welcome_short.mp3');
+        });
+    });
+};
+
+window.closeMenu = () => {
+    playInteractionSFX();
+    const menu = document.getElementById('menu-overlay');
+    if (menu) menu.classList.add('hidden');
+    // Always return to home if menu is closed (since it's a mandatory step now)
+    goHome();
+};
+
+window.backMenu = () => {
+    if (menuState.history.length > 0) {
+        playInteractionSFX();
+        const prevStep = menuState.history.pop();
+        menuState.currentStep = prevStep.step;
+        updateMenuUI();
+    } else {
+        // If at step 1 and back clicked, go home
+        closeMenu();
+    }
+};
+
+const updateMenuUI = () => {
+    const steps = ['menu-step-1', 'menu-step-2', 'menu-step-3'];
+    steps.forEach((s, i) => {
+        const el = document.getElementById(s);
+        if (el) el.classList.toggle('hidden', (i + 1) !== menuState.currentStep);
+    });
+
+    const backBtn = document.getElementById('menu-back');
+    // Show back button always, but step 1 will just go back to welcome
+    if (backBtn) backBtn.classList.remove('hidden');
+
+    const title = document.getElementById('menu-title');
+    if (title) {
+        if (menuState.currentStep === 1) title.innerText = 'विषय चुनें';
+    }
+};
+
+window.showMobileCategory = (titleCat) => {
+    playInteractionSFX();
+    menuState.history.push({ step: 1 });
+    menuState.currentStep = 2;
+    updateMenuUI();
+
+    const title = document.getElementById('menu-title');
+    const container = document.getElementById('menu-step2-container');
+    if (!container) return;
+    container.innerHTML = '';
+
+    // Play intro audio matching desktop IDs
+    const introFiles = {
+        'varnamala': 'system/intros/intro_varnamala.mp3',
+        'sankhya': 'system/intros/intro_ganit.mp3',
+        'names': 'system/intros/intro_names.mp3',
+        'games': 'system/intros/intro_games.mp3'
+    };
+    if (introFiles[titleCat]) playSound(introFiles[titleCat]);
+
+    if (titleCat === 'varnamala') {
+        if (title) title.innerText = 'वर्णमाला के भाग';
+        container.innerHTML = 
+            createMenuCard('अ', 'स्वर (Swar)', "showMobileSubCategory('swar')", 'vyanjan') +
+            createMenuCard('क', 'व्यंजन (Vyanjan)', "showMobileSubCategory('vyanjan')", 'swar') +
+            createMenuCard('🔗', 'संयुक्त अक्षर', "showMobileSubCategory('samyukt')", 'samyukt') +
+            createMenuCard('✍️', 'मात्रा ज्ञान', "showMobileSubCategory('matra')", 'magic');
+    } else if (titleCat === 'sankhya') {
+        if (title) title.innerText = 'गणित (Math)';
+        container.innerHTML = 
+            createMenuCard('🧮', 'गिनती (Ginti)', "showMobileSubCategory('numbers_main')", 'swar') +
+            createMenuCard('📚', 'पहाड़े (Pahade)', "showMobileSubCategory('tables_main')", 'vyanjan') +
+            createMenuCard('📐', 'आकार-तुलना', "showMobileSubCategory('shapes_fun')", 'samyukt');
+    } else if (titleCat === 'names') {
+        if (title) title.innerText = 'मेरा संसार';
+        container.innerHTML = 
+            createMenuCard('👨‍👩‍👧‍👦', 'हम और शरीर', "showMobileSubCategory('family_body')", 'swar') + 
+            createMenuCard('🦁', 'पशु और पक्षी', "showMobileSubCategory('animals_birds')", 'vyanjan') + 
+            createMenuCard('🍎', 'खान-पान', "showMobileSubCategory('food_drinks')", 'samyukt') + 
+            createMenuCard('🏡', 'आस-पास', "showMobileSubCategory('around_us')", 'magic') + 
+            createMenuCard('🌍', 'प्रकृति-समय', "showMobileSubCategory('nature_time')", 'swar') + 
+            createMenuCard('🎨', 'रंग और मज़ा', "showMobileSubCategory('colors_fun')", 'vyanjan');
+    } else if (titleCat === 'games') {
+        if (title) title.innerText = 'खेल-कूद (Games)';
+        container.innerHTML = 
+            createMenuCard('🕵️', 'पहचानो कौन', "selectMobileCategory('games_identify')", 'vyanjan') + 
+            createMenuCard('🧩', 'सही मिलान', "selectMobileCategory('games_match')", 'swar') + 
+            createMenuCard('❓', 'पहेलियाँ', "selectMobileCategory('games_quiz')", 'magic') + 
+            createMenuCard('🃏', 'मेमोरी गेम', "selectMobileCategory('games_memory')", 'samyukt');
+    }
+};
+
+window.showMobileSubCategory = (mainCat) => {
+    // Check if it's a direct category
+    const directCats = ['swar', 'vyanjan', 'samyukt', 'matra', 'nature_final', 'directions_main', 'space_main', 'festivals_main'];
+    if (directCats.includes(mainCat)) {
+        selectMobileCategory(mainCat);
+        return;
+    }
+
+    playInteractionSFX();
+    menuState.history.push({ step: 2 });
+    menuState.currentStep = 3;
+    updateMenuUI();
+
+    const title = document.getElementById('menu-title');
+    const container = document.getElementById('menu-step3-container');
+    if (!container) return;
+    container.innerHTML = '';
+
+    if (mainCat === 'numbers_main') {
+        if (title) title.innerText = 'गिनती (Numbers)';
+        container.innerHTML = 
+            createMenuCard('🧮', '१ - १०', "selectMobileCategory('numbers_10')", 'swar') + 
+            createMenuCard('💯', '१ - १००', "selectMobileCategory('numbers_100')", 'vyanjan');
+    } else if (mainCat === 'tables_main') {
+        if (title) title.innerText = 'पहाड़े (Tables)';
+        container.innerHTML = 
+            createMenuCard('📝', 'पद्धति १', "selectMobileCategory('tables_10_m1')", 'samyukt') + 
+            createMenuCard('🎵', 'पद्धति २', "selectMobileCategory('tables_10_m2')", 'magic');
+    } else if (mainCat === 'shapes_fun') {
+        if (title) title.innerText = 'आकार और तुलना';
+        container.innerHTML = 
+            createMenuCard('📐', 'आकार (Shapes)', "selectMobileCategory('shapes')", 'magic') + 
+            createMenuCard('⚖️', 'तुलना', "selectMobileCategory('comparisons')", 'vyanjan');
+    } else if (mainCat === 'family_body') {
+        if (title) title.innerText = 'हम और शरीर';
+        container.innerHTML = 
+            createMenuCard('👨‍👩‍👧', 'रिश्ते', "selectMobileCategory('family')", 'swar') + 
+            createMenuCard('👃', 'शरीर के अंग', "selectMobileCategory('body_parts')", 'magic') + 
+            createMenuCard('🌟', 'अच्छी आदतें', "selectMobileCategory('habits')", 'vyanjan') + 
+            createMenuCard('🤩', 'भावनाएं', "selectMobileCategory('emotions')", 'samyukt') + 
+            createMenuCard('🤸', 'क्रियाएँ', "selectMobileCategory('actions')", 'swar');
+    } else if (mainCat === 'animals_birds') {
+        if (title) title.innerText = 'पशु और पक्षी';
+        container.innerHTML = 
+            createMenuCard('🐄', 'पालतू', "selectMobileCategory('animals_domestic')", 'samyukt') + 
+            createMenuCard('🦁', 'जंगली', "selectMobileCategory('animals_wild')", 'vyanjan') + 
+            createMenuCard('🦎', 'छोटे जीव', "selectMobileCategory('animals_smaller')", 'magic') + 
+            createMenuCard('🦜', 'पक्षी', "selectMobileCategory('birds')", 'swar') + 
+            createMenuCard('🦋', 'कीड़े-मकोड़े', "selectMobileCategory('insects')", 'magic');
+    } else if (mainCat === 'food_drinks') {
+        if (title) title.innerText = 'खान-पान';
+        container.innerHTML = 
+            createMenuCard('🍎', 'फल (Fruits)', "selectMobileCategory('fruits')", 'swar') + 
+            createMenuCard('🥦', 'सब्जियाँ', "selectMobileCategory('vegetables')", 'samyukt') + 
+            createMenuCard('😋', 'खाना-पीना', "selectMobileCategory('food')", 'magic');
+    } else if (mainCat === 'around_us') {
+        if (title) title.innerText = 'हमारा आस-पास';
+        container.innerHTML = 
+            createMenuCard('🏠', 'घर का सामान', "selectMobileCategory('objects')", 'swar') + 
+            createMenuCard('👗', 'कपड़े', "selectMobileCategory('clothes')", 'vyanjan') + 
+            createMenuCard('🧸', 'खिलौने', "selectMobileCategory('toys')", 'magic') + 
+            createMenuCard('🚌', 'यातायात', "selectMobileCategory('vehicles')", 'samyukt') + 
+            createMenuCard('🏫', 'जगहें', "selectMobileCategory('places')", 'swar') + 
+            createMenuCard('👨‍🚒', 'सहायक', "selectMobileCategory('helpers')", 'vyanjan');
+    } else if (mainCat === 'nature_time') {
+        if (title) title.innerText = 'प्रकृति और समय';
+        container.innerHTML = 
+            createMenuCard('⛅', 'मौसम', "selectMobileCategory('nature')", 'swar') + 
+            createMenuCard('🚀', 'अंतरिक्ष', "selectMobileCategory('space')", 'vyanjan') + 
+            createMenuCard('📅', 'दिन', "selectMobileCategory('days_week')", 'magic') + 
+            createMenuCard('🗓️', 'महीने', "selectMobileCategory('months_year')", 'samyukt') + 
+            createMenuCard('🧭', 'दिशाएं', "selectMobileCategory('directions')", 'swar') + 
+            createMenuCard('🌿', 'प्राकृतिक रंग', "selectMobileCategory('colors_natural')", 'vyanjan');
+    } else if (mainCat === 'colors_fun') {
+        if (title) title.innerText = 'रंग और मज़ा';
+        container.innerHTML = 
+            createMenuCard('🌈', 'रंगों का संसार', "showMobileSubCategory('colors_main')", 'magic') + 
+            createMenuCard('⚽', 'खेल', "selectMobileCategory('games')", 'swar') + 
+            createMenuCard('🥁', 'वाद्य यंत्र', "selectMobileCategory('instruments')", 'vyanjan') + 
+            createMenuCard('🔔', 'आवाज़ें', "selectMobileCategory('sounds')", 'magic') + 
+            createMenuCard('🪔', 'त्योहार', "selectMobileCategory('festivals')", 'samyukt') + 
+            createMenuCard('🧚‍♀️', 'जादुई दुनिया', "selectMobileCategory('magic')", 'swar') + 
+            createMenuCard('💭', 'कल्पना', "selectMobileCategory('imagination')", 'vyanjan');
+    } else if (mainCat === 'colors_main') {
+        if (title) title.innerText = 'रंगों का संसार';
+        container.innerHTML = 
+            createMenuCard('❤️', 'प्राथमिक (Primary)', "selectMobileCategory('colors_primary')", 'swar') + 
+            createMenuCard('💚', 'द्वितीयक (Secondary)', "selectMobileCategory('colors_secondary')", 'vyanjan') + 
+            createMenuCard('🌿', 'प्राकृतिक (Natural)', "selectMobileCategory('colors_natural')", 'samyukt') + 
+            createMenuCard('🌈', 'रंगों का सागर', "showMobileSubCategory('colors_world_main')", 'magic');
+    } else if (mainCat === 'colors_world_main') {
+        if (title) title.innerText = 'रंगों का सागर';
+        container.innerHTML = 
+            createMenuCard('🌸', 'गुलाबी और लाल', "selectMobileCategory('colors_pink_red')", 'swar') + 
+            createMenuCard('🌊', 'नीले और हरे', "selectMobileCategory('colors_blue_green')", 'vyanjan') + 
+            createMenuCard('🟫', 'भूरे और बादामी', "selectMobileCategory('colors_brown_beige')", 'samyukt') + 
+            createMenuCard('✨', 'चमकीले और धातु', "selectMobileCategory('colors_metallic')", 'vyanjan') + 
+            createMenuCard('🔮', 'अन्य विशेष रंग', "selectMobileCategory('colors_special')", 'swar');
+    }
+};
+
+window.selectMobileCategory = (category) => {
+    stopCurrentAudio();
+    playInteractionSFX();
+    
+    // Close menu
+    const menu = document.getElementById('menu-overlay');
+    if (menu) menu.classList.add('hidden');
+
+    // Update state and load
+    state.currentCategoryName = category;
+    state.currentIndex = 0;
+    localStorage.setItem('mobile_currentCategory', category);
+    localStorage.setItem('mobile_currentIndex', 0);
+    
+    loadData();
+    startApp(true); // Silent start (to avoid double welcome sound)
+
+    // Play final intro sound matching desktop
+    const finalIntroFiles = {
+        'swar': 'system/intros/final_swar.mp3', 'vyanjan': 'system/intros/final_vyanjan.mp3', 'samyukt': 'system/intros/final_samyukt.mp3', 'matra': 'system/intros/final_matra.mp3',
+        'numbers_10': 'system/intros/final_numbers_10.mp3', 'numbers_100': 'system/intros/final_numbers_100.mp3',
+        'tables_10_m1': 'system/intros/final_tables_m1.mp3', 'tables_10_m2': 'system/intros/final_tables_m2.mp3',
+        'shapes': 'system/intros/final_shapes.mp3', 'comparisons': 'system/intros/final_comparisons.mp3',
+        'family': 'system/intros/final_family.mp3', 'body_parts': 'system/intros/final_body_parts.mp3',
+        'animals_domestic': 'system/intros/final_animals_domestic.mp3', 'animals_wild': 'system/intros/final_animals_wild.mp3',
+        'fruits': 'system/intros/final_fruits.mp3', 'vegetables': 'system/intros/final_vegetables.mp3',
+        'habits': 'system/intros/final_habits.mp3', 'days_week': 'system/intros/final_days_week.mp3', 'months_year': 'system/intros/final_months_year.mp3',
+        'nature': 'system/intros/final_nature.mp3', 'directions': 'system/intros/final_directions.mp3', 'space': 'system/intros/final_nature.mp3', 'festivals': 'system/intros/final_nature.mp3',
+        'colors_primary': 'system/intros/final_colors_primary.mp3', 'colors_secondary': 'system/intros/final_colors_secondary.mp3', 'colors_natural': 'system/intros/final_colors_natural.mp3',
+        'colors_pink_red': 'system/intros/sub_pink_red.mp3', 'colors_blue_green': 'system/intros/sub_blue_green.mp3', 'colors_brown_beige': 'system/intros/sub_brown_beige.mp3', 'colors_metallic': 'system/intros/sub_metallic.mp3', 'colors_special': 'system/intros/sub_special.mp3'
+    };
+
+    if (finalIntroFiles[category]) {
+        setTimeout(() => playSound(finalIntroFiles[category]), 300);
+    }
+};
+
+const createMenuCard = (icon, label, onClick, colorClass = '') => {
+    return `<div class="menu-card ${colorClass}" onclick="${onClick}">
+                <div class="menu-card-icon">${icon}</div>
+                <div class="menu-card-label">${label}</div>
+            </div>`;
+};
 
 // Re-evaluate settings on visibility or focus return
 window.addEventListener('focus', () => {
