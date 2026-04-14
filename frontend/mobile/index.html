@@ -7,11 +7,13 @@
     <meta name="description" content="राजश्री हिंदी - मोबाइल ऐप। Rajshree Hindi Learning Mobile App for preschool children.">
     <title>राजश्री हिंदी - मोबाइल | Rajshree Hindi Mobile 🎒</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/menu-styles.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Hind:wght@400;700&family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <script src="js/theme-engine.js"></script>
+    <script src="js/menu-engine.js"></script>
     <script src="js/i18n.js"></script>
     <script>
         window.addEventListener('resize', () => {
@@ -25,10 +27,18 @@
 <body>
 
     <!-- Menu Overlay (Multi-step) -->
-    <div id="menu-overlay" class="mobile-overlay hidden">
+    <div id="menu-overlay" class="mobile-overlay hidden" data-menu-style="classic">
         <div class="menu-header">
-            <button class="menu-back-btn hidden" id="menu-back" onclick="backMenu()">⬅️ <span data-i18n="btn_back">वापस</span></button>
-            <h2 class="menu-title" id="menu-title" data-i18n="menu_title">विषय चुनें</h2>
+            <button class="menu-back-btn" id="menu-back" onclick="backMenu()">⬅️ <span data-i18n="btn_back">वापस</span></button>
+            
+            <div class="menu-branding">
+                <div class="branding-mini">
+                    <span class="branding-icon-main">👑</span>
+                    <h2 class="menu-title" id="menu-title" data-i18n="menu_title">विषय चुनें</h2>
+                </div>
+                <p class="menu-subtitle" data-i18n="welcome_desc">सीखने की दुनिया ✨</p>
+            </div>
+
             <button class="menu-close-btn" onclick="closeMenu()">✕</button>
         </div>
         
@@ -36,11 +46,11 @@
             <!-- Step 1: Main Categories -->
             <div id="menu-step-1" class="menu-step">
                 <div class="menu-grid">
-                    <div class="menu-card vyanjan" onclick="showMobileCategory('varnamala')">
+                    <div class="menu-card swar" onclick="showMobileCategory('varnamala')">
                         <div class="menu-card-icon">📖</div>
                         <div class="menu-card-label">वर्णमाला</div>
                     </div>
-                    <div class="menu-card swar" onclick="showMobileCategory('sankhya')">
+                    <div class="menu-card vyanjan" onclick="showMobileCategory('sankhya')">
                         <div class="menu-card-icon">🧮</div>
                         <div class="menu-card-label">गणित</div>
                     </div>
