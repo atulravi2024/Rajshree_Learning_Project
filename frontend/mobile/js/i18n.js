@@ -76,6 +76,7 @@ window.RAJSHREE_I18N = {
             'sec_help_admin': 'एडमिन सहायता',
             'sec_help_dev': 'डेवलपर सहायता',
             'sec_help_general': 'सामान्य सहायता',
+            'sec_demo_settings': 'डेमो सेटिंग्स (Demo)',
             'lbl_usage_guide': 'एडमिन गाइड',
             'sub_usage_guide': 'ऐप को सुरक्षित रखने के तरीके',
 
@@ -99,6 +100,7 @@ window.RAJSHREE_I18N = {
             'lbl_forgot_pin_demo': 'पिन भूल गए? (Demo)',
             'lbl_child_lock': 'चाइल्ड लॉक',
             'lbl_cloud_sync': 'क्लाउड बैकअप',
+            'lbl_cloud_simulation': 'क्लाउड सिमुलेशन (Demo)',
             'lbl_version': 'वर्शन जानकारी',
             'lbl_reset_all': 'पूरा डेटा रीसेट करें',
             'lbl_lock_alerts': 'सुरक्षा अलर्ट',
@@ -202,6 +204,7 @@ window.RAJSHREE_I18N = {
             'sub_interactive_shadows': 'बटन्स पर 3D इफेक्ट',
             'sub_particles': 'सफलता पर सुंदर एनीमेशन',
             'sub_nav_control': 'मुख्य स्क्रीन पर बटनों की विजिबिलिटी कंट्रोल करें',
+            'sub_cloud_simulation': 'डेमो डेटा सिंक का अनुभव करने के लिए',
 
             // Buttons
             'btn_add_new': 'नया जोड़ें',
@@ -372,6 +375,7 @@ window.RAJSHREE_I18N = {
             'sec_help_admin': 'Admin Help',
             'sec_help_dev': 'Developer Help',
             'sec_help_general': 'General help',
+            'sec_demo_settings': 'Demo Settings (Experimental)',
             'lbl_usage_guide': 'Admin Guide',
             'sub_usage_guide': 'How to keep the app secure',
 
@@ -395,6 +399,7 @@ window.RAJSHREE_I18N = {
             'lbl_forgot_pin_demo': 'Forgot PIN? (Demo)',
             'lbl_child_lock': 'Child Lock',
             'lbl_cloud_sync': 'Cloud Backup',
+            'lbl_cloud_simulation': 'Cloud Simulation (Demo)',
             'lbl_version': 'Version Info',
             'lbl_reset_all': 'Reset All Data',
             'lbl_lock_alerts': 'Security Alerts',
@@ -496,6 +501,7 @@ window.RAJSHREE_I18N = {
             'sub_interactive_shadows': '3D depth on interactive elements',
             'sub_particles': 'Success celebration animations',
             'sub_nav_control': 'Control button visibility on the learning screen',
+            'sub_cloud_simulation': 'Experience demo data syncing simulation',
 
             // Buttons
             'btn_add_new': 'Add New',
@@ -666,6 +672,7 @@ window.RAJSHREE_I18N = {
             'sec_help_admin': 'Admin Help',
             'sec_help_dev': 'Developer Help',
             'sec_help_general': 'General help',
+            'sec_demo_settings': 'Demo Settings (Experimental)',
             'lbl_usage_guide': 'Admin Guide',
             'sub_usage_guide': 'App ko surakshit rakhne ke tips',
 
@@ -689,6 +696,7 @@ window.RAJSHREE_I18N = {
             'lbl_forgot_pin_demo': 'PIN bhool gaye? (Demo)',
             'lbl_child_lock': 'Child Lock',
             'lbl_cloud_sync': 'Cloud Backup',
+            'lbl_cloud_simulation': 'Cloud Simulation (Demo)',
             'lbl_clear_cache': 'Cache Saaf Karein',
             'lbl_version': 'Version Mahiti',
             'lbl_reset_all': 'Poora Data Reset Karein',
@@ -791,6 +799,7 @@ window.RAJSHREE_I18N = {
             'sub_interactive_shadows': '3D interactive depth',
             'sub_particles': 'Sunder success animation',
             'sub_nav_control': 'Main screen ke button ki visibility control karein',
+            'sub_cloud_simulation': 'Demo data sync experience ke liye',
 
             // Buttons
             'btn_add_new': 'Naya Jodein',
