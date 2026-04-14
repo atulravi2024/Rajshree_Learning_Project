@@ -82,9 +82,9 @@ body.v-dragging * {
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
-    position: sticky;
+        position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 2000;
     background: var(--surface-color);
     transition: all 0.3s ease;
     border-bottom: 1px solid transparent;
@@ -126,9 +126,9 @@ body.v-dragging * {
     gap: 8px;
     overflow-x: auto;
     padding: 10px 15px;
-    position: sticky;
+        position: sticky;
     top: 50px; /* Header height offset */
-    z-index: 999;
+    z-index: 1900;
     background: var(--surface-color);
     scroll-behavior: smooth;
     -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, black 8%, black 92%, rgba(0,0,0,0) 100%);
@@ -224,6 +224,7 @@ body.tabs-hidden .category-tabs {
 .category-block {
     scroll-margin-top: var(--nav-offset);
     transition: all 0.3s ease;
+    margin-bottom: 15px; /* Added breathing room between settings blocks */
 }
 
 
@@ -240,9 +241,9 @@ body.tabs-hidden .category-tabs {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: var(--shadow-soft);
-    border: 1.5px solid var(--glow-color);
+        border: 1.5px solid var(--glow-color);
     position: relative;
-    z-index: 1100 !important;
+    z-index: 10 !important;
     pointer-events: auto !important;
     -webkit-tap-highlight-color: transparent;
     -webkit-user-select: none;
