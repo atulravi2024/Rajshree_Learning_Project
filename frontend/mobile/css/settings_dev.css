@@ -1,0 +1,74 @@
+/* =====================================================
+   Mobile Settings - Developer Specific Styles
+   ===================================================== */
+
+.btn-cache-clear { background: #64748b !important; }
+
+/* Dev Tools specific overrides */
+#cat-developer .settings-group {
+    border-style: dashed;
+}
+
+/* Device & Data Enhancement Styles */
+.diag-list {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0;
+}
+
+.diag-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.85rem;
+}
+
+.diag-key { font-weight: 700; color: #64748b; }
+.diag-val { font-family: monospace; color: var(--primary-color); }
+
+.storage-meter-container {
+    margin-top: 10px;
+}
+
+.storage-bar {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 8px 0;
+}
+
+.storage-fill {
+    height: 100%;
+    background: var(--primary-gradient);
+    width: var(--progress, 0%);
+    transition: width 1s ease-out;
+}
+
+.storage-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #94a3b8;
+}
+
+.btn-danger-zone {
+    background: #ef4444 !important;
+    margin-top: 15px !important;
+}
+
+.import-label {
+    display: block;
+    text-align: center;
+    background: #fff;
+    border: 1.5px dashed var(--primary-color);
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+#import-file { display: none; }

@@ -1,0 +1,31 @@
+/* =====================================================
+   Mobile Settings - Admin Specific Styles
+   ===================================================== */
+
+.btn-feedback { background: #8b5cf6 !important; }
+
+/* Update Section Enhancements */
+.update-header-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.version-text {
+    margin: 2px 0;
+}
+
+.btn-release-notes {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    color: var(--primary-color);
+}
+
+.update-toggle-row {
+    margin-bottom: 10px;
+}
+
+.update-toggle-row-spaced {
+    margin-bottom: 12px;
+}

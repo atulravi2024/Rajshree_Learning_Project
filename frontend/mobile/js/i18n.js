@@ -83,6 +83,7 @@ window.RAJSHREE_I18N = {
             'sec_help_parent': 'पैरेंट्स के लिए सहायता',
             'sec_help_admin': 'एडमिन सहायता',
             'sec_help_dev': 'डेवलपर सहायता',
+            'sec_help_designer': 'डिजाइनर सहायता',
             'sec_help_general': 'सामान्य सहायता',
             'sec_designer': 'डिजाइनर सेटिंग्स',
             'sec_demo_settings': 'डेमो सेटिंग्स (Demo)',
@@ -329,6 +330,17 @@ window.RAJSHREE_I18N = {
             'h_dev_debug_do': '✅ समस्या होने पर लॉग्स ऑन करके हमें बताएं।',
             'h_dev_debug_dont': '❌ सामान्य उपयोग के दौरान "डीबग मोड" ऑन न रखें, इससे ऐप धीमी हो सकती है।',
 
+            // --- HELP GUIDE CONTENT (DESIGNER) ---
+            'h_designer_layout_title': '🖌️ लेआउट और डिजाइन',
+            'h_designer_layout_desc': 'फ्लैशकार्ड और मेन्यू के लेआउट को अपनी पसंद के अनुसार बदलें।',
+            'h_designer_layout_do': '✅ नए लुक्स को आज़माने के लिए अलग-अलग कार्ड स्टाइल्स का उपयोग करें।',
+            'h_designer_layout_dont': '❌ बहुत ज़्यादा चमक-धमक वाली सेटिंग्स से बचें जो बच्चों को विचलित कर सकती हैं।',
+
+            'h_designer_nav_title': '🗺️ नेविगेशन और कंट्रोल',
+            'h_designer_nav_desc': 'तय करें कि यूज़र को कौन से बटन दिखाई देंगे और वे कैसे लोड होंगे।',
+            'h_designer_nav_do': '✅ कम अनुभव वाले बच्चों के लिए इंटरफ़ेस को सरल (Simple) रखें।',
+            'h_designer_nav_dont': '❌ मुख्य नेविगेशन बटन्स को बिना सोचे-समझे न छुपाएं।',
+
             // --- HELP GUIDE CONTENT (GENERAL) ---
             'h_gen_init_title': '❓ अक्सर पूछे जाने वाले सवाल',
             'h_gen_init_desc': 'ऐप के बारे में सामान्य जानकारी।',
@@ -412,7 +424,8 @@ window.RAJSHREE_I18N = {
             'sec_help_parent': 'Parent Help',
             'sec_help_admin': 'Admin Help',
             'sec_help_dev': 'Developer Help',
-            'sec_help_general': 'General help',
+            'sec_help_designer': 'Designer Help',
+            'sec_help_general': 'General Help',
             'sec_designer': 'Designer Settings',
             'sec_demo_settings': 'Demo Settings (Experimental)',
             'lbl_usage_guide': 'Admin Guide',
@@ -659,6 +672,17 @@ window.RAJSHREE_I18N = {
             'h_dev_debug_do': '✅ Enable logs only when troubleshooting bugs.',
             'h_dev_debug_dont': '❌ Don\'t keep Debug Mode on during normal use as it may slow down the app.',
 
+            // --- HELP GUIDE CONTENT (DESIGNER) ---
+            'h_designer_layout_title': '🖌️ Layout & Design',
+            'h_designer_layout_desc': 'Customize the visual structure of flashcards and menus.',
+            'h_designer_layout_do': '✅ Experiment with different card styles to find the best engagement.',
+            'h_designer_layout_dont': '❌ Avoid cluttered layouts that may confuse young learners.',
+
+            'h_designer_nav_title': '🗺️ Navigation & Controls',
+            'h_designer_nav_desc': 'Control which buttons are visible and how navigation flows.',
+            'h_designer_nav_do': '✅ Keep the interface simple for beginners by hiding advanced buttons.',
+            'h_designer_nav_dont': '❌ Don\'t hide essential navigation without a valid design reason.',
+
             // --- HELP GUIDE CONTENT (GENERAL) ---
             'h_gen_init_title': '❓ General FAQs',
             'h_gen_init_desc': 'General information about the project.',
@@ -742,7 +766,8 @@ window.RAJSHREE_I18N = {
             'sec_help_parent': 'Parent Help',
             'sec_help_admin': 'Admin Help',
             'sec_help_dev': 'Developer Help',
-            'sec_help_general': 'General help',
+            'sec_help_designer': 'Designer सहायता',
+            'sec_help_general': 'General Help',
             'sec_designer': 'Designer Settings',
             'sec_demo_settings': 'Demo Settings (Experimental)',
             'lbl_usage_guide': 'Admin Guide',
@@ -989,6 +1014,17 @@ window.RAJSHREE_I18N = {
             'h_dev_debug_desc': 'Technical problems ki pehchan karne ke liye.',
             'h_dev_debug_do': '✅ Problem hone pe logs on karein.',
             'h_dev_debug_dont': '❌ Rozana use mein "Debug Mode" band rakhein.',
+
+            // --- HELP GUIDE CONTENT (DESIGNER) ---
+            'h_designer_layout_title': '🖌️ Layout aur Design',
+            'h_designer_layout_desc': 'Flashcards aur menu ke layout ko apne hisab se badlein.',
+            'h_designer_layout_do': '✅ Naye card styles try karein behtar engagement ke liye.',
+            'h_designer_layout_dont': '❌ Zyada confusing layouts se bachein.',
+
+            'h_designer_nav_title': '🗺️ Navigation aur Controls',
+            'h_designer_nav_desc': 'Buttons ki visibility aur navigation flow control karein.',
+            'h_designer_nav_do': '✅ Beginners ke liye interface ko simple rakhein.',
+            'h_designer_nav_dont': '❌ Zaruri navigation buttons ko bina wajah na chhupayein.',
 
             // --- HELP GUIDE CONTENT (GENERAL) ---
             'h_gen_init_title': '❓ General FAQs',

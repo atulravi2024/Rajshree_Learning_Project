@@ -38,6 +38,7 @@ window.SettingsAdmin = {
             { id: 'mobile-intrusion-shield', key: 'mobile_intrusion_shield', i18n: 'lbl_intrusion_shield' },
             { id: 'mobile-edge-protection', key: 'mobile_edge_protection', i18n: 'lbl_edge_protection' },
             { id: 'admin-pin-visible', key: 'mobile_admin_pin_visible', i18n: 'lbl_pin_visible' },
+            { id: 'admin-pin-required', key: 'mobile_admin_pin_required', i18n: 'lbl_pin_required' },
             { id: 'mobile-auto-update', key: 'mobile_auto_update', i18n: 'lbl_auto_update' },
             { id: 'mobile-beta-program', key: 'mobile_beta_program', i18n: 'lbl_beta_prog' }
         ];

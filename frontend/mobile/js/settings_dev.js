@@ -26,6 +26,13 @@ window.SettingsDev = {
             });
         }
 
+        const dPinReq = document.getElementById('dev-pin-required');
+        if (dPinReq) {
+            dPinReq.addEventListener('change', (e) => {
+                localStorage.setItem('mobile_dev_pin_required', e.target.checked);
+            });
+        }
+
         // Independent PIN Setup for Dev
         window.setupDevPin = () => {
             window.SettingsCore.showPinModal('setup', (success) => {

@@ -564,18 +564,24 @@
                                 <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_forgot_pin_demo')" title="पिन भूल गए?" data-i18n="lbl_forgot_pin_demo">पिन भूल गए? (Demo)</button>
                             </div>
                         </section>
-                        <section class="settings-group">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="parent-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
-                                    <p class="group-sub" data-i18n="sub_pin_visible">टाइप करते समय पिन के अंक दिखाएं</p>
+                        <div class="standalone-lock-row">
+                            <div class="compact-locks-grid compact-locks-grid-custom">
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="parent-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="parent-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
+                                        <span class="slider"></span>
+                                    </span>
                                 </div>
-                                <span class="switch">
-                                    <input type="checkbox" id="parent-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
-                                    <span class="slider"></span>
-                                </span>
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="parent-pin-required" data-i18n="lbl_pin_required">पिन आवश्यक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="parent-pin-required" title="पिन आवश्यक" aria-label="पिन आवश्यक">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
                             </div>
-                        </section>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -761,39 +767,6 @@
                 </div>
             </div>
 
-             <!-- Category 11: Admin PIN (Independent) -->
-            <div class="category-block">
-                <header class="section-header" role="button" tabindex="0">
-                    <span class="section-icon">🔐</span>
-                    <span class="section-title" data-i18n="sec_pin_admin">पिन एडमिन (Demo)</span>
-                    <span class="chevron">▼</span>
-                </header>
-                <div class="category-content">
-                    <div class="category-inner">
-                        <section class="settings-group">
-                            <div class="data-actions-grid">
-                                <button class="btn-inline" onclick="setupAdminPin()" title="एडमिन पिन सेट करें" data-i18n="lbl_admin_pin">एडमिन पिन</button>
-                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_change_pin_demo')" title="पिन बदलें" data-i18n="lbl_change_pin_demo">पिन बदलें (Demo)</button>
-                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_reset_pin_demo')" title="पिन रीसेट करें" data-i18n="lbl_reset_pin_demo">पिन रीसेट करें (Demo)</button>
-                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_forgot_pin_demo')" title="पिन भूल गए?" data-i18n="lbl_forgot_pin_demo">पिन भूल गए? (Demo)</button>
-                            </div>
-                        </section>
-                        <section class="settings-group">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="admin-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
-                                    <p class="group-sub" data-i18n="sub_pin_visible">टाइप करते समय पिन के अंक दिखाएं</p>
-                                </div>
-                                <span class="switch">
-                                    <input type="checkbox" id="admin-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
-                                    <span class="slider"></span>
-                                </span>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-
             <!-- Category 8: Storage & Sync (Moved to Admin) -->
             <div class="category-block">
                 <header class="section-header" role="button" tabindex="0">
@@ -864,6 +837,46 @@
                     </div>
                 </div>
             </div>
+
+             <!-- Category 11: Admin PIN (Independent) -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🔐</span>
+                    <span class="section-title" data-i18n="sec_pin_admin">पिन एडमिन (Demo)</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <div class="data-actions-grid">
+                                <button class="btn-inline" onclick="setupAdminPin()" title="एडमिन पिन सेट करें" data-i18n="lbl_admin_pin">एडमिन पिन</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_change_pin_demo')" title="पिन बदलें" data-i18n="lbl_change_pin_demo">पिन बदलें (Demo)</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_reset_pin_demo')" title="पिन रीसेट करें" data-i18n="lbl_reset_pin_demo">पिन रीसेट करें (Demo)</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_forgot_pin_demo')" title="पिन भूल गए?" data-i18n="lbl_forgot_pin_demo">पिन भूल गए? (Demo)</button>
+                            </div>
+                        </section>
+                        <div class="standalone-lock-row">
+                            <div class="compact-locks-grid compact-locks-grid-custom">
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="admin-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="admin-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="admin-pin-required" data-i18n="lbl_pin_required">पिन आवश्यक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="admin-pin-required" title="पिन आवश्यक" aria-label="पिन आवश्यक">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
         </div><!-- End #cat-admin -->
 
@@ -1003,18 +1016,24 @@
                                 <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_forgot_pin_demo')" title="पिन भूल गए?" data-i18n="lbl_forgot_pin_demo">पिन भूल गए? (Demo)</button>
                             </div>
                         </section>
-                        <section class="settings-group">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="dev-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
-                                    <p class="group-sub" data-i18n="sub_pin_visible">टाइप करते समय पिन के अंक दिखाएं</p>
+                        <div class="standalone-lock-row">
+                            <div class="compact-locks-grid compact-locks-grid-custom">
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="dev-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="dev-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
+                                        <span class="slider"></span>
+                                    </span>
                                 </div>
-                                <span class="switch">
-                                    <input type="checkbox" id="dev-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
-                                    <span class="slider"></span>
-                                </span>
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="dev-pin-required" data-i18n="lbl_pin_required">पिन आवश्यक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="dev-pin-required" title="पिन आवश्यक" aria-label="पिन आवश्यक">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
                             </div>
-                        </section>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1342,14 +1361,28 @@
                     <span class="chevron">▼</span>
                 </header>
                 <div class="category-content">
-                    <div class="category-inner">
-                        <section class="settings-group">
-                            <div class="instruction-box">
-                                <p>• <b>पिन:</b> सेटिंग्स बदलने के लिए 4 अंकों का पिन इस्तेमाल करें।</p>
-                                <p>• <b>टाइम:</b> 'समय प्रबंधन' में स्क्रीन टाइम लिमिट सेट करें।</p>
-                                <p>• <b>प्रोफाइल:</b> हर बच्चे के लिए अलग प्रोफाइल बनाई जा सकती है।</p>
-                            </div>
-                        </section>
+                    <div class="category-inner help-category-container">
+                        <!-- Profile -->
+                        <div class="help-entry">
+                            <div class="help-entry-title" data-i18n="h_parent_profile_title">👥 प्रोफाइल प्रबंधन</div>
+                            <div class="help-section desc" data-i18n="h_parent_profile_desc">...</div>
+                            <div class="help-section do"><b data-i18n="lbl_do">Do:</b> <span data-i18n="h_parent_profile_do">...</span></div>
+                            <div class="help-section dont"><b data-i18n="lbl_dont">Don't:</b> <span data-i18n="h_parent_profile_dont">...</span></div>
+                        </div>
+                        <!-- Goals -->
+                        <div class="help-entry">
+                            <div class="help-entry-title" data-i18n="h_parent_goals_title">🎓 सीखने के लक्ष्य</div>
+                            <div class="help-section desc" data-i18n="h_parent_goals_desc">...</div>
+                            <div class="help-section do"><b data-i18n="lbl_do">Do:</b> <span data-i18n="h_parent_goals_do">...</span></div>
+                            <div class="help-section dont"><b data-i18n="lbl_dont">Don't:</b> <span data-i18n="h_parent_goals_dont">...</span></div>
+                        </div>
+                        <!-- Safety -->
+                        <div class="help-entry">
+                            <div class="help-entry-title" data-i18n="h_parent_safety_title">🛡️ किड्स सेफ्टी (टैप सुरक्षा)</div>
+                            <div class="help-section desc" data-i18n="h_parent_safety_desc">...</div>
+                            <div class="help-section do"><b data-i18n="lbl_do">Do:</b> <span data-i18n="h_parent_safety_do">...</span></div>
+                            <div class="help-section dont"><b data-i18n="lbl_dont">Don't:</b> <span data-i18n="h_parent_safety_dont">...</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1362,14 +1395,26 @@
                     <span class="chevron">▼</span>
                 </header>
                 <div class="category-content">
-                    <div class="category-inner">
-                        <section class="settings-group">
-                            <div class="instruction-box">
-                                <p>• <b>लॉक:</b> 'चाइल्ड लॉक' सेटिंग्स को सुरक्षित रखता है।</p>
-                                <p>• <b>बैकअप:</b> 'स्टोरेज' से डेटा का बैकअप फाइल ली जा सकती है।</p>
-                                <p>• <b>सुरक्षा:</b> अनधिकृत बदलावों पर अलर्ट ऑन रखें।</p>
-                            </div>
-                        </section>
+                    <div class="category-inner help-category-container">
+                        <!-- Security -->
+                        <div class="help-entry">
+                            <div class="help-entry-title" data-i18n="h_admin_security_title">🔐 सुरक्षा और पिन</div>
+                            <div class="help-section desc" data-i18n="h_admin_security_desc">...</div>
+                            <div class="help-section do"><b data-i18n="lbl_do">Do:</b> <span data-i18n="h_admin_security_do">...</span></div>
+                            <div class="help-section dont"><b data-i18n="lbl_dont">Don't:</b> <span data-i18n="h_admin_security_dont">...</span></div>
+                        </div>
+                        <!-- Data -->
+                        <div class="help-entry">
+                            <div class="help-entry-title" data-i18n="h_admin_data_title">📂 डेटा और बैकअप</div>
+                            <div class="help-section desc" data-i18n="h_admin_data_desc">...</div>
+                            <div class="help-section do"><b data-i18n="lbl_do">Do:</b> <span data-i18n="h_admin_data_do">...</span></div>
+                            <div class="help-section dont"><b data-i18n="lbl_dont">Don't:</b> <span data-i18n="h_admin_data_dont">...</span></div>
+                        </div>
+                        <!-- Warning -->
+                        <div class="help-entry warn">
+                            <div class="help-entry-title" data-i18n="h_warn_reset_title">🚨 महत्वपूर्ण चेतावनी: डेटा रीसेट</div>
+                            <div class="help-section desc" data-i18n="h_warn_reset_desc">...</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1382,14 +1427,48 @@
                     <span class="chevron">▼</span>
                 </header>
                 <div class="category-content">
-                    <div class="category-inner">
-                        <section class="settings-group">
-                            <div class="instruction-box">
-                                <p>• <b>लॉग्स:</b> समस्याओं की पहचान के लिए डीबग मोड ऑन करें।</p>
-                                <p>• <b>स्पीड:</b> लो-एंड डिवाइसेस पर एनिमेशन क्वालिटी घटाएं।</p>
-                                <p>• <b>कैश:</b> ऐप में गड़बड़ी होने पर 'कैश साफ़ करें' का प्रयोग करें।</p>
-                            </div>
-                        </section>
+                    <div class="category-inner help-category-container">
+                        <!-- Performance -->
+                        <div class="help-entry">
+                            <div class="help-entry-title" data-i18n="h_dev_perf_title">🏃 परफॉरमेंस और गति</div>
+                            <div class="help-section desc" data-i18n="h_dev_perf_desc">...</div>
+                            <div class="help-section do"><b data-i18n="lbl_do">Do:</b> <span data-i18n="h_dev_perf_do">...</span></div>
+                            <div class="help-section dont"><b data-i18n="lbl_dont">Don't:</b> <span data-i18n="h_dev_perf_dont">...</span></div>
+                        </div>
+                        <!-- Debug -->
+                        <div class="help-entry">
+                            <div class="help-entry-title" data-i18n="h_dev_debug_title">📝 डीबग और लॉग्स</div>
+                            <div class="help-section desc" data-i18n="h_dev_debug_desc">...</div>
+                            <div class="help-section do"><b data-i18n="lbl_do">Do:</b> <span data-i18n="h_dev_debug_do">...</span></div>
+                            <div class="help-section dont"><b data-i18n="lbl_dont">Don't:</b> <span data-i18n="h_dev_debug_dont">...</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Designer Help -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🎨</span>
+                    <span class="section-title" data-i18n="sec_help_designer">डिजाइनर सहायता</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner help-category-container">
+                        <!-- Layout -->
+                        <div class="help-entry">
+                            <div class="help-entry-title" data-i18n="h_designer_layout_title">🖌️ लेआउट और डिजाइन</div>
+                            <div class="help-section desc" data-i18n="h_designer_layout_desc">...</div>
+                            <div class="help-section do"><b data-i18n="lbl_do">Do:</b> <span data-i18n="h_designer_layout_do">...</span></div>
+                            <div class="help-section dont"><b data-i18n="lbl_dont">Don't:</b> <span data-i18n="h_designer_layout_dont">...</span></div>
+                        </div>
+                        <!-- Navigation -->
+                        <div class="help-entry">
+                            <div class="help-entry-title" data-i18n="h_designer_nav_title">🗺️ नेविगेशन और कंट्रोल</div>
+                            <div class="help-section desc" data-i18n="h_designer_nav_desc">...</div>
+                            <div class="help-section do"><b data-i18n="lbl_do">Do:</b> <span data-i18n="h_designer_nav_do">...</span></div>
+                            <div class="help-section dont"><b data-i18n="lbl_dont">Don't:</b> <span data-i18n="h_designer_nav_dont">...</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1402,14 +1481,14 @@
                     <span class="chevron">▼</span>
                 </header>
                 <div class="category-content">
-                    <div class="category-inner">
-                        <section class="settings-group">
-                            <div class="instruction-box">
-                                <p>• <b>इंटरनेट:</b> एक बार लोड होने पर ऐप ऑफलाइन चलती है।</p>
-                                <p>• <b>फीडबैक:</b> सुझाव के लिए 'एडमिन' टैब में फीडबैक चुनें।</p>
-                                <p>• <b>वर्शन:</b> ऐप का वर्शन v1.2.0-ultimate है।</p>
-                            </div>
-                        </section>
+                    <div class="category-inner help-category-container">
+                        <!-- FAQs -->
+                        <div class="help-entry">
+                            <div class="help-entry-title" data-i18n="h_gen_init_title">❓ अक्सर पूछे जाने वाले सवाल</div>
+                            <div class="help-section desc" data-i18n="h_gen_init_desc">...</div>
+                            <div class="help-section do"><b data-i18n="lbl_do">Do:</b> <span data-i18n="h_gen_init_do">...</span></div>
+                            <div class="help-section dont"><b data-i18n="lbl_dont">Don't:</b> <span data-i18n="h_gen_init_dont">...</span></div>
+                        </div>
                     </div>
                 </div>
             </div>

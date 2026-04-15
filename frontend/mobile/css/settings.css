@@ -5,4 +5,6 @@
 @import 'settings_core.css';
 @import 'settings_kids.css';
 @import 'settings_parent.css';
-@import 'settings_admin_dev.css';
+@import 'settings_admin.css';
+@import 'settings_dev.css';
+

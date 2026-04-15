@@ -9,7 +9,6 @@ window.SettingsParent = {
         try {
             this.attachEvents();
             this.initSafetyLocks();
-            this.initCompactLocks();
             console.log("👨‍👩‍👧 Settings Parent: Boot Complete.");
         } catch (e) {
             console.error("❌ Settings Parent Boot Failed:", e);
@@ -33,7 +32,9 @@ window.SettingsParent = {
             { id: 'mobile-master-audio', key: 'mobile_master_audio', i18n: 'lbl_master_lock' },
             { id: 'mobile-master-global', key: 'mobile_master_global', i18n: 'lbl_master_lock' },
             { id: 'mobile-lock-autoplay', key: 'mobile_lock_autoplay', i18n: 'lbl_lock_autoplay' },
-            { id: 'mobile-lock-card', key: 'mobile_lock_card', i18n: 'lbl_lock_card' }
+            { id: 'mobile-lock-card', key: 'mobile_lock_card', i18n: 'lbl_lock_card' },
+            { id: 'parent-pin-visible', key: 'mobile_parent_pin_visible', i18n: 'lbl_pin_visible' },
+            { id: 'parent-pin-required', key: 'mobile_parent_pin_required', i18n: 'lbl_pin_required' }
         ];
 
         parentToggles.forEach(t => {
@@ -108,28 +109,4 @@ window.SettingsParent = {
         });
     },
 
-    initCompactLocks: function() {
-        const targets = '.lock-card-compact, .master-lock-group, .standalone-lock-row';
-        document.querySelectorAll(targets).forEach(card => {
-            // Prevent wrapper elements with multiple toggles from hijacking clicks
-            const checkboxes = card.querySelectorAll('input[type="checkbox"]');
-            if (checkboxes.length !== 1) return;
-
-            card.style.cursor = 'pointer';
-            card.addEventListener('click', (e) => {
-                if (e.target.tagName === 'INPUT' || e.target.tagName === 'LABEL') return;
-                
-                // Prevent bubbling up to any potential parent targets
-                e.stopPropagation();
-
-                const checkbox = checkboxes[0];
-                if (checkbox) {
-                    checkbox.checked = !checkbox.checked;
-                    checkbox.dispatchEvent(new Event('change'));
-                    card.style.transform = 'scale(0.98)';
-                    setTimeout(() => card.style.transform = '', 100);
-                }
-            });
-        });
-    }
 };

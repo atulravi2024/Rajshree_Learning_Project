@@ -521,3 +521,68 @@ input[type="range"]::-webkit-slider-thumb {
     background: #1e293b;
     color: white;
 }
+
+/* Premium Shared UI Components (Redirected from category-specific files) */
+.data-actions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.master-lock-group.master-lock-group-custom {
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.08), rgba(255, 105, 180, 0.05));
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 15px var(--glow-color);
+}
+
+.standalone-lock-row {
+    margin-top: 15px;
+}
+
+.compact-locks-grid-custom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-locked {
+    filter: grayscale(0.5);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.lock-card-compact {
+    background: white;
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid var(--glow-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.lock-label-mini {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #475569;
+    line-height: 1.2;
+}
+
+.dark-mode .lock-card-compact {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+.dark-mode .lock-label-mini {
+    color: #94a3b8;
+}
+
+.dark-mode .master-lock-group.master-lock-group-custom {
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.15), rgba(30, 41, 59, 0.5));
+}

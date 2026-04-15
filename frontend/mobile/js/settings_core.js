@@ -15,6 +15,7 @@ window.SettingsCore = {
             this.initVerticalDraggable();
             this.initPinPad();
             this.initSwitches();
+            this.initCompactLocks();
             console.log("⚙️ Settings Core: Boot Complete.");
         } catch (e) {
             console.error("❌ Settings Core Boot Failed:", e);
@@ -128,8 +129,12 @@ window.SettingsCore = {
         this.setCheck('mobile-lock-alerts', lockAlerts);
         this.setCheck('mobile-intrusion-shield', intrusionShield);
         this.setCheck('mobile-edge-protection', edgeProtection);
+        this.setCheck('parent-pin-visible', b('mobile_parent_pin_visible', false));
+        this.setCheck('parent-pin-required', b('mobile_parent_pin_required', false));
         this.setCheck('admin-pin-visible', b('mobile_admin_pin_visible', false));
+        this.setCheck('admin-pin-required', b('mobile_admin_pin_required', false));
         this.setCheck('dev-pin-visible', b('mobile_dev_pin_visible', false));
+        this.setCheck('dev-pin-required', b('mobile_dev_pin_required', false));
         this.setCheck('designer-pin-visible', b('mobile_designer_pin_visible', false));
         this.setCheck('designer-pin-required', b('mobile_designer_pin_required', false));
         this.setCheck('mobile-break', breakToggle);
@@ -624,6 +629,31 @@ window.SettingsCore = {
                 manualInput.disabled = false;
             }
         }
+    },
+
+    initCompactLocks: function() {
+        const targets = '.lock-card-compact, .master-lock-group, .standalone-lock-row';
+        document.querySelectorAll(targets).forEach(card => {
+            // Prevent wrapper elements with multiple toggles from hijacking clicks
+            const checkboxes = card.querySelectorAll('input[type="checkbox"]');
+            if (checkboxes.length !== 1) return;
+
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', (e) => {
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'LABEL') return;
+                
+                // Prevent bubbling up to any potential parent targets
+                e.stopPropagation();
+
+                const checkbox = checkboxes[0];
+                if (checkbox && !checkbox.disabled) {
+                    checkbox.checked = !checkbox.checked;
+                    checkbox.dispatchEvent(new Event('change'));
+                    card.style.transform = 'scale(0.98)';
+                    setTimeout(() => card.style.transform = '', 100);
+                }
+            });
+        });
     },
 
     initSwitches: function() {
