@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>सेटिंग्स - मोबाइल | Settings Mobile ⚙️</title>
     <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/settings_designer.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,6 +37,10 @@
             <button class="tab-btn" data-target="cat-developer">
                 <span class="tab-icon">💻</span>
                 <span class="tab-text" data-i18n="tab_dev">Dev</span>
+            </button>
+            <button class="tab-btn" data-target="cat-designer">
+                <span class="tab-icon">🎨</span>
+                <span class="tab-text" data-i18n="tab_designer">Designer</span>
             </button>
             <button class="tab-btn" data-target="cat-help">
                 <span class="tab-icon">❓</span>
@@ -393,6 +398,28 @@
 
         <!-- Parent Category Section -->
         <div id="cat-parent" class="category-view">
+            <!-- Category 0: App Settings (To Top) -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🌐</span>
+                    <span class="section-title" data-i18n="sec_app_language">ऐप की भाषा</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <label class="group-label" for="mobile-ui-lang" data-i18n="lbl_ui_lang">मेन्यू की भाषा</label>
+                            <p class="group-sub" data-i18n="sub_lang">सेटिंग्स और बटनों की प्रमुख भाषा</p>
+                            <select id="mobile-ui-lang" class="select-field" title="ऐप की भाषा चुनिए" aria-label="ऐप की भाषा">
+                                <option value="hi" selected>हिंदी</option>
+                                <option value="en">English</option>
+                                <option value="hinglish">Hinglish</option>
+                            </select>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
             <!-- Category 1: Profile Management (Moved from Kids) -->
             <div class="category-block">
                 <header class="section-header" role="button" tabindex="0">
@@ -453,28 +480,6 @@
                 </div>
             </div>
 
-            <!-- Category 0: App Settings -->
-            <div class="category-block">
-                <header class="section-header" role="button" tabindex="0">
-                    <span class="section-icon">🌐</span>
-                    <span class="section-title" data-i18n="sec_app_language">ऐप की भाषा</span>
-                    <span class="chevron">▼</span>
-                </header>
-                <div class="category-content">
-                    <div class="category-inner">
-                        <section class="settings-group">
-                            <label class="group-label" for="mobile-ui-lang" data-i18n="lbl_ui_lang">मेन्यू की भाषा</label>
-                            <p class="group-sub" data-i18n="sub_lang">सेटिंग्स और बटनों की प्रमुख भाषा</p>
-                            <select id="mobile-ui-lang" class="select-field" title="ऐप की भाषा चुनिए" aria-label="ऐप की भाषा">
-                                <option value="hi" selected>हिंदी</option>
-                                <option value="en">English</option>
-                                <option value="hinglish">Hinglish</option>
-                            </select>
-                        </section>
-                    </div>
-                </div>
-            </div>
-
             <!-- Category 5: Time Management -->
             <div class="category-block">
                 <header class="section-header" role="button" tabindex="0">
@@ -507,7 +512,77 @@
                 </div>
             </div>
 
+            <!-- Category 6: Accessibility (Moved to Parent) -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">♿</span>
+                    <span class="section-title" data-i18n="sec_accessibility">पहुंच और उपयोग</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <label class="group-label" for="mobile-large-text" data-i18n="lbl_large_text">बड़ा टेक्स्ट</label>
+                                </div>
+                                <span class="switch">
+                                    <input type="checkbox" id="mobile-large-text" title="बड़ा टेक्स्ट ऑन/ऑफ" aria-label="बड़ा टेक्स्ट">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </section>
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <label class="group-label" for="mobile-contrast" data-i18n="lbl_contrast">हाई कंट्रास्ट</label>
+                                </div>
+                                <span class="switch">
+                                    <input type="checkbox" id="mobile-contrast" title="हाई कंट्रास्ट ऑन/ऑफ" aria-label="हाई कंट्रास्ट">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Category 7.1: PIN (Pin Parent Demo) (To Bottom) -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🔑</span>
+                    <span class="section-title" data-i18n="sec_pin_parent">पिन पैरेंट (Demo)</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <div class="data-actions-grid">
+                                <button class="btn-inline" onclick="setupParentPin()" title="पैरेंट पिन सेट करें" data-i18n="lbl_parent_pin">पैरेंट पिन</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_change_pin_demo')" title="पिन बदलें" data-i18n="lbl_change_pin_demo">पिन बदलें (Demo)</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_reset_pin_demo')" title="पिन रीसेट करें" data-i18n="lbl_reset_pin_demo">पिन रीसेट करें (Demo)</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_forgot_pin_demo')" title="पिन भूल गए?" data-i18n="lbl_forgot_pin_demo">पिन भूल गए? (Demo)</button>
+                            </div>
+                        </section>
+                        <section class="settings-group">
+                            <div class="toggle-row">
+                                <div>
+                                    <label class="group-label" for="parent-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
+                                    <p class="group-sub" data-i18n="sub_pin_visible">टाइप करते समय पिन के अंक दिखाएं</p>
+                                </div>
+                                <span class="switch">
+                                    <input type="checkbox" id="parent-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End #cat-parent -->
+
+        <!-- Admin Category Section -->
+        <div id="cat-admin" class="category-view">
 
             <!-- Category 7.5: Kids Safety (Always On) -->
             <div class="category-block">
@@ -654,77 +729,6 @@
             </div>
         </div>
 
-            <!-- Category 7.1: PIN (Pin Parent Demo) -->
-            <div class="category-block">
-                <header class="section-header" role="button" tabindex="0">
-                    <span class="section-icon">🔑</span>
-                    <span class="section-title" data-i18n="sec_pin_parent">पिन पैरेंट (Demo)</span>
-                    <span class="chevron">▼</span>
-                </header>
-                <div class="category-content">
-                    <div class="category-inner">
-                        <section class="settings-group">
-                            <div class="data-actions-grid">
-                                <button class="btn-inline" onclick="setupParentPin()" title="पैरेंट पिन सेट करें" data-i18n="lbl_parent_pin">पैरेंट पिन</button>
-                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_change_pin_demo')" title="पिन बदलें" data-i18n="lbl_change_pin_demo">पिन बदलें (Demo)</button>
-                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_reset_pin_demo')" title="पिन रीसेट करें" data-i18n="lbl_reset_pin_demo">पिन रीसेट करें (Demo)</button>
-                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_forgot_pin_demo')" title="पिन भूल गए?" data-i18n="lbl_forgot_pin_demo">पिन भूल गए? (Demo)</button>
-                            </div>
-                        </section>
-                        <section class="settings-group">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="parent-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
-                                    <p class="group-sub" data-i18n="sub_pin_visible">टाइप करते समय पिन के अंक दिखाएं</p>
-                                </div>
-                                <span class="switch">
-                                    <input type="checkbox" id="parent-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
-                                    <span class="slider"></span>
-                                </span>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category 6: Accessibility (Moved to Parent) -->
-            <div class="category-block">
-                <header class="section-header" role="button" tabindex="0">
-                    <span class="section-icon">♿</span>
-                    <span class="section-title" data-i18n="sec_accessibility">पहुंच और उपयोग</span>
-                    <span class="chevron">▼</span>
-                </header>
-                <div class="category-content">
-                    <div class="category-inner">
-                        <section class="settings-group">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="mobile-large-text" data-i18n="lbl_large_text">बड़ा टेक्स्ट</label>
-                                </div>
-                                <span class="switch">
-                                    <input type="checkbox" id="mobile-large-text" title="बड़ा टेक्स्ट ऑन/ऑफ" aria-label="बड़ा टेक्स्ट">
-                                    <span class="slider"></span>
-                                </span>
-                            </div>
-                        </section>
-                        <section class="settings-group">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="mobile-contrast" data-i18n="lbl_contrast">हाई कंट्रास्ट</label>
-                                </div>
-                                <span class="switch">
-                                    <input type="checkbox" id="mobile-contrast" title="हाई कंट्रास्ट ऑन/ऑफ" aria-label="हाई कंट्रास्ट">
-                                    <span class="slider"></span>
-                                </span>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </div><!-- End #cat-parent -->
-
-        <!-- Admin Category Section -->
-        <div id="cat-admin" class="category-view">
 
             <!-- Category 7: Safety (Split - Safety) -->
             <div class="category-block">
@@ -752,47 +756,15 @@
                                     <label class="group-label" for="mobile-lock-alerts" data-i18n="lbl_lock_alerts">सुरक्षा अलर्ट</label>
                                     <p class="group-sub" data-i18n="sub_lock_alerts">अनधिकृत कोशिश पर सूचना दें</p>
                                 </div>
-                                <span class="switch">
-                                    <input type="checkbox" id="mobile-lock-alerts" checked title="सुरक्षा अलर्ट" aria-label="सुरक्षा अलर्ट">
-                                    <span class="slider"></span>
-                                </span>
-                            </div>
-                        </section>
-                        <section class="settings-group">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="mobile-intrusion-shield" data-i18n="lbl_intrusion_shield">इंट्रूजन शील्ड (Demo)</label>
-                                    <p class="group-sub" data-i18n="sub_intrusion_shield">पिन क्रैकिंग के खिलाफ सुरक्षा</p>
-                                </div>
-                                <span class="switch">
-                                    <input type="checkbox" id="mobile-intrusion-shield" title="इंट्रूजन शील्ड" aria-label="इंट्रूजन शील्ड">
-                                    <span class="slider"></span>
-                                </span>
-                            </div>
-                        </section>
-                        <section class="settings-group">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="mobile-edge-protection" data-i18n="lbl_edge_protection">एज प्रोटेक्शन (Demo)</label>
-                                    <p class="group-sub" data-i18n="sub_edge_protection">ऐप के बाहर जाने से रोकें</p>
-                                </div>
-                                <span class="switch">
-                                    <input type="checkbox" id="mobile-edge-protection" title="एज प्रोटेक्शन" aria-label="एज प्रोटेक्शन">
-                                    <span class="slider"></span>
-                                </span>
-                            </div>
-                        </section>
-                        <section class="settings-group">
-                            <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('btn_view_safety_log')" data-i18n="btn_view_safety_log">सुरक्षा लॉग देखें (Demo)</button>
                         </section>
                     </div>
                 </div>
             </div>
 
-            <!-- Category 7.1: PIN (Pin Admin Demo) -->
+             <!-- Category 11: Admin PIN (Independent) -->
             <div class="category-block">
                 <header class="section-header" role="button" tabindex="0">
-                    <span class="section-icon">🔑</span>
+                    <span class="section-icon">🔐</span>
                     <span class="section-title" data-i18n="sec_pin_admin">पिन एडमिन (Demo)</span>
                     <span class="chevron">▼</span>
                 </header>
@@ -800,7 +772,7 @@
                     <div class="category-inner">
                         <section class="settings-group">
                             <div class="data-actions-grid">
-                                <button class="btn-inline" onclick="setupParentPin()" title="पैरेंट पिन सेट करें" data-i18n="lbl_parent_pin">पैरेंट पिन</button>
+                                <button class="btn-inline" onclick="setupAdminPin()" title="एडमिन पिन सेट करें" data-i18n="lbl_admin_pin">एडमिन पिन</button>
                                 <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_change_pin_demo')" title="पिन बदलें" data-i18n="lbl_change_pin_demo">पिन बदलें (Demo)</button>
                                 <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_reset_pin_demo')" title="पिन रीसेट करें" data-i18n="lbl_reset_pin_demo">पिन रीसेट करें (Demo)</button>
                                 <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_forgot_pin_demo')" title="पिन भूल गए?" data-i18n="lbl_forgot_pin_demo">पिन भूल गए? (Demo)</button>
@@ -809,242 +781,13 @@
                         <section class="settings-group">
                             <div class="toggle-row">
                                 <div>
-                                    <label class="group-label" for="mobile-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
+                                    <label class="group-label" for="admin-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
                                     <p class="group-sub" data-i18n="sub_pin_visible">टाइप करते समय पिन के अंक दिखाएं</p>
                                 </div>
                                 <span class="switch">
-                                    <input type="checkbox" id="mobile-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
+                                    <input type="checkbox" id="admin-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
                                     <span class="slider"></span>
                                 </span>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category 7.2: Navigation Control (Demo) -->
-            <div class="category-block">
-                <header class="section-header" role="button" tabindex="0">
-                    <span class="section-icon">🕹️</span>
-                    <span class="section-title" data-i18n="sec_nav_control">नेविगेशन कंट्रोल (Demo)</span>
-                    <span class="chevron">▼</span>
-                </header>
-                <div class="category-content">
-                    <div class="category-inner">
-                        <!-- Master Control Row (Kids Safety Style) -->
-                        <div class="master-lock-group master-lock-group-custom">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="mobile-master-nav" data-i18n="lbl_master_nav">मास्टर नेविगेशन कंट्रोल</label>
-                                    <p class="group-sub" data-i18n="sub_nav_control">सभी बटन को एक साथ कंट्रोल करें</p>
-                                </div>
-                                <span class="switch">
-                                    <input type="checkbox" id="mobile-master-nav" checked title="मास्टर कंट्रोल" aria-label="मास्टर कंट्रोल">
-                                    <span class="slider"></span>
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- Grid Layout (Kids Safety Style) -->
-                        <div class="standalone-lock-row">
-                            <div id="nav-sub-controls" class="compact-locks-grid compact-locks-grid-custom">
-                                <div class="lock-card-compact">
-                                    <label class="lock-label-mini" for="mobile-show-home" data-i18n="lbl_show_home">होम बटन दिखाएं</label>
-                                    <span class="switch is-small">
-                                        <input type="checkbox" id="mobile-show-home" checked title="होम बटन" aria-label="होम बटन">
-                                        <span class="slider"></span>
-                                    </span>
-                                </div>
-
-                                <div class="lock-card-compact">
-                                    <label class="lock-label-mini" for="mobile-show-nav" data-i18n="lbl_show_nav">पीछे/अगला बटन दिखाएं</label>
-                                    <span class="switch is-small">
-                                        <input type="checkbox" id="mobile-show-nav" checked title="पीछे/अगला बटन" aria-label="पीछे/अगला बटन">
-                                        <span class="slider"></span>
-                                    </span>
-                                </div>
-
-                                <div class="lock-card-compact">
-                                    <label class="lock-label-mini" for="mobile-show-settings" data-i18n="lbl_show_settings">सेटिंग्स बटन दिखाएं</label>
-                                    <span class="switch is-small">
-                                        <input type="checkbox" id="mobile-show-settings" checked title="सेटिंग्स बटन" aria-label="सेटिंग्स बटन">
-                                        <span class="slider"></span>
-                                    </span>
-                                </div>
-
-                                <div class="lock-card-compact">
-                                    <label class="lock-label-mini" for="mobile-show-autoplay-nav" data-i18n="lbl_show_autoplay_nav">ऑटो-प्ले बटन दिखाएं</label>
-                                    <span class="switch is-small">
-                                        <input type="checkbox" id="mobile-show-autoplay-nav" checked title="ऑटो-प्ले बटन" aria-label="ऑटो-प्ले बटन">
-                                        <span class="slider"></span>
-                                    </span>
-                                </div>
-
-                                <div class="lock-card-compact">
-                                    <label class="lock-label-mini" for="mobile-show-bottom-nav" data-i18n="lbl_show_bottom_nav">बॉटम नेविगेशन दिखाएं</label>
-                                    <span class="switch is-small">
-                                        <input type="checkbox" id="mobile-show-bottom-nav" checked title="बॉटम नेविगेशन" aria-label="बॉटम नेविगेशन">
-                                        <span class="slider"></span>
-                                    </span>
-                                </div>
-
-                                <div class="lock-card-compact">
-                                    <label class="lock-label-mini" for="mobile-autohide-nav" data-i18n="lbl_autohide_nav">ऑटो-हाईड नेविगेशन</label>
-                                    <span class="switch is-small">
-                                        <input type="checkbox" id="mobile-autohide-nav" title="ऑटो-हाईड" aria-label="ऑटो-हाईड">
-                                        <span class="slider"></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category 7.3: Flashcard Layout (Advanced) -->
-            <div class="category-block">
-                <header class="section-header" role="button" tabindex="0">
-                    <span class="section-icon">🎴</span>
-                    <span class="section-title" data-i18n="sec_layout_control">फ्लैशकार्ड लेआउट</span>
-                    <span class="chevron">▼</span>
-                </header>
-                <div class="category-content">
-                    <div class="category-inner">
-                        <section class="settings-group">
-                            <label class="group-label" data-i18n="lbl_view_mode">ठीक करें: व्यू मोड</label>
-                            <div class="segmented-control" id="mobile-view-mode">
-                                <button class="seg-btn active" data-value="flashcard" data-i18n="opt_mode_single">सिंगल व्यू</button>
-                                <button class="seg-btn" data-value="three" data-i18n="opt_mode_three">3-में-1 व्यू</button>
-                                <button class="seg-btn" data-value="grid" data-i18n="opt_mode_all">सभी एक साथ</button>
-                            </div>
-                        </section>
-
-                        <!-- 3-in-1 Alignment (Dynamically Shown) -->
-                        <section class="settings-group hidden" id="three-alignment-group">
-                            <label class="group-label" data-i18n="lbl_three_nav">3-में-1 एलाइनमेंट</label>
-                            <div class="segmented-control" id="mobile-three-nav-dir">
-                                <button class="seg-btn active" data-value="horizontal" data-i18n="opt_dir_horizontal">क्षैतिज</button>
-                                <button class="seg-btn" data-value="vertical" data-i18n="opt_dir_vertical">लंबवत</button>
-                            </div>
-                        </section>
-
-                        <!-- Flashcard Nav Direction -->
-                        <section class="settings-group">
-                            <label class="group-label" data-i18n="lbl_flashcard_nav">फ्लैशकार्ड नेविगेशन</label>
-                            <div class="segmented-control" id="mobile-flashcard-nav-dir">
-                                <button class="seg-btn active" data-value="horizontal" data-i18n="opt_dir_horizontal">क्षैतिज</button>
-                                <button class="seg-btn" data-value="vertical" data-i18n="opt_dir_vertical">लंबवत</button>
-                            </div>
-                        </section>
-
-                        <!-- Grid Nav Direction -->
-                        <section class="settings-group">
-                            <label class="group-label" data-i18n="lbl_grid_nav">ग्रिड नेविगेशन</label>
-                            <div class="segmented-control" id="mobile-grid-nav-dir">
-                                <button class="seg-btn active" data-value="horizontal" data-i18n="opt_dir_horizontal">क्षैतिज</button>
-                                <button class="seg-btn" data-value="vertical" data-i18n="opt_dir_vertical">लंबवत</button>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category 7.4: Menu Layout (Demo Phase) -->
-            <div class="category-block">
-                <header class="section-header" role="button" tabindex="0">
-                    <span class="section-icon">📋</span>
-                    <span class="section-title" data-i18n="sec_menu_layout">मेन्यू लेआउट</span>
-                    <span class="chevron">▼</span>
-                </header>
-                <div class="category-content">
-                    <div class="category-inner">
-                        <section class="settings-group">
-                            <label class="group-label" data-i18n="lbl_menu_demo">मेन्यू स्टाइल (Demo)</label>
-                            <div class="segmented-control" id="mobile-menu-style">
-                                <button class="seg-btn active" data-value="classic" data-i18n="opt_style_classic">क्लासिक</button>
-                                <button class="seg-btn" data-value="modern" data-i18n="opt_style_modern">आधुनिक</button>
-                                <button class="seg-btn" data-value="playful" data-i18n="opt_style_playful">नटखट</button>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category 7.5: Flashcard Design Demo -->
-            <div class="category-block">
-                <header class="section-header" role="button" tabindex="0">
-                    <span class="section-icon">🃏</span>
-                    <span class="section-title" data-i18n="sec_flashcard_design_demo">Flashcard Design (Demo)</span>
-                    <span class="chevron">▼</span>
-                </header>
-                <div class="category-content">
-                    <div class="category-inner">
-                        <section class="settings-group">
-                            <label class="group-label" data-i18n="lbl_flashcard_style_demo">Card Style (Demo)</label>
-                            
-                            <style>
-                                .mockup-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 12px 4px; margin-top: 8px; }
-                                .mockup-card { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; opacity: 0.6; filter: grayscale(50%); transition: all 0.3s ease; }
-                                .mockup-card.active { opacity: 1; filter: grayscale(0%); transform: scale(1.05); }
-                                .mockup-card img { width: 100%; aspect-ratio: 9/16; object-fit: cover; border-radius: 12px; border: 3px solid transparent; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: border-color 0.3s ease; }
-                                .mockup-card.active img { border-color: var(--primary-pink, #ff6b9d); box-shadow: 0 8px 24px rgba(255, 107, 157, 0.4); }
-                                .mockup-label { font-size: 0.85rem; font-weight: 600; color: var(--text-dark, #333); transition: color 0.3s ease; text-align: center; }
-                                .mockup-card.active .mockup-label { color: var(--primary-pink, #ff6b9d); }
-                            </style>
-
-                            <div class="mockup-gallery" id="mobile-flashcard-style-gallery">
-                                <div class="mockup-card active" data-value="classic" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
-                                    <img src="mockup/flashcard/classic_flashcard_mockup.png" alt="Classic">
-                                    <span class="mockup-label" data-i18n="opt_card_classic">Classic</span>
-                                </div>
-                                <div class="mockup-card" data-value="modern" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
-                                    <img src="mockup/flashcard/modern_flashcard_mockup.png" alt="Modern">
-                                    <span class="mockup-label" data-i18n="opt_card_modern">Modern</span>
-                                </div>
-                                <div class="mockup-card" data-value="playful" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
-                                    <img src="mockup/flashcard/playful_flashcard_mockup.png" alt="Playful">
-                                    <span class="mockup-label" data-i18n="opt_card_playful">Playful</span>
-                                </div>
-                                <div class="mockup-card" data-value="aquatic" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
-                                    <img src="mockup/flashcard/unique_styles/aquatic_style.png" alt="Aquatic">
-                                    <span class="mockup-label" data-i18n="opt_card_aquatic">Aquatic</span>
-                                </div>
-                                <div class="mockup-card" data-value="candy" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
-                                    <img src="mockup/flashcard/unique_styles/candy_style.png" alt="Candy">
-                                    <span class="mockup-label" data-i18n="opt_card_candy">Candy</span>
-                                </div>
-                                <div class="mockup-card" data-value="clay" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
-                                    <img src="mockup/flashcard/unique_styles/clay_style.png" alt="Clay">
-                                    <span class="mockup-label" data-i18n="opt_card_clay">Clay</span>
-                                </div>
-                                <div class="mockup-card" data-value="crayon" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
-                                    <img src="mockup/flashcard/unique_styles/crayon_style.png" alt="Crayon">
-                                    <span class="mockup-label" data-i18n="opt_card_crayon">Crayon</span>
-                                </div>
-                                <div class="mockup-card" data-value="fairytale" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
-                                    <img src="mockup/flashcard/unique_styles/fairytale_style.png" alt="Fairytale">
-                                    <span class="mockup-label" data-i18n="opt_card_fairytale">Fairytale</span>
-                                </div>
-                                <div class="mockup-card" data-value="nature" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
-                                    <img src="mockup/flashcard/unique_styles/nature_style.png" alt="Nature">
-                                    <span class="mockup-label" data-i18n="opt_card_nature">Nature</span>
-                                </div>
-                                <div class="mockup-card" data-value="papercraft" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
-                                    <img src="mockup/flashcard/unique_styles/papercraft_style.png" alt="Papercraft">
-                                    <span class="mockup-label" data-i18n="opt_card_papercraft">Papercraft</span>
-                                </div>
-                                <div class="mockup-card" data-value="pixel" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
-                                    <img src="mockup/flashcard/unique_styles/pixel_style.png" alt="Pixel">
-                                    <span class="mockup-label" data-i18n="opt_card_pixel">Pixel</span>
-                                </div>
-                                <div class="mockup-card" data-value="space" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
-                                    <img src="mockup/flashcard/unique_styles/space_style.png" alt="Space">
-                                    <span class="mockup-label" data-i18n="opt_card_space">Space</span>
-                                </div>
-                                <div class="mockup-card" data-value="sticker" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
-                                    <img src="mockup/flashcard/unique_styles/sticker_style.png" alt="Sticker">
-                                    <span class="mockup-label" data-i18n="opt_card_sticker">Sticker</span>
-                                </div>
                             </div>
                         </section>
                     </div>
@@ -1254,7 +997,7 @@
                     <div class="category-inner">
                         <section class="settings-group">
                             <div class="data-actions-grid">
-                                <button class="btn-inline" onclick="setupParentPin()" title="पैरेंट पिन सेट करें" data-i18n="lbl_parent_pin">पैरेंट पिन</button>
+                                <button class="btn-inline" onclick="setupDevPin()" title="डेवलपर पिन सेट करें" data-i18n="lbl_dev_pin">डेवलपर पिन</button>
                                 <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_change_pin_demo')" title="पिन बदलें" data-i18n="lbl_change_pin_demo">पिन बदलें (Demo)</button>
                                 <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_reset_pin_demo')" title="पिन रीसेट करें" data-i18n="lbl_reset_pin_demo">पिन रीसेट करें (Demo)</button>
                                 <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_forgot_pin_demo')" title="पिन भूल गए?" data-i18n="lbl_forgot_pin_demo">पिन भूल गए? (Demo)</button>
@@ -1276,6 +1019,277 @@
                 </div>
             </div>
         </div><!-- End #cat-developer -->
+        
+        <!-- Designer Category Section -->
+        <div id="cat-designer" class="category-view">
+            <!-- Navigation Control (Demo) -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🕹️</span>
+                    <span class="section-title" data-i18n="sec_nav_control">नेविगेशन कंट्रोल (Demo)</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <!-- Master Control Row (Kids Safety Style) -->
+                        <div class="master-lock-group master-lock-group-custom">
+                            <div class="toggle-row">
+                                <div>
+                                    <label class="group-label" for="mobile-master-nav" data-i18n="lbl_master_nav">मास्टर नेविगेशन कंट्रोल</label>
+                                    <p class="group-sub" data-i18n="sub_nav_control">सभी बटन को एक साथ कंट्रोल करें</p>
+                                </div>
+                                <span class="switch">
+                                    <input type="checkbox" id="mobile-master-nav" checked title="मास्टर कंट्रोल" aria-label="मास्टर कंट्रोल">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Grid Layout (Kids Safety Style) -->
+                        <div class="standalone-lock-row">
+                            <div id="nav-sub-controls" class="compact-locks-grid compact-locks-grid-custom">
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="mobile-show-home" data-i18n="lbl_show_home">होम बटन दिखाएं</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="mobile-show-home" checked title="होम बटन" aria-label="होम बटन">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="mobile-show-nav" data-i18n="lbl_show_nav">पीछे/अगला बटन दिखाएं</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="mobile-show-nav" checked title="पीछे/अगला बटन" aria-label="पीछे/अगला बटन">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="mobile-show-settings" data-i18n="lbl_show_settings">सेटिंग्स बटन दिखाएं</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="mobile-show-settings" checked title="सेटिंग्स बटन" aria-label="सेटिंग्स बटन">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="mobile-show-autoplay-nav" data-i18n="lbl_show_autoplay_nav">ऑटो-प्ले बटन दिखाएं</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="mobile-show-autoplay-nav" checked title="ऑटो-प्ले बटन" aria-label="ऑटो-प्ले बटन">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="mobile-show-bottom-nav" data-i18n="lbl_show_bottom_nav">बॉटम नेविगेशन दिखाएं</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="mobile-show-bottom-nav" checked title="बॉटम नेविगेशन" aria-label="बॉटम नेविगेशन">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="mobile-autohide-nav" data-i18n="lbl_autohide_nav">ऑटो-हाईड नेविगेशन</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="mobile-autohide-nav" title="ऑटो-हाईड" aria-label="ऑटो-हाईड">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flashcard Layout (Advanced) -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🎴</span>
+                    <span class="section-title" data-i18n="sec_layout_control">फ्लैशकार्ड लेआउट</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <label class="group-label" data-i18n="lbl_view_mode">ठीक करें: व्यू मोड</label>
+                            <div class="segmented-control" id="mobile-view-mode">
+                                <button class="seg-btn active" data-value="flashcard" data-i18n="opt_mode_single">सिंगल व्यू</button>
+                                <button class="seg-btn" data-value="three" data-i18n="opt_mode_three">3-में-1 व्यू</button>
+                                <button class="seg-btn" data-value="grid" data-i18n="opt_mode_all">सभी एक साथ</button>
+                            </div>
+                        </section>
+
+                        <!-- 3-in-1 Alignment (Dynamically Shown) -->
+                        <section class="settings-group hidden" id="three-alignment-group">
+                            <label class="group-label" data-i18n="lbl_three_nav">3-में-1 एलाइनमेंट</label>
+                            <div class="segmented-control" id="mobile-three-nav-dir">
+                                <button class="seg-btn active" data-value="horizontal" data-i18n="opt_dir_horizontal">क्षैतिज</button>
+                                <button class="seg-btn" data-value="vertical" data-i18n="opt_dir_vertical">लंबवत</button>
+                            </div>
+                        </section>
+
+                        <!-- Flashcard Nav Direction -->
+                        <section class="settings-group">
+                            <label class="group-label" data-i18n="lbl_flashcard_nav">फ्लैशकार्ड नेविगेशन</label>
+                            <div class="segmented-control" id="mobile-flashcard-nav-dir">
+                                <button class="seg-btn active" data-value="horizontal" data-i18n="opt_dir_horizontal">क्षैतिज</button>
+                                <button class="seg-btn" data-value="vertical" data-i18n="opt_dir_vertical">लंबवत</button>
+                            </div>
+                        </section>
+
+                        <!-- Grid Nav Direction -->
+                        <section class="settings-group">
+                            <label class="group-label" data-i18n="lbl_grid_nav">ग्रिड नेविगेशन</label>
+                            <div class="segmented-control" id="mobile-grid-nav-dir">
+                                <button class="seg-btn active" data-value="horizontal" data-i18n="opt_dir_horizontal">क्षैतिज</button>
+                                <button class="seg-btn" data-value="vertical" data-i18n="opt_dir_vertical">लंबवत</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Layout (Demo Phase) -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">📋</span>
+                    <span class="section-title" data-i18n="sec_menu_layout">मेन्यू लेआउट</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <label class="group-label" data-i18n="lbl_menu_demo">मेन्यू स्टाइल (Demo)</label>
+                            <div class="segmented-control" id="mobile-menu-style">
+                                <button class="seg-btn active" data-value="classic" data-i18n="opt_style_classic">क्लासिक</button>
+                                <button class="seg-btn" data-value="modern" data-i18n="opt_style_modern">आधुनिक</button>
+                                <button class="seg-btn" data-value="playful" data-i18n="opt_style_playful">नटखट</button>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flashcard Design Demo -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🃏</span>
+                    <span class="section-title" data-i18n="sec_flashcard_design_demo">Flashcard Design (Demo)</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <label class="group-label" data-i18n="lbl_flashcard_style_demo">Card Style (Demo)</label>
+                            
+                            <style>
+                                .mockup-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 12px 4px; margin-top: 8px; }
+                                .mockup-card { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; opacity: 0.6; filter: grayscale(50%); transition: all 0.3s ease; }
+                                .mockup-card.active { opacity: 1; filter: grayscale(0%); transform: scale(1.05); }
+                                .mockup-card img { width: 100%; aspect-ratio: 9/16; object-fit: cover; border-radius: 12px; border: 3px solid transparent; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: border-color 0.3s ease; }
+                                .mockup-card.active img { border-color: var(--primary-pink, #ff6b9d); box-shadow: 0 8px 24px rgba(255, 107, 157, 0.4); }
+                                .mockup-label { font-size: 0.85rem; font-weight: 600; color: var(--text-dark, #333); transition: color 0.3s ease; text-align: center; }
+                                .mockup-card.active .mockup-label { color: var(--primary-pink, #ff6b9d); }
+                            </style>
+
+                            <div class="mockup-gallery" id="mobile-flashcard-style-gallery">
+                                <div class="mockup-card active" data-value="classic" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
+                                    <img src="mockup/flashcard/classic_flashcard_mockup.png" alt="Classic">
+                                    <span class="mockup-label" data-i18n="opt_card_classic">Classic</span>
+                                </div>
+                                <div class="mockup-card" data-value="modern" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
+                                    <img src="mockup/flashcard/modern_flashcard_mockup.png" alt="Modern">
+                                    <span class="mockup-label" data-i18n="opt_card_modern">Modern</span>
+                                </div>
+                                <div class="mockup-card" data-value="playful" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
+                                    <img src="mockup/flashcard/playful_flashcard_mockup.png" alt="Playful">
+                                    <span class="mockup-label" data-i18n="opt_card_playful">Playful</span>
+                                </div>
+                                <div class="mockup-card" data-value="aquatic" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
+                                    <img src="mockup/flashcard/unique_styles/aquatic_style.png" alt="Aquatic">
+                                    <span class="mockup-label" data-i18n="opt_card_aquatic">Aquatic</span>
+                                </div>
+                                <div class="mockup-card" data-value="candy" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
+                                    <img src="mockup/flashcard/unique_styles/candy_style.png" alt="Candy">
+                                    <span class="mockup-label" data-i18n="opt_card_candy">Candy</span>
+                                </div>
+                                <div class="mockup-card" data-value="clay" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
+                                    <img src="mockup/flashcard/unique_styles/clay_style.png" alt="Clay">
+                                    <span class="mockup-label" data-i18n="opt_card_clay">Clay</span>
+                                </div>
+                                <div class="mockup-card" data-value="crayon" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
+                                    <img src="mockup/flashcard/unique_styles/crayon_style.png" alt="Crayon">
+                                    <span class="mockup-label" data-i18n="opt_card_crayon">Crayon</span>
+                                </div>
+                                <div class="mockup-card" data-value="fairytale" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
+                                    <img src="mockup/flashcard/unique_styles/fairytale_style.png" alt="Fairytale">
+                                    <span class="mockup-label" data-i18n="opt_card_fairytale">Fairytale</span>
+                                </div>
+                                <div class="mockup-card" data-value="nature" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
+                                    <img src="mockup/flashcard/unique_styles/nature_style.png" alt="Nature">
+                                    <span class="mockup-label" data-i18n="opt_card_nature">Nature</span>
+                                </div>
+                                <div class="mockup-card" data-value="papercraft" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
+                                    <img src="mockup/flashcard/unique_styles/papercraft_style.png" alt="Papercraft">
+                                    <span class="mockup-label" data-i18n="opt_card_papercraft">Papercraft</span>
+                                </div>
+                                <div class="mockup-card" data-value="pixel" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
+                                    <img src="mockup/flashcard/unique_styles/pixel_style.png" alt="Pixel">
+                                    <span class="mockup-label" data-i18n="opt_card_pixel">Pixel</span>
+                                </div>
+                                <div class="mockup-card" data-value="space" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
+                                    <img src="mockup/flashcard/unique_styles/space_style.png" alt="Space">
+                                    <span class="mockup-label" data-i18n="opt_card_space">Space</span>
+                                </div>
+                                <div class="mockup-card" data-value="sticker" onclick="document.querySelectorAll('.mockup-card').forEach(c=>c.classList.remove('active')); this.classList.add('active');">
+                                    <img src="mockup/flashcard/unique_styles/sticker_style.png" alt="Sticker">
+                                    <span class="mockup-label" data-i18n="opt_card_sticker">Sticker</span>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <!-- PIN Designer (Demo) - LAST SECTION -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🎨</span>
+                    <span class="section-title" data-i18n="sec_pin_designer">पिन डिजाइनर (Demo)</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <section class="settings-group">
+                            <div class="data-actions-grid">
+                                <button class="btn-inline" onclick="setupDesignerPin()" title="डिजाइनर पिन सेट करें" data-i18n="lbl_designer_pin">डिजाइनर पिन</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_change_pin_demo')" title="पिन बदलें" data-i18n="lbl_change_pin_demo">पिन बदलें (Demo)</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_reset_pin_demo')" title="पिन रीसेट करें" data-i18n="lbl_reset_pin_demo">पिन रीसेट करें (Demo)</button>
+                                <button class="btn-inline" onclick="SettingsAdmin.showDemoAlert('lbl_forgot_pin_demo')" title="पिन भूल गए?" data-i18n="lbl_forgot_pin_demo">पिन भूल गए? (Demo)</button>
+                            </div>
+                        </section>
+
+                        <div class="standalone-lock-row">
+                            <div class="compact-locks-grid compact-locks-grid-custom">
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="designer-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="designer-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+                                <div class="lock-card-compact">
+                                    <label class="lock-label-mini" for="designer-pin-required" data-i18n="lbl_pin_required">पिन आवश्यक</label>
+                                    <span class="switch is-small">
+                                        <input type="checkbox" id="designer-pin-required" title="पिन आवश्यक" aria-label="पिन आवश्यक">
+                                        <span class="slider"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End #cat-designer -->
         
         <!-- Help Category Section -->
         <div id="cat-help" class="category-view">
@@ -1445,6 +1459,7 @@
     <script src="js/settings_parent.js"></script>
     <script src="js/settings_admin.js"></script>
     <script src="js/settings_dev.js"></script>
+    <script src="js/settings_designer.js"></script>
     <script src="js/settings_help.js"></script>
     <script src="js/settings.js"></script>
 </body>

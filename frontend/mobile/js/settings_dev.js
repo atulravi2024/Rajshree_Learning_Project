@@ -18,5 +18,25 @@ window.SettingsDev = {
                 window.SettingsCore.showToast(`Debug Logs: ${val ? 'Enabled' : 'Disabled'}`);
             });
         }
+
+        const dPinVis = document.getElementById('dev-pin-visible');
+        if (dPinVis) {
+            dPinVis.addEventListener('change', (e) => {
+                localStorage.setItem('mobile_dev_pin_visible', e.target.checked);
+            });
+        }
+
+        // Independent PIN Setup for Dev
+        window.setupDevPin = () => {
+            window.SettingsCore.showPinModal('setup', (success) => {
+                if (success) {
+                    window.SettingsCore.showToast(window.SettingsCore.getTranslation('pin_success'));
+                }
+            }, { 
+                targetKey: 'mobile_dev_pin', 
+                visibilityKey: 'mobile_dev_pin_visible',
+                categoryName: 'Developer'
+            });
+        };
     }
 };

@@ -128,9 +128,10 @@ window.SettingsCore = {
         this.setCheck('mobile-lock-alerts', lockAlerts);
         this.setCheck('mobile-intrusion-shield', intrusionShield);
         this.setCheck('mobile-edge-protection', edgeProtection);
-        this.setCheck('mobile-pin-visible', pinVisible);
-        this.setCheck('parent-pin-visible', pinVisible);
-        this.setCheck('dev-pin-visible', pinVisible);
+        this.setCheck('admin-pin-visible', b('mobile_admin_pin_visible', false));
+        this.setCheck('dev-pin-visible', b('mobile_dev_pin_visible', false));
+        this.setCheck('designer-pin-visible', b('mobile_designer_pin_visible', false));
+        this.setCheck('designer-pin-required', b('mobile_designer_pin_required', false));
         this.setCheck('mobile-break', breakToggle);
         this.setCheck('mobile-auto-dark', autoDark);
         this.setCheck('mobile-reduce-motion', reduceMotion);
@@ -386,7 +387,10 @@ window.SettingsCore = {
         buffer: '',
         callback: null,
         purpose: 'verify',
-        tempNewPin: ''
+        tempNewPin: '',
+        targetKey: 'mobile_parent_pin',
+        visibilityKey: 'mobile_pin_visible',
+        categoryName: 'Parent'
     },
 
     initPinPad: function() {
@@ -404,13 +408,17 @@ window.SettingsCore = {
         });
     },
 
-    showPinModal: function(purpose, callback) {
+    showPinModal: function(purpose, callback, config = {}) {
         const modal = document.getElementById('pin-modal');
         if (!modal) return;
         
         this.pinData.purpose = purpose;
         this.pinData.callback = callback;
         this.pinData.buffer = '';
+        this.pinData.targetKey = config.targetKey || 'mobile_parent_pin';
+        this.pinData.visibilityKey = config.visibilityKey || 'mobile_pin_visible';
+        this.pinData.categoryName = config.categoryName || 'Parent';
+        
         this.updatePinDots();
         
         const title = document.getElementById('pin-modal-title');
@@ -418,7 +426,8 @@ window.SettingsCore = {
         if (msg) msg.textContent = '';
         
         if (title) {
-            title.textContent = this.getTranslation(purpose === 'setup' ? 'pin_title_setup' : 'pin_title_verify');
+            const baseTitle = this.getTranslation(purpose === 'setup' ? 'pin_title_setup' : 'pin_title_verify');
+            title.textContent = `${baseTitle} (${this.pinData.categoryName})`;
         }
         modal.classList.add('active');
     },
@@ -432,7 +441,7 @@ window.SettingsCore = {
 
     updatePinDots: function() {
         const dots = document.querySelectorAll('.pin-dot');
-        const showDigits = localStorage.getItem('mobile_pin_visible') === 'true';
+        const showDigits = localStorage.getItem(this.pinData.visibilityKey) === 'true';
         dots.forEach((dot, index) => {
             const isFilled = index < this.pinData.buffer.length;
             dot.classList.toggle('filled', isFilled);
@@ -461,7 +470,7 @@ window.SettingsCore = {
     },
 
     validatePin: function() {
-        const storedPin = localStorage.getItem('mobile_parent_pin') || '1234';
+        const storedPin = localStorage.getItem(this.pinData.targetKey) || '1234';
         
         if (this.pinData.purpose === 'verify') {
             if (this.pinData.buffer === storedPin) {
@@ -475,10 +484,10 @@ window.SettingsCore = {
             this.pinData.buffer = '';
             this.updatePinDots();
             const title = document.getElementById('pin-modal-title');
-            if (title) title.textContent = this.getTranslation('btn_confirm');
+            if (title) title.textContent = `${this.getTranslation('btn_confirm')} (${this.pinData.categoryName})`;
         } else if (this.pinData.purpose === 'setup-confirm') {
             if (this.pinData.buffer === this.pinData.tempNewPin) {
-                localStorage.setItem('mobile_parent_pin', this.pinData.buffer);
+                localStorage.setItem(this.pinData.targetKey, this.pinData.buffer);
                 this.hidePinModal(true);
             } else {
                 this.handlePinError();
@@ -487,7 +496,7 @@ window.SettingsCore = {
                     this.pinData.buffer = '';
                     this.updatePinDots();
                     const title = document.getElementById('pin-modal-title');
-                    if (title) title.textContent = this.getTranslation('pin_title_setup');
+                    if (title) title.textContent = `${this.getTranslation('pin_title_setup')} (${this.pinData.categoryName})`;
                 }, 500);
             }
         }

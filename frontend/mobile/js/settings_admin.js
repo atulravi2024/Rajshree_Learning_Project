@@ -9,55 +9,13 @@ window.SettingsAdmin = {
         try {
             this.attachEvents();
             this.renderDiagnostics();
-            this.syncNavigationControl(null, null, true); // Initial sync on load
             console.log("🛠️ Settings Admin: Boot Complete.");
         } catch (e) {
             console.error("❌ Settings Admin Boot Failed:", e);
         }
     },
 
-    /**
-     * Managed Navigation Control Logic
-     * Handles Master Switch, Exclusive Home/Menu pair, and UI feedback.
-     */
-    syncNavigationControl: function(triggerId, value, isInit = false) {
-        const masterEl = document.getElementById('mobile-master-nav');
-        if (!masterEl) return;
 
-        const container = document.getElementById('nav-sub-controls');
-        const homeEl = document.getElementById('mobile-show-home');
-        const menuEl = document.getElementById('mobile-show-menu');
-        const navEl = document.getElementById('mobile-show-nav');
-        const settingsEl = document.getElementById('mobile-show-settings');
-
-        const isMasterEnabled = masterEl.checked;
-
-        // 1. Handle Master Switch Impact (Targets all buttons uniformly)
-        if (triggerId === 'mobile-master-nav' && !isInit) {
-            const targets = [
-                { el: homeEl, val: value, key: 'mobile_show_home' },
-                { el: navEl, val: value, key: 'mobile_show_nav' },
-                { el: settingsEl, val: value, key: 'mobile_show_settings' },
-                { el: document.getElementById('mobile-show-autoplay-nav'), val: value, key: 'mobile_show_autoplay_nav' },
-                { el: document.getElementById('mobile-show-bottom-nav'), val: value, key: 'mobile_show_bottom_nav' },
-                { el: document.getElementById('mobile-autohide-nav'), val: value, key: 'mobile_autohide_nav' }
-            ];
-
-            targets.forEach(item => {
-                if (item.el) {
-                    item.el.checked = item.val;
-                    localStorage.setItem(item.key, item.val);
-                }
-            });
-        }
-
-        // All other buttons work individually without mutually exclusive locks.
-        
-        // 2. UI Feedback Layer
-        if (container) {
-            container.classList.toggle('nav-locked', !isMasterEnabled);
-        }
-    },
 
     attachEvents: function() {
         const resetBtn = document.getElementById('reset-app');
@@ -79,18 +37,9 @@ window.SettingsAdmin = {
             { id: 'mobile-lock-alerts', key: 'mobile_lock_alerts', i18n: 'lbl_lock_alerts' },
             { id: 'mobile-intrusion-shield', key: 'mobile_intrusion_shield', i18n: 'lbl_intrusion_shield' },
             { id: 'mobile-edge-protection', key: 'mobile_edge_protection', i18n: 'lbl_edge_protection' },
-            { id: 'mobile-pin-visible', key: 'mobile_pin_visible', i18n: 'lbl_pin_visible' },
-            { id: 'parent-pin-visible', key: 'mobile_pin_visible', i18n: 'lbl_pin_visible' },
-            { id: 'dev-pin-visible', key: 'mobile_pin_visible', i18n: 'lbl_pin_visible' },
+            { id: 'admin-pin-visible', key: 'mobile_admin_pin_visible', i18n: 'lbl_pin_visible' },
             { id: 'mobile-auto-update', key: 'mobile_auto_update', i18n: 'lbl_auto_update' },
-            { id: 'mobile-beta-program', key: 'mobile_beta_program', i18n: 'lbl_beta_prog' },
-            { id: 'mobile-show-home', key: 'mobile_show_home', i18n: 'lbl_show_home' },
-            { id: 'mobile-show-nav', key: 'mobile_show_nav', i18n: 'lbl_show_nav' },
-            { id: 'mobile-show-settings', key: 'mobile_show_settings', i18n: 'lbl_show_settings' },
-            { id: 'mobile-show-autoplay-nav', key: 'mobile_show_autoplay_nav', i18n: 'lbl_show_autoplay_nav' },
-            { id: 'mobile-show-bottom-nav', key: 'mobile_show_bottom_nav', i18n: 'lbl_show_bottom_nav' },
-            { id: 'mobile-autohide-nav', key: 'mobile_autohide_nav', i18n: 'lbl_autohide_nav' },
-            { id: 'mobile-master-nav', key: 'mobile_master_nav', i18n: 'lbl_master_nav' }
+            { id: 'mobile-beta-program', key: 'mobile_beta_program', i18n: 'lbl_beta_prog' }
         ];
 
         adminToggles.forEach(t => {
@@ -118,13 +67,6 @@ window.SettingsAdmin = {
                 } else if (t.i18n) {
                     const label = window.SettingsCore.getTranslation(t.i18n);
                     const status = window.SettingsCore.getTranslation(val ? 'status_on' : 'status_off');
-                    window.SettingsCore.showToast(`${label}: ${status}`);
-                }
-
-                // Handle Navigation Control logic (Master/Sub/Exclusive)
-                const isNavControl = t.id.startsWith('mobile-show-') || t.id === 'mobile-autohide-nav' || t.id === 'mobile-master-nav';
-                if (isNavControl) {
-                    window.SettingsAdmin.syncNavigationControl(t.id, val);
                 }
             });
         });
@@ -146,75 +88,18 @@ window.SettingsAdmin = {
             });
         });
 
-        // 3. Layout & View Selects
 
-        // 3.1 Segmented Controls (Navigation Direction)
-        const segmentedControls = [
-            { id: 'mobile-flashcard-nav-dir', key: 'mobile_flashcard_nav_dir' },
-            { id: 'mobile-grid-nav-dir', key: 'mobile_grid_nav_dir' },
-            { id: 'mobile-view-mode', key: 'mobile_view_mode' },
-            { id: 'mobile-three-nav-dir', key: 'mobile_three_nav_dir' },
-            { id: 'mobile-menu-style', key: 'mobile_menu_style' }
-        ];
 
-        const updateAlignmentVisibility = () => {
-            const viewMode = localStorage.getItem('mobile_view_mode');
-            const group = document.getElementById('three-alignment-group');
-            if (group) {
-                group.classList.toggle('hidden', viewMode !== 'three');
-            }
-        };
-
-        // Initialize visibility
-        updateAlignmentVisibility();
-
-        segmentedControls.forEach(ctrl => {
-            const container = document.getElementById(ctrl.id);
-            if (container) {
-                container.addEventListener('click', (e) => {
-                    const btn = e.target.closest('.seg-btn');
-                    if (!btn) return;
-
-                    const val = btn.getAttribute('data-value');
-                    localStorage.setItem(ctrl.key, val);
-
-                    // Update UI via SettingsCore helper
-                    window.SettingsCore.setSegmentedValue(ctrl.id, val);
-                    
-                    let labelKey = 'lbl_view_mode';
-                    if (ctrl.id.includes('flashcard')) labelKey = 'lbl_flashcard_nav';
-                    if (ctrl.id.includes('grid')) labelKey = 'lbl_grid_nav';
-                    if (ctrl.id.includes('three-nav')) labelKey = 'lbl_three_nav';
-                    if (ctrl.id.includes('menu-style')) labelKey = 'lbl_menu_demo';
-
-                    // Dynamic visibility toggle if View Mode changed
-                    if (ctrl.id === 'mobile-view-mode') {
-                        updateAlignmentVisibility();
-                    }
-
-                    const label = window.SettingsCore.getTranslation(labelKey);
-                    window.SettingsCore.showToast(`${label}: ${val}`);
-                });
-            }
-        });
-
-        // Layout & View Toggles
-        const layoutToggles = [];
-
-        layoutToggles.forEach(t => {
-            const el = document.getElementById(t.id);
-            if (el) el.addEventListener('change', (e) => {
-                localStorage.setItem(t.key, e.target.checked);
-                window.SettingsCore.showToast(`${e.target.checked ? 'Enabled' : 'Disabled'}: ${t.key}`);
-            });
-        });
-
-        // PIN Setup Global
-        window.setupParentPin = () => {
+        // Independent PIN Setup for Admin
+        window.setupAdminPin = () => {
             window.SettingsCore.showPinModal('setup', (success) => {
                 if (success) {
                     window.SettingsCore.showToast(window.SettingsCore.getTranslation('pin_success'));
                 }
+            }, { 
+                targetKey: 'mobile_admin_pin', 
+                visibilityKey: 'mobile_admin_pin_visible',
+                categoryName: 'Admin'
             });
         };
     },

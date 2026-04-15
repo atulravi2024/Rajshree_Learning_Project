@@ -1,0 +1,41 @@
+/* settings_designer.css - Premium Designer Mode Styling */
+
+.designer-container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.designer-demo-card {
+    background: var(--glass-bg, rgba(255, 255, 255, 0.7));
+    -webkit-backdrop-filter: blur(var(--glass-blur, 10px));
+    backdrop-filter: blur(var(--glass-blur, 10px));
+    border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.3));
+    border-radius: var(--border-radius-lg, 16px);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.designer-demo-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-pink, #ff6b9d);
+    margin-bottom: 10px;
+}
+
+.designer-demo-text {
+    font-size: 0.95rem;
+    color: var(--text-dark, #333);
+    line-height: 1.6;
+}
+
+[data-theme="dark"] .designer-demo-card {
+    background: rgba(30, 30, 40, 0.6);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .designer-demo-text {
+    color: #eee;
+}

@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.SettingsParent) window.SettingsParent.init();
         if (window.SettingsAdmin) window.SettingsAdmin.init();
         if (window.SettingsDev) window.SettingsDev.init();
+        if (window.SettingsDesigner) window.SettingsDesigner.init();
         
         console.log("💎 All Modules Loaded.");
     } catch (e) {
