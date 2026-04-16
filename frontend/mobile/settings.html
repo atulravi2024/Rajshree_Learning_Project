@@ -556,6 +556,17 @@
                 </header>
                 <div class="category-content">
                     <div class="category-inner">
+                        <!-- Master Control Parent PIN -->
+                        <div class="master-lock-group master-lock-group-custom">
+                            <div class="toggle-row">
+                                <label class="group-label" for="mobile-master-pin-parent" data-i18n="lbl_master_lock">मास्टर लॉक कंट्रोल</label>
+                                <span class="switch">
+                                    <input type="checkbox" id="mobile-master-pin-parent" title="Parent PIN Master" aria-label="Parent PIN Master">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </div>
+
                         <section class="settings-group">
                             <div class="data-actions-grid">
                                 <button class="btn-inline" onclick="setupParentPin()" title="पैरेंट पिन सेट करें" data-i18n="lbl_parent_pin">पैरेंट पिन</button>
@@ -569,14 +580,14 @@
                                 <div class="lock-card-compact">
                                     <label class="lock-label-mini" for="parent-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
                                     <span class="switch is-small">
-                                        <input type="checkbox" id="parent-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
+                                        <input type="checkbox" class="pin-parent-lock" id="parent-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
                                         <span class="slider"></span>
                                     </span>
                                 </div>
                                 <div class="lock-card-compact">
                                     <label class="lock-label-mini" for="parent-pin-required" data-i18n="lbl_pin_required">पिन आवश्यक</label>
                                     <span class="switch is-small">
-                                        <input type="checkbox" id="parent-pin-required" title="पिन आवश्यक" aria-label="पिन आवश्यक">
+                                        <input type="checkbox" class="pin-parent-lock" id="parent-pin-required" title="पिन आवश्यक" aria-label="पिन आवश्यक">
                                         <span class="slider"></span>
                                     </span>
                                 </div>
@@ -589,6 +600,99 @@
 
         <!-- Admin Category Section -->
         <div id="cat-admin" class="category-view">
+
+            <!-- Category 7: Safety (Split - Safety) -->
+            <div class="category-block">
+                <header class="section-header" role="button" tabindex="0">
+                    <span class="section-icon">🛡️</span>
+                    <span class="section-title" data-i18n="sec_safety_only">सुरक्षा (सभी)</span>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="category-content">
+                    <div class="category-inner">
+                        <!-- Master Control Safety All -->
+                        <div class="master-lock-group master-lock-group-custom">
+                            <div class="toggle-row">
+                                <label class="group-label" for="mobile-master-safety" data-i18n="lbl_master_lock">मास्टर लॉक कंट्रोल</label>
+                                <span class="switch">
+                                    <input type="checkbox" id="mobile-master-safety" title="मास्टर लॉक सुरक्षा" aria-label="मास्टर लॉक कंट्रोल">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="compact-locks-grid compact-locks-grid-custom mt-10">
+                            <!-- Kids (🧒) -->
+                            <div class="lock-card-compact">
+                                <label class="lock-label-mini" for="mobile-safety-kids-global">🧒 <span data-i18n="sec_kids_global">बच्चों की सुरक्षा</span></label>
+                                <span class="switch is-small">
+                                    <input type="checkbox" class="safety-all-lock" id="mobile-safety-kids-global" title="Kids Safety" aria-label="Kids Safety">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                            <div class="lock-card-compact">
+                                <label class="lock-label-mini" for="mobile-safety-kids-audio">🧒 <span data-i18n="sec_kids_audio">किड्स ऑडियो सुरक्षा</span></label>
+                                <span class="switch is-small">
+                                    <input type="checkbox" class="safety-all-lock" id="mobile-safety-kids-audio" title="Kids Safety Audio" aria-label="Kids Safety Audio">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+
+                            <!-- Parent (👨‍👩‍👧) -->
+                            <div class="lock-card-compact">
+                                <label class="lock-label-mini" for="mobile-safety-pin-parent">👨‍👩‍👧 <span data-i18n="sec_pin_parent">पिन पैरेंट</span></label>
+                                <span class="switch is-small">
+                                    <input type="checkbox" class="safety-all-lock" id="mobile-safety-pin-parent" title="PIN Parent" aria-label="PIN Parent">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+
+                            <!-- Admin (🛠️) -->
+                            <div class="lock-card-compact">
+                                <label class="lock-label-mini" for="mobile-safety-pin-admin">🛠️ <span data-i18n="sec_pin_admin">पिन एडमिन</span></label>
+                                <span class="switch is-small">
+                                    <input type="checkbox" class="safety-all-lock" id="mobile-safety-pin-admin" title="PIN Admin" aria-label="PIN Admin">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+
+                            <!-- Developer (💻) -->
+                            <div class="lock-card-compact">
+                                <label class="lock-label-mini" for="mobile-safety-pin-dev">💻 <span data-i18n="sec_pin_developer">पिन डेवलपर</span></label>
+                                <span class="switch is-small">
+                                    <input type="checkbox" class="safety-all-lock" id="mobile-safety-pin-dev" title="PIN Developer" aria-label="PIN Developer">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+
+                            <!-- Designer (🎨) -->
+                            <div class="lock-card-compact">
+                                <label class="lock-label-mini" for="mobile-safety-pin-designer">🎨 <span data-i18n="sec_pin_designer">पिन डिजाइनर</span></label>
+                                <span class="switch is-small">
+                                    <input type="checkbox" class="safety-all-lock" id="mobile-safety-pin-designer" title="PIN Designer" aria-label="PIN Designer">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+
+                            <!-- Safety / General (🛡️) -->
+                            <div class="lock-card-compact">
+                                <label class="lock-label-mini" for="mobile-lock">🛡️ <span data-i18n="lbl_child_lock">चाइल्ड लॉक</span></label>
+                                <span class="switch is-small">
+                                    <input type="checkbox" class="safety-all-lock" id="mobile-lock" title="चाइल्ड लॉक ऑन/ऑफ" aria-label="चाइल्ड लॉक">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                            <div class="lock-card-compact">
+                                <label class="lock-label-mini" for="mobile-lock-alerts">🛡️ <span data-i18n="lbl_lock_alerts">सुरक्षा अलर्ट</span></label>
+                                <span class="switch is-small">
+                                    <input type="checkbox" class="safety-all-lock" id="mobile-lock-alerts" title="सुरक्षा अलर्ट ऑन/ऑफ" aria-label="सुरक्षा अलर्ट">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Category 7.5: Kids Safety (Always On) -->
             <div class="category-block">
@@ -736,38 +840,8 @@
         </div>
 
 
-            <!-- Category 7: Safety (Split - Safety) -->
-            <div class="category-block">
-                <header class="section-header" role="button" tabindex="0">
-                    <span class="section-icon">🛡️</span>
-                    <span class="section-title" data-i18n="sec_safety_only">सुरक्षा</span>
-                    <span class="chevron">▼</span>
-                </header>
-                <div class="category-content">
-                    <div class="category-inner">
-                        <section class="settings-group">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="mobile-lock" data-i18n="lbl_child_lock">चाइल्ड लॉक</label>
-                                </div>
-                                <span class="switch">
-                                    <input type="checkbox" id="mobile-lock" title="चाइल्ड लॉक ऑन/ऑफ" aria-label="चाइल्ड लॉक">
-                                    <span class="slider"></span>
-                                </span>
-                            </div>
-                        </section>
-                        <section class="settings-group">
-                            <div class="toggle-row">
-                                <div>
-                                    <label class="group-label" for="mobile-lock-alerts" data-i18n="lbl_lock_alerts">सुरक्षा अलर्ट</label>
-                                    <p class="group-sub" data-i18n="sub_lock_alerts">अनधिकृत कोशिश पर सूचना दें</p>
-                                </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Category 8: Storage & Sync (Moved to Admin) -->
+                <!-- Category 8: Storage & Sync (Moved to Admin) -->
             <div class="category-block">
                 <header class="section-header" role="button" tabindex="0">
                     <span class="section-icon">📂</span>
@@ -847,6 +921,16 @@
                 </header>
                 <div class="category-content">
                     <div class="category-inner">
+                        <!-- Master Control Admin PIN -->
+                        <div class="master-lock-group master-lock-group-custom">
+                            <div class="toggle-row">
+                                <label class="group-label" for="mobile-master-pin-admin" data-i18n="lbl_master_lock">मास्टर लॉक कंट्रोल</label>
+                                <span class="switch">
+                                    <input type="checkbox" id="mobile-master-pin-admin" title="Admin PIN Master" aria-label="Admin PIN Master">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </div>
                         <section class="settings-group">
                             <div class="data-actions-grid">
                                 <button class="btn-inline" onclick="setupAdminPin()" title="एडमिन पिन सेट करें" data-i18n="lbl_admin_pin">एडमिन पिन</button>
@@ -860,14 +944,14 @@
                                 <div class="lock-card-compact">
                                     <label class="lock-label-mini" for="admin-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
                                     <span class="switch is-small">
-                                        <input type="checkbox" id="admin-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
+                                        <input type="checkbox" class="pin-admin-lock" id="admin-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
                                         <span class="slider"></span>
                                     </span>
                                 </div>
                                 <div class="lock-card-compact">
                                     <label class="lock-label-mini" for="admin-pin-required" data-i18n="lbl_pin_required">पिन आवश्यक</label>
                                     <span class="switch is-small">
-                                        <input type="checkbox" id="admin-pin-required" title="पिन आवश्यक" aria-label="पिन आवश्यक">
+                                        <input type="checkbox" class="pin-admin-lock" id="admin-pin-required" title="पिन आवश्यक" aria-label="पिन आवश्यक">
                                         <span class="slider"></span>
                                     </span>
                                 </div>
@@ -1008,6 +1092,16 @@
                 </header>
                 <div class="category-content">
                     <div class="category-inner">
+                        <!-- Master Control Developer PIN -->
+                        <div class="master-lock-group master-lock-group-custom">
+                            <div class="toggle-row">
+                                <label class="group-label" for="mobile-master-pin-dev" data-i18n="lbl_master_lock">मास्टर लॉक कंट्रोल</label>
+                                <span class="switch">
+                                    <input type="checkbox" id="mobile-master-pin-dev" title="Developer PIN Master" aria-label="Developer PIN Master">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </div>
                         <section class="settings-group">
                             <div class="data-actions-grid">
                                 <button class="btn-inline" onclick="setupDevPin()" title="डेवलपर पिन सेट करें" data-i18n="lbl_dev_pin">डेवलपर पिन</button>
@@ -1021,14 +1115,14 @@
                                 <div class="lock-card-compact">
                                     <label class="lock-label-mini" for="dev-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
                                     <span class="switch is-small">
-                                        <input type="checkbox" id="dev-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
+                                        <input type="checkbox" class="pin-dev-lock" id="dev-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
                                         <span class="slider"></span>
                                     </span>
                                 </div>
                                 <div class="lock-card-compact">
                                     <label class="lock-label-mini" for="dev-pin-required" data-i18n="lbl_pin_required">पिन आवश्यक</label>
                                     <span class="switch is-small">
-                                        <input type="checkbox" id="dev-pin-required" title="पिन आवश्यक" aria-label="पिन आवश्यक">
+                                        <input type="checkbox" class="pin-dev-lock" id="dev-pin-required" title="पिन आवश्यक" aria-label="पिन आवश्यक">
                                         <span class="slider"></span>
                                     </span>
                                 </div>
@@ -1278,6 +1372,16 @@
                 </header>
                 <div class="category-content">
                     <div class="category-inner">
+                        <!-- Master Control Designer PIN -->
+                        <div class="master-lock-group master-lock-group-custom">
+                            <div class="toggle-row">
+                                <label class="group-label" for="mobile-master-pin-designer" data-i18n="lbl_master_lock">मास्टर लॉक कंट्रोल</label>
+                                <span class="switch">
+                                    <input type="checkbox" id="mobile-master-pin-designer" title="Designer PIN Master" aria-label="Designer PIN Master">
+                                    <span class="slider"></span>
+                                </span>
+                            </div>
+                        </div>
                         <section class="settings-group">
                             <div class="data-actions-grid">
                                 <button class="btn-inline" onclick="setupDesignerPin()" title="डिजाइनर पिन सेट करें" data-i18n="lbl_designer_pin">डिजाइनर पिन</button>
@@ -1292,14 +1396,14 @@
                                 <div class="lock-card-compact">
                                     <label class="lock-label-mini" for="designer-pin-visible" data-i18n="lbl_pin_visible">पिन दिखाएं</label>
                                     <span class="switch is-small">
-                                        <input type="checkbox" id="designer-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
+                                        <input type="checkbox" class="pin-designer-lock" id="designer-pin-visible" title="पिन विजिबिलिटी" aria-label="पिन विजिबिलिटी">
                                         <span class="slider"></span>
                                     </span>
                                 </div>
                                 <div class="lock-card-compact">
                                     <label class="lock-label-mini" for="designer-pin-required" data-i18n="lbl_pin_required">पिन आवश्यक</label>
                                     <span class="switch is-small">
-                                        <input type="checkbox" id="designer-pin-required" title="पिन आवश्यक" aria-label="पिन आवश्यक">
+                                        <input type="checkbox" class="pin-designer-lock" id="designer-pin-required" title="पिन आवश्यक" aria-label="पिन आवश्यक">
                                         <span class="slider"></span>
                                     </span>
                                 </div>
@@ -1527,6 +1631,31 @@
                 <button class="key btn-ghost" id="pin-cancel" data-i18n="btn_cancel">रद्द</button>
                 <button class="key">0</button>
                 <button class="key btn-ghost" id="pin-backspace">⌫</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Math Challenge Modal (For Child Lock) -->
+    <div id="math-modal" class="pin-modal-overlay">
+        <div class="pin-modal-content math-modal-content">
+            <h2 data-i18n="math_title">सुरक्षा जांच</h2>
+            <p class="math-desc" data-i18n="math_desc">चाइल्ड लॉक को बंद करने के लिए हल करें:</p>
+            <div class="math-question" id="math-question-text">15 + 25 = ?</div>
+            <div class="math-input-display" id="math-answer-display">?</div>
+            <p id="math-modal-msg" class="pin-msg"></p>
+            <div class="pin-keypad">
+                <button class="key math-key">1</button>
+                <button class="key math-key">2</button>
+                <button class="key math-key">3</button>
+                <button class="key math-key">4</button>
+                <button class="key math-key">5</button>
+                <button class="key math-key">6</button>
+                <button class="key math-key">7</button>
+                <button class="key math-key">8</button>
+                <button class="key math-key">9</button>
+                <button class="key btn-ghost" id="math-cancel" data-i18n="btn_cancel">रद्द</button>
+                <button class="key math-key">0</button>
+                <button class="key btn-ghost" id="math-backspace">⌫</button>
             </div>
         </div>
     </div>

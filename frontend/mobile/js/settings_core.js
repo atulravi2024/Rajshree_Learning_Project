@@ -14,8 +14,10 @@ window.SettingsCore = {
             this.initDraggableTabs();
             this.initVerticalDraggable();
             this.initPinPad();
+            this.initMathPad();
             this.initSwitches();
             this.initCompactLocks();
+            this.initGlobalLockInterceptor();
             console.log("⚙️ Settings Core: Boot Complete.");
         } catch (e) {
             console.error("❌ Settings Core Boot Failed:", e);
@@ -96,6 +98,20 @@ window.SettingsCore = {
         const masterAudio = b('mobile_master_audio', false);
         const masterGlobal = b('mobile_master_global', false);
         
+        // Admin PIN Master Toggles
+        const masterPinParent = b('mobile_master_pin_parent', false);
+        const masterPinAdmin = b('mobile_master_pin_admin', false);
+        const masterPinDev = b('mobile_master_pin_dev', false);
+        const masterPinDesigner = b('mobile_master_pin_designer', false);
+
+        // Safety All Sub-Masters
+        const safetyKidsGlobal = b('mobile_safety_kids_global', false);
+        const safetyKidsAudio = b('mobile_safety_kids_audio', false);
+        const safetyPinParent = b('mobile_safety_pin_parent', false);
+        const safetyPinAdmin = b('mobile_safety_pin_admin', false);
+        const safetyPinDev = b('mobile_safety_pin_dev', false);
+        const safetyPinDesigner = b('mobile_safety_pin_designer', false);
+
         const lockAutoplay = b('mobile_lock_autoplay', false);
         const lockCard = b('mobile_lock_card', false);
 
@@ -205,6 +221,18 @@ window.SettingsCore = {
         this.setCheck('mobile-master-audio', masterAudio);
         this.setCheck('mobile-master-global', masterGlobal);
         
+        this.setCheck('mobile-master-pin-parent', masterPinParent);
+        this.setCheck('mobile-master-pin-admin', masterPinAdmin);
+        this.setCheck('mobile-master-pin-dev', masterPinDev);
+        this.setCheck('mobile-master-pin-designer', masterPinDesigner);
+
+        this.setCheck('mobile-safety-kids-global', safetyKidsGlobal);
+        this.setCheck('mobile-safety-kids-audio', safetyKidsAudio);
+        this.setCheck('mobile-safety-pin-parent', safetyPinParent);
+        this.setCheck('mobile-safety-pin-admin', safetyPinAdmin);
+        this.setCheck('mobile-safety-pin-dev', safetyPinDev);
+        this.setCheck('mobile-safety-pin-designer', safetyPinDesigner);
+        
         // Manual Dark Mode checkbox should reflect current state
         const effectiveDarkMode = autoDark ? window.matchMedia('(prefers-color-scheme: dark)').matches : darkMode;
         this.setCheck('mobile-dark-mode', effectiveDarkMode);
@@ -304,15 +332,6 @@ window.SettingsCore = {
         };
 
         const switchTab = (targetId) => {
-            const isLocked = localStorage.getItem('mobile_child_lock') === 'true';
-            if (isLocked && targetId !== 'cat-kids') {
-                this.showPinModal('verify', (success) => {
-                    if (success) {
-                        performSwitch(targetId);
-                    }
-                });
-                return;
-            }
             performSwitch(targetId);
         };
 
@@ -396,6 +415,12 @@ window.SettingsCore = {
         targetKey: 'mobile_parent_pin',
         visibilityKey: 'mobile_pin_visible',
         categoryName: 'Parent'
+    },
+
+    mathData: {
+        answer: 0,
+        buffer: '',
+        callback: null
     },
 
     initPinPad: function() {
@@ -517,6 +542,94 @@ window.SettingsCore = {
         if (msg) msg.textContent = this.getTranslation('pin_wrong');
         this.pinData.buffer = '';
         this.updatePinDots();
+    },
+
+    initMathPad: function() {
+        document.querySelectorAll('.math-key').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (this.mathData.buffer.length < 5) {
+                    this.mathData.buffer += btn.textContent;
+                    this.updateMathUI();
+                    if (this.mathData.buffer.length >= String(this.mathData.answer).length) {
+                        // Small delay before auto-validating
+                        setTimeout(() => this.validateMath(), 300);
+                    }
+                }
+            });
+        });
+
+        const cancel = document.getElementById('math-cancel');
+        if (cancel) cancel.addEventListener('click', () => this.hideMathModal(false));
+
+        const backspace = document.getElementById('math-backspace');
+        if (backspace) backspace.addEventListener('click', () => {
+            this.mathData.buffer = this.mathData.buffer.slice(0, -1);
+            this.updateMathUI();
+        });
+    },
+
+    showMathModal: function(callback) {
+        const modal = document.getElementById('math-modal');
+        if (!modal) return;
+
+        this.mathData.callback = callback;
+        this.mathData.buffer = '';
+        
+        // Generate Question
+        const ops = ['+', '-', '*'];
+        const op = ops[Math.floor(Math.random() * ops.length)];
+        let n1, n2;
+
+        if (op === '*') {
+            n1 = Math.floor(Math.random() * 8) + 2; // 2-9
+            n2 = Math.floor(Math.random() * 8) + 2; // 2-9
+            this.mathData.answer = n1 * n2;
+        } else if (op === '-') {
+            n1 = Math.floor(Math.random() * 40) + 10; // 10-49
+            n2 = Math.floor(Math.random() * (n1 - 5)) + 1; // n2 < n1
+            this.mathData.answer = n1 - n2;
+        } else {
+            n1 = Math.floor(Math.random() * 40) + 10;
+            n2 = Math.floor(Math.random() * 40) + 10;
+            this.mathData.answer = n1 + n2;
+        }
+
+        const questionText = document.getElementById('math-question-text');
+        if (questionText) questionText.textContent = `${n1} ${op} ${n2} = ?`;
+
+        const msg = document.getElementById('math-modal-msg');
+        if (msg) msg.textContent = '';
+
+        this.updateMathUI();
+        modal.classList.add('active');
+    },
+
+    hideMathModal: function(success = false) {
+        const modal = document.getElementById('math-modal');
+        if (modal) modal.classList.remove('active');
+        if (this.mathData.callback) this.mathData.callback(success);
+        this.mathData.callback = null;
+    },
+
+    updateMathUI: function() {
+        const display = document.getElementById('math-answer-display');
+        if (display) display.textContent = this.mathData.buffer || '?';
+    },
+
+    validateMath: function() {
+        if (parseInt(this.mathData.buffer) === this.mathData.answer) {
+            this.hideMathModal(true);
+        } else if (this.mathData.buffer.length >= String(this.mathData.answer).length) {
+            const modalContent = document.querySelector('.math-modal-content');
+            const msg = document.getElementById('math-modal-msg');
+            if (modalContent) {
+                modalContent.classList.add('shake');
+                setTimeout(() => modalContent.classList.remove('shake'), 400);
+            }
+            if (msg) msg.textContent = this.getTranslation('math_wrong');
+            this.mathData.buffer = '';
+            setTimeout(() => this.updateMathUI(), 400);
+        }
     },
 
     initVerticalDraggable: function() {
@@ -674,6 +787,60 @@ window.SettingsCore = {
                     }
                 });
             }
+        });
+    },
+
+    initGlobalLockInterceptor: function() {
+        /**
+         * GLOBAL CHILD LOCK INTERCEPTOR
+         * This ensures that no settings can be modified when mobile_child_lock is active.
+         * It allows section expansion (accordion) and tab switching (which has its own PIN logic).
+         */
+        const interceptEvents = ['pointerdown', 'change', 'input', 'click'];
+        
+        interceptEvents.forEach(eventType => {
+            document.addEventListener(eventType, (e) => {
+                const isLocked = localStorage.getItem('mobile_child_lock') === 'true';
+                if (!isLocked) return;
+
+                // 1. Identify the target and its context
+                const target = e.target;
+                
+                // 2. Define "Allowed" zones that should NOT be blocked
+                const childLockEl = document.getElementById('mobile-lock');
+                const isChildLockToggle = (childLockEl && childLockEl.contains(target)) || 
+                                          target.closest('label[for="mobile-lock"]') ||
+                                          target.closest('.lock-card-compact')?.contains(childLockEl) ||
+                                          target.closest('.switch')?.contains(childLockEl);
+                const isAccordionHeader = target.closest('.section-header');
+                const isTabBtn = target.closest('.tab-btn');
+                const isPinModal = target.closest('.pin-modal-overlay');
+                const isCloseBtn = target.closest('.close-btn');
+                const isToast = target.closest('.toast-msg');
+
+                if (isChildLockToggle || isAccordionHeader || isTabBtn || isPinModal || isCloseBtn || isToast) {
+                    return; // Allow interaction
+                }
+
+                // 3. Block interactions for actual settings elements
+                // We check if the target is an input-like element or is inside a settings-group
+                const isInput = target.tagName === 'INPUT' || target.tagName === 'SELECT' || target.tagName === 'BUTTON' || target.tagName === 'TEXTAREA';
+                const isSettingCard = target.closest('.voice-card, .color-circle, .lock-card-compact, .master-lock-group, .standalone-lock-row, .switch, .slider');
+
+                if (isInput || isSettingCard) {
+                    // Only block if it's an interaction that would change state
+                    // Click on a switch, input on a range, change on a select, etc.
+                    
+                    e.preventDefault();
+                    e.stopPropagation();
+                    e.stopImmediatePropagation();
+
+                    // Show visual feedback that settings are locked
+                    if (eventType === 'pointerdown' || eventType === 'click') {
+                        this.showToast(this.getTranslation('msg_settings_locked_child_lock'));
+                    }
+                }
+            }, { capture: true });
         });
     }
 };

@@ -8,6 +8,7 @@ window.SettingsAdmin = {
         console.log("🛠️ Settings Admin: Start Boot...");
         try {
             this.attachEvents();
+            this.initSafetyLocks();
             this.renderDiagnostics();
             console.log("🛠️ Settings Admin: Boot Complete.");
         } catch (e) {
@@ -37,10 +38,38 @@ window.SettingsAdmin = {
             { id: 'mobile-lock-alerts', key: 'mobile_lock_alerts', i18n: 'lbl_lock_alerts' },
             { id: 'mobile-intrusion-shield', key: 'mobile_intrusion_shield', i18n: 'lbl_intrusion_shield' },
             { id: 'mobile-edge-protection', key: 'mobile_edge_protection', i18n: 'lbl_edge_protection' },
+            
+            // PIN Parent
+            { id: 'mobile-master-pin-parent', key: 'mobile_master_pin_parent', i18n: 'lbl_master_lock' },
+            { id: 'parent-pin-visible', key: 'mobile_parent_pin_visible', i18n: 'lbl_pin_visible' },
+            { id: 'parent-pin-required', key: 'mobile_parent_pin_required', i18n: 'lbl_pin_required' },
+
+            // PIN Admin
+            { id: 'mobile-master-pin-admin', key: 'mobile_master_pin_admin', i18n: 'lbl_master_lock' },
             { id: 'admin-pin-visible', key: 'mobile_admin_pin_visible', i18n: 'lbl_pin_visible' },
             { id: 'admin-pin-required', key: 'mobile_admin_pin_required', i18n: 'lbl_pin_required' },
+            
+            // PIN Developer
+            { id: 'mobile-master-pin-dev', key: 'mobile_master_pin_dev', i18n: 'lbl_master_lock' },
+            { id: 'dev-pin-visible', key: 'mobile_dev_pin_visible', i18n: 'lbl_pin_visible' },
+            { id: 'dev-pin-required', key: 'mobile_dev_pin_required', i18n: 'lbl_pin_required' },
+
+            // PIN Designer
+            { id: 'mobile-master-pin-designer', key: 'mobile_master_pin_designer', i18n: 'lbl_master_lock' },
+            { id: 'designer-pin-visible', key: 'mobile_designer_pin_visible', i18n: 'lbl_pin_visible' },
+            { id: 'designer-pin-required', key: 'mobile_designer_pin_required', i18n: 'lbl_pin_required' },
+
+            // Safety Grid Sub-Masters
+            { id: 'mobile-safety-kids-global', key: 'mobile_safety_kids_global', i18n: 'sec_kids_global' },
+            { id: 'mobile-safety-kids-audio', key: 'mobile_safety_kids_audio', i18n: 'sec_kids_audio' },
+            { id: 'mobile-safety-pin-parent', key: 'mobile_safety_pin_parent', i18n: 'sec_pin_parent' },
+            { id: 'mobile-safety-pin-admin', key: 'mobile_safety_pin_admin', i18n: 'sec_pin_admin' },
+            { id: 'mobile-safety-pin-dev', key: 'mobile_safety_pin_dev', i18n: 'sec_pin_developer' },
+            { id: 'mobile-safety-pin-designer', key: 'mobile_safety_pin_designer', i18n: 'sec_pin_designer' },
+
             { id: 'mobile-auto-update', key: 'mobile_auto_update', i18n: 'lbl_auto_update' },
-            { id: 'mobile-beta-program', key: 'mobile_beta_program', i18n: 'lbl_beta_prog' }
+            { id: 'mobile-beta-program', key: 'mobile_beta_program', i18n: 'lbl_beta_prog' },
+            { id: 'mobile-master-safety', key: 'mobile_master_safety', i18n: 'lbl_master_lock' }
         ];
 
         adminToggles.forEach(t => {
@@ -48,14 +77,16 @@ window.SettingsAdmin = {
             if (el) el.addEventListener('change', (e) => {
                 const val = e.target.checked;
 
-                // --- CHILD LOCK TOGGLE INTERCEPTION ---
+                // --- CHILD LOCK TOGGLE INTERCEPTION (DISABLE ONLY) ---
                 if (t.key === 'mobile_child_lock' && !val) {
-                    e.target.checked = true; // Revert UI
-                    window.SettingsCore.showPinModal('verify', (success) => {
+                    e.target.checked = true; // Stay ON initially
+                    window.SettingsCore.showMathModal((success) => {
                         if (success) {
                             e.target.checked = false;
                             localStorage.setItem(t.key, false);
                             window.SettingsCore.showToast(window.SettingsCore.getTranslation('child_lock_off'));
+                        } else {
+                            e.target.checked = true;
                         }
                     });
                     return;
@@ -103,6 +134,61 @@ window.SettingsAdmin = {
                 categoryName: 'Admin'
             });
         };
+    },
+    
+    initSafetyLocks: function() {
+        // 1. Master Safety All -> Controls the entire grid
+        this.initMasterLockLogic('mobile-master-safety', '.safety-all-lock');
+
+        // 2. PIN Section Masters -> Controls their children
+        this.initMasterLockLogic('mobile-master-pin-parent', '.pin-parent-lock');
+        this.initMasterLockLogic('mobile-master-pin-admin', '.pin-admin-lock');
+        this.initMasterLockLogic('mobile-master-pin-dev', '.pin-dev-lock');
+        this.initMasterLockLogic('mobile-master-pin-designer', '.pin-designer-lock');
+
+        // 3. Safety Grid Sub-Masters -> Sync with Section Masters (Master-of-Masters)
+        this.syncTwoToggles('mobile-safety-kids-global', 'mobile-master-global');
+        this.syncTwoToggles('mobile-safety-kids-audio', 'mobile-master-audio');
+        this.syncTwoToggles('mobile-safety-pin-parent', 'mobile-master-pin-parent');
+        this.syncTwoToggles('mobile-safety-pin-admin', 'mobile-master-pin-admin');
+        this.syncTwoToggles('mobile-safety-pin-dev', 'mobile-master-pin-dev');
+        this.syncTwoToggles('mobile-safety-pin-designer', 'mobile-master-pin-designer');
+    },
+
+    syncTwoToggles: function(sourceId, targetId) {
+        const source = document.getElementById(sourceId);
+        const target = document.getElementById(targetId);
+        if (!source || !target) return;
+
+        source.addEventListener('change', (e) => {
+            if (target.checked !== e.target.checked) {
+                target.checked = e.target.checked;
+                target.dispatchEvent(new Event('change'));
+            }
+        });
+
+        target.addEventListener('change', (e) => {
+            if (source.checked !== e.target.checked) {
+                source.checked = e.target.checked;
+                // Don't save source directly here if it's already in adminToggles, 
+                // it will be saved by its own change listener
+            }
+        });
+    },
+
+    initMasterLockLogic: function(masterId, slaveClass) {
+        const master = document.getElementById(masterId);
+        const slaves = document.querySelectorAll(slaveClass);
+        if (!master) return;
+        master.addEventListener('change', (e) => {
+            const val = e.target.checked;
+            slaves.forEach(s => {
+                if (s.checked !== val) {
+                    s.checked = val;
+                    s.dispatchEvent(new Event('change'));
+                }
+            });
+        });
     },
 
     renderDiagnostics: function() {
